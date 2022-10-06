@@ -1,0 +1,111 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "217",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default"
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "a_usingwalipipeline"
+  },
+  "connections" : [ {
+    "id" : "pFUZ38bVsVB8-txyPTIoj",
+    "source" : "h4oBQhBDhe6hcb9Go6R5O$$5b7usXGLv6yhdBn0jHki4",
+    "sourcePort" : "munC3y8tiCgr7eDhpQVAS$$PdrTp-K3Nju-L_diUcdV7",
+    "target" : "fJtqUESv9z3pU4DkMKf-P$$2AHNT7mKX8v4dzn3jyO4_",
+    "targetPort" : "Rd8ya6OuW89bDMdbvLs_2$$-Udt6YuwtWWOvLdL2USeO"
+  } ],
+  "processes" : {
+    "fJtqUESv9z3pU4DkMKf-P$$2AHNT7mKX8v4dzn3jyO4_" : {
+      "id" : "fJtqUESv9z3pU4DkMKf-P$$2AHNT7mKX8v4dzn3jyO4_",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 420.3999999999999,
+        "y" : 180.39999999999998,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Rd8ya6OuW89bDMdbvLs_2$$-Udt6YuwtWWOvLdL2USeO",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "sh56owuWyih8tOR714ohh$$qOc4eav9NJOwHzVMyGe_P",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      }
+    },
+    "h4oBQhBDhe6hcb9Go6R5O$$5b7usXGLv6yhdBn0jHki4" : {
+      "id" : "h4oBQhBDhe6hcb9Go6R5O$$5b7usXGLv6yhdBn0jHki4",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "TEST_SHARINGWALADATASET",
+        "slug" : "TEST_SHARINGWALADATASET",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "munC3y8tiCgr7eDhpQVAS$$PdrTp-K3Nju-L_diUcdV7",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/ramdom@A_WithDataset/1.0/751/datasets/TEST_SHARINGWALADATASET"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}
