@@ -1,0 +1,35 @@
+name: PythonExternalGit_Another
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: python
+buildSystem: wheel
+pipelines:
+  pipelines/TestExternalUse:
+    name: TestExternalUse
+    description: TestExternalUse
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-10-06 17:51:42'
+    datasets:
+      inputs:
+      - https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/test@TestAyushProject/1.0/748/datasets/TEST_REVOKE_ACCESS
+      outputs: []
+    dependencies:
+      project/748:
+        name: project/748
+        projectUID: 748
+        projectName: TestAyushProject
+        version: TestAyushProject/1.0
+        author: null
+        repositoryPath: https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/test
+        createdAt: '2022-10-06 17:52:44'
+datasets: {}
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'

@@ -1,0 +1,111 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "217",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default"
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "testexternaluse"
+  },
+  "connections" : [ {
+    "id" : "OF-4Yk-rHCTkNejFl2Tzu",
+    "source" : "qpWlHB3dN9Ux4_AMyxGfq$$-TueVHgUMHrX1q4g95Ao0",
+    "sourcePort" : "em8u1o02ALbLGyfrmm-SY$$tgB83b57HnytHCW0TRTnW",
+    "target" : "SFNrsDjMNaiQ1yYV5PNKJ$$DAlYAz6bz3H_eKTx1oziO",
+    "targetPort" : "b4RJQn_uvp5GMll-XFWxr$$PL6voPFHdr8mGjatRNotu"
+  } ],
+  "processes" : {
+    "qpWlHB3dN9Ux4_AMyxGfq$$-TueVHgUMHrX1q4g95Ao0" : {
+      "id" : "qpWlHB3dN9Ux4_AMyxGfq$$-TueVHgUMHrX1q4g95Ao0",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "TEST_REVOKE_ACCESS",
+        "slug" : "TEST_REVOKE_ACCESS",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "em8u1o02ALbLGyfrmm-SY$$tgB83b57HnytHCW0TRTnW",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/test@TestAyushProject/1.0/748/datasets/TEST_REVOKE_ACCESS"
+      }
+    },
+    "SFNrsDjMNaiQ1yYV5PNKJ$$DAlYAz6bz3H_eKTx1oziO" : {
+      "id" : "SFNrsDjMNaiQ1yYV5PNKJ$$DAlYAz6bz3H_eKTx1oziO",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 280,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "b4RJQn_uvp5GMll-XFWxr$$PL6voPFHdr8mGjatRNotu",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "jg4PybeSHqitMLlyFCkCt$$Mh6exF9sl2HFNg0MM_hnA",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}
