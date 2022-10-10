@@ -544,10 +544,14 @@ def main():
     spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
     spark.conf.set("spark_config1", "spark_config1 value")
     spark.conf.set("spark_config2", "spark_config2 value")
-    spark.conf.set("prophecy.metadata.pipeline.uri", "7235/pipelines/PYTHON_DEP_MGMT_ALL")
+    spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_DEP_MGMT_ALL")
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config1", "hadoop_config1 value")
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config2", "hadoop_config2 value")
-    MetricsCollector.start(spark = spark, pipelineId = "7235/pipelines/PYTHON_DEP_MGMT_ALL")
+    
+    MetricsCollector.start(
+        spark = spark,
+        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_DEP_MGMT_ALL"
+    )
     pipeline(spark)
     MetricsCollector.end(spark)
 

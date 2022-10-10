@@ -12,7 +12,7 @@ def pipeline(spark: SparkSession) -> None:
         spark, 
         df_src_parquet_all_type_and_partition_withspacehyphens, 
         "graph", 
-        "src_parquet_all_type_and_partition_withspacehyphens", 
+        "vlcUd7KAM_zvifvMwu9pZ$$8MswNyzCALGAeJjSxRNDZ", 
         "CHZEgFOxU2vx1Q32ysboc$$LB9injlM6BGINFq1djzRE"
     )
     df_Reformat_1 = Reformat_1(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
@@ -20,7 +20,7 @@ def pipeline(spark: SparkSession) -> None:
         spark, 
         df_Reformat_1, 
         "graph", 
-        "Reformat_1", 
+        "oSnCy6FWydBV675_CTMv8$$In5C4VfAlHsx5qLzItDuW", 
         "OgcPwunAgx_Y_Y3m8Krd0$$2IcX9S_gny3CS3TcShBZe"
     )
     df_Reformat_1.cache().count()
@@ -39,8 +39,12 @@ def main():
     spark.conf.set("prophecy.collect.basic.stats", "true")
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
     spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
-    spark.conf.set("prophecy.metadata.pipeline.uri", "7235/pipelines/PYTHON_BASIC")
-    MetricsCollector.start(spark = spark, pipelineId = "7235/pipelines/PYTHON_BASIC")
+    spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_BASIC")
+    
+    MetricsCollector.start(
+        spark = spark,
+        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_BASIC"
+    )
     pipeline(spark)
     MetricsCollector.end(spark)
 

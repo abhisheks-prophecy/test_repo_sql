@@ -51,8 +51,12 @@ def main():
     spark.conf.set("prophecy.collect.basic.stats", "true")
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
     spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
-    spark.conf.set("prophecy.metadata.pipeline.uri", "7235/pipelines/PYTHON_SG_SRC")
-    MetricsCollector.start(spark = spark, pipelineId = "7235/pipelines/PYTHON_SG_SRC")
+    spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_SG_SRC")
+    
+    MetricsCollector.start(
+        spark = spark,
+        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_SG_SRC"
+    )
     pipeline(spark)
     MetricsCollector.end(spark)
 
