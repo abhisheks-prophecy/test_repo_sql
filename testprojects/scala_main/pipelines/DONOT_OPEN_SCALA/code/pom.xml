@@ -1,7 +1,7 @@
 <project 
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ScalaProject</groupId>
+    <groupId>ScalaProjectCloneExternalGit</groupId>
     <artifactId>DONOT_OPEN_SCALA</artifactId>
     <description>workflow</description>
     <version>1.0</version>
@@ -10,7 +10,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <scalaBaseVersion>2.12</scalaBaseVersion>
         <scalaVersion>2.12.15</scalaVersion>
         <sparkVersion>3.3.0</sparkVersion>
-        <prophecyLibsVersion>5.2.3</prophecyLibsVersion>
+        <prophecyLibsVersion>6.0.0-rc1</prophecyLibsVersion>
     </properties>
     <repositories>
         <repository>
@@ -145,6 +145,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <artifactId>scalatest_${scalaBaseVersion}</artifactId>
             <version>3.0.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scalanlp</groupId>
+            <artifactId>epic_2.12</artifactId>
+            <version>0.5</version>
         </dependency>
         <dependency>
             <groupId>com.holdenkarau</groupId>
