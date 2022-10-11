@@ -117,6 +117,18 @@ pipelines:
         author: ''
         repositoryPath: null
         createdAt: '2022-08-31 08:00:29'
+  pipelines/LIVY_PYTHON:
+    name: LIVY_PYTHON
+    description: LIVY_PYTHON
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: python
+    createdAt: '2022-10-11 08:15:02'
+    datasets:
+      inputs:
+      - datasets/livy_src_csv
+      outputs: []
+    dependencies: {}
 datasets:
   datasets/dest_json_input_custs:
     name: dest_json_input_custs
@@ -250,6 +262,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 15:00:14'
+  datasets/livy_src_csv:
+    name: livy_src_csv
+    description: ''
+    author: abhisheks+e2etests@simpledatalabs.com
+    createdAt: '2022-10-11 08:16:15'
+    physicalDatasets:
+      dev:
+        fabricId: 299
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@simpledatalabs.com
+        createdAt: '2022-10-11 08:16:16'
   datasets/dest_text_DatasetWithSpaceHyphens:
     name: dest_text_DatasetWithSpaceHyphens
     description: ''
@@ -598,6 +622,12 @@ subgraphs:
     author: abhisheks+e2etests@simpledatalabs.com
     language: python
     createdAt: '2022-06-29 04:12:40'
+  subgraphs/pythonLivySG1:
+    name: pythonLivySG1
+    description: pythonSG1
+    author: abhisheks+e2etests@simpledatalabs.com
+    language: python
+    createdAt: '2022-10-11 08:16:58'
 sqlModels: {}
 sqlPipeline: null
 dependencies:

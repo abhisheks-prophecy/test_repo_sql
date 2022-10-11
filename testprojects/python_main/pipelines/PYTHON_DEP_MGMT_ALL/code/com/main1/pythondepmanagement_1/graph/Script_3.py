@@ -52,6 +52,9 @@ This is another comment
     print(a)
     real_val = int(Config.c_1) + int(Config.c_0)
     assert(real_val == 1)
+    print(
+        f"Configs are: CONFIG_STR:{Config.CONFIG_STR} \n CONFIG_DOUBLE:{Config.CONFIG_DOUBLE} \n CONFIG_BOOLEAN:{Config.CONFIG_BOOLEAN} \n CONFIG_INT:{Config.CONFIG_INT} \n CONFIG_FLOAT:{Config.CONFIG_FLOAT} \n CONFIG_SHORT:{Config.CONFIG_SHORT} \n CONFIG_DB_SECRETS:{Config.CONFIG_DB_SECRETS} \n c_join_expr:{Config.c_join_expr}"
+    )
     out00 = in0.select("c_int").withColumnRenamed("c_int", "c_int_new")
     out1 = in1\
              .select("c_int")\
