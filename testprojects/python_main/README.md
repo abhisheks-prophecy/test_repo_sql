@@ -175,3 +175,7 @@ final release
 *** Release notes for version: 1.1663842710509 ***
 
 1.1663842710509
+
+*** Release notes for version: 1.0 ***
+
+1.0
