@@ -183,3 +183,7 @@ final release
 *** Release notes for version: 1.1 ***
 
 Changes
+
+*** Release notes for version: 1.2 ***
+
+Changes
