@@ -5989,7 +5989,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "script" : "var out=in0.filter(col(\"c_short\")  > -1)\nprint(out.show(10))",
+        "script" : "var out=in0 //.filter(col(\"c_short\")  > -654566)\nprint(out.show())\nprintln(Config.CONFIG_STR)\nprintln(Config.CONFIG_BOOLEAN)\nprintln(Config.CONFIG_DOUBLE)\nprintln(Config.CONFIG_INT)\nprintln(Config.CONFIG_FLOAT)\nprintln(Config.c_agg_expr)",
         "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): Unit = {",
         "scriptMethodFooter" : "    \n}"
       }

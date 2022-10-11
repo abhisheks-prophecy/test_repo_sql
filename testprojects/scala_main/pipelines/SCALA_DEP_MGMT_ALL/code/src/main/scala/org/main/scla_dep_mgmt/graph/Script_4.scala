@@ -13,8 +13,14 @@ import java.time._
 
 object Script_4 {
   def apply(spark: SparkSession, in0: DataFrame): Unit = {
-    var out=in0.filter(col("c_short")  > -1)
-    print(out.show(10))
+    var out=in0 //.filter(col("c_short")  > -654566)
+    print(out.show())
+    println(Config.CONFIG_STR)
+    println(Config.CONFIG_BOOLEAN)
+    println(Config.CONFIG_DOUBLE)
+    println(Config.CONFIG_INT)
+    println(Config.CONFIG_FLOAT)
+    println(Config.c_agg_expr)
   }
 
 }
