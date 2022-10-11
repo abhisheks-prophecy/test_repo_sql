@@ -2,8 +2,8 @@
   "metainfo" : {
     "type" : "Databricks",
     "fabricId" : "1962",
-    "jobId" : "7235/jobs/PYTHON_BASIC_JOB",
-    "name" : "PYTHON_BASIC_JOB",
+    "jobId" : "jobs/PYTHON_BASIC_JOB",
+    "name" : "GIT_PYTHON_BASIC_JOB",
     "schedule" : "0 0 0/8 * * ? 2090",
     "jobClusterMode" : {
       "clusterMode" : "Multi"
@@ -27,21 +27,14 @@
       }
     },
     "availableFabrics" : [ {
-      "id" : "2175",
-      "name" : "test_job_lost",
+      "id" : "2335",
+      "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
       }
     }, {
-      "id" : "2206",
-      "name" : "JobFabricMain_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
-      }
-    }, {
-      "id" : "2210",
+      "id" : "2330",
       "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
         "default" : "small",
@@ -76,18 +69,25 @@
         "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
-      "id" : "2215",
-      "name" : "FabricAutomatedADVJobSize",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
-      }
-    }, {
-      "id" : "2219",
+      "id" : "2338",
       "name" : "TEST-Automated_Databricks1",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      }
+    }, {
+      "id" : "2327",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2349",
+      "name" : "GCP-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1" ]
       }
     }, {
       "id" : "1962",
@@ -97,11 +97,11 @@
         "availableClusterSizes" : [ "small", "adv-json1" ]
       }
     }, {
-      "id" : "2224",
-      "name" : "GCP-TEST_Automated",
+      "id" : "2326",
+      "name" : "JobFabricMain_1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       }
     }, {
       "id" : "299",
@@ -122,14 +122,7 @@
       "name" : "dev_shared",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium-1" ]
-      }
-    }, {
-      "id" : "2207",
-      "name" : "SingleCluster_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small" ]
       }
     } ]
   },
@@ -161,7 +154,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7235/pipelines/PYTHON_BASIC",
+        "pipelineId" : "pipelines/PYTHON_BASIC",
         "configurations" : {
           "schema" : [ ],
           "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],

@@ -2614,8 +2614,8 @@
       "metadata" : {
         "label" : "csv_special_chars",
         "slug" : "csv_special_chars",
-        "x" : -266,
-        "y" : 127,
+        "x" : -242,
+        "y" : 137.8,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -5909,7 +5909,7 @@
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "\"\"\"\nThis is a comment\n\"\"\"\n'''\nThis is another comment\n'''\n\n## FINAL SINGLE LINE COMMENT ####\n\nfrom pyspark.sql.types import DoubleType\n\nimport requests\nURL = \"https://www.geeksforgeeks.org/data-structures/\"\nr = requests.get(URL)\nprint(r.content)\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nxpoints = np.array([1, 8])\nypoints = np.array([3, 10])\nplt.plot(xpoints, ypoints)\n\nimport pandas as pd\ndata = {\n  \"calories\": [420, 380, 390],\n  \"duration\": [50, 40, 45]\n}\ndf = pd.DataFrame(data)\nprint(df)\n\nimport numpy as np\narr = np.array(['$c_1', 2, 3, 4, 5])\nprint(arr)\n\nfrom scipy.special import cbrt\ncb = cbrt([27, 64])\nprint(cb[0])\n\nimport torch\nimport math\ndtype = torch.float\ndevice = torch.device(\"cpu\")\nx = torch.linspace(-math.pi, math.pi, 2000, device=device, dtype=dtype)\ny = torch.sin(x)\na = torch.randn((), device=device, dtype=dtype)\nprint(a)\n\nreal_val = int(Config.c_1)+int(Config.c_0)\nassert(real_val == 1)\n\nout00=in0.select(\"c_int\").withColumnRenamed(\"c_int\", \"c_int_new\")\nout1=in1.select(\"c_int\").withColumn(\"c_int\", in1[\"c_int\"].cast(IntegerType())).withColumnRenamed(\"c_int\", \"c_int_new\")\nout2=in2.select(\"c_int\").withColumnRenamed(\"c_int\", \"c_int_new\")\nout3=in3.select(\"c_int\").withColumnRenamed(\"c_int\", \"c_int_new\")\nout4=in4.select(\"customer_id\").withColumn(\"customer_id\", in4[\"customer_id\"].cast(IntegerType())).withColumnRenamed(\"customer_id\", \"c_int_new\")\nout5=in5.select(\"_c0\").withColumnRenamed(\"_c0\", \"c_int_new\")\nout6=in6.select(\"c-int-column type\").withColumnRenamed(\"c-int-column type\", \"c_int_new\")\nout0=out00.union(out1).union(out2).union(out3).union(out4).union(out5).union(out6)",
+        "script" : "\"\"\"\nThis is a comment\n\"\"\"\n'''\nThis is another comment\n'''\n\n## FINAL SINGLE LINE COMMENT ####\n\nfrom pyspark.sql.types import DoubleType\n\nimport requests\nURL = \"https://www.geeksforgeeks.org/data-structures/\"\nr = requests.get(URL)\nprint(r.content)\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nxpoints = np.array([1, 8])\nypoints = np.array([3, 10])\nplt.plot(xpoints, ypoints)\n\nimport pandas as pd\ndata = {\n  \"calories\": [420, 380, 390],\n  \"duration\": [50, 40, 45]\n}\ndf = pd.DataFrame(data)\nprint(df)\n\nimport numpy as np\narr = np.array(['$c_1', 2, 3, 4, 5])\nprint(arr)\n\nfrom scipy.special import cbrt\ncb = cbrt([27, 64])\nprint(cb[0])\n\nimport torch\nimport math\ndtype = torch.float\ndevice = torch.device(\"cpu\")\nx = torch.linspace(-math.pi, math.pi, 2000, device=device, dtype=dtype)\ny = torch.sin(x)\na = torch.randn((), device=device, dtype=dtype)\nprint(a)\n\nreal_val = int(Config.c_1)+int(Config.c_0)\nassert(real_val == 1)\n\n\nprint(f\"Configs are: CONFIG_STR:{Config.CONFIG_STR} \\n CONFIG_DOUBLE:{Config.CONFIG_DOUBLE} \\n CONFIG_BOOLEAN:{Config.CONFIG_BOOLEAN} \\n CONFIG_INT:{Config.CONFIG_INT} \\n CONFIG_FLOAT:{Config.CONFIG_FLOAT} \\n CONFIG_SHORT:{Config.CONFIG_SHORT} \\n CONFIG_DB_SECRETS:{Config.CONFIG_DB_SECRETS} \\n c_join_expr:{Config.c_join_expr}\")\nout00=in0.select(\"c_int\").withColumnRenamed(\"c_int\", \"c_int_new\")\nout1=in1.select(\"c_int\").withColumn(\"c_int\", in1[\"c_int\"].cast(IntegerType())).withColumnRenamed(\"c_int\", \"c_int_new\")\nout2=in2.select(\"c_int\").withColumnRenamed(\"c_int\", \"c_int_new\")\nout3=in3.select(\"c_int\").withColumnRenamed(\"c_int\", \"c_int_new\")\nout4=in4.select(\"customer_id\").withColumn(\"customer_id\", in4[\"customer_id\"].cast(IntegerType())).withColumnRenamed(\"customer_id\", \"c_int_new\")\nout5=in5.select(\"_c0\").withColumnRenamed(\"_c0\", \"c_int_new\")\nout6=in6.select(\"c-int-column type\").withColumnRenamed(\"c-int-column type\", \"c_int_new\")\nout0=out00.union(out1).union(out2).union(out3).union(out4).union(out5).union(out6)",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame, in6: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }
@@ -7898,8 +7898,8 @@
       "metadata" : {
         "label" : "Filter_1",
         "slug" : "Filter_1",
-        "x" : 398,
-        "y" : 90,
+        "x" : 364.4,
+        "y" : 112.80000000000001,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -7918,7 +7918,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c___-- string", "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c-int-column type", "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c   short  --" ],
+        "columnsSelector" : [ "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c   short  --", "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c___-- string", "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c-int-column type" ],
         "condition" : {
           "format" : "sql",
           "expression" : "(`c   short  --` > '$c_0') and (`c-int-column type` not like '$c_regex1' and `c___-- string` not like '$c_regex2')"
