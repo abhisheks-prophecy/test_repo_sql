@@ -39,6 +39,18 @@ pipelines:
       - 7234/datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs: []
     dependencies: {}
+  pipelines/SCALA_AZURE:
+    name: SCALA_AZURE
+    description: SCALA_AZURE
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-10-12 12:59:32'
+    datasets:
+      inputs:
+      - datasets/src_azure
+      outputs: []
+    dependencies: {}
   pipelines/SCALA_DEP_MGMT_ALL:
     name: SCALA_DEP_MGMT_ALL
     description: SCALA_DEP_MGMT_ALL
@@ -86,6 +98,18 @@ pipelines:
       outputs: []
     dependencies: {}
 datasets:
+  datasets/src_azure:
+    name: src_azure
+    description: ''
+    author: abhisheks+e2etests@simpledatalabs.com
+    createdAt: '2022-10-12 13:01:36'
+    physicalDatasets:
+      dev:
+        fabricId: 299
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@simpledatalabs.com
+        createdAt: '2022-10-12 13:01:36'
   datasets/dest_json_input_custs:
     name: dest_json_input_custs
     description: ''
