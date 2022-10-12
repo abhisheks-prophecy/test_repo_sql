@@ -167,8 +167,49 @@ pipeline:
                                 <goal>testCompile</goal>
                             </goals>
                         </execution>
+                        
                     </executions>
                 </plugin>
+                <plugin>
+                  <artifactId>maven-resources-plugin</artifactId>
+                  <version>3.3.0</version>
+                  <executions>
+                    <execution>
+                        <id>copy-src-as-resource</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Adding src as resource -->
+                            <outputDirectory>${basedir}/target/classes/src</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-dot-prophecy-as-resource</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Adding .prophecy as resource -->
+                            <outputDirectory>${basedir}/target/classes/.prophecy</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>.prophecy</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+              </plugin>
             </plugins>
         </build>
     </project>
