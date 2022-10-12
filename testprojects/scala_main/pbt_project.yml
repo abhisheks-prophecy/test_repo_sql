@@ -39,6 +39,18 @@ pipelines:
       - 7234/datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs: []
     dependencies: {}
+  pipelines/SCALA_AZURE:
+    name: SCALA_AZURE
+    description: SCALA_AZURE
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-10-12 12:59:32'
+    datasets:
+      inputs:
+      - datasets/src_azure
+      outputs: []
+    dependencies: {}
   pipelines/SCALA_DEP_MGMT_ALL:
     name: SCALA_DEP_MGMT_ALL
     description: SCALA_DEP_MGMT_ALL
@@ -86,6 +98,18 @@ pipelines:
       outputs: []
     dependencies: {}
 datasets:
+  datasets/src_azure:
+    name: src_azure
+    description: ''
+    author: abhisheks+e2etests@simpledatalabs.com
+    createdAt: '2022-10-12 13:01:36'
+    physicalDatasets:
+      dev:
+        fabricId: 299
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@simpledatalabs.com
+        createdAt: '2022-10-12 13:01:36'
   datasets/dest_json_input_custs:
     name: dest_json_input_custs
     description: ''
@@ -472,7 +496,7 @@ templates:
     dependencies: {}
 jobs:
   jobs/SCALA_DEP_MGMT_ALL_JOB:
-    name: SCALA_DEP_MGMT_ALL_JOB
+    name: REL_SCALA_DEP_MGMT_ALL_JOB
     description: ''
     fabricUID: 299
     scheduler:
@@ -496,7 +520,7 @@ jobs:
     createdAt: '2022-06-29 06:42:58'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/SCALA_BASIC_JOB:
-    name: SCALA_BASIC_JOB
+    name: REL_SCALA_BASIC_JOB
     description: ''
     fabricUID: 299
     scheduler:
@@ -519,32 +543,8 @@ jobs:
     enabled: false
     createdAt: '2022-08-28 16:32:45'
     author: abhisheks+e2etests@simpledatalabs.com
-  jobs/DONOT_OPEN_SCALA_JOB:
-    name: DONOT_OPEN_SCALA_JOB
-    description: ''
-    fabricUID: 299
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: adv-json1
-    scheduleCron: 0 0 0/1 * * ? 2080
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io
-      onStart: true
-      onSuccess: true
-      onFailure: true
-    pipelines:
-    - 7234/pipelines/DONOT_OPEN_SCALA
-    jobClusterMode:
-      clusterMode:
-        Multi: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-08-11 07:44:56'
-    author: abhisheks+e2etests@simpledatalabs.com
   jobs/SCALA_SINGLE_CLUSTER_JOB:
-    name: SCALA_SINGLE_CLUSTER_JOB
+    name: REL_SCALA_SINGLE_CLUSTER_JOB
     description: ''
     fabricUID: 299
     scheduler:
@@ -568,6 +568,30 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 12:01:54'
+    author: abhisheks+e2etests@simpledatalabs.com
+  jobs/DONOT_OPEN_SCALA_JOB:
+    name: REL_SCALA_DONOT_OPEN_JOB
+    description: ''
+    fabricUID: 299
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: adv-json1
+    scheduleCron: 0 0 0/1 * * ? 2080
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: true
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - 7234/pipelines/DONOT_OPEN_SCALA
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-08-11 07:44:56'
     author: abhisheks+e2etests@simpledatalabs.com
 libraries: []
 subgraphs:
