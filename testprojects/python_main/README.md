@@ -179,3 +179,23 @@ final release
 *** Release notes for version: 1.0 ***
 
 1.0
+
+*** Release notes for version: 1.1 ***
+
+Changes
+
+*** Release notes for version: 1.2 ***
+
+Changes
+
+*** Release notes for version: 1.3 ***
+
+Changes
+
+*** Release notes for version: 1.4 ***
+
+Changes
+
+*** Release notes for version: 1.5 ***
+
+Changes
