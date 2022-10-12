@@ -187,3 +187,7 @@ Changes
 *** Release notes for version: 1.2 ***
 
 Changes
+
+*** Release notes for version: 1.3 ***
+
+Changes
