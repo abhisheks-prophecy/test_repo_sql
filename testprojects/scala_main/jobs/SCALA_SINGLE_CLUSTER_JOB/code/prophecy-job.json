@@ -2,7 +2,7 @@
   "metainfo" : {
     "type" : "Databricks",
     "fabricId" : "299",
-    "jobId" : "7234/jobs/SCALA_SINGLE_CLUSTER_JOB",
+    "jobId" : "jobs/SCALA_SINGLE_CLUSTER_JOB",
     "name" : "SCALA_SINGLE_CLUSTER_JOB",
     "schedule" : "0 0 0 9 * ? 2090",
     "jobClusterMode" : {
@@ -27,18 +27,18 @@
       }
     },
     "availableFabrics" : [ {
-      "id" : "2175",
-      "name" : "test_job_lost",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      }
-    }, {
-      "id" : "2274",
+      "id" : "2335",
       "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2330",
+      "name" : "FabricAutomatedEBS",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
       }
     }, {
       "id" : "917",
@@ -46,13 +46,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "new-job.size" ]
-      }
-    }, {
-      "id" : "2262",
-      "name" : "JobFabricMain_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       }
     }, {
       "id" : "2135",
@@ -69,20 +62,6 @@
         "availableClusterSizes" : [ "small", "newjobsize-1.1" ]
       }
     }, {
-      "id" : "2268",
-      "name" : "FabricAutomatedEBS",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "2279",
-      "name" : "TEST-Automated_Databricks1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
-      }
-    }, {
       "id" : "2080",
       "name" : "dev_gcp",
       "clusterSizes" : {
@@ -90,7 +69,21 @@
         "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
-      "id" : "2271",
+      "id" : "2338",
+      "name" : "TEST-Automated_Databricks1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      }
+    }, {
+      "id" : "2327",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2349",
       "name" : "GCP-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
@@ -104,8 +97,8 @@
         "availableClusterSizes" : [ "small", "adv-json1" ]
       }
     }, {
-      "id" : "2264",
-      "name" : "SingleCluster_1",
+      "id" : "2326",
+      "name" : "JobFabricMain_1",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
@@ -129,7 +122,7 @@
       "name" : "dev_shared",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium-1" ]
+        "availableClusterSizes" : [ "small" ]
       }
     } ]
   },
@@ -161,7 +154,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_SG_SRC",
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
           "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],
@@ -197,7 +190,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_BASIC",
+        "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
           "schema" : [ ],
           "instances" : [ "livy_kishore", "default", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1", "jobSize-databricksBasic.New" ],
@@ -263,7 +256,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_DEP_MGMT_ALL",
+        "pipelineId" : "pipelines/SCALA_DEP_MGMT_ALL",
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_USER",
@@ -579,7 +572,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_DEP_MGMT_ALL",
+        "pipelineId" : "pipelines/SCALA_DEP_MGMT_ALL",
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_USER",
@@ -899,7 +892,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_BASIC",
+        "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
           "schema" : [ ],
           "instances" : [ "livy_kishore", "default", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1", "jobSize-databricksBasic.New" ],
@@ -935,7 +928,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_DEP_MGMT_ALL",
+        "pipelineId" : "pipelines/SCALA_DEP_MGMT_ALL",
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_USER",
@@ -1286,7 +1279,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_SG_SRC",
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
           "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],
@@ -1322,7 +1315,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "7234/pipelines/SCALA_BASIC",
+        "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
           "schema" : [ ],
           "instances" : [ "livy_kishore", "default", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1", "jobSize-databricksBasic.New" ],
