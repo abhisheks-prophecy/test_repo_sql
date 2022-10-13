@@ -199,3 +199,7 @@ Changes
 *** Release notes for version: 1.5 ***
 
 Changes
+
+*** Release notes for version: 1.6 ***
+
+1.6
