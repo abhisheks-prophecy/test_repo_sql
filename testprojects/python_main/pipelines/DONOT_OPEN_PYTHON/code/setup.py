@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 setup(
     name = 'DONOT_OPEN_PYTHON',
     version = '1.0',
-    packages = find_packages(include = ('com.main.pythondepmanagement_1*', )) + ["prophecy_config_instances"],
+    packages = find_packages(include = ('job*', )) + ["prophecy_config_instances"],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},
     package_data = {'prophecy_config_instances' : ['*.json', '*.py']},
     description = 'workflow',
@@ -10,7 +10,7 @@ setup(
      'prophecy-libs==1.3.8'],
     entry_points = {
 'console_scripts' : [
-'main = com.main.pythondepmanagement_1.pipeline:main'], },
+'main = job.pipeline:main'], },
     data_files = [(".prophecy", [".prophecy/workflow.latest.json"])],
     extras_require = {
 'test' : ['pytest', 'pytest-html'], }
