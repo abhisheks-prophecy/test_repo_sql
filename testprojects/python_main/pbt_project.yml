@@ -112,23 +112,7 @@ pipelines:
       - 7235/datasets/src_csv_special_char_column_name
       - 7235/datasets/src_orc_all_type_no_partition
       outputs: []
-    dependencies:
-      project/7234:
-        name: project/7234
-        projectUID: 7234
-        projectName: ScalaProject
-        version: ScalaProject/1.32
-        author: ''
-        repositoryPath: null
-        createdAt: '2022-08-31 08:00:29'
-      project/9847:
-        name: project/9847
-        projectUID: 9847
-        projectName: SharedTeamProjectScala
-        version: SharedTeamProjectScala/1.0
-        author: ''
-        repositoryPath: null
-        createdAt: '2022-08-31 08:00:29'
+    dependencies: {}
   pipelines/LIVY_PYTHON:
     name: LIVY_PYTHON
     description: LIVY_PYTHON
@@ -587,30 +571,6 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-06-29 05:01:43'
-    author: abhisheks+e2etests@simpledatalabs.com
-  jobs/PYTHON_BASIC_JOB:
-    name: REL_PYTHON_BASIC_JOB
-    description: ''
-    fabricUID: 1962
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0/8 * * ? 2090
-    timeout: null
-    alerting:
-      emails: ''
-      onStart: false
-      onSuccess: false
-      onFailure: false
-    pipelines:
-    - 7235/pipelines/PYTHON_BASIC
-    jobClusterMode:
-      clusterMode:
-        Multi: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-08-28 16:32:25'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
     name: REL_PYTHON_SINGLE_CLUSTER_JOB
