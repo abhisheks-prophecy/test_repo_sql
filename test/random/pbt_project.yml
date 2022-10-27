@@ -1,6 +1,6 @@
 name: PythonExternalGit_Another
 description: ''
-version: 0.0.1
+version: 0.0.1-SNAPSHOT
 author: abhisheks+e2etests@prophecy.io
 language: python
 buildSystem: wheel
@@ -16,15 +16,7 @@ pipelines:
       inputs:
       - https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/test@TestAyushProject/1.0/748/datasets/TEST_REVOKE_ACCESS
       outputs: []
-    dependencies:
-      project/748:
-        name: project/748
-        projectUID: 748
-        projectName: TestAyushProject
-        version: TestAyushProject/1.0
-        author: ''
-        repositoryPath: https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/test
-        createdAt: '2022-10-06 17:52:44'
+    dependencies: {}
   pipelines/A_UsingWaliPipeline:
     name: A_UsingWaliPipeline
     description: A_UsingWaliPipeline
@@ -36,15 +28,7 @@ pipelines:
       inputs:
       - https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/ramdom@A_WithDataset/1.0/751/datasets/TEST_SHARINGWALADATASET
       outputs: []
-    dependencies:
-      project/751:
-        name: project/751
-        projectUID: 751
-        projectName: A_WithDataset
-        version: A_WithDataset/1.0
-        author: null
-        repositoryPath: https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/ramdom
-        createdAt: '2022-10-06 18:25:22'
+    dependencies: {}
 datasets: {}
 templates: {}
 jobs: {}
@@ -53,3 +37,18 @@ subgraphs: {}
 sqlModels: {}
 sqlPipeline: null
 dependencies: '[]'
+projectDependencies:
+  '748':
+    projectUID: 748
+    projectName: TestAyushProject
+    repositoryPath: https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/test
+    version: TestAyushProject/1.0
+    author: ''
+    createdAt: '2022-10-27 14:05:24'
+  '751':
+    projectUID: 751
+    projectName: A_WithDataset
+    repositoryPath: https://github.com/MetadataGitTesting/DecouplingTesting.git//tmp/ramdom
+    version: A_WithDataset/1.0
+    author: ''
+    createdAt: '2022-10-27 14:05:24'
