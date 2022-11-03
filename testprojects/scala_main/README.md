@@ -199,3 +199,7 @@ final release
 *** Release notes for version: 1.8 ***
 
 1.8
+
+*** Release notes for version: 1.9 ***
+
+1.9
