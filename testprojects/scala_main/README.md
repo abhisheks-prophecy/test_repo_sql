@@ -191,3 +191,7 @@ final release
 *** Release notes for version: 1.6 ***
 
 1.6
+
+*** Release notes for version: 1.7 ***
+
+1.7
