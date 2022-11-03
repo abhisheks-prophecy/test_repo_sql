@@ -11,7 +11,7 @@
     "enabled" : true,
     "defaultClusterSize" : "small",
     "alerting" : {
-      "emails" : "abhisheks@simpledatalabs.com",
+      "emails" : "abhisheks@simpledatalabs.com,abhisheks@prophecy.io",
       "onStart" : false,
       "onSuccess" : true,
       "onFailure" : true
@@ -20,13 +20,27 @@
       "type" : "Inherited",
       "retries" : 1,
       "alerting" : {
-        "emails" : "abhisheks@simpledatalabs.com",
+        "emails" : "abhisheks@simpledatalabs.com,abhisheks@prophecy.io",
         "onStart" : false,
         "onSuccess" : true,
         "onFailure" : true
       }
     },
     "availableFabrics" : [ {
+      "id" : "2371",
+      "name" : "Livyscala-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      }
+    }, {
+      "id" : "1654",
+      "name" : "captain_livy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      }
+    }, {
       "id" : "2363",
       "name" : "SingleCluster_1",
       "clusterSizes" : {
@@ -48,6 +62,13 @@
         "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
       }
     }, {
+      "id" : "2379",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      }
+    }, {
       "id" : "2135",
       "name" : "dev_azure",
       "clusterSizes" : {
@@ -67,6 +88,20 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium" ]
+      }
+    }, {
+      "id" : "2380",
+      "name" : "TEST-Automated_Livy1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
+      }
+    }, {
+      "id" : "2394",
+      "name" : "dev_sdl_acl",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json-acl" ]
       }
     }, {
       "id" : "1962",

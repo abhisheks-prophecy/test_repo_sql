@@ -545,7 +545,7 @@ jobs:
     scheduleCron: 0 0 0 * * ? *
     timeout: null
     alerting:
-      emails: abhisheks@simpledatalabs.com
+      emails: abhisheks@simpledatalabs.com,abhisheks@prophecy.io
       onStart: false
       onSuccess: true
       onFailure: true
@@ -558,29 +558,77 @@ jobs:
     enabled: true
     createdAt: '2022-06-29 06:42:58'
     author: abhisheks+e2etests@simpledatalabs.com
-  jobs/SCALA_BASIC_JOB:
-    name: REL_SCALA_BASIC_JOB
+  jobs/REL_PY_TEST_MULTIPLE_PIPELINES_FROM_EDITOR:
+    name: REL_PY_TEST_MULTIPLE_PIPELINES_FROM_EDITOR
     description: ''
     fabricUID: 299
     scheduler:
       Databricks: {}
     cloudProvider: null
     jobSize: small
-    scheduleCron: 0 0 0/8 * * ? 2090
+    scheduleCron: 0 0 0 * * ? 2090
     timeout: null
     alerting:
-      emails: ''
+      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
       onStart: false
-      onSuccess: false
+      onSuccess: true
       onFailure: false
     pipelines:
-    - 7234/pipelines/SCALA_BASIC
+    - pipelines/SCALA_SG_SRC
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2022-11-03 11:35:55'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/REL_PY_TEST_MULTIPLE_PIPELINES:
+    name: REL_PY_TEST_MULTIPLE_PIPELINES
+    description: test one
+    fabricUID: 299
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines:
+    - pipelines/SCALA_SG_SRC
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2022-11-03 11:34:05'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/DONOT_OPEN_SCALA_JOB:
+    name: REL_SCALA_DONOT_OPEN_JOB
+    description: ''
+    fabricUID: 299
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: adv-json1
+    scheduleCron: 0 0 0/1 * * ? 2080
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: true
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - 7234/pipelines/DONOT_OPEN_SCALA
     jobClusterMode:
       clusterMode:
         Multi: {}
       clusterId: null
-    enabled: false
-    createdAt: '2022-08-28 16:32:45'
+    enabled: true
+    createdAt: '2022-08-11 07:44:56'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/SCALA_SINGLE_CLUSTER_JOB:
     name: REL_SCALA_SINGLE_CLUSTER_JOB
@@ -607,30 +655,6 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 12:01:54'
-    author: abhisheks+e2etests@simpledatalabs.com
-  jobs/DONOT_OPEN_SCALA_JOB:
-    name: REL_SCALA_DONOT_OPEN_JOB
-    description: ''
-    fabricUID: 299
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: adv-json1
-    scheduleCron: 0 0 0/1 * * ? 2080
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io
-      onStart: true
-      onSuccess: true
-      onFailure: true
-    pipelines:
-    - 7234/pipelines/DONOT_OPEN_SCALA
-    jobClusterMode:
-      clusterMode:
-        Multi: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-08-11 07:44:56'
     author: abhisheks+e2etests@simpledatalabs.com
 libraries: []
 subgraphs:
@@ -711,3 +735,4 @@ dependencies:
   id: GXM_V
   type: coordinates
   enabled: false
+projectDependencies: {}
