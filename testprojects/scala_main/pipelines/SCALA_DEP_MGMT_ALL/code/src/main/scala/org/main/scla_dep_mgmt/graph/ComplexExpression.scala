@@ -114,7 +114,7 @@ object ComplexExpression {
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
 
-  val c7 =
+  val c1 =
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -140,7 +140,7 @@ object ComplexExpression {
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
 
-  val c1 =
+  val c7 =
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
