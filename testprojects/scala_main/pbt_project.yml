@@ -558,54 +558,6 @@ jobs:
     enabled: true
     createdAt: '2022-06-29 06:42:58'
     author: abhisheks+e2etests@simpledatalabs.com
-  jobs/REL_PY_TEST_MULTIPLE_PIPELINES_FROM_EDITOR:
-    name: REL_PY_TEST_MULTIPLE_PIPELINES_FROM_EDITOR
-    description: ''
-    fabricUID: 299
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? 2090
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
-      onStart: false
-      onSuccess: true
-      onFailure: false
-    pipelines:
-    - pipelines/SCALA_SG_SRC
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: false
-    createdAt: '2022-11-03 11:35:55'
-    author: abhisheks+e2etests@prophecy.io
-  jobs/REL_PY_TEST_MULTIPLE_PIPELINES:
-    name: REL_PY_TEST_MULTIPLE_PIPELINES
-    description: test one
-    fabricUID: 299
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? 2090
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
-      onStart: false
-      onSuccess: true
-      onFailure: false
-    pipelines:
-    - pipelines/SCALA_SG_SRC
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: false
-    createdAt: '2022-11-03 11:34:05'
-    author: abhisheks+e2etests@prophecy.io
   jobs/DONOT_OPEN_SCALA_JOB:
     name: REL_SCALA_DONOT_OPEN_JOB
     description: ''
