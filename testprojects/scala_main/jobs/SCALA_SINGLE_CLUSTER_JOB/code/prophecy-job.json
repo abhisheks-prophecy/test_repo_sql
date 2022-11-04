@@ -48,6 +48,23 @@
         "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       }
     }, {
+      "id" : "2404",
+      "name" : "testDBFS",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
       "id" : "917",
       "name" : "ebs_ssd",
       "clusterSizes" : {
@@ -60,6 +77,25 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2403",
+      "name" : "testPublicCentral",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "2379",
@@ -137,6 +173,12 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "1770",
@@ -144,6 +186,23 @@
       "clusterSizes" : {
         "default" : "Small",
         "availableClusterSizes" : [ "Small" ]
+      }
+    }, {
+      "id" : "2405",
+      "name" : "testCustom",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2068",
@@ -158,6 +217,12 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     } ]
   },

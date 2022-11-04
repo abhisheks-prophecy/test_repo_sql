@@ -1,29 +1,30 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "299",
-    "jobId" : "jobs/SCALA_DEP_MGMT_ALL_JOB",
-    "name" : "REL_SCALA_DEP_MGMT_ALL_JOB",
-    "schedule" : "0 0 0 * * ? *",
+    "fabricId" : "2404",
+    "jobId" : "jobs/REL_SC_DBFSLIBS",
+    "name" : "REL_SC_DBFSLIBS",
+    "schedule" : "0 0 0 * * ? 2090",
     "jobClusterMode" : {
       "clusterMode" : "Single"
     },
-    "enabled" : true,
-    "defaultClusterSize" : "small",
+    "enabled" : false,
+    "defaultClusterSize" : "medium",
     "alerting" : {
-      "emails" : "abhisheks@simpledatalabs.com,abhisheks@prophecy.io",
+      "emails" : "abhisheks@prophecy.io,abhisheks@simpledatalabs.com",
       "onStart" : false,
       "onSuccess" : true,
-      "onFailure" : true
+      "onFailure" : false
     },
+    "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
       "type" : "Inherited",
-      "retries" : 1,
+      "retries" : 0,
       "alerting" : {
-        "emails" : "abhisheks@simpledatalabs.com,abhisheks@prophecy.io",
+        "emails" : "abhisheks@prophecy.io,abhisheks@simpledatalabs.com",
         "onStart" : false,
         "onSuccess" : true,
-        "onFailure" : true
+        "onFailure" : false
       }
     },
     "availableFabrics" : [ {
@@ -173,6 +174,12 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "1770",
@@ -221,21 +228,21 @@
     } ]
   },
   "processes" : {
-    "2q8aaiwdBZUDz1Jm0acgy" : {
-      "id" : "2q8aaiwdBZUDz1Jm0acgy",
+    "e1XmRoQW_-WNxcgAjNroE$$A9Q2q-aX7hOTwfsKb2ksF" : {
+      "id" : "e1XmRoQW_-WNxcgAjNroE$$A9Q2q-aX7hOTwfsKb2ksF",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "SCALA_DEP_MGMT_ALL",
-        "slug" : "SCALA_DEP_MGMT_ALL",
-        "x" : 100,
-        "y" : 100
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : 140,
+        "y" : 160
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "in"
+          "id" : "kcZFuc66aDuEQspdh7MZn$$_f8EVJriRAFqLctc8DmYj"
         } ],
         "outputs" : [ {
-          "id" : "out"
+          "id" : "gPg9i6LMD0n1SosmBA1ix$$56N5ipab-wo6K8zY-edeL"
         } ]
       },
       "settings" : {
@@ -297,35 +304,35 @@
             "optional" : false,
             "kind" : {
               "type" : "boolean",
-              "value" : "true"
+              "value" : "false"
             }
           }, {
             "name" : "CONFIG_DOUBLE",
             "optional" : false,
             "kind" : {
               "type" : "double",
-              "value" : "123123.12321321"
+              "value" : "11"
             }
           }, {
             "name" : "CONFIG_INT",
             "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "3243423"
+              "value" : "123"
             }
           }, {
             "name" : "CONFIG_FLOAT",
             "optional" : false,
             "kind" : {
               "type" : "float",
-              "value" : "3454.34534"
+              "value" : "34"
             }
           }, {
             "name" : "c_limit_11",
             "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "11"
+              "value" : "1"
             }
           }, {
             "name" : "c_st_expr",
@@ -493,7 +500,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "%[^aeiou]@%"
+              "value" : "%[^aeiouAB]@%"
             }
           }, {
             "name" : "c_sql_c8c1",
@@ -532,11 +539,51 @@
             }
           } ],
           "instances" : [ "default", "test-instance1", "test-instance2", "dev_11rt", "newfabric", "ebs_ssd", "test-instance3", "dev1", "dev", "captain_livy" ],
-          "overrides" : { },
-          "selectedInstance" : "default"
+          "overrides" : {
+            "CONFIG_DOUBLE" : "22",
+            "CONFIG_INT" : "22",
+            "CONFIG_FLOAT" : "22"
+          },
+          "selectedInstance" : "test-instance1"
         }
+      }
+    },
+    "l7NlUZ9ZFZYOMdrRD4zBh$$aO6mzZaeJFIkq-LmuW0bp" : {
+      "id" : "l7NlUZ9ZFZYOMdrRD4zBh$$aO6mzZaeJFIkq-LmuW0bp",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : 1016.7999877929688,
+        "y" : 331.6000061035156
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iDsou1ONruqOJycni4xiw$$4wmX7JKdoJcRnzPhz5UPQ"
+        } ],
+        "outputs" : [ {
+          "id" : "iTvYVGX7Z0CzJxHtGsfCP$$ZzO4YVQwablWj4OLXxZKL"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "code" : "print(\"hello\")"
       }
     }
   },
-  "connections" : [ ]
+  "connections" : [ {
+    "id" : "9iAbOyWCl63eWc9UoN6pd",
+    "source" : "e1XmRoQW_-WNxcgAjNroE$$A9Q2q-aX7hOTwfsKb2ksF",
+    "target" : "l7NlUZ9ZFZYOMdrRD4zBh$$aO6mzZaeJFIkq-LmuW0bp",
+    "sourcePort" : "gPg9i6LMD0n1SosmBA1ix$$56N5ipab-wo6K8zY-edeL",
+    "targetPort" : "iDsou1ONruqOJycni4xiw$$4wmX7JKdoJcRnzPhz5UPQ"
+  } ]
 }
