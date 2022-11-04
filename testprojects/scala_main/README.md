@@ -187,3 +187,23 @@ final release
 *** Release notes for version: 1.0 ***
 
 1.0
+
+*** Release notes for version: 1.6 ***
+
+1.6
+
+*** Release notes for version: 1.7 ***
+
+1.7
+
+*** Release notes for version: 1.8 ***
+
+1.8
+
+*** Release notes for version: 1.9 ***
+
+1.9
+
+*** Release notes for version: 2.0 ***
+
+2.0

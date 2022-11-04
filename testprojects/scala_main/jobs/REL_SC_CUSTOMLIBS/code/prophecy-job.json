@@ -1,26 +1,27 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "299",
-    "jobId" : "jobs/DONOT_OPEN_SCALA_JOB",
-    "name" : "REL_SCALA_DONOT_OPEN_JOB",
-    "schedule" : "0 0 0/1 * * ? 2080",
+    "fabricId" : "2405",
+    "jobId" : "jobs/REL_SC_CUSTOMLIBS",
+    "name" : "REL_SC_CUSTOMLIBS",
+    "schedule" : "0 0 0 * * ? 2090",
     "jobClusterMode" : {
       "clusterMode" : "Multi"
     },
-    "enabled" : true,
+    "enabled" : false,
     "defaultClusterSize" : "small",
     "alerting" : {
-      "emails" : "abhisheks@prophecy.io",
-      "onStart" : true,
+      "emails" : "abhisheks@prophecy.io,abhisheks@simpledalabs.com",
+      "onStart" : false,
       "onSuccess" : true,
-      "onFailure" : true
+      "onFailure" : false
     },
+    "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
       "type" : "Inherited",
-      "retries" : 1,
+      "retries" : 0,
       "alerting" : {
-        "emails" : "abhisheks@prophecy.io",
+        "emails" : "abhisheks@prophecy.io,abhisheks@simpledalabs.com",
         "onStart" : false,
         "onSuccess" : true,
         "onFailure" : false
@@ -173,6 +174,12 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "1770",
@@ -221,138 +228,21 @@
     } ]
   },
   "processes" : {
-    "F76_wFftAN9xnljCcuwBu" : {
-      "id" : "F76_wFftAN9xnljCcuwBu",
-      "component" : "Pipeline",
-      "metadata" : {
-        "label" : "DONOT_OPEN_SCALA",
-        "slug" : "DONOT_OPEN_SCALA",
-        "x" : 100,
-        "y" : 100
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "out"
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "pipelineId" : "pipelines/DONOT_OPEN_SCALA",
-        "configurations" : {
-          "schema" : [ {
-            "name" : "JDBC_USER",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_user"
-            }
-          }, {
-            "name" : "SOURCE_TABLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_table"
-            }
-          }, {
-            "name" : "db_secrets",
-            "optional" : true,
-            "kind" : {
-              "type" : "databricks_secret",
-              "value" : "qasecrets_mysql:username"
-            }
-          }, {
-            "name" : "JDBC_URL",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
-          }, {
-            "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_table"
-            }
-          }, {
-            "name" : "CONFIG_STR",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "jdbc_url-${JDBC_URL}"
-            }
-          }, {
-            "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
-            "kind" : {
-              "type" : "boolean",
-              "value" : "true"
-            }
-          }, {
-            "name" : "CONFIG_DOUBLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "double",
-              "value" : "123123.12321321"
-            }
-          }, {
-            "name" : "CONFIG_INT",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "3243423"
-            }
-          }, {
-            "name" : "CONFIG_FLOAT",
-            "optional" : false,
-            "kind" : {
-              "type" : "float",
-              "value" : "3454.34534"
-            }
-          } ],
-          "instances" : [ "livy_kishore", "default", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1" ],
-          "overrides" : {
-            "CONFIG_DOUBLE" : "22.22",
-            "CONFIG_STR" : "jdbc_url-${JDBC_URL}",
-            "CONFIG_FLOAT" : "222.222",
-            "JDBC_URL" : "jdbc:mysql://18.144.156.219:3306/test_database",
-            "CONFIG_INT" : "222",
-            "CONFIG_BOOLEAN" : "false",
-            "db_secrets" : "qasecrets_mysql:username",
-            "JDBC_USER" : "test_user",
-            "SOURCE_TABLE" : "test_table",
-            "JDBC_SOURCE_TABLE" : "test_table"
-          },
-          "selectedInstance" : "default"
-        }
-      }
-    },
-    "BMCMySJ6NFgmufYJamv3p" : {
-      "id" : "BMCMySJ6NFgmufYJamv3p",
+    "GmMsF2FBQdPEOWMZUSY4Y$$ImXXKFxbdkZ4_pO52JmuT" : {
+      "id" : "GmMsF2FBQdPEOWMZUSY4Y$$ImXXKFxbdkZ4_pO52JmuT",
       "component" : "Script",
       "metadata" : {
         "label" : "Script_1",
-        "slug" : "Script",
-        "x" : 314,
-        "y" : 110.19999694824219
+        "slug" : "Script_1",
+        "x" : 931.5999755859375,
+        "y" : 448
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "gRptq7YGeqZgq7noe_Q44"
+          "id" : "Lwnza4tz13OTx9M0Yob_D$$qsenzxCM4-nCnUh4FNWA-"
         } ],
         "outputs" : [ {
-          "id" : "5OCTEM-MFWY37Zd9QsUXh"
+          "id" : "f6tRkZiogyVrMgUazl6E5$$_zp4EKNk2Z1wRc55t9lMv"
         } ]
       },
       "settings" : {
@@ -367,13 +257,49 @@
       "properties" : {
         "code" : "print(\"hello\")"
       }
+    },
+    "fNsQ1oJbzbeJ_pycTTBW3$$QBWcVvjzvsHfoIt8Wqdel" : {
+      "id" : "fNsQ1oJbzbeJ_pycTTBW3$$QBWcVvjzvsHfoIt8Wqdel",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : 436.3999938964844,
+        "y" : 245.1999969482422
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PbdB2yvx6mrjK-jfD0T3_$$pSMgnpbibE1Fj71FnVM3D"
+        } ],
+        "outputs" : [ {
+          "id" : "gc4Q_SbgFY4hxSvMKeVy8$$80xBjIqml80Mvc24HpLpW"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
     }
   },
   "connections" : [ {
-    "id" : "JL4hwo_9I17tjImsvtQtR",
-    "source" : "F76_wFftAN9xnljCcuwBu",
-    "target" : "BMCMySJ6NFgmufYJamv3p",
-    "sourcePort" : "out",
-    "targetPort" : "gRptq7YGeqZgq7noe_Q44"
+    "id" : "CsMSBQA7T6mNa971Bt64Y",
+    "source" : "fNsQ1oJbzbeJ_pycTTBW3$$QBWcVvjzvsHfoIt8Wqdel",
+    "target" : "GmMsF2FBQdPEOWMZUSY4Y$$ImXXKFxbdkZ4_pO52JmuT",
+    "sourcePort" : "gc4Q_SbgFY4hxSvMKeVy8$$80xBjIqml80Mvc24HpLpW",
+    "targetPort" : "Lwnza4tz13OTx9M0Yob_D$$qsenzxCM4-nCnUh4FNWA-"
   } ]
 }
