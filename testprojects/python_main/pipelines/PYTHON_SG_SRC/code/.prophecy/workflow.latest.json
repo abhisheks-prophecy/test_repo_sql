@@ -16,7 +16,21 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "c_dbsecrets",
+          "kind" : {
+            "type" : "databricks_secret",
+            "value" : "qasecrets_mysql:username"
+          },
+          "optional" : false
+        }, {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "test"
+          },
+          "optional" : false
+        } ]
       },
       "fabrics" : { },
       "instances" : { },
@@ -94,7 +108,7 @@
     } ],
     "isImported" : false,
     "interimMode" : "Full",
-    "interimModeEnabled" : true,
+    "interimModeEnabled" : false,
     "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
@@ -128,40 +142,14 @@
     "targetPort" : "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA"
   } ],
   "processes" : {
-    "8CMZjneZeAtyULAaSgjr7$$YgEIbHI5lKFjLFPVmJ0U4" : {
-      "id" : "8CMZjneZeAtyULAaSgjr7$$YgEIbHI5lKFjLFPVmJ0U4",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "src_parquet_all_type_and_partition_withspacehyphens",
-        "slug" : "src_parquet_all_type_and_partition_withspacehyphens",
-        "x" : 681,
-        "y" : 260,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "nWXM5TsGqqk8hm3T4uB59$$AhXAXszhxoAva5XFdTZIY",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/src_parquet_all_type_and_partition_withspacehyphens"
-      }
-    },
     "iC1rp4-DoatoqQJ9h4dfU$$zRdSeZ8gKVPyr9ukBUfRG" : {
       "id" : "iC1rp4-DoatoqQJ9h4dfU$$zRdSeZ8gKVPyr9ukBUfRG",
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_1",
         "slug" : "Subgraph_1",
-        "x" : 1179,
-        "y" : 271.70000000000005,
+        "x" : 1181.4,
+        "y" : 227.30000000000007,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1415,43 +1403,6 @@
             "targetPort" : "-u2sJ41MyHSNqppADf6g-$$TAylFYfHN_28O2_JJBoBP"
           } ],
           "processes" : {
-            "jXAIarxmRsKCNmKuiGDQW$$xSNUfrf8gREL5gsrZwKbR" : {
-              "id" : "jXAIarxmRsKCNmKuiGDQW$$xSNUfrf8gREL5gsrZwKbR",
-              "component" : "Script",
-              "metadata" : {
-                "label" : "Script_2_1_1",
-                "slug" : "Script_2_1_1",
-                "x" : 529,
-                "y" : 314.1,
-                "phase" : 0,
-                "cache" : false,
-                "detailedStats" : false,
-                "isImported" : false
-              },
-              "ports" : {
-                "inputs" : [ {
-                  "id" : "lScHRqffdRoqYm68t7hOp$$U64f0wrsg_GwVD7VKmTKj",
-                  "slug" : "in0"
-                }, {
-                  "id" : "wxMn69Jvv8mVPRfxpnxTM$$Y-4AfYbnZGYFleLUNPDeg",
-                  "slug" : "in1"
-                }, {
-                  "id" : "FMrhYJtofR7qIIOON9XEo$$m711Ccl5Sm4GtFIoqZlQk",
-                  "slug" : "in2"
-                } ],
-                "outputs" : [ {
-                  "id" : "LtJNJ9K2E3T5WSgm96Hxv$$izEyii0Ns2SpwRAqd1aPb",
-                  "slug" : "out0"
-                } ],
-                "selectedInputFields" : [ ],
-                "isCustomOutputSchema" : false
-              },
-              "properties" : {
-                "script" : "out1=in0.select(\"c-string\")\nout2=in1.select(\"c-string\")\nout3=in2.select(\"c-string\")\nout0=out1.union(out2).union(out3)",
-                "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame) -> DataFrame:",
-                "scriptMethodFooter" : "    return out0"
-              }
-            },
             "E1vqhvpw_0tOVKqsmSyyZ$$uBmSlVZNRm7bM4lGuRcWo" : {
               "id" : "E1vqhvpw_0tOVKqsmSyyZ$$uBmSlVZNRm7bM4lGuRcWo",
               "component" : "Subgraph",
@@ -1504,8 +1455,8 @@
                   "metadata" : {
                     "label" : "Subgraph_7_1_1",
                     "slug" : "Subgraph_7_1_1",
-                    "x" : 428.99999999999994,
-                    "y" : 214.10000000000002,
+                    "x" : 496.2,
+                    "y" : 367.7,
                     "phase" : 0,
                     "cache" : false,
                     "detailedStats" : false,
@@ -1586,8 +1537,8 @@
                       "metadata" : {
                         "label" : "Subgraph_8_1_1",
                         "slug" : "Subgraph_8_1_1",
-                        "x" : 428.99999999999994,
-                        "y" : 214.10000000000002,
+                        "x" : 594.5999999999999,
+                        "y" : 420.49999999999994,
                         "phase" : 0,
                         "cache" : false,
                         "detailedStats" : false,
@@ -1626,50 +1577,14 @@
                         "targetPort" : "t7fR6pkgCyeNLzuEJSWIE$$5CZ4bpRIbDuBw2rO8NPxB"
                       } ],
                       "processes" : {
-                        "2OW_e2OWirNT8Iv2PeGCl$$Ie4Efz0za07vqsNuykF-_" : {
-                          "id" : "2OW_e2OWirNT8Iv2PeGCl$$Ie4Efz0za07vqsNuykF-_",
-                          "component" : "OrderBy",
-                          "metadata" : {
-                            "label" : "OrderBy_5_1_1",
-                            "slug" : "OrderBy_5_1_1",
-                            "x" : 288.9999999999999,
-                            "y" : 214.10000000000002,
-                            "phase" : 0,
-                            "cache" : false,
-                            "detailedStats" : false,
-                            "isImported" : false
-                          },
-                          "ports" : {
-                            "inputs" : [ {
-                              "id" : "I-7ii7O4hNxDfDARNvBF9$$1Gk0Z8Vi0XWp4fXwm3xhK",
-                              "slug" : "in0"
-                            } ],
-                            "outputs" : [ {
-                              "id" : "JDJyA499iZD_5Wi2NBhj5$$Q-LKwbs6-7aLbdbv-k57R",
-                              "slug" : "out"
-                            } ],
-                            "selectedInputFields" : [ ],
-                            "isCustomOutputSchema" : false
-                          },
-                          "properties" : {
-                            "columnsSelector" : [ "SeKCb5c4NzZRhCCWaX3A8$$kjkt71DTi0_dQ_fFJHkhO##c-string" ],
-                            "orders" : [ {
-                              "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c-string`"
-                              },
-                              "sortType" : "asc"
-                            } ]
-                          }
-                        },
                         "d1Vlr7ndEEPAFj_Gzh1xu$$uy-N_jPrFf-24Mu_WW9Tc" : {
                           "id" : "d1Vlr7ndEEPAFj_Gzh1xu$$uy-N_jPrFf-24Mu_WW9Tc",
                           "component" : "Subgraph",
                           "metadata" : {
                             "label" : "Subgraph_9_1_1",
                             "slug" : "Subgraph_9_1_1",
-                            "x" : 428.99999999999994,
-                            "y" : 214.10000000000002,
+                            "x" : 672.5999999999999,
+                            "y" : 426.5,
                             "phase" : 0,
                             "cache" : false,
                             "detailedStats" : false,
@@ -1740,6 +1655,42 @@
                               }
                             }
                           }
+                        },
+                        "2OW_e2OWirNT8Iv2PeGCl$$Ie4Efz0za07vqsNuykF-_" : {
+                          "id" : "2OW_e2OWirNT8Iv2PeGCl$$Ie4Efz0za07vqsNuykF-_",
+                          "component" : "OrderBy",
+                          "metadata" : {
+                            "label" : "OrderBy_5_1_1",
+                            "slug" : "OrderBy_5_1_1",
+                            "x" : 288.9999999999999,
+                            "y" : 214.10000000000002,
+                            "phase" : 0,
+                            "cache" : false,
+                            "detailedStats" : false,
+                            "isImported" : false
+                          },
+                          "ports" : {
+                            "inputs" : [ {
+                              "id" : "I-7ii7O4hNxDfDARNvBF9$$1Gk0Z8Vi0XWp4fXwm3xhK",
+                              "slug" : "in0"
+                            } ],
+                            "outputs" : [ {
+                              "id" : "JDJyA499iZD_5Wi2NBhj5$$Q-LKwbs6-7aLbdbv-k57R",
+                              "slug" : "out"
+                            } ],
+                            "selectedInputFields" : [ ],
+                            "isCustomOutputSchema" : false
+                          },
+                          "properties" : {
+                            "columnsSelector" : [ "SeKCb5c4NzZRhCCWaX3A8$$kjkt71DTi0_dQ_fFJHkhO##c-string" ],
+                            "orders" : [ {
+                              "expression" : {
+                                "format" : "sql",
+                                "expression" : "`c-string`"
+                              },
+                              "sortType" : "asc"
+                            } ]
+                          }
                         }
                       }
                     }
@@ -1782,6 +1733,43 @@
                     } ]
                   }
                 }
+              }
+            },
+            "jXAIarxmRsKCNmKuiGDQW$$xSNUfrf8gREL5gsrZwKbR" : {
+              "id" : "jXAIarxmRsKCNmKuiGDQW$$xSNUfrf8gREL5gsrZwKbR",
+              "component" : "Script",
+              "metadata" : {
+                "label" : "Script_2_1_1",
+                "slug" : "Script_2_1_1",
+                "x" : 529,
+                "y" : 314.1,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "lScHRqffdRoqYm68t7hOp$$U64f0wrsg_GwVD7VKmTKj",
+                  "slug" : "in0"
+                }, {
+                  "id" : "wxMn69Jvv8mVPRfxpnxTM$$Y-4AfYbnZGYFleLUNPDeg",
+                  "slug" : "in1"
+                }, {
+                  "id" : "FMrhYJtofR7qIIOON9XEo$$m711Ccl5Sm4GtFIoqZlQk",
+                  "slug" : "in2"
+                } ],
+                "outputs" : [ {
+                  "id" : "LtJNJ9K2E3T5WSgm96Hxv$$izEyii0Ns2SpwRAqd1aPb",
+                  "slug" : "out0"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false
+              },
+              "properties" : {
+                "script" : "out1=in0.select(\"c-string\")\nout2=in1.select(\"c-string\")\nout3=in2.select(\"c-string\")\nout0=out1.union(out2).union(out3)",
+                "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame) -> DataFrame:",
+                "scriptMethodFooter" : "    return out0"
               }
             }
           }
@@ -2548,8 +2536,8 @@
       "metadata" : {
         "label" : "Reformat_1",
         "slug" : "Reformat_1",
-        "x" : 1160.0151448567708,
-        "y" : 75.82954711914061,
+        "x" : 1178.0151448567708,
+        "y" : 81.82954711914061,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2568,7 +2556,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_float-__  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_decimal  -  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c- short", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_date", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_double", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_decimal", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_timestamp  __ for--today", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array-string  _ string", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_date-for today", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_float", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_string", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array-int  _ int", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##- c long", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array -- float", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c  - int", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_short", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_struct -- _  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array -- decimal", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array--long", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c-string", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_int", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_boolean", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_double", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##-- c_array_timestamp -- ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_long", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c -  boolean _  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_timestamp", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array-- boolean " ],
+        "columnsSelector" : [ "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_float", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_struct -- _  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_double", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c -  boolean _  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array-string  _ string", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_short", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##-- c_array_timestamp -- ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_decimal", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_timestamp  __ for--today", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_double", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c-string", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array -- float", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c- short", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c  - int", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_decimal  -  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_boolean", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_timestamp", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array-int  _ int", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_float-__  ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array--long", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_long", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array-- boolean ", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_int", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_date", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##p_string", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_array -- decimal", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##- c long", "t0-qP_2XqkHbWAxu_Srvz$$-59L8ef8HAl9SaFgeyrTA##c_date-for today" ],
         "expressions" : [ {
           "target" : "`c- short`",
           "expression" : {
@@ -2766,6 +2754,32 @@
           },
           "description" : ""
         } ]
+      }
+    },
+    "8CMZjneZeAtyULAaSgjr7$$YgEIbHI5lKFjLFPVmJ0U4" : {
+      "id" : "8CMZjneZeAtyULAaSgjr7$$YgEIbHI5lKFjLFPVmJ0U4",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_parquet_all_type_and_partition_withspacehyphens",
+        "slug" : "src_parquet_all_type_and_partition_withspacehyphens",
+        "x" : 424.20000000000005,
+        "y" : 178.40000000000003,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "nWXM5TsGqqk8hm3T4uB59$$AhXAXszhxoAva5XFdTZIY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_parquet_all_type_and_partition_withspacehyphens"
       }
     }
   },
