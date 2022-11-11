@@ -65,6 +65,18 @@ pipelines:
       outputs:
       - 6148/datasets/dest_12345
     dependencies: {}
+  pipelines/SC_CONFIG_PIP:
+    name: SC_CONFIG_PIP
+    description: SC_CONFIG_PIP
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2022-11-11 16:30:43'
+    datasets:
+      inputs:
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      outputs: []
+    dependencies: {}
   pipelines/ScalaDoAnything:
     name: ScalaDoAnything
     description: ScalaDoAnything
