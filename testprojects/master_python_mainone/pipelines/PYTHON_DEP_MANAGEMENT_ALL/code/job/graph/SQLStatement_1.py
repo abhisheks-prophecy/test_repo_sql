@@ -6,7 +6,7 @@ from job.udfs.UDFs import *
 
 def SQLStatement_1(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> (DataFrame, DataFrame):
     in0.createOrReplaceTempView("in0")
-    in0.createOrReplaceTempView("in1")
+    in1.createOrReplaceTempView("in1")
     df1 = spark.sql(
         "select in0.p_int, in1.p_short, in0.`c_array-- boolean ` from in0, in1 where in0.p_int > 5 limit 10"
     )

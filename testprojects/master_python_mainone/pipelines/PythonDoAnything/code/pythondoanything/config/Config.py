@@ -34,7 +34,35 @@ class Config(ConfigBase):
             spakre_expr: str=None
     ):
         self.spark = None
-        self.update()
+        self.update(
+            c_boolean, 
+            c_double, 
+            c_float, 
+            c_int, 
+            c_long, 
+            c_short, 
+            c_db_secret, 
+            c_string1, 
+            c_expr_schematransform, 
+            c_colname_schematransform, 
+            c_colnamedrop_schematransform, 
+            c_regex_filter, 
+            c_regex_filter2, 
+            c_string, 
+            c_repartition_expr, 
+            c_repartition_colname, 
+            c_sql_expr, 
+            c_sql_pattern, 
+            c_agg_expr, 
+            c_date_for_today, 
+            c_float_name, 
+            c_row_number, 
+            c_int_name, 
+            c_join_condition, 
+            c_85, 
+            c_rd_expr, 
+            spakre_expr
+        )
 
     def update(
             self,
@@ -66,12 +94,12 @@ class Config(ConfigBase):
             c_rd_expr: str="`c  float` < 5 and `c-int-column type` <= 85", 
             spakre_expr: str="dayofyear(expression)"
     ):
-        self.c_boolean = c_boolean
-        self.c_double = c_double
-        self.c_float = c_float
-        self.c_int = c_int
-        self.c_long = c_long
-        self.c_short = c_short
+        self.c_boolean = self.get_bool_value(c_boolean)
+        self.c_double = self.get_float_value(c_double)
+        self.c_float = self.get_float_value(c_float)
+        self.c_int = self.get_int_value(c_int)
+        self.c_long = self.get_int_value(c_long)
+        self.c_short = self.get_int_value(c_short)
 
         if c_db_secret is not None:
             self.c_db_secret = self.get_dbutils(self.spark).secrets.get(*c_db_secret.split(":"))
@@ -93,7 +121,7 @@ class Config(ConfigBase):
         self.c_row_number = c_row_number
         self.c_int_name = c_int_name
         self.c_join_condition = c_join_condition
-        self.c_85 = c_85
+        self.c_85 = self.get_int_value(c_85)
         self.c_rd_expr = c_rd_expr
         self.spakre_expr = spakre_expr
         pass

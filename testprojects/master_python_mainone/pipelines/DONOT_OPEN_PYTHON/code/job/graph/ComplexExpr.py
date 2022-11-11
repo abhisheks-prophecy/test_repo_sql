@@ -8,40 +8,135 @@ def ComplexExpr(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         (
           ((((date_add(expr("date_trunc(date_format(date_sub(date_add(current_date(), 2), 2), 'yyyy MMM dd'), 'YEAR')"), 1) < date_sub(current_timestamp(), 2)) | (date_add(from_unixtime(lit(0), "yyyy-MM-dd HH:mm:ss"), 2) < date_add(from_utc_timestamp(col("c_timestamp"), "Asia/Seoul"), 2))) | (next_day(lit("2015-01-14"), "TU") < current_date())) | ((to_date(lit("2009-07-30 04:17:52")) < to_timestamp(col("c_date"))) | (add_months(col("c_timestamp"), 1) < add_months(col("c_date"), 2))))
-          & (col("c_int") % lit(2) == lit(0))
+          & ((col("c_int") % lit(2)) == lit(0))
         )\
           .alias(
           "c1"
         ), 
         (
-          greatest(col("c_int"), lit(9), lit(2))
-          + floor(col("c_decimal"))
-          + degrees(lit(3.141592653589793)) * exp(lit(2)) * expm1(lit(0))
-          + factorial(lit(5))
-          + format_number(lit(12332.123456), 4)
-          - instr(lit("SparkSQL"), "SQL")
-          - length(lit("Spark SQL "))
-          - levenshtein(lit("kitten"), lit("sitting"))
-          + expr("log(10.0D, 100)") * log10(lit(10)) * log2(lit(2))
-          + locate("bar", lit("foobarbar"), 5)
-          - months_between(lit("1997-02-28 10:30:00"), lit("1996-10-30"))
-          + nanvl(lit("NaN").cast(DoubleType()), lit(123))
-          + rand()
-          + lit(10) % lit(3)
-          - round(lit("2.5").cast(FloatType()), 0)
-          + sin(lit(0)) * sinh(lit(0))
-          + sqrt(lit(4))
-          + abs(lit(1.23))
-          + acos(lit(1))
-          - ascii(lit("2"))
-          - asin(lit(0))
-          + bin(lit(13))
-          + lit("10").cast(IntegerType())
-          + cbrt(lit("27.0").cast(FloatType()))
-          + ceil(lit(-2.1))
-          - coalesce(lit(None), lit(1), lit(None))
-          + conv(lit("100"), 2, 10)
-          + year(lit("2016-07-30"))
+          (
+            (
+              (
+                (
+                  (
+                    (
+                      (
+                        (
+                          (
+                            (
+                              (
+                                (
+                                  (
+                                    (
+                                      (
+                                        (
+                                          (
+                                            (
+                                              (
+                                                (
+                                                  (
+                                                    (
+                                                      (
+                                                        (
+                                                          (
+                                                            (
+                                                              (
+                                                                greatest(col("c_int"), lit(9), lit(2))
+                                                                + floor(
+                                                                  col("c_decimal")
+                                                                )
+                                                              )
+                                                              + (
+                                                                (
+                                                                  degrees(lit(3.141592653589793))
+                                                                  * exp(
+                                                                    lit(2)
+                                                                  )
+                                                                )
+                                                                * expm1(
+                                                                  lit(0)
+                                                                )
+                                                              )
+                                                            )
+                                                            + factorial(
+                                                              lit(5)
+                                                            )
+                                                          )
+                                                          + format_number(
+                                                            lit(12332.123456), 
+                                                            4
+                                                          )
+                                                        )
+                                                        - instr(
+                                                          lit("SparkSQL"), 
+                                                          "SQL"
+                                                        )
+                                                      )
+                                                      - length(
+                                                        lit("Spark SQL ")
+                                                      )
+                                                    )
+                                                    - levenshtein(
+                                                      lit("kitten"), 
+                                                      lit("sitting")
+                                                    )
+                                                  )
+                                                  + (
+                                                    (
+                                                      expr("log(10.0D, 100)")
+                                                      * log10(lit(10))
+                                                    )
+                                                    * log2(lit(2))
+                                                  )
+                                                )
+                                                + locate(
+                                                  "bar", 
+                                                  lit("foobarbar"), 
+                                                  5
+                                                )
+                                              )
+                                              - months_between(
+                                                lit("1997-02-28 10:30:00"), 
+                                                lit("1996-10-30")
+                                              )
+                                            )
+                                            + nanvl(
+                                              lit("NaN").cast(DoubleType()), 
+                                              lit(123)
+                                            )
+                                          )
+                                          + rand()
+                                        )
+                                        + (lit(10) % lit(3))
+                                      )
+                                      - round(lit("2.5").cast(FloatType()), 0)
+                                    )
+                                    + (sin(lit(0)) * sinh(lit(0)))
+                                  )
+                                  + sqrt(lit(4))
+                                )
+                                + abs(lit(1.23))
+                              )
+                              + acos(lit(1))
+                            )
+                            - ascii(lit("2"))
+                          )
+                          - asin(lit(0))
+                        )
+                        + bin(lit(13))
+                      )
+                      + lit("10").cast(IntegerType())
+                    )
+                    + cbrt(lit("27.0").cast(FloatType()))
+                  )
+                  + ceil(lit(-2.1))
+                )
+                - coalesce(lit(None), lit(1), lit(None))
+              )
+              + conv(lit("100"), 2, 10)
+            )
+            + year(lit("2016-07-30"))
+          )
           + least(col("c_decimal"), col("c_int"), col("c_long"))
         )\
           .alias(
@@ -68,18 +163,18 @@ def ComplexExpr(spark: SparkSession, in0: DataFrame) -> DataFrame:
           )\
           .alias("c3"), 
         (
-          (((isnan(col("c_short").cast(DoubleType())) | col("c_decimal").isNull()) | col("c_string").like("%9%")) | (((datediff(col("c_date"), col("c_timestamp")) + last_day(col("c_date")) + dayofyear(col("c_date")) - dayofweek(col("c_date")) < date_sub(current_timestamp(), 2)) | array_contains(array(lit(1), lit(2), lit(3)), 2)) | array_contains(array(lit(1), lit(2), lit(3)), 11)))
-          & (col("c_int") % lit(2) == lit(0))
+          (((isnan(col("c_short").cast(DoubleType())) | col("c_decimal").isNull()) | col("c_string").like("%9%")) | ((((((datediff(col("c_date"), col("c_timestamp")) + last_day(col("c_date"))) + dayofyear(col("c_date"))) - dayofweek(col("c_date"))) < date_sub(current_timestamp(), 2)) | array_contains(array(lit(1), lit(2), lit(3)), lit(2))) | array_contains(array(lit(1), lit(2), lit(3)), lit(11))))
+          & ((col("c_int") % lit(2)) == lit(0))
         )\
           .alias(
           "c4"
         ), 
         when(
-            (col("c_int") % lit(11) == lit(0)), 
-            map_keys(create_map(lit(2) + col("c_int"), lit("a"), lit(1) + col("c_int"), lit("b")))
+            ((col("c_int") % lit(11)) == lit(0)), 
+            map_keys(create_map((lit(2) + col("c_int")), lit("a"), (lit(1) + col("c_int")), lit("b")))
           )\
           .when(
-            (col("c_int") % lit(9) == lit(0)), 
+            ((col("c_int") % lit(9)) == lit(0)), 
             sort_array(
               split(
                 col("c_string"), 
@@ -87,8 +182,8 @@ def ComplexExpr(spark: SparkSession, in0: DataFrame) -> DataFrame:
               )
             )
           )\
-          .when((col("c_int") % lit(7) == lit(0)), split(col("c_string"), "[@4]"))\
-          .when((col("c_int") % lit(5) == lit(0)), map_values(create_map(lit(1), lit("a"), lit(2), lit("b"))))\
+          .when(((col("c_int") % lit(7)) == lit(0)), split(col("c_string"), "[@4]"))\
+          .when(((col("c_int") % lit(5)) == lit(0)), map_values(create_map(lit(1), lit("a"), lit(2), lit("b"))))\
           .otherwise(sort_array(array(lit("b"), lit("d"), lit("c"), lit("a")), True))\
           .alias("c5"), 
         when(

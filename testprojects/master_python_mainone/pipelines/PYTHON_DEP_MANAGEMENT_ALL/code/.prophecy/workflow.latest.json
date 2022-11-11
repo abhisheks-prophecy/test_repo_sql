@@ -99,7 +99,7 @@
           "name" : "CONFIG_STR",
           "kind" : {
             "type" : "string",
-            "value" : "jdbc_url-${JDBC_URL}"
+            "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
           },
           "optional" : true
         }, {
@@ -167,9 +167,15 @@
           "optional" : false
         } ]
       },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance2"
+      "selected" : "test-instance2",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
     },
     "sparkConf" : [ {
       "name" : "spark_config1",
