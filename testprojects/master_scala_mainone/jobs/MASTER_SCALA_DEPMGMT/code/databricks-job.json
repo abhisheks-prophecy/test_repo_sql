@@ -11,8 +11,10 @@
   "request" : {
     "format" : "MULTI_TASK",
     "name" : "MASTER_SCALA_DEPMGMT",
-    "job_clusters" : [ {
-      "job_cluster_key" : "MASTER_SCALA_DEPMGMT_default_small",
+    "job_clusters" : [ ],
+    "email_notifications" : { },
+    "tasks" : [ {
+      "task_key" : "SCALA_DEPENDENCY_MANAGEMENT",
       "new_cluster" : {
         "spark_version" : "10.4.x-scala2.12",
         "node_type_id" : "i3.xlarge",
@@ -27,12 +29,7 @@
         },
         "num_workers" : 1,
         "driver_node_type_id" : "i3.xlarge"
-      }
-    } ],
-    "email_notifications" : { },
-    "tasks" : [ {
-      "task_key" : "SCALA_DEPENDENCY_MANAGEMENT",
-      "job_cluster_key" : "MASTER_SCALA_DEPMGMT_default_small",
+      },
       "spark_jar_task" : {
         "main_class_name" : "Main",
         "parameters" : [ "-i", "default" ]
@@ -70,11 +67,6 @@
         }
       }, {
         "maven" : {
-          "coordinates" : "mysql:mysql-connector-java:8.0.29",
-          "exclusions" : [ ]
-        }
-      }, {
-        "maven" : {
           "coordinates" : "mysql:mysql-connector-java:8.0.28",
           "exclusions" : [ ]
         }
@@ -100,6 +92,6 @@
     }
   },
   "cluster_mode" : {
-    "clusterMode" : "Single"
+    "clusterMode" : "Multi"
   }
 }
