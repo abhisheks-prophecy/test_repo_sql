@@ -20,7 +20,7 @@
     "format" : "MULTI_TASK",
     "name" : "REL_SC_DBFSLIBS",
     "job_clusters" : [ {
-      "job_cluster_key" : "REL_SC_DBFSLIBS_default_medium",
+      "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
       "new_cluster" : {
         "spark_version" : "10.4.x-scala2.12",
         "node_type_id" : "i3.xlarge",
@@ -33,7 +33,7 @@
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "prophecy.metadata.is.interactive.run" : "false"
         },
-        "num_workers" : 2,
+        "num_workers" : 1,
         "driver_node_type_id" : "i3.xlarge"
       }
     } ],
@@ -42,7 +42,7 @@
     },
     "tasks" : [ {
       "task_key" : "Pipeline_0",
-      "job_cluster_key" : "REL_SC_DBFSLIBS_default_medium",
+      "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
       "spark_jar_task" : {
         "main_class_name" : "org.main.scla_dep_mgmt.Main",
         "parameters" : [ "-i", "test-instance1", "-C", "CONFIG_DOUBLE=22", "CONFIG_INT=22", "CONFIG_FLOAT=22" ]
@@ -84,7 +84,7 @@
       "depends_on" : [ {
         "task_key" : "Pipeline_0"
       } ],
-      "job_cluster_key" : "REL_SC_DBFSLIBS_default_medium",
+      "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
       "spark_python_task" : {
         "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/REL_SC_DBFSLIBS/Script_1--342935075.py"
       },
@@ -97,7 +97,7 @@
     "schedule" : {
       "quartz_cron_expression" : "0 0 0 * * ? 2090",
       "timezone_id" : "GMT",
-      "pause_status" : "PAUSED"
+      "pause_status" : "UNPAUSED"
     }
   },
   "cluster_mode" : {
