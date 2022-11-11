@@ -1,0 +1,807 @@
+name: ScalaMainProject
+description: ''
+version: '1.1668108261046'
+author: abhisheks+e2etests1@simpledatalabs.com
+language: scala
+buildSystem: maven
+pipelines:
+  pipelines/DONOT_OPEN_SCALA:
+    name: DONOT_OPEN_SCALA
+    description: DONOT_OPEN_SCALA
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-11 08:01:41'
+    datasets:
+      inputs:
+      - 6148/datasets/custom_xlsx_scala
+      - 6148/datasets/dataset_cust_in
+      - 6148/datasets/src_catalog_table_test_catalog_source
+      - 6148/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - 6148/datasets/src_parquet_all_type_no_partition
+      - 6148/datasets/src_orc_all_type_no_partition
+      - 6148/datasets/src_avro_CustsDatasetInput
+      - 6148/datasets/src_csv_special_char_column_name
+      - 6148/datasets/src_delta_all_type_no_partition
+      outputs:
+      - 6148/datasets/dest_12345
+    dependencies: {}
+  pipelines/SCALA_COMPLEX:
+    name: SCALA_COMPLEX
+    description: SCALA_COMPLEX
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-06-11 08:57:54'
+    datasets:
+      inputs:
+      - 6148/datasets/dataset_cust_in
+      - 6148/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - 6148/datasets/src_parquet_all_type_no_partition
+      - 6148/datasets/src_orc_all_type_no_partition
+      - 6148/datasets/src_avro_CustsDatasetInput
+      - 6148/datasets/src_csv_special_char_column_name
+      - 6148/datasets/src_parquet_500col
+      - 6148/datasets/src_delta_all_type_no_partition
+      - 6148/datasets/src_catalog_table_test_catalog_source
+      - 6148/datasets/src_jdbc_dbsecrets_test_table
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_no_partition
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_csv_special_char_column_name
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_jdbc_dbsecrets_test_table
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_avro_CustsDatasetInput
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_delta_all_type_no_partition
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_orc_all_type_no_partition
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_catalog_table_test_catalog_source
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git/@scala_project/0.1.3/5689/datasets/dataset_cust_in
+      outputs:
+      - 6148/datasets/dest_jdbc_dbsecrets_test_table
+      - 6148/datasets/dest_catalog_table_test_catalog_source
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/dest_jdbc_dbsecrets_test_table
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/dest_catalog_table_test_catalog_source
+    dependencies: {}
+  pipelines/SCALA_DEPENDENCY_MANAGEMENT:
+    name: SCALA_DEPENDENCY_MANAGEMENT
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-06-21 07:02:35'
+    datasets:
+      inputs:
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_no_partition
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_csv_special_char_column_name
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_jdbc_dbsecrets_test_table
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_orc_all_type_no_partition
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_catalog_table_test_catalog_source
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git/@scala_project/0.1.3/5689/datasets/dataset_cust_in
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_avro_CustsDatasetInput
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_delta_all_type_no_partition
+      outputs:
+      - 6148/datasets/dest_12345
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/dest_jdbc_dbsecrets_test_table
+    dependencies: {}
+  pipelines/SCALA_SG_SRC:
+    name: SCALA_SG_SRC
+    description: SCALA_SG_SRC
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-06-21 07:32:44'
+    datasets:
+      inputs:
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git/@scala_project/0.1.3/5689/datasets/dataset_cust_in
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      outputs:
+      - 6148/datasets/dest_12345
+    dependencies: {}
+  pipelines/TestPipeline1:
+    name: TestPipeline1
+    description: TestPipeline1
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-09-05 05:39:38'
+    datasets:
+      inputs:
+      - 6148/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git/@scala_project/0.1.3/5689/datasets/dataset_cust_in
+      outputs:
+      - 6148/datasets/dest_12345
+    dependencies: {}
+  pipelines/ScalaDoAnything:
+    name: ScalaDoAnything
+    description: ScalaDoAnything
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-23 04:47:30'
+    datasets:
+      inputs:
+      - 6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - 6154/datasets/src_orc_all_type_no_partition
+      - 6148/datasets/src_csv_special_char_column_name
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_csv_special_char_column_name
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_orc_all_type_no_partition
+      outputs: []
+    dependencies: {}
+  pipelines/ScalaGCP:
+    name: ScalaGCP
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-17 10:12:29'
+    datasets:
+      inputs:
+      - 6148/datasets/dataset_cust_in
+      - 6148/datasets/src_catalog_table_test_catalog_source
+      - 6148/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - 6148/datasets/src_jdbc_dbsecrets_test_table
+      - 6148/datasets/src_parquet_all_type_no_partition
+      - 6148/datasets/src_orc_all_type_no_partition
+      - 6148/datasets/src_avro_CustsDatasetInput
+      - 6148/datasets/src_csv_special_char_column_name
+      - 6148/datasets/src_delta_all_type_no_partition
+      outputs:
+      - 6148/datasets/dest_jdbc_dbsecrets_test_table
+      - 6148/datasets/dest_12345
+    dependencies: {}
+datasets:
+  datasets/dest_json_input_custs:
+    name: dest_json_input_custs
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 13:59:21'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 13:59:21'
+  datasets/dest_avro_CustsDatasetInput:
+    name: dest_avro_CustsDatasetInput
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:12:32'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:12:32'
+  datasets/src_avro_CustsDatasetInput:
+    name: src_avro_CustsDatasetInput
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:12:23'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:12:23'
+  datasets/src_json_input_custs:
+    name: src_json_input_custs
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 13:59:12'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 13:59:12'
+  datasets/src_parquet_all_type_and_partition_withspacehyphens:
+    name: src_parquet_all_type_and_partition_withspacehyphens
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:06:17'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:06:17'
+  datasets/cutomerCatalog:
+    name: cutomerCatalog
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-21 11:12:38'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-21 11:12:38'
+  datasets/src_parquet_all_type_no_partition:
+    name: src_parquet_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:09:21'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:09:21'
+  datasets/dest_parquet_all_type_and_partition_withspacehyphens:
+    name: dest_parquet_all_type_and_partition_withspacehyphens
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:06:26'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:06:26'
+  datasets/dest_csv_special_char_column_name:
+    name: dest_csv_special_char_column_name
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:03:56'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:03:56'
+  datasets/src_csv_special_char_column_name:
+    name: src_csv_special_char_column_name
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:03:50'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:03:50'
+  datasets/dest_text_DatasetWithSpaceHyphens:
+    name: dest_text_DatasetWithSpaceHyphens
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:11:00'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:11:00'
+  datasets/src_parquet_500col:
+    name: src_parquet_500col
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-15 13:14:35'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-15 13:14:35'
+  datasets/dest_delta_all_type_no_partition:
+    name: dest_delta_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:00:59'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:00:59'
+  datasets/dest_tmp_out1232:
+    name: dest_tmp_out1232
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-20 09:59:47'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-20 09:59:47'
+  datasets/src_catalog_table_test_catalog_source:
+    name: src_catalog_table_test_catalog_source
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:14:03'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:14:03'
+  datasets/dest_jdbc_userandpass_test_table:
+    name: dest_jdbc_userandpass_test_table
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:17:32'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:17:32'
+  datasets/catalogoutput:
+    name: catalogoutput
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-24 06:13:38'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-24 06:13:38'
+  datasets/src_delta_all_type_no_partition:
+    name: src_delta_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:00:50'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:00:50'
+      dev1:
+        fabricId: 952
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-20 15:38:03'
+  datasets/5k_partitions:
+    name: 5k_partitions
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-07-21 13:56:18'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-07-21 13:56:18'
+  datasets/src_orc_all_type_no_partition:
+    name: src_orc_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:07:49'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:07:49'
+  datasets/src_jdbc_userandpass_test_table:
+    name: src_jdbc_userandpass_test_table
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:17:21'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:17:21'
+  datasets/dest_test_orc:
+    name: dest_test_orc
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-20 09:58:00'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-20 09:58:00'
+      dev1:
+        fabricId: 952
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-20 15:46:38'
+  datasets/dest_orc_all_type_no_partition:
+    name: dest_orc_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:07:58'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:07:58'
+  datasets/dest_jdbc_dbsecrets_test_table:
+    name: dest_jdbc_dbsecrets_test_table
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:15:55'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:15:55'
+  datasets/src_snowflake_userandpass_cust:
+    name: src_snowflake_userandpass_cust
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:19:10'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:19:10'
+  datasets/src_csv_all_type_no_partition:
+    name: src_csv_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:02:21'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:02:21'
+  datasets/dest_csv_all_type_no_partition:
+    name: dest_csv_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:02:28'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:02:28'
+  datasets/src_text_DatasetWithSpaceHyphens:
+    name: src_text_DatasetWithSpaceHyphens
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:10:52'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:10:52'
+  datasets/src_jdbc_dbsecrets_test_table:
+    name: src_jdbc_dbsecrets_test_table
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:15:44'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:15:44'
+  datasets/dest_catalog_table_test_catalog_source:
+    name: dest_catalog_table_test_catalog_source
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:14:16'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:14:16'
+  datasets/dest_snowflake_userandpass_cust:
+    name: dest_snowflake_userandpass_cust
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:19:17'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:19:17'
+      dev1:
+        fabricId: 952
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-23 05:35:28'
+  datasets/out_dataset_cust:
+    name: out_dataset_cust
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 13:36:35'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 13:36:35'
+  datasets/dest_parquet_all_type_no_partition:
+    name: dest_parquet_all_type_no_partition
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:09:30'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:09:30'
+  datasets/Input_File:
+    name: Input_File
+    description: 'Dataset for Imported Pipeline:cust_ord_abinitio componentName: Input_File'
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-07-27 04:36:02'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-07-27 04:36:02'
+  datasets/Output_File:
+    name: Output_File
+    description: 'Dataset for Imported Pipeline:cust_ord_abinitio componentName: Output_File'
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-07-27 04:36:02'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-07-27 04:36:02'
+  datasets/dataset_cust_in:
+    name: dataset_cust_in
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-15 13:12:32'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-15 13:12:32'
+  datasets/dest_12345:
+    name: dest_12345
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-21 07:35:59'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-21 07:35:59'
+  datasets/dest_snowflake_dbsecrets_cust:
+    name: dest_snowflake_dbsecrets_cust
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:22:11'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:22:12'
+  datasets/Input_File_1:
+    name: Input_File_1
+    description: 'Dataset for Imported Pipeline:cust_ord_abinitio componentName: Input_File_1'
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-07-27 04:36:02'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-07-27 04:36:02'
+  datasets/src_snowflake_dbsecrets_cust:
+    name: src_snowflake_dbsecrets_cust
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-10 14:22:05'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-10 14:22:05'
+      dev1:
+        fabricId: 952
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-23 05:32:03'
+      crandom:
+        fabricId: 1223
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-23 05:35:39'
+  datasets/custom_xlsx_scala:
+    name: custom_xlsx_scala
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    createdAt: '2022-06-21 07:11:11'
+    physicalDatasets:
+      dev:
+        fabricId: 674
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests1@simpledatalabs.com
+        createdAt: '2022-06-21 07:11:11'
+templates: {}
+jobs:
+  jobs/MASTER_SCALA_DEPMGMT:
+    name: MASTER_SCALA_DEPMGMT
+    description: ''
+    fabricUID: 674
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - 6148/pipelines/SCALA_DEPENDENCY_MANAGEMENT
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-09-24 06:52:43'
+    author: abhisheks+e2etests1@simpledatalabs.com
+  jobs/MASTER_SC_SCALA_DEPMGMT:
+    name: MASTER_SC_SCALA_DEPMGMT
+    description: ''
+    fabricUID: 674
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - 6148/pipelines/SCALA_DEPENDENCY_MANAGEMENT
+    - 6148/pipelines/SCALA_SG_SRC
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-09-24 06:54:45'
+    author: abhisheks+e2etests1@simpledatalabs.com
+libraries: []
+subgraphs:
+  subgraphs/withXLSXSource:
+    name: withXLSXSource
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    language: scala
+    createdAt: '2022-06-21 07:29:22'
+  subgraphs/everythingSG:
+    name: everythingSG
+    description: ''
+    author: abhisheks+e2etests1@simpledatalabs.com
+    language: scala
+    createdAt: '2022-06-21 07:50:25'
+  subgraphs/Limiting_Nested_Subgraph:
+    name: Limiting_Nested_Subgraph
+    description: Nested subgraphs for nested limits
+    author: abhisheks+e2etests1@simpledatalabs.com
+    language: scala
+    createdAt: '2022-06-27 11:29:57'
+sqlModels: {}
+sqlPipeline: null
+dependencies:
+- coordinates: mysql:mysql-connector-java:8.0.29
+  name: mysql
+  exclusions: []
+  id: '59965868'
+  type: coordinates
+  enabled: false
+- coordinates: org.postgresql:postgresql:42.3.4
+  name: postgres
+  exclusions: []
+  id: '1360721423'
+  type: coordinates
+  enabled: false
+- repo: https://repo.maven.apache.org/maven2/
+  coordinates: org.scalanlp:epic_2.12:0.5
+  name: epic
+  exclusions: []
+  id: '418005485'
+  type: coordinates
+  enabled: false
+- coordinates: org.typelevel:cats-core_2.12:2.6.1
+  name: cats
+  exclusions: []
+  id: '1575366423'
+  type: coordinates
+  enabled: false
+- coordinates: org.springframework:spring-beans:5.3.19
+  name: spring
+  exclusions: []
+  id: '611418782'
+  type: coordinates
+  enabled: false
+- coordinates: com.crealytics:spark-excel_2.12:3.2.1_0.17.1
+  name: spark-excel
+  exclusions: []
+  id: '368609749'
+  type: coordinates
+  enabled: false
+- repo: https://prophecyio.jfrog.io/artifactory/default-sbt-release/
+  coordinates: io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0
+  name: prophecy-libs-4.0.0
+  exclusions: []
+  id: GXM_V
+  type: coordinates
+  enabled: false
+projectDependencies:
+  '6154':
+    projectUID: 6154
+    projectName: PythonMainProject
+    repositoryPath: http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git//
+    version: PythonMainProject/1.1664556387869
+    author: ''
+    createdAt: '2022-10-15 07:48:23'
+  '5689':
+    projectUID: 5689
+    projectName: scala_project
+    repositoryPath: http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git//
+    version: scala_project/0.1.3
+    author: ''
+    createdAt: '2022-10-15 07:48:23'

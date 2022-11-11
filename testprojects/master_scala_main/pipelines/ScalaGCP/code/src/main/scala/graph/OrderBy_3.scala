@@ -1,0 +1,28 @@
+package graph
+
+import io.prophecy.libs._
+import config.ConfigStore._
+import udfs.UDFs._
+import udfs._
+import org.apache.spark._
+import org.apache.spark.sql._
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types._
+import java.time._
+
+object OrderBy_3 {
+
+  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+    in.orderBy(col("c1").asc,
+               col("c2").asc,
+               col("c3").asc,
+               col("c4").asc,
+               col("c5").asc,
+               col("c6").asc,
+               col("c7").asc,
+               col("c8").asc,
+               col("c9_udf1").asc,
+               col("c9_udf2").asc
+    )
+
+}
