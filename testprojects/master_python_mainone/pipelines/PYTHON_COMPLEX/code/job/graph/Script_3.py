@@ -1,0 +1,40 @@
+from pyspark.sql import *
+from pyspark.sql.functions import *
+from pyspark.sql.types import *
+from job.config.ConfigStore import *
+from job.udfs.UDFs import *
+
+def Script_3(
+        spark: SparkSession, 
+        in0: DataFrame, 
+        in1: DataFrame, 
+        in2: DataFrame, 
+        in3: DataFrame, 
+        in4: DataFrame, 
+        in5: DataFrame, 
+        in6: DataFrame
+) -> DataFrame:
+    """
+This is a comment
+"""
+    '''
+This is another comment
+'''
+    ## FINAL SINGLE LINE COMMENT ####
+    from pyspark.sql.types import DoubleType
+    out00 = in0.select("c_int").withColumnRenamed("c_int", "c_int_new")
+    out1 = in1\
+             .select("c_int")\
+             .withColumn("c_int", in1["c_int"].cast(IntegerType()))\
+             .withColumnRenamed("c_int", "c_int_new")
+    out2 = in2.select("c_int").withColumnRenamed("c_int", "c_int_new")
+    out3 = in3.select("c_int").withColumnRenamed("c_int", "c_int_new")
+    out4 = in4\
+             .select("customer_id")\
+             .withColumn("customer_id", in4["customer_id"].cast(IntegerType()))\
+             .withColumnRenamed("customer_id", "c_int_new")
+    out5 = in5.select("_c0").withColumnRenamed("_c0", "c_int_new")
+    out6 = in6.select("c-int-column type").withColumnRenamed("c-int-column type", "c_int_new")
+    out0 = out00.union(out1).union(out2).union(out3).union(out4).union(out5).union(out6)
+
+    return out0
