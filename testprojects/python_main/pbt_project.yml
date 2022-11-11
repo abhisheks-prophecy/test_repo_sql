@@ -1,6 +1,6 @@
 name: PythonProject
 description: ''
-version: '1.6'
+version: '2.1'
 author: abhisheks+e2etests@simpledatalabs.com
 language: python
 buildSystem: wheel
@@ -112,23 +112,20 @@ pipelines:
       - 7235/datasets/src_csv_special_char_column_name
       - 7235/datasets/src_orc_all_type_no_partition
       outputs: []
-    dependencies:
-      project/7234:
-        name: project/7234
-        projectUID: 7234
-        projectName: ScalaProject
-        version: ScalaProject/1.32
-        author: ''
-        repositoryPath: null
-        createdAt: '2022-08-31 08:00:29'
-      project/9847:
-        name: project/9847
-        projectUID: 9847
-        projectName: SharedTeamProjectScala
-        version: SharedTeamProjectScala/1.0
-        author: ''
-        repositoryPath: null
-        createdAt: '2022-08-31 08:00:29'
+    dependencies: {}
+  pipelines/PYTHON_ACL_HC_SHARED:
+    name: PYTHON_ACL_HC_SHARED
+    description: PYTHON_ACL_HC_SHARED
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-11-03 04:37:05'
+    datasets:
+      inputs:
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/src_catalog_accessible
+      outputs: []
+    dependencies: {}
   pipelines/LIVY_PYTHON:
     name: LIVY_PYTHON
     description: LIVY_PYTHON
@@ -334,6 +331,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:43:10'
+  datasets/src_catalog_accessible:
+    name: src_catalog_accessible
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-11-02 10:24:28'
+    physicalDatasets:
+      dev:
+        fabricId: 299
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-11-02 10:24:28'
   datasets/custom_xlsx_src:
     name: custom_xlsx_src
     description: ''
@@ -564,62 +573,14 @@ jobs:
     enabled: true
     createdAt: '2022-08-11 07:51:50'
     author: abhisheks+e2etests@simpledatalabs.com
-  jobs/PYTHON_DEP_MGMT_ALL_JOB:
-    name: REL_PYTHON_DEP_MGMT_ALL_JOB
-    description: ''
-    fabricUID: 299
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? *
-    timeout: null
-    alerting:
-      emails: abhisheks@simpledatalabs.com
-      onStart: false
-      onSuccess: true
-      onFailure: false
-    pipelines:
-    - 7235/pipelines/PYTHON_DEP_MGMT_ALL
-    jobClusterMode:
-      clusterMode:
-        Multi: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-06-29 05:01:43'
-    author: abhisheks+e2etests@simpledatalabs.com
-  jobs/PYTHON_BASIC_JOB:
-    name: REL_PYTHON_BASIC_JOB
-    description: ''
-    fabricUID: 1962
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0/8 * * ? 2090
-    timeout: null
-    alerting:
-      emails: ''
-      onStart: false
-      onSuccess: false
-      onFailure: false
-    pipelines:
-    - 7235/pipelines/PYTHON_BASIC
-    jobClusterMode:
-      clusterMode:
-        Multi: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-08-28 16:32:25'
-    author: abhisheks+e2etests@simpledatalabs.com
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
     name: REL_PYTHON_SINGLE_CLUSTER_JOB
     description: ''
-    fabricUID: 1901
+    fabricUID: 2068
     scheduler:
       Databricks: {}
     cloudProvider: null
-    jobSize: newjobsize-1.1
+    jobSize: small
     scheduleCron: 0 0 0 9 * ? 2090
     timeout: null
     alerting:
@@ -638,6 +599,78 @@ jobs:
     enabled: true
     createdAt: '2022-07-28 11:54:59'
     author: abhisheks+e2etests@simpledatalabs.com
+  jobs/PYTHON_DEP_MGMT_ALL_JOB:
+    name: REL_PYTHON_DEP_MGMT_ALL_JOB
+    description: ''
+    fabricUID: 299
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? *
+    timeout: null
+    alerting:
+      emails: abhisheks@simpledatalabs.com,abhisheks@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines:
+    - 7235/pipelines/PYTHON_DEP_MGMT_ALL
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-06-29 05:01:43'
+    author: abhisheks+e2etests@simpledatalabs.com
+  jobs/REL_PY_DBFSLIBS:
+    name: REL_PY_DBFSLIBS
+    description: ''
+    fabricUID: 2404
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: medium
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines:
+    - pipelines/PYTHON_DEP_MGMT_ALL
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2022-11-04 10:54:37'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/REL_PY_CUSTOMLIBS:
+    name: REL_PY_CUSTOMLIBS
+    description: ''
+    fabricUID: 2405
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io,abhisheks@simpledalabs.com
+      onStart: true
+      onSuccess: true
+      onFailure: false
+    pipelines:
+    - pipelines/PYTHON_SG_SRC
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2022-11-04 10:50:42'
+    author: abhisheks+e2etests@prophecy.io
 libraries: []
 subgraphs:
   subgraphs/all_type:

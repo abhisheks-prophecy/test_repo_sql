@@ -1,1 +1,1 @@
-from .all_type_main_1 import *
+from .main import *

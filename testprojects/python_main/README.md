@@ -203,3 +203,7 @@ Changes
 *** Release notes for version: 1.6 ***
 
 1.6
+
+*** Release notes for version: 2.1 ***
+
+2.1
