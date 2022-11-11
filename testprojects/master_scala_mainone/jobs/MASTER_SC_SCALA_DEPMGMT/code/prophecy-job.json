@@ -1,0 +1,770 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "674",
+    "jobId" : "jobs/MASTER_SC_SCALA_DEPMGMT",
+    "name" : "MASTER_SC_SCALA_DEPMGMT",
+    "schedule" : "0 0 0 * * ? 2090",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "2071",
+      "name" : "dev_shared",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium-1" ]
+      }
+    }, {
+      "id" : "674",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2683",
+      "name" : "TEST-Automated_Livy1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
+      }
+    }, {
+      "id" : "2689",
+      "name" : "dev_acl_sdl",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "2247",
+      "name" : "jobFabric1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2682",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      }
+    }, {
+      "id" : "1580",
+      "name" : "captain_livy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      }
+    }, {
+      "id" : "2665",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2704",
+      "name" : "TEST-Automated_Databricks1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2676",
+      "name" : "FabricAutomatedADVJobSize",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2016",
+      "name" : "dev_gcp",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium", "adv-json1" ]
+      }
+    }, {
+      "id" : "2659",
+      "name" : "JobFabricMain_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "2699",
+      "name" : "dev_CustomLibs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium", "large" ]
+      },
+      "pylibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
+      }
+    }, {
+      "id" : "1770",
+      "name" : "devnew",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "2655",
+      "name" : "ACLFabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "2698",
+      "name" : "Livyscala-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3" ]
+      }
+    } ]
+  },
+  "processes" : {
+    "NBebEUAvx7OoU25uHz0gj$$nObffZ71E4VzmZo84vl6r" : {
+      "id" : "NBebEUAvx7OoU25uHz0gj$$nObffZ71E4VzmZo84vl6r",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : 372.09393310546875,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "1wn3Akfm7CIXlIvlK35_o$$XdK2dPpgcH3mF_PGnOpHk"
+        } ],
+        "outputs" : [ {
+          "id" : "zXHRCq-yPQaLbE9l81Zd5$$uPXZQ3YobQouoZqG39wl6"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "code" : "print(\"hello\")"
+      },
+      "parent" : "2VqhFiGQiffqC_Xv5SiwE"
+    },
+    "ovjnPqQ7QffWB_yZMAphc$$_LhaxQRRx5Tqz4oiu6wyP" : {
+      "id" : "ovjnPqQ7QffWB_yZMAphc$$_LhaxQRRx5Tqz4oiu6wyP",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_1",
+        "slug" : "Pipeline_1",
+        "x" : 279.2939453125,
+        "y" : -92.25151824951172
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IpAsa8v9j_ZcGR0o2sALl$$ZnHt3daLz0cFkJZ_9JWF4"
+        } ],
+        "outputs" : [ {
+          "id" : "wu3IxfE-4sR7xpIsjm1a-$$Z5z8nXk9UcgvvJhSUHrYh"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "default", "TEST-Automated_Databricks.1", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "2VqhFiGQiffqC_Xv5SiwE" : {
+      "id" : "2VqhFiGQiffqC_Xv5SiwE",
+      "component" : "Cluster",
+      "metadata" : {
+        "label" : "Cluster_1",
+        "slug" : "Cluster_1",
+        "x" : -665.2000122070312,
+        "y" : -158.65151977539062,
+        "width" : 502.09393310546875,
+        "height" : 263.8515319824219
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "properties" : {
+        "clusterSize" : "medium"
+      }
+    },
+    "hklQJONDVLVVLNw7khWwN" : {
+      "id" : "hklQJONDVLVVLNw7khWwN",
+      "component" : "Cluster",
+      "metadata" : {
+        "label" : "Cluster_2",
+        "slug" : "Cluster_2",
+        "x" : -31.506099700927734,
+        "y" : 136.54800415039062,
+        "width" : 647.9971923828125,
+        "height" : 279.9999694824219
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "properties" : {
+        "clusterSize" : "adv-json1"
+      }
+    },
+    "UFs7O-iOIs0IUTUxIogFv$$fjpB8BOIaME7Bkc7B2VDy" : {
+      "id" : "UFs7O-iOIs0IUTUxIogFv$$fjpB8BOIaME7Bkc7B2VDy",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_4",
+        "slug" : "Pipeline_4",
+        "x" : -290.9530334472656,
+        "y" : 254.1484832763672
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "FBiYyrP-VsvDQWwsz71M6$$NYJsgJEYPIoqwLDqL57WZ"
+        } ],
+        "outputs" : [ {
+          "id" : "sKjrNhiIF4SbHOgb39lqU$$I-lXj1ugLve46NF7iEhy4"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "default", "TEST-Automated_Databricks.1", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "9WE7UsQ0PBHKjsWwUWJDk$$bMpGH-L0rLcEaR3CXbZhV" : {
+      "id" : "9WE7UsQ0PBHKjsWwUWJDk$$bMpGH-L0rLcEaR3CXbZhV",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_3",
+        "slug" : "Pipeline_3",
+        "x" : 65.60004425048828,
+        "y" : 137.2004852294922
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "habNY53rhhhyM_ltifxfl$$oD1uqL3eBNeLZe9C_tLoa"
+        } ],
+        "outputs" : [ {
+          "id" : "egID_8qV7RW0WT2mndldQ$$EaDFukcQE5hH4xppBbSfJ"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "default", "TEST-Automated_Databricks.1", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      },
+      "parent" : "hklQJONDVLVVLNw7khWwN"
+    },
+    "9wQmkNAMPnzs0IBSBwE8Q" : {
+      "id" : "9wQmkNAMPnzs0IBSBwE8Q",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "SCALA_DEPENDENCY_MANAGEMENT",
+        "slug" : "SCALA_DEPENDENCY_MANAGEMENT",
+        "x" : 50,
+        "y" : 103.85151672363281
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "out"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/SCALA_DEPENDENCY_MANAGEMENT",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "JDBC_USER",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test_user"
+            }
+          }, {
+            "name" : "SOURCE_TABLE",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            }
+          }, {
+            "name" : "db_secrets",
+            "optional" : true,
+            "kind" : {
+              "type" : "databricks_secret",
+              "value" : "qasecrets_mysql:username"
+            }
+          }, {
+            "name" : "JDBC_URL",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+            }
+          }, {
+            "name" : "JDBC_SOURCE_TABLE",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            }
+          }, {
+            "name" : "CONFIG_BOOLEAN",
+            "optional" : false,
+            "kind" : {
+              "type" : "boolean",
+              "value" : "false"
+            }
+          }, {
+            "name" : "CONFIG_DOUBLE",
+            "optional" : false,
+            "kind" : {
+              "type" : "double",
+              "value" : "12"
+            }
+          }, {
+            "name" : "CONFIG_INT",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "12"
+            }
+          }, {
+            "name" : "CONFIG_FLOAT",
+            "optional" : false,
+            "kind" : {
+              "type" : "float",
+              "value" : "12"
+            }
+          }, {
+            "name" : "CONFIG_STR",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc_url-${JDBC_URL}"
+            }
+          }, {
+            "name" : "c_0",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "0"
+            }
+          }, {
+            "name" : "c_1",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "1"
+            }
+          }, {
+            "name" : "c_st_expr",
+            "optional" : false,
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
+            }
+          }, {
+            "name" : "c_st_long",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_long"
+            }
+          }, {
+            "name" : "c_st_rename",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_boolean_renamed"
+            }
+          }, {
+            "name" : "c_rd_expr",
+            "optional" : false,
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "`c_decimal  -  ` >= 12321 "
+            }
+          }, {
+            "name" : "c_limit_11",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "11"
+            }
+          }, {
+            "name" : "c_row",
+            "optional" : false,
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "row_number()"
+            }
+          }, {
+            "name" : "c_sql_expr",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "%1%"
+            }
+          }, {
+            "name" : "c_regex1",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
+            }
+          }, {
+            "name" : "c_regex2",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            }
+          } ],
+          "instances" : [ "default", "test-instance1", "test-instance2", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "overrides" : {
+            "CONFIG_DOUBLE" : "111",
+            "CONFIG_INT" : "111",
+            "CONFIG_FLOAT" : "222"
+          },
+          "selectedInstance" : "test-instance2"
+        }
+      },
+      "parent" : "2VqhFiGQiffqC_Xv5SiwE"
+    },
+    "gioLYng0mGxaTad_Xsn2N$$KTkDGZw-LO4tTL1SVk-Ri" : {
+      "id" : "gioLYng0mGxaTad_Xsn2N$$KTkDGZw-LO4tTL1SVk-Ri",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_2",
+        "slug" : "Script_2",
+        "x" : -524.7060546875,
+        "y" : 260.5484619140625
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "q8dZvgi8cjJqgwYrHBd1r$$fLBSYPhjioYFnGpi62lXF"
+        } ],
+        "outputs" : [ {
+          "id" : "gPn8d6Y7yQKxa_m1nu-VS$$SzjFVpPghwoOBEatxEl8k"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "code" : "print(\"hello\")"
+      }
+    },
+    "lp4SHlGF4p5RvBiLmkFOe$$bprXoGWZj7Kwoey4Pcum8" : {
+      "id" : "lp4SHlGF4p5RvBiLmkFOe$$bprXoGWZj7Kwoey4Pcum8",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_2",
+        "slug" : "Pipeline_2",
+        "x" : 445.2000427246094,
+        "y" : 139.60047912597656
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UyvCSTqGhOQQHB6RRaRiq$$-OTUE_AScmbmklsbHOWSD"
+        } ],
+        "outputs" : [ {
+          "id" : "0Ui8e0FYkY18y8Sq9Dcl-$$edhgnBEO2bfxU4ObRq6QX"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/SCALA_DEPENDENCY_MANAGEMENT",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "JDBC_USER",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test_user"
+            }
+          }, {
+            "name" : "SOURCE_TABLE",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            }
+          }, {
+            "name" : "db_secrets",
+            "optional" : true,
+            "kind" : {
+              "type" : "databricks_secret",
+              "value" : "qasecrets_mysql:username"
+            }
+          }, {
+            "name" : "JDBC_URL",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+            }
+          }, {
+            "name" : "JDBC_SOURCE_TABLE",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            }
+          }, {
+            "name" : "CONFIG_BOOLEAN",
+            "optional" : false,
+            "kind" : {
+              "type" : "boolean",
+              "value" : "false"
+            }
+          }, {
+            "name" : "CONFIG_DOUBLE",
+            "optional" : false,
+            "kind" : {
+              "type" : "double",
+              "value" : "123"
+            }
+          }, {
+            "name" : "CONFIG_INT",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "3243423"
+            }
+          }, {
+            "name" : "CONFIG_FLOAT",
+            "optional" : false,
+            "kind" : {
+              "type" : "float",
+              "value" : "3454.34534"
+            }
+          }, {
+            "name" : "CONFIG_STR",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc_url-${JDBC_URL}"
+            }
+          }, {
+            "name" : "c_0",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "0"
+            }
+          }, {
+            "name" : "c_1",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "1"
+            }
+          }, {
+            "name" : "c_st_expr",
+            "optional" : false,
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
+            }
+          }, {
+            "name" : "c_st_long",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_long"
+            }
+          }, {
+            "name" : "c_st_rename",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_boolean_renamed"
+            }
+          }, {
+            "name" : "c_rd_expr",
+            "optional" : false,
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "`c_decimal  -  ` >= 12321 "
+            }
+          }, {
+            "name" : "c_limit_11",
+            "optional" : false,
+            "kind" : {
+              "type" : "int",
+              "value" : "11"
+            }
+          }, {
+            "name" : "c_row",
+            "optional" : false,
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "row_number()"
+            }
+          }, {
+            "name" : "c_sql_expr",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "%1%"
+            }
+          }, {
+            "name" : "c_regex1",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
+            }
+          }, {
+            "name" : "c_regex2",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            }
+          } ],
+          "instances" : [ "default", "test-instance1", "test-instance2", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "overrides" : {
+            "CONFIG_DOUBLE" : "1",
+            "CONFIG_INT" : "1",
+            "CONFIG_FLOAT" : "1"
+          },
+          "selectedInstance" : "test-instance1"
+        }
+      },
+      "parent" : "hklQJONDVLVVLNw7khWwN"
+    }
+  },
+  "connections" : [ {
+    "id" : "ZFQBEyr7w5SY66VPEMIBb",
+    "source" : "9wQmkNAMPnzs0IBSBwE8Q",
+    "target" : "NBebEUAvx7OoU25uHz0gj$$nObffZ71E4VzmZo84vl6r",
+    "sourcePort" : "out",
+    "targetPort" : "1wn3Akfm7CIXlIvlK35_o$$XdK2dPpgcH3mF_PGnOpHk"
+  }, {
+    "id" : "0on9XikcypSOaGksSx3zQ",
+    "source" : "NBebEUAvx7OoU25uHz0gj$$nObffZ71E4VzmZo84vl6r",
+    "target" : "ovjnPqQ7QffWB_yZMAphc$$_LhaxQRRx5Tqz4oiu6wyP",
+    "sourcePort" : "zXHRCq-yPQaLbE9l81Zd5$$uPXZQ3YobQouoZqG39wl6",
+    "targetPort" : "IpAsa8v9j_ZcGR0o2sALl$$ZnHt3daLz0cFkJZ_9JWF4"
+  }, {
+    "id" : "vVuFwGVMHaffZghGdwFOE",
+    "source" : "NBebEUAvx7OoU25uHz0gj$$nObffZ71E4VzmZo84vl6r",
+    "target" : "lp4SHlGF4p5RvBiLmkFOe$$bprXoGWZj7Kwoey4Pcum8",
+    "sourcePort" : "zXHRCq-yPQaLbE9l81Zd5$$uPXZQ3YobQouoZqG39wl6",
+    "targetPort" : "UyvCSTqGhOQQHB6RRaRiq$$-OTUE_AScmbmklsbHOWSD"
+  }, {
+    "id" : "0Pj_rqnsDVQyZI3YjlbZ-",
+    "source" : "gioLYng0mGxaTad_Xsn2N$$KTkDGZw-LO4tTL1SVk-Ri",
+    "target" : "UFs7O-iOIs0IUTUxIogFv$$fjpB8BOIaME7Bkc7B2VDy",
+    "sourcePort" : "gPn8d6Y7yQKxa_m1nu-VS$$SzjFVpPghwoOBEatxEl8k",
+    "targetPort" : "FBiYyrP-VsvDQWwsz71M6$$NYJsgJEYPIoqwLDqL57WZ"
+  } ]
+}
