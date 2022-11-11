@@ -31,14 +31,6 @@ object Main {
     )
     df_Reformat_1.cache().count()
     df_Reformat_1.unpersist()
-    val df_src_parquet_all_type_and_partition_withspacehyphens_1 =
-      src_parquet_all_type_and_partition_withspacehyphens_1(spark).interim(
-        "graph",
-        "nWx5-SquUN7rAkxaPGDrk$$_nhpUgozXHNPGhSNNlqcK",
-        "zHB_AHbuXxGulfLpf-XFk$$TIjxriDE51_-2XP8okB1E"
-      )
-    df_src_parquet_all_type_and_partition_withspacehyphens_1.cache().count()
-    df_src_parquet_all_type_and_partition_withspacehyphens_1.unpersist()
   }
 
   def main(args: Array[String]): Unit = {
