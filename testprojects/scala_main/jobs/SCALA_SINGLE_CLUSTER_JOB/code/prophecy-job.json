@@ -34,24 +34,28 @@
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       }
     }, {
-      "id" : "1654",
-      "name" : "captain_livy",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2411",
-      "name" : "test101",
+      "id" : "2420",
+      "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
+      "id" : "1654",
+      "name" : "captain_livy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
       "id" : "2418",
@@ -183,19 +187,6 @@
         "availableClusterSizes" : [ "small", "adv-json1" ]
       }
     }, {
-      "id" : "2412",
-      "name" : "test_10001",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "2372",
       "name" : "TEST-Automated_Databricks1",
       "clusterSizes" : {
@@ -288,8 +279,8 @@
       "metadata" : {
         "label" : "Pipeline_1",
         "slug" : "Pipeline",
-        "x" : 280,
-        "y" : 160
+        "x" : 257.20001220703125,
+        "y" : 175.60000610351562
       },
       "ports" : {
         "inputs" : [ {
@@ -312,7 +303,9 @@
         "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -324,8 +317,8 @@
       "metadata" : {
         "label" : "Pipeline_3",
         "slug" : "Pipeline",
-        "x" : 560,
-        "y" : 160
+        "x" : 743.5999755859375,
+        "y" : 170.8000030517578
       },
       "ports" : {
         "inputs" : [ {
@@ -348,7 +341,9 @@
         "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "livy_kishore", "default", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1", "jobSize-databricksBasic.New" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -390,8 +385,8 @@
       "metadata" : {
         "label" : "Pipeline_6",
         "slug" : "Pipeline",
-        "x" : 768,
-        "y" : 23
+        "x" : 1029.5999755859375,
+        "y" : 35
       },
       "ports" : {
         "inputs" : [ {
@@ -694,7 +689,9 @@
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
             }
           } ],
-          "instances" : [ "default", "test-instance1", "test-instance2", "dev_11rt", "newfabric", "ebs_ssd", "test-instance3", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -706,8 +703,8 @@
       "metadata" : {
         "label" : "Pipeline_0",
         "slug" : "Pipeline",
-        "x" : 140,
-        "y" : 160
+        "x" : 63.20000076293945,
+        "y" : 179.1999969482422
       },
       "ports" : {
         "inputs" : [ {
@@ -1010,7 +1007,9 @@
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
             }
           } ],
-          "instances" : [ "default", "test-instance1", "test-instance2", "dev_11rt", "newfabric", "ebs_ssd", "test-instance3", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
+          },
           "overrides" : {
             "CONFIG_BOOLEAN" : "true",
             "CONFIG_DOUBLE" : "2222222",
@@ -1026,8 +1025,8 @@
       "metadata" : {
         "label" : "Pipeline_2",
         "slug" : "Pipeline",
-        "x" : 420,
-        "y" : 160
+        "x" : 523.2000122070312,
+        "y" : 167.1999969482422
       },
       "ports" : {
         "inputs" : [ {
@@ -1050,7 +1049,9 @@
         "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "livy_kishore", "default", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1", "jobSize-databricksBasic.New" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -1062,8 +1063,8 @@
       "metadata" : {
         "label" : "Pipeline_7",
         "slug" : "Pipeline",
-        "x" : 607,
-        "y" : 314.20001220703125
+        "x" : 741.4000244140625,
+        "y" : 356.20001220703125
       },
       "ports" : {
         "inputs" : [ {
@@ -1366,7 +1367,9 @@
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
             }
           } ],
-          "instances" : [ "default", "test-instance1", "test-instance2", "dev_11rt", "newfabric", "ebs_ssd", "test-instance3", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
+          },
           "overrides" : {
             "CONFIG_BOOLEAN" : "true",
             "CONFIG_DOUBLE" : "333333",
@@ -1383,8 +1386,8 @@
       "metadata" : {
         "label" : "Script_1",
         "slug" : "Script",
-        "x" : 766,
-        "y" : 231
+        "x" : 1003.5999755859375,
+        "y" : 271.79998779296875
       },
       "ports" : {
         "inputs" : [ {
@@ -1413,8 +1416,8 @@
       "metadata" : {
         "label" : "Pipeline_4",
         "slug" : "Pipeline",
-        "x" : 12,
-        "y" : 367
+        "x" : -174,
+        "y" : 388.6000061035156
       },
       "ports" : {
         "inputs" : [ {
@@ -1437,7 +1440,9 @@
         "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -1473,7 +1478,9 @@
         "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "livy_kishore", "default", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1", "jobSize-databricksBasic.New" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -1485,8 +1492,8 @@
       "metadata" : {
         "label" : "Script_3",
         "slug" : "Script",
-        "x" : 477,
-        "y" : -2
+        "x" : 510.6000061035156,
+        "y" : -32
       },
       "ports" : {
         "inputs" : [ {

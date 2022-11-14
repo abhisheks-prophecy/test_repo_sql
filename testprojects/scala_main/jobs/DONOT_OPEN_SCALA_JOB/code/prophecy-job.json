@@ -34,6 +34,23 @@
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       }
     }, {
+      "id" : "2420",
+      "name" : "dev_sdl_acl_dbfs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
       "id" : "1654",
       "name" : "captain_livy",
       "clusterSizes" : {
@@ -356,7 +373,9 @@
               "value" : "3454.34534"
             }
           } ],
-          "instances" : [ "livy_kishore", "default", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy", "TEST-Automated_Livy.1" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+          },
           "overrides" : {
             "CONFIG_DOUBLE" : "22.22",
             "CONFIG_STR" : "jdbc_url-${JDBC_URL}",

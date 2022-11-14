@@ -35,24 +35,28 @@
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       }
     }, {
-      "id" : "1654",
-      "name" : "captain_livy",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2411",
-      "name" : "test101",
+      "id" : "2420",
+      "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
+      "id" : "1654",
+      "name" : "captain_livy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
       "id" : "2418",
@@ -182,19 +186,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1" ]
-      }
-    }, {
-      "id" : "2412",
-      "name" : "test_10001",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
       }
     }, {
       "id" : "2372",
@@ -343,7 +334,9 @@
         "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default", "dev_11rt", "newfabric", "ebs_ssd", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }

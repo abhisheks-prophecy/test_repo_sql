@@ -35,24 +35,28 @@
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       }
     }, {
-      "id" : "1654",
-      "name" : "captain_livy",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2411",
-      "name" : "test101",
+      "id" : "2420",
+      "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
+      "id" : "1654",
+      "name" : "captain_livy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
       "id" : "2418",
@@ -182,19 +186,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1" ]
-      }
-    }, {
-      "id" : "2412",
-      "name" : "test_10001",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
       }
     }, {
       "id" : "2372",
@@ -593,7 +584,9 @@
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
             }
           } ],
-          "instances" : [ "default", "test-instance1", "test-instance2", "dev_11rt", "newfabric", "ebs_ssd", "test-instance3", "dev1", "dev", "captain_livy" ],
+          "instances" : {
+            "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
+          },
           "overrides" : {
             "CONFIG_DOUBLE" : "22",
             "CONFIG_INT" : "22",
