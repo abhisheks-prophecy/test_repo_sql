@@ -35,24 +35,28 @@
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       }
     }, {
-      "id" : "1654",
-      "name" : "captain_livy",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2411",
-      "name" : "test101",
+      "id" : "2420",
+      "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
+      "id" : "1654",
+      "name" : "captain_livy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
       "id" : "2418",
@@ -182,19 +186,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1" ]
-      }
-    }, {
-      "id" : "2412",
-      "name" : "test_10001",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
       }
     }, {
       "id" : "2372",
@@ -551,7 +542,9 @@
               "value" : "stringwith$$one#%^&*()-=!@#"
             }
           } ],
-          "instances" : [ "default", "test-instance1", "test-instance8", "test-instance5", "test-instance2", "test-instance6", "test-instance7", "test-instance3", "test-instance4" ],
+          "instances" : {
+            "PythonProjectCloneExternalGit" : [ "test-instance7", "test-instance2", "test-instance3", "test-instance6", "test-instance5", "test-instance1", "default", "test-instance4", "test-instance8" ]
+          },
           "overrides" : {
             "CONFIG_DOUBLE" : "22",
             "CONFIG_INT" : "22",
