@@ -207,3 +207,7 @@ Changes
 *** Release notes for version: 2.1 ***
 
 2.1
+
+*** Release notes for version: 2.3 ***
+
+2.3
