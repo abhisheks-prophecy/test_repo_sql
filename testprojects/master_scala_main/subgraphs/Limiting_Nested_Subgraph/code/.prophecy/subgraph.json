@@ -1,0 +1,150 @@
+{
+  "id" : "OaKCsK3ato6ctkNWgaM8o",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "6dMNwyZG9n7yqlxPsQbRj",
+      "slug" : "in0"
+    } ],
+    "outputs" : [ {
+      "id" : "0hJ2lget9a9VEdH_YIn5f",
+      "slug" : "out0"
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "org.scala.limiting_nested"
+  },
+  "connections" : [ {
+    "id" : "waqUhekzwummaLPU_eVcI",
+    "source" : "OaKCsK3ato6ctkNWgaM8o",
+    "sourcePort" : "6dMNwyZG9n7yqlxPsQbRj",
+    "target" : "2JIu0jwy5tD-x1CURmrLp",
+    "targetPort" : "wnyei9G6DJtuvkLOI-Zmq"
+  }, {
+    "id" : "bb2XtY3vINVFiCT3P66zK",
+    "source" : "2JIu0jwy5tD-x1CURmrLp",
+    "sourcePort" : "JNRKyMLBpRlsuV-5UDYns",
+    "target" : "oQJx0vZEL7Gsn2wuWNeE4",
+    "targetPort" : "T766i6zdfdNi9YzI7Q5z1"
+  }, {
+    "id" : "BnhANNloxgd6PMxAjRn24",
+    "source" : "oQJx0vZEL7Gsn2wuWNeE4",
+    "sourcePort" : "RUbh5J_It_nxxyVgttyL7",
+    "target" : "OaKCsK3ato6ctkNWgaM8o",
+    "targetPort" : "0hJ2lget9a9VEdH_YIn5f"
+  } ],
+  "processes" : {
+    "2JIu0jwy5tD-x1CURmrLp" : {
+      "id" : "2JIu0jwy5tD-x1CURmrLp",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_Inside_Outer",
+        "slug" : "Limit_Inside_Outer",
+        "x" : 744,
+        "y" : 556,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wnyei9G6DJtuvkLOI-Zmq",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "JNRKyMLBpRlsuV-5UDYns",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "limit" : "90"
+      }
+    },
+    "oQJx0vZEL7Gsn2wuWNeE4" : {
+      "id" : "oQJx0vZEL7Gsn2wuWNeE4",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_Inner",
+        "slug" : "Subgraph_Inner",
+        "x" : 1512,
+        "y" : 590,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "T766i6zdfdNi9YzI7Q5z1",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "RUbh5J_It_nxxyVgttyL7",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "dJMrhtro1FLbH8VjMNVdO",
+        "source" : "oQJx0vZEL7Gsn2wuWNeE4",
+        "sourcePort" : "T766i6zdfdNi9YzI7Q5z1",
+        "target" : "8_d1jeJcPj5GIc4ma0o-n",
+        "targetPort" : "StiQzkckPupfXuzoUR4sr"
+      }, {
+        "id" : "uUR13LoTMP-sdIDw3wsL3",
+        "source" : "8_d1jeJcPj5GIc4ma0o-n",
+        "sourcePort" : "pT3Nfa_x_Jy8Ai3P7BecH",
+        "target" : "oQJx0vZEL7Gsn2wuWNeE4",
+        "targetPort" : "RUbh5J_It_nxxyVgttyL7"
+      } ],
+      "processes" : {
+        "8_d1jeJcPj5GIc4ma0o-n" : {
+          "id" : "8_d1jeJcPj5GIc4ma0o-n",
+          "component" : "Limit",
+          "metadata" : {
+            "label" : "Limit_Inside_Inner",
+            "slug" : "Limit_Inside_Inner",
+            "x" : 1240,
+            "y" : 628,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "StiQzkckPupfXuzoUR4sr",
+              "slug" : "in"
+            } ],
+            "outputs" : [ {
+              "id" : "pT3Nfa_x_Jy8Ai3P7BecH",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "limit" : "50"
+          }
+        }
+      }
+    }
+  }
+}
