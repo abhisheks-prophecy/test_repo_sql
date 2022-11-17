@@ -105,7 +105,7 @@
           "name" : "CONFIG_STR",
           "kind" : {
             "type" : "string",
-            "value" : "jdbc_url-${JDBC_URL}"
+            "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
           },
           "optional" : false
         }, {
@@ -187,9 +187,15 @@
           "optional" : false
         } ]
       },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance2"
+      "selected" : "test-instance2",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
     },
     "sparkConf" : [ {
       "name" : "spark_config1",
@@ -256,6 +262,13 @@
       "name" : "prophecy-libs-4.0.0",
       "exclusions" : [ ],
       "id" : "GXM_V",
+      "type" : "coordinates",
+      "enabled" : false
+    }, {
+      "coordinates" : "mysql:mysql-connector-java:8.0.28",
+      "name" : "mysql-828",
+      "exclusions" : [ ],
+      "id" : "E6bZY",
       "type" : "coordinates",
       "enabled" : false
     } ],

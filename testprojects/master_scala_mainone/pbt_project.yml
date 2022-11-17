@@ -37,17 +37,26 @@ pipelines:
     datasets:
       inputs:
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_no_partition
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_jdbc_dbsecrets_test_table
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_csv_special_char_column_name
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_jdbc_dbsecrets_test_table
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_csv_special_char_column_name
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_no_partition
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_orc_all_type_no_partition
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_avro_CustsDatasetInput
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_catalog_table_test_catalog_source
-      - http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git/@scala_project/0.1.3/5689/datasets/dataset_cust_in
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_delta_all_type_no_partition
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_orc_all_type_no_partition
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_avro_CustsDatasetInput
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_delta_all_type_no_partition
+      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_orc_all_type_no_partition
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_catalog_table_test_catalog_source
       outputs:
       - 6148/datasets/dest_12345
       - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/dest_jdbc_dbsecrets_test_table
+      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/dest_jdbc_dbsecrets_test_table
     dependencies: {}
   pipelines/SCALA_SG_SRC:
     name: SCALA_SG_SRC
@@ -756,6 +765,12 @@ dependencies:
   name: prophecy-libs-4.0.0
   exclusions: []
   id: GXM_V
+  type: coordinates
+  enabled: false
+- coordinates: mysql:mysql-connector-java:8.0.28
+  name: mysql-828
+  exclusions: []
+  id: E6bZY
   type: coordinates
   enabled: false
 projectDependencies: {}
