@@ -22,6 +22,18 @@ class SetOperation_1Test extends FunSuite with DataFrameSuiteBase {
 
   test("Unit Test 0") {
 
+    val dfIn0 = createDfFromResourceFiles(
+      spark,
+      "/data/graph/SetOperation_1/in0/schema.json",
+      "/data/graph/SetOperation_1/in0/data/unit_test_0.json",
+      "in0"
+    )
+    val dfIn1 = createDfFromResourceFiles(
+      spark,
+      "/data/graph/SetOperation_1/in1/schema.json",
+      "/data/graph/SetOperation_1/in1/data/unit_test_0.json",
+      "in1"
+    )
     val dfOut = createDfFromResourceFiles(
       spark,
       "/data/graph/SetOperation_1/out/schema.json",
