@@ -1,6 +1,6 @@
 name: PythonProject
 description: ''
-version: '2.3'
+version: '2.5'
 author: abhisheks+e2etests@simpledatalabs.com
 language: python
 buildSystem: wheel
@@ -50,15 +50,15 @@ pipelines:
     createdAt: '2022-06-29 04:43:12'
     datasets:
       inputs:
-      - 7235/datasets/src_text_DatasetWithSpaceHyphens
       - 7235/datasets/src_orc_all_type_no_partition
-      - 7235/datasets/src_csv_all_type_no_partition
-      - 7235/datasets/src_catalog_table_test_catalog_source
+      - 7235/datasets/src_text_DatasetWithSpaceHyphens
       - 7235/datasets/src_csv_special_char_column_name
       - 7235/datasets/src_json_input_custs
       - 7235/datasets/src_avro_CustsDatasetInput
       - 7235/datasets/src_jdbc_dbsecrets_test_table
       - 7235/datasets/src_parquet_all_type_no_partition
+      - 7235/datasets/src_catalog_table_test_catalog_source
+      - 7235/datasets/src_csv_all_type_no_partition
       - 7235/datasets/src_parquet_all_type_and_partition_withspacehyphens
       - 7235/datasets/src_delta_all_type_no_partition
       outputs:
@@ -499,6 +499,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 15:01:52'
+  datasets/prophecy_test_component_runs:
+    name: prophecy_test_component_runs
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-11-14 15:26:01'
+    physicalDatasets:
+      dev:
+        fabricId: 299
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-11-14 15:26:02'
   datasets/out_dataset_cust:
     name: out_dataset_cust
     description: ''
@@ -719,3 +731,5 @@ dependencies:
   id: '701579940'
   type: pypi
   enabled: false
+projectDependencies: {}
+pipelineConfigurations: {}

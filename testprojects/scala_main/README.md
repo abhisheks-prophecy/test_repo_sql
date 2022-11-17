@@ -219,3 +219,7 @@ final release
 *** Release notes for version: 2.4 ***
 
 2.4
+
+*** Release notes for version: 2.5 ***
+
+2.5
