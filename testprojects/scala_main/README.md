@@ -215,3 +215,11 @@ final release
 *** Release notes for version: 2.3 ***
 
 2.3
+
+*** Release notes for version: 2.4 ***
+
+2.4
+
+*** Release notes for version: 2.5 ***
+
+2.5
