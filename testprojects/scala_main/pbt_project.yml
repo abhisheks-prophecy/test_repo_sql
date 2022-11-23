@@ -14,17 +14,30 @@ pipelines:
     createdAt: '2022-08-11 07:27:24'
     datasets:
       inputs:
-      - 7234/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - 7234/datasets/src_parquet_all_type_no_partition
-      - 7234/datasets/src_jdbc_dbsecrets_test_table
-      - 7234/datasets/src_orc_all_type_no_partition
-      - 7234/datasets/src_delta_all_type_no_partition
-      - 7234/datasets/src_csv_special_char_column_name
-      - 7234/datasets/src_json_input_custs
-      - 7234/datasets/src_avro_CustsDatasetInput
-      - 7234/datasets/src_catalog_table_test_catalog_source
+      - datasets/src_avro_CustsDatasetInput
+      - datasets/src_catalog_table_test_catalog_source
+      - datasets/src_csv_special_char_column_name
+      - datasets/src_delta_all_type_no_partition
+      - datasets/src_jdbc_dbsecrets_test_table
+      - datasets/src_json_input_custs
+      - datasets/src_orc_all_type_no_partition
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/src_parquet_all_type_no_partition
       outputs:
-      - 7234/datasets/dest_jdbc_userandpass_test_table
+      - datasets/dest_jdbc_userandpass_test_table
+    dependencies: {}
+  pipelines/SCALA_UNITY_CATALOG:
+    name: SCALA_UNITY_CATALOG
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2022-11-23 08:59:52'
+    datasets:
+      inputs:
+      - datasets/qa_database_all_type_parquet
+      - datasets/src_parquet_unity_catalog
+      outputs: []
     dependencies: {}
   pipelines/SCALA_BASIC:
     name: SCALA_BASIC
@@ -35,8 +48,7 @@ pipelines:
     createdAt: '2022-07-28 12:00:15'
     datasets:
       inputs:
-      - 7234/datasets/src_csv_special_char_column_name
-      - 7234/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/src_csv_special_char_column_name
       outputs: []
     dependencies: {}
   pipelines/SCALA_AZURE:
@@ -60,17 +72,17 @@ pipelines:
     createdAt: '2022-06-29 05:58:26'
     datasets:
       inputs:
-      - 7234/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - 7234/datasets/src_parquet_all_type_no_partition
-      - 7234/datasets/src_jdbc_dbsecrets_test_table
-      - 7234/datasets/src_orc_all_type_no_partition
-      - 7234/datasets/src_delta_all_type_no_partition
-      - 7234/datasets/src_csv_special_char_column_name
-      - 7234/datasets/src_json_input_custs
-      - 7234/datasets/src_avro_CustsDatasetInput
-      - 7234/datasets/src_catalog_table_test_catalog_source
+      - datasets/src_avro_CustsDatasetInput
+      - datasets/src_catalog_table_test_catalog_source
+      - datasets/src_csv_special_char_column_name
+      - datasets/src_delta_all_type_no_partition
+      - datasets/src_jdbc_dbsecrets_test_table
+      - datasets/src_json_input_custs
+      - datasets/src_orc_all_type_no_partition
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/src_parquet_all_type_no_partition
       outputs:
-      - 7234/datasets/dest_jdbc_userandpass_test_table
+      - datasets/dest_jdbc_userandpass_test_table
     dependencies: {}
   pipelines/SCALA_SG_SRC:
     name: SCALA_SG_SRC
@@ -81,8 +93,8 @@ pipelines:
     createdAt: '2022-06-29 04:13:26'
     datasets:
       inputs:
-      - 7234/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - 7234/datasets/src_avro_CustsDatasetInput
+      - datasets/src_avro_CustsDatasetInput
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs: []
     dependencies: {}
   pipelines/LIVY_SCALA:
@@ -98,18 +110,6 @@ pipelines:
       outputs: []
     dependencies: {}
 datasets:
-  datasets/src_azure:
-    name: src_azure
-    description: ''
-    author: abhisheks+e2etests@simpledatalabs.com
-    createdAt: '2022-10-12 13:01:36'
-    physicalDatasets:
-      dev:
-        fabricId: 299
-        datasetType: File
-        description: ''
-        author: abhisheks+e2etests@simpledatalabs.com
-        createdAt: '2022-10-12 13:01:36'
   datasets/dest_json_input_custs:
     name: dest_json_input_custs
     description: ''
@@ -182,6 +182,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:23:05'
+  datasets/qa_database_all_type_parquet:
+    name: qa_database_all_type_parquet
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-11-23 09:10:47'
+    physicalDatasets:
+      dev_unity_catalog:
+        fabricId: 2601
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-11-23 09:10:48'
   datasets/src_parquet_all_type_no_partition:
     name: src_parquet_all_type_no_partition
     description: ''
@@ -290,6 +302,30 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:38:25'
+  datasets/src_azure:
+    name: src_azure
+    description: ''
+    author: abhisheks+e2etests@simpledatalabs.com
+    createdAt: '2022-10-12 13:01:36'
+    physicalDatasets:
+      dev:
+        fabricId: 299
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@simpledatalabs.com
+        createdAt: '2022-10-12 13:01:36'
+  datasets/src_parquet_unity_catalog:
+    name: src_parquet_unity_catalog
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-11-23 09:01:51'
+    physicalDatasets:
+      dev_unity_catalog:
+        fabricId: 2601
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-11-23 09:01:51'
   datasets/src_xlsx:
     name: src_xlsx
     description: ''
