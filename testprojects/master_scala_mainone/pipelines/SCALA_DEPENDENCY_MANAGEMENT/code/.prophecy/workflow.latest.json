@@ -105,7 +105,7 @@
           "name" : "CONFIG_STR",
           "kind" : {
             "type" : "string",
-            "value" : "jdbc_url-${JDBC_URL}"
+            "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
           },
           "optional" : false
         }, {
@@ -187,9 +187,15 @@
           "optional" : false
         } ]
       },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance2"
+      "selected" : "test-instance2",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
     },
     "sparkConf" : [ {
       "name" : "spark_config1",
@@ -256,6 +262,13 @@
       "name" : "prophecy-libs-4.0.0",
       "exclusions" : [ ],
       "id" : "GXM_V",
+      "type" : "coordinates",
+      "enabled" : false
+    }, {
+      "coordinates" : "mysql:mysql-connector-java:8.0.28",
+      "name" : "mysql-828",
+      "exclusions" : [ ],
+      "id" : "E6bZY",
       "type" : "coordinates",
       "enabled" : false
     } ],
@@ -792,8 +805,8 @@
       "id" : "XM4cdlXB7oVFseHwX2LRg",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_3",
-        "slug" : "Source_3",
+        "label" : "src_avro_CustsDatasetInput",
+        "slug" : "src_avro_CustsDatasetInput",
         "x" : -1340.125,
         "y" : 8.5,
         "phase" : 0,
@@ -811,7 +824,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_avro_CustsDatasetInput"
+        "datasetId" : "datasets/src_avro_CustsDatasetInput"
       }
     },
     "ntYO_C9LBj2oXcT9ScxKC" : {
@@ -1586,8 +1599,8 @@
       "id" : "nCk_vxm7W80JgQ2ANSHA_",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_7",
-        "slug" : "Source_7",
+        "label" : "dataset_cust_in_3",
+        "slug" : "dataset_cust_in_3",
         "x" : -1267.8125,
         "y" : 154.75,
         "phase" : 0,
@@ -1605,15 +1618,15 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "QQ_f4SrARPaP0ZtL6uV0r" : {
       "id" : "QQ_f4SrARPaP0ZtL6uV0r",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_5",
-        "slug" : "Source_5",
+        "label" : "dataset_cust_in_1",
+        "slug" : "dataset_cust_in_1",
         "x" : -1302.8125,
         "y" : -277.25,
         "phase" : 0,
@@ -1631,15 +1644,15 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "A7YBjCffwys4LPAleAKpC" : {
       "id" : "A7YBjCffwys4LPAleAKpC",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_6",
-        "slug" : "Source_6",
+        "label" : "dataset_cust_in_4",
+        "slug" : "dataset_cust_in_4",
         "x" : -1335.8125,
         "y" : -134.25,
         "phase" : 0,
@@ -1657,7 +1670,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "BtjgWEFk-IrCWsqN3RqDF" : {
@@ -1693,8 +1706,8 @@
       "id" : "osOfTnoQY4cOYhV6LnBYq",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_8",
-        "slug" : "Source_8",
+        "label" : "dataset_cust_in_2",
+        "slug" : "dataset_cust_in_2",
         "x" : -1137.8125,
         "y" : 194.75,
         "phase" : 0,
@@ -1712,15 +1725,15 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "mIzhZK1DvRR0LaQOQgY-y$$RPrxiTU9k2wWEIk8Ctc8E" : {
       "id" : "mIzhZK1DvRR0LaQOQgY-y$$RPrxiTU9k2wWEIk8Ctc8E",
       "component" : "Target",
       "metadata" : {
-        "label" : "Target_2",
-        "slug" : "Target_2",
+        "label" : "dest_jdbc_dbsecrets_test_table",
+        "slug" : "dest_jdbc_dbsecrets_test_table",
         "x" : -794.3125,
         "y" : -930.2613525390625,
         "phase" : 0,
@@ -1738,7 +1751,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/dest_jdbc_dbsecrets_test_table"
+        "datasetId" : "datasets/dest_jdbc_dbsecrets_test_table"
       }
     },
     "JDdGnXnYzeiw8aXJ5gB5q" : {
@@ -1804,8 +1817,8 @@
       "id" : "xoDRuSduB1niuIF8PP3ct",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_9",
-        "slug" : "Source_9",
+        "label" : "src_orc_all_type_no_partition",
+        "slug" : "src_orc_all_type_no_partition",
         "x" : -633.65625,
         "y" : -837.220458984375,
         "phase" : 0,
@@ -1823,7 +1836,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_orc_all_type_no_partition"
+        "datasetId" : "datasets/src_orc_all_type_no_partition"
       }
     },
     "gNCO_k3OESC15dRefnTjD" : {
@@ -1863,8 +1876,8 @@
       "id" : "Fmg6g-ViOm77hFxIpAPch",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_11",
-        "slug" : "Source_11",
+        "label" : "src_delta_all_type_no_partition",
+        "slug" : "src_delta_all_type_no_partition",
         "x" : -1394.65625,
         "y" : -701.220458984375,
         "phase" : 0,
@@ -1882,7 +1895,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_delta_all_type_no_partition"
+        "datasetId" : "datasets/src_delta_all_type_no_partition"
       }
     },
     "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz" : {
@@ -1945,15 +1958,15 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_and_partition_withspacehyphens"
+        "datasetId" : "datasets/src_parquet_all_type_and_partition_withspacehyphens"
       }
     },
     "FMl2GuBQkrf6_L2-1_mJj$$StZaODbsxnN9fIdLwaO0z" : {
       "id" : "FMl2GuBQkrf6_L2-1_mJj$$StZaODbsxnN9fIdLwaO0z",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_14",
-        "slug" : "Source_14",
+        "label" : "src_jdbc_dbsecrets_test_table",
+        "slug" : "src_jdbc_dbsecrets_test_table",
         "x" : -1273.3125,
         "y" : -911.2613525390625,
         "phase" : 0,
@@ -1971,7 +1984,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_jdbc_dbsecrets_test_table"
+        "datasetId" : "datasets/src_jdbc_dbsecrets_test_table"
       }
     },
     "X5J7daeiMxXXaSTwpkDu9$$bZ2O5xQ9NUIlbSkMbv1MY" : {
@@ -2432,8 +2445,8 @@
       "id" : "vmRKV0Nd6-lh2PBG9DCyM$$r1IXlDV-WCE_ANbMUvQcs",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_15",
-        "slug" : "Source_15",
+        "label" : "src_catalog_table_test_catalog_source",
+        "slug" : "src_catalog_table_test_catalog_source",
         "x" : -1301.3567708333335,
         "y" : -1034.1775390624998,
         "phase" : 0,
@@ -2451,7 +2464,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_catalog_table_test_catalog_source"
+        "datasetId" : "datasets/src_catalog_table_test_catalog_source"
       }
     },
     "nQiz2d6SRIARVLzvC1odD$$pbN4wtXHyLQPsfLa3oD2E" : {
@@ -2805,8 +2818,8 @@
       "id" : "nEj64p7qzVS7z0LXXTFkx",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_1",
-        "slug" : "Source_1",
+        "label" : "src_csv_special_char_column_name",
+        "slug" : "src_csv_special_char_column_name",
         "x" : -795.75,
         "y" : -179,
         "phase" : 0,
@@ -2824,7 +2837,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_csv_special_char_column_name"
+        "datasetId" : "datasets/src_csv_special_char_column_name"
       }
     },
     "hxZRArGTe6IeA715uZ9hX" : {
@@ -4661,7 +4674,7 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+            "datasetId" : "datasets/dataset_cust_in"
           }
         },
         "UHalLyvCgbZTCWcD0QsBK$$GdqlyAdFgm2s5wODINHSg" : {
@@ -5986,8 +5999,8 @@
       "id" : "9MW3M6D_dPk34335bQHHC",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_4",
-        "slug" : "Source_4",
+        "label" : "dataset_cust_in",
+        "slug" : "dataset_cust_in",
         "x" : -1257.8125,
         "y" : -430.25,
         "phase" : 0,
@@ -6005,15 +6018,15 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "PM7sxRmKo0cGk1IYdBNtT" : {
       "id" : "PM7sxRmKo0cGk1IYdBNtT",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_2",
-        "slug" : "Source_2",
+        "label" : "src_parquet_all_type_no_partition",
+        "slug" : "src_parquet_all_type_no_partition",
         "x" : -679.5,
         "y" : -691,
         "phase" : 0,
@@ -6031,7 +6044,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_no_partition"
+        "datasetId" : "datasets/src_parquet_all_type_no_partition"
       }
     },
     "5jhe2NMutKCmtfsWW03Dh" : {

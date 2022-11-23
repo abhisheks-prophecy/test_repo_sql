@@ -9,9 +9,11 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Source_15 {
+object src_orc_all_type_no_partition {
 
   def apply(spark: SparkSession): DataFrame =
-    spark.read.table("qa_database.test_catalog_source")
+    spark.read
+      .format("orc")
+      .load("dbfs:/Prophecy/qa_data/orc/all_type_no_partition")
 
 }

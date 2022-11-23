@@ -9,7 +9,7 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Source_11 {
+object src_delta_all_type_no_partition {
 
   def apply(spark: SparkSession): DataFrame =
     spark.read

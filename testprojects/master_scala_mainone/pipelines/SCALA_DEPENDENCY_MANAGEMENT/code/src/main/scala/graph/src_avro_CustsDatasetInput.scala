@@ -9,7 +9,7 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Source_3 {
+object src_avro_CustsDatasetInput {
 
   def apply(spark: SparkSession): DataFrame = {
     import org.apache.avro.Schema

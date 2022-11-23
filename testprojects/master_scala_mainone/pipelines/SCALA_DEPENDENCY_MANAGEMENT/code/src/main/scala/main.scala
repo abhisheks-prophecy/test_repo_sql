@@ -16,20 +16,20 @@ import java.time._
 object Main {
 
   def graph(spark: SparkSession): Unit = {
-    val df_Source_5 = Source_5(spark).interim("graph",
-                                              "QQ_f4SrARPaP0ZtL6uV0r",
-                                              "FtKm0kyfkwIxab-8yOffM"
-    )
-    Lookup_2(spark, df_Source_5)
-    val df_Source_9 = Source_9(spark).interim("graph",
-                                              "xoDRuSduB1niuIF8PP3ct",
-                                              "AJqWz1Up0SmtM70ipV65i"
-    )
-    val df_FlattenSchema_1 = FlattenSchema_1(spark, df_Source_9).interim(
+    val df_dataset_cust_in_1 = dataset_cust_in_1(spark).interim(
       "graph",
-      "Szohjp1gWxHYvFe2IrcM0$$UyKRJZMAGITZk2c-3nrry",
-      "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd"
+      "QQ_f4SrARPaP0ZtL6uV0r",
+      "FtKm0kyfkwIxab-8yOffM"
     )
+    Lookup_2(spark, df_dataset_cust_in_1)
+    val df_src_orc_all_type_no_partition = src_orc_all_type_no_partition(spark)
+      .interim("graph", "xoDRuSduB1niuIF8PP3ct", "AJqWz1Up0SmtM70ipV65i")
+    val df_FlattenSchema_1 =
+      FlattenSchema_1(spark, df_src_orc_all_type_no_partition).interim(
+        "graph",
+        "Szohjp1gWxHYvFe2IrcM0$$UyKRJZMAGITZk2c-3nrry",
+        "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd"
+      )
     val df_all_type_parquet = all_type_parquet(spark).interim(
       "graph",
       "4c8lUyCOBMQXJt_5f7dbP$$hbMC_bA0Uq2x2q8FW4tAX",
@@ -46,32 +46,36 @@ object Main {
       "vpuiPUloPPI5wKsdnBW2X$$9hYAzmyJqyva6xBUJQas7",
       "OcRhKi5A8GbNRmjSJ_cwb$$AAP0iEMiVDg3mvHXC8Y01"
     )
-    val df_Source_3 = Source_3(spark)
+    val df_src_avro_CustsDatasetInput = src_avro_CustsDatasetInput(spark)
       .interim("graph", "XM4cdlXB7oVFseHwX2LRg", "gB7zngP2OXebTsbxfm4vF")
       .cache()
-    val df_Source_4 = Source_4(spark).interim("graph",
-                                              "9MW3M6D_dPk34335bQHHC",
-                                              "iZ223SCz_w9vGNJJkCIw-"
+    val df_dataset_cust_in = dataset_cust_in(spark).interim(
+      "graph",
+      "9MW3M6D_dPk34335bQHHC",
+      "iZ223SCz_w9vGNJJkCIw-"
     )
-    val df_Source_6 = Source_6(spark).interim("graph",
-                                              "A7YBjCffwys4LPAleAKpC",
-                                              "bsEyEzvvLYNF6CFSyeX9o"
+    val df_dataset_cust_in_4 = dataset_cust_in_4(spark).interim(
+      "graph",
+      "A7YBjCffwys4LPAleAKpC",
+      "bsEyEzvvLYNF6CFSyeX9o"
     )
-    val df_Source_7 = Source_7(spark).interim("graph",
-                                              "nCk_vxm7W80JgQ2ANSHA_",
-                                              "DqVz4ONoErO0RNOWar0yr"
+    val df_dataset_cust_in_3 = dataset_cust_in_3(spark).interim(
+      "graph",
+      "nCk_vxm7W80JgQ2ANSHA_",
+      "DqVz4ONoErO0RNOWar0yr"
     )
-    val df_Source_8 = Source_8(spark).interim("graph",
-                                              "osOfTnoQY4cOYhV6LnBYq",
-                                              "pkhXK0L27Mh9R-Iq9ZFdV"
+    val df_dataset_cust_in_2 = dataset_cust_in_2(spark).interim(
+      "graph",
+      "osOfTnoQY4cOYhV6LnBYq",
+      "pkhXK0L27Mh9R-Iq9ZFdV"
     )
     val df_Script_1 = Script_1(spark,
-                               df_Source_4,
-                               df_Source_5,
-                               df_Source_6,
-                               df_Source_3,
-                               df_Source_7,
-                               df_Source_8
+                               df_dataset_cust_in,
+                               df_dataset_cust_in_1,
+                               df_dataset_cust_in_4,
+                               df_src_avro_CustsDatasetInput,
+                               df_dataset_cust_in_3,
+                               df_dataset_cust_in_2
     ).interim("graph", "ntYO_C9LBj2oXcT9ScxKC", "8hkvbnxtCb0LGV132c6CU")
     val df_Limit_2 = Limit_2(spark, df_FlattenSchema_1).interim(
       "graph",
@@ -91,15 +95,15 @@ object Main {
     )
     df_Repartition_3.cache().count()
     df_Repartition_3.unpersist()
-    val df_Source_2 = Source_2(spark)
-      .interim("graph", "PM7sxRmKo0cGk1IYdBNtT", "zMejsXna2UN-uClx0tfKO")
-      .cache()
-    val df_ComplexExpression = ComplexExpression(spark, df_Source_2).interim(
-      "graph",
-      "2tRCXGkA-6TfjEnFofIJq",
-      "MwSfNu4URv3g0PC7kc9CR"
-    )
-    val df_Script_2 = Script_2(spark, df_Source_4).interim(
+    val df_src_parquet_all_type_no_partition =
+      src_parquet_all_type_no_partition(spark)
+        .interim("graph", "PM7sxRmKo0cGk1IYdBNtT", "zMejsXna2UN-uClx0tfKO")
+        .cache()
+    val df_ComplexExpression = ComplexExpression(
+      spark,
+      df_src_parquet_all_type_no_partition
+    ).interim("graph", "2tRCXGkA-6TfjEnFofIJq", "MwSfNu4URv3g0PC7kc9CR")
+    val df_Script_2 = Script_2(spark, df_dataset_cust_in).interim(
       "graph",
       "h5XiG-HuGCGv4oeFsPFsp",
       "pOEwcWysgxUYA9RF4iwl-"
@@ -133,24 +137,15 @@ object Main {
     )
     df_OrderBy_4.cache().count()
     df_OrderBy_4.unpersist()
-    val df_Source_1 = Source_1(spark)
-      .interim("graph", "nEj64p7qzVS7z0LXXTFkx", "2G70-QEVG04zcV_iAsqv1")
-      .cache()
-    val df_Filter_1 = Filter_1(spark, df_Source_1).interim(
-      "graph",
-      "gNCO_k3OESC15dRefnTjD",
-      "7ecj16KrYrMc5jCMOyV_-"
-    )
-    val df_Limit_1 = Limit_1(spark, df_Source_1).interim(
-      "graph",
-      "BtjgWEFk-IrCWsqN3RqDF",
-      "vz8yOBdktTG02eFYUsCr_"
-    )
-    val df_OrderBy_1 = OrderBy_1(spark, df_Source_1).interim(
-      "graph",
-      "hxZRArGTe6IeA715uZ9hX",
-      "NGuAUZuZAsYsYcFmYLp2B"
-    )
+    val df_src_csv_special_char_column_name = src_csv_special_char_column_name(
+      spark
+    ).interim("graph", "nEj64p7qzVS7z0LXXTFkx", "2G70-QEVG04zcV_iAsqv1").cache()
+    val df_Filter_1 = Filter_1(spark, df_src_csv_special_char_column_name)
+      .interim("graph", "gNCO_k3OESC15dRefnTjD", "7ecj16KrYrMc5jCMOyV_-")
+    val df_Limit_1 = Limit_1(spark, df_src_csv_special_char_column_name)
+      .interim("graph", "BtjgWEFk-IrCWsqN3RqDF", "vz8yOBdktTG02eFYUsCr_")
+    val df_OrderBy_1 = OrderBy_1(spark, df_src_csv_special_char_column_name)
+      .interim("graph", "hxZRArGTe6IeA715uZ9hX", "NGuAUZuZAsYsYcFmYLp2B")
     val df_Script_3 = Script_3(spark, df_Filter_1, df_Limit_1, df_OrderBy_1)
       .interim("graph", "NRY7mBrYHFd7nMbAND7yB", "_OQB7vQzBoBVAscfGCmoN")
     df_Script_3.cache().count()
@@ -177,37 +172,37 @@ object Main {
       "0BEbuoCU7vasdz7Wr3Ft1",
       "1DyiAt45y3SZCoDDCNVmw"
     )
-    val df_Source_14 = Source_14(spark).interim(
-      "graph",
-      "FMl2GuBQkrf6_L2-1_mJj$$StZaODbsxnN9fIdLwaO0z",
-      "SmN3D2QHD52ep_LvBEm_y$$7ZYjSWohGfpYZvd31RArp"
-    )
+    val df_src_jdbc_dbsecrets_test_table =
+      src_jdbc_dbsecrets_test_table(spark).interim(
+        "graph",
+        "FMl2GuBQkrf6_L2-1_mJj$$StZaODbsxnN9fIdLwaO0z",
+        "SmN3D2QHD52ep_LvBEm_y$$7ZYjSWohGfpYZvd31RArp"
+      )
     withSubgraphName("graph", spark) {
-      withTargetId("Target_2", spark) {
-        Target_2(spark, df_Source_14)
+      withTargetId("dest_jdbc_dbsecrets_test_table", spark) {
+        dest_jdbc_dbsecrets_test_table(spark, df_src_jdbc_dbsecrets_test_table)
       }
     }
-    val df_Repartition_1 = Repartition_1(spark, df_Source_1).interim(
-      "graph",
-      "JDdGnXnYzeiw8aXJ5gB5q",
-      "sNPPOS1ix-ZWOvC-Q0cPD"
-    )
+    val df_Repartition_1 = Repartition_1(spark,
+                                         df_src_csv_special_char_column_name
+    ).interim("graph", "JDdGnXnYzeiw8aXJ5gB5q", "sNPPOS1ix-ZWOvC-Q0cPD")
     df_Repartition_1.cache().count()
     df_Repartition_1.unpersist()
-    val df_Source_11 = Source_11(spark).interim("graph",
-                                                "Fmg6g-ViOm77hFxIpAPch",
-                                                "ee0X8XILMHhyMro4U1_V7"
-    )
-    val df_Source_15 = Source_15(spark).interim(
-      "graph",
-      "vmRKV0Nd6-lh2PBG9DCyM$$r1IXlDV-WCE_ANbMUvQcs",
-      "RiRMBmFnYhsz_jKLJYl4P$$UkVrz2ppXuwUgrdRSOXCa"
-    )
-    val df_Reformat_2 = Reformat_2(spark, df_Source_15).interim(
-      "graph",
-      "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz",
-      "r0a543LnVEGLj4EiHP7P0$$F6WweoNFKHeQEZHINdKwA"
-    )
+    val df_src_delta_all_type_no_partition = src_delta_all_type_no_partition(
+      spark
+    ).interim("graph", "Fmg6g-ViOm77hFxIpAPch", "ee0X8XILMHhyMro4U1_V7")
+    val df_src_catalog_table_test_catalog_source =
+      src_catalog_table_test_catalog_source(spark).interim(
+        "graph",
+        "vmRKV0Nd6-lh2PBG9DCyM$$r1IXlDV-WCE_ANbMUvQcs",
+        "RiRMBmFnYhsz_jKLJYl4P$$UkVrz2ppXuwUgrdRSOXCa"
+      )
+    val df_Reformat_2 =
+      Reformat_2(spark, df_src_catalog_table_test_catalog_source).interim(
+        "graph",
+        "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz",
+        "r0a543LnVEGLj4EiHP7P0$$F6WweoNFKHeQEZHINdKwA"
+      )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
     val df_SchemaTransform_1 = SchemaTransform_1(spark, df_SubGraph_1).interim(
@@ -217,17 +212,17 @@ object Main {
     )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
-    val df_SetOperation_1 =
-      SetOperation_1(spark, df_Source_11, df_Source_11).interim(
-        "graph",
-        "6MGeoO_3CAkDyZvPYAGOY$$W7ZInyQSxiNrP-XuCd9hK",
-        "9nSC-MM8SEHYGTWCQwmW8$$82qHa1CcCeW1MGcYp5jb4"
-      )
-    val df_Join_1 = Join_1(spark, df_Source_1, df_Source_1).interim(
-      "graph",
-      "s6VHxJpslzbkbawETR2P-",
-      "Vgk6IkOJ1X4GCgsQt0iEM"
+    val df_SetOperation_1 = SetOperation_1(spark,
+                                           df_src_delta_all_type_no_partition,
+                                           df_src_delta_all_type_no_partition
+    ).interim("graph",
+              "6MGeoO_3CAkDyZvPYAGOY$$W7ZInyQSxiNrP-XuCd9hK",
+              "9nSC-MM8SEHYGTWCQwmW8$$82qHa1CcCeW1MGcYp5jb4"
     )
+    val df_Join_1 = Join_1(spark,
+                           df_src_csv_special_char_column_name,
+                           df_src_csv_special_char_column_name
+    ).interim("graph", "s6VHxJpslzbkbawETR2P-", "Vgk6IkOJ1X4GCgsQt0iEM")
     df_Join_1.cache().count()
     df_Join_1.unpersist()
     Script_4(spark, df_SetOperation_1)
@@ -298,11 +293,8 @@ object Main {
     )
     df_Reformat_7.cache().count()
     df_Reformat_7.unpersist()
-    val df_Reformat_3 = Reformat_3(spark, df_Source_1).interim(
-      "graph",
-      "5jhe2NMutKCmtfsWW03Dh",
-      "SzVxzITqrWe5YCf4ZUe7t"
-    )
+    val df_Reformat_3 = Reformat_3(spark, df_src_csv_special_char_column_name)
+      .interim("graph", "5jhe2NMutKCmtfsWW03Dh", "SzVxzITqrWe5YCf4ZUe7t")
     df_Reformat_3.cache().count()
     df_Reformat_3.unpersist()
   }

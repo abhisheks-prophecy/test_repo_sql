@@ -1,7 +1,7 @@
 package orc.scala.everythingsg
 
 import io.prophecy.libs._
-import graph.everythingSG_1.recursive.Subgraph_2
+import graph.all_types.recursive.Subgraph_2
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
