@@ -29,6 +29,29 @@ pipelines:
       - datasets/src_azure
       outputs: []
     dependencies: {}
+  pipelines/PYTHON_DEP_MGMT_ALL:
+    name: PYTHON_DEP_MGMT_ALL
+    description: PYTHON_DEP_MGMT_ALL
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: python
+    createdAt: '2022-06-29 04:43:12'
+    datasets:
+      inputs:
+      - 7235/datasets/src_orc_all_type_no_partition
+      - 7235/datasets/src_text_DatasetWithSpaceHyphens
+      - 7235/datasets/src_csv_special_char_column_name
+      - 7235/datasets/src_json_input_custs
+      - 7235/datasets/src_avro_CustsDatasetInput
+      - 7235/datasets/src_jdbc_dbsecrets_test_table
+      - 7235/datasets/src_parquet_all_type_no_partition
+      - 7235/datasets/src_catalog_table_test_catalog_source
+      - 7235/datasets/src_csv_all_type_no_partition
+      - 7235/datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - 7235/datasets/src_delta_all_type_no_partition
+      outputs:
+      - 7235/datasets/dest_csv_all_type_no_partition
+    dependencies: {}
   pipelines/DONOT_OPEN_PYTHON:
     name: DONOT_OPEN_PYTHON
     description: DONOT Open Python
@@ -127,44 +150,6 @@ pipelines:
       inputs:
       - 7235/datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs: []
-    dependencies: {}
-  pipelines/bug_testing_environment_tab:
-    name: bug_testing_environment_tab
-    description: ''
-    author: abhisheks+e2etests@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-11-22 08:44:16'
-    datasets:
-      inputs:
-      - datasets/qa_database_all_type_parquet
-      - datasets/qa_database_dest_all_type_parquet
-      - datasets/qa_database_ttination_1
-      - datasets/qa_database_two_thousand_rows_table
-      outputs: []
-    dependencies: {}
-  pipelines/PYTHON_DEP_MGMT_ALL:
-    name: PYTHON_DEP_MGMT_ALL
-    description: PYTHON_DEP_MGMT_ALL
-    author: abhisheks+e2etests@simpledatalabs.com
-    mode: batch
-    language: python
-    createdAt: '2022-06-29 04:43:12'
-    datasets:
-      inputs:
-      - 7235/datasets/src_orc_all_type_no_partition
-      - 7235/datasets/src_text_DatasetWithSpaceHyphens
-      - 7235/datasets/src_csv_special_char_column_name
-      - 7235/datasets/src_json_input_custs
-      - 7235/datasets/src_avro_CustsDatasetInput
-      - 7235/datasets/src_jdbc_dbsecrets_test_table
-      - 7235/datasets/src_parquet_all_type_no_partition
-      - 7235/datasets/src_catalog_table_test_catalog_source
-      - 7235/datasets/src_csv_all_type_no_partition
-      - 7235/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - 7235/datasets/src_delta_all_type_no_partition
-      outputs:
-      - 7235/datasets/dest_csv_all_type_no_partition
     dependencies: {}
 datasets:
   datasets/dest_avro_CustsDatasetInput:
