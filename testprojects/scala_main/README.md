@@ -227,3 +227,7 @@ final release
 *** Release notes for version: 2.6 ***
 
 2.6
+
+*** Release notes for version: 2.7 ***
+
+2.7

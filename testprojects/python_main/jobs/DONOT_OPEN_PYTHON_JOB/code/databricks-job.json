@@ -22,7 +22,7 @@
     "job_clusters" : [ {
       "job_cluster_key" : "REL_PYTHON_DONOT_OPEN_JOB_default_small",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/DONOT_OPEN_PYTHON_JOB",
@@ -31,6 +31,7 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.packages.path" : "{\"pipelines/DONOT_OPEN_PYTHON\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/DONOT_OPEN_PYTHON-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
         "num_workers" : 1,
@@ -52,11 +53,12 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.10-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.5-3.3.0"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.11"
+          "package" : "prophecy-libs==1.3.12",
+          "repo" : "https://pypi.python.org/simple"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/DONOT_OPEN_PYTHON-1.0-py3-none-any.whl"
