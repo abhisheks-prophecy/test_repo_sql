@@ -358,7 +358,7 @@
       "exclusions" : [ ],
       "id" : "418005485",
       "type" : "coordinates",
-      "enabled" : true
+      "enabled" : false
     }, {
       "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
       "name" : "cats",
@@ -4900,7 +4900,7 @@
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "import epic.models.{ParserSelector}\nval parser = epic.models.ParserSelector.loadParser(\"en\")\nprint(parser)\n\nimport cats.syntax.show._\nval shownInt = 123.show \nprint(shownInt)\n\nvar out0=in0.select(\"c_array--long\")",
+        "script" : "// import epic.models.{ParserSelector}\n// val parser = epic.models.ParserSelector.loadParser(\"en\")\n// print(parser)\n\nimport cats.syntax.show._\nval shownInt = 123.show \nprint(shownInt)\n\nvar out0=in0.select(\"c_array--long\")",
         "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
         "scriptMethodFooter" : "    out0\n}"
       }

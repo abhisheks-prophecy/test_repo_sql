@@ -22,7 +22,7 @@
     "job_clusters" : [ {
       "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/REL_SC_DBFSLIBS",
@@ -31,6 +31,7 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.packages.path" : "{\"pipelines/SCALA_DEP_MGMT_ALL\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEP_MGMT_ALL.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
         "num_workers" : 1,
@@ -48,7 +49,7 @@
         "parameters" : [ "-i", "test-instance1", "-C", "CONFIG_DOUBLE=22", "CONFIG_INT=22", "CONFIG_FLOAT=22" ]
       },
       "libraries" : [ {
-        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-6.2.0-3.2.0.jar"
+        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-6.2.5-3.2.0.jar"
       }, {
         "whl" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/prophecy_libs-1.3.12-py3-none-any.whl"
       }, {
