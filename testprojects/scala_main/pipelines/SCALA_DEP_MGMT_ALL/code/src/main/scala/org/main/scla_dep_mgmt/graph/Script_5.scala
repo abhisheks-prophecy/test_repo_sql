@@ -13,9 +13,9 @@ import java.time._
 
 object Script_5 {
   def apply(spark: SparkSession, in0: DataFrame): DataFrame = {
-    import epic.models.{ParserSelector}
-    val parser = epic.models.ParserSelector.loadParser("en")
-    print(parser)
+    // import epic.models.{ParserSelector}
+    // val parser = epic.models.ParserSelector.loadParser("en")
+    // print(parser)
     
     import cats.syntax.show._
     val shownInt = 123.show 
