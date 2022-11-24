@@ -215,3 +215,7 @@ Changes
 *** Release notes for version: 2.5 ***
 
 2.5
+
+*** Release notes for version: 2.6 ***
+
+2.6
