@@ -1,0 +1,201 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "scala",
+    "fabricId" : "299",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "scala",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "scala",
+      "code" : "package udfs\n\nimport org.apache.spark.sql.expressions._\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql._\n\n/**\n  * Here you can define your custom aggregate functions.\n  *\n  * Make sure to register your `udafs` in the register_udafs function below.\n  *\n  * Example:\n  *\n  * object GeometricMean extends UserDefinedAggregateFunction {\n  *   // This is the input fields for your aggregate function.\n  *   override def inputSchema: org.apache.spark.sql.types.StructType =\n  *     StructType(StructField(\"value\", DoubleType) :: Nil)\n  *\n  *   // This is the internal fields you keep for computing your aggregate.\n  *   override def bufferSchema: StructType = StructType(\n  *     StructField(\"count\", LongType) ::\n  *     StructField(\"product\", DoubleType) :: Nil\n  *   )\n  *\n  *   // This is the output type of your aggregatation function.\n  *   override def dataType: DataType = DoubleType\n  *\n  *   override def deterministic: Boolean = true\n  *\n  *   // This is the initial value for your buffer schema.\n  *   override def initialize(buffer: MutableAggregationBuffer): Unit = {\n  *     buffer(0) = 0L\n  *     buffer(1) = 1.0\n  *   }\n  *\n  *   // This is how to update your buffer schema given an input.\n  *   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {\n  *     buffer(0) = buffer.getAs[Long](0) + 1\n  *     buffer(1) = buffer.getAs[Double](1) * input.getAs[Double](0)\n  *   }\n  *\n  *   // This is how to merge two objects with the bufferSchema type.\n  *   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {\n  *     buffer1(0) = buffer1.getAs[Long](0) + buffer2.getAs[Long](0)\n  *     buffer1(1) = buffer1.getAs[Double](1) * buffer2.getAs[Double](1)\n  *   }\n  *\n  *   // This is where you output the final value, given the final value of your bufferSchema.\n  *   override def evaluate(buffer: Row): Any = {\n  *     math.pow(buffer.getDouble(1), 1.toDouble / buffer.getLong(0))\n  *   }\n  * }\n  *\n  */\n\n\nobject UDAFs {\n  /**\n    * Registers UDAFs with Spark SQL\n    */\n  def registerUDAFs(spark: SparkSession): Unit = {\n    /**\n      * Example:\n      *\n      * spark.udf.register(\"gm\", GeometricMean)\n      *\n      */\n\n\n  }\n}\n"
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "string$$%^&*#@"
+          },
+          "optional" : false
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "int",
+            "value" : 65530
+          },
+          "optional" : false
+        }, {
+          "name" : "c_boolean",
+          "kind" : {
+            "type" : "boolean",
+            "value" : true
+          },
+          "optional" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "test-instance1",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "io.prophecy.pipelines.automatedscalapbt1669640932953"
+  },
+  "connections" : [ {
+    "id" : "FNgpLnuP8pveqytuIX1OL",
+    "source" : "WVHUEhan6YbdJA3nCkn0z$$PuxV5Cuo-FG6-G60Q2tU9",
+    "sourcePort" : "KfxW65xKAy5EiMkxIqlpm$$EEN8dXLB0Omo4xhKYQudb",
+    "target" : "MRBbvXD2ttZhVkqcwI8jj$$tN0Eb5zkm9hzp8WKPgi-G",
+    "targetPort" : "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z"
+  } ],
+  "processes" : {
+    "WVHUEhan6YbdJA3nCkn0z$$PuxV5Cuo-FG6-G60Q2tU9" : {
+      "id" : "WVHUEhan6YbdJA3nCkn0z$$PuxV5Cuo-FG6-G60Q2tU9",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "dataset_cust_in",
+        "slug" : "dataset_cust_in",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "KfxW65xKAy5EiMkxIqlpm$$EEN8dXLB0Omo4xhKYQudb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=http://gitserver:3000/zoYlsmR6_team_778/jUmGuZDl_project_4693.git&subPath=&tag=scala_project/1.0&projectSubscriptionProjectId=4693&path=datasets/dataset_cust_in"
+      }
+    },
+    "MRBbvXD2ttZhVkqcwI8jj$$tN0Eb5zkm9hzp8WKPgi-G" : {
+      "id" : "MRBbvXD2ttZhVkqcwI8jj$$tN0Eb5zkm9hzp8WKPgi-G",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 280,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "ny6a2aIDk_lfBxXXBfPjX$$_Nq-0-cY5E9DFqL3F5l7J",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##first_name", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##last_name", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##customer_id", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##phone", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##email", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##country_code", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##account_open_date", "NZ646fm7DGlSraZK2ByCG$$3JPwtIYZf664etJcJWy1z##account_flags" ],
+        "expressions" : [ {
+          "target" : "col1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat(first_name, last_name, '$c_string', '$c_int', '$c_boolean')"
+          },
+          "description" : ""
+        }, {
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_id"
+          },
+          "description" : ""
+        }, {
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first_name"
+          },
+          "description" : ""
+        }, {
+          "target" : "last_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "last_name"
+          },
+          "description" : ""
+        }, {
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "phone"
+          },
+          "description" : ""
+        }, {
+          "target" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email"
+          },
+          "description" : ""
+        }, {
+          "target" : "country_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "country_code"
+          },
+          "description" : ""
+        }, {
+          "target" : "account_open_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_open_date"
+          },
+          "description" : ""
+        }, {
+          "target" : "account_flags",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_flags"
+          },
+          "description" : ""
+        } ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}
