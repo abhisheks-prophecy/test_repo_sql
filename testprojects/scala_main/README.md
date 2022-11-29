@@ -239,3 +239,7 @@ final release
 *** Release notes for version: 2.9 ***
 
 2.9
+
+*** Release notes for version: 2.11 ***
+
+Changes
