@@ -223,3 +223,27 @@ final release
 *** Release notes for version: 2.5 ***
 
 2.5
+
+*** Release notes for version: 2.6 ***
+
+2.6
+
+*** Release notes for version: 2.7 ***
+
+2.7
+
+*** Release notes for version: 2.8 ***
+
+2.8
+
+*** Release notes for version: 2.9 ***
+
+2.9
+
+*** Release notes for version: 2.11 ***
+
+Changes
+
+*** Release notes for version: 2.12 ***
+
+2.12
