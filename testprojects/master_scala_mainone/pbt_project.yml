@@ -56,13 +56,10 @@ pipelines:
     createdAt: '2022-06-21 07:32:44'
     datasets:
       inputs:
-      - datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in
       - datasets/dataset_cust_in
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs:
-      - 6148/datasets/dest_12345
+      - datasets/dest_12345
     dependencies: {}
   pipelines/SC_CONFIG_PIP:
     name: SC_CONFIG_PIP
@@ -85,12 +82,9 @@ pipelines:
     createdAt: '2022-08-23 04:47:30'
     datasets:
       inputs:
-      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_csv_special_char_column_name
-      - datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git/@PythonMainProject/1.1664556387869/6154/datasets/src_orc_all_type_no_partition
-      - 6148/datasets/src_csv_special_char_column_name
+      - datasets/src_csv_special_char_column_name
       - datasets/src_orc_all_type_no_partition
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs: []
     dependencies: {}
   pipelines/ScalaGCP:
@@ -102,19 +96,18 @@ pipelines:
     createdAt: '2022-08-17 10:12:29'
     datasets:
       inputs:
-      - 6148/datasets/dataset_cust_in
-      - 6148/datasets/src_catalog_table_test_catalog_source
-      - 6148/datasets/src_parquet_all_type_no_partition
-      - 6148/datasets/src_orc_all_type_no_partition
-      - 6148/datasets/src_avro_CustsDatasetInput
-      - 6148/datasets/src_csv_special_char_column_name
-      - 6148/datasets/src_delta_all_type_no_partition
-      - 6148/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - 6148/datasets/src_jdbc_dbsecrets_test_table
-      - gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in
+      - datasets/dataset_cust_in
+      - datasets/src_avro_CustsDatasetInput
+      - datasets/src_catalog_table_test_catalog_source
+      - datasets/src_csv_special_char_column_name
+      - datasets/src_delta_all_type_no_partition
+      - datasets/src_jdbc_dbsecrets_test_table
+      - datasets/src_orc_all_type_no_partition
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/src_parquet_all_type_no_partition
       outputs:
-      - 6148/datasets/dest_jdbc_dbsecrets_test_table
-      - 6148/datasets/dest_12345
+      - datasets/dest_12345
+      - datasets/dest_jdbc_dbsecrets_test_table
     dependencies: {}
 datasets:
   datasets/dest_json_input_custs:
