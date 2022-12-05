@@ -23,7 +23,16 @@ def pipeline(spark: SparkSession) -> None:
         "oSnCy6FWydBV675_CTMv8$$In5C4VfAlHsx5qLzItDuW", 
         "OgcPwunAgx_Y_Y3m8Krd0$$2IcX9S_gny3CS3TcShBZe"
     )
-    Script_4(spark, df_Reformat_1)
+    df_Script_4 = Script_4(spark, df_Reformat_1)
+    df_Script_4 = collectMetrics(
+        spark, 
+        df_Script_4, 
+        "graph", 
+        "Uooc3h8tVmdPw5lJv48-v$$8fU6UMC7OvanJjkndel2x", 
+        "1DpbGVDq4gDguuxlp-FsI$$a6wwBFUElAoCP-OZd2Dyj"
+    )
+    df_Script_4.cache().count()
+    df_Script_4.unpersist()
     df_Script_1 = Script_1(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
     df_Script_1 = collectMetrics(
         spark, 

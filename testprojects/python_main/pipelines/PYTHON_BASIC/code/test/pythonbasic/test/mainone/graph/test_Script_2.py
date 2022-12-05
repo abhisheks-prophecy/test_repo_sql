@@ -26,6 +26,36 @@ class Script_2Test(BaseTestCase):
         dfOut0Computed = Script_2(self.spark, dfIn0)
         assertDFEquals(dfOut0.select("a"), dfOut0Computed.select("a"), self.maxUnequalRowsToShow)
 
+    def test_unit_test_1(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/in0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/in0/data/test_unit_test_1.json',
+            'in0'
+        )
+        dfOut0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/out0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/out0/data/test_unit_test_1.json',
+            'out0'
+        )
+        dfOut0Computed = Script_2(self.spark, dfIn0)
+
+    def test_unit_test_2(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/in0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/in0/data/test_unit_test_2.json',
+            'in0'
+        )
+        dfOut0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/out0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/out0/data/test_unit_test_2.json',
+            'out0'
+        )
+        dfOut0Computed = Script_2(self.spark, dfIn0)
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os

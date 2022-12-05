@@ -14,7 +14,7 @@ pipelines:
     createdAt: '2022-08-18 08:39:13'
     datasets:
       inputs:
-      - 7235/datasets/src_delta_all_type_no_partition
+      - datasets/src_delta_all_type_no_partition
       outputs: []
     dependencies: {}
   pipelines/PYTHON_AZURE:
@@ -61,17 +61,17 @@ pipelines:
     createdAt: '2022-08-11 07:47:15'
     datasets:
       inputs:
-      - 7235/datasets/src_orc_all_type_no_partition
-      - 7235/datasets/src_text_DatasetWithSpaceHyphens
-      - 7235/datasets/src_catalog_table_test_catalog_source
-      - 7235/datasets/src_csv_all_type_no_partition
-      - 7235/datasets/src_csv_special_char_column_name
-      - 7235/datasets/src_json_input_custs
-      - 7235/datasets/src_avro_CustsDatasetInput
-      - 7235/datasets/src_jdbc_dbsecrets_test_table
-      - 7235/datasets/src_parquet_all_type_no_partition
-      - 7235/datasets/src_parquet_all_type_and_partition_withspacehyphens
-      - 7235/datasets/src_delta_all_type_no_partition
+      - datasets/src_avro_CustsDatasetInput
+      - datasets/src_catalog_table_test_catalog_source
+      - datasets/src_csv_all_type_no_partition
+      - datasets/src_csv_special_char_column_name
+      - datasets/src_delta_all_type_no_partition
+      - datasets/src_jdbc_dbsecrets_test_table
+      - datasets/src_json_input_custs
+      - datasets/src_orc_all_type_no_partition
+      - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/src_parquet_all_type_no_partition
+      - datasets/src_text_DatasetWithSpaceHyphens
       outputs: []
     dependencies: {}
   pipelines/PYTHON_BASIC:
@@ -724,30 +724,6 @@ datasets:
         createdAt: '2022-06-28 17:52:28'
 templates: {}
 jobs:
-  jobs/DONOT_OPEN_PYTHON_JOB:
-    name: REL_PYTHON_DONOT_OPEN_JOB
-    description: ''
-    fabricUID: 299
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0/1 * * ? 2090
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io
-      onStart: true
-      onSuccess: true
-      onFailure: true
-    pipelines:
-    - 7235/pipelines/DONOT_OPEN_PYTHON
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-08-11 07:51:50'
-    author: abhisheks+e2etests@simpledatalabs.com
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
     name: REL_PYTHON_SINGLE_CLUSTER_JOB
     description: ''
@@ -822,6 +798,30 @@ jobs:
     enabled: true
     createdAt: '2022-11-04 10:50:42'
     author: abhisheks+e2etests@prophecy.io
+  jobs/DONOT_OPEN_PYTHON_JOB:
+    name: REL_PYTHON_DONOT_OPEN_JOB
+    description: ''
+    fabricUID: 2730
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0/1 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: true
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - 7235/pipelines/DONOT_OPEN_PYTHON
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-08-11 07:51:50'
+    author: abhisheks+e2etests@simpledatalabs.com
 libraries: []
 subgraphs:
   subgraphs/all_type:
