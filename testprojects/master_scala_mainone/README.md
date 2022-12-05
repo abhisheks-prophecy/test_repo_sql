@@ -223,3 +223,7 @@ final release
 *** Release notes for version: 1.15 ***
 
 changes
+
+*** Release notes for version: 1.16 ***
+
+Changes
