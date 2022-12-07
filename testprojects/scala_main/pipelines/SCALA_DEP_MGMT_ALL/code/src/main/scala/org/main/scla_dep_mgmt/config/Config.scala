@@ -49,8 +49,109 @@ case class Config(
   c_regex2: String = "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})",
   c_str:    String = "stringwith$$one#%^&*()-=!@#",
   c_new_sqlexpr: String =
-    "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
+    "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1",
+  @Description("c array complex") c_array_complex: List[C_array_complex] = List(
+    C_array_complex(
+      car_array_spark_expression =
+        List("concat(first_name, last_name)",
+             "concat(first_name, last_name, last_name)"
+        ),
+      car_record = Car_record(carr_double = 2.2132312e7d, carr_short = 22),
+      car_string = "test string",
+      car_array_float = List(10.12f, -10.12f, 0.0f),
+      car_int = -5446
+    ),
+    C_array_complex(
+      car_array_spark_expression = List("concat(first_name, 'a')"),
+      car_record = Car_record(carr_double = 2.2344234e7d, carr_short = 12),
+      car_string = "this is another item",
+      car_array_float = List(22.23432f),
+      car_int = 234234
+    )
+  ),
+  @Description("c record complex") c_record_complex: C_record_complex =
+    C_record_complex()
 ) extends ConfigBase
+
+object C_array_complex {
+
+  implicit val confHint: ProductHint[C_array_complex] =
+    ProductHint[C_array_complex](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class C_array_complex(
+  car_string:                 String,
+  car_array_float:            List[Float],
+  car_record:                 Car_record,
+  car_array_spark_expression: List[String],
+  car_int:                    Int
+)
+
+object Car_record {
+
+  implicit val confHint: ProductHint[Car_record] =
+    ProductHint[Car_record](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Car_record(carr_double: Double, carr_short: Short)
+
+object C_record_complex {
+
+  implicit val confHint: ProductHint[C_record_complex] =
+    ProductHint[C_record_complex](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class C_record_complex(
+  cr_string:        String = "this is me son another complex",
+  cr_array_boolean: List[Boolean] = List(true, false),
+  cr_record:        Cr_record = Cr_record(),
+  cr_array_record: List[Cr_array_record] = List(
+    Cr_array_record(
+      crar_int = 234234,
+      crar_bool = true,
+      crar_string = "this is my string lift",
+      crar_spark_expression = "concat(fist_name, first_name)",
+      crar_short = 12,
+      crar_float = 2343.234f,
+      crar_long = 234324L,
+      crar_double = 3.4543523e7d
+    )
+  )
+)
+
+object Cr_record {
+
+  implicit val confHint: ProductHint[Cr_record] =
+    ProductHint[Cr_record](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Cr_record(
+  crr_float:            Option[Float] = None,
+  crr_spark_expression: String = "concat(first_name, last_name)",
+  crr_array_short:      List[Short] = List(33, 44)
+)
+
+object Cr_array_record {
+
+  implicit val confHint: ProductHint[Cr_array_record] =
+    ProductHint[Cr_array_record](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Cr_array_record(
+  crar_bool:             Boolean,
+  crar_double:           Double,
+  crar_float:            Float,
+  crar_int:              Int,
+  crar_long:             Long,
+  crar_short:            Short,
+  crar_string:           String,
+  crar_spark_expression: String
+)
 
 object DatabricksSecret {
 

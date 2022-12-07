@@ -277,19 +277,6 @@
         "availableClusterSizes" : [ "small", "adv-json-acl" ]
       }
     }, {
-      "id" : "2729",
-      "name" : "Config_unity_catalog_shared",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "1962",
       "name" : "dev_11rt",
       "clusterSizes" : {
@@ -332,6 +319,19 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
+    }, {
+      "id" : "2731",
+      "name" : "Config_unity_catalog_shared",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
     } ]
   },
   "processes" : {
@@ -339,8 +339,8 @@
       "id" : "DL-E6u8JPMv5OLvsgXvqj",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_1",
-        "slug" : "Pipeline",
+        "label" : "ScalaSG_SRC2",
+        "slug" : "ScalaSG_SRC2",
         "x" : -155.59999084472656,
         "y" : 83.20000457763672
       },
@@ -377,8 +377,8 @@
       "id" : "zpW3JW9SBY91WtenbovxD",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_3",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic",
+        "slug" : "Scala_Basic",
         "x" : 270.39996337890625,
         "y" : 103.60000610351562
       },
@@ -446,8 +446,8 @@
       "id" : "SZlbXlblhbJXpFaye79w5",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_6",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic2",
+        "slug" : "Scala_Basic2",
         "x" : 1285.199951171875,
         "y" : 152.60000610351562
       },
@@ -484,8 +484,8 @@
       "id" : "ZTooE20sDX6AOBrHr1dOx",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Scala_Dep1",
-        "slug" : "Scala_Dep1",
+        "label" : "Scala_Dep_2",
+        "slug" : "Scala_Dep_2",
         "x" : 45.20000457763672,
         "y" : -68
       },
@@ -789,13 +789,263 @@
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
             },
             "optional" : false
+          }, {
+            "name" : "c_array_complex",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "car_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_float",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "carr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "carr_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : null
+                  },
+                  "optional" : false
+                } ]
+              },
+              "value" : [ {
+                "car_array_spark_expression" : [ "concat(first_name, last_name)", "concat(first_name, last_name, last_name)" ],
+                "car_record" : {
+                  "carr_double" : 22132312,
+                  "carr_short" : 22
+                },
+                "car_string" : "test string",
+                "car_array_float" : [ 10.12, -10.12, 0 ],
+                "car_int" : -5446
+              }, {
+                "car_array_spark_expression" : [ "concat(first_name, 'a')" ],
+                "car_record" : {
+                  "carr_double" : 22344234,
+                  "carr_short" : 12
+                },
+                "car_string" : "this is another item",
+                "car_array_float" : [ 22.23432 ],
+                "car_int" : 234234
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c array complex"
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is me son another complex"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_boolean",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "boolean",
+                    "value" : null
+                  },
+                  "value" : [ true, false ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : -123.213213
+                    },
+                    "optional" : true
+                  }, {
+                    "name" : "crr_spark_expression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : "concat(first_name, last_name)"
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_short",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "value" : [ 33, 44 ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_record",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_bool",
+                      "kind" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_spark_expression",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_int" : 234234,
+                    "crar_bool" : true,
+                    "crar_string" : "this is my string lift",
+                    "crar_spark_expression" : "concat(fist_name, first_name)",
+                    "crar_short" : 12,
+                    "crar_float" : 2343.234,
+                    "crar_long" : 234324,
+                    "crar_double" : 34543523
+                  } ]
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c record complex"
           } ],
           "instances" : {
             "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
           },
           "overrides" : {
-            "CONFIG_BOOLEAN" : "true",
             "CONFIG_DOUBLE" : "2222222",
+            "c_record_complex" : {
+              "cr_string" : "asdsad",
+              "cr_array_boolean" : [ true ],
+              "cr_record" : {
+                "crr_float" : -23432,
+                "crr_spark_expression" : "concat(first_name, first_name)",
+                "crr_array_short" : [ 2 ]
+              },
+              "cr_array_record" : [ {
+                "crar_int" : 55,
+                "crar_bool" : false,
+                "crar_string" : "this is a lift son",
+                "crar_spark_expression" : "concat(first_name, last_name, last_name)",
+                "crar_short" : 55,
+                "crar_float" : 55.55,
+                "crar_long" : 5,
+                "crar_double" : 555
+              } ]
+            },
+            "c_array_complex" : [ {
+              "car_array_spark_expression" : [ "concat(last_name, last_name)", "concat(first_name, first_name, last_name)" ],
+              "car_record" : {
+                "carr_double" : 66,
+                "carr_short" : 66
+              },
+              "car_string" : "asdasd",
+              "car_array_float" : [ 11, 0 ],
+              "car_int" : -435
+            } ],
+            "CONFIG_BOOLEAN" : "true",
             "c_str" : "overridenstring_pipeline0"
           },
           "selectedInstance" : "test-instance1"
@@ -825,8 +1075,8 @@
       "id" : "EnBhDB9q7Qps0M-POArMA",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_2",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic1",
+        "slug" : "Scala_Basic1",
         "x" : 50,
         "y" : 100
       },
@@ -1169,6 +1419,227 @@
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
             },
             "optional" : false
+          }, {
+            "name" : "c_array_complex",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "car_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_float",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "carr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "carr_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : null
+                  },
+                  "optional" : false
+                } ]
+              },
+              "value" : [ {
+                "car_array_spark_expression" : [ "concat(first_name, last_name)", "concat(first_name, last_name, last_name)" ],
+                "car_record" : {
+                  "carr_double" : 22132312,
+                  "carr_short" : 22
+                },
+                "car_string" : "test string",
+                "car_array_float" : [ 10.12, -10.12, 0 ],
+                "car_int" : -5446
+              }, {
+                "car_array_spark_expression" : [ "concat(first_name, 'a')" ],
+                "car_record" : {
+                  "carr_double" : 22344234,
+                  "carr_short" : 12
+                },
+                "car_string" : "this is another item",
+                "car_array_float" : [ 22.23432 ],
+                "car_int" : 234234
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c array complex"
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is me son another complex"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_boolean",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "boolean",
+                    "value" : null
+                  },
+                  "value" : [ true, false ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : -123.213213
+                    },
+                    "optional" : true
+                  }, {
+                    "name" : "crr_spark_expression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : "concat(first_name, last_name)"
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_short",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "value" : [ 33, 44 ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_record",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_bool",
+                      "kind" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_spark_expression",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_int" : 234234,
+                    "crar_bool" : true,
+                    "crar_string" : "this is my string lift",
+                    "crar_spark_expression" : "concat(fist_name, first_name)",
+                    "crar_short" : 12,
+                    "crar_float" : 2343.234,
+                    "crar_long" : 234324,
+                    "crar_double" : 34543523
+                  } ]
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c record complex"
           } ],
           "instances" : {
             "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
@@ -1238,8 +1709,8 @@
       "id" : "_qiFSsxfdxuPJ4J4uhgxS",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_4",
-        "slug" : "Pipeline",
+        "label" : "ScalaSG_SRC",
+        "slug" : "ScalaSG_SRC",
         "x" : 49.599998474121094,
         "y" : 106.00000762939453
       },
@@ -1277,8 +1748,8 @@
       "id" : "1tep3kD734Xd7PWE8Td-w",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_5",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic4",
+        "slug" : "Scala_Basic4",
         "x" : 169.1999969482422,
         "y" : 308.6000061035156
       },

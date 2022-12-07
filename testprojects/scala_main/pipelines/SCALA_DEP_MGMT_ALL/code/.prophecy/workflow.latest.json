@@ -309,6 +309,227 @@
             "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
           },
           "optional" : false
+        }, {
+          "name" : "c_array_complex",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "car_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "optional" : false
+              }, {
+                "name" : "car_array_float",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "float",
+                    "value" : null
+                  },
+                  "value" : null
+                },
+                "optional" : false
+              }, {
+                "name" : "car_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "carr_double",
+                    "kind" : {
+                      "type" : "double",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "carr_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "car_array_spark_expression",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "spark_expression",
+                    "value" : null
+                  },
+                  "value" : null
+                },
+                "optional" : false
+              }, {
+                "name" : "car_int",
+                "kind" : {
+                  "type" : "int",
+                  "value" : null
+                },
+                "optional" : false
+              } ]
+            },
+            "value" : [ {
+              "car_array_spark_expression" : [ "concat(first_name, last_name)", "concat(first_name, last_name, last_name)" ],
+              "car_record" : {
+                "carr_double" : 22132312,
+                "carr_short" : 22
+              },
+              "car_string" : "test string",
+              "car_array_float" : [ 10.12, -10.12, 0 ],
+              "car_int" : -5446
+            }, {
+              "car_array_spark_expression" : [ "concat(first_name, 'a')" ],
+              "car_record" : {
+                "carr_double" : 22344234,
+                "carr_short" : 12
+              },
+              "car_string" : "this is another item",
+              "car_array_float" : [ 22.23432 ],
+              "car_int" : 234234
+            } ]
+          },
+          "optional" : false,
+          "comment" : "c array complex"
+        }, {
+          "name" : "c_record_complex",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "cr_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is me son another complex"
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_array_boolean",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "boolean",
+                  "value" : null
+                },
+                "value" : [ true, false ]
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "crr_float",
+                  "kind" : {
+                    "type" : "float",
+                    "value" : -123.213213
+                  },
+                  "optional" : true
+                }, {
+                  "name" : "crr_spark_expression",
+                  "kind" : {
+                    "type" : "spark_expression",
+                    "value" : "concat(first_name, last_name)"
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "crr_array_short",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "value" : [ 33, 44 ]
+                  },
+                  "optional" : false
+                } ]
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_array_record",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crar_bool",
+                    "kind" : {
+                      "type" : "boolean",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_double",
+                    "kind" : {
+                      "type" : "double",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_int",
+                    "kind" : {
+                      "type" : "int",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_long",
+                    "kind" : {
+                      "type" : "long",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_string",
+                    "kind" : {
+                      "type" : "string",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_spark_expression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "value" : [ {
+                  "crar_int" : 234234,
+                  "crar_bool" : true,
+                  "crar_string" : "this is my string lift",
+                  "crar_spark_expression" : "concat(fist_name, first_name)",
+                  "crar_short" : 12,
+                  "crar_float" : 2343.234,
+                  "crar_long" : 234324,
+                  "crar_double" : 34543523
+                } ]
+              },
+              "optional" : false
+            } ]
+          },
+          "optional" : false,
+          "comment" : "c record complex"
         } ]
       },
       "oldCommon" : {
@@ -317,7 +538,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance1",
+      "selected" : "test-instance2",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -6253,6 +6474,20 @@
           "expression" : {
             "format" : "sql",
             "expression" : "concat('$c_str', first_name)"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_complex_config",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('$c_array_complex[0].car_record.carr_double', '$c_record_complex.cr_array_record[0].crar_double')"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_complex_expr",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "expr('$c_record_complex.cr_array_record[0].crar_spark_expression')"
           },
           "description" : ""
         } ]
