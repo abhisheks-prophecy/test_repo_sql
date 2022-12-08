@@ -113,7 +113,7 @@ case class C_record_complex(
       crar_int = 234234,
       crar_bool = true,
       crar_string = "this is my string lift",
-      crar_spark_expression = "concat(fist_name, first_name)",
+      crar_spark_expression = "concat(first_name, first_name)",
       crar_short = 12,
       crar_float = 2343.234f,
       crar_long = 234324L,

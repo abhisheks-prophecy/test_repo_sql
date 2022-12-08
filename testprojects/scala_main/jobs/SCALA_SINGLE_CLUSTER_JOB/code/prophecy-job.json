@@ -154,17 +154,21 @@
         "availableClusterSizes" : [ "small", "new-job.size" ]
       }
     }, {
-      "id" : "2694",
+      "id" : "2733",
       "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2403",
@@ -1178,14 +1182,14 @@
             "name" : "CONFIG_STR",
             "kind" : {
               "type" : "string",
-              "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
+              "value" : "jdbc_url-${JDBC_URL}"
             },
             "optional" : false
           }, {
             "name" : "CONFIG_BOOLEAN",
             "kind" : {
               "type" : "boolean",
-              "value" : true
+              "value" : false
             },
             "optional" : false
           }, {
@@ -1485,23 +1489,14 @@
                 } ]
               },
               "value" : [ {
-                "car_array_spark_expression" : [ "concat(first_name, last_name)", "concat(first_name, last_name, last_name)" ],
+                "car_array_spark_expression" : [ "concat(first_name, first_name)" ],
                 "car_record" : {
-                  "carr_double" : 22132312,
-                  "carr_short" : 22
+                  "carr_double" : 221323121,
+                  "carr_short" : 222
                 },
-                "car_string" : "test string",
-                "car_array_float" : [ 10.12, -10.12, 0 ],
-                "car_int" : -5446
-              }, {
-                "car_array_spark_expression" : [ "concat(first_name, 'a')" ],
-                "car_record" : {
-                  "carr_double" : 22344234,
-                  "carr_short" : 12
-                },
-                "car_string" : "this is another item",
-                "car_array_float" : [ 22.23432 ],
-                "car_int" : 234234
+                "car_string" : "key1 i am string sama",
+                "car_array_float" : [ 10.121 ],
+                "car_int" : -54463
               } ]
             },
             "optional" : false,
@@ -1514,7 +1509,7 @@
                 "name" : "cr_string",
                 "kind" : {
                   "type" : "string",
-                  "value" : "this is me son another complex"
+                  "value" : "new1"
                 },
                 "optional" : false
               }, {
@@ -1525,7 +1520,7 @@
                     "type" : "boolean",
                     "value" : null
                   },
-                  "value" : [ true, false ]
+                  "value" : [ true, false, true, false ]
                 },
                 "optional" : false
               }, {
@@ -1536,14 +1531,14 @@
                     "name" : "crr_float",
                     "kind" : {
                       "type" : "float",
-                      "value" : -123.213213
+                      "value" : -123
                     },
                     "optional" : true
                   }, {
                     "name" : "crr_spark_expression",
                     "kind" : {
                       "type" : "spark_expression",
-                      "value" : "concat(first_name, last_name)"
+                      "value" : "234"
                     },
                     "optional" : false
                   }, {
@@ -1554,7 +1549,7 @@
                         "type" : "short",
                         "value" : null
                       },
-                      "value" : [ 33, 44 ]
+                      "value" : [ 3319 ]
                     },
                     "optional" : false
                   } ]
@@ -1625,14 +1620,14 @@
                     } ]
                   },
                   "value" : [ {
-                    "crar_int" : 234234,
+                    "crar_int" : 23,
                     "crar_bool" : true,
-                    "crar_string" : "this is my string lift",
-                    "crar_spark_expression" : "concat(fist_name, first_name)",
-                    "crar_short" : 12,
-                    "crar_float" : 2343.234,
-                    "crar_long" : 234324,
-                    "crar_double" : 34543523
+                    "crar_string" : "this is overridden string",
+                    "crar_spark_expression" : "concat(first_name, first_name, first_name)",
+                    "crar_short" : -23,
+                    "crar_float" : -222222.234,
+                    "crar_long" : -324,
+                    "crar_double" : 345435231
                   } ]
                 },
                 "optional" : false
@@ -1650,7 +1645,7 @@
             "CONFIG_INT" : "333333",
             "c_str" : "overridenstring_pipeline7"
           },
-          "selectedInstance" : "dev_11rt"
+          "selectedInstance" : "test-instance2"
         }
       },
       "parent" : "DKsX8b6xsP1NddzvqYJiq"
