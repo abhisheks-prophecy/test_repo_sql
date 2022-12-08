@@ -99,6 +99,85 @@ class Script_1Test extends FunSuite with DataFrameSuiteBase {
     Assert.assertTrue(msg, res.isRight)
   }
 
+  test("Unit Test 1") {
+
+    val dfIn2 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in2/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in2/data/unit_test_1.json",
+      "in2"
+    )
+    val dfIn0 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in0/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in0/data/unit_test_1.json",
+      "in0"
+    )
+    val dfIn3 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in3/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in3/data/unit_test_1.json",
+      "in3"
+    )
+    val dfIn4 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in4/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in4/data/unit_test_1.json",
+      "in4"
+    )
+    val dfIn5 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in5/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in5/data/unit_test_1.json",
+      "in5"
+    )
+    val dfIn1 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in1/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/in1/data/unit_test_1.json",
+      "in1"
+    )
+    val dfOut0 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/out0/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_1/out0/data/unit_test_1.json",
+      "out0"
+    )
+
+    val dfOut0Computed = org.main.scla_dep_mgmt.graph.Script_1(spark,
+                                                               dfIn0,
+                                                               dfIn1,
+                                                               dfIn2,
+                                                               dfIn3,
+                                                               dfIn4,
+                                                               dfIn5
+    )
+    val res = assertDFEquals(
+      dfOut0.select("account_flags",
+                    "account_open_date",
+                    "country_code",
+                    "customer_id",
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "phone"
+      ),
+      dfOut0Computed.select("account_flags",
+                            "account_open_date",
+                            "country_code",
+                            "customer_id",
+                            "email",
+                            "first_name",
+                            "last_name",
+                            "phone"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
@@ -122,6 +201,14 @@ class Script_1Test extends FunSuite with DataFrameSuiteBase {
       spark,
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
+    val dfMain_scla_dep_mgmt_graph_Lookup_1 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_1/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_1/data.json",
+      port = "in"
+    )
+    org.main.scla_dep_mgmt.graph
+      .Lookup_1(spark, dfMain_scla_dep_mgmt_graph_Lookup_1)
   }
 
 }
