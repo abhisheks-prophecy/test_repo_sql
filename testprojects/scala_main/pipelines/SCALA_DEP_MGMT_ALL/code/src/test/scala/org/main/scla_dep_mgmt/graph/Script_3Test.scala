@@ -81,6 +81,14 @@ class Script_3Test extends FunSuite with DataFrameSuiteBase {
       spark,
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
+    val dfMain_scla_dep_mgmt_graph_Lookup_1 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_1/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_1/data.json",
+      port = "in"
+    )
+    org.main.scla_dep_mgmt.graph
+      .Lookup_1(spark, dfMain_scla_dep_mgmt_graph_Lookup_1)
   }
 
 }

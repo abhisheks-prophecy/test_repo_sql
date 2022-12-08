@@ -1,6 +1,6 @@
 name: ScalaProject
 description: ''
-version: '2.9'
+version: '1.19'
 author: abhisheks+e2etests@simpledatalabs.com
 language: scala
 buildSystem: maven
@@ -570,6 +570,30 @@ templates:
       outputs: []
     dependencies: {}
 jobs:
+  jobs/REL_SC_DBFSLIBS:
+    name: REL_SC_DBFSLIBS
+    description: ''
+    fabricUID: 2404
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines:
+    - pipelines/SCALA_DEP_MGMT_ALL
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-11-04 14:04:26'
+    author: abhisheks+e2etests@prophecy.io
   jobs/REL_SC_CUSTOMLIBS:
     name: REL_SC_CUSTOMLIBS
     description: ''
@@ -597,7 +621,7 @@ jobs:
   jobs/DONOT_OPEN_SCALA_JOB:
     name: REL_SCALA_DONOT_OPEN_JOB
     description: ''
-    fabricUID: 299
+    fabricUID: 2730
     scheduler:
       Databricks: {}
     cloudProvider: null
@@ -618,34 +642,10 @@ jobs:
     enabled: true
     createdAt: '2022-08-11 07:44:56'
     author: abhisheks+e2etests@simpledatalabs.com
-  jobs/REL_SC_DBFSLIBS:
-    name: REL_SC_DBFSLIBS
-    description: ''
-    fabricUID: 2404
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? 2090
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io,abhisheks@simpledatalabs.com
-      onStart: false
-      onSuccess: true
-      onFailure: false
-    pipelines:
-    - pipelines/SCALA_DEP_MGMT_ALL
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-11-04 14:04:26'
-    author: abhisheks+e2etests@prophecy.io
   jobs/SCALA_SINGLE_CLUSTER_JOB:
     name: REL_SCALA_SINGLE_CLUSTER_JOB
     description: ''
-    fabricUID: 299
+    fabricUID: 2730
     scheduler:
       Databricks: {}
     cloudProvider: null

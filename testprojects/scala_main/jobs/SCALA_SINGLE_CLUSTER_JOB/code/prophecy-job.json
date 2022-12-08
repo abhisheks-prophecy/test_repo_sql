@@ -1,7 +1,7 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "299",
+    "fabricId" : "2730",
     "jobId" : "jobs/SCALA_SINGLE_CLUSTER_JOB",
     "name" : "REL_SCALA_SINGLE_CLUSTER_JOB",
     "schedule" : "0 0 0 9 * ? 2090",
@@ -77,7 +77,7 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2652",
+      "id" : "2706",
       "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
         "default" : "small",
@@ -90,11 +90,18 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2663",
-      "name" : "TEST-Automated_Databricks1",
+      "id" : "2695",
+      "name" : "Livyscala-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3" ]
+      }
+    }, {
+      "id" : "2601",
+      "name" : "dev_unity_catalog",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -103,11 +110,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2601",
-      "name" : "dev_unity_catalog",
+      "id" : "2730",
+      "name" : "dev",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -133,6 +140,13 @@
         }
       }
     }, {
+      "id" : "2709",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3" ]
+      }
+    }, {
       "id" : "917",
       "name" : "ebs_ssd",
       "clusterSizes" : {
@@ -140,17 +154,21 @@
         "availableClusterSizes" : [ "small", "new-job.size" ]
       }
     }, {
-      "id" : "2641",
-      "name" : "JobFabricMain_1",
+      "id" : "2733",
+      "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2403",
@@ -166,25 +184,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2650",
-      "name" : "Livyscala-TEST_Automated",
+      "id" : "2707",
+      "name" : "GCP-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "2664",
-      "name" : "Livypython-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "2653",
-      "name" : "SingleCluster_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "adv-json1" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -198,6 +202,19 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium" ]
+      }
+    }, {
+      "id" : "2708",
+      "name" : "TEST-Automated_Databricks1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "1901",
@@ -217,18 +234,11 @@
         }
       }
     }, {
-      "id" : "2080",
-      "name" : "dev_gcp",
+      "id" : "2726",
+      "name" : "JobFabricMain_1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2654",
-      "name" : "GCP-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -237,11 +247,31 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2632",
+      "id" : "2080",
+      "name" : "dev_gcp",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      }
+    }, {
+      "id" : "2710",
       "name" : "TEST-Automated_Livy1",
       "clusterSizes" : {
         "default" : "Small",
         "availableClusterSizes" : [ "Small", "small2", "small3", "small_new" ]
+      }
+    }, {
+      "id" : "2704",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "2394",
@@ -256,13 +286,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1" ]
-      }
-    }, {
-      "id" : "299",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -301,11 +324,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2638",
-      "name" : "FabricAutomatedEBS",
+      "id" : "2731",
+      "name" : "Config_unity_catalog_shared",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -320,8 +343,8 @@
       "id" : "DL-E6u8JPMv5OLvsgXvqj",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_1",
-        "slug" : "Pipeline",
+        "label" : "ScalaSG_SRC2",
+        "slug" : "ScalaSG_SRC2",
         "x" : -155.59999084472656,
         "y" : 83.20000457763672
       },
@@ -358,8 +381,8 @@
       "id" : "zpW3JW9SBY91WtenbovxD",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_3",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic",
+        "slug" : "Scala_Basic",
         "x" : 270.39996337890625,
         "y" : 103.60000610351562
       },
@@ -427,8 +450,8 @@
       "id" : "SZlbXlblhbJXpFaye79w5",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_6",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic2",
+        "slug" : "Scala_Basic2",
         "x" : 1285.199951171875,
         "y" : 152.60000610351562
       },
@@ -465,8 +488,8 @@
       "id" : "ZTooE20sDX6AOBrHr1dOx",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Scala_Dep1",
-        "slug" : "Scala_Dep1",
+        "label" : "Scala_Dep_2",
+        "slug" : "Scala_Dep_2",
         "x" : 45.20000457763672,
         "y" : -68
       },
@@ -492,291 +515,541 @@
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_USER",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_user"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "db_secrets",
-            "optional" : true,
             "kind" : {
               "type" : "databricks_secret",
               "value" : "qasecrets_mysql:username"
-            }
+            },
+            "optional" : true
           }, {
             "name" : "JDBC_URL",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_STR",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "jdbc_url-${JDBC_URL}"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
             "kind" : {
               "type" : "boolean",
-              "value" : "false"
-            }
+              "value" : false
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_DOUBLE",
-            "optional" : false,
             "kind" : {
               "type" : "double",
-              "value" : "11"
-            }
+              "value" : 11
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_INT",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "123"
-            }
+              "value" : 123
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_FLOAT",
-            "optional" : false,
             "kind" : {
               "type" : "float",
-              "value" : "34"
-            }
+              "value" : 34
+            },
+            "optional" : false
           }, {
             "name" : "c_limit_11",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "1"
-            }
+              "value" : 1
+            },
+            "optional" : false
           }, {
             "name" : "c_st_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_long",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c_array_long"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_rename",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c_array_boolean_renamed"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_dedup_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(c_array_float, `c_array_int`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_dedup_col",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : " c_array_date"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_rd_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "`c -  boolean _  ` in (true,false)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_12321",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "12321"
-            }
+              "value" : 12321
+            },
+            "optional" : false
           }, {
             "name" : "c_0",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "0"
-            }
+              "value" : 0
+            },
+            "optional" : false
           }, {
             "name" : "c_1",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "1"
-            }
+              "value" : 1
+            },
+            "optional" : false
           }, {
             "name" : "c_join_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "in0.`-- c-long`=in1.`-- c-long`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_join_cshort",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "in0.`c   short  --`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_orderby_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c  date`, c_timestamp)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_orderby_int",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c-int-column type`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_filter_expression",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "customer_id >5"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_reformat_complex",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "case     when c_int > 10 then         case              when NOT (NOT (c_string like '%1%')) then 'A'             when NOT (NOT (trim(trim(c_string)) = '')) then 'B'             else 'X'         end     when c_int <= 10 then         case             when NOT (NOT (c_string like '%1%')) then 'C'             when NOT (NOT (c_string not like '%2%')) then 'D'             else 'Z'         end     else null end"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_repartition_colname",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c_float-__  `"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_repartition_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c  - int`, `c_struct -- _  `.`c_string - of a struct -- _`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_agg_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "first(c1)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_agg_group",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(c1, c2, c3)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_agg_c3",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c3"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_row",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "row_number()"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_bool",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c -  boolean _  `"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_short",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c- short`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_sql_expr",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "%[^aeiouAB]@%"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_sql_c8c1",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "-1"
-            }
+              "value" : -1
+            },
+            "optional" : false
           }, {
             "name" : "c_regex1",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_regex2",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_str",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "stringwith$$one#%^&*()-=!@#"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_new_sqlexpr",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
-            }
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_complex",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "car_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_float",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "carr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "carr_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : null
+                  },
+                  "optional" : false
+                } ]
+              },
+              "value" : [ {
+                "car_array_spark_expression" : [ "concat(first_name, last_name)", "concat(first_name, last_name, last_name)" ],
+                "car_record" : {
+                  "carr_double" : 22132312,
+                  "carr_short" : 22
+                },
+                "car_string" : "test string",
+                "car_array_float" : [ 10.12, -10.12, 0 ],
+                "car_int" : -5446
+              }, {
+                "car_array_spark_expression" : [ "concat(first_name, 'a')" ],
+                "car_record" : {
+                  "carr_double" : 22344234,
+                  "carr_short" : 12
+                },
+                "car_string" : "this is another item",
+                "car_array_float" : [ 22.23432 ],
+                "car_int" : 234234
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c array complex"
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is me son another complex"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_boolean",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "boolean",
+                    "value" : null
+                  },
+                  "value" : [ true, false ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : -123.213213
+                    },
+                    "optional" : true
+                  }, {
+                    "name" : "crr_spark_expression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : "concat(first_name, last_name)"
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_short",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "value" : [ 33, 44 ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_record",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_bool",
+                      "kind" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_spark_expression",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_int" : 234234,
+                    "crar_bool" : true,
+                    "crar_string" : "this is my string lift",
+                    "crar_spark_expression" : "concat(first_name, first_name)",
+                    "crar_short" : 12,
+                    "crar_float" : 2343.234,
+                    "crar_long" : 234324,
+                    "crar_double" : 34543523
+                  } ]
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c record complex"
           } ],
           "instances" : {
             "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
           },
           "overrides" : {
-            "CONFIG_BOOLEAN" : "true",
             "CONFIG_DOUBLE" : "2222222",
+            "c_record_complex" : {
+              "cr_string" : "asdsad",
+              "cr_array_boolean" : [ true ],
+              "cr_record" : {
+                "crr_float" : -23432,
+                "crr_spark_expression" : "concat(first_name, first_name)",
+                "crr_array_short" : [ 2 ]
+              },
+              "cr_array_record" : [ {
+                "crar_int" : 55,
+                "crar_bool" : false,
+                "crar_string" : "this is a lift son",
+                "crar_spark_expression" : "concat(first_name, last_name, last_name)",
+                "crar_short" : 55,
+                "crar_float" : 55.55,
+                "crar_long" : 5,
+                "crar_double" : 555
+              } ]
+            },
+            "c_array_complex" : [ {
+              "car_array_spark_expression" : [ "concat(last_name, last_name)", "concat(first_name, first_name, last_name)" ],
+              "car_record" : {
+                "carr_double" : 66,
+                "carr_short" : 66
+              },
+              "car_string" : "asdasd",
+              "car_array_float" : [ 11, 0 ],
+              "car_int" : -435
+            } ],
+            "CONFIG_BOOLEAN" : "true",
             "c_str" : "overridenstring_pipeline0"
           },
           "selectedInstance" : "test-instance1"
@@ -806,8 +1079,8 @@
       "id" : "EnBhDB9q7Qps0M-POArMA",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_2",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic1",
+        "slug" : "Scala_Basic1",
         "x" : 50,
         "y" : 100
       },
@@ -872,284 +1145,496 @@
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_USER",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_user"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "db_secrets",
-            "optional" : true,
             "kind" : {
               "type" : "databricks_secret",
               "value" : "qasecrets_mysql:username"
-            }
+            },
+            "optional" : true
           }, {
             "name" : "JDBC_URL",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_STR",
-            "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
-            }
+              "value" : "jdbc_url-${JDBC_URL}"
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
             "kind" : {
               "type" : "boolean",
-              "value" : "true"
-            }
+              "value" : false
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_DOUBLE",
-            "optional" : false,
             "kind" : {
               "type" : "double",
-              "value" : "123123.12321321"
-            }
+              "value" : 123123.12321321
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_INT",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "3243423"
-            }
+              "value" : 3243423
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_FLOAT",
-            "optional" : false,
             "kind" : {
               "type" : "float",
-              "value" : "3454.34534"
-            }
+              "value" : 3454.34534
+            },
+            "optional" : false
           }, {
             "name" : "c_limit_11",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "11"
-            }
+              "value" : 11
+            },
+            "optional" : false
           }, {
             "name" : "c_st_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_long",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c_array_long"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_rename",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c_array_boolean_renamed"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_dedup_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(c_array_float, `c_array_int`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_dedup_col",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : " c_array_date"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_rd_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "`c -  boolean _  ` in (true,false)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_12321",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "12321"
-            }
+              "value" : 12321
+            },
+            "optional" : false
           }, {
             "name" : "c_0",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "0"
-            }
+              "value" : 0
+            },
+            "optional" : false
           }, {
             "name" : "c_1",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "1"
-            }
+              "value" : 1
+            },
+            "optional" : false
           }, {
             "name" : "c_join_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "in0.`-- c-long`=in1.`-- c-long`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_join_cshort",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "in0.`c   short  --`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_orderby_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c  date`, c_timestamp)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_orderby_int",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c-int-column type`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_filter_expression",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "customer_id >5"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_reformat_complex",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "case     when c_int > 10 then         case              when NOT (NOT (c_string like '%1%')) then 'A'             when NOT (NOT (trim(trim(c_string)) = '')) then 'B'             else 'X'         end     when c_int <= 10 then         case             when NOT (NOT (c_string like '%1%')) then 'C'             when NOT (NOT (c_string not like '%2%')) then 'D'             else 'Z'         end     else null end"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_repartition_colname",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c_float-__  `"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_repartition_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c  - int`, `c_struct -- _  `.`c_string - of a struct -- _`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_agg_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "first(c1)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_agg_group",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(c1, c2, c3)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_agg_c3",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c3"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_row",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "row_number()"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_bool",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c -  boolean _  `"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_short",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "`c- short`"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_sql_expr",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "%[^aeiou]@%"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_sql_c8c1",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "-1"
-            }
+              "value" : -1
+            },
+            "optional" : false
           }, {
             "name" : "c_regex1",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_regex2",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_str",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "stringwith$$one#%^&*()-=!@#"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_new_sqlexpr",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
-            }
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_complex",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "car_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_float",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "carr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "carr_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : null
+                  },
+                  "optional" : false
+                } ]
+              },
+              "value" : [ {
+                "car_array_spark_expression" : [ "concat(first_name, first_name)" ],
+                "car_record" : {
+                  "carr_double" : 221323121,
+                  "carr_short" : 222
+                },
+                "car_string" : "key1 i am string sama",
+                "car_array_float" : [ 10.121 ],
+                "car_int" : -54463
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c array complex"
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "new1"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_boolean",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "boolean",
+                    "value" : null
+                  },
+                  "value" : [ true, false, true, false ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : -123
+                    },
+                    "optional" : true
+                  }, {
+                    "name" : "crr_spark_expression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : "234"
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_short",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "value" : [ 3319 ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_record",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_bool",
+                      "kind" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_spark_expression",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_int" : 23,
+                    "crar_bool" : true,
+                    "crar_string" : "this is overridden string",
+                    "crar_spark_expression" : "concat(first_name, first_name, first_name)",
+                    "crar_short" : -23,
+                    "crar_float" : -222222.234,
+                    "crar_long" : -324,
+                    "crar_double" : 345435231
+                  } ]
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c record complex"
           } ],
           "instances" : {
             "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
@@ -1160,7 +1645,7 @@
             "CONFIG_INT" : "333333",
             "c_str" : "overridenstring_pipeline7"
           },
-          "selectedInstance" : "dev_11rt"
+          "selectedInstance" : "test-instance2"
         }
       },
       "parent" : "DKsX8b6xsP1NddzvqYJiq"
@@ -1219,8 +1704,8 @@
       "id" : "_qiFSsxfdxuPJ4J4uhgxS",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_4",
-        "slug" : "Pipeline",
+        "label" : "ScalaSG_SRC",
+        "slug" : "ScalaSG_SRC",
         "x" : 49.599998474121094,
         "y" : 106.00000762939453
       },
@@ -1258,8 +1743,8 @@
       "id" : "1tep3kD734Xd7PWE8Td-w",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_5",
-        "slug" : "Pipeline",
+        "label" : "Scala_Basic4",
+        "slug" : "Scala_Basic4",
         "x" : 169.1999969482422,
         "y" : 308.6000061035156
       },

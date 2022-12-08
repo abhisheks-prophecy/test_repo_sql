@@ -62,6 +62,48 @@ class Script_2Test extends FunSuite with DataFrameSuiteBase {
     Assert.assertTrue(msg, res.isRight)
   }
 
+  test("Unit Test 1") {
+
+    val dfIn0 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_2/in0/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_2/in0/data/unit_test_1.json",
+      "in0"
+    )
+    val dfOut0 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Script_2/out0/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Script_2/out0/data/unit_test_1.json",
+      "out0"
+    )
+
+    val dfOut0Computed = org.main.scla_dep_mgmt.graph.Script_2(spark, dfIn0)
+    val res = assertDFEquals(
+      dfOut0.select("customer_id",
+                    "first_name",
+                    "last_name",
+                    "phone",
+                    "email",
+                    "country_code",
+                    "account_open_date",
+                    "account_flags"
+      ),
+      dfOut0Computed.select("customer_id",
+                            "first_name",
+                            "last_name",
+                            "phone",
+                            "email",
+                            "country_code",
+                            "account_open_date",
+                            "account_flags"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
@@ -85,6 +127,14 @@ class Script_2Test extends FunSuite with DataFrameSuiteBase {
       spark,
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
+    val dfMain_scla_dep_mgmt_graph_Lookup_1 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_1/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_1/data.json",
+      port = "in"
+    )
+    org.main.scla_dep_mgmt.graph
+      .Lookup_1(spark, dfMain_scla_dep_mgmt_graph_Lookup_1)
   }
 
 }
