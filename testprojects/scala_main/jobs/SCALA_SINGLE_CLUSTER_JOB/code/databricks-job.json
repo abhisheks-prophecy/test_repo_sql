@@ -309,7 +309,7 @@
       "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_small",
       "spark_jar_task" : {
         "main_class_name" : "org.main.scla_dep_mgmt.Main",
-        "parameters" : [ "-i", "test-instance1", "-O", "{\"CONFIG_DOUBLE\":\"2222222\",\"c_record_complex\":{\"cr_string\":\"asdsad\",\"cr_array_boolean\":[true],\"cr_record\":{\"crr_float\":-23432,\"crr_spark_expression\":\"concat(first_name, first_name)\",\"crr_array_short\":[2]},\"cr_array_record\":[{\"crar_int\":55,\"crar_bool\":false,\"crar_string\":\"this is a lift son\",\"crar_spark_expression\":\"concat(first_name, last_name, last_name)\",\"crar_short\":55,\"crar_float\":55.55,\"crar_long\":5,\"crar_double\":555}]},\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(last_name, last_name)\",\"concat(first_name, first_name, last_name)\"],\"car_record\":{\"carr_double\":66,\"carr_short\":66},\"car_string\":\"asdasd\",\"car_array_float\":[11,0],\"car_int\":-435}],\"CONFIG_BOOLEAN\":\"true\",\"c_str\":\"overridenstring_pipeline0\"}" ]
+        "parameters" : [ "-i", "test-instance1", "-O", "{\"CONFIG_DOUBLE\":\"2222222\",\"c_record_complex\":{\"cr_string\":\"asdsad\",\"cr_array_boolean\":[true,false],\"cr_record\":{\"crr_float\":-23432,\"crr_spark_expression\":\"concat(first_name, first_name)\",\"crr_array_short\":[2,3,5]},\"cr_array_record\":[{\"crar_int\":55,\"crar_bool\":false,\"crar_string\":\"this is a lift son\",\"crar_spark_expression\":\"concat(first_name, last_name, last_name)\",\"crar_short\":55,\"crar_float\":55.55,\"crar_long\":5,\"crar_double\":555}]},\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(last_name, last_name)\",\"concat(first_name, first_name, last_name)\"],\"car_record\":{\"carr_double\":66,\"carr_short\":66},\"car_string\":\"asdasd\",\"car_array_float\":[11,0],\"car_int\":-435},{\"car_string\":\"this is another item\",\"car_array_float\":[66.66],\"car_record\":{\"carr_double\":22,\"carr_short\":22},\"car_int\":33}],\"CONFIG_BOOLEAN\":\"true\",\"c_str\":\"overridenstring_pipeline0\"}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -346,7 +346,7 @@
       "job_cluster_key" : "Cluster_2",
       "spark_jar_task" : {
         "main_class_name" : "org.main.scla_dep_mgmt.Main",
-        "parameters" : [ "-i", "test-instance2", "-O", "{\"CONFIG_BOOLEAN\":\"true\",\"CONFIG_DOUBLE\":\"333333\",\"CONFIG_INT\":\"333333\",\"c_str\":\"overridenstring_pipeline7\"}" ]
+        "parameters" : [ "-i", "test-instance2", "-O", "{\"CONFIG_DOUBLE\":3333,\"CONFIG_FLOAT\":33.33,\"c_dedup_expr\":\"concat(c_array_float, `c_array_int`) \",\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(first_name, first_name, first_name)\",\"concat(first_name, first_name, first_name)\"],\"car_record\":{\"carr_double\":44,\"carr_short\":44},\"car_string\":\"this is another string\",\"car_array_float\":[22.22,33.33],\"car_int\":55555}],\"CONFIG_INT\":33,\"CONFIG_BOOLEAN\":false,\"db_secrets\":\"qasecrets:mysql_user\",\"JDBC_USER\":\"test_user\",\"c_str\":\"overridenstring_pipeline7\",\"c_limit_11\":11}" ]
       },
       "libraries" : [ {
         "maven" : {

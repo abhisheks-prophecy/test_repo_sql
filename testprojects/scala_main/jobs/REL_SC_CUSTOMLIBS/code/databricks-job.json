@@ -4,12 +4,12 @@
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_SG_SRC",
       "nodeName" : "Pipeline_0",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar",
       "language" : "scala"
     }
   }, {
     "ScriptComponent" : {
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/REL_SC_CUSTOMLIBS/Script_1--342935075.py",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SC_CUSTOMLIBS/Script_1--342935075.py",
       "nodeName" : "Script_1",
       "id" : "GmMsF2FBQdPEOWMZUSY4Y$$ImXXKFxbdkZ4_pO52JmuT",
       "language" : "python",
@@ -33,7 +33,7 @@
           "prophecy.metadata.fabric.id" : "2405",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
@@ -43,11 +43,11 @@
       },
       "spark_jar_task" : {
         "main_class_name" : "com.main.sub_graph_src1.Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.7-3.2.0",
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.2.0",
           "repo" : "https://repo1.maven.org/"
         }
       }, {
@@ -56,7 +56,7 @@
           "repo" : "https://pypi.python.org/simple"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar"
       } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledalabs.com" ]
@@ -75,7 +75,7 @@
           "prophecy.metadata.fabric.id" : "2405",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
@@ -84,7 +84,7 @@
         "driver_node_type_id" : "i3.xlarge"
       },
       "spark_python_task" : {
-        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/REL_SC_CUSTOMLIBS/Script_1--342935075.py"
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SC_CUSTOMLIBS/Script_1--342935075.py"
       },
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledalabs.com" ]

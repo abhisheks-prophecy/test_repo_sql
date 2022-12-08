@@ -132,7 +132,7 @@ object Cr_record {
 case class Cr_record(
   crr_float:            Option[Float] = None,
   crr_spark_expression: String = "concat(first_name, last_name)",
-  crr_array_short:      List[Short] = List(33, 44)
+  crr_array_short:      List[Short] = List(33, 44, 55, 66, 0)
 )
 
 object Cr_array_record {

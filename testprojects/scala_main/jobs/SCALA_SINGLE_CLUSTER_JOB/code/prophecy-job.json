@@ -1022,11 +1022,11 @@
             "CONFIG_DOUBLE" : "2222222",
             "c_record_complex" : {
               "cr_string" : "asdsad",
-              "cr_array_boolean" : [ true ],
+              "cr_array_boolean" : [ true, false ],
               "cr_record" : {
                 "crr_float" : -23432,
                 "crr_spark_expression" : "concat(first_name, first_name)",
-                "crr_array_short" : [ 2 ]
+                "crr_array_short" : [ 2, 3, 5 ]
               },
               "cr_array_record" : [ {
                 "crar_int" : 55,
@@ -1048,6 +1048,14 @@
               "car_string" : "asdasd",
               "car_array_float" : [ 11, 0 ],
               "car_int" : -435
+            }, {
+              "car_string" : "this is another item",
+              "car_array_float" : [ 66.66 ],
+              "car_record" : {
+                "carr_double" : 22,
+                "carr_short" : 22
+              },
+              "car_int" : 33
             } ],
             "CONFIG_BOOLEAN" : "true",
             "c_str" : "overridenstring_pipeline0"
@@ -1640,10 +1648,25 @@
             "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
           },
           "overrides" : {
-            "CONFIG_BOOLEAN" : "true",
-            "CONFIG_DOUBLE" : "333333",
-            "CONFIG_INT" : "333333",
-            "c_str" : "overridenstring_pipeline7"
+            "CONFIG_DOUBLE" : 3333,
+            "CONFIG_FLOAT" : 33.33,
+            "c_dedup_expr" : "concat(c_array_float, `c_array_int`) ",
+            "c_array_complex" : [ {
+              "car_array_spark_expression" : [ "concat(first_name, first_name, first_name)", "concat(first_name, first_name, first_name)" ],
+              "car_record" : {
+                "carr_double" : 44,
+                "carr_short" : 44
+              },
+              "car_string" : "this is another string",
+              "car_array_float" : [ 22.22, 33.33 ],
+              "car_int" : 55555
+            } ],
+            "CONFIG_INT" : 33,
+            "CONFIG_BOOLEAN" : false,
+            "db_secrets" : "qasecrets:mysql_user",
+            "JDBC_USER" : "test_user",
+            "c_str" : "overridenstring_pipeline7",
+            "c_limit_11" : 11
           },
           "selectedInstance" : "test-instance2"
         }
