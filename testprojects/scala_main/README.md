@@ -247,3 +247,7 @@ Changes
 *** Release notes for version: 2.12 ***
 
 2.12
+
+*** Release notes for version: 1.18 ***
+
+changes
