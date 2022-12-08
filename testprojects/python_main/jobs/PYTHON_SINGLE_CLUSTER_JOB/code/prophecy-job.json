@@ -154,17 +154,21 @@
         "availableClusterSizes" : [ "small", "new-job.size" ]
       }
     }, {
-      "id" : "2694",
+      "id" : "2733",
       "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2403",
@@ -339,8 +343,8 @@
       "id" : "piC6-VBZUShbiRHUA46V5",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_3",
-        "slug" : "Pipeline",
+        "label" : "PythonBasic1",
+        "slug" : "PythonBasic1",
         "x" : 276.3999938964844,
         "y" : 104.80000305175781
       },
@@ -378,8 +382,8 @@
       "id" : "VvuwQAiJMqPEajiLlsTTD$$ItH204GaFtb2fsvskySFd",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_6",
-        "slug" : "Pipeline_6",
+        "label" : "Python_Basic4",
+        "slug" : "Python_Basic4",
         "x" : 392.5,
         "y" : 119.19999694824219
       },
@@ -417,10 +421,10 @@
       "id" : "b-9zycXTcrrue-ztrMAVc",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_4",
-        "slug" : "Pipeline",
-        "x" : 94.4000015258789,
-        "y" : 259.20001220703125
+        "label" : "Python_Basic3",
+        "slug" : "Python_Basic3",
+        "x" : 107.5999984741211,
+        "y" : 238.80001831054688
       },
       "ports" : {
         "inputs" : [ {
@@ -456,8 +460,8 @@
       "id" : "3xosyvFhVyO97-kzKjBfI",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_5",
-        "slug" : "Pipeline",
+        "label" : "PythonSGSrc2",
+        "slug" : "PythonSGSrc2",
         "x" : 835.2000122070312,
         "y" : 605
       },
@@ -539,8 +543,8 @@
       "id" : "0WvJEwNbtFnFTIx8tGPCy",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "PY_DEP_MGMT",
-        "slug" : "PY_DEP_MGMT",
+        "label" : "PythonDepMgmt",
+        "slug" : "PythonDepMgmt",
         "x" : 125.5999984741211,
         "y" : 298
       },
@@ -807,9 +811,18 @@
             "PythonProjectCloneExternalGit" : [ "test-instance7", "test-instance2", "test-instance3", "test-instance6", "test-instance5", "test-instance1", "default", "test-instance4", "test-instance8" ]
           },
           "overrides" : {
-            "CONFIG_BOOLEAN" : "true",
             "CONFIG_DOUBLE" : "2222222",
-            "c_str" : "overridenstring_pipeline0"
+            "EXPR_COMPLEX_DATES" : "(((((date_add(date_trunc(date_format(date_sub(date_add(current_date(), 2), 2), 'yyyy MMM dd'), 'YEAR'), 1) < date_sub(current_timestamp(), 2)) OR (date_add(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss'), 2) < date_add(from_utc_timestamp(c_timestamp, 'Asia/Seoul'), 2))) OR (next_day('2015-01-14', 'TU') < current_date())) OR ((to_date('2009-07-30 04:17:52') < to_timestamp(c_date)) OR (add_months(c_timestamp, 1) < add_months(c_date, 2)))) AND ((c_int % 2) = 0))",
+            "CONFIG_FLOAT" : 44.44,
+            "CONFIG_DB_SECRETS" : "qasecrets:mysql_user",
+            "JDBC_URL" : "jdbc:mysql://18.144.156.219:3306/test_database",
+            "CONFIG_INT" : 44,
+            "CONFIG_BOOLEAN" : false,
+            "c_int_11" : 11,
+            "c_st_expr" : "concat(`c   short  --`, `c-int-column type`)",
+            "c_str" : "overridenstring_pipeline0",
+            "JDBC_SOURCE_TABLE" : "test_table",
+            "CONFIG_SHORT" : 44
           },
           "selectedInstance" : "test-instance1"
         }
@@ -819,8 +832,8 @@
       "id" : "xk9oV4IPA6aWyvMeeMH3Y",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_1",
-        "slug" : "Pipeline",
+        "label" : "PythonSGSrc3",
+        "slug" : "PythonSGSrc3",
         "x" : 95.39999389648438,
         "y" : 283.6000061035156
       },
@@ -874,8 +887,8 @@
       "metadata" : {
         "label" : "Cluster_2",
         "slug" : "Cluster_2",
-        "x" : 758.5999755859375,
-        "y" : 6.800000190734863,
+        "x" : 745.3999633789062,
+        "y" : 8,
         "width" : 634.300048828125,
         "height" : 494.20001220703125
       },
@@ -921,8 +934,8 @@
       "id" : "XN75fEayv1t73hscEi5kQ",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_2",
-        "slug" : "Pipeline",
+        "label" : "PythonSG_SRC1",
+        "slug" : "PythonSG_SRC1",
         "x" : -269,
         "y" : 168.60000610351562
       },
@@ -975,8 +988,8 @@
       "metadata" : {
         "label" : "Cluster_1",
         "slug" : "Cluster_1",
-        "x" : 254,
-        "y" : 361.79998779296875,
+        "x" : 240.8000030517578,
+        "y" : 373.79998779296875,
         "width" : 425.6000061035156,
         "height" : 419.20001220703125
       },

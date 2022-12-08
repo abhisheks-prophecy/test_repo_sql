@@ -132,3 +132,11 @@ class Reformat_16Test(BaseTestCase):
             self.spark,
             Namespace(file = f"configs/resources/config/{fabricName}.json", config = None)
         )
+        dfmain1_pythondepmanagement_1_graph_Lookup_1 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Lookup_1/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Lookup_1/data.json',
+            "in0"
+        )
+        from com.main1.pythondepmanagement_1.graph.Lookup_1 import Lookup_1
+        Lookup_1(self.spark, dfmain1_pythondepmanagement_1_graph_Lookup_1)
