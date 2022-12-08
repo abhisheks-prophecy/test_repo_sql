@@ -2,6 +2,7 @@ package io.prophecy.pipelines.sc_config_pip.config
 
 import io.prophecy.pipelines.sc_config_pip.config.ConfigStore._
 import pureconfig._
+import pureconfig.generic.ProductHint
 import io.prophecy.libs._
 
 case class Config(

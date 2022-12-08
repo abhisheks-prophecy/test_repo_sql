@@ -1,15 +1,15 @@
 {
-  "fabric_id" : "674",
+  "fabric_id" : "2790",
   "components" : [ {
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_DEPENDENCY_MANAGEMENT",
       "nodeName" : "SCALA_DEPENDENCY_MANAGEMENT",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar",
       "language" : "scala"
     }
   }, {
     "ScriptComponent" : {
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_1--342935075.py",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_1--342935075.py",
       "nodeName" : "Script_1",
       "id" : "NBebEUAvx7OoU25uHz0gj$$nObffZ71E4VzmZo84vl6r",
       "language" : "python",
@@ -19,12 +19,12 @@
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_SG_SRC",
       "nodeName" : "Pipeline_1",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar",
       "language" : "scala"
     }
   }, {
     "ScriptComponent" : {
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_2--342935074.py",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_2--342935074.py",
       "nodeName" : "Script_2",
       "id" : "gioLYng0mGxaTad_Xsn2N$$KTkDGZw-LO4tTL1SVk-Ri",
       "language" : "python",
@@ -34,21 +34,21 @@
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_SG_SRC",
       "nodeName" : "Pipeline_4",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar",
       "language" : "scala"
     }
   }, {
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_SG_SRC",
       "nodeName" : "Pipeline_3",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar",
       "language" : "scala"
     }
   }, {
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_DEPENDENCY_MANAGEMENT",
       "nodeName" : "Pipeline_2",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar",
       "language" : "scala"
     }
   } ],
@@ -58,15 +58,16 @@
     "job_clusters" : [ {
       "job_cluster_key" : "MASTER_SC_SCALA_DEPMGMT_default_small",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/MASTER_SC_SCALA_DEPMGMT",
-          "prophecy.metadata.fabric.id" : "674",
+          "prophecy.metadata.fabric.id" : "2790",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar\",\"pipelines/SCALA_DEPENDENCY_MANAGEMENT\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar\",\"pipelines/SCALA_DEPENDENCY_MANAGEMENT\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.test.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
         "num_workers" : 1,
@@ -75,18 +76,19 @@
     }, {
       "job_cluster_key" : "Cluster_1",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/MASTER_SC_SCALA_DEPMGMT",
-          "prophecy.metadata.fabric.id" : "674",
+          "prophecy.metadata.fabric.id" : "2790",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar\",\"pipelines/SCALA_DEPENDENCY_MANAGEMENT\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar\",\"pipelines/SCALA_DEPENDENCY_MANAGEMENT\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.test.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
-        "num_workers" : 2,
+        "num_workers" : 1,
         "driver_node_type_id" : "i3.xlarge"
       }
     }, {
@@ -96,11 +98,12 @@
         "node_type_id" : "m5.xlarge",
         "spark_conf" : {
           "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/MASTER_SC_SCALA_DEPMGMT",
-          "prophecy.metadata.fabric.id" : "674",
+          "prophecy.metadata.fabric.id" : "2790",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar\",\"pipelines/SCALA_DEPENDENCY_MANAGEMENT\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar\",\"pipelines/SCALA_DEPENDENCY_MANAGEMENT\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.test.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
         "custom_tags" : { },
@@ -132,18 +135,18 @@
       "job_cluster_key" : "Cluster_1",
       "spark_jar_task" : {
         "main_class_name" : "Main",
-        "parameters" : [ "-i", "test-instance2", "-C", "CONFIG_DOUBLE=111", "CONFIG_INT=111", "CONFIG_FLOAT=222" ]
+        "parameters" : [ "-i", "test-instance2", "-O", "{\"CONFIG_DOUBLE\":\"111\",\"CONFIG_INT\":\"111\",\"CONFIG_FLOAT\":\"222\"}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.10-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.3.0"
         }
       }, {
         "pypi" : {
           "package" : "prophecy-libs==1.3.11"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar"
       }, {
         "maven" : {
           "coordinates" : "mysql:mysql-connector-java:8.0.29",
@@ -152,12 +155,6 @@
       }, {
         "maven" : {
           "coordinates" : "org.postgresql:postgresql:42.3.4",
-          "exclusions" : [ ]
-        }
-      }, {
-        "maven" : {
-          "coordinates" : "org.scalanlp:epic_2.12:0.5",
-          "repo" : "https://repo.maven.apache.org/maven2/",
           "exclusions" : [ ]
         }
       }, {
@@ -175,7 +172,7 @@
       } ],
       "job_cluster_key" : "Cluster_1",
       "spark_python_task" : {
-        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_1--342935075.py"
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_1--342935075.py"
       },
       "email_notifications" : { },
       "max_retries" : 0
@@ -187,18 +184,18 @@
       "job_cluster_key" : "MASTER_SC_SCALA_DEPMGMT_default_small",
       "spark_jar_task" : {
         "main_class_name" : "Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.10-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.3.0"
         }
       }, {
         "pypi" : {
           "package" : "prophecy-libs==1.3.11"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar"
       } ],
       "email_notifications" : { },
       "max_retries" : 0
@@ -206,7 +203,7 @@
       "task_key" : "Script_2",
       "job_cluster_key" : "MASTER_SC_SCALA_DEPMGMT_default_small",
       "spark_python_task" : {
-        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_2--342935074.py"
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/MASTER_SC_SCALA_DEPMGMT/Script_2--342935074.py"
       },
       "email_notifications" : { },
       "max_retries" : 0
@@ -218,18 +215,18 @@
       "job_cluster_key" : "MASTER_SC_SCALA_DEPMGMT_default_small",
       "spark_jar_task" : {
         "main_class_name" : "Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.10-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.3.0"
         }
       }, {
         "pypi" : {
           "package" : "prophecy-libs==1.3.11"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar"
       } ],
       "email_notifications" : { },
       "max_retries" : 0
@@ -238,18 +235,18 @@
       "job_cluster_key" : "Cluster_2",
       "spark_jar_task" : {
         "main_class_name" : "Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.10-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.2.0"
         }
       }, {
         "pypi" : {
           "package" : "prophecy-libs==1.3.11"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_SG_SRC.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar"
       } ],
       "email_notifications" : { },
       "max_retries" : 0
@@ -261,18 +258,18 @@
       "job_cluster_key" : "Cluster_2",
       "spark_jar_task" : {
         "main_class_name" : "Main",
-        "parameters" : [ "-i", "test-instance1", "-C", "CONFIG_DOUBLE=1", "CONFIG_INT=1", "CONFIG_FLOAT=1" ]
+        "parameters" : [ "-i", "test-instance1", "-O", "{\"CONFIG_DOUBLE\":\"1\",\"CONFIG_INT\":\"1\",\"CONFIG_FLOAT\":\"1\"}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.10-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.2.0"
         }
       }, {
         "pypi" : {
           "package" : "prophecy-libs==1.3.11"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/SCALA_DEPENDENCY_MANAGEMENT.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/test/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_DEPENDENCY_MANAGEMENT.jar"
       }, {
         "maven" : {
           "coordinates" : "mysql:mysql-connector-java:8.0.29",
@@ -281,12 +278,6 @@
       }, {
         "maven" : {
           "coordinates" : "org.postgresql:postgresql:42.3.4",
-          "exclusions" : [ ]
-        }
-      }, {
-        "maven" : {
-          "coordinates" : "org.scalanlp:epic_2.12:0.5",
-          "repo" : "https://repo.maven.apache.org/maven2/",
           "exclusions" : [ ]
         }
       }, {

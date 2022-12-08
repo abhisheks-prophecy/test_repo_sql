@@ -2,6 +2,7 @@ package io.prophecy.pipelines.scaladoanything.config
 
 import io.prophecy.pipelines.scaladoanything.config.ConfigStore._
 import pureconfig._
+import pureconfig.generic.ProductHint
 import io.prophecy.libs._
 
 case class Config(

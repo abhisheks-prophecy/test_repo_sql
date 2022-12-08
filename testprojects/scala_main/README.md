@@ -243,3 +243,7 @@ final release
 *** Release notes for version: 2.11 ***
 
 Changes
+
+*** Release notes for version: 2.12 ***
+
+2.12
