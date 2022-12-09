@@ -301,9 +301,23 @@ schema:
         type: string
         nullable: true
         metadata:
-          description: ''
-          mappings: []
-          tags: []
+          description: this is a struct field description
+          mappings:
+          - columnName: c_string
+            type: foreign
+            datasetName: src_delta_all_type_no_partition
+            datasetId: datasets/src_delta_all_type_no_partition
+          - columnName: c-string
+            type: foreign
+            datasetName: src_parquet_all_type_and_partition_withspacehyphens
+            datasetId: datasets/src_parquet_all_type_and_partition_withspacehyphens
+          tags:
+          - type: user
+            name: complex data tag (- *&^%$#@!~()+-+)
+          - type: user
+            name: optional
+          - type: user
+            name: string
       - name: 'c_date - of a struct _ '
         type: date
         nullable: true
