@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "299",
+    "fabricId" : "2730",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -170,14 +170,21 @@
           "id" : "zqgMuruDRcxP9L0gCGFS7$$JNCurZ9IuBczN7K-ao6cl",
           "slug" : "in0"
         } ],
-        "outputs" : [ ],
+        "outputs" : [ {
+          "id" : "1DpbGVDq4gDguuxlp-FsI$$a6wwBFUElAoCP-OZd2Dyj",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          }
+        } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "print(\"hello\")",
-        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> None:",
-        "scriptMethodFooter" : "    return "
+        "script" : "print(\"hello\")\nout0=in0",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
       }
     },
     "048ogu6WADjDj-febNiED$$cbZiqf-vOBq4RxSRvDKRY" : {
@@ -249,7 +256,7 @@
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "import subprocess\nresult=subprocess.run([\"ls\"], capture_output=True, text=True)\n# result1=subprocess.run([\"pwd\"], capture_output=True, text=True)\ndata = [StructField(item, StringType(), True) for item in result.stdout.split(\"\\n\")]\n# data.append((result1.stdout,))\nprint(data)\ndeptDF = spark.createDataFrame(data=[], schema=StructType(data))\ndeptDF.printSchema()\nout0=deptDF",
+        "script" : "import subprocess\nresult=subprocess.run([\"ls\"], capture_output=True, text=True)\n# result1=subprocess.run([\"pwd\"], capture_output=True, text=True)\ndata = [StructField(item, StringType(), True) for item in result.stdout.split(\"\\n\")]\n# data.append((result1.stdout,))\nprint(data)\ndeptDF = spark.createDataFrame(data=[], schema=StructType(data))\ndeptDF.printSchema()\nout0=in0",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }
@@ -395,13 +402,80 @@
         } ],
         "outputs" : [ {
           "id" : "HG2PFttcDIFYU1vzP-sYS$$LRER5fLiAr-bMCiDFK5N1",
-          "slug" : "out0"
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "bin",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "conf",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dbt_project.yml",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "kanela-agent",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lib",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "packages.yml",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          }
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "import subprocess\nresult=subprocess.run([\"ls\"], capture_output=True, text=True)\n# result1=subprocess.run([\"pwd\"], capture_output=True, text=True)\ndata = [StructField(item, StringType(), True) for item in result.stdout.split(\"\\n\")]\n# data.append((result1.stdout,))\nprint(data)\ndeptDF = spark.createDataFrame(data=[], schema=StructType(data))\ndeptDF.printSchema()\nout0=deptDF",
+        "script" : "import subprocess\nresult=subprocess.run([\"ls\"], capture_output=True, text=True)\n# result1=subprocess.run([\"pwd\"], capture_output=True, text=True)\ndata = [StructField(item, StringType(), True) for item in result.stdout.split(\"\\n\")]\n# data.append((result1.stdout,))\nprint(data)\ndeptDF = spark.createDataFrame(data=[], schema=StructType(data))\ndeptDF.printSchema()\nout0=in0",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }

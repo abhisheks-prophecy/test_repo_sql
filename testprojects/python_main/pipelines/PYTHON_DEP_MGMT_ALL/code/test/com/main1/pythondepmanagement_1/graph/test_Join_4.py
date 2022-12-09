@@ -88,6 +88,32 @@ class Join_4Test(BaseTestCase):
             self.maxUnequalRowsToShow
         )
 
+    def test_unit_test_3(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Join_4/in0/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Join_4/in0/data/test_unit_test_3.json',
+            'in0'
+        )
+        dfIn1 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Join_4/in1/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Join_4/in1/data/test_unit_test_3.json',
+            'in1'
+        )
+        dfOut = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Join_4/out/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Join_4/out/data/test_unit_test_3.json',
+            'out'
+        )
+        dfOutComputed = Join_4(self.spark, dfIn0, dfIn1)
+        assertDFEquals(
+            dfOut.select("c- short", "c_int1"),
+            dfOutComputed.select("c- short", "c_int1"),
+            self.maxUnequalRowsToShow
+        )
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os
@@ -96,3 +122,11 @@ class Join_4Test(BaseTestCase):
             self.spark,
             Namespace(file = f"configs/resources/config/{fabricName}.json", config = None)
         )
+        dfmain1_pythondepmanagement_1_graph_Lookup_1 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Lookup_1/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Lookup_1/data.json',
+            "in0"
+        )
+        from com.main1.pythondepmanagement_1.graph.Lookup_1 import Lookup_1
+        Lookup_1(self.spark, dfmain1_pythondepmanagement_1_graph_Lookup_1)

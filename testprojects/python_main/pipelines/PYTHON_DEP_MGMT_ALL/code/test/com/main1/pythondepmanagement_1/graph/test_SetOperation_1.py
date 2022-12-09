@@ -178,6 +178,68 @@ class SetOperation_1Test(BaseTestCase):
             self.maxUnequalRowsToShow
         )
 
+    def test_unit_test_3(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/SetOperation_1/in0/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/SetOperation_1/in0/data/test_unit_test_3.json',
+            'in0'
+        )
+        dfIn1 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/SetOperation_1/in1/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/SetOperation_1/in1/data/test_unit_test_3.json',
+            'in1'
+        )
+        dfOut = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/SetOperation_1/out/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/SetOperation_1/out/data/test_unit_test_3.json',
+            'out'
+        )
+        dfOutComputed = SetOperation_1(self.spark, dfIn0, dfIn1)
+        assertDFEquals(
+            dfOut.select(
+              "c   short  --",
+              "c-int-column type",
+              "-- c-long",
+              "c-decimal renamed",
+              "c  float",
+              "c--boolean",
+              "c- - -double",
+              "c___-- string",
+              "c  date",
+              "c_timestamp",
+              "squared_short",
+              "factorial_short",
+              "random_string_value",
+              "config_values",
+              "udf_scipy_dependency",
+              "c_config_str",
+              "concat short int"
+            ),
+            dfOutComputed.select(
+              "c   short  --",
+              "c-int-column type",
+              "-- c-long",
+              "c-decimal renamed",
+              "c  float",
+              "c--boolean",
+              "c- - -double",
+              "c___-- string",
+              "c  date",
+              "c_timestamp",
+              "squared_short",
+              "factorial_short",
+              "random_string_value",
+              "config_values",
+              "udf_scipy_dependency",
+              "c_config_str",
+              "concat short int"
+            ),
+            self.maxUnequalRowsToShow
+        )
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os
@@ -186,3 +248,11 @@ class SetOperation_1Test(BaseTestCase):
             self.spark,
             Namespace(file = f"configs/resources/config/{fabricName}.json", config = None)
         )
+        dfmain1_pythondepmanagement_1_graph_Lookup_1 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Lookup_1/schema.json',
+            'test/resources/data/com/main1/pythondepmanagement_1/graph/Lookup_1/data.json',
+            "in0"
+        )
+        from com.main1.pythondepmanagement_1.graph.Lookup_1 import Lookup_1
+        Lookup_1(self.spark, dfmain1_pythondepmanagement_1_graph_Lookup_1)

@@ -251,3 +251,7 @@ Changes
 *** Release notes for version: 1.18 ***
 
 changes
+
+*** Release notes for version: 1.19 ***
+
+1.19
