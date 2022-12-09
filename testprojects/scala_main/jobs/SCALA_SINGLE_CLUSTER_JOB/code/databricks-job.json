@@ -16,9 +16,9 @@
     }
   }, {
     "PipelineComponent" : {
-      "id" : "pipelines/SCALA_BASIC",
-      "nodeName" : "Scala_Basic",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar",
+      "id" : "pipelines/SCALA_SG_SRC",
+      "nodeName" : "ScalaSGSRC4",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar",
       "language" : "scala"
     }
   }, {
@@ -217,13 +217,13 @@
       },
       "max_retries" : 0
     }, {
-      "task_key" : "Scala_Basic",
+      "task_key" : "ScalaSGSRC4",
       "depends_on" : [ {
         "task_key" : "Scala_Basic1"
       } ],
       "job_cluster_key" : "Cluster_2",
       "spark_jar_task" : {
-        "main_class_name" : "com.scala.main.job1.Main",
+        "main_class_name" : "com.main.sub_graph_src1.Main",
         "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
@@ -235,7 +235,7 @@
           "package" : "prophecy-libs==1.3.12"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_SG_SRC.jar"
       } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledatalabs.com" ]
@@ -279,7 +279,7 @@
     }, {
       "task_key" : "Scala_Basic2",
       "depends_on" : [ {
-        "task_key" : "Scala_Basic"
+        "task_key" : "ScalaSGSRC4"
       } ],
       "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_small",
       "spark_jar_task" : {
@@ -309,7 +309,7 @@
       "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_small",
       "spark_jar_task" : {
         "main_class_name" : "org.main.scla_dep_mgmt.Main",
-        "parameters" : [ "-i", "test-instance1", "-O", "{\"CONFIG_DOUBLE\":\"2222222\",\"c_record_complex\":{\"cr_string\":\"asdsad\",\"cr_array_boolean\":[true,false],\"cr_record\":{\"crr_float\":-23432,\"crr_spark_expression\":\"concat(first_name, first_name)\",\"crr_array_short\":[2,3,5]},\"cr_array_record\":[{\"crar_int\":55,\"crar_bool\":false,\"crar_string\":\"this is a lift son\",\"crar_spark_expression\":\"concat(first_name, last_name, last_name)\",\"crar_short\":55,\"crar_float\":55.55,\"crar_long\":5,\"crar_double\":555}]},\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(last_name, last_name)\",\"concat(first_name, first_name, last_name)\"],\"car_record\":{\"carr_double\":66,\"carr_short\":66},\"car_string\":\"asdasd\",\"car_array_float\":[11,0],\"car_int\":-435},{\"car_string\":\"this is another item\",\"car_array_float\":[66.66],\"car_record\":{\"carr_double\":22,\"carr_short\":22},\"car_int\":33}],\"CONFIG_BOOLEAN\":\"true\",\"c_str\":\"overridenstring_pipeline0\"}" ]
+        "parameters" : [ "-i", "test-instance1", "-O", "{\"CONFIG_DOUBLE\":\"2222222\",\"c_record_complex\":{\"cr_string\":\"asdsad\",\"cr_array_boolean\":[true,false],\"cr_record\":{\"crr_float\":-23432,\"crr_spark_expression\":\"concat(first_name, first_name)\",\"crr_array_short\":[2,3,5]},\"cr_array_record\":[{\"crar_int\":55,\"crar_bool\":false,\"crar_string\":\"this is a lift son\",\"crar_spark_expression\":\"concat(first_name, last_name, last_name)\",\"crar_short\":55,\"crar_float\":55.55,\"crar_long\":5,\"crar_double\":555}]},\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(`last_name`, last_name)\",\"concat(first_name, `first_name`, last_name)\"],\"car_record\":{\"carr_double\":66,\"carr_short\":66},\"car_string\":\"asdasd\",\"car_array_float\":[11,0],\"car_int\":-435},{\"car_array_spark_expression\":[\"concat(first_name, 'a')\",\"concat(last_name, 'a')\"],\"car_record\":{\"carr_double\":22,\"carr_short\":22},\"car_string\":\"this is another item\",\"car_array_float\":[66.66,22.22],\"car_int\":33}],\"CONFIG_BOOLEAN\":\"true\",\"c_str\":\"overridenstring_pipeline0\"}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -381,7 +381,7 @@
     }, {
       "task_key" : "Script_1",
       "depends_on" : [ {
-        "task_key" : "Scala_Basic"
+        "task_key" : "ScalaSGSRC4"
       } ],
       "job_cluster_key" : "Cluster_2",
       "spark_python_task" : {

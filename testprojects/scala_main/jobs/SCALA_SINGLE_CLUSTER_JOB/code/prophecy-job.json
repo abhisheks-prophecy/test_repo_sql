@@ -385,8 +385,8 @@
       "id" : "zpW3JW9SBY91WtenbovxD",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Scala_Basic",
-        "slug" : "Scala_Basic",
+        "label" : "ScalaSGSRC4",
+        "slug" : "ScalaSGSRC4",
         "x" : 270.39996337890625,
         "y" : 103.60000610351562
       },
@@ -408,11 +408,11 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/SCALA_BASIC",
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+            "ScalaProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -1044,7 +1044,7 @@
               } ]
             },
             "c_array_complex" : [ {
-              "car_array_spark_expression" : [ "concat(last_name, last_name)", "concat(first_name, first_name, last_name)" ],
+              "car_array_spark_expression" : [ "concat(`last_name`, last_name)", "concat(first_name, `first_name`, last_name)" ],
               "car_record" : {
                 "carr_double" : 66,
                 "carr_short" : 66
@@ -1053,12 +1053,13 @@
               "car_array_float" : [ 11, 0 ],
               "car_int" : -435
             }, {
-              "car_string" : "this is another item",
-              "car_array_float" : [ 66.66 ],
+              "car_array_spark_expression" : [ "concat(first_name, 'a')", "concat(last_name, 'a')" ],
               "car_record" : {
                 "carr_double" : 22,
                 "carr_short" : 22
               },
+              "car_string" : "this is another item",
+              "car_array_float" : [ 66.66, 22.22 ],
               "car_int" : 33
             } ],
             "CONFIG_BOOLEAN" : "true",
