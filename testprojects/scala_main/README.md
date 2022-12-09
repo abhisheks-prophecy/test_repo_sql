@@ -263,3 +263,7 @@ changes
 *** Release notes for version: 1.21 ***
 
 1.21
+
+*** Release notes for version: 1.22 ***
+
+1.22
