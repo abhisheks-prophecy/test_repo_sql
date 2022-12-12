@@ -3,8 +3,8 @@
   "components" : [ {
     "PipelineComponent" : {
       "id" : "pipelines/PYTHON_SG_SRC",
-      "nodeName" : "Pipeline_0",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_SG_SRC-1.0-py3-none-any.whl",
+      "nodeName" : "PY_SG_SRC",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl",
       "language" : "python"
     }
   }, {
@@ -29,7 +29,7 @@
           "prophecy.metadata.fabric.id" : "2405",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/PYTHON_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_SG_SRC-1.0-py3-none-any.whl\"}",
+          "prophecy.packages.path" : "{\"pipelines/PYTHON_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
@@ -43,10 +43,10 @@
       "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledalabs.com" ]
     },
     "tasks" : [ {
-      "task_key" : "Pipeline_0",
+      "task_key" : "PY_SG_SRC",
       "job_cluster_key" : "REL_PY_CUSTOMLIBS_default_small",
       "python_wheel_task" : {
-        "package_name" : "PYTHON_SG_SRC",
+        "package_name" : "REL_PY_PIP_SG_SRC",
         "entry_point" : "main",
         "parameters" : [ "-i", "default" ]
       },
@@ -61,7 +61,7 @@
           "repo" : "https://pypi.python.org/simple"
         }
       }, {
-        "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_SG_SRC-1.0-py3-none-any.whl"
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
       } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledalabs.com" ]
@@ -70,7 +70,7 @@
     }, {
       "task_key" : "Script_1",
       "depends_on" : [ {
-        "task_key" : "Pipeline_0"
+        "task_key" : "PY_SG_SRC"
       } ],
       "job_cluster_key" : "REL_PY_CUSTOMLIBS_default_small",
       "spark_python_task" : {

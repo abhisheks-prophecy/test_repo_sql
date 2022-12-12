@@ -3,7 +3,7 @@
   "components" : [ {
     "PipelineComponent" : {
       "id" : "pipelines/PYTHON_BASIC",
-      "nodeName" : "Pipeline_0",
+      "nodeName" : "PY_BASIC",
       "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl",
       "language" : "python"
     }
@@ -42,7 +42,7 @@
       "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledatalabs.com" ]
     },
     "tasks" : [ {
-      "task_key" : "Pipeline_0",
+      "task_key" : "PY_BASIC",
       "job_cluster_key" : "REL_PY_DBFSLIBS_default_small",
       "python_wheel_task" : {
         "package_name" : "PYTHON_BASIC",
@@ -63,7 +63,7 @@
     }, {
       "task_key" : "Script_1",
       "depends_on" : [ {
-        "task_key" : "Pipeline_0"
+        "task_key" : "PY_BASIC"
       } ],
       "job_cluster_key" : "REL_PY_DBFSLIBS_default_small",
       "spark_python_task" : {
