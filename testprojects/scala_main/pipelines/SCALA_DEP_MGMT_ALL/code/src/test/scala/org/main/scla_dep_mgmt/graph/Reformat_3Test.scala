@@ -57,6 +57,14 @@ class Reformat_3Test extends FunSuite with DataFrameSuiteBase {
       )
     )
 
+    val dfMain_scla_dep_mgmt_graph_Lookup_2 = createDfFromResourceFiles(
+      spark,
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_2/schema.json",
+      "/data/org/main/scla_dep_mgmt/graph/Lookup_2/data.json",
+      port = "in"
+    )
+    org.main.scla_dep_mgmt.graph
+      .Lookup_2(spark, dfMain_scla_dep_mgmt_graph_Lookup_2)
     val dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1 =
       createDfFromResourceFiles(
         spark,

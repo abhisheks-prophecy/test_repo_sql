@@ -23,6 +23,15 @@ object Main {
         "8qziesy9-ngcOeLhVFmCK$$oTFH-zftsblU11s6LLMBZ",
         "tZblttEX9pep-3_lCvBEW$$zkLqZI_HCzpfACOL1uLTn"
       )
+    val df_Reformat_1 = Reformat_1(
+      spark,
+      df_src_parquet_all_type_and_partition_withspacehyphens
+    ).interim("graph",
+              "sguXN3Qzk-rrsIeKc-lwj$$6nXDsqNXOLVMJZNMjkPv0",
+              "97nBNPy4v0oHeGU_zRGWw$$luZlhcxAsoGVl412RoaFq"
+    )
+    df_Reformat_1.cache().count()
+    df_Reformat_1.unpersist()
     val df_Reformat_2 = Reformat_2(
       spark,
       df_src_parquet_all_type_and_partition_withspacehyphens
@@ -53,15 +62,6 @@ object Main {
     df_Subgraph_1_out1.unpersist()
     df_Subgraph_1_out2.cache().count()
     df_Subgraph_1_out2.unpersist()
-    val df_Reformat_1 = Reformat_1(
-      spark,
-      df_src_parquet_all_type_and_partition_withspacehyphens
-    ).interim("graph",
-              "sguXN3Qzk-rrsIeKc-lwj$$6nXDsqNXOLVMJZNMjkPv0",
-              "97nBNPy4v0oHeGU_zRGWw$$luZlhcxAsoGVl412RoaFq"
-    )
-    df_Reformat_1.cache().count()
-    df_Reformat_1.unpersist()
   }
 
   def main(args: Array[String]): Unit = {

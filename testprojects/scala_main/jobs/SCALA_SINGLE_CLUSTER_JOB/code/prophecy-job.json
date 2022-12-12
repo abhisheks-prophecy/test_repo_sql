@@ -27,6 +27,19 @@
       }
     },
     "availableFabrics" : [ {
+      "id" : "2807",
+      "name" : "Azure-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2420",
       "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
@@ -77,24 +90,41 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2706",
+      "id" : "2801",
       "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
       }
     }, {
-      "id" : "2695",
+      "id" : "2792",
       "name" : "Livyscala-TEST_Automated",
       "clusterSizes" : {
         "default" : "Small",
         "availableClusterSizes" : [ "Small", "small2", "small3" ]
+      }
+    }, {
+      "id" : "2797",
+      "name" : "JobFabricMain_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "2601",
@@ -140,13 +170,6 @@
         }
       }
     }, {
-      "id" : "2709",
-      "name" : "Livypython-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3" ]
-      }
-    }, {
       "id" : "917",
       "name" : "ebs_ssd",
       "clusterSizes" : {
@@ -154,7 +177,20 @@
         "availableClusterSizes" : [ "small", "new-job.size" ]
       }
     }, {
-      "id" : "2733",
+      "id" : "2802",
+      "name" : "TEST-Automated_Databricks1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2798",
       "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
         "default" : "small",
@@ -184,37 +220,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2707",
-      "name" : "GCP-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "2135",
       "name" : "dev_azure",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2708",
-      "name" : "TEST-Automated_Databricks1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
       }
     }, {
       "id" : "1901",
@@ -234,17 +244,11 @@
         }
       }
     }, {
-      "id" : "2726",
-      "name" : "JobFabricMain_1",
+      "id" : "2794",
+      "name" : "TEST-Automated_Livy1",
       "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3", "small_new" ]
       }
     }, {
       "id" : "2080",
@@ -254,18 +258,11 @@
         "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
-      "id" : "2710",
-      "name" : "TEST-Automated_Livy1",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3", "small_new" ]
-      }
-    }, {
-      "id" : "2704",
-      "name" : "SingleCluster_1",
+      "id" : "2795",
+      "name" : "GCP-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "adv-json1" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -279,6 +276,26 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json-acl" ]
+      }
+    }, {
+      "id" : "2800",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2793",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3" ]
       }
     }, {
       "id" : "1962",
@@ -324,7 +341,7 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2731",
+      "id" : "2796",
       "name" : "Config_unity_catalog_shared",
       "clusterSizes" : {
         "default" : "small",
@@ -376,45 +393,6 @@
           "selectedInstance" : "default"
         }
       }
-    },
-    "zpW3JW9SBY91WtenbovxD" : {
-      "id" : "zpW3JW9SBY91WtenbovxD",
-      "component" : "Pipeline",
-      "metadata" : {
-        "label" : "Scala_Basic",
-        "slug" : "Scala_Basic",
-        "x" : 270.39996337890625,
-        "y" : 103.60000610351562
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "yIaMc3IIqSfPIfwXOrVDw"
-        } ],
-        "outputs" : [ {
-          "id" : "w0U6w5nt8tJY2a4qpH6dU"
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "pipelineId" : "pipelines/SCALA_BASIC",
-        "configurations" : {
-          "schema" : [ ],
-          "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
-          },
-          "overrides" : { },
-          "selectedInstance" : "default"
-        }
-      },
-      "parent" : "DKsX8b6xsP1NddzvqYJiq"
     },
     "qhw6BKxwq3hOBYvXF5PxY" : {
       "id" : "qhw6BKxwq3hOBYvXF5PxY",
@@ -928,7 +906,7 @@
                         "type" : "short",
                         "value" : null
                       },
-                      "value" : [ 33, 44 ]
+                      "value" : [ 33, 44, 55, 66, 0 ]
                     },
                     "optional" : false
                   } ]
@@ -1022,11 +1000,11 @@
             "CONFIG_DOUBLE" : "2222222",
             "c_record_complex" : {
               "cr_string" : "asdsad",
-              "cr_array_boolean" : [ true ],
+              "cr_array_boolean" : [ true, false ],
               "cr_record" : {
                 "crr_float" : -23432,
                 "crr_spark_expression" : "concat(first_name, first_name)",
-                "crr_array_short" : [ 2 ]
+                "crr_array_short" : [ 2, 3, 5 ]
               },
               "cr_array_record" : [ {
                 "crar_int" : 55,
@@ -1040,7 +1018,7 @@
               } ]
             },
             "c_array_complex" : [ {
-              "car_array_spark_expression" : [ "concat(last_name, last_name)", "concat(first_name, first_name, last_name)" ],
+              "car_array_spark_expression" : [ "concat(`last_name`, last_name)", "concat(first_name, `first_name`, last_name)" ],
               "car_record" : {
                 "carr_double" : 66,
                 "carr_short" : 66
@@ -1048,6 +1026,15 @@
               "car_string" : "asdasd",
               "car_array_float" : [ 11, 0 ],
               "car_int" : -435
+            }, {
+              "car_array_spark_expression" : [ "concat(first_name, 'a')", "concat(last_name, 'a')" ],
+              "car_record" : {
+                "carr_double" : 22,
+                "carr_short" : 22
+              },
+              "car_string" : "this is another item",
+              "car_array_float" : [ 66.66, 22.22 ],
+              "car_int" : 33
             } ],
             "CONFIG_BOOLEAN" : "true",
             "c_str" : "overridenstring_pipeline0"
@@ -1120,8 +1107,8 @@
       "metadata" : {
         "label" : "Scala_Dep_1",
         "slug" : "Scala_Dep_1",
-        "x" : 268.20001220703125,
-        "y" : 289
+        "x" : 231.00001525878906,
+        "y" : 107.80000305175781
       },
       "ports" : {
         "inputs" : [ {
@@ -1640,10 +1627,28 @@
             "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
           },
           "overrides" : {
-            "CONFIG_BOOLEAN" : "true",
-            "CONFIG_DOUBLE" : "333333",
-            "CONFIG_INT" : "333333",
-            "c_str" : "overridenstring_pipeline7"
+            "CONFIG_DOUBLE" : 3333,
+            "c_1" : 1,
+            "CONFIG_FLOAT" : 33.33,
+            "c_filter_expression" : "customer_id > 5",
+            "c_dedup_expr" : "concat(c_array_float, `c_array_int`) ",
+            "c_array_complex" : [ {
+              "car_array_spark_expression" : [ "concat(first_name, first_name, first_name)", "concat(first_name, first_name, first_name)" ],
+              "car_record" : {
+                "carr_double" : 44,
+                "carr_short" : 44
+              },
+              "car_string" : "this is another string",
+              "car_array_float" : [ 22.22, 33.33 ],
+              "car_int" : 55555
+            } ],
+            "c_0" : 0,
+            "CONFIG_INT" : 33,
+            "CONFIG_BOOLEAN" : false,
+            "db_secrets" : "qasecrets:mysql_user",
+            "JDBC_USER" : "test_user",
+            "c_str" : "overridenstring_pipeline7",
+            "c_limit_11" : 11
           },
           "selectedInstance" : "test-instance2"
         }
@@ -1888,5 +1893,23 @@
     "target" : "ZTooE20sDX6AOBrHr1dOx",
     "sourcePort" : "nKDMYbQmxNWNiU2FeyutN",
     "targetPort" : "DnLKwgfoDEFQTRdHs0VX7"
+  }, {
+    "id" : "SkflxxJ4ky67usa4ChdV0",
+    "source" : "EnBhDB9q7Qps0M-POArMA",
+    "target" : "GKKsTfNPHWcw91ONmz7mX",
+    "sourcePort" : "7OJODT0JPULgYEZZ5JY1x",
+    "targetPort" : "7h3ijXLIDMCoOsZMSd8bE"
+  }, {
+    "id" : "7K4MGDpq4iGJVH-u_Ihda",
+    "source" : "GKKsTfNPHWcw91ONmz7mX",
+    "target" : "SZlbXlblhbJXpFaye79w5",
+    "sourcePort" : "GZMZadJ4JHronbKNk70i2",
+    "targetPort" : "ljcENl28wLyUs1_cGSBSp"
+  }, {
+    "id" : "9QhAXsW6KJHA9V4NKAbHw",
+    "source" : "GKKsTfNPHWcw91ONmz7mX",
+    "target" : "IwLWoFpeABdPj70x5ewGZ",
+    "sourcePort" : "GZMZadJ4JHronbKNk70i2",
+    "targetPort" : "j-35vFWKX3fOTgVArZO0y"
   } ]
 }

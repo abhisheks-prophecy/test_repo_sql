@@ -255,3 +255,19 @@ changes
 *** Release notes for version: 1.19 ***
 
 1.19
+
+*** Release notes for version: 1.20 ***
+
+1.20
+
+*** Release notes for version: 1.21 ***
+
+1.21
+
+*** Release notes for version: 1.22 ***
+
+1.22
+
+*** Release notes for version: 1.23 ***
+
+1.23

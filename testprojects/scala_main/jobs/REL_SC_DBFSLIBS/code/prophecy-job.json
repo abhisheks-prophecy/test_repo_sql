@@ -28,6 +28,19 @@
       }
     },
     "availableFabrics" : [ {
+      "id" : "2807",
+      "name" : "Azure-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2420",
       "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
@@ -78,24 +91,35 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2652",
+      "id" : "2801",
       "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
       }
     }, {
-      "id" : "2663",
-      "name" : "TEST-Automated_Databricks1",
+      "id" : "2792",
+      "name" : "Livyscala-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3" ]
+      }
+    }, {
+      "id" : "2797",
+      "name" : "JobFabricMain_1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -109,6 +133,19 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2730",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -141,17 +178,34 @@
         "availableClusterSizes" : [ "small", "new-job.size" ]
       }
     }, {
-      "id" : "2641",
-      "name" : "JobFabricMain_1",
+      "id" : "2802",
+      "name" : "TEST-Automated_Databricks1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
       },
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2798",
+      "name" : "FabricAutomatedEBS",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2403",
@@ -159,33 +213,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "2650",
-      "name" : "Livyscala-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "2664",
-      "name" : "Livypython-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "2653",
-      "name" : "SingleCluster_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -218,6 +245,13 @@
         }
       }
     }, {
+      "id" : "2794",
+      "name" : "TEST-Automated_Livy1",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3", "small_new" ]
+      }
+    }, {
       "id" : "2080",
       "name" : "dev_gcp",
       "clusterSizes" : {
@@ -225,7 +259,7 @@
         "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
-      "id" : "2654",
+      "id" : "2795",
       "name" : "GCP-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
@@ -238,13 +272,6 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2632",
-      "name" : "TEST-Automated_Livy1",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3", "small_new" ]
-      }
-    }, {
       "id" : "2394",
       "name" : "dev_sdl_acl",
       "clusterSizes" : {
@@ -252,18 +279,31 @@
         "availableClusterSizes" : [ "small", "adv-json-acl" ]
       }
     }, {
+      "id" : "2800",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2793",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small", "small2", "small3" ]
+      }
+    }, {
       "id" : "1962",
       "name" : "dev_11rt",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1" ]
-      }
-    }, {
-      "id" : "299",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -302,11 +342,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2638",
-      "name" : "FabricAutomatedEBS",
+      "id" : "2796",
+      "name" : "Config_unity_catalog_shared",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -344,298 +384,14 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/SCALA_DEP_MGMT_ALL",
+        "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
-          "schema" : [ {
-            "name" : "JDBC_USER",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_user"
-            }
-          }, {
-            "name" : "SOURCE_TABLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_table"
-            }
-          }, {
-            "name" : "db_secrets",
-            "optional" : true,
-            "kind" : {
-              "type" : "databricks_secret",
-              "value" : "qasecrets_mysql:username"
-            }
-          }, {
-            "name" : "JDBC_URL",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
-          }, {
-            "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_table"
-            }
-          }, {
-            "name" : "CONFIG_STR",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "jdbc_url-${JDBC_URL}"
-            }
-          }, {
-            "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
-            "kind" : {
-              "type" : "boolean",
-              "value" : "false"
-            }
-          }, {
-            "name" : "CONFIG_DOUBLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "double",
-              "value" : "11"
-            }
-          }, {
-            "name" : "CONFIG_INT",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "123"
-            }
-          }, {
-            "name" : "CONFIG_FLOAT",
-            "optional" : false,
-            "kind" : {
-              "type" : "float",
-              "value" : "34"
-            }
-          }, {
-            "name" : "c_limit_11",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "1"
-            }
-          }, {
-            "name" : "c_st_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
-            }
-          }, {
-            "name" : "c_st_long",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "c_array_long"
-            }
-          }, {
-            "name" : "c_st_rename",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "c_array_boolean_renamed"
-            }
-          }, {
-            "name" : "c_dedup_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "concat(c_array_float, `c_array_int`)"
-            }
-          }, {
-            "name" : "c_dedup_col",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : " c_array_date"
-            }
-          }, {
-            "name" : "c_rd_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "`c -  boolean _  ` in (true,false)"
-            }
-          }, {
-            "name" : "c_12321",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "12321"
-            }
-          }, {
-            "name" : "c_0",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "0"
-            }
-          }, {
-            "name" : "c_1",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "1"
-            }
-          }, {
-            "name" : "c_join_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "in0.`-- c-long`=in1.`-- c-long`"
-            }
-          }, {
-            "name" : "c_join_cshort",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "in0.`c   short  --`"
-            }
-          }, {
-            "name" : "c_orderby_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "concat(`c  date`, c_timestamp)"
-            }
-          }, {
-            "name" : "c_orderby_int",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "`c-int-column type`"
-            }
-          }, {
-            "name" : "c_filter_expression",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "customer_id >5"
-            }
-          }, {
-            "name" : "c_reformat_complex",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "case     when c_int > 10 then         case              when NOT (NOT (c_string like '%1%')) then 'A'             when NOT (NOT (trim(trim(c_string)) = '')) then 'B'             else 'X'         end     when c_int <= 10 then         case             when NOT (NOT (c_string like '%1%')) then 'C'             when NOT (NOT (c_string not like '%2%')) then 'D'             else 'Z'         end     else null end"
-            }
-          }, {
-            "name" : "c_repartition_colname",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "`c_float-__  `"
-            }
-          }, {
-            "name" : "c_repartition_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "concat(`c  - int`, `c_struct -- _  `.`c_string - of a struct -- _`)"
-            }
-          }, {
-            "name" : "c_agg_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "first(c1)"
-            }
-          }, {
-            "name" : "c_agg_group",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "concat(c1, c2, c3)"
-            }
-          }, {
-            "name" : "c_agg_c3",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "c3"
-            }
-          }, {
-            "name" : "c_row",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "row_number()"
-            }
-          }, {
-            "name" : "c_bool",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "`c -  boolean _  `"
-            }
-          }, {
-            "name" : "c_short",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "`c- short`"
-            }
-          }, {
-            "name" : "c_sql_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "%[^aeiouAB]@%"
-            }
-          }, {
-            "name" : "c_sql_c8c1",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "-1"
-            }
-          }, {
-            "name" : "c_regex1",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
-            }
-          }, {
-            "name" : "c_regex2",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
-            }
-          }, {
-            "name" : "c_str",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "stringwith$$one#%^&*()-=!@#"
-            }
-          }, {
-            "name" : "c_new_sqlexpr",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
-            }
-          } ],
+          "schema" : [ ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
+            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
           },
-          "overrides" : {
-            "CONFIG_DOUBLE" : "22",
-            "CONFIG_INT" : "22",
-            "CONFIG_FLOAT" : "22"
-          },
-          "selectedInstance" : "test-instance1"
+          "overrides" : { },
+          "selectedInstance" : "default"
         }
       }
     },
