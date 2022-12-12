@@ -7,15 +7,15 @@ from prophecy.utils import *
 from pythonbasic.test.mainone.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_src_parquet_all_type_and_partition_withspacehyphens = src_parquet_all_type_and_partition_withspacehyphens(spark)
-    df_src_parquet_all_type_and_partition_withspacehyphens = collectMetrics(
+    df_src_csv_special_char_column_name = src_csv_special_char_column_name(spark)
+    df_src_csv_special_char_column_name = collectMetrics(
         spark, 
-        df_src_parquet_all_type_and_partition_withspacehyphens, 
+        df_src_csv_special_char_column_name, 
         "graph", 
         "vlcUd7KAM_zvifvMwu9pZ$$8MswNyzCALGAeJjSxRNDZ", 
         "CHZEgFOxU2vx1Q32ysboc$$LB9injlM6BGINFq1djzRE"
     )
-    df_Reformat_1 = Reformat_1(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
+    df_Reformat_1 = Reformat_1(spark, df_src_csv_special_char_column_name)
     df_Reformat_1 = collectMetrics(
         spark, 
         df_Reformat_1, 
@@ -33,7 +33,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Script_4.cache().count()
     df_Script_4.unpersist()
-    df_Script_1 = Script_1(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
+    df_Script_1 = Script_1(spark, df_src_csv_special_char_column_name)
     df_Script_1 = collectMetrics(
         spark, 
         df_Script_1, 
@@ -51,7 +51,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
-    df_Script_2 = Script_2(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
+    df_Script_2 = Script_2(spark, df_src_csv_special_char_column_name)
     df_Script_2 = collectMetrics(
         spark, 
         df_Script_2, 
@@ -69,7 +69,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_3.cache().count()
     df_Reformat_3.unpersist()
-    df_Script_3 = Script_3(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
+    df_Script_3 = Script_3(spark, df_src_csv_special_char_column_name)
     df_Script_3 = collectMetrics(
         spark, 
         df_Script_3, 
