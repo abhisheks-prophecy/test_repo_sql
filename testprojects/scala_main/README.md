@@ -279,3 +279,7 @@ changes
 *** Release notes for version: 2.15 ***
 
 2.15
+
+*** Release notes for version: 2.16 ***
+
+2.16
