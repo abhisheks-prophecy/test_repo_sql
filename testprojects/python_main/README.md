@@ -247,3 +247,7 @@ Changes
 *** Release notes for version: 2.14 ***
 
 2.14
+
+*** Release notes for version: 2.15 ***
+
+2.15
