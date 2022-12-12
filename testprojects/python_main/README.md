@@ -239,3 +239,7 @@ Changes
 *** Release notes for version: 2.12 ***
 
 2.12
+
+*** Release notes for version: 2.13 ***
+
+2.13
