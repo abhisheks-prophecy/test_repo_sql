@@ -3,7 +3,7 @@
   "components" : [ {
     "PipelineComponent" : {
       "id" : "pipelines/SCALA_BASIC",
-      "nodeName" : "Pipeline_0",
+      "nodeName" : "SCALA_BASIC",
       "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar",
       "language" : "scala"
     }
@@ -42,7 +42,7 @@
       "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledatalabs.com" ]
     },
     "tasks" : [ {
-      "task_key" : "Pipeline_0",
+      "task_key" : "SCALA_BASIC",
       "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
       "spark_jar_task" : {
         "main_class_name" : "com.scala.main.job1.Main",
@@ -62,7 +62,7 @@
     }, {
       "task_key" : "Script_1",
       "depends_on" : [ {
-        "task_key" : "Pipeline_0"
+        "task_key" : "SCALA_BASIC"
       } ],
       "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
       "spark_python_task" : {
