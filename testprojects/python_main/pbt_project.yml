@@ -1,6 +1,6 @@
 name: PythonProject
 description: ''
-version: '2.12'
+version: '2.13'
 author: abhisheks+e2etests@simpledatalabs.com
 language: python
 buildSystem: wheel
@@ -30,8 +30,8 @@ pipelines:
       outputs: []
     dependencies: {}
   pipelines/PYTHON_DEP_MGMT_ALL:
-    name: PYTHON_DEP_MGMT_ALL
-    description: PYTHON_DEP_MGMT_ALL
+    name: REL_PY_PIP_DEP_MGMT_ALL
+    description: Python dependency management
     author: abhisheks+e2etests@simpledatalabs.com
     mode: batch
     language: python
@@ -53,8 +53,8 @@ pipelines:
       - datasets/dest_csv_all_type_no_partition
     dependencies: {}
   pipelines/DONOT_OPEN_PYTHON:
-    name: DONOT_OPEN_PYTHON
-    description: DONOT Open Python
+    name: REL_PY_DONOT_OPEN
+    description: DONOT Open Python pipeline
     author: abhisheks+e2etests@simpledatalabs.com
     mode: batch
     language: python
@@ -441,8 +441,8 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2022-11-22 10:56:15'
   datasets/src_delta_all_type_no_partition:
-    name: src_delta_all_type_no_partition
-    description: ''
+    name: src_delta_all_type_no_partition_renamed
+    description: this is my delta dataset
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:43:01'
     physicalDatasets:

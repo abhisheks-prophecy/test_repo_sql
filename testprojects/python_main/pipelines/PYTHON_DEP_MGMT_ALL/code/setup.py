@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name = 'PYTHON_DEP_MGMT_ALL',
+    name = 'REL_PY_PIP_DEP_MGMT_ALL',
     version = '1.0',
     packages = find_packages(include = ('com.main1.pythondepmanagement_1*', )) + ["prophecy_config_instances"],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},
