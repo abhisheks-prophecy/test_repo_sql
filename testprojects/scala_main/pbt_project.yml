@@ -6,7 +6,7 @@ language: scala
 buildSystem: maven
 pipelines:
   pipelines/DONOT_OPEN_SCALA:
-    name: DONOT_OPEN_SCALA
+    name: REL_SC_PIP_DONOT_OPEN
     description: DO NOT Open this
     author: abhisheks+e2etests@simpledatalabs.com
     mode: batch
@@ -64,8 +64,8 @@ pipelines:
       outputs: []
     dependencies: {}
   pipelines/SCALA_DEP_MGMT_ALL:
-    name: SCALA_DEP_MGMT_ALL
-    description: SCALA_DEP_MGMT_ALL
+    name: REL_SC_PIP_DEP_MGMT_ALL
+    description: this is dependency management pipeline
     author: abhisheks+e2etests@simpledatalabs.com
     mode: batch
     language: scala
@@ -147,8 +147,8 @@ datasets:
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:15:27'
   datasets/src_delta_all_type_no_partition:
-    name: src_delta_all_type_no_partition
-    description: ''
+    name: src_delta_all_type_no_partition_renamed
+    description: this is delta dataset for scala
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:16:54'
     physicalDatasets:
