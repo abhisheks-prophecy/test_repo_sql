@@ -1,3 +1,3 @@
-from .job import *
+from .org import *
 from .TestSuite import *
 from .conftest import *

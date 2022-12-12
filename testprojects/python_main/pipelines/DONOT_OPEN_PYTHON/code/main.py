@@ -1,3 +1,3 @@
-from job.pipeline import main
+from org.donot.openme12.pipeline import main
 
 main()
