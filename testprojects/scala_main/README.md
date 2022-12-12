@@ -267,3 +267,7 @@ changes
 *** Release notes for version: 1.22 ***
 
 1.22
+
+*** Release notes for version: 1.23 ***
+
+1.23
