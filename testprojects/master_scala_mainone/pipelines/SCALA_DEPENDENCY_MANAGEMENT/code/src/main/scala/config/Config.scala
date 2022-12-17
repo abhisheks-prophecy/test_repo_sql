@@ -1,6 +1,7 @@
 package config
 
 import config.ConfigStore._
+import config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._
@@ -29,7 +30,9 @@ case class Config(
   c_sql_expr:  String = "%1%",
   c_regex1: String =
     "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})",
-  c_regex2: String = "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+  c_regex2:       String = "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})",
+  c_array_long:   List[Long] = List(10L),
+  c_array_string: List[String] = List("this is string1", "this is string2")
 ) extends ConfigBase
 
 object DatabricksSecret {

@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class SetOperation_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -41,7 +42,7 @@ class SetOperation_1Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = graph.SetOperation_1(spark, dfIn0, dfIn1)
+    val dfOutComputed = graph.SetOperation_1(context, dfIn0, dfIn1)
 
   }
 
@@ -51,11 +52,13 @@ class SetOperation_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
   }
 
 }

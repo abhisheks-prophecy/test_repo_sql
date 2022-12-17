@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object ComplexExpression {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.select(
       c1.as("c1"),
       concat(
@@ -87,7 +88,7 @@ object ComplexExpression {
       (udf_string_null_safe(col("c_string")) * col("c_int")).as("c9_udf2")
     )
 
-  val c8 =
+  val c1 =
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -113,7 +114,7 @@ object ComplexExpression {
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
 
-  val c1 =
+  val c8 =
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(

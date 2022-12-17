@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -12,7 +13,9 @@ import org.apache.spark.sql.expressions._
 import java.time._
 
 object Script_1 {
-  def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame): DataFrame = {
+  def apply(context: Context, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame): DataFrame = {
+    val spark = context.spark
+    val Config = context.config
     var result=Config.c_0*Config.c_1
     assert(result==0)
     var out0=in0.filter(col("customer_id")  > 5)

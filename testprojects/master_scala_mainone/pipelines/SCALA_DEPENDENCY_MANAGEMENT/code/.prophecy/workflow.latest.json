@@ -185,6 +185,28 @@
             "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
           },
           "optional" : false
+        }, {
+          "name" : "c_array_long",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "long",
+              "value" : null
+            },
+            "value" : [ 10 ]
+          },
+          "optional" : false
+        }, {
+          "name" : "c_array_string",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "string",
+              "value" : null
+            },
+            "value" : [ "this is string1", "this is string2" ]
+          },
+          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -193,7 +215,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "devnew",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -2759,7 +2781,7 @@
           "target" : "config_values",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(`customer_id`, '$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT')"
+            "expression" : "concat(`customer_id`, '$c_array_string[0]','$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT')"
           },
           "description" : ""
         }, {
@@ -2776,7 +2798,8 @@
             "expression" : "udf_string_null_safe(first_name)"
           },
           "description" : ""
-        } ]
+        } ],
+        "mdUsers" : null
       }
     },
     "yfeifaX7xpRlj28Ls-8Vf$$29PiihbU95u1gXWccO3GA" : {

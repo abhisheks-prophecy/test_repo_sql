@@ -1,5 +1,5 @@
 import io.prophecy.libs._
-import config.ConfigStore._
+import config.Context
 import config._
 import udfs.UDFs._
 import udfs._
@@ -14,15 +14,15 @@ import java.time._
 
 object Main {
 
-  def apply(spark: SparkSession): Unit = {
+  def apply(context: Context): Unit = {
     val df_src_parquet_all_type_and_partition_withspacehyphens =
-      src_parquet_all_type_and_partition_withspacehyphens(spark)
+      src_parquet_all_type_and_partition_withspacehyphens(context)
     val (df_all_types_out0,
          df_all_types_out1,
          df_all_types_out2,
          df_all_types_out3
     ) = all_types.apply(
-      spark,
+      context,
       df_src_parquet_all_type_and_partition_withspacehyphens,
       df_src_parquet_all_type_and_partition_withspacehyphens,
       df_src_parquet_all_type_and_partition_withspacehyphens
@@ -30,7 +30,7 @@ object Main {
   }
 
   def main(args: Array[String]): Unit = {
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(args)
+    val config = ConfigurationFactoryImpl.fromCLI(args)
     val spark: SparkSession = SparkSession
       .builder()
       .appName("Prophecy Pipeline")
@@ -39,12 +39,13 @@ object Main {
       .enableHiveSupport()
       .getOrCreate()
       .newSession()
+    val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_SG_SRC")
     MetricsCollector.start(
       spark,
       spark.conf.get("prophecy.project.id") + "/" + "pipelines/SCALA_SG_SRC"
     )
-    apply(spark)
+    apply(context)
     MetricsCollector.end(spark)
   }
 

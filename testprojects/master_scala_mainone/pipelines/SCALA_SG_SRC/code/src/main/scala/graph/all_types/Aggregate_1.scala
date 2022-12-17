@@ -1,7 +1,7 @@
 package graph.all_types
 
 import io.prophecy.libs._
-import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +13,7 @@ import java.time._
 
 object Aggregate_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.groupBy(col("`c_date-for today`"), col("`c_timestamp  __ for--today`"))
       .agg(
         first(col("`c- short`")).as("c- short"),

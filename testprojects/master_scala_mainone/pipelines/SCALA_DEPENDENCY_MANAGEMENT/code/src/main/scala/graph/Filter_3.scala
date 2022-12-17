@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,11 +14,13 @@ import java.time._
 
 object Filter_3 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     in.filter(
       !col("first_name")
         .like(Config.c_regex1)
         .and(!col("country_code").like(Config.c_regex2))
     )
+  }
 
 }
