@@ -1309,13 +1309,89 @@
         } ],
         "outputs" : [ {
           "id" : "8hkvbnxtCb0LGV132c6CU",
-          "slug" : "out0"
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          }
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "var a=Config.c_1*Config.c_0\nassert(a==0)\nvar out0=in0.filter(col(\"customer_id\")  > 5)\nvar out1=in1.filter(col(\"customer_id\")  > 5)\nvar out2=in2.filter(col(\"first_name\") === \"%A%\" )\nvar out3=in3.distinct()\nvar out4=in4.filter(col(\"customer_id\")  > 5)\nvar out5=in5.filter(col(\"customer_id\")  > 5)\nout0=out1.union(out2).union(out3).union(out4).union(out5)",
+        "script" : "var a=Config.c_1*Config.c_0\nassert(a==0)\nvar out0=in0.filter(col(\"customer_id\")  > 5)\nvar out1=in1.filter(col(\"customer_id\")  > 5)\nvar out2=in2.filter(col(\"first_name\") === \"%A%\" )\nvar out3=in3.distinct()\nvar out4=in4.filter(col(\"customer_id\")  > 5)\nvar out5=in5.filter(col(\"customer_id\")  > 5)\nprintln(s\"Configs are: CONFIG_STR: ${Config.CONFIG_STR} \\n CONFIG_DOUBLE: ${Config.CONFIG_DOUBLE} \\n CONFIG_BOOLEAN: ${Config.CONFIG_BOOLEAN} \\n CONFIG_INT: ${Config.CONFIG_INT} \\n CONFIG_FLOAT: ${Config.CONFIG_FLOAT}\")\n\nout0=out1.union(out2).union(out3).union(out4).union(out5)",
         "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame): DataFrame = {",
         "scriptMethodFooter" : "    out0\n}"
       }
@@ -6223,8 +6299,8 @@
       "metadata" : {
         "label" : "src_catalog_table_test_catalog_source",
         "slug" : "src_catalog_table_test_catalog_source",
-        "x" : -1539.3567708333335,
-        "y" : -678.1775390624998,
+        "x" : -1530.9567708333336,
+        "y" : -673.3775390624999,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

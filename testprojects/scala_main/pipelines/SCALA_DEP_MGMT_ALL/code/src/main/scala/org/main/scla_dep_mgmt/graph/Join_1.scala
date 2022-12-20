@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.apache.spark._
@@ -13,12 +14,12 @@ import java.time._
 
 object Join_1 {
 
-  def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame): DataFrame =
+  def apply(context: Context, in0: DataFrame, in1: DataFrame): DataFrame =
     in0
       .as("in0")
-      .join(in1.as("in1"), expr(Config.c_join_expr), "inner")
+      .join(in1.as("in1"), expr(context.config.c_join_expr), "inner")
       .select(
-        lit(Config.c_join_cshort).as("c   short  --"),
+        lit(context.config.c_join_cshort).as("c   short  --"),
         col("in0.`c-int-column type`").as("c-int-column type"),
         col("in0.`-- c-long`").as("-- c-long"),
         col("in0.`c-decimal`").as("c-decimal"),

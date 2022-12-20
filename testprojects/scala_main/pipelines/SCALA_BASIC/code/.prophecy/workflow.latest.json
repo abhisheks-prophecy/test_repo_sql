@@ -16,7 +16,14 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "c_test",
+          "kind" : {
+            "type" : "string",
+            "value" : "random"
+          },
+          "optional" : false
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -24,7 +31,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "test-random3",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -100,6 +107,12 @@
     "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
     "target" : "bl47XMiEa-WNOlMEK4sFp$$2Dwp_ulOdXsBz8xjpntdm",
     "targetPort" : "vqaCSvN66ux6y98vYUpId$$OA1oJMPzK9Ui9RSaZo0yW"
+  }, {
+    "id" : "k3hzAcy7Y4X8jwKPPr44R",
+    "source" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+    "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+    "target" : "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0",
+    "targetPort" : "2Gz2HS8MDf_HK-44Trsh5$$eiJ0Rvj3-tu3lppCP5uFr"
   } ],
   "processes" : {
     "bl47XMiEa-WNOlMEK4sFp$$2Dwp_ulOdXsBz8xjpntdm" : {
@@ -108,8 +121,8 @@
       "metadata" : {
         "label" : "Reformat_1",
         "slug" : "Reformat_1",
-        "x" : 280,
-        "y" : 160,
+        "x" : 272.8,
+        "y" : 257.2,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -138,8 +151,8 @@
       "metadata" : {
         "label" : "src_parquet_all_type_and_partition_withspacehyphens",
         "slug" : "src_parquet_all_type_and_partition_withspacehyphens",
-        "x" : -424.59999999999997,
-        "y" : 105.99999999999997,
+        "x" : -454.59999999999997,
+        "y" : 197.19999999999996,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -156,6 +169,41 @@
       },
       "properties" : {
         "datasetId" : "datasets/src_csv_special_char_column_name"
+      }
+    },
+    "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0" : {
+      "id" : "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : 179.69999999999993,
+        "y" : 31.19999999999999,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2Gz2HS8MDf_HK-44Trsh5$$eiJ0Rvj3-tu3lppCP5uFr",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "1vob0WwUeTByi5ggao1MM$$RLb5byOWJfwhdby-ImTGc",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          }
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "script" : "print(s\"Config: ${Config.c_test}\")\n\nvar out0=in0",
+        "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
+        "scriptMethodFooter" : "    out0\n}"
       }
     }
   },

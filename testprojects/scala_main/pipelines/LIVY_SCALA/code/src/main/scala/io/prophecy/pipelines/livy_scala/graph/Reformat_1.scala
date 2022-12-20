@@ -22,7 +22,11 @@ object Reformat_1 {
       col("rme_size_grp"),
       col("variable"),
       col("value"),
-      col("unit")
+      col("unit"),
+      concat(lit(Config.c_string),
+             lit(Config.c_int),
+             udf1(col("unit").cast(IntegerType))
+      ).as("c_configs")
     )
 
 }
