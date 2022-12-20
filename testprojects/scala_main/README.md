@@ -291,3 +291,7 @@ changes
 *** Release notes for version: 2.18 ***
 
 2.18
+
+*** Release notes for version: 2.19 ***
+
+Changes
