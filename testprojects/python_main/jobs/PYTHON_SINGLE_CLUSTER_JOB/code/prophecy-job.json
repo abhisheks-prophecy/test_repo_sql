@@ -220,6 +220,23 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "2809",
+      "name" : "livy_filesystem",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_python/prophecy_libs-1.3.13-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-6.2.11-2.3.0.jar"
+        }
+      }
+    }, {
       "id" : "2135",
       "name" : "dev_azure",
       "clusterSizes" : {
@@ -828,18 +845,18 @@
             "PythonProjectCloneExternalGit" : [ "test-instance7", "test-instance2", "test-instance3", "test-instance6", "test-instance5", "test-instance1", "default", "test-instance4", "test-instance8" ]
           },
           "overrides" : {
-            "CONFIG_DOUBLE" : 2000,
+            "CONFIG_DOUBLE" : 222,
             "EXPR_COMPLEX_DATES" : "(((((date_add(date_trunc(date_format(date_sub(date_add(current_date(), 2), 2), 'yyyy MMM dd'), 'YEAR'), 1) < date_sub(current_timestamp(), 2)) OR (date_add(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss'), 2) < date_add(from_utc_timestamp(c_timestamp, 'Asia/Seoul'), 2))) OR (next_day('2015-01-14', 'TU') < current_date())) OR ((to_date('2009-07-30 04:17:52') < to_timestamp(c_date)) OR (add_months(c_timestamp, 1) < add_months(c_date, 2)))) AND ((c_int % 2) = 0))",
-            "CONFIG_FLOAT" : 44.44,
+            "CONFIG_FLOAT" : 22.22,
             "CONFIG_DB_SECRETS" : "qasecrets:mysql_user",
             "JDBC_URL" : "jdbc:mysql://18.144.156.219:3306/test_database",
-            "CONFIG_INT" : 44,
+            "CONFIG_INT" : 22,
             "CONFIG_BOOLEAN" : false,
             "c_int_11" : 11,
             "c_st_expr" : "concat(`c   short  --`, `c-int-column type`)",
             "c_str" : "overridenstring_pipeline0",
             "JDBC_SOURCE_TABLE" : "test_table",
-            "CONFIG_SHORT" : 44
+            "CONFIG_SHORT" : 22
           },
           "selectedInstance" : "test-instance1"
         }
@@ -849,8 +866,8 @@
       "id" : "xk9oV4IPA6aWyvMeeMH3Y",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "PythonSGSrc3",
-        "slug" : "PythonSGSrc3",
+        "label" : "Py_DEP_MGMT",
+        "slug" : "Py_DEP_MGMT",
         "x" : 95.39999389648438,
         "y" : 283.6000061035156
       },
@@ -872,28 +889,258 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/PYTHON_SG_SRC",
+        "pipelineId" : "pipelines/PYTHON_DEP_MGMT_ALL",
         "configurations" : {
           "schema" : [ {
-            "name" : "c_dbsecrets",
+            "name" : "JDBC_URL",
             "kind" : {
-              "type" : "databricks_secret",
-              "value" : "qasecrets_mysql:username"
+              "type" : "string",
+              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
             },
             "optional" : false
           }, {
-            "name" : "c_string",
+            "name" : "JDBC_SOURCE_TABLE",
             "kind" : {
               "type" : "string",
-              "value" : "test"
+              "value" : "test_table"
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_STR",
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc_url-${JDBC_URL}"
+            },
+            "optional" : true
+          }, {
+            "name" : "CONFIG_BOOLEAN",
+            "kind" : {
+              "type" : "boolean",
+              "value" : false
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_DOUBLE",
+            "kind" : {
+              "type" : "double",
+              "value" : 2
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_INT",
+            "kind" : {
+              "type" : "int",
+              "value" : 2
+            },
+            "optional" : true
+          }, {
+            "name" : "CONFIG_FLOAT",
+            "kind" : {
+              "type" : "float",
+              "value" : 4567546.34543
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_SHORT",
+            "kind" : {
+              "type" : "short",
+              "value" : 120
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_DB_SECRETS",
+            "kind" : {
+              "type" : "databricks_secret",
+              "value" : "qasecrets:mysql_user"
+            },
+            "optional" : false
+          }, {
+            "name" : "EXPR_COMPLEX_DATES",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "(((((date_add(date_trunc(date_format(date_sub(date_add(current_date(), 2), 2), 'yyyy MMM dd'), 'YEAR'), 1) < date_sub(current_timestamp(), 2)) OR (date_add(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss'), 2) < date_add(from_utc_timestamp(c_timestamp, 'Asia/Seoul'), 2))) OR (next_day('2015-01-14', 'TU') < current_date())) OR ((to_date('2009-07-30 04:17:52') < to_timestamp(c_date)) OR (add_months(c_timestamp, 1) < add_months(c_date, 2)))) AND ((c_int % 2) = 0))"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_int_11",
+            "kind" : {
+              "type" : "int",
+              "value" : 10
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "concat(`c   short  --`, `c-int-column type`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_decimal_renamed",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c-decimal renamed`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_repartition_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "concat(`c  float`, `c--boolean`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_repartition_colname",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c_float-__  `"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_sql_pattern",
+            "kind" : {
+              "type" : "string",
+              "value" : "%[^aeiou]@%"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_row_distributor_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "(((col(\"`c_struct -- _  `.`c_double - of a struct _`\") > lit(20)) | (col(\"`c_date-for today`\") == lit(\"2005-04-16\"))) & col(\"`c_array-string  _ string`\")[1].like(\"%7%\"))"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_join_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "(in0.`- c long` = in1.`- c long`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_1",
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "optional" : false
+          }, {
+            "name" : "c_0",
+            "kind" : {
+              "type" : "int",
+              "value" : 0
+            },
+            "optional" : false
+          }, {
+            "name" : "c_row_distributor",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "(((`c_struct -- _  `.`c_double - of a struct _` > 20) OR (`c_date-for today` = '2005-04-16')) AND `c_array-string  _ string`[1] LIKE '%7%')"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_order_by_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "concat(c_int, c_long)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_expr_deduplicate",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c  float`, `c   short  --`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_decimal",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c-decimal`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_rowdistributor_complex_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "((p_string LIKE '%a%' OR RLIKE(p_string, '%A%')) OR ((`c_decimal  -  ` = 12321) AND `c_array-string  _ string`[0] LIKE '%3%'))"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_aggregate_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "first(`c   short  --`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_aggregate_string",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c___-- string`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_aggregate_float_name",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c float`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_row_number",
+            "kind" : {
+              "type" : "string",
+              "value" : "row_number()"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_long_wf",
+            "kind" : {
+              "type" : "string",
+              "value" : "`- c long`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_wf_orderby_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c -  boolean _  `, c_double)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_regex1",
+            "kind" : {
+              "type" : "string",
+              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_regex2",
+            "kind" : {
+              "type" : "string",
+              "value" : "((?=.*)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_str",
+            "kind" : {
+              "type" : "string",
+              "value" : "stringwith$$one#%^&*()-=!@#"
             },
             "optional" : false
           } ],
           "instances" : {
-            "PythonProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+            "PythonProjectCloneExternalGit" : [ "test-instance7", "test-instance2", "test-instance3", "test-instance6", "test-instance5", "test-instance1", "default", "test-instance4", "test-instance8" ]
           },
-          "overrides" : { },
-          "selectedInstance" : "default"
+          "overrides" : {
+            "CONFIG_DOUBLE" : 33,
+            "CONFIG_FLOAT" : 33.33,
+            "CONFIG_INT" : 33,
+            "CONFIG_BOOLEAN" : true,
+            "CONFIG_SHORT" : 33
+          },
+          "selectedInstance" : "test-instance5"
         }
       },
       "parent" : "QcsV9H7t3liJGBvj-mvE_"

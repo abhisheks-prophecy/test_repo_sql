@@ -2,12 +2,17 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "1654",
+    "fabricId" : "2809",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ {
+        "name" : "udf1",
+        "code" : "@udf(returnType=IntegerType())\ndef squared_offset(value):\n    return value*a if value!=None else a*a",
+        "language" : "python"
+      } ],
+      "initialCode" : "a=10"
     },
     "udafs" : {
       "language" : "python",
@@ -30,6 +35,20 @@
             "value" : "%11%"
           },
           "optional" : false
+        }, {
+          "name" : "c_string",
+          "kind" : {
+            "type" : "string",
+            "value" : "this is a test string"
+          },
+          "optional" : false
+        }, {
+          "name" : "c_int",
+          "kind" : {
+            "type" : "int",
+            "value" : 22
+          },
+          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -38,7 +57,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "test-instance1",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -222,7 +241,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##value", "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##industry_name_ANZSIC", "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##industry_code_ANZSIC", "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##year", "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##rme_size_grp", "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##variable", "IzJMOJlg7eDiKT5qEJOu2$$69_GGVNghuDrim057uk8d##unit" ],
+        "columnsSelector" : [ "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##industry_name_ANZSIC", "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##unit", "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##value", "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##year", "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##variable", "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##industry_code_ANZSIC", "Rma3cVdJAz9yAfq9kr57v$$UJsJoK_P371pU8YTN1wVF##rme_size_grp" ],
         "expressions" : [ {
           "target" : "year",
           "expression" : {
@@ -277,6 +296,13 @@
           "expression" : {
             "format" : "sql",
             "expression" : "unit"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_configs",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('$c_string', '$c_int', udf1(unit))"
           },
           "description" : ""
         } ]
@@ -711,8 +737,64 @@
                 "isCustomOutputSchema" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
-                "expressions" : [ ]
+                "columnsSelector" : [ "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##year", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##industry_name_ANZSIC", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##variable", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##rme_size_grp", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##industry_code_ANZSIC", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##value", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##unit" ],
+                "expressions" : [ {
+                  "target" : "year",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "year"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "industry_code_ANZSIC",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "industry_code_ANZSIC"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "industry_name_ANZSIC",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "industry_name_ANZSIC"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "rme_size_grp",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "rme_size_grp"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "variable",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "variable"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "value",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "value"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "unit",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "unit"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c_config",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "concat('$c_string', '$c_int')"
+                  },
+                  "description" : ""
+                } ]
               }
             }
           }
@@ -1109,8 +1191,64 @@
                 "isCustomOutputSchema" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
-                "expressions" : [ ]
+                "columnsSelector" : [ "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##year", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##industry_name_ANZSIC", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##variable", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##rme_size_grp", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##industry_code_ANZSIC", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##value", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##unit" ],
+                "expressions" : [ {
+                  "target" : "year",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "year"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "industry_code_ANZSIC",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "industry_code_ANZSIC"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "industry_name_ANZSIC",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "industry_name_ANZSIC"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "rme_size_grp",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "rme_size_grp"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "variable",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "variable"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "value",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "value"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "unit",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "unit"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c_config",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "concat('$c_string', '$c_int')"
+                  },
+                  "description" : ""
+                } ]
               }
             }
           }
