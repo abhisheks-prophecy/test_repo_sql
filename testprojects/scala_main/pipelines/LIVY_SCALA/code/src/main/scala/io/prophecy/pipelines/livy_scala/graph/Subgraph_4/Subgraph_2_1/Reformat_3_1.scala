@@ -14,13 +14,15 @@ import java.time._
 object Reformat_3_1 {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.select(col("year"),
-              col("industry_code_ANZSIC"),
-              col("industry_name_ANZSIC"),
-              col("rme_size_grp"),
-              col("variable"),
-              col("value"),
-              col("unit")
+    in.select(
+      col("year"),
+      col("industry_code_ANZSIC"),
+      col("industry_name_ANZSIC"),
+      col("rme_size_grp"),
+      col("variable"),
+      col("value"),
+      col("unit"),
+      concat(lit(Config.c_string), lit(Config.c_int)).as("c_configs")
     )
 
 }

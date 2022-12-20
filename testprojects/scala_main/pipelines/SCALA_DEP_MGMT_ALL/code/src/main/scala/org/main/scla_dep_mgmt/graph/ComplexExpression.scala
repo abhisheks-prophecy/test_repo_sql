@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object ComplexExpression {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.select(
       c1.as("c1"),
       concat(
@@ -85,7 +86,7 @@ object ComplexExpression {
       c8.as("c8"),
       udf_multiply(col("c_int")).as("c9_udf1"),
       (udf_string_null_safe(col("c_string")) * col("c_int")).as("c9_udf2"),
-      expr(Config.c_reformat_complex).as("c_10_config")
+      expr(context.config.c_reformat_complex).as("c_10_config")
     )
 
   val c8 =

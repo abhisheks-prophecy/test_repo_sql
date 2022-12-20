@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Join_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -41,7 +42,8 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = org.main.scla_dep_mgmt.graph.Join_1(spark, dfIn0, dfIn1)
+    val dfOutComputed =
+      org.main.scla_dep_mgmt.graph.Join_1(context, dfIn0, dfIn1)
     val res = assertDFEquals(
       dfOut.select(
         "c   short  --",
@@ -100,11 +102,13 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
 
     val dfMain_scla_dep_mgmt_graph_Lookup_2 = createDfFromResourceFiles(
       spark,
@@ -113,7 +117,7 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
       port = "in"
     )
     org.main.scla_dep_mgmt.graph
-      .Lookup_2(spark, dfMain_scla_dep_mgmt_graph_Lookup_2)
+      .Lookup_2(context, dfMain_scla_dep_mgmt_graph_Lookup_2)
     val dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1 =
       createDfFromResourceFiles(
         spark,
@@ -122,7 +126,7 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.Lookup_1_1(
-      spark,
+      context,
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
     val dfMain_scla_dep_mgmt_graph_Lookup_1 = createDfFromResourceFiles(
@@ -132,7 +136,7 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
       port = "in"
     )
     org.main.scla_dep_mgmt.graph
-      .Lookup_1(spark, dfMain_scla_dep_mgmt_graph_Lookup_1)
+      .Lookup_1(context, dfMain_scla_dep_mgmt_graph_Lookup_1)
   }
 
 }

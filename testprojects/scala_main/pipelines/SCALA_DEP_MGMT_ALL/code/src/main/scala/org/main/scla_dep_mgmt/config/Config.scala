@@ -1,6 +1,7 @@
 package org.main.scla_dep_mgmt.config
 
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._

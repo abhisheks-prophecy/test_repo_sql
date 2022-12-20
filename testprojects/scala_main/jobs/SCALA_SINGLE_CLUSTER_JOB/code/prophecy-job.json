@@ -220,6 +220,23 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "2809",
+      "name" : "livy_filesystem",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_python/prophecy_libs-1.3.13-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-6.2.11-2.3.0.jar"
+        }
+      }
+    }, {
       "id" : "2135",
       "name" : "dev_azure",
       "clusterSizes" : {
@@ -453,9 +470,16 @@
       "properties" : {
         "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "c_test",
+            "kind" : {
+              "type" : "string",
+              "value" : "random"
+            },
+            "optional" : false
+          } ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+            "ScalaProjectCloneExternalGit" : [ "test-random3", "test-random2", "test-random1", "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -1017,6 +1041,7 @@
                 "crar_double" : 555
               } ]
             },
+            "CONFIG_FLOAT" : 22,
             "c_array_complex" : [ {
               "car_array_spark_expression" : [ "concat(`last_name`, last_name)", "concat(first_name, `first_name`, last_name)" ],
               "car_record" : {
@@ -1036,7 +1061,8 @@
               "car_array_float" : [ 66.66, 22.22 ],
               "car_int" : 33
             } ],
-            "CONFIG_BOOLEAN" : "true",
+            "CONFIG_INT" : 222,
+            "CONFIG_BOOLEAN" : true,
             "c_str" : "overridenstring_pipeline0"
           },
           "selectedInstance" : "test-instance1"
@@ -1091,9 +1117,16 @@
       "properties" : {
         "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "c_test",
+            "kind" : {
+              "type" : "string",
+              "value" : "random"
+            },
+            "optional" : false
+          } ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+            "ScalaProjectCloneExternalGit" : [ "test-random3", "test-random2", "test-random1", "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -1773,9 +1806,16 @@
       "properties" : {
         "pipelineId" : "pipelines/SCALA_BASIC",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "c_test",
+            "kind" : {
+              "type" : "string",
+              "value" : "random"
+            },
+            "optional" : false
+          } ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "jobSize-databricksBasic.New", "ebs_ssd", "dev1", "livy_kishore", "dev", "TEST-Automated_Livy.1", "default", "captain_livy" ]
+            "ScalaProjectCloneExternalGit" : [ "test-random3", "test-random2", "test-random1", "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"

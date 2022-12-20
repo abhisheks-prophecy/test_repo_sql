@@ -2,6 +2,7 @@ package com.scala.main.job1.graph
 
 import io.prophecy.libs._
 import com.scala.main.job1.config.ConfigStore._
+import com.scala.main.job1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -11,8 +12,8 @@ import java.time._
 
 object src_parquet_all_type_and_partition_withspacehyphens {
 
-  def apply(spark: SparkSession): DataFrame =
-    spark.read
+  def apply(context: Context): DataFrame =
+    context.spark.read
       .format("csv")
       .option("header", true)
       .option("sep",    ",")

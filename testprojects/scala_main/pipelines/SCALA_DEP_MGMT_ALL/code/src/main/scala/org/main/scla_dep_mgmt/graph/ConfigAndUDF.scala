@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.apache.spark._
@@ -13,7 +14,8 @@ import java.time._
 
 object ConfigAndUDF {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     in.select(
       col("customer_id"),
       col("first_name"),
@@ -40,5 +42,6 @@ object ConfigAndUDF {
       expr(Config.c_record_complex.cr_array_record(0).crar_spark_expression)
         .as("c_complex_expr")
     )
+  }
 
 }

@@ -58,711 +58,6 @@
     "targetPort" : "hiCAQWt50irDXKb-xFMZ4"
   } ],
   "processes" : {
-    "hWl1wokt2JmhhClszrhId" : {
-      "id" : "hWl1wokt2JmhhClszrhId",
-      "component" : "OrderBy",
-      "metadata" : {
-        "label" : "OrderBy_1_1",
-        "slug" : "OrderBy_1_1",
-        "x" : 500,
-        "y" : 412.5,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "gYBIlBWAuHaQhRmsVevK4",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "X2j3ieGsXy6gWc5YSubeG",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##year", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##industry_code_ANZSIC", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##industry_name_ANZSIC", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##rme_size_grp", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##variable", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##value", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##unit" ],
-        "orders" : [ {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "year"
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "industry_code_ANZSIC"
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "industry_name_ANZSIC"
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "rme_size_grp"
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "variable"
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "value"
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "format" : "sql",
-            "expression" : "unit"
-          },
-          "sortType" : "asc"
-        } ]
-      },
-      "test" : {
-        "unitTests" : [ {
-          "data" : {
-            "gYBIlBWAuHaQhRmsVevK4" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            },
-            "X2j3ieGsXy6gWc5YSubeG" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            }
-          },
-          "name" : "Unit Test 0",
-          "testType" : "outputRow",
-          "language" : "scala"
-        }, {
-          "data" : {
-            "gYBIlBWAuHaQhRmsVevK4" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            },
-            "X2j3ieGsXy6gWc5YSubeG" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            }
-          },
-          "name" : "Unit Test 1",
-          "testType" : "outputRow",
-          "language" : "scala"
-        } ],
-        "language" : "scala"
-      }
-    },
-    "a95m1y4bcMMdQEKJG3oZu" : {
-      "id" : "a95m1y4bcMMdQEKJG3oZu",
-      "component" : "Filter",
-      "metadata" : {
-        "label" : "Filter_1_1",
-        "slug" : "Filter_1_1",
-        "x" : 360,
-        "y" : 412.5,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "LiPKVZ8490wJADbQWnDOx",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "S7xfTsANsMRuCt42_hEAI",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ "VmHlBnLjBLoGpBfPiDlXl$$Wz47apCOwH_-pcrlb7Cqm##year" ],
-        "condition" : {
-          "format" : "sql",
-          "expression" : "year not like '%45345%'"
-        }
-      },
-      "test" : {
-        "unitTests" : [ {
-          "data" : {
-            "LiPKVZ8490wJADbQWnDOx" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            },
-            "S7xfTsANsMRuCt42_hEAI" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            }
-          },
-          "name" : "Unit Test 0",
-          "testType" : "outputRow",
-          "language" : "scala"
-        }, {
-          "data" : {
-            "LiPKVZ8490wJADbQWnDOx" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            },
-            "S7xfTsANsMRuCt42_hEAI" : {
-              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "year",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_code_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "industry_name_ANZSIC",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "rme_size_grp",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "variable",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "value",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "unit",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "predicates" : [ ]
-            }
-          },
-          "name" : "Unit Test 1",
-          "testType" : "outputRow",
-          "language" : "scala"
-        } ],
-        "language" : "scala"
-      }
-    },
     "A3h4L6GB_MCM7ISV8QPDO" : {
       "id" : "A3h4L6GB_MCM7ISV8QPDO",
       "component" : "Reformat",
@@ -1195,392 +490,6 @@
         "targetPort" : "uG_z6MfIdnAlgZx51QUKA"
       } ],
       "processes" : {
-        "zQF4dSwuG_hgbhqoZxo-y" : {
-          "id" : "zQF4dSwuG_hgbhqoZxo-y",
-          "component" : "Reformat",
-          "metadata" : {
-            "label" : "Reformat_3_1",
-            "slug" : "Reformat_3_1",
-            "x" : 220,
-            "y" : 412.5,
-            "phase" : 0,
-            "cache" : false,
-            "detailedStats" : false,
-            "isImported" : false
-          },
-          "ports" : {
-            "inputs" : [ {
-              "id" : "DQJpFk23iuZUrLdHlsVJp",
-              "slug" : "in"
-            } ],
-            "outputs" : [ {
-              "id" : "wDd5fLv92FEDQRDX_Vi6R",
-              "slug" : "out"
-            } ],
-            "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : false
-          },
-          "properties" : {
-            "columnsSelector" : [ "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##year", "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##industry_code_ANZSIC", "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##industry_name_ANZSIC", "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##rme_size_grp", "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##variable", "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##value", "fAjOai8HJrCsmNTu5PP84$$oFN_WxqIaBJWNMYk-QsCI##unit" ],
-            "expressions" : [ {
-              "_row_id" : "544932124",
-              "target" : "year",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "year"
-              },
-              "description" : ""
-            }, {
-              "_row_id" : "486788010",
-              "target" : "industry_code_ANZSIC",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "industry_code_ANZSIC"
-              },
-              "description" : ""
-            }, {
-              "_row_id" : "1493062418",
-              "target" : "industry_name_ANZSIC",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "industry_name_ANZSIC"
-              },
-              "description" : ""
-            }, {
-              "_row_id" : "251827923",
-              "target" : "rme_size_grp",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "rme_size_grp"
-              },
-              "description" : ""
-            }, {
-              "_row_id" : "586824540",
-              "target" : "variable",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "variable"
-              },
-              "description" : ""
-            }, {
-              "_row_id" : "238522296",
-              "target" : "value",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "value"
-              },
-              "description" : ""
-            }, {
-              "_row_id" : "1065343406",
-              "target" : "unit",
-              "expression" : {
-                "format" : "sql",
-                "expression" : "unit"
-              },
-              "description" : ""
-            } ]
-          },
-          "test" : {
-            "unitTests" : [ {
-              "data" : {
-                "DQJpFk23iuZUrLdHlsVJp" : {
-                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
-                  "schema" : {
-                    "type" : "struct",
-                    "fields" : [ {
-                      "name" : "year",
-                      "type" : "string",
-                      "nullable" : false,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_code_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_name_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "rme_size_grp",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "variable",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "value",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "unit",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    } ]
-                  },
-                  "predicates" : [ ]
-                },
-                "wDd5fLv92FEDQRDX_Vi6R" : {
-                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
-                  "schema" : {
-                    "type" : "struct",
-                    "fields" : [ {
-                      "name" : "year",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_code_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_name_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "rme_size_grp",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "variable",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "value",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "unit",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    } ]
-                  },
-                  "predicates" : [ ]
-                }
-              },
-              "name" : "Unit Test 0",
-              "testType" : "outputRow",
-              "language" : "scala"
-            }, {
-              "data" : {
-                "DQJpFk23iuZUrLdHlsVJp" : {
-                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
-                  "schema" : {
-                    "type" : "struct",
-                    "fields" : [ {
-                      "name" : "year",
-                      "type" : "string",
-                      "nullable" : false,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_code_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_name_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "rme_size_grp",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "variable",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "value",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "unit",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    } ]
-                  },
-                  "predicates" : [ ]
-                },
-                "wDd5fLv92FEDQRDX_Vi6R" : {
-                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
-                  "schema" : {
-                    "type" : "struct",
-                    "fields" : [ {
-                      "name" : "year",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_code_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "industry_name_ANZSIC",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "rme_size_grp",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "variable",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "value",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    }, {
-                      "name" : "unit",
-                      "type" : "string",
-                      "nullable" : true,
-                      "metadata" : {
-                        "description" : "",
-                        "mappings" : [ ],
-                        "tags" : [ ]
-                      }
-                    } ]
-                  },
-                  "predicates" : [ ]
-                }
-              },
-              "name" : "Unit Test 1",
-              "testType" : "outputRow",
-              "language" : "scala"
-            } ],
-            "language" : "scala"
-          }
-        },
         "X0MuXT_U0n3f8RgmrJpf5" : {
           "id" : "X0MuXT_U0n3f8RgmrJpf5",
           "component" : "Subgraph",
@@ -2008,7 +917,1106 @@
               }
             }
           }
+        },
+        "zQF4dSwuG_hgbhqoZxo-y" : {
+          "id" : "zQF4dSwuG_hgbhqoZxo-y",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_3_1",
+            "slug" : "Reformat_3_1",
+            "x" : 220,
+            "y" : 412.5,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "DQJpFk23iuZUrLdHlsVJp",
+              "slug" : "in"
+            } ],
+            "outputs" : [ {
+              "id" : "wDd5fLv92FEDQRDX_Vi6R",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##year", "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##industry_code_ANZSIC", "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##industry_name_ANZSIC", "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##rme_size_grp", "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##variable", "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##value", "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG##unit" ],
+            "expressions" : [ {
+              "_row_id" : "544932124",
+              "target" : "year",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "year"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "486788010",
+              "target" : "industry_code_ANZSIC",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "industry_code_ANZSIC"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "1493062418",
+              "target" : "industry_name_ANZSIC",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "industry_name_ANZSIC"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "251827923",
+              "target" : "rme_size_grp",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "rme_size_grp"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "586824540",
+              "target" : "variable",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "variable"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "238522296",
+              "target" : "value",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "value"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "1065343406",
+              "target" : "unit",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "unit"
+              },
+              "description" : ""
+            }, {
+              "_row_id" : "c_8",
+              "target" : "c_configs",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "concat('$c_string', '$c_int')"
+              },
+              "description" : ""
+            } ]
+          },
+          "test" : {
+            "unitTests" : [ {
+              "data" : {
+                "DQJpFk23iuZUrLdHlsVJp" : {
+                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "predicates" : [ ]
+                },
+                "wDd5fLv92FEDQRDX_Vi6R" : {
+                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "predicates" : [ ]
+                }
+              },
+              "name" : "Unit Test 0",
+              "testType" : "outputRow",
+              "language" : "scala"
+            }, {
+              "data" : {
+                "DQJpFk23iuZUrLdHlsVJp" : {
+                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "predicates" : [ ]
+                },
+                "wDd5fLv92FEDQRDX_Vi6R" : {
+                  "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "i_Industry_Total", "Total assets", "133625", "DOLLARS(millions)" ], [ "2011", "B", "Mining", "i_Industry_Total", "Operating profit before tax", "1895", "DOLLARS(millions)" ], [ "2011", "C", "Manufacturing", "h_200+", "Total income", "53879", "DOLLARS(millions)" ], [ "2011", "D", "Electricity, Gas, Water and Waste Services", "h_200+", "Salaries and wages paid", "648", "DOLLARS(millions)" ], [ "2011", "E", "Construction", "h_200+", "Activity unit", "39", "COUNT" ], [ "2011", "F", "Wholesale Trade", "g_100-199", "Total assets", "3566", "DOLLARS(millions)" ], [ "2011", "G", "Retail Trade", "g_100-199", "Operating profit before tax", "142", "DOLLARS(millions)" ], [ "2011", "H", "Accommodation and Food Services", "f_50-99", "Total income", "678", "DOLLARS(millions)" ], [ "2011", "I", "Transport, Postal and Warehousing", "f_50-99", "Salaries and wages paid", "428", "DOLLARS(millions)" ] ],
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "predicates" : [ ]
+                }
+              },
+              "name" : "Unit Test 1",
+              "testType" : "outputRow",
+              "language" : "scala"
+            } ],
+            "language" : "scala"
+          }
         }
+      }
+    },
+    "a95m1y4bcMMdQEKJG3oZu" : {
+      "id" : "a95m1y4bcMMdQEKJG3oZu",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_1_1",
+        "slug" : "Filter_1_1",
+        "x" : 360,
+        "y" : 412.5,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LiPKVZ8490wJADbQWnDOx",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "S7xfTsANsMRuCt42_hEAI",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "VmHlBnLjBLoGpBfPiDlXl$$Wz47apCOwH_-pcrlb7Cqm##year" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "year not like '%45345%'"
+        }
+      },
+      "test" : {
+        "unitTests" : [ {
+          "data" : {
+            "LiPKVZ8490wJADbQWnDOx" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            },
+            "S7xfTsANsMRuCt42_hEAI" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            }
+          },
+          "name" : "Unit Test 0",
+          "testType" : "outputRow",
+          "language" : "scala"
+        }, {
+          "data" : {
+            "LiPKVZ8490wJADbQWnDOx" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            },
+            "S7xfTsANsMRuCt42_hEAI" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            }
+          },
+          "name" : "Unit Test 1",
+          "testType" : "outputRow",
+          "language" : "scala"
+        } ],
+        "language" : "scala"
+      }
+    },
+    "hWl1wokt2JmhhClszrhId" : {
+      "id" : "hWl1wokt2JmhhClszrhId",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "OrderBy_1_1",
+        "slug" : "OrderBy_1_1",
+        "x" : 500,
+        "y" : 412.5,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gYBIlBWAuHaQhRmsVevK4",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "X2j3ieGsXy6gWc5YSubeG",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##year", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##industry_code_ANZSIC", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##industry_name_ANZSIC", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##rme_size_grp", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##variable", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##value", "dTtsyKnMavgLPyXzx3f5d$$S2wcFkGWTPRLSC6LkniKe##unit" ],
+        "orders" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "year"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "industry_code_ANZSIC"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "industry_name_ANZSIC"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "rme_size_grp"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "variable"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "value"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "unit"
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "test" : {
+        "unitTests" : [ {
+          "data" : {
+            "gYBIlBWAuHaQhRmsVevK4" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            },
+            "X2j3ieGsXy6gWc5YSubeG" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            }
+          },
+          "name" : "Unit Test 0",
+          "testType" : "outputRow",
+          "language" : "scala"
+        }, {
+          "data" : {
+            "gYBIlBWAuHaQhRmsVevK4" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            },
+            "X2j3ieGsXy6gWc5YSubeG" : {
+              "values" : [ [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Activity unit", "46134", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Fixed tangible assets", "32155", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Operating profit before tax", "770", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Rolling mean employees", "0", "COUNT" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Salaries and wages paid", "279", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Sales, government funding, grants and subsidies", "8187", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total assets", "55700", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total expenditure", "7618", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "a_0", "Total income", "8866", "DOLLARS(millions)" ], [ "2011", "A", "Agriculture, Forestry and Fishing", "b_1-5", "Activity unit", "21777", "COUNT" ] ],
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "predicates" : [ ]
+            }
+          },
+          "name" : "Unit Test 1",
+          "testType" : "outputRow",
+          "language" : "scala"
+        } ],
+        "language" : "scala"
       }
     }
   }

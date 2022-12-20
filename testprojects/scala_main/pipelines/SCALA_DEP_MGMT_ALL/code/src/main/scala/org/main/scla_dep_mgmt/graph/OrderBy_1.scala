@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.apache.spark._
@@ -13,7 +14,8 @@ import java.time._
 
 object OrderBy_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     in.orderBy(
       col("c_timestamp").asc,
       expr(Config.c_orderby_expr).asc,
@@ -32,5 +34,6 @@ object OrderBy_1 {
       col("`c  date`").asc,
       col("c_timestamp").asc
     )
+  }
 
 }

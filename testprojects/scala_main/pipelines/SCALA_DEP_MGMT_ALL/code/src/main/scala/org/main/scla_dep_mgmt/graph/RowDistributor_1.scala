@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.apache.spark._
@@ -13,9 +14,11 @@ import java.time._
 
 object RowDistributor_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): (DataFrame, DataFrame) =
+  def apply(context: Context, in: DataFrame): (DataFrame, DataFrame) = {
+    val Config = context.config
     (in.filter(col("`c_decimal  -  `") >= lit(Config.c_12321)),
      in.filter(expr(Config.c_rd_expr))
     )
+  }
 
 }
