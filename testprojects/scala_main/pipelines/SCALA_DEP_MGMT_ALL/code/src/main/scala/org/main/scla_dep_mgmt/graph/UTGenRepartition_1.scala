@@ -12,12 +12,14 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Script_1 {
-  def apply(context: Context, in0: DataFrame): DataFrame = {
-    val spark = context.spark
-    val Config = context.config
-    var out0=in0
-    out0
-  }
+object UTGenRepartition_1 {
+
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.repartitionByRange(10.toInt,
+                          col("c_timestamp").asc,
+                          col("`c   short  --`").asc,
+                          col("`c  date`").desc,
+                          concat(col("c_timestamp"), col("`c  date`")).desc
+    )
 
 }

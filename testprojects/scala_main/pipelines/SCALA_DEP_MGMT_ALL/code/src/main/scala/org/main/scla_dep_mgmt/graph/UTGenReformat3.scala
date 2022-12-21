@@ -12,12 +12,11 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Script_1 {
-  def apply(context: Context, in0: DataFrame): DataFrame = {
-    val spark = context.spark
-    val Config = context.config
-    var out0=in0
-    out0
-  }
+object UTGenReformat3 {
+
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.select(col("`c   short  --`").as("c   short  --"),
+              col("`c   short  --`").as("c_next")
+    )
 
 }

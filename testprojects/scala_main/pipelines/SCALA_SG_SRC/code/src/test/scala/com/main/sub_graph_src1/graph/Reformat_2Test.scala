@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -35,7 +36,7 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = com.main.sub_graph_src1.graph.Reformat_2(spark, dfIn)
+    val dfOutComputed = com.main.sub_graph_src1.graph.Reformat_2(context, dfIn)
     val res = assertDFEquals(dfOut.select("c- short", "c  - int"),
                              dfOutComputed.select("c- short", "c  - int"),
                              maxUnequalRowsToShow,
@@ -60,7 +61,7 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = com.main.sub_graph_src1.graph.Reformat_2(spark, dfIn)
+    val dfOutComputed = com.main.sub_graph_src1.graph.Reformat_2(context, dfIn)
     val res = assertDFEquals(dfOut.select("c- short"),
                              dfOutComputed.select("c- short"),
                              maxUnequalRowsToShow,
@@ -76,11 +77,13 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
 
     val dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1 =
       createDfFromResourceFiles(
@@ -90,7 +93,7 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     com.main.sub_graph_src1.graph.Subgraph_1
-      .Lookup_1_1(spark, dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1)
+      .Lookup_1_1(context, dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1)
   }
 
 }
