@@ -25,12 +25,14 @@ object ConfigAndUDF {
       col("country_code"),
       col("account_open_date"),
       col("account_flags"),
-      concat(col("customer_id"),
-             lit(Config.CONFIG_STR),
-             lit(Config.CONFIG_BOOLEAN),
-             lit(Config.CONFIG_DOUBLE),
-             lit(Config.CONFIG_INT),
-             lit(Config.CONFIG_FLOAT)
+      concat(
+        col("customer_id"),
+        lit(Config.c_config_45),
+        lit(Config.CONFIG_STR),
+        lit(Config.CONFIG_BOOLEAN),
+        lit(Config.CONFIG_DOUBLE),
+        lit(Config.CONFIG_INT),
+        lit(Config.CONFIG_FLOAT)
       ).as("config_values"),
       udf_multiply(col("customer_id").cast(IntegerType))
         .as("udf_multiply_usage"),

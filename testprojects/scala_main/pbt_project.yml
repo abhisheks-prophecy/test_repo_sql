@@ -1,6 +1,6 @@
 name: ScalaProject
 description: ''
-version: '2.18'
+version: '2.20'
 author: abhisheks+e2etests@simpledatalabs.com
 language: scala
 buildSystem: maven
@@ -81,6 +81,7 @@ pipelines:
       - datasets/src_orc_all_type_no_partition
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
       - datasets/src_parquet_all_type_no_partition
+      - datasets/src_unittest_parquet_all
       outputs:
       - datasets/dest_jdbc_userandpass_test_table
     dependencies: {}
@@ -194,18 +195,6 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:23:05'
-  datasets/qa_database_all_type_parquet:
-    name: qa_database_all_type_parquet
-    description: ''
-    author: abhisheks+e2etests@prophecy.io
-    createdAt: '2022-11-23 09:10:47'
-    physicalDatasets:
-      dev_unity_catalog:
-        fabricId: 2601
-        datasetType: Database
-        description: ''
-        author: abhisheks+e2etests@prophecy.io
-        createdAt: '2022-11-23 09:10:48'
   datasets/dest_parquet_all_type_and_partition_withspacehyphens:
     name: dest_parquet_all_type_and_partition_withspacehyphens
     description: ''
@@ -290,6 +279,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:17:03'
+  datasets/qa_20k_tables_test_table_number_10:
+    name: qa_20k_tables_test_table_number_10
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-20 13:02:06'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-20 13:02:06'
   datasets/src_azure:
     name: src_azure
     description: ''
@@ -362,6 +363,30 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:34:29'
+  datasets/src_unittest_parquet_all:
+    name: src_unittest_parquet_all
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-21 07:09:44'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-21 07:09:44'
+  datasets/qa_database_all_type_parquet:
+    name: qa_database_all_type_parquet
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-11-23 09:10:47'
+    physicalDatasets:
+      dev_unity_catalog:
+        fabricId: 2601
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-11-23 09:10:48'
   datasets/qa_database_hive_provider_table:
     name: qa_database_hive_provider_table
     description: ''

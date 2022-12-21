@@ -109,14 +109,14 @@ package object all_type_scala_sg_1 {
     )
     df_Reformat_7.cache().count()
     df_Reformat_7.unpersist()
-    val df_Reformat_1_1 =
-      Reformat_1_1(context, df_src_csv_all_type_no_partition_1).interim(
+    val df_UTGenReformat_1_1 =
+      UTGenReformat_1_1(context, df_src_csv_all_type_no_partition_1).interim(
         "all_type_scala_sg_1",
         "WwV8YcgqfDbTr1Qjw-_ub$$pnS8qdrEHHcUrAYFZLdQT",
         "y-_P0LZWdJ6sodhEZaaQ6$$9axgrkS6-bnnp4-zOmcyr"
       )
-    df_Reformat_1_1.cache().count()
-    df_Reformat_1_1.unpersist()
+    df_UTGenReformat_1_1.cache().count()
+    df_UTGenReformat_1_1.unpersist()
     val df_FlattenSchema_1_1 =
       FlattenSchema_1_1(context, df_Aggregate_1_1).interim(
         "all_type_scala_sg_1",
