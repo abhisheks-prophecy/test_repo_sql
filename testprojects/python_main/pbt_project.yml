@@ -49,6 +49,7 @@ pipelines:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
       - datasets/src_parquet_all_type_no_partition
       - datasets/src_text_DatasetWithSpaceHyphens
+      - datasets/src_ut_parquet_all
       outputs:
       - datasets/dest_csv_all_type_no_partition
     dependencies: {}
@@ -295,6 +296,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 15:04:22'
+  datasets/src_ut_parquet_all:
+    name: src_ut_parquet_all
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-21 07:30:14'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-21 07:30:14'
   datasets/src_azure:
     name: src_azure
     description: ''

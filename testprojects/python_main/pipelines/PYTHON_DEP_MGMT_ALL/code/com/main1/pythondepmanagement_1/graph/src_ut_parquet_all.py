@@ -4,5 +4,5 @@ from pyspark.sql.types import *
 from com.main1.pythondepmanagement_1.config.ConfigStore import *
 from com.main1.pythondepmanagement_1.udfs.UDFs import *
 
-def Reformat_4(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    return in0.select(lit(10).alias("c_short"), lit(123231).alias("c_int"), col("value"))
+def src_ut_parquet_all(spark: SparkSession) -> DataFrame:
+    return spark.read.format("parquet").load("dbfs:/Prophecy/qa_data/parquet/all_type_no_complex")

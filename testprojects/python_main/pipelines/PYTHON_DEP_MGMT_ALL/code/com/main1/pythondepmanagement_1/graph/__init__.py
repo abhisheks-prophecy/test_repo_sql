@@ -28,18 +28,20 @@ from .avro import *
 from .Limit_5 import *
 from .Script_2 import *
 from .orc_src import *
-from .SetOperation_2 import *
+from .src_ut_parquet_all import *
 from .SubGraph_7 import *
 from .Script_7 import *
 from .SchemaTransform_1 import *
 from .ComplexExpr import *
 from .Join_3 import *
 from .Aggregate_1 import *
+from .UTGenSetOperation_2 import *
 from .Limit_7 import *
 from .Reformat_5 import *
 from .Reformat_15 import *
 from .OrderBy_4 import *
 from .Reformat_4 import *
+from .UTGenOrderBy_3 import *
 from .Reformat_7 import *
 from .Deduplicate_2 import *
 from .json_in import *
@@ -49,7 +51,6 @@ from .Reformat_6 import *
 from .RowDistributor_1 import *
 from .WindowFunction_1 import *
 from .Reformat_13 import *
-from .OrderBy_3 import *
 from .csv_all_type import *
 from .Join_5 import *
 from .src_jdbc_userandpass_test_table import *
@@ -57,6 +58,7 @@ from .Script_6 import *
 from .src_parquet_all_type_no_partition import *
 from .Reformat_11 import *
 from .Deduplicate_1 import *
+from .UTGenAllReformat_12 import *
 from .OrderBy_5 import *
 from .Lookup_1 import *
 from .Reformat_10 import *

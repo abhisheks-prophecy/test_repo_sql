@@ -210,15 +210,15 @@ def pipeline(spark: SparkSession) -> None:
         "5CWHE-tPSkfgaUUbMv5u5$$bz3wkz4t1Qs8S2xkBshkc", 
         "O7MlD4SsSNAngvEmyO2mL$$EPYlbrlI9CP94b-tBwNsN"
     )
-    df_OrderBy_3 = OrderBy_3(spark, df_avro)
-    df_OrderBy_3 = collectMetrics(
+    df_UTGenOrderBy_3 = UTGenOrderBy_3(spark, df_avro)
+    df_UTGenOrderBy_3 = collectMetrics(
         spark, 
-        df_OrderBy_3, 
+        df_UTGenOrderBy_3, 
         "graph", 
         "F-O0ZWyymLHQ7NAiD4HwH$$mRW3uIYVYRgYXJeBJQ7JX", 
         "23_EUJ5mmZmxkUF_FP06-$$05CM-G0C71N7lAUdf7DdA"
     )
-    df_Reformat_7 = Reformat_7(spark, df_OrderBy_3)
+    df_Reformat_7 = Reformat_7(spark, df_UTGenOrderBy_3)
     df_Reformat_7 = collectMetrics(
         spark, 
         df_Reformat_7, 
@@ -250,6 +250,24 @@ def pipeline(spark: SparkSession) -> None:
         "LEDjjajm33AFBjMK7JioI$$rVWjZayD16h1-uiVX4Hdm", 
         "fbhuMh-rzp5KYLcyDkDFf$$hmxqhdByTaoXKqNkuTfOf"
     )
+    df_src_ut_parquet_all = src_ut_parquet_all(spark)
+    df_src_ut_parquet_all = collectMetrics(
+        spark, 
+        df_src_ut_parquet_all, 
+        "graph", 
+        "2gdpmd5LP9WpcJvc7sBWg$$CcRfyYPTUGbcDheu3WiMB", 
+        "0NWji28TTLxZHhoBCEBHk$$LnAcQC6vvtD6CMfGObhj_"
+    )
+    df_UTGenAllReformat_12 = UTGenAllReformat_12(spark, df_src_ut_parquet_all)
+    df_UTGenAllReformat_12 = collectMetrics(
+        spark, 
+        df_UTGenAllReformat_12, 
+        "graph", 
+        "xFJ677pxDBcB70K6jtp4d$$9tPV0j5HB9l1XWUZh_piT", 
+        "VeZntApaeK-RzMXX89SZY$$-SPdWodOllgm5Z0QrisTq"
+    )
+    df_UTGenAllReformat_12.cache().count()
+    df_UTGenAllReformat_12.unpersist()
     df_Aggregate_1_1 = Aggregate_1_1(spark, df_SetOperation_1)
     df_Aggregate_1_1 = collectMetrics(
         spark, 
@@ -462,10 +480,10 @@ def pipeline(spark: SparkSession) -> None:
         "THZf4U0Afr0WwFlHIExkT$$ZcG-fixeZPUAPkqvmsgpR"
     )
     Script_2(spark, df_WindowFunction_1)
-    df_SetOperation_2 = SetOperation_2(spark, df_csv_all_type, df_csv_all_type)
-    df_SetOperation_2 = collectMetrics(
+    df_UTGenSetOperation_2 = UTGenSetOperation_2(spark, df_csv_all_type, df_csv_all_type)
+    df_UTGenSetOperation_2 = collectMetrics(
         spark, 
-        df_SetOperation_2, 
+        df_UTGenSetOperation_2, 
         "graph", 
         "nhcr8lRzD1Z62M29QSJV2$$G3wZPVKTwdIe7pFbDPx8A", 
         "8BO0wVrXpfywc10AAtnm3$$HOGG5Xn1Bn2NB3wojyJQI"
@@ -498,7 +516,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_OrderBy_5.cache().count()
     df_OrderBy_5.unpersist()
-    df_Script_7 = Script_7(spark, df_SetOperation_2)
+    df_Script_7 = Script_7(spark, df_UTGenSetOperation_2)
     df_Script_7 = collectMetrics(
         spark, 
         df_Script_7, 
