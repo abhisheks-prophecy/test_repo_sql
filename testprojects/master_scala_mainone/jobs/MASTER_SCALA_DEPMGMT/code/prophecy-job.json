@@ -27,6 +27,23 @@
       }
     },
     "availableFabrics" : [ {
+      "id" : "2835",
+      "name" : "FabricAutomatedEBS",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
+      }
+    }, {
       "id" : "2071",
       "name" : "dev_shared",
       "clusterSizes" : {
@@ -40,11 +57,17 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2801",
-      "name" : "Livyscala-TEST_Automated",
+      "id" : "2842",
+      "name" : "SingleCluster_1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "2769",
@@ -60,30 +83,21 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2780",
-      "name" : "SingleCluster_1",
+      "id" : "2841",
+      "name" : "Automated-LivyFileSystem",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "/app/common/qa_python/prophecy_libs-1.3.13-py3.9.egg"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "2804",
-      "name" : "Config_unity_catalog_shared",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-6.2.11-2.3.0.jar"
+        }
       }
     }, {
       "id" : "2755",
@@ -101,11 +115,41 @@
         }
       }
     }, {
+      "id" : "2837",
+      "name" : "JobFabricMain_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2689",
       "name" : "dev_acl_sdl",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "2840",
+      "name" : "FabricAutomatedADVJobSize",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
       }
     }, {
       "id" : "2790",
@@ -121,11 +165,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2777",
-      "name" : "GCP-TEST_Automated",
+      "id" : "2836",
+      "name" : "Config_unity_catalog_shared",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -148,11 +192,11 @@
         "availableClusterSizes" : [ "small", "medium" ]
       }
     }, {
-      "id" : "2805",
-      "name" : "Azure-TEST_Automated",
+      "id" : "2838",
+      "name" : "Livyscala-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -166,6 +210,13 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium", "adv-json1" ]
+      }
+    }, {
+      "id" : "2811",
+      "name" : "TEST-Automated_Livy1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
       }
     }, {
       "id" : "2699",
@@ -185,35 +236,11 @@
         }
       }
     }, {
-      "id" : "2800",
-      "name" : "FabricAutomatedEBS",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
-      },
-      "pylibsResolutionMode" : {
-        "CustomArtifactory" : {
-          "url" : "https://pypi.python.org/simple"
-        }
-      },
-      "scalalibsResolutionMode" : {
-        "CustomArtifactory" : {
-          "url" : "https://repo1.maven.org/"
-        }
-      }
-    }, {
       "id" : "1770",
       "name" : "devnew",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
-      }
-    }, {
-      "id" : "2785",
-      "name" : "TEST-Automated_Livy1",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3", "small_new" ]
       }
     }, {
       "id" : "2803",
@@ -229,11 +256,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2806",
-      "name" : "JobFabricMain_1",
+      "id" : "2843",
+      "name" : "GCP-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "adv-json1" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -449,6 +476,92 @@
                 "value" : null
               },
               "value" : [ "this is string1", "this is string2" ]
+            },
+            "optional" : false
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_array",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_short" : 11,
+                    "crar_long" : 22,
+                    "crar_float" : 33.33
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_array_bool",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "value" : [ false, true ]
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_spark_expression",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "value" : [ "concat(first_name, last_name)", "concat(first_name, first_name)", "concat(first_name, first_name, last_name)" ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is a string"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_int",
+                "kind" : {
+                  "type" : "int",
+                  "value" : 11
+                },
+                "optional" : false
+              } ]
             },
             "optional" : false
           } ],

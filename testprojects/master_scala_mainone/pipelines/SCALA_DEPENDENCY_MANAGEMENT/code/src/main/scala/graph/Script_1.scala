@@ -24,6 +24,9 @@ object Script_1 {
     var out3=in3.distinct()
     var out4=in4.filter(col("customer_id")  > 5)
     var out5=in5.filter(col("customer_id")  > 5)
+    
+    print(s"Int:${Config.CONFIG_INT},Float: ${Config.CONFIG_FLOAT},Double:${Config.CONFIG_DOUBLE}")
+    
     out0=out1.union(out2).union(out3).union(out4).union(out5)
     out0
   }

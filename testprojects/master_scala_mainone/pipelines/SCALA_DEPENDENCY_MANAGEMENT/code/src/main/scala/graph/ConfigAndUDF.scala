@@ -36,7 +36,10 @@ object ConfigAndUDF {
       ).as("config_values"),
       udf_multiply(col("customer_id").cast(IntegerType))
         .as("udf_multiply_usage"),
-      udf_string_null_safe(col("first_name")).as("udf_string_null_safe_usage")
+      udf_string_null_safe(col("first_name")).as("udf_string_null_safe_usage"),
+      concat(lit(Config.c_record_complex.cr_array(0).crar_short),
+             lit(Config.c_record_complex.cr_record.crr_array_bool(0))
+      ).as("complex_configs")
     )
   }
 

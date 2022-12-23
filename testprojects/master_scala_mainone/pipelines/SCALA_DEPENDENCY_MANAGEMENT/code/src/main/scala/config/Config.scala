@@ -30,10 +30,52 @@ case class Config(
   c_sql_expr:  String = "%1%",
   c_regex1: String =
     "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})",
-  c_regex2:       String = "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})",
-  c_array_long:   List[Long] = List(10L),
-  c_array_string: List[String] = List("this is string1", "this is string2")
+  c_regex2:         String = "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})",
+  c_array_long:     List[Long] = List(10L),
+  c_array_string:   List[String] = List("this is string1", "this is string2"),
+  c_record_complex: C_record_complex = C_record_complex()
 ) extends ConfigBase
+
+object C_record_complex {
+
+  implicit val confHint: ProductHint[C_record_complex] =
+    ProductHint[C_record_complex](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class C_record_complex(
+  cr_array: List[Cr_array] = List(
+    Cr_array(crar_short = 11, crar_long = 22L, crar_float = 33.33f)
+  ),
+  cr_record: Cr_record = Cr_record(),
+  cr_string: String = "this is a string",
+  cr_int:    Int = 11
+)
+
+object Cr_array {
+
+  implicit val confHint: ProductHint[Cr_array] =
+    ProductHint[Cr_array](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Cr_array(crar_short: Short, crar_long: Long, crar_float: Float)
+
+object Cr_record {
+
+  implicit val confHint: ProductHint[Cr_record] =
+    ProductHint[Cr_record](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Cr_record(
+  crr_array_bool: List[Boolean] = List(false, true),
+  crr_array_spark_expression: List[String] = List(
+    "concat(first_name, last_name)",
+    "concat(first_name, first_name)",
+    "concat(first_name, first_name, last_name)"
+  )
+)
 
 object DatabricksSecret {
 

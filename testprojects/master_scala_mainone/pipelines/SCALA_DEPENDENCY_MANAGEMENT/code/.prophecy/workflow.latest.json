@@ -207,6 +207,92 @@
             "value" : [ "this is string1", "this is string2" ]
           },
           "optional" : false
+        }, {
+          "name" : "c_record_complex",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "cr_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crar_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_long",
+                    "kind" : {
+                      "type" : "long",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "value" : [ {
+                  "crar_short" : 11,
+                  "crar_long" : 22,
+                  "crar_float" : 33.33
+                } ]
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "crr_array_bool",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "boolean",
+                      "value" : null
+                    },
+                    "value" : [ false, true ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "crr_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : [ "concat(first_name, last_name)", "concat(first_name, first_name)", "concat(first_name, first_name, last_name)" ]
+                  },
+                  "optional" : false
+                } ]
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is a string"
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_int",
+              "kind" : {
+                "type" : "int",
+                "value" : 11
+              },
+              "optional" : false
+            } ]
+          },
+          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -215,7 +301,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "test-instance1",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -884,13 +970,89 @@
         } ],
         "outputs" : [ {
           "id" : "8hkvbnxtCb0LGV132c6CU",
-          "slug" : "out0"
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          }
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "var result=Config.c_0*Config.c_1\nassert(result==0)\nvar out0=in0.filter(col(\"customer_id\")  > 5)\nvar out1=in1.filter(col(\"customer_id\")  > 5)\nvar out2=in2.filter(col(\"first_name\") === \"%A%\" )\nvar out3=in3.distinct()\nvar out4=in4.filter(col(\"customer_id\")  > 5)\nvar out5=in5.filter(col(\"customer_id\")  > 5)\nout0=out1.union(out2).union(out3).union(out4).union(out5)",
+        "script" : "var result=Config.c_0*Config.c_1\nassert(result==0)\nvar out0=in0.filter(col(\"customer_id\")  > 5)\nvar out1=in1.filter(col(\"customer_id\")  > 5)\nvar out2=in2.filter(col(\"first_name\") === \"%A%\" )\nvar out3=in3.distinct()\nvar out4=in4.filter(col(\"customer_id\")  > 5)\nvar out5=in5.filter(col(\"customer_id\")  > 5)\n\nprint(s\"Int:${Config.CONFIG_INT},Float: ${Config.CONFIG_FLOAT},Double:${Config.CONFIG_DOUBLE}\")\n\nout0=out1.union(out2).union(out3).union(out4).union(out5)",
         "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame): DataFrame = {",
         "scriptMethodFooter" : "    out0\n}"
       }
@@ -2796,6 +2958,13 @@
           "expression" : {
             "format" : "sql",
             "expression" : "udf_string_null_safe(first_name)"
+          },
+          "description" : ""
+        }, {
+          "target" : "complex_configs",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('$c_record_complex.cr_array[0].crar_short', '$c_record_complex.cr_record.crr_array_bool[0]')"
           },
           "description" : ""
         } ],
