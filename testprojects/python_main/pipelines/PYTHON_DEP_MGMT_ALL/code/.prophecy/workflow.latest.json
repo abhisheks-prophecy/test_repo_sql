@@ -21,7 +21,31 @@
         "language" : "python"
       }, {
         "name" : "udf_scipy_dependency",
-        "code" : "@udf(returnType=StringType())\ndef square():\n    from scipy.special import cbrt\n    cb = cbrt([27, 64])\n    return str(cb[0])",
+        "code" : "@udf(returnType=StringType())\ndef udf_scipy_dependency():\n    from scipy.special import cbrt\n    cb = cbrt([27, 64])\n    return str(cb[0])",
+        "language" : "python"
+      }, {
+        "name" : "udf_swap_product",
+        "code" : "@udf(returnType=IntegerType())\ndef udf_swap_product(x, y):\n    x = x ^ y\n    y = x ^ y\n    x = x ^ y\n    return x*y",
+        "language" : "python"
+      }, {
+        "name" : "udf_prime",
+        "code" : "@udf(returnType=BooleanType())\ndef udf_prime(x):\n    if num > 1:\n    # check for factors\n        for i in range(2,num):\n            if (num % i) == 0:\n                return False\n        else:\n            return True\n    else:\n        return False",
+        "language" : "python"
+      }, {
+        "name" : "udf_datetype",
+        "code" : "@udf(returnType=DateType())\ndef udf_datetype(value):\n    return to_date(value)",
+        "language" : "python"
+      }, {
+        "name" : "udf_timestamptype",
+        "code" : "@udf(returnType=TimestampType())\ndef udf_timestamptype(value):\n    return to_timestamp(value)",
+        "language" : "python"
+      }, {
+        "name" : "udf_arraytype",
+        "code" : "@udf(returnType=ArrayType(IntegerType()))\ndef udf_arraytype(value, repeattimes):\n    return [value]*repeattimes",
+        "language" : "python"
+      }, {
+        "name" : "udf_maptype",
+        "code" : "@udf(returnType=ArrayType(StructType([\n    StructField(\"char\", StringType(), False),\n    StructField(\"count\", IntegerType(), False)\n])))\ndef udf_maptype():\n    return [{\"char\": \"char1\", \"count\": 10}]",
         "language" : "python"
       } ],
       "initialCode" : "initial=10"
@@ -621,6 +645,13 @@
             "value" : "this is a test!@#^&*()_=- asdasd"
           },
           "optional" : false
+        }, {
+          "name" : "AI_MIN_DATETIME",
+          "kind" : {
+            "type" : "string",
+            "value" : "2020-01-02 11:11:11"
+          },
+          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -629,7 +660,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance1",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -5831,8 +5862,8 @@
       "id" : "HlaWDG5dsklrL9pm8GG8M$$PhFCGBTLGIr5vXoTnP5v6",
       "component" : "Reformat",
       "metadata" : {
-        "label" : "Reformat_16",
-        "slug" : "Reformat_16",
+        "label" : "VeryLargeExpr",
+        "slug" : "VeryLargeExpr",
         "x" : 498,
         "y" : -156,
         "phase" : 0,
@@ -5853,7 +5884,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##first_name", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##email", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##account_flags", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##country_code", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##account_open_date", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##last_name", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##phone", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##customer_id" ],
+        "columnsSelector" : [ "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##customer_id", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##phone", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##first_name", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##country_code", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##account_open_date", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##email", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##last_name", "9BXUXQ8U9m_px0MJ_U3dL$$j6aUdplB26KVk7IaWBus1##account_flags" ],
         "expressions" : [ {
           "target" : "account_flags",
           "expression" : {
@@ -5908,6 +5939,13 @@
           "expression" : {
             "format" : "sql",
             "expression" : "phone"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_complex_expression",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CASE WHEN (NOT CAST(CASE WHEN coalesce(((((length(CAST(first_name AS STRING)) = 8) AND (length(CAST(first_name AS STRING)) = 8)) AND ((length(CAST(first_name AS STRING)) = 8) AND (length(CAST(first_name AS STRING)) = 8))) AND ((((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10)) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10))), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) WHEN coalesce(((array_contains(array(6, 7), length(CAST(first_name AS STRING))) AND array_contains(array(6, 7), length(CAST(first_name AS STRING)))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) ELSE CAST(0 AS BOOLEAN) END AS BOOLEAN)) THEN date_format(to_timestamp('$AI_MIN_DATETIME', 'yyyy-MM-dd HH:mm:ss'), 'yyyyMMdd') WHEN coalesce(((length(CAST(first_name AS STRING)) = 8) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(first_name AS STRING) WHEN coalesce((array_contains(array(6, 7), length(CAST(first_name AS STRING))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING) ELSE NULL END"
           },
           "description" : ""
         } ]
@@ -8238,7 +8276,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_timestamp", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_short", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_date", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_int", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_decimal", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_string", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_long" ],
+        "columnsSelector" : [ "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_date", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_short", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_int", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_string", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_timestamp", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_long", "pTEiFHIIS3-fkPc3hutcS$$hF16vFlCQLadI7SpfrgfI##c_decimal" ],
         "expressions" : [ {
           "target" : "c1",
           "expression" : {
@@ -8279,6 +8317,20 @@
           "expression" : {
             "format" : "sql",
             "expression" : "CASE WHEN (c_int > 10) THEN CASE WHEN (NOT (NOT c_string LIKE '%1%')) THEN concat(c_string, 'A') WHEN (NOT (NOT (trim(trim(c_string)) = ''))) THEN concat(c_string, 'B') ELSE concat(c_string, 'X') END WHEN (c_int <= 10) THEN CASE WHEN (NOT (NOT c_string LIKE '%1%')) THEN concat(c_string, 'C') WHEN (NOT (NOT (NOT c_string LIKE '%2%'))) THEN concat(c_string, 'D') ELSE concat(c_string, 'Z') END ELSE NULL END"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_udf_maptype",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "udf_maptype()"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_udf_array_type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "udf_arraytype(c_int, 5)"
           },
           "description" : ""
         } ]

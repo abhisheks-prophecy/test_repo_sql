@@ -88,7 +88,8 @@ class Config(ConfigBase):
             c_config_47: str=None, 
             c_config_48: str=None, 
             c_config_49: str=None, 
-            c_config_50: str=None
+            c_config_50: str=None, 
+            AI_MIN_DATETIME: str=None
     ):
         self.spark = None
         self.update(
@@ -175,7 +176,8 @@ class Config(ConfigBase):
             c_config_47, 
             c_config_48, 
             c_config_49, 
-            c_config_50
+            c_config_50, 
+            AI_MIN_DATETIME
         )
 
     def update(
@@ -263,7 +265,8 @@ class Config(ConfigBase):
             c_config_47: str="this is a test!@#^&*()_=- asdasd", 
             c_config_48: str="this is a test!@#^&*()_=- asdasd", 
             c_config_49: str="this is a test!@#^&*()_=- asdasd", 
-            c_config_50: str="this is a test!@#^&*()_=- asdasd"
+            c_config_50: str="this is a test!@#^&*()_=- asdasd", 
+            AI_MIN_DATETIME: str="2020-01-02 11:11:11"
     ):
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
@@ -352,4 +355,5 @@ class Config(ConfigBase):
         self.c_config_48 = c_config_48
         self.c_config_49 = c_config_49
         self.c_config_50 = c_config_50
+        self.AI_MIN_DATETIME = AI_MIN_DATETIME
         pass

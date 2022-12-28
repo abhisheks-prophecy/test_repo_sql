@@ -324,10 +324,10 @@ def pipeline(spark: SparkSession) -> None:
         "iEAhKfffRKYROLhkq6LCM$$FUrIc9QCdGEO7TuzFhdTJ", 
         "AkoFj0jmMBshTbQIjr103$$OaRGS-kcQrvnXd_bho8ve"
     )
-    df_Reformat_16 = Reformat_16(spark, df_json_in)
-    df_Reformat_16 = collectMetrics(
+    df_VeryLargeExpr = VeryLargeExpr(spark, df_json_in)
+    df_VeryLargeExpr = collectMetrics(
         spark, 
-        df_Reformat_16, 
+        df_VeryLargeExpr, 
         "graph", 
         "HlaWDG5dsklrL9pm8GG8M$$PhFCGBTLGIr5vXoTnP5v6", 
         "NumrPyiY_QXIWM_GXd7Un$$36iPKHFjqehM2767gFFSP"
@@ -397,7 +397,7 @@ def pipeline(spark: SparkSession) -> None:
         df_Limit_5, 
         df_OrderBy_4, 
         df_Limit_4, 
-        df_Reformat_16, 
+        df_VeryLargeExpr, 
         df_Reformat_15, 
         df_OrderBy_1
     )
@@ -566,10 +566,7 @@ def main():
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config1", "hadoop_config1 value")
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config2", "hadoop_config2 value")
     
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_DEP_MGMT_ALL"
-    )
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_DEP_MGMT_ALL")
     pipeline(spark)
     MetricsCollector.end(spark)
 
