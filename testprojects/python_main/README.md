@@ -259,3 +259,7 @@ Changes
 *** Release notes for version: 2.17 ***
 
 2.17
+
+*** Release notes for version: 2.20 ***
+
+2.20
