@@ -19,8 +19,48 @@
         "name" : "udf_string_length",
         "code" : "udf((s: String) => s.length)",
         "language" : "scala"
+      }, {
+        "name" : "udf_random_number",
+        "code" : "udf(() => Math.random())",
+        "language" : "scala"
+      }, {
+        "name" : "udf_add_one",
+        "code" : "udf((x: Int) => x+1)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_concat",
+        "code" : "udf((value1: String, value2: String) => value1 + value2)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_divide_total",
+        "code" : "udf((value: Int) => {\n      var myList = Array(1.9, 2.9, 3.4, 3.5)\n      var total = 0.0;\n      for ( i <- 0 to (myList.length - 1)) {\n            total += myList(i);\n      }\n      total/value\n})",
+        "language" : "scala"
+      }, {
+        "name" : "udf_string_length5",
+        "code" : "udf((s: String) => s.length)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_string_length6",
+        "code" : "udf((s: String) => s.length)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_string_length7",
+        "code" : "udf((s: String) => s.length)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_string_length8",
+        "code" : "udf((s: String) => s.length)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_string_length9",
+        "code" : "udf((s: String) => s.length)",
+        "language" : "scala"
+      }, {
+        "name" : "udf_string_length10",
+        "code" : "udf((s: String) => s.length)",
+        "language" : "scala"
       } ],
-      "initialCode" : "var int_value = 10\nvar string_value = \"string value\""
+      "initialCode" : "var int_value = 10\nvar string_value = \"string value\"\nval colors = Map(\"red\" -> \"#FF0000\", \"azure\" -> \"#F0FFFF\", \"peru\" -> \"#CD853F\")\nval nums: Map[Int, Int] = Map()\nval fruit = Set(\"apples\", \"oranges\", \"pears\")\nval t = (4,3,2,1)\nval sum = t._1 + t._2 + t._3 + t._4\nval ita = Iterator(20,40,2,50,69, 90)\nval itb = Iterator(20,40,2,50,69, 90)"
     },
     "udafs" : {
       "language" : "scala",
@@ -35,14 +75,16 @@
             "type" : "string",
             "value" : "test_user"
           },
-          "optional" : false
+          "optional" : false,
+          "comment" : "this is jdbc user"
         }, {
           "name" : "SOURCE_TABLE",
           "kind" : {
             "type" : "string",
             "value" : "test_table"
           },
-          "optional" : false
+          "optional" : false,
+          "comment" : "this is source table"
         }, {
           "name" : "db_secrets",
           "kind" : {
@@ -878,7 +920,14 @@
           "name" : "c_config_50",
           "kind" : {
             "type" : "string",
-            "value" : "test config 12#%^&*()-="
+            "value" : "this is test string"
+          },
+          "optional" : false
+        }, {
+          "name" : "AI_MIN_DATETIME",
+          "kind" : {
+            "type" : "string",
+            "value" : "2019-06-24 12:01:19"
           },
           "optional" : false
         } ]
@@ -889,7 +938,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance1",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -967,9 +1016,9 @@
     "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
-      "value" : 25
+      "value" : 55
     },
-    "topLevelPackage" : "org.main.scla_dep_mgmt"
+    "topLevelPackage" : "org.main.scla_dep_mgmt_change"
   },
   "connections" : [ {
     "id" : "edge2",
@@ -1968,6 +2017,13 @@
           "expression" : {
             "format" : "sql",
             "expression" : "expr('$c_reformat_complex')"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_11_udf_divide_total",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "udf_divide_total(c_int)"
           },
           "description" : ""
         } ]
@@ -6929,19 +6985,12 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##customer_id", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##first_name", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##last_name", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##phone", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##email", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##country_code", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##account_open_date", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##account_flags" ],
+        "columnsSelector" : [ "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##customer_id", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##last_name", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##first_name", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##phone", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##account_open_date", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##email", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##country_code", "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ##account_flags" ],
         "expressions" : [ {
           "target" : "customer_id",
           "expression" : {
             "format" : "sql",
             "expression" : "customer_id"
-          },
-          "description" : ""
-        }, {
-          "target" : "first_name",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "first_name"
           },
           "description" : ""
         }, {
@@ -6952,10 +7001,24 @@
           },
           "description" : ""
         }, {
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first_name"
+          },
+          "description" : ""
+        }, {
           "target" : "phone",
           "expression" : {
             "format" : "sql",
             "expression" : "phone"
+          },
+          "description" : ""
+        }, {
+          "target" : "account_open_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_open_date"
           },
           "description" : ""
         }, {
@@ -6970,13 +7033,6 @@
           "expression" : {
             "format" : "sql",
             "expression" : "country_code"
-          },
-          "description" : ""
-        }, {
-          "target" : "account_open_date",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "account_open_date"
           },
           "description" : ""
         }, {
@@ -7148,6 +7204,13 @@
           "expression" : {
             "format" : "sql",
             "expression" : "expr('$c_record_complex.cr_array_record[0].crar_spark_expression')"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_another_complex_expression",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CASE WHEN (NOT CAST(CASE WHEN coalesce(((((string_length(CAST(first_name AS STRING)) = 8) AND (string_length(CAST(first_name AS STRING)) = 8)) AND ((string_length(CAST(first_name AS STRING)) = 8) AND (string_length(CAST(first_name AS STRING)) = cast('$c_record_complex.cr_array_record[0].crar_int' as int)))) AND ((((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10)) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10))), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) WHEN coalesce(((array_contains(array(6, 7), string_length(CAST(first_name AS STRING))) AND array_contains(array(6, 7), string_length(CAST(first_name AS STRING)))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) ELSE CAST(0 AS BOOLEAN) END AS BOOLEAN)) THEN date_format(to_timestamp('$AI_MIN_DATETIME', 'yyyy-MM-dd HH:mm:ss'), 'yyyyMMdd') WHEN coalesce(((string_length(CAST(first_name AS STRING)) = 8) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(first_name AS STRING) WHEN coalesce((array_contains(array(6, 7), string_length(CAST(first_name AS STRING))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING) ELSE concat('$c_array_complex[0].car_record.carr_double', '$c_record_complex.cr_array_record[0].crar_double') END"
           },
           "description" : ""
         } ]
