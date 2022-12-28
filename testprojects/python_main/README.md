@@ -267,3 +267,7 @@ Changes
 *** Release notes for version: 2.22 ***
 
 2.22
+
+*** Release notes for version: 2.24 ***
+
+2.24
