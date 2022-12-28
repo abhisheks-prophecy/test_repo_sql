@@ -231,6 +231,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:34:18'
+  datasets/test_delta_report_pricing:
+    name: test_delta_report_pricing
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-22 05:46:08'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-22 05:46:08'
   datasets/livy_src_csv:
     name: livy_src_csv
     description: ''
@@ -543,6 +555,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:25:44'
+  datasets/randomnew:
+    name: randomnew
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-23 07:30:48'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-23 07:30:48'
   datasets/src_jdbc_dbsecrets_test_table:
     name: src_jdbc_dbsecrets_test_table
     description: ''
@@ -691,30 +715,6 @@ templates:
       outputs: []
     dependencies: {}
 jobs:
-  jobs/REL_SC_CUSTOMLIBS:
-    name: REL_SC_CUSTOMLIBS
-    description: ''
-    fabricUID: 2405
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? 2090
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io,abhisheks@simpledalabs.com
-      onStart: false
-      onSuccess: true
-      onFailure: false
-    pipelines:
-    - pipelines/SCALA_SG_SRC
-    jobClusterMode:
-      clusterMode:
-        Multi: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2022-11-04 10:50:36'
-    author: abhisheks+e2etests@prophecy.io
   jobs/DONOT_OPEN_SCALA_JOB:
     name: REL_SCALA_DONOT_OPEN_JOB
     description: ''
@@ -789,6 +789,30 @@ jobs:
     enabled: true
     createdAt: '2022-07-28 12:01:54'
     author: abhisheks+e2etests@simpledatalabs.com
+  jobs/REL_SC_CUSTOMLIBS:
+    name: REL_SC_CUSTOMLIBS
+    description: ''
+    fabricUID: 2405
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io,abhisheks@simpledalabs.com
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines:
+    - pipelines/SCALA_DEP_MGMT_ALL
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-11-04 10:50:36'
+    author: abhisheks+e2etests@prophecy.io
 libraries: []
 subgraphs:
   subgraphs/livyscalaSG1:

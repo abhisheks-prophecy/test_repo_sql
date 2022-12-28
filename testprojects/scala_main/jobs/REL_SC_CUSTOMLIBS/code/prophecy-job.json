@@ -128,6 +128,23 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "2893",
+      "name" : "Automated-LivyFileSystem",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_python/prophecy_libs-1.3.13-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-6.2.11-2.3.0.jar"
+        }
+      }
+    }, {
       "id" : "2601",
       "name" : "dev_unity_catalog",
       "clusterSizes" : {
@@ -408,8 +425,8 @@
       "id" : "fNsQ1oJbzbeJ_pycTTBW3$$QBWcVvjzvsHfoIt8Wqdel",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "SCALA_SG_SRC",
-        "slug" : "SCALA_SG_SRC",
+        "label" : "SCALA_DEP_MGMT",
+        "slug" : "SCALA_DEP_MGMT",
         "x" : 376.3999938964844,
         "y" : 239.1999969482422
       },
@@ -431,14 +448,886 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/SCALA_SG_SRC",
+        "pipelineId" : "pipelines/SCALA_DEP_MGMT_ALL",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "JDBC_USER",
+            "kind" : {
+              "type" : "string",
+              "value" : "test_user"
+            },
+            "optional" : false,
+            "comment" : "this is jdbc user"
+          }, {
+            "name" : "SOURCE_TABLE",
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            },
+            "optional" : false,
+            "comment" : "this is source table"
+          }, {
+            "name" : "db_secrets",
+            "kind" : {
+              "type" : "databricks_secret",
+              "value" : "qasecrets_mysql:username"
+            },
+            "optional" : true
+          }, {
+            "name" : "JDBC_URL",
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+            },
+            "optional" : false
+          }, {
+            "name" : "JDBC_SOURCE_TABLE",
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_STR",
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc_url-${JDBC_URL}"
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_BOOLEAN",
+            "kind" : {
+              "type" : "boolean",
+              "value" : false
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_DOUBLE",
+            "kind" : {
+              "type" : "double",
+              "value" : 11
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_INT",
+            "kind" : {
+              "type" : "int",
+              "value" : 123
+            },
+            "optional" : false
+          }, {
+            "name" : "CONFIG_FLOAT",
+            "kind" : {
+              "type" : "float",
+              "value" : 34
+            },
+            "optional" : false
+          }, {
+            "name" : "c_limit_11",
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_long",
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_long"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_rename",
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_boolean_renamed"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_dedup_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(c_array_float, `c_array_int`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_dedup_col",
+            "kind" : {
+              "type" : "string",
+              "value" : " c_array_date"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_rd_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "`c -  boolean _  ` in (true,false)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_12321",
+            "kind" : {
+              "type" : "int",
+              "value" : 12321
+            },
+            "optional" : false
+          }, {
+            "name" : "c_0",
+            "kind" : {
+              "type" : "int",
+              "value" : 0
+            },
+            "optional" : false
+          }, {
+            "name" : "c_1",
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "optional" : false
+          }, {
+            "name" : "c_join_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "in0.`-- c-long`=in1.`-- c-long`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_join_cshort",
+            "kind" : {
+              "type" : "string",
+              "value" : "in0.`c   short  --`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_orderby_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c  date`, c_timestamp)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_orderby_int",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c-int-column type`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_filter_expression",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "customer_id >5"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_reformat_complex",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "case     when c_int > 10 then         case              when NOT (NOT (c_string like '%1%')) then 'A'             when NOT (NOT (trim(trim(c_string)) = '')) then 'B'             else 'X'         end     when c_int <= 10 then         case             when NOT (NOT (c_string like '%1%')) then 'C'             when NOT (NOT (c_string not like '%2%')) then 'D'             else 'Z'         end     else null end"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_repartition_colname",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c_float-__  `"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_repartition_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c  - int`, `c_struct -- _  `.`c_string - of a struct -- _`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_agg_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "first(c1)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_agg_group",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(c1, c2, c3)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_agg_c3",
+            "kind" : {
+              "type" : "string",
+              "value" : "c3"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_row",
+            "kind" : {
+              "type" : "string",
+              "value" : "row_number()"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_bool",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c -  boolean _  `"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_short",
+            "kind" : {
+              "type" : "string",
+              "value" : "`c- short`"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_sql_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "%[^aeiouAB]@%"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_sql_c8c1",
+            "kind" : {
+              "type" : "int",
+              "value" : -1
+            },
+            "optional" : false
+          }, {
+            "name" : "c_regex1",
+            "kind" : {
+              "type" : "string",
+              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_regex2",
+            "kind" : {
+              "type" : "string",
+              "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_str",
+            "kind" : {
+              "type" : "string",
+              "value" : "stringwith$$one#%^&*()-=!@#"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_new_sqlexpr",
+            "kind" : {
+              "type" : "string",
+              "value" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_complex",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "car_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_float",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "carr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "carr_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : null
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "car_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : null
+                  },
+                  "optional" : false
+                } ]
+              },
+              "value" : [ {
+                "car_array_spark_expression" : [ "concat(first_name, last_name)", "concat(first_name, last_name, last_name)" ],
+                "car_record" : {
+                  "carr_double" : 22132312,
+                  "carr_short" : 22
+                },
+                "car_string" : "test string",
+                "car_array_float" : [ 10.12, -10.12, 0 ],
+                "car_int" : -5446
+              }, {
+                "car_array_spark_expression" : [ "concat(first_name, 'a')" ],
+                "car_record" : {
+                  "carr_double" : 22344234,
+                  "carr_short" : 12
+                },
+                "car_string" : "this is another item",
+                "car_array_float" : [ 22.23432 ],
+                "car_int" : 234234
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c array complex"
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is me son another complex"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_boolean",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "boolean",
+                    "value" : null
+                  },
+                  "value" : [ true, false ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : -123.213213
+                    },
+                    "optional" : true
+                  }, {
+                    "name" : "crr_spark_expression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : "concat(first_name, last_name)"
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_short",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "value" : [ 33, 44, 55, 66, 0 ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_array_record",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_bool",
+                      "kind" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_spark_expression",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_int" : 234234,
+                    "crar_bool" : true,
+                    "crar_string" : "this is my string lift",
+                    "crar_spark_expression" : "concat(first_name, first_name)",
+                    "crar_short" : 12,
+                    "crar_float" : 2343.234,
+                    "crar_long" : 234324,
+                    "crar_double" : 34543523
+                  } ]
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false,
+            "comment" : "c record complex"
+          }, {
+            "name" : "c_config_1",
+            "kind" : {
+              "type" : "string",
+              "value" : "config 1 test instance 1"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_2",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_3",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_4",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_5",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_6",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_7",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_8",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_9",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_10",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_11",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_12",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_13",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_14",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_15",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : true
+          }, {
+            "name" : "c_config_16",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_17",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_18",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_19",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_20",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_21",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_22",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_23",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_24",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_25",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_26",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_27",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_28",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_29",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_30",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_31",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_32",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_33",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_34",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_35",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_36",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_37",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_38",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_39",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_40",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false,
+            "comment" : "this is random configs description long running this is random configs description long runningthis is random configs description long runningthis is random configs description long runningthis is random configs description long runningthis is random configs description long runningthis is random configs description long runningthis is random configs description long running"
+          }, {
+            "name" : "c_config_41",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_42",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_43",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_44",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_45",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_46",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_47",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_48",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_49",
+            "kind" : {
+              "type" : "string",
+              "value" : "test config 12#%^&*()-="
+            },
+            "optional" : false
+          }, {
+            "name" : "c_config_50",
+            "kind" : {
+              "type" : "string",
+              "value" : "this is test string"
+            },
+            "optional" : false
+          }, {
+            "name" : "AI_MIN_DATETIME",
+            "kind" : {
+              "type" : "string",
+              "value" : "2019-06-24 12:01:19"
+            },
+            "optional" : false
+          } ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "default", "captain_livy" ]
+            "ScalaProjectCloneExternalGit" : [ "test-instance2", "test-instance3", "newfabric", "ebs_ssd", "dev_11rt", "dev1", "dev", "test-instance1", "default", "captain_livy" ]
           },
-          "overrides" : { },
-          "selectedInstance" : "default"
+          "overrides" : {
+            "AI_MIN_DATETIME" : "2020-06-06 12:12:12",
+            "CONFIG_DOUBLE" : 22,
+            "c_1" : 1,
+            "CONFIG_FLOAT" : 22,
+            "CONFIG_INT" : 22,
+            "CONFIG_BOOLEAN" : true,
+            "c_st_long" : "c_array_long",
+            "JDBC_USER" : "test_user",
+            "SOURCE_TABLE" : "test_table",
+            "JDBC_SOURCE_TABLE" : "test_table"
+          },
+          "selectedInstance" : "test-instance1"
         }
       }
     }

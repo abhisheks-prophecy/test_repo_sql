@@ -2,9 +2,9 @@
   "fabric_id" : "2405",
   "components" : [ {
     "PipelineComponent" : {
-      "id" : "pipelines/SCALA_SG_SRC",
-      "nodeName" : "SCALA_SG_SRC",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_SGSRC.jar",
+      "id" : "pipelines/SCALA_DEP_MGMT_ALL",
+      "nodeName" : "SCALA_DEP_MGMT",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DEP_MGMT_ALL.jar",
       "language" : "scala"
     }
   }, {
@@ -24,7 +24,7 @@
       "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledalabs.com" ]
     },
     "tasks" : [ {
-      "task_key" : "SCALA_SG_SRC",
+      "task_key" : "SCALA_DEP_MGMT",
       "new_cluster" : {
         "spark_version" : "10.4.x-scala2.12",
         "node_type_id" : "i3.xlarge",
@@ -33,21 +33,21 @@
           "prophecy.metadata.fabric.id" : "2405",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_SGSRC.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_DEP_MGMT_ALL\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DEP_MGMT_ALL.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.cloud.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
         "num_workers" : 1,
         "driver_node_type_id" : "i3.xlarge"
       },
       "spark_jar_task" : {
-        "main_class_name" : "com.main.sub_graph_src1.Main",
-        "parameters" : [ "-i", "default", "-O", "{}" ]
+        "main_class_name" : "org.main.scla_dep_mgmt_change.Main",
+        "parameters" : [ "-i", "test-instance1", "-O", "{\"AI_MIN_DATETIME\":\"2020-06-06 12:12:12\",\"CONFIG_DOUBLE\":22,\"c_1\":1,\"CONFIG_FLOAT\":22,\"CONFIG_INT\":22,\"CONFIG_BOOLEAN\":true,\"c_st_long\":\"c_array_long\",\"JDBC_USER\":\"test_user\",\"SOURCE_TABLE\":\"test_table\",\"JDBC_SOURCE_TABLE\":\"test_table\"}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.11-3.2.0",
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.2.14-3.2.0",
           "repo" : "https://repo1.maven.org/"
         }
       }, {
@@ -56,7 +56,22 @@
           "repo" : "https://pypi.python.org/simple"
         }
       }, {
-        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_SGSRC.jar"
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DEP_MGMT_ALL.jar"
+      }, {
+        "maven" : {
+          "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "maven" : {
+          "coordinates" : "org.postgresql:postgresql:42.3.4",
+          "exclusions" : [ ]
+        }
+      }, {
+        "maven" : {
+          "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
+          "exclusions" : [ ]
+        }
       } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledalabs.com" ]
@@ -65,7 +80,7 @@
     }, {
       "task_key" : "Script_1",
       "depends_on" : [ {
-        "task_key" : "SCALA_SG_SRC"
+        "task_key" : "SCALA_DEP_MGMT"
       } ],
       "new_cluster" : {
         "spark_version" : "10.4.x-scala2.12",
@@ -75,9 +90,9 @@
           "prophecy.metadata.fabric.id" : "2405",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_SGSRC.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_DEP_MGMT_ALL\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DEP_MGMT_ALL.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.cloud.prophecy.io/eventws",
           "prophecy.metadata.is.interactive.run" : "false"
         },
         "num_workers" : 1,
