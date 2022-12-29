@@ -303,3 +303,7 @@ Changes
 *** Release notes for version: 2.21 ***
 
 2.21
+
+*** Release notes for version: 2.22 ***
+
+2.22
