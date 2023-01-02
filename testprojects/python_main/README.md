@@ -291,3 +291,7 @@ Changes
 *** Release notes for version: 2.29 ***
 
 2.29
+
+*** Release notes for version: 2.30 ***
+
+2.30
