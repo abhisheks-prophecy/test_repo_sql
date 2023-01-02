@@ -271,3 +271,19 @@ Changes
 *** Release notes for version: 2.24 ***
 
 2.24
+
+*** Release notes for version: 2.25 ***
+
+2.25
+
+*** Release notes for version: 2.26 ***
+
+2.26
+
+*** Release notes for version: 2.27 ***
+
+Changes
+
+*** Release notes for version: 2.28 ***
+
+Changes

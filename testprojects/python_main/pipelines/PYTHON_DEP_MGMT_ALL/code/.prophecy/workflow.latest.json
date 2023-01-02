@@ -3,7 +3,7 @@
     "id" : "1",
     "language" : "python",
     "fabricId" : "2730",
-    "frontEndLanguage" : "sql",
+    "frontEndLanguage" : "scala",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
@@ -1315,24 +1315,24 @@
         "conditions" : [ {
           "alias" : "in1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "(NOT (in0.`c  - int` = in1.c_int1))"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c  - int`\") =!= col(\"in1.c_int1\")"
           },
           "joinType" : "inner"
         } ],
         "expressions" : [ {
           "target" : "c- short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c- short`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_int1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in1.c_int1"
+            "format" : "scala",
+            "expression" : "col(\"in1.c_int1\")"
           },
           "description" : "",
           "_row_id" : null
@@ -1457,8 +1457,8 @@
           "properties" : {
             "columnsSelector" : [ "IgYrX1gepJAu8GdfjCw8d$$tIu3zVn5fjeEtg70i85PF##c- short" ],
             "condition" : {
-              "format" : "sql",
-              "expression" : "(`c- short` > -1)"
+              "format" : "scala",
+              "expression" : "col(\"`c- short`\") > lit(-1)"
             }
           }
         },
@@ -1490,8 +1490,8 @@
           "properties" : {
             "columnsSelector" : [ "3OC-zNX4GZQnHldDky3vB$$u76MPbvmxYU_gaA6i6r-K##c-string" ],
             "condition" : {
-              "format" : "sql",
-              "expression" : "`c-string` LIKE '%'"
+              "format" : "scala",
+              "expression" : "col(\"`c-string`\").like(\"%\")"
             }
           }
         },
@@ -1625,14 +1625,14 @@
                     "repartitionType" : "range_repartitioning",
                     "rangeExpressions" : [ {
                       "expression" : {
-                        "format" : "sql",
-                        "expression" : "`c- short`"
+                        "format" : "scala",
+                        "expression" : "col(\"`c- short`\")"
                       },
                       "sortType" : "asc"
                     }, {
                       "expression" : {
-                        "format" : "sql",
-                        "expression" : "`c_float-__  `"
+                        "format" : "scala",
+                        "expression" : "col(\"`c_float-__  `\")"
                       },
                       "sortType" : "desc"
                     } ],
@@ -1756,197 +1756,197 @@
                             "expressions" : [ {
                               "target" : "`c- short`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c- short`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c- short`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c  - int`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c  - int`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c  - int`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`- c long`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`- c long`"
+                                "format" : "scala",
+                                "expression" : "col(\"`- c long`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_decimal  -  `",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_decimal  -  `"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_decimal  -  `\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_float-__  `",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_float-__  `"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_float-__  `\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c -  boolean _  `",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c -  boolean _  `"
+                                "format" : "scala",
+                                "expression" : "col(\"`c -  boolean _  `\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "c_double",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "c_double"
+                                "format" : "scala",
+                                "expression" : "col(\"c_double\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c-string`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c-string`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c-string`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_date-for today`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_date-for today`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_date-for today`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_timestamp  __ for--today`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_timestamp  __ for--today`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_timestamp  __ for--today`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_array-int  _ int`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_array-int  _ int`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_array-int  _ int`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_array-string  _ string`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_array-string  _ string`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_array-string  _ string`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_array--long`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_array--long`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_array--long`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_array-- boolean `",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_array-- boolean `"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_array-- boolean `\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`-- c_array_timestamp -- `",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`-- c_array_timestamp -- `"
+                                "format" : "scala",
+                                "expression" : "col(\"`-- c_array_timestamp -- `\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_array -- float`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_array -- float`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_array -- float`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_array -- decimal`",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_array -- decimal`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_array -- decimal`\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "`c_struct -- _  `",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c_struct -- _  `"
+                                "format" : "scala",
+                                "expression" : "col(\"`c_struct -- _  `\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_short",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_short"
+                                "format" : "scala",
+                                "expression" : "col(\"p_short\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_int",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_int"
+                                "format" : "scala",
+                                "expression" : "col(\"p_int\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_long",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_long"
+                                "format" : "scala",
+                                "expression" : "col(\"p_long\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_decimal",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_decimal"
+                                "format" : "scala",
+                                "expression" : "col(\"p_decimal\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_float",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_float"
+                                "format" : "scala",
+                                "expression" : "col(\"p_float\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_boolean",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_boolean"
+                                "format" : "scala",
+                                "expression" : "col(\"p_boolean\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_double",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_double"
+                                "format" : "scala",
+                                "expression" : "col(\"p_double\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_string",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_string"
+                                "format" : "scala",
+                                "expression" : "col(\"p_string\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_date",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_date"
+                                "format" : "scala",
+                                "expression" : "col(\"p_date\")"
                               },
                               "description" : ""
                             }, {
                               "target" : "p_timestamp",
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "p_timestamp"
+                                "format" : "scala",
+                                "expression" : "col(\"p_timestamp\")"
                               },
                               "description" : ""
                             } ]
@@ -1983,110 +1983,110 @@
                         "columnsSelector" : [ "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c_double", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_string", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_float", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c-string", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_date", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c -  boolean _  ", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_decimal", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c_date-for today", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c  - int", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##- c long", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_long", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c_float-__  ", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c_timestamp  __ for--today", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_timestamp", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_double", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c_decimal  -  ", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##p_boolean", "z4o7FdVvyWIVm0mHrO1y_$$RbhVH1g5fi9G0aDeTB7NQ##c- short" ],
                         "orders" : [ {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c- short`"
+                            "format" : "scala",
+                            "expression" : "col(\"`c- short`\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c  - int`"
+                            "format" : "scala",
+                            "expression" : "col(\"`c  - int`\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`- c long`"
+                            "format" : "scala",
+                            "expression" : "col(\"`- c long`\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c_decimal  -  `"
+                            "format" : "scala",
+                            "expression" : "col(\"`c_decimal  -  `\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c_float-__  `"
+                            "format" : "scala",
+                            "expression" : "col(\"`c_float-__  `\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c -  boolean _  `"
+                            "format" : "scala",
+                            "expression" : "col(\"`c -  boolean _  `\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "c_double"
+                            "format" : "scala",
+                            "expression" : "col(\"c_double\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c-string`"
+                            "format" : "scala",
+                            "expression" : "col(\"`c-string`\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c_date-for today`"
+                            "format" : "scala",
+                            "expression" : "col(\"`c_date-for today`\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c_timestamp  __ for--today`"
+                            "format" : "scala",
+                            "expression" : "col(\"`c_timestamp  __ for--today`\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_long"
+                            "format" : "scala",
+                            "expression" : "col(\"p_long\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_decimal"
+                            "format" : "scala",
+                            "expression" : "col(\"p_decimal\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_float"
+                            "format" : "scala",
+                            "expression" : "col(\"p_float\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_boolean"
+                            "format" : "scala",
+                            "expression" : "col(\"p_boolean\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_double"
+                            "format" : "scala",
+                            "expression" : "col(\"p_double\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_string"
+                            "format" : "scala",
+                            "expression" : "col(\"p_string\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_date"
+                            "format" : "scala",
+                            "expression" : "col(\"p_date\")"
                           },
                           "sortType" : "asc"
                         }, {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "p_timestamp"
+                            "format" : "scala",
+                            "expression" : "col(\"p_timestamp\")"
                           },
                           "sortType" : "asc"
                         } ]
@@ -2128,232 +2128,232 @@
                 "conditions" : [ {
                   "alias" : "in1",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "(in0.`- c long` = in0.`- c long`)"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`- c long`\") === col(\"in0.`- c long`\")"
                   },
                   "joinType" : "inner"
                 } ],
                 "expressions" : [ {
                   "target" : "c- short",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c- short`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c- short`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c  - int",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c  - int`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c  - int`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "- c long",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`- c long`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`- c long`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_decimal  -  ",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_decimal  -  `"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_decimal  -  `\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_float-__  ",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_float-__  `"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_float-__  `\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c -  boolean _  ",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c -  boolean _  `"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c -  boolean _  `\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_double",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.c_double"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.c_double\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c-string",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c-string`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c-string`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_date-for today",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_date-for today`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_date-for today`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_timestamp  __ for--today",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_timestamp  __ for--today`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_timestamp  __ for--today`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_array-int  _ int",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_array-int  _ int`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_array-int  _ int`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_array-string  _ string",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_array-string  _ string`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_array-string  _ string`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_array--long",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_array--long`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_array--long`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_array-- boolean ",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_array-- boolean `"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_array-- boolean `\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "-- c_array_timestamp -- ",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`-- c_array_timestamp -- `"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`-- c_array_timestamp -- `\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_array -- float",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_array -- float`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_array -- float`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_array -- decimal",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_array -- decimal`"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_array -- decimal`\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "c_struct -- _  ",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.`c_struct -- _  `"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.`c_struct -- _  `\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_short",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_short"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_short\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_int",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_int"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_int\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_long",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_long"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_long\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_decimal",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_decimal"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_decimal\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_float",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_float"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_float\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_boolean",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_boolean"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_boolean\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_double",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_double"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_double\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_string",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_string"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_string\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_date",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_date"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_date\")"
                   },
                   "description" : "",
                   "_row_id" : null
                 }, {
                   "target" : "p_timestamp",
                   "expression" : {
-                    "format" : "sql",
-                    "expression" : "in0.p_timestamp"
+                    "format" : "scala",
+                    "expression" : "col(\"in0.p_timestamp\")"
                   },
                   "description" : "",
                   "_row_id" : null
@@ -2396,15 +2396,15 @@
             "expressions" : [ {
               "target" : "`c- short`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "description" : ""
             }, {
               "target" : "p_timestamp",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_timestamp"
+                "format" : "scala",
+                "expression" : "col(\"p_timestamp\")"
               },
               "description" : ""
             } ]
@@ -2493,197 +2493,197 @@
             "expressions" : [ {
               "target" : "`c- short`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "description" : ""
             }, {
               "target" : "`c  - int`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c  - int`"
+                "format" : "scala",
+                "expression" : "col(\"`c  - int`\")"
               },
               "description" : ""
             }, {
               "target" : "`- c long`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"`- c long`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_decimal  -  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_decimal  -  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_decimal  -  `\")"
               },
               "description" : ""
             }, {
               "target" : "`c_float-__  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_float-__  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_float-__  `\")"
               },
               "description" : ""
             }, {
               "target" : "`c -  boolean _  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c -  boolean _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c -  boolean _  `\")"
               },
               "description" : ""
             }, {
               "target" : "c_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_double"
+                "format" : "scala",
+                "expression" : "col(\"c_double\")"
               },
               "description" : ""
             }, {
               "target" : "`c-string`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c-string`"
+                "format" : "scala",
+                "expression" : "col(\"`c-string`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_date-for today`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_date-for today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_date-for today`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_timestamp  __ for--today`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_timestamp  __ for--today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_timestamp  __ for--today`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-int  _ int`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-int  _ int`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-int  _ int`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-string  _ string`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-string  _ string`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-string  _ string`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array--long`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array--long`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array--long`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-- boolean `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-- boolean `"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-- boolean `\")"
               },
               "description" : ""
             }, {
               "target" : "`-- c_array_timestamp -- `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`-- c_array_timestamp -- `"
+                "format" : "scala",
+                "expression" : "col(\"`-- c_array_timestamp -- `\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array -- float`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array -- float`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array -- float`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array -- decimal`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array -- decimal`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array -- decimal`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_struct -- _  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_struct -- _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_struct -- _  `\")"
               },
               "description" : ""
             }, {
               "target" : "p_short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_short"
+                "format" : "scala",
+                "expression" : "col(\"p_short\")"
               },
               "description" : ""
             }, {
               "target" : "p_int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_int"
+                "format" : "scala",
+                "expression" : "col(\"p_int\")"
               },
               "description" : ""
             }, {
               "target" : "p_long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_long"
+                "format" : "scala",
+                "expression" : "col(\"p_long\")"
               },
               "description" : ""
             }, {
               "target" : "p_decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_decimal"
+                "format" : "scala",
+                "expression" : "col(\"p_decimal\")"
               },
               "description" : ""
             }, {
               "target" : "p_float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_float"
+                "format" : "scala",
+                "expression" : "col(\"p_float\")"
               },
               "description" : ""
             }, {
               "target" : "p_boolean",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_boolean"
+                "format" : "scala",
+                "expression" : "col(\"p_boolean\")"
               },
               "description" : ""
             }, {
               "target" : "p_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_double"
+                "format" : "scala",
+                "expression" : "col(\"p_double\")"
               },
               "description" : ""
             }, {
               "target" : "p_string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_string"
+                "format" : "scala",
+                "expression" : "col(\"p_string\")"
               },
               "description" : ""
             }, {
               "target" : "p_date",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_date"
+                "format" : "scala",
+                "expression" : "col(\"p_date\")"
               },
               "description" : ""
             }, {
               "target" : "p_timestamp",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_timestamp"
+                "format" : "scala",
+                "expression" : "col(\"p_timestamp\")"
               },
               "description" : ""
             } ]
@@ -2721,15 +2721,15 @@
         "expressions" : [ {
           "target" : "c_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_short"
+            "format" : "scala",
+            "expression" : "col(\"c_short\")"
           },
           "description" : ""
         }, {
           "target" : "c_int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_int"
+            "format" : "scala",
+            "expression" : "col(\"c_int\")"
           },
           "description" : ""
         } ]
@@ -2795,92 +2795,92 @@
         "expressions" : [ {
           "target" : "`c- short`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"`c- short`\")"
           },
           "description" : ""
         }, {
           "target" : "`c  - int`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  - int`"
+            "format" : "scala",
+            "expression" : "col(\"`c  - int`\")"
           },
           "description" : ""
         }, {
           "target" : "`- c long`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`- c long`"
+            "format" : "scala",
+            "expression" : "col(\"`- c long`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_decimal  -  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_decimal  -  `"
+            "format" : "scala",
+            "expression" : "col(\"`c_decimal  -  `\")"
           },
           "description" : ""
         }, {
           "target" : "`c_float-__  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_float-__  `"
+            "format" : "scala",
+            "expression" : "col(\"`c_float-__  `\")"
           },
           "description" : ""
         }, {
           "target" : "`c -  boolean _  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c -  boolean _  `"
+            "format" : "scala",
+            "expression" : "col(\"`c -  boolean _  `\")"
           },
           "description" : ""
         }, {
           "target" : "c_double",
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_double"
+            "format" : "scala",
+            "expression" : "col(\"c_double\")"
           },
           "description" : ""
         }, {
           "target" : "`c-string`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-string`"
+            "format" : "scala",
+            "expression" : "col(\"`c-string`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_date-for today`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_date-for today`"
+            "format" : "scala",
+            "expression" : "col(\"`c_date-for today`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_timestamp  __ for--today`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp  __ for--today`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp  __ for--today`\")"
           },
           "description" : ""
         }, {
           "target" : "`c-bytes`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-bytes`"
+            "format" : "scala",
+            "expression" : "col(\"`c-bytes`\")"
           },
           "description" : ""
         }, {
           "target" : "`c-binary`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-binary`"
+            "format" : "scala",
+            "expression" : "col(\"`c-binary`\")"
           },
           "description" : ""
         }, {
           "target" : "p_date",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_date"
+            "format" : "scala",
+            "expression" : "col(\"p_date\")"
           },
           "description" : ""
         } ]
@@ -2943,48 +2943,48 @@
         "aggregate" : [ {
           "target" : "c   short  --",
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_aggregate_expr')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_aggregate_expr)"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c-int-column type",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`c-int-column type`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`c-int-column type`\"))"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "-- c-long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`-- c-long`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`-- c-long`\"))"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c-decimal renamed",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`c-decimal renamed`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`c-decimal renamed`\"))"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c  float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`c  float`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`c  float`\"))"
           },
           "description" : "",
           "_row_id" : null
         } ],
         "allowSelection" : false,
         "pivotColumn" : {
-          "format" : "sql",
-          "expression" : "`-- c-long`"
+          "format" : "scala",
+          "expression" : "col(\"`-- c-long`\")"
         },
         "pivotValues" : [ {
           "colName" : "c_timestamp"
@@ -2996,16 +2996,16 @@
         "groupBy" : [ {
           "target" : "`c___-- string`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "'$c_aggregate_string'"
+            "format" : "scala",
+            "expression" : "lit(Config.c_aggregate_string)"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "`c  date`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  date`"
+            "format" : "scala",
+            "expression" : "col(\"`c  date`\")"
           },
           "description" : "",
           "_row_id" : null
@@ -3043,40 +3043,40 @@
         "aggregate" : [ {
           "target" : "c   short  --",
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_aggregate_expr')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_aggregate_expr)"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c-int-column type",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`c-int-column type`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`c-int-column type`\"))"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "-- c-long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`-- c-long`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`-- c-long`\"))"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c-decimal renamed",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`c-decimal renamed`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`c-decimal renamed`\"))"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c  float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first(`c  float`)"
+            "format" : "scala",
+            "expression" : "first(col(\"`c  float`\"))"
           },
           "description" : "",
           "_row_id" : null
@@ -3093,16 +3093,16 @@
         "groupBy" : [ {
           "target" : "`c___-- string`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "'$c_aggregate_string'"
+            "format" : "scala",
+            "expression" : "lit(Config.c_aggregate_string)"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "`c  date`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  date`"
+            "format" : "scala",
+            "expression" : "col(\"`c  date`\")"
           },
           "description" : "",
           "_row_id" : null
@@ -3193,40 +3193,40 @@
         "conditions" : [ {
           "alias" : "in1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "(NOT (in0.`c  - int` = in1.c_int))"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c  - int`\") =!= col(\"in1.c_int\")"
           },
           "joinType" : "inner"
         } ],
         "expressions" : [ {
           "target" : "c- short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c- short`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c  - int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c  - int`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c  - int`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in1.c_short"
+            "format" : "scala",
+            "expression" : "col(\"in1.c_short\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in1.c_int"
+            "format" : "scala",
+            "expression" : "col(\"in1.c_int\")"
           },
           "description" : "",
           "_row_id" : null
@@ -3332,22 +3332,22 @@
         "expressions" : [ {
           "target" : "c_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "10"
+            "format" : "scala",
+            "expression" : "lit(10)"
           },
           "description" : ""
         }, {
           "target" : "c_int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "123231"
+            "format" : "scala",
+            "expression" : "lit(123231)"
           },
           "description" : ""
         }, {
           "target" : "value",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`value`"
+            "format" : "scala",
+            "expression" : "col(\"value\")"
           },
           "description" : ""
         } ]
@@ -3585,216 +3585,216 @@
             "aggregate" : [ {
               "target" : "c- short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c- short`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c- short`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c  - int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c  - int`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c  - int`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "- c long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`- c long`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`- c long`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_decimal  -  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_decimal  -  `)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_decimal  -  `\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_float-__  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_float-__  `)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_float-__  `\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c -  boolean _  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c -  boolean _  `)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c -  boolean _  `\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c-string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c-string`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c-string`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_date-for today",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_date-for today`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_date-for today`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_timestamp  __ for--today",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_timestamp  __ for--today`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_timestamp  __ for--today`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array-int  _ int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_array-int  _ int`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_array-int  _ int`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array-string  _ string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_array-string  _ string`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_array-string  _ string`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array--long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_array--long`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_array--long`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array-- boolean ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_array-- boolean `)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_array-- boolean `\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "-- c_array_timestamp -- ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`-- c_array_timestamp -- `)"
+                "format" : "scala",
+                "expression" : "first(col(\"`-- c_array_timestamp -- `\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array -- float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_array -- float`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_array -- float`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array -- decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_array -- decimal`)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_array -- decimal`\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_struct -- _  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(`c_struct -- _  `)"
+                "format" : "scala",
+                "expression" : "first(col(\"`c_struct -- _  `\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_short)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_short\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_int)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_int\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_long)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_long\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_decimal)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_decimal\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_float)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_float\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_boolean",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_boolean)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_boolean\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_double)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_double\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_string)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_string\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_date",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_date)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_date\"))"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_timestamp",
               "expression" : {
-                "format" : "sql",
-                "expression" : "first(p_timestamp)"
+                "format" : "scala",
+                "expression" : "first(col(\"p_timestamp\"))"
               },
               "description" : "",
               "_row_id" : null
@@ -3807,8 +3807,8 @@
             "groupBy" : [ {
               "target" : "c_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_double"
+                "format" : "scala",
+                "expression" : "col(\"c_double\")"
               },
               "description" : "",
               "_row_id" : null
@@ -3876,232 +3876,232 @@
             "conditions" : [ {
               "alias" : "in1",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`- c long`=in1.`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`- c long`\") === col(\"in1.`- c long`\")"
               },
               "joinType" : "inner"
             } ],
             "expressions" : [ {
               "target" : "c- short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c- short`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c  - int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c  - int`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c  - int`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "- c long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`- c long`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_decimal  -  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_decimal  -  `"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_decimal  -  `\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_float-__  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_float-__  `"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_float-__  `\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c -  boolean _  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c -  boolean _  `"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c -  boolean _  `\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.c_double"
+                "format" : "scala",
+                "expression" : "col(\"in0.c_double\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c-string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c-string`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c-string`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_date-for today",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_date-for today`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_date-for today`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_timestamp  __ for--today",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_timestamp  __ for--today`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_timestamp  __ for--today`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array-int  _ int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_array-int  _ int`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_array-int  _ int`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array-string  _ string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_array-string  _ string`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_array-string  _ string`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array--long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_array--long`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_array--long`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array-- boolean ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_array-- boolean `"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_array-- boolean `\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "-- c_array_timestamp -- ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`-- c_array_timestamp -- `"
+                "format" : "scala",
+                "expression" : "col(\"in0.`-- c_array_timestamp -- `\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array -- float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_array -- float`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_array -- float`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_array -- decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_array -- decimal`"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_array -- decimal`\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "c_struct -- _  ",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.`c_struct -- _  `"
+                "format" : "scala",
+                "expression" : "col(\"in0.`c_struct -- _  `\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_short"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_short\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_int"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_int\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_long"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_long\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_decimal"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_decimal\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_float"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_float\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_boolean",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_boolean"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_boolean\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_double"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_double\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_string"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_string\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_date",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_date"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_date\")"
               },
               "description" : "",
               "_row_id" : null
             }, {
               "target" : "p_timestamp",
               "expression" : {
-                "format" : "sql",
-                "expression" : "in0.p_timestamp"
+                "format" : "scala",
+                "expression" : "col(\"in0.p_timestamp\")"
               },
               "description" : "",
               "_row_id" : null
@@ -4172,32 +4172,32 @@
             "columnsSelector" : [ "0QM7SImf04egqXk7J-UkV$$fM1Nw1bBkRZla--HtfqCp##c  - int", "0QM7SImf04egqXk7J-UkV$$fM1Nw1bBkRZla--HtfqCp##c- short", "0QM7SImf04egqXk7J-UkV$$fM1Nw1bBkRZla--HtfqCp##- c long", "0QM7SImf04egqXk7J-UkV$$fM1Nw1bBkRZla--HtfqCp##c_decimal  -  ", "0QM7SImf04egqXk7J-UkV$$fM1Nw1bBkRZla--HtfqCp##c_float-__  " ],
             "orders" : [ {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c  - int`"
+                "format" : "scala",
+                "expression" : "col(\"`c  - int`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"`- c long`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_decimal  -  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_decimal  -  `\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_float-__  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_float-__  `\")"
               },
               "sortType" : "asc"
             } ]
@@ -4257,8 +4257,8 @@
           "properties" : {
             "columnsSelector" : [ ],
             "condition" : {
-              "format" : "sql",
-              "expression" : "`c- short` > 5"
+              "format" : "scala",
+              "expression" : "col(\"`c- short`\") > lit(5)"
             }
           }
         },
@@ -4292,7 +4292,7 @@
             "expressionColumns" : [ {
               "target" : "c_float-__  ",
               "expression" : {
-                "format" : "sql",
+                "format" : "scala",
                 "expression" : "row_number()"
               },
               "description" : "",
@@ -4300,7 +4300,7 @@
             }, {
               "target" : "c_date-for today",
               "expression" : {
-                "format" : "sql",
+                "format" : "scala",
                 "expression" : "row_number()"
               },
               "description" : "",
@@ -4308,65 +4308,65 @@
             } ],
             "frameType" : "row",
             "partitionColumns" : [ {
-              "format" : "sql",
-              "expression" : "c_double"
+              "format" : "scala",
+              "expression" : "col(\"c_double\")"
             }, {
-              "format" : "sql",
-              "expression" : "`c- short`"
+              "format" : "scala",
+              "expression" : "col(\"`c- short`\")"
             }, {
-              "format" : "sql",
-              "expression" : "`- c long`"
+              "format" : "scala",
+              "expression" : "col(\"`- c long`\")"
             }, {
-              "format" : "sql",
-              "expression" : "c_decimal_new"
+              "format" : "scala",
+              "expression" : "col(\"c_decimal_new\")"
             }, {
-              "format" : "sql",
-              "expression" : "`c_float-__  `"
+              "format" : "scala",
+              "expression" : "col(\"`c_float-__  `\")"
             }, {
-              "format" : "sql",
-              "expression" : "`c -  boolean _  `"
+              "format" : "scala",
+              "expression" : "col(\"`c -  boolean _  `\")"
             }, {
-              "format" : "sql",
-              "expression" : "`c-string`"
+              "format" : "scala",
+              "expression" : "col(\"`c-string`\")"
             }, {
-              "format" : "sql",
-              "expression" : "`c_date-for today`"
+              "format" : "scala",
+              "expression" : "col(\"`c_date-for today`\")"
             }, {
-              "format" : "sql",
-              "expression" : "`c_timestamp  __ for--today`"
+              "format" : "scala",
+              "expression" : "col(\"`c_timestamp  __ for--today`\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_short"
+              "format" : "scala",
+              "expression" : "col(\"p_short\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_int"
+              "format" : "scala",
+              "expression" : "col(\"p_int\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_long"
+              "format" : "scala",
+              "expression" : "col(\"p_long\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_decimal"
+              "format" : "scala",
+              "expression" : "col(\"p_decimal\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_float"
+              "format" : "scala",
+              "expression" : "col(\"p_float\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_boolean"
+              "format" : "scala",
+              "expression" : "col(\"p_boolean\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_double"
+              "format" : "scala",
+              "expression" : "col(\"p_double\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_string"
+              "format" : "scala",
+              "expression" : "col(\"p_string\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_date"
+              "format" : "scala",
+              "expression" : "col(\"p_date\")"
             }, {
-              "format" : "sql",
-              "expression" : "p_timestamp"
+              "format" : "scala",
+              "expression" : "col(\"p_timestamp\")"
             }, {
-              "format" : "sql",
-              "expression" : "c_double_c_float"
+              "format" : "scala",
+              "expression" : "col(\"c_double_c_float\")"
             } ],
             "activeTab" : "windowUse",
             "columnsSelector" : [ ],
@@ -4374,14 +4374,14 @@
             "frameStart" : null,
             "orderColumns" : [ {
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_double"
+                "format" : "scala",
+                "expression" : "col(\"c_double\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "sortType" : "asc"
             } ],
@@ -4641,8 +4641,8 @@
                         "columnsSelector" : [ "NwFlf_nKCzCZlPp1lD1UZ$$YxPqJYI7Fkxk-2aRy-D2G##c-string" ],
                         "orders" : [ {
                           "expression" : {
-                            "format" : "sql",
-                            "expression" : "`c-string`"
+                            "format" : "scala",
+                            "expression" : "col(\"`c-string`\")"
                           },
                           "sortType" : "asc"
                         } ]
@@ -4723,8 +4723,8 @@
                             "columnsSelector" : [ "SeKCb5c4NzZRhCCWaX3A8$$kjkt71DTi0_dQ_fFJHkhO##c-string" ],
                             "orders" : [ {
                               "expression" : {
-                                "format" : "sql",
-                                "expression" : "`c-string`"
+                                "format" : "scala",
+                                "expression" : "col(\"`c-string`\")"
                               },
                               "sortType" : "asc"
                             } ]
@@ -4800,8 +4800,8 @@
                                 "expressions" : [ {
                                   "target" : "`c-string`",
                                   "expression" : {
-                                    "format" : "sql",
-                                    "expression" : "`c-string`"
+                                    "format" : "scala",
+                                    "expression" : "col(\"`c-string`\")"
                                   },
                                   "description" : ""
                                 } ]
@@ -4843,8 +4843,8 @@
                     "expressions" : [ {
                       "target" : "`c-string`",
                       "expression" : {
-                        "format" : "sql",
-                        "expression" : "`c-string`"
+                        "format" : "scala",
+                        "expression" : "col(\"`c-string`\")"
                       },
                       "description" : ""
                     } ]
@@ -4921,8 +4921,8 @@
               "AddReplaceColumn" : {
                 "sourceColumn" : "c_double_c_float",
                 "expression" : {
-                  "format" : "sql",
-                  "expression" : "concat(c_double, `c_float-__  `)"
+                  "format" : "scala",
+                  "expression" : "concat(col(\"c_double\"), col(\"`c_float-__  `\"))"
                 }
               },
               "DropColumn" : {
@@ -4996,74 +4996,74 @@
             "columnsSelector" : [ "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c_timestamp  __ for--today", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c-string", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c- short", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##- c long", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c_date-for today", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##p_date", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c  - int", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c_double", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##p_timestamp", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c -  boolean _  ", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c_decimal  -  ", "-ThUgJbZyZ3UVT4gX6ZmO$$zkcsdskykNDpxPHM-yNEJ##c_float-__  " ],
             "orders" : [ {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c  - int`"
+                "format" : "scala",
+                "expression" : "col(\"`c  - int`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"`- c long`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_decimal  -  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_decimal  -  `\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_float-__  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_float-__  `\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c -  boolean _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c -  boolean _  `\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_double"
+                "format" : "scala",
+                "expression" : "col(\"c_double\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c-string`"
+                "format" : "scala",
+                "expression" : "col(\"`c-string`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_date-for today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_date-for today`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_timestamp  __ for--today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_timestamp  __ for--today`\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_date"
+                "format" : "scala",
+                "expression" : "col(\"p_date\")"
               },
               "sortType" : "asc"
             }, {
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_timestamp"
+                "format" : "scala",
+                "expression" : "col(\"p_timestamp\")"
               },
               "sortType" : "asc"
             } ]
@@ -5099,197 +5099,197 @@
             "expressions" : [ {
               "target" : "`c- short`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "description" : ""
             }, {
               "target" : "`c  - int`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c  - int`"
+                "format" : "scala",
+                "expression" : "col(\"`c  - int`\")"
               },
               "description" : ""
             }, {
               "target" : "`- c long`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"`- c long`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_decimal  -  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_decimal  -  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_decimal  -  `\")"
               },
               "description" : ""
             }, {
               "target" : "`c_float-__  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_float-__  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_float-__  `\")"
               },
               "description" : ""
             }, {
               "target" : "`c -  boolean _  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c -  boolean _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c -  boolean _  `\")"
               },
               "description" : ""
             }, {
               "target" : "c_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_double"
+                "format" : "scala",
+                "expression" : "col(\"c_double\")"
               },
               "description" : ""
             }, {
               "target" : "`c-string`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c-string`"
+                "format" : "scala",
+                "expression" : "col(\"`c-string`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_date-for today`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_date-for today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_date-for today`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_timestamp  __ for--today`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_timestamp  __ for--today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_timestamp  __ for--today`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-int  _ int`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-int  _ int`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-int  _ int`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-string  _ string`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-string  _ string`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-string  _ string`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array--long`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array--long`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array--long`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-- boolean `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-- boolean `"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-- boolean `\")"
               },
               "description" : ""
             }, {
               "target" : "`-- c_array_timestamp -- `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`-- c_array_timestamp -- `"
+                "format" : "scala",
+                "expression" : "col(\"`-- c_array_timestamp -- `\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array -- float`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array -- float`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array -- float`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array -- decimal`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array -- decimal`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array -- decimal`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_struct -- _  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_struct -- _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_struct -- _  `\")"
               },
               "description" : ""
             }, {
               "target" : "p_short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_short"
+                "format" : "scala",
+                "expression" : "col(\"p_short\")"
               },
               "description" : ""
             }, {
               "target" : "p_int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_int"
+                "format" : "scala",
+                "expression" : "col(\"p_int\")"
               },
               "description" : ""
             }, {
               "target" : "p_long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_long"
+                "format" : "scala",
+                "expression" : "col(\"p_long\")"
               },
               "description" : ""
             }, {
               "target" : "p_decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_decimal"
+                "format" : "scala",
+                "expression" : "col(\"p_decimal\")"
               },
               "description" : ""
             }, {
               "target" : "p_float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_float"
+                "format" : "scala",
+                "expression" : "col(\"p_float\")"
               },
               "description" : ""
             }, {
               "target" : "p_boolean",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_boolean"
+                "format" : "scala",
+                "expression" : "col(\"p_boolean\")"
               },
               "description" : ""
             }, {
               "target" : "p_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_double"
+                "format" : "scala",
+                "expression" : "col(\"p_double\")"
               },
               "description" : ""
             }, {
               "target" : "p_string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_string"
+                "format" : "scala",
+                "expression" : "col(\"p_string\")"
               },
               "description" : ""
             }, {
               "target" : "p_date",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_date"
+                "format" : "scala",
+                "expression" : "col(\"p_date\")"
               },
               "description" : ""
             }, {
               "target" : "p_timestamp",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_timestamp"
+                "format" : "scala",
+                "expression" : "col(\"p_timestamp\")"
               },
               "description" : ""
             } ]
@@ -5360,197 +5360,197 @@
             "expressions" : [ {
               "target" : "`c- short`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c- short`"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\")"
               },
               "description" : ""
             }, {
               "target" : "`c  - int`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c  - int`"
+                "format" : "scala",
+                "expression" : "col(\"`c  - int`\")"
               },
               "description" : ""
             }, {
               "target" : "`- c long`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`- c long`"
+                "format" : "scala",
+                "expression" : "col(\"`- c long`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_decimal  -  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_decimal  -  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_decimal  -  `\")"
               },
               "description" : ""
             }, {
               "target" : "`c_float-__  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_float-__  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_float-__  `\")"
               },
               "description" : ""
             }, {
               "target" : "`c -  boolean _  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c -  boolean _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c -  boolean _  `\")"
               },
               "description" : ""
             }, {
               "target" : "c_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_double"
+                "format" : "scala",
+                "expression" : "col(\"c_double\")"
               },
               "description" : ""
             }, {
               "target" : "`c-string`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c-string`"
+                "format" : "scala",
+                "expression" : "col(\"`c-string`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_date-for today`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_date-for today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_date-for today`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_timestamp  __ for--today`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_timestamp  __ for--today`"
+                "format" : "scala",
+                "expression" : "col(\"`c_timestamp  __ for--today`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-int  _ int`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-int  _ int`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-int  _ int`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-string  _ string`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-string  _ string`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-string  _ string`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array--long`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array--long`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array--long`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array-- boolean `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array-- boolean `"
+                "format" : "scala",
+                "expression" : "col(\"`c_array-- boolean `\")"
               },
               "description" : ""
             }, {
               "target" : "`-- c_array_timestamp -- `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`-- c_array_timestamp -- `"
+                "format" : "scala",
+                "expression" : "col(\"`-- c_array_timestamp -- `\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array -- float`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array -- float`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array -- float`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_array -- decimal`",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_array -- decimal`"
+                "format" : "scala",
+                "expression" : "col(\"`c_array -- decimal`\")"
               },
               "description" : ""
             }, {
               "target" : "`c_struct -- _  `",
               "expression" : {
-                "format" : "sql",
-                "expression" : "`c_struct -- _  `"
+                "format" : "scala",
+                "expression" : "col(\"`c_struct -- _  `\")"
               },
               "description" : ""
             }, {
               "target" : "p_short",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_short"
+                "format" : "scala",
+                "expression" : "col(\"p_short\")"
               },
               "description" : ""
             }, {
               "target" : "p_int",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_int"
+                "format" : "scala",
+                "expression" : "col(\"p_int\")"
               },
               "description" : ""
             }, {
               "target" : "p_long",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_long"
+                "format" : "scala",
+                "expression" : "col(\"p_long\")"
               },
               "description" : ""
             }, {
               "target" : "p_decimal",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_decimal"
+                "format" : "scala",
+                "expression" : "col(\"p_decimal\")"
               },
               "description" : ""
             }, {
               "target" : "p_float",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_float"
+                "format" : "scala",
+                "expression" : "col(\"p_float\")"
               },
               "description" : ""
             }, {
               "target" : "p_boolean",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_boolean"
+                "format" : "scala",
+                "expression" : "col(\"p_boolean\")"
               },
               "description" : ""
             }, {
               "target" : "p_double",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_double"
+                "format" : "scala",
+                "expression" : "col(\"p_double\")"
               },
               "description" : ""
             }, {
               "target" : "p_string",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_string"
+                "format" : "scala",
+                "expression" : "col(\"p_string\")"
               },
               "description" : ""
             }, {
               "target" : "p_date",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_date"
+                "format" : "scala",
+                "expression" : "col(\"p_date\")"
               },
               "description" : ""
             }, {
               "target" : "p_timestamp",
               "expression" : {
-                "format" : "sql",
-                "expression" : "p_timestamp"
+                "format" : "scala",
+                "expression" : "col(\"p_timestamp\")"
               },
               "description" : ""
             } ]
@@ -5589,15 +5589,15 @@
               "path" : "out0",
               "id" : "out0",
               "model" : {
-                "format" : "sql",
-                "expression" : "`c- short` > -1"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\") > lit(-1)"
               }
             }, {
               "path" : "out1",
               "id" : "out1",
               "model" : {
-                "format" : "sql",
-                "expression" : "`c- short` > 5"
+                "format" : "scala",
+                "expression" : "col(\"`c- short`\") > lit(5)"
               }
             } ]
           }
@@ -5797,62 +5797,62 @@
         "columnsSelector" : [ "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c-decimal", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c- - -double", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c--boolean", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c___-- string", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##-- c-long", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c   short  --", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c-int-column type", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c_timestamp", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c  float", "R-OP6AsplIeLaqRvr3P_R$$T_-bZ3aqOUN0JnPx2cMxe##c  date" ],
         "orders" : [ {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c   short  --`"
+            "format" : "scala",
+            "expression" : "col(\"`c   short  --`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-int-column type`"
+            "format" : "scala",
+            "expression" : "col(\"`c-int-column type`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`-- c-long`"
+            "format" : "scala",
+            "expression" : "col(\"`-- c-long`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-decimal`"
+            "format" : "scala",
+            "expression" : "col(\"`c-decimal`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  float`"
+            "format" : "scala",
+            "expression" : "col(\"`c  float`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c--boolean`"
+            "format" : "scala",
+            "expression" : "col(\"`c--boolean`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c- - -double`"
+            "format" : "scala",
+            "expression" : "col(\"`c- - -double`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c___-- string`"
+            "format" : "scala",
+            "expression" : "col(\"`c___-- string`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  date`"
+            "format" : "scala",
+            "expression" : "col(\"`c  date`\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_timestamp"
+            "format" : "scala",
+            "expression" : "col(\"c_timestamp\")"
           },
           "sortType" : "asc"
         } ]
@@ -5888,64 +5888,64 @@
         "expressions" : [ {
           "target" : "account_flags",
           "expression" : {
-            "format" : "sql",
-            "expression" : "account_flags"
+            "format" : "scala",
+            "expression" : "col(\"account_flags\")"
           },
           "description" : ""
         }, {
           "target" : "account_open_date",
           "expression" : {
-            "format" : "sql",
-            "expression" : "account_open_date"
+            "format" : "scala",
+            "expression" : "col(\"account_open_date\")"
           },
           "description" : ""
         }, {
           "target" : "country_code",
           "expression" : {
-            "format" : "sql",
-            "expression" : "country_code"
+            "format" : "scala",
+            "expression" : "col(\"country_code\")"
           },
           "description" : ""
         }, {
           "target" : "customer_id",
           "expression" : {
-            "format" : "sql",
-            "expression" : "customer_id"
+            "format" : "scala",
+            "expression" : "col(\"customer_id\")"
           },
           "description" : ""
         }, {
           "target" : "email",
           "expression" : {
-            "format" : "sql",
-            "expression" : "email"
+            "format" : "scala",
+            "expression" : "col(\"email\")"
           },
           "description" : ""
         }, {
           "target" : "first_name",
           "expression" : {
-            "format" : "sql",
-            "expression" : "first_name"
+            "format" : "scala",
+            "expression" : "col(\"first_name\")"
           },
           "description" : ""
         }, {
           "target" : "last_name",
           "expression" : {
-            "format" : "sql",
-            "expression" : "last_name"
+            "format" : "scala",
+            "expression" : "col(\"last_name\")"
           },
           "description" : ""
         }, {
           "target" : "phone",
           "expression" : {
-            "format" : "sql",
-            "expression" : "phone"
+            "format" : "scala",
+            "expression" : "col(\"phone\")"
           },
           "description" : ""
         }, {
           "target" : "c_complex_expression",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CASE WHEN (NOT CAST(CASE WHEN coalesce(((((length(CAST(first_name AS STRING)) = 8) AND (length(CAST(first_name AS STRING)) = 8)) AND ((length(CAST(first_name AS STRING)) = 8) AND (length(CAST(first_name AS STRING)) = 8))) AND ((((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10)) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10))), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) WHEN coalesce(((array_contains(array(6, 7), length(CAST(first_name AS STRING))) AND array_contains(array(6, 7), length(CAST(first_name AS STRING)))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) ELSE CAST(0 AS BOOLEAN) END AS BOOLEAN)) THEN date_format(to_timestamp('$AI_MIN_DATETIME', 'yyyy-MM-dd HH:mm:ss'), 'yyyyMMdd') WHEN coalesce(((length(CAST(first_name AS STRING)) = 8) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(first_name AS STRING) WHEN coalesce((array_contains(array(6, 7), length(CAST(first_name AS STRING))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING) ELSE NULL END"
+            "format" : "scala",
+            "expression" : "when(!when(coalesce(length(col(\"first_name\").cast(StringType)) === lit(8) and length(col(\"first_name\").cast(StringType)) === lit(8) and (length(col(\"first_name\").cast(StringType)) === lit(8) and length(col(\"first_name\").cast(StringType)) === lit(8)) and (!when(length(trim(col(\"first_name\").cast(StringType))) === lit(8), date_format(to_date(trim(col(\"first_name\").cast(StringType)), \"yyyyMMdd\"), \"yyyyMMdd\")).isNull === lit(10) and !when(length(trim(col(\"first_name\").cast(StringType))) === lit(8), date_format(to_date(trim(col(\"first_name\").cast(StringType)), \"yyyyMMdd\"), \"yyyyMMdd\")).isNull === lit(10) and !when(length(trim(col(\"first_name\").cast(StringType))) === lit(8), date_format(to_date(trim(col(\"first_name\").cast(StringType)), \"yyyyMMdd\"), \"yyyyMMdd\")).isNull === lit(10)), lit(0).cast(BooleanType)), lit(1).cast(BooleanType)).when(coalesce(array_contains(array(lit(6), lit(7)), length(col(\"first_name\").cast(StringType))) and array_contains(array(lit(6), lit(7)), length(col(\"first_name\").cast(StringType))) and !when(length(trim((lit(19000000) + col(\"first_name\").cast(DecimalType(9, 0))).cast(StringType))) === lit(8), date_format(to_date(trim((lit(19000000) + col(\"first_name\").cast(DecimalType(9, 0))).cast(StringType)), \"yyyyMMdd\"), \"yyyyMMdd\")).isNull === lit(1), lit(0).cast(BooleanType)), lit(1).cast(BooleanType)).otherwise(lit(0).cast(BooleanType)).cast(BooleanType), date_format(to_timestamp(lit(Config.AI_MIN_DATETIME), \"yyyy-MM-dd HH:mm:ss\"), \"yyyyMMdd\")).when(coalesce(length(col(\"first_name\").cast(StringType)) === lit(8) and !when(length(trim(col(\"first_name\").cast(StringType))) === lit(8), date_format(to_date(trim(col(\"first_name\").cast(StringType)), \"yyyyMMdd\"), \"yyyyMMdd\")).isNull === lit(1), lit(0).cast(BooleanType)), col(\"first_name\").cast(StringType)).when(coalesce(array_contains(array(lit(6), lit(7)), length(col(\"first_name\").cast(StringType))) and !when(length(trim((lit(19000000) + col(\"first_name\").cast(DecimalType(9, 0))).cast(StringType))) === lit(8), date_format(to_date(trim((lit(19000000) + col(\"first_name\").cast(DecimalType(9, 0))).cast(StringType)), \"yyyyMMdd\"), \"yyyyMMdd\")).isNull === lit(1), lit(0).cast(BooleanType)), (lit(19000000) + col(\"first_name\").cast(DecimalType(9, 0))).cast(StringType)).otherwise(lit(null))"
           },
           "description" : ""
         } ]
@@ -5979,11 +5979,11 @@
       "properties" : {
         "overwriteDefaultNPartitions" : true,
         "hashExpressions" : [ {
-          "format" : "sql",
-          "expression" : "concat(`c  - int`, `c_struct -- _  `.`c_string - of a struct -- _`)"
+          "format" : "scala",
+          "expression" : "concat(col(\"`c  - int`\"), col(\"`c_struct -- _  `.`c_string - of a struct -- _`\"))"
         }, {
-          "format" : "sql",
-          "expression" : "concat('$c_repartition_colname', `c- short`)"
+          "format" : "scala",
+          "expression" : "concat(lit(Config.c_repartition_colname), col(\"`c- short`\"))"
         } ],
         "columnsSelector" : [ "Ay_g1ZpSle1oa61ZvNnPO$$5-wAcxfaNDruyRDKaiRIA##c  - int", "Ay_g1ZpSle1oa61ZvNnPO$$5-wAcxfaNDruyRDKaiRIA##c_struct -- _  .c_string - of a struct -- _", "Ay_g1ZpSle1oa61ZvNnPO$$5-wAcxfaNDruyRDKaiRIA##c_struct -- _  ", "Ay_g1ZpSle1oa61ZvNnPO$$5-wAcxfaNDruyRDKaiRIA##c- short" ],
         "repartitionType" : "hash_repartitioning",
@@ -6116,14 +6116,14 @@
         "columnsSelector" : [ "nEGwj5iMM9SjFsx2AITcU$$3GT_63AJKvl8mAfFZphss##c___-- string", "nEGwj5iMM9SjFsx2AITcU$$3GT_63AJKvl8mAfFZphss##c-decimal" ],
         "orders" : [ {
           "expression" : {
-            "format" : "sql",
-            "expression" : "concat('$c_decimal', `c-int-column type`)"
+            "format" : "scala",
+            "expression" : "concat(lit(Config.c_decimal), col(\"`c-int-column type`\"))"
           },
           "sortType" : ""
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_expr_deduplicate')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_expr_deduplicate)"
           },
           "sortType" : ""
         } ],
@@ -6160,197 +6160,197 @@
         "expressions" : [ {
           "target" : "`c- short`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"`c- short`\")"
           },
           "description" : ""
         }, {
           "target" : "`c  - int`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  - int`"
+            "format" : "scala",
+            "expression" : "col(\"`c  - int`\")"
           },
           "description" : ""
         }, {
           "target" : "`- c long`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`- c long`"
+            "format" : "scala",
+            "expression" : "col(\"`- c long`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_decimal  -  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_decimal  -  `"
+            "format" : "scala",
+            "expression" : "col(\"`c_decimal  -  `\")"
           },
           "description" : ""
         }, {
           "target" : "`c_float-__  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_float-__  `"
+            "format" : "scala",
+            "expression" : "col(\"`c_float-__  `\")"
           },
           "description" : ""
         }, {
           "target" : "`c -  boolean _  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c -  boolean _  `"
+            "format" : "scala",
+            "expression" : "col(\"`c -  boolean _  `\")"
           },
           "description" : ""
         }, {
           "target" : "c_double",
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_double"
+            "format" : "scala",
+            "expression" : "col(\"c_double\")"
           },
           "description" : ""
         }, {
           "target" : "`c-string`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-string`"
+            "format" : "scala",
+            "expression" : "col(\"`c-string`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_date-for today`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_date-for today`"
+            "format" : "scala",
+            "expression" : "col(\"`c_date-for today`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_timestamp  __ for--today`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp  __ for--today`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp  __ for--today`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_array-int  _ int`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array-int  _ int`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array-int  _ int`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_array-string  _ string`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array-string  _ string`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array-string  _ string`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_array--long`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array--long`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array--long`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_array-- boolean `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array-- boolean `"
+            "format" : "scala",
+            "expression" : "col(\"`c_array-- boolean `\")"
           },
           "description" : ""
         }, {
           "target" : "`-- c_array_timestamp -- `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`-- c_array_timestamp -- `"
+            "format" : "scala",
+            "expression" : "col(\"`-- c_array_timestamp -- `\")"
           },
           "description" : ""
         }, {
           "target" : "`c_array -- float`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array -- float`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array -- float`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_array -- decimal`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array -- decimal`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array -- decimal`\")"
           },
           "description" : ""
         }, {
           "target" : "`c_struct -- _  `",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_struct -- _  `"
+            "format" : "scala",
+            "expression" : "col(\"`c_struct -- _  `\")"
           },
           "description" : ""
         }, {
           "target" : "p_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_short"
+            "format" : "scala",
+            "expression" : "col(\"p_short\")"
           },
           "description" : ""
         }, {
           "target" : "p_int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_int"
+            "format" : "scala",
+            "expression" : "col(\"p_int\")"
           },
           "description" : ""
         }, {
           "target" : "p_long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_long"
+            "format" : "scala",
+            "expression" : "col(\"p_long\")"
           },
           "description" : ""
         }, {
           "target" : "p_decimal",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_decimal"
+            "format" : "scala",
+            "expression" : "col(\"p_decimal\")"
           },
           "description" : ""
         }, {
           "target" : "p_float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_float"
+            "format" : "scala",
+            "expression" : "col(\"p_float\")"
           },
           "description" : ""
         }, {
           "target" : "p_boolean",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_boolean"
+            "format" : "scala",
+            "expression" : "col(\"p_boolean\")"
           },
           "description" : ""
         }, {
           "target" : "p_double",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_double"
+            "format" : "scala",
+            "expression" : "col(\"p_double\")"
           },
           "description" : ""
         }, {
           "target" : "p_string",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_string"
+            "format" : "scala",
+            "expression" : "col(\"p_string\")"
           },
           "description" : ""
         }, {
           "target" : "p_date",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_date"
+            "format" : "scala",
+            "expression" : "col(\"p_date\")"
           },
           "description" : ""
         }, {
           "target" : "p_timestamp",
           "expression" : {
-            "format" : "sql",
-            "expression" : "p_timestamp"
+            "format" : "scala",
+            "expression" : "col(\"p_timestamp\")"
           },
           "description" : ""
         } ]
@@ -6544,7 +6544,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "limit" : "'$c_int_11'"
+        "limit" : "Config.c_int_11"
       }
     },
     "QmGu-UelGs__wu0AWreZx$$Dec9-PSzLbbv6Iyos5iku" : {
@@ -6603,8 +6603,8 @@
         "expressions" : [ {
           "target" : "c_str_new",
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_str_new"
+            "format" : "scala",
+            "expression" : "col(\"c_str_new\")"
           },
           "description" : ""
         } ]
@@ -6639,14 +6639,14 @@
         "columnsSelector" : [ "2RT4rjAwtUJczEweqtOmK$$feSOjiC6bjFXdzF8Lhn5v##c_short" ],
         "orders" : [ {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_short"
+            "format" : "scala",
+            "expression" : "col(\"c_short\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_order_by_expr')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_order_by_expr)"
           },
           "sortType" : "desc"
         } ]
@@ -6763,8 +6763,8 @@
             "expressions" : [ {
               "target" : "c_int_new",
               "expression" : {
-                "format" : "sql",
-                "expression" : "c_int_new"
+                "format" : "scala",
+                "expression" : "col(\"c_int_new\")"
               },
               "description" : ""
             } ]
@@ -6823,8 +6823,8 @@
           "exploded" : "",
           "flattenedExpression" : "c_struct -- _  .c_string - of a struct -- _",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_struct -- _  `.`c_string - of a struct -- _`"
+            "format" : "scala",
+            "expression" : "col(\"`c_struct -- _  `.`c_string - of a struct -- _`\")"
           },
           "targetTokens" : [ "c_struct -- _  ", "c_string - of a struct -- _" ],
           "target" : "c_struct -- _  -c_string - of a struct -- _"
@@ -6832,8 +6832,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_struct -- _  .c_array_int - of a struct ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_struct -- _  `.`c_array_int - of a struct `"
+            "format" : "scala",
+            "expression" : "col(\"`c_struct -- _  `.`c_array_int - of a struct `\")"
           },
           "targetTokens" : [ "c_struct -- _  ", "c_array_int - of a struct " ],
           "target" : "c_struct -- _  -c_array_int - of a struct "
@@ -6841,8 +6841,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_array--long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array--long`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array--long`\")"
           },
           "targetTokens" : [ "c_array--long" ],
           "target" : "c_array--long"
@@ -6850,8 +6850,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_array-int  _ int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array-int  _ int`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array-int  _ int`\")"
           },
           "targetTokens" : [ "c_array-int  _ int" ],
           "target" : "c_array-int  _ int"
@@ -6859,8 +6859,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "-- c_array_timestamp -- ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`-- c_array_timestamp -- `"
+            "format" : "scala",
+            "expression" : "col(\"`-- c_array_timestamp -- `\")"
           },
           "targetTokens" : [ "-- c_array_timestamp -- " ],
           "target" : "-- c_array_timestamp -- "
@@ -6868,8 +6868,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_array -- float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_array -- float`"
+            "format" : "scala",
+            "expression" : "col(\"`c_array -- float`\")"
           },
           "targetTokens" : [ "c_array -- float" ],
           "target" : "c_array -- float"
@@ -6909,15 +6909,15 @@
         "expressions" : [ {
           "target" : "c- short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"`c- short`\")"
           },
           "description" : ""
         }, {
           "target" : "c  - int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  - int`"
+            "format" : "scala",
+            "expression" : "col(\"`c  - int`\")"
           },
           "description" : ""
         } ]
@@ -6955,232 +6955,232 @@
         "conditions" : [ {
           "alias" : "in1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_join_expr')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_join_expr)"
           },
           "joinType" : "inner"
         } ],
         "expressions" : [ {
           "target" : "c- short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c- short`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c  - int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c  - int`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c  - int`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "- c long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`- c long`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`- c long`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_decimal  -  ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_decimal  -  `"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_decimal  -  `\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_float-__  ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_float-__  `"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_float-__  `\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c -  boolean _  ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c -  boolean _  `"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c -  boolean _  `\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_double",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.c_double"
+            "format" : "scala",
+            "expression" : "col(\"in0.c_double\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c-string",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c-string`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c-string`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_date-for today",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_date-for today`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_date-for today`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_timestamp  __ for--today",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_timestamp  __ for--today`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_timestamp  __ for--today`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_array-int  _ int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_array-int  _ int`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_array-int  _ int`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_array-string  _ string",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_array-string  _ string`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_array-string  _ string`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_array--long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_array--long`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_array--long`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_array-- boolean ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_array-- boolean `"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_array-- boolean `\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "-- c_array_timestamp -- ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`-- c_array_timestamp -- `"
+            "format" : "scala",
+            "expression" : "col(\"in0.`-- c_array_timestamp -- `\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_array -- float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_array -- float`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_array -- float`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_array -- decimal",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_array -- decimal`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_array -- decimal`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_struct -- _  ",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c_struct -- _  `"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c_struct -- _  `\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_short"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_short\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_int"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_int\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_long"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_long\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_decimal",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_decimal"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_decimal\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_float"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_float\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_boolean",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_boolean"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_boolean\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_double",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_double"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_double\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_string",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_string"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_string\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_date",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_date"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_date\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "p_timestamp",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.p_timestamp"
+            "format" : "scala",
+            "expression" : "col(\"in0.p_timestamp\")"
           },
           "description" : "",
           "_row_id" : null
@@ -7201,8 +7201,8 @@
         "columnsSelector" : [ "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_array -- float", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##-- c_array_timestamp -- ", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_decimal  -  ", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_short", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_timestamp", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c  - int", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_array--long", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##- c long", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c-string", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_float-__  ", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_float", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c- short", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_int", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_date-for today", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_array -- decimal", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_array-string  _ string", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_timestamp  __ for--today", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_date", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_long", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_double", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_array-- boolean ", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_decimal", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_struct -- _  ", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_double", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_string", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c_array-int  _ int", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##p_boolean", "pMqwfJeraAcrqCyOxSX_L$$1xgAv3FU224AXdWj7We-j##c -  boolean _  " ],
         "allIn0" : null,
         "whereClause" : {
-          "format" : "sql",
-          "expression" : "((in0.`c- short` > '$c_0') AND (in1.`c- short` > '$c_1'))"
+          "format" : "scala",
+          "expression" : "col(\"in0.`c- short`\") > lit(Config.c_0) and col(\"in1.`c- short`\") > lit(Config.c_1)"
         },
         "headAlias" : "in0"
       }
@@ -7235,8 +7235,8 @@
       "properties" : {
         "columnsSelector" : [ ],
         "condition" : {
-          "format" : "sql",
-          "expression" : "true"
+          "format" : "scala",
+          "expression" : "lit(true)"
         }
       }
     },
@@ -7270,29 +7270,29 @@
         "expressions" : [ {
           "target" : "c_short1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CAST(customer_id AS SMALLINT)"
+            "format" : "scala",
+            "expression" : "col(\"customer_id\").cast(ShortType)"
           },
           "description" : ""
         }, {
           "target" : "c_int1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CAST(customer_id AS INT)"
+            "format" : "scala",
+            "expression" : "col(\"customer_id\").cast(IntegerType)"
           },
           "description" : ""
         }, {
           "target" : "c_short2",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CAST(customer_id AS SMALLINT)"
+            "format" : "scala",
+            "expression" : "col(\"customer_id\").cast(ShortType)"
           },
           "description" : ""
         }, {
           "target" : "c_int2",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CAST(customer_id AS INT)"
+            "format" : "scala",
+            "expression" : "col(\"customer_id\").cast(IntegerType)"
           },
           "description" : ""
         } ]
@@ -7337,29 +7337,29 @@
           "path" : "out0",
           "id" : "out0",
           "model" : {
-            "format" : "sql",
-            "expression" : "expr('$c_row_distributor')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_row_distributor)"
           }
         }, {
           "path" : "out1",
           "id" : "W59iy89iTXSgFaxfQEwhW",
           "model" : {
-            "format" : "sql",
-            "expression" : "((`c -  boolean _  ` IN (NULL, true)) AND `c_array-string  _ string`[1] LIKE '%8%')"
+            "format" : "scala",
+            "expression" : "col(\"`c -  boolean _  `\").isin(null, true) and col(\"`c_array-string  _ string`\")(1).like(\"%8%\")"
           }
         }, {
           "path" : "out2",
           "id" : "3a-JMPZZW4g-OIK6u8pOH",
           "model" : {
-            "format" : "sql",
-            "expression" : "((`c_array -- decimal`[0] > 10) AND `c_array-string  _ string`[1] LIKE '%6%')"
+            "format" : "scala",
+            "expression" : "col(\"`c_array -- decimal`\")(0) > lit(10) and col(\"`c_array-string  _ string`\")(1).like(\"%6%\")"
           }
         }, {
           "path" : "out3",
           "id" : "CKp-fYcvwRV-xHIE140JV",
           "model" : {
-            "format" : "sql",
-            "expression" : "expr('$c_rowdistributor_complex_expr')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_rowdistributor_complex_expr)"
           }
         } ]
       }
@@ -7451,8 +7451,8 @@
           "AddReplaceColumn" : {
             "sourceColumn" : "concat short int",
             "expression" : {
-              "format" : "sql",
-              "expression" : "expr('$c_st_expr')"
+              "format" : "scala",
+              "expression" : "expr(Config.c_st_expr)"
             }
           },
           "DropColumn" : {
@@ -7465,7 +7465,7 @@
         }, {
           "kind" : "DropColumn",
           "DropColumn" : {
-            "sourceColumn" : "'$c_decimal_renamed'"
+            "sourceColumn" : "Config.c_decimal_renamed"
           },
           "RenameColumn" : {
             "sourceColumn" : "",
@@ -7552,7 +7552,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "limit" : "'$c_int_11'"
+        "limit" : "Config.c_int_11"
       }
     },
     "fjLmZ6vfR2C-j7IKuv_0q$$Msx0xcxDAiyQFIgcTIVlq" : {
@@ -7613,15 +7613,15 @@
         "expressionColumns" : [ {
           "target" : "c- short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_row_number')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_row_number)"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c-string",
           "expression" : {
-            "format" : "sql",
+            "format" : "scala",
             "expression" : "row_number()"
           },
           "description" : "",
@@ -7629,14 +7629,14 @@
         } ],
         "frameType" : "row",
         "partitionColumns" : [ {
-          "format" : "sql",
-          "expression" : "`c- short`"
+          "format" : "scala",
+          "expression" : "col(\"`c- short`\")"
         }, {
-          "format" : "sql",
-          "expression" : "`c  - int`"
+          "format" : "scala",
+          "expression" : "col(\"`c  - int`\")"
         }, {
-          "format" : "sql",
-          "expression" : "'$c_long_wf'"
+          "format" : "scala",
+          "expression" : "lit(Config.c_long_wf)"
         } ],
         "activeTab" : "windowOrder",
         "columnsSelector" : [ ],
@@ -7644,14 +7644,14 @@
         "frameStart" : null,
         "orderColumns" : [ {
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_float-__  `"
+            "format" : "scala",
+            "expression" : "col(\"`c_float-__  `\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$c_wf_orderby_expr')"
+            "format" : "scala",
+            "expression" : "expr(Config.c_wf_orderby_expr)"
           },
           "sortType" : "desc"
         } ],
@@ -7689,113 +7689,113 @@
         "expressions" : [ {
           "target" : "`c   short  --`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c   short  --`"
+            "format" : "scala",
+            "expression" : "col(\"`c   short  --`\")"
           },
           "description" : ""
         }, {
           "target" : "`c-int-column type`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-int-column type`"
+            "format" : "scala",
+            "expression" : "col(\"`c-int-column type`\")"
           },
           "description" : ""
         }, {
           "target" : "`-- c-long`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`-- c-long`"
+            "format" : "scala",
+            "expression" : "col(\"`-- c-long`\")"
           },
           "description" : ""
         }, {
           "target" : "`c-decimal`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c-decimal`"
+            "format" : "scala",
+            "expression" : "col(\"`c-decimal`\")"
           },
           "description" : ""
         }, {
           "target" : "`c  float`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  float`"
+            "format" : "scala",
+            "expression" : "col(\"`c  float`\")"
           },
           "description" : ""
         }, {
           "target" : "`c--boolean`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c--boolean`"
+            "format" : "scala",
+            "expression" : "col(\"`c--boolean`\")"
           },
           "description" : ""
         }, {
           "target" : "`c- - -double`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c- - -double`"
+            "format" : "scala",
+            "expression" : "col(\"`c- - -double`\")"
           },
           "description" : ""
         }, {
           "target" : "`c___-- string`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c___-- string`"
+            "format" : "scala",
+            "expression" : "col(\"`c___-- string`\")"
           },
           "description" : ""
         }, {
           "target" : "`c  date`",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  date`"
+            "format" : "scala",
+            "expression" : "col(\"`c  date`\")"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp",
           "expression" : {
-            "format" : "sql",
-            "expression" : "c_timestamp"
+            "format" : "scala",
+            "expression" : "col(\"c_timestamp\")"
           },
           "description" : ""
         }, {
           "target" : "squared_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "squared(`c   short  --`)"
+            "format" : "scala",
+            "expression" : "squared(col(\"`c   short  --`\"))"
           },
           "description" : ""
         }, {
           "target" : "factorial_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "factorial(`c   short  --`)"
+            "format" : "scala",
+            "expression" : "factorial(col(\"`c   short  --`\"))"
           },
           "description" : ""
         }, {
           "target" : "random_string_value",
           "expression" : {
-            "format" : "sql",
-            "expression" : "random_string(10, `c___-- string`)"
+            "format" : "scala",
+            "expression" : "random_string(lit(10), col(\"`c___-- string`\"))"
           },
           "description" : ""
         }, {
           "target" : "config_values",
           "expression" : {
-            "format" : "sql",
-            "expression" : "concat(`c  date`, '$c_config_38', '$CONFIG_DB_SECRETS', '$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT', '$CONFIG_SHORT')"
+            "format" : "scala",
+            "expression" : "concat(col(\"`c  date`\"), lit(Config.c_config_38), lit(Config.CONFIG_DB_SECRETS), lit(Config.CONFIG_STR), lit(Config.CONFIG_BOOLEAN), lit(Config.CONFIG_DOUBLE), lit(Config.CONFIG_INT), lit(Config.CONFIG_FLOAT), lit(Config.CONFIG_SHORT))"
           },
           "description" : ""
         }, {
           "target" : "udf_scipy_dependency",
           "expression" : {
-            "format" : "sql",
+            "format" : "scala",
             "expression" : "udf_scipy_dependency()"
           },
           "description" : ""
         }, {
           "target" : "c_config_str",
           "expression" : {
-            "format" : "sql",
-            "expression" : "concat('$c_str', `c  date`)"
+            "format" : "scala",
+            "expression" : "concat(lit(Config.c_str), col(\"`c  date`\"))"
           },
           "description" : ""
         } ]
@@ -7889,78 +7889,78 @@
         "expressions" : [ {
           "target" : "c  date",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c  date`"
+            "format" : "scala",
+            "expression" : "col(\"`c  date`\")"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp_c   short  --",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp_c   short  --`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp_c   short  --`\")"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp_c-int-column type",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp_c-int-column type`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp_c-int-column type`\")"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp_-- c-long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp_-- c-long`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp_-- c-long`\")"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp_c-decimal renamed",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp_c-decimal renamed`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp_c-decimal renamed`\")"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp_c  float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`c_timestamp_c  float`"
+            "format" : "scala",
+            "expression" : "col(\"`c_timestamp_c  float`\")"
           },
           "description" : ""
         }, {
           "target" : "config_values_c   short  --",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`config_values_c   short  --`"
+            "format" : "scala",
+            "expression" : "col(\"`config_values_c   short  --`\")"
           },
           "description" : ""
         }, {
           "target" : "config_values_c-int-column type",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`config_values_c-int-column type`"
+            "format" : "scala",
+            "expression" : "col(\"`config_values_c-int-column type`\")"
           },
           "description" : ""
         }, {
           "target" : "config_values_-- c-long",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`config_values_-- c-long`"
+            "format" : "scala",
+            "expression" : "col(\"`config_values_-- c-long`\")"
           },
           "description" : ""
         }, {
           "target" : "config_values_c-decimal renamed",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`config_values_c-decimal renamed`"
+            "format" : "scala",
+            "expression" : "col(\"`config_values_c-decimal renamed`\")"
           },
           "description" : ""
         }, {
           "target" : "config_values_c  float",
           "expression" : {
-            "format" : "sql",
-            "expression" : "`config_values_c  float`"
+            "format" : "scala",
+            "expression" : "col(\"`config_values_c  float`\")"
           },
           "description" : ""
         } ]
@@ -7995,50 +7995,50 @@
         "columnsSelector" : [ "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##account_open_date", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##country_code", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##email", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##customer_id", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##account_flags", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##phone", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##last_name", "uTInqb0a2kMUO0WXMsOav$$2pPjfJ9GgB_n9cHovhItS##first_name" ],
         "orders" : [ {
           "expression" : {
-            "format" : "sql",
-            "expression" : "customer_id"
+            "format" : "scala",
+            "expression" : "col(\"customer_id\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "first_name"
+            "format" : "scala",
+            "expression" : "col(\"first_name\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "last_name"
+            "format" : "scala",
+            "expression" : "col(\"last_name\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "phone"
+            "format" : "scala",
+            "expression" : "col(\"phone\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "email"
+            "format" : "scala",
+            "expression" : "col(\"email\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "country_code"
+            "format" : "scala",
+            "expression" : "col(\"country_code\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "account_open_date"
+            "format" : "scala",
+            "expression" : "col(\"account_open_date\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "account_flags"
+            "format" : "scala",
+            "expression" : "col(\"account_flags\")"
           },
           "sortType" : "asc"
         } ]
@@ -8073,32 +8073,32 @@
         "columnsSelector" : [ "rIUDm0wDxmQ0bJ4-t3iYY$$hJPBT_WRGcjhC0hDvSzir##c3", "rIUDm0wDxmQ0bJ4-t3iYY$$hJPBT_WRGcjhC0hDvSzir##c6", "rIUDm0wDxmQ0bJ4-t3iYY$$hJPBT_WRGcjhC0hDvSzir##c1", "rIUDm0wDxmQ0bJ4-t3iYY$$hJPBT_WRGcjhC0hDvSzir##c4", "rIUDm0wDxmQ0bJ4-t3iYY$$hJPBT_WRGcjhC0hDvSzir##c2" ],
         "orders" : [ {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c1"
+            "format" : "scala",
+            "expression" : "col(\"c1\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c2"
+            "format" : "scala",
+            "expression" : "col(\"c2\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c3"
+            "format" : "scala",
+            "expression" : "col(\"c3\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c4"
+            "format" : "scala",
+            "expression" : "col(\"c4\")"
           },
           "sortType" : "asc"
         }, {
           "expression" : {
-            "format" : "sql",
-            "expression" : "c6"
+            "format" : "scala",
+            "expression" : "col(\"c6\")"
           },
           "sortType" : "asc"
         } ]
@@ -8193,40 +8193,40 @@
         "conditions" : [ {
           "alias" : "in1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "(NOT (in0.c_int1 = in1.c_int))"
+            "format" : "scala",
+            "expression" : "col(\"in0.c_int1\") =!= col(\"in1.c_int\")"
           },
           "joinType" : "inner"
         } ],
         "expressions" : [ {
           "target" : "c_short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in1.c_short"
+            "format" : "scala",
+            "expression" : "col(\"in1.c_short\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_int",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in1.c_int"
+            "format" : "scala",
+            "expression" : "col(\"in1.c_int\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c- short",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.`c- short`"
+            "format" : "scala",
+            "expression" : "col(\"in0.`c- short`\")"
           },
           "description" : "",
           "_row_id" : null
         }, {
           "target" : "c_int1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "in0.c_int1"
+            "format" : "scala",
+            "expression" : "col(\"in0.c_int1\")"
           },
           "description" : "",
           "_row_id" : null
@@ -8280,57 +8280,57 @@
         "expressions" : [ {
           "target" : "c1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "expr('$EXPR_COMPLEX_DATES')"
+            "format" : "scala",
+            "expression" : "expr(Config.EXPR_COMPLEX_DATES)"
           },
           "description" : ""
         }, {
           "target" : "c2",
           "expression" : {
-            "format" : "sql",
-            "expression" : "((((((((((((((((((((((((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL')) - length('Spark SQL ')) - levenshtein('kitten', 'sitting')) + ((log(10.0D, 100) * log10(10)) * log2(2))) + locate('bar', 'foobarbar', 5)) - months_between('1997-02-28 10:30:00', '1996-10-30')) + nanvl(CAST('NaN' AS DOUBLE), 123)) + rand()) + (10 % 3)) - round(CAST('2.5' AS FLOAT), 0)) + (sin(0) * sinh(0))) + sqrt(4)) + abs(1.23D)) + acos(1)) - ascii('2')) - asin(0)) + bin(13)) + CAST('10' AS INT)) + cbrt(CAST('27.0' AS FLOAT))) + ceil(-2.1D)) - coalesce(NULL, 1, NULL)) + conv('100', 2, 10)) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
+            "format" : "scala",
+            "expression" : "greatest(col(\"c_int\"), lit(9), lit(2)) + floor(col(\"c_decimal\")) + degrees(lit(3.141592653589793d)) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(lit(12332.123456d), 4) - instr(lit(\"SparkSQL\"), \"SQL\") - length(lit(\"Spark SQL \")) - levenshtein(lit(\"kitten\"), lit(\"sitting\")) + expr(\"log(10.0D, 100)\") * log10(lit(10)) * log2(lit(2)) + locate(\"bar\", lit(\"foobarbar\"), 5) - months_between(lit(\"1997-02-28 10:30:00\"), lit(\"1996-10-30\")) + nanvl(lit(\"NaN\").cast(DoubleType), lit(123)) + rand() + lit(10) % lit(3) - round(lit(\"2.5\").cast(FloatType), 0) + sin(lit(0)) * sinh(lit(0)) + sqrt(lit(4)) + abs(lit(1.23d)) + acos(lit(1)) - ascii(lit(\"2\")) - asin(lit(0)) + bin(lit(13)) + lit(\"10\").cast(IntegerType) + cbrt(lit(\"27.0\").cast(FloatType)) + ceil(lit(-2.1d)) - coalesce(lit(null), lit(1), lit(null)) + conv(lit(\"100\"), 2, 10) + year(lit(\"2016-07-30\")) + least(col(\"c_decimal\"), col(\"c_int\"), col(\"c_long\"))"
           },
           "description" : ""
         }, {
           "target" : "c3",
           "expression" : {
-            "format" : "sql",
-            "expression" : "concat(regexp_extract('100-200', '(d+)-(d+)', 1), regexp_replace('100-200', '(d+)', 'num'), repeat('123', 2), reverse('Spark SQL'), rpad('hi', 5, '??'), rtrim('LQSa'), sha2('Spark', 256), substring('Spark SQL', 5, 2), trim('    SparkSQL   '), decode(encode('abc', 'utf-8'), 'utf-8'), format_string('Hello World %d %s', 100, 'days'), lower('SparkSql'), lpad('hi', 5, '??'), ltrim('    SparkSQL   '), hex('Spark SQL'), md5('Spark'), base64(c_string))"
+            "format" : "scala",
+            "expression" : "concat(regexp_extract(lit(\"100-200\"), \"(d+)-(d+)\", 1), regexp_replace(lit(\"100-200\"), \"(d+)\", \"num\"), repeat(lit(\"123\"), 2), reverse(lit(\"Spark SQL\")), rpad(lit(\"hi\"), 5, \"??\"), rtrim(lit(\"LQSa\")), sha2(lit(\"Spark\"), 256), substring(lit(\"Spark SQL\"), 5, 2), trim(lit(\"    SparkSQL   \")), decode(encode(lit(\"abc\"), \"utf-8\"), \"utf-8\"), format_string(\"Hello World %d %s\", lit(100), lit(\"days\")), lower(lit(\"SparkSql\")), lpad(lit(\"hi\"), 5, \"??\"), ltrim(lit(\"    SparkSQL   \")), hex(lit(\"Spark SQL\")), md5(lit(\"Spark\")), base64(col(\"c_string\")))"
           },
           "description" : ""
         }, {
           "target" : "c4",
           "expression" : {
-            "format" : "sql",
-            "expression" : "((((isnan(CAST(c_short AS DOUBLE)) OR isnull(c_decimal)) OR c_string LIKE '%9%') OR ((((((datediff(c_date, c_timestamp) + last_day(c_date)) + dayofyear(c_date)) - dayofweek(c_date)) < date_sub(current_timestamp(), 2)) OR array_contains(array(1, 2, 3), 2)) OR array_contains(array(1, 2, 3), 11))) AND ((c_int % 2) = 0))"
+            "format" : "scala",
+            "expression" : "isnan(col(\"c_short\").cast(DoubleType)) or col(\"c_decimal\").isNull or col(\"c_string\").like(\"%9%\") or (datediff(col(\"c_date\"), col(\"c_timestamp\")) + last_day(col(\"c_date\")) + dayofyear(col(\"c_date\")) - dayofweek(col(\"c_date\")) < date_sub(current_timestamp(), 2) or array_contains(array(lit(1), lit(2), lit(3)), lit(2)) or array_contains(array(lit(1), lit(2), lit(3)), lit(11))) and col(\"c_int\") % lit(2) === lit(0)"
           },
           "description" : ""
         }, {
           "target" : "c5",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CASE WHEN ((c_int % '$c_int_11') = 0) THEN map_keys(map((2 + c_int), 'a', (1 + c_int), 'b')) WHEN ((c_int % 9) = 0) THEN sort_array(split(c_string, '[#%]')) WHEN ((c_int % 7) = 0) THEN split(c_string, '[@4]') WHEN ((c_int % 5) = 0) THEN map_values(map(1, 'a', 2, 'b')) ELSE sort_array(array('b', 'd', 'c', 'a'), true) END"
+            "format" : "scala",
+            "expression" : "when(col(\"c_int\") % lit(Config.c_int_11) === lit(0), map_keys(map(lit(2) + col(\"c_int\"), lit(\"a\"), lit(1) + col(\"c_int\"), lit(\"b\")))).when(col(\"c_int\") % lit(9) === lit(0), sort_array(split(col(\"c_string\"), \"[#%]\"))).when(col(\"c_int\") % lit(7) === lit(0), split(col(\"c_string\"), \"[@4]\")).when(col(\"c_int\") % lit(5) === lit(0), map_values(map(lit(1), lit(\"a\"), lit(2), lit(\"b\")))).otherwise(sort_array(array(lit(\"b\"), lit(\"d\"), lit(\"c\"), lit(\"a\")), true))"
           },
           "description" : ""
         }, {
           "target" : "c6",
           "expression" : {
-            "format" : "sql",
-            "expression" : "CASE WHEN (c_int > 10) THEN CASE WHEN (NOT (NOT c_string LIKE '%1%')) THEN concat(c_string, 'A') WHEN (NOT (NOT (trim(trim(c_string)) = ''))) THEN concat(c_string, 'B') ELSE concat(c_string, 'X') END WHEN (c_int <= 10) THEN CASE WHEN (NOT (NOT c_string LIKE '%1%')) THEN concat(c_string, 'C') WHEN (NOT (NOT (NOT c_string LIKE '%2%'))) THEN concat(c_string, 'D') ELSE concat(c_string, 'Z') END ELSE NULL END"
+            "format" : "scala",
+            "expression" : "when(col(\"c_int\") > lit(10), when(!(!col(\"c_string\").like(\"%1%\")), concat(col(\"c_string\"), lit(\"A\"))).when(!(trim(trim(col(\"c_string\"))) =!= lit(\"\")), concat(col(\"c_string\"), lit(\"B\"))).otherwise(concat(col(\"c_string\"), lit(\"X\")))).when(col(\"c_int\") <= lit(10), when(!(!col(\"c_string\").like(\"%1%\")), concat(col(\"c_string\"), lit(\"C\"))).when(!(!(!col(\"c_string\").like(\"%2%\"))), concat(col(\"c_string\"), lit(\"D\"))).otherwise(concat(col(\"c_string\"), lit(\"Z\")))).otherwise(lit(null))"
           },
           "description" : ""
         }, {
           "target" : "c_udf_maptype",
           "expression" : {
-            "format" : "sql",
+            "format" : "scala",
             "expression" : "udf_maptype()"
           },
           "description" : ""
         }, {
           "target" : "c_udf_array_type",
           "expression" : {
-            "format" : "sql",
-            "expression" : "udf_arraytype(c_int, 5)"
+            "format" : "scala",
+            "expression" : "udf_arraytype(col(\"c_int\"), lit(5))"
           },
           "description" : ""
         } ]
@@ -8366,8 +8366,8 @@
         "expressions" : [ {
           "target" : "a",
           "expression" : {
-            "format" : "sql",
-            "expression" : "a"
+            "format" : "scala",
+            "expression" : "col(\"a\")"
           },
           "description" : ""
         } ]
@@ -8403,71 +8403,71 @@
         "expressions" : [ {
           "target" : "_c0",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c0"
+            "format" : "scala",
+            "expression" : "col(\"_c0\")"
           },
           "description" : ""
         }, {
           "target" : "_c1",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c1"
+            "format" : "scala",
+            "expression" : "col(\"_c1\")"
           },
           "description" : ""
         }, {
           "target" : "_c2",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c2"
+            "format" : "scala",
+            "expression" : "col(\"_c2\")"
           },
           "description" : ""
         }, {
           "target" : "_c3",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c3"
+            "format" : "scala",
+            "expression" : "col(\"_c3\")"
           },
           "description" : ""
         }, {
           "target" : "_c4",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c4"
+            "format" : "scala",
+            "expression" : "col(\"_c4\")"
           },
           "description" : ""
         }, {
           "target" : "_c5",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c5"
+            "format" : "scala",
+            "expression" : "col(\"_c5\")"
           },
           "description" : ""
         }, {
           "target" : "_c6",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c6"
+            "format" : "scala",
+            "expression" : "col(\"_c6\")"
           },
           "description" : ""
         }, {
           "target" : "_c7",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c7"
+            "format" : "scala",
+            "expression" : "col(\"_c7\")"
           },
           "description" : ""
         }, {
           "target" : "_c8",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c8"
+            "format" : "scala",
+            "expression" : "col(\"_c8\")"
           },
           "description" : ""
         }, {
           "target" : "_c9",
           "expression" : {
-            "format" : "sql",
-            "expression" : "_c9"
+            "format" : "scala",
+            "expression" : "col(\"_c9\")"
           },
           "description" : ""
         } ]
@@ -8527,8 +8527,8 @@
       "properties" : {
         "columnsSelector" : [ "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c___-- string", "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c   short  --", "bPafkrPc4XyHluVkE0Cwl$$VZgUGj3KNcB9yikXaXPIX##c-int-column type" ],
         "condition" : {
-          "format" : "sql",
-          "expression" : "(`c   short  --` > '$c_0') and (`c-int-column type` not like '$c_regex1' and `c___-- string` not like '$c_regex2')"
+          "format" : "scala",
+          "expression" : "col(\"`c   short  --`\") > lit(Config.c_0) and (!col(\"`c-int-column type`\").like(Config.c_regex1) and !col(\"`c___-- string`\").like(Config.c_regex2))"
         }
       }
     },
