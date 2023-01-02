@@ -283,3 +283,7 @@ Changes
 *** Release notes for version: 2.27 ***
 
 Changes
+
+*** Release notes for version: 2.28 ***
+
+Changes
