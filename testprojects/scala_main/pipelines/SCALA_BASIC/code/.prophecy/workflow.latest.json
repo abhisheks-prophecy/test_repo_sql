@@ -19,8 +19,8 @@
         "fields" : [ {
           "name" : "c_test",
           "kind" : {
-            "type" : "databricks_secret",
-            "value" : "qasecrets:mysql_user"
+            "type" : "string",
+            "value" : "this is something new son"
           },
           "optional" : true
         }, {
@@ -31,7 +31,7 @@
               "type" : "string",
               "value" : null
             },
-            "value" : [ "dasdsad", "sadasdsad", null ]
+            "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
           },
           "optional" : false
         }, {
@@ -55,37 +55,6 @@
             } ]
           },
           "optional" : false
-        }, {
-          "name" : "str1",
-          "kind" : {
-            "type" : "string",
-            "value" : "234 234 234 234234234 234 234 234 234 234234234 234 234 234 234 234234234 234 234 234 234 234234234 234kajariverma"
-          },
-          "optional" : false,
-          "comment" : "ererter"
-        }, {
-          "name" : "sdf",
-          "kind" : {
-            "type" : "array",
-            "elementType" : {
-              "type" : "record",
-              "fields" : [ {
-                "name" : "key1",
-                "kind" : {
-                  "type" : "string",
-                  "value" : null
-                },
-                "optional" : false
-              } ]
-            },
-            "value" : [ {
-              "key1" : "2342we 2342we2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we "
-            }, {
-              "key1" : "sdf"
-            } ]
-          },
-          "optional" : false,
-          "comment" : "erwe"
         } ]
       },
       "oldCommon" : {
@@ -94,7 +63,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test_all_instancevalues",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
