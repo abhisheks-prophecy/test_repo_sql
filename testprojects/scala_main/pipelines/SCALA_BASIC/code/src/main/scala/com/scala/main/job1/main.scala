@@ -38,8 +38,14 @@ object Main {
       .getOrCreate()
       .newSession()
     val context = Context(spark, config)
+    spark.conf.set("spark_config1",                  "spark_config_value_1")
+    spark.conf.set("spark_config2",                  "spark_config_value_2")
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_BASIC")
-    MetricsCollector.start(spark,                    "pipelines/SCALA_BASIC")
+    spark.sparkContext.hadoopConfiguration
+      .set("hadoop_config1", "hadoop_config_value1")
+    spark.sparkContext.hadoopConfiguration
+      .set("hadoop_config2",      "hadoop_config_value2")
+    MetricsCollector.start(spark, "pipelines/SCALA_BASIC")
     apply(context)
     MetricsCollector.end(spark)
   }
