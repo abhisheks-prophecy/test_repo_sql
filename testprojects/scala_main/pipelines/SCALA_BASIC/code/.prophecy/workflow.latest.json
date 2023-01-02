@@ -26,8 +26,12 @@
         }, {
           "name" : "c_array",
           "kind" : {
-            "type" : "float",
-            "value" : 32432
+            "type" : "array",
+            "elementType" : {
+              "type" : "string",
+              "value" : null
+            },
+            "value" : [ "dasdsad", "sadasdsad", null ]
           },
           "optional" : false
         }, {
@@ -51,6 +55,37 @@
             } ]
           },
           "optional" : false
+        }, {
+          "name" : "str1",
+          "kind" : {
+            "type" : "string",
+            "value" : "234"
+          },
+          "optional" : false,
+          "comment" : "ererter"
+        }, {
+          "name" : "sdf",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "key1",
+                "kind" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "optional" : false
+              } ]
+            },
+            "value" : [ {
+              "key1" : "2342we 2342we2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we 2342we "
+            }, {
+              "key1" : "sdf"
+            } ]
+          },
+          "optional" : false,
+          "comment" : "erwe"
         } ]
       },
       "oldCommon" : {
@@ -59,12 +94,24 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-random1",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
-    "sparkConf" : [ ],
-    "hadoopConf" : [ ],
+    "sparkConf" : [ {
+      "name" : "spark_config1",
+      "value" : "spark_config_value_1"
+    }, {
+      "name" : "spark_config2",
+      "value" : "spark_config_value_2"
+    } ],
+    "hadoopConf" : [ {
+      "name" : "hadoop_config1",
+      "value" : "hadoop_config_value1"
+    }, {
+      "name" : "hadoop_config2",
+      "value" : "hadoop_config_value2"
+    } ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ {
@@ -121,7 +168,7 @@
     } ],
     "isImported" : false,
     "interimMode" : "Full",
-    "interimModeEnabled" : false,
+    "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
       "enabled" : false,

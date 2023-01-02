@@ -307,3 +307,11 @@ Changes
 *** Release notes for version: 2.22 ***
 
 2.22
+
+*** Release notes for version: 2.26 ***
+
+2.26
+
+*** Release notes for version: 2.27 ***
+
+2.27
