@@ -25,6 +25,10 @@ object Main {
     )
     val df_Script_1 =
       Script_1(context, df_src_parquet_all_type_and_partition_withspacehyphens)
+    val df_SchemaTransform_1 = SchemaTransform_1(
+      context,
+      df_src_parquet_all_type_and_partition_withspacehyphens
+    )
   }
 
   def main(args: Array[String]): Unit = {

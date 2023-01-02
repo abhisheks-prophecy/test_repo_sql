@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "2730",
+    "fabricId" : "1654",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -59,7 +59,7 @@
           "name" : "str1",
           "kind" : {
             "type" : "string",
-            "value" : "234"
+            "value" : "234 234 234 234234234 234 234 234 234 234234234 234 234 234 234 234234234 234 234 234 234 234234234 234kajariverma"
           },
           "optional" : false,
           "comment" : "ererter"
@@ -94,7 +94,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "test_all_instancevalues",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -188,6 +188,12 @@
     "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
     "target" : "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0",
     "targetPort" : "2Gz2HS8MDf_HK-44Trsh5$$eiJ0Rvj3-tu3lppCP5uFr"
+  }, {
+    "id" : "YagxlrMVwen_jlbornjq9",
+    "source" : "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+    "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
+    "target" : "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n",
+    "targetPort" : "qCaups1PStyAXXib1un7c$$i_76JB0Rt4nZ49W42v46U"
   } ],
   "processes" : {
     "bl47XMiEa-WNOlMEK4sFp$$2Dwp_ulOdXsBz8xjpntdm" : {
@@ -279,6 +285,36 @@
         "script" : "print(s\"Config: ${Config.c_test}\")\n\nvar out0=in0",
         "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
         "scriptMethodFooter" : "    out0\n}"
+      }
+    },
+    "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n" : {
+      "id" : "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : -786.4000000000001,
+        "y" : 363.6,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qCaups1PStyAXXib1un7c$$i_76JB0Rt4nZ49W42v46U",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "vx64sYjC4vVrmBOSkCOXa$$qpmxU6WcJBG1bBJ5VrLY-",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "transformations" : [ ]
       }
     }
   },
