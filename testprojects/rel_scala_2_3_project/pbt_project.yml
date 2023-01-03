@@ -1,0 +1,59 @@
+name: Scala2_11Project
+description: ''
+version: '1.0'
+author: abhisheks+e2etests@prophecy.io
+language: scala
+buildSystem: maven
+pipelines:
+  pipelines/scala2_11_pipeline:
+    name: Pipeline_Scala2-11_Spark2-3
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-03 03:55:32'
+    datasets:
+      inputs:
+      - datasets/s3_source
+      outputs: []
+    dependencies: {}
+datasets:
+  datasets/s3_source:
+    name: s3_source
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-03 03:57:01'
+    physicalDatasets:
+      captain_livy:
+        fabricId: 1654
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-03 03:57:01'
+templates:
+  templates/maven:
+    name: maven
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-03 03:58:05'
+    datasets:
+      inputs: []
+      outputs: []
+    dependencies: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies:
+  '1359':
+    projectUID: 1359
+    projectName: HelloWorld
+    repositoryPath: gitUri=http://gitserver:3000/zoYlsmR6_team_778/zoYlsmR6_project_1359.git&subPath=
+    version: HelloWorld/1.71
+    author: null
+    createdAt: '2023-01-03 03:51:50'
+pipelineConfigurations: {}
