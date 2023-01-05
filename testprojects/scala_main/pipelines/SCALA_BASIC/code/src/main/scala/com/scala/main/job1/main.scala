@@ -19,13 +19,15 @@ object Main {
   def apply(context: Context): Unit = {
     val df_src_parquet_all_type_and_partition_withspacehyphens =
       src_parquet_all_type_and_partition_withspacehyphens(context)
-    val df_Reformat_1 = Reformat_1(
+    val df_SCALA_B1ASIC = SCALA_B1ASIC(
       context,
       df_src_parquet_all_type_and_partition_withspacehyphens
     )
-    val df_Script_1 =
-      Script_1(context, df_src_parquet_all_type_and_partition_withspacehyphens)
     val df_SchemaTransform_1 = SchemaTransform_1(
+      context,
+      df_src_parquet_all_type_and_partition_withspacehyphens
+    )
+    val df_SCALA_BASIC12 = SCALA_BASIC12(
       context,
       df_src_parquet_all_type_and_partition_withspacehyphens
     )

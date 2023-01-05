@@ -1,10 +1,10 @@
-package com.scala.main.job1.graph
+package org.main.scla_dep_mgmt_change.graph
 
 import io.prophecy.libs._
-import com.scala.main.job1.config.ConfigStore._
-import com.scala.main.job1.config.Context
-import com.scala.main.job1.udfs.UDFs._
-import com.scala.main.job1.udfs._
+import org.main.scla_dep_mgmt_change.config.ConfigStore._
+import org.main.scla_dep_mgmt_change.config.Context
+import org.main.scla_dep_mgmt_change.udfs.UDFs._
+import org.main.scla_dep_mgmt_change.udfs._
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -12,12 +12,10 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Script_1 {
+object PERF_SCRIPT {
   def apply(context: Context, in0: DataFrame): DataFrame = {
     val spark = context.spark
     val Config = context.config
-    print(s"Config: ${Config.c_test}")
-    
     var out0=in0
     out0
   }
