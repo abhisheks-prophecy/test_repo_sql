@@ -17,6 +17,18 @@ pipelines:
       - datasets/src_delta_all_type_no_partition
       outputs: []
     dependencies: {}
+  pipelines/PERF_PY_PIP:
+    name: PERF_PY_PIP
+    description: Python dependency management
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: python
+    createdAt: '2023-01-05 03:56:15'
+    datasets:
+      inputs:
+      - datasets/perf_parquet_src_2k_columns
+      outputs: []
+    dependencies: {}
   pipelines/PYTHON_AZURE:
     name: PYTHON_AZURE
     description: PYTHON_AZURE
@@ -404,6 +416,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:53:03'
+  datasets/perf_parquet_src_2k_columns:
+    name: perf_parquet_src_2k_columns
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-05 04:18:47'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-05 04:18:47'
   datasets/src_catalog_table_test_catalog_source:
     name: src_catalog_table_test_catalog_source
     description: ''
