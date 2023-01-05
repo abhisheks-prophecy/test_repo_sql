@@ -1,5 +1,5 @@
 from .PERF_SQLSTATEMENT import *
-from .PERF_SG1 import *
+from .PERF_SG import *
 from .PERF_SCHEMATRANSFORM import *
 from .PERF_AGGREGATE import *
 from .PERF_SET import *
