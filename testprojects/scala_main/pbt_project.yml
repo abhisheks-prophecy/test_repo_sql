@@ -1,10 +1,23 @@
 name: ScalaProject
 description: ''
-version: '2.27'
+version: Rel_0.0000002
 author: abhisheks+e2etests@simpledatalabs.com
 language: scala
 buildSystem: maven
 pipelines:
+  pipelines/PERF_SC_PIP:
+    name: PERF_SC_PIP
+    description: this is dependency management pipeline
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2023-01-05 03:56:01'
+    datasets:
+      inputs:
+      - datasets/perf_src_2000_cols
+      - datasets/src_avro_CustsDatasetInput
+      outputs: []
+    dependencies: {}
   pipelines/DONOT_OPEN_SCALA:
     name: REL_SC_PIP_DONOT_OPEN
     description: DO NOT Open this
@@ -375,6 +388,18 @@ datasets:
         description: ''
         author: abhisheks+e2etests@simpledatalabs.com
         createdAt: '2022-06-28 14:34:29'
+  datasets/perf_src_2000_cols:
+    name: perf_src_2000_cols
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-05 03:42:32'
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-05 03:42:32'
   datasets/src_unittest_parquet_all:
     name: src_unittest_parquet_all
     description: ''
