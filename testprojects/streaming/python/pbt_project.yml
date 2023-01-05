@@ -1,0 +1,279 @@
+name: StreamingPythonProject
+description: ''
+version: 0.0.1-SNAPSHOT
+author: abhisheks+e2etests@prophecy.io
+language: python
+buildSystem: wheel
+pipelines:
+  pipelines/DeltaOnly:
+    name: DeltaOnly
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-02 13:29:09'
+    datasets:
+      inputs:
+      - datasets/s3_delta_autoloader_dirlist
+      outputs:
+      - datasets/s3_delta_autoloader_target
+    dependencies: {}
+  pipelines/JSONType:
+    name: JSONType
+    description: JSONType
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-02 13:13:34'
+    datasets:
+      inputs:
+      - datasets/s3_json_autoloader_dir
+      outputs:
+      - datasets/s3_json_autoloader_dir_target
+    dependencies: {}
+  pipelines/ParquetOnly:
+    name: ParquetOnly
+    description: ParquetOnly
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-02 09:44:10'
+    datasets:
+      inputs:
+      - datasets/s3_parquet_standard
+      outputs:
+      - datasets/s3_parquet_standard_target
+    dependencies: {}
+  pipelines/StreamingTestPipeline_1Clone:
+    name: StreamingTestPipeline_1Clone
+    description: StreamingTestPipeline_1
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-02 04:53:20'
+    datasets:
+      inputs:
+      - datasets/s3_csv_standard
+      - datasets/s3_delta_autoloader_dirlist
+      - datasets/s3_json_autoloader_dir
+      - datasets/s3_orc_autoloader_dirlist
+      - datasets/s3_parquet_standard
+      outputs:
+      - datasets/s3_csv_standard_target
+      - datasets/s3_delta_autoloader_target
+      - datasets/s3_json_autoloader_dir_target
+      - datasets/s3_orc_autoloader_dirlist_target
+      - datasets/s3_parquet_standard_target
+    dependencies: {}
+  pipelines/SQSSource:
+    name: SQSSource
+    description: SQSSource
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-03 07:55:30'
+    datasets:
+      inputs: []
+      outputs: []
+    dependencies: {}
+  pipelines/ORCOnly:
+    name: ORCOnly
+    description: ORCOnly
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-02 13:25:07'
+    datasets:
+      inputs:
+      - datasets/s3_orc_autoloader_dirlist
+      outputs:
+      - datasets/s3_orc_autoloader_dirlist_target
+    dependencies: {}
+  pipelines/CSVOnly:
+    name: CSVOnly
+    description: CSVOnly
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2023-01-02 09:56:50'
+    datasets:
+      inputs:
+      - datasets/s3_csv_standard
+      outputs:
+      - datasets/s3_csv_standard_target
+    dependencies: {}
+  pipelines/StreamingTestPipeline_1:
+    name: StreamingTestPipeline_1
+    description: StreamingTestPipeline_1
+    author: abhisheks+e2etests@prophecy.io
+    mode: stream
+    language: python
+    createdAt: '2022-12-27 12:36:41'
+    datasets:
+      inputs:
+      - datasets/s3_csv_standard
+      - datasets/s3_delta_autoloader_dirlist
+      - datasets/s3_json_autoloader_dir
+      - datasets/s3_orc_autoloader_dirlist
+      - datasets/s3_parquet_standard
+      outputs:
+      - datasets/s3_csv_standard_target
+      - datasets/s3_delta_autoloader_target
+      - datasets/s3_json_autoloader_dir_target
+      - datasets/s3_orc_autoloader_dirlist_target
+      - datasets/s3_parquet_standard_target
+    dependencies: {}
+datasets:
+  datasets/s3_orc_autoloader_dirlist_target:
+    name: s3_orc_autoloader_dirlist_target
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 03:38:36'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 03:38:36'
+  datasets/s3_orc_autoloader_dirlist:
+    name: s3_orc_autoloader_dirlist
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 03:36:40'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 03:36:40'
+  datasets/s3_delta_autoloader_target:
+    name: s3_delta_autoloader_target
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 05:51:44'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 05:51:44'
+  datasets/s3_json_autoloader_dir_target:
+    name: s3_json_autoloader_dir_target
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 04:43:36'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 04:43:36'
+  datasets/s3_parquet_standard:
+    name: s3_parquet_standard
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-28 10:41:38'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-28 10:41:38'
+  datasets/s3_csv_standard_target:
+    name: s3_csv_standard_target
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 04:27:37'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 04:27:38'
+  datasets/s3_csv_standard:
+    name: s3_csv_standard
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 04:15:11'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 04:15:11'
+  datasets/s3_parquet_standard_target:
+    name: s3_parquet_standard_target
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2022-12-28 10:44:52'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2022-12-28 10:44:52'
+  datasets/s3_delta_autoloader_dirlist:
+    name: s3_delta_autoloader_dirlist
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 03:57:30'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 03:57:30'
+  datasets/s3_json_autoloader_dir:
+    name: s3_json_autoloader_dir
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-02 04:35:16'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 10
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-02 04:35:16'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs:
+  subgraphs/testsg:
+    name: testsg
+    description: testsg
+    author: abhisheks+e2etests@prophecy.io
+    language: python
+    mode: stream
+    createdAt: '2023-01-02 07:44:54'
+  subgraphs/streamingsgLimit:
+    name: streamingsgLimit
+    description: org.streamingsg
+    author: abhisheks+e2etests@prophecy.io
+    language: python
+    mode: stream
+    createdAt: '2023-01-02 10:02:20'
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
