@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class OrderBy_1_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -36,7 +37,7 @@ class OrderBy_1_1Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed = io.prophecy.pipelines.livy_scala.graph.livyscalaSG1_1
-      .OrderBy_1_1(spark, dfIn)
+      .OrderBy_1_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -77,7 +78,7 @@ class OrderBy_1_1Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed = io.prophecy.pipelines.livy_scala.graph.livyscalaSG1_1
-      .OrderBy_1_1(spark, dfIn)
+      .OrderBy_1_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -108,11 +109,13 @@ class OrderBy_1_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
 
     val dfProphecy_pipelines_livy_scala_graph_Lookup_1 =
       createDfFromResourceFiles(
@@ -122,7 +125,7 @@ class OrderBy_1_1Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     io.prophecy.pipelines.livy_scala.graph
-      .Lookup_1(spark, dfProphecy_pipelines_livy_scala_graph_Lookup_1)
+      .Lookup_1(context, dfProphecy_pipelines_livy_scala_graph_Lookup_1)
   }
 
 }

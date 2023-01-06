@@ -119,7 +119,7 @@ object ComplexExpression {
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
   }
 
-  def c1(context: Context) = {
+  def c8(context: Context) = {
     val spark  = context.spark
     val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
@@ -148,7 +148,7 @@ object ComplexExpression {
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
   }
 
-  def c8(context: Context) = {
+  def c1(context: Context) = {
     val spark  = context.spark
     val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(

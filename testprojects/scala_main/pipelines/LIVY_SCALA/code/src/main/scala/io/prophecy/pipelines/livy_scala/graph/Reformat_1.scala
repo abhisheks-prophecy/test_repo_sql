@@ -2,6 +2,7 @@ package io.prophecy.pipelines.livy_scala.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.livy_scala.config.ConfigStore._
+import io.prophecy.pipelines.livy_scala.config.Context
 import io.prophecy.pipelines.livy_scala.udfs.UDFs._
 import io.prophecy.pipelines.livy_scala.udfs._
 import org.apache.spark._
@@ -13,7 +14,8 @@ import java.time._
 
 object Reformat_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     in.select(
       col("year"),
       lookup("LookupTest", col("variable")).getField("value").as("lookup1"),
@@ -28,5 +30,6 @@ object Reformat_1 {
              udf1(col("unit").cast(IntegerType))
       ).as("c_configs")
     )
+  }
 
 }

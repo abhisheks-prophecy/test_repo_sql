@@ -2,6 +2,7 @@ package io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1.Subgraph_
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.livy_scala.config.ConfigStore._
+import io.prophecy.pipelines.livy_scala.config.Context
 import io.prophecy.pipelines.livy_scala.udfs.UDFs._
 import io.prophecy.pipelines.livy_scala.udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object Reformat_4_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.select(col("year"),
               col("industry_code_ANZSIC"),
               col("industry_name_ANZSIC"),
