@@ -12,7 +12,7 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object Reformat_2_1_1 {
+object PERF_SG_REFORMAT {
 
   def apply(context: Context, in: DataFrame): DataFrame =
     in.select(
