@@ -4,9 +4,9 @@ from pyspark.sql.types import *
 from com.main1.pythondepmanagement_1.config.ConfigStore import *
 from com.main1.pythondepmanagement_1.udfs.UDFs import *
 
-def PERF_REFORMAT(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def PERF_SG_REFORMAT(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
-        concat(col("cmls_3ds_authntn_mthd"), col("cmls_acct_cobrnd_bus_id_drvd")).alias("c_modify_me_son"), 
+        concat(col("cmls_3ds_authntn_mthd"), col("cmls_acct_cobrnd_bus_id_drvd")).alias("change_col"), 
         col("first_name"), 
         col("c_short"), 
         col("c_int"), 

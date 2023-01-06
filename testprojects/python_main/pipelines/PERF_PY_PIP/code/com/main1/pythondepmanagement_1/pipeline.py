@@ -146,18 +146,18 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_PERF_FLATTENSCHEMA.cache().count()
     df_PERF_FLATTENSCHEMA.unpersist()
-    df_PERF_SG1_out0, df_PERF_SG1_out1, df_PERF_SG1_out2 = PERF_SG1(
+    df_PERF_SG_out0, df_PERF_SG_out1, df_PERF_SG_out2 = PERF_SG(
         spark, 
         df_REFORMAT_TES, 
         df_REFORMAT_TES, 
         df_REFORMAT_TES
     )
-    df_PERF_SG1_out0.cache().count()
-    df_PERF_SG1_out0.unpersist()
-    df_PERF_SG1_out1.cache().count()
-    df_PERF_SG1_out1.unpersist()
-    df_PERF_SG1_out2.cache().count()
-    df_PERF_SG1_out2.unpersist()
+    df_PERF_SG_out0.cache().count()
+    df_PERF_SG_out0.unpersist()
+    df_PERF_SG_out1.cache().count()
+    df_PERF_SG_out1.unpersist()
+    df_PERF_SG_out2.cache().count()
+    df_PERF_SG_out2.unpersist()
     df_PERF_SQLSTATEMENT = PERF_SQLSTATEMENT(spark, df_PERF_ROWDISTRIBUTOR_out0)
     df_PERF_SQLSTATEMENT = collectMetrics(
         spark, 
