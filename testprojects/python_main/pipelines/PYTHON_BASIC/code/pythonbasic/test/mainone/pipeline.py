@@ -95,10 +95,7 @@ def main():
     spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_BASIC")
     
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_BASIC"
-    )
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_BASIC")
     pipeline(spark)
     MetricsCollector.end(spark)
 

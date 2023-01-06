@@ -1,0 +1,73 @@
+{
+  "id" : "nZSaQSDh06oygpLdKmhqt",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "fLsHsz6D6mEfCnxSCudt5",
+      "slug" : "in0"
+    } ],
+    "outputs" : [ {
+      "id" : "f3nlejykFncXgwWjz7hzv",
+      "slug" : "out0"
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "org.streamingsg"
+  },
+  "connections" : [ {
+    "id" : "QMO-WEHJJfWp1gp57oZyB",
+    "source" : "nZSaQSDh06oygpLdKmhqt",
+    "sourcePort" : "fLsHsz6D6mEfCnxSCudt5",
+    "target" : "U0g4XnbwBC4y0MBmhNxI6",
+    "targetPort" : "bjQlbAPHp0Jy4Uwqy0wOn"
+  }, {
+    "id" : "eJmwkZMG1781R1v7lh2bB",
+    "source" : "U0g4XnbwBC4y0MBmhNxI6",
+    "sourcePort" : "A_OzlO83b3Jch4NTfkNq3",
+    "target" : "nZSaQSDh06oygpLdKmhqt",
+    "targetPort" : "f3nlejykFncXgwWjz7hzv"
+  } ],
+  "processes" : {
+    "U0g4XnbwBC4y0MBmhNxI6" : {
+      "id" : "U0g4XnbwBC4y0MBmhNxI6",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_2",
+        "slug" : "Limit_2",
+        "x" : 160,
+        "y" : 180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bjQlbAPHp0Jy4Uwqy0wOn",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "A_OzlO83b3Jch4NTfkNq3",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      }
+    }
+  }
+}
