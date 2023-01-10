@@ -1,0 +1,41 @@
+name: sony_test_new
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: scala
+buildSystem: maven
+pipelines:
+  pipelines/sony_livy_pipe:
+    name: sony_livy_pipe
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-10 10:37:24'
+    datasets:
+      inputs:
+      - datasets/livy_csv_dataset
+      outputs: []
+    dependencies: {}
+datasets:
+  datasets/livy_csv_dataset:
+    name: livy_csv_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-10 10:38:33'
+    physicalDatasets:
+      captain_livy:
+        fabricId: 1654
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-10 10:38:33'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: []
+projectDependencies: {}
+pipelineConfigurations: {}
