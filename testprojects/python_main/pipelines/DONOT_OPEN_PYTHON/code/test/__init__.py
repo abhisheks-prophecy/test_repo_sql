@@ -1,3 +1,3 @@
-from .org import *
+from .pythonorganization import *
 from .TestSuite import *
 from .conftest import *
