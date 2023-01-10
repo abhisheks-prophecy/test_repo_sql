@@ -105,10 +105,7 @@ def main():
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config1", "hadoop_config1 value")
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config2", "hadoop_config2 value")
     
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/DONOT_OPEN_PYTHON"
-    )
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/DONOT_OPEN_PYTHON")
     pipeline(spark)
     MetricsCollector.end(spark)
 
