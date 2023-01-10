@@ -119,6 +119,26 @@ class Reformat_2_1_2Test extends FunSuite with DataFrameSuiteBase {
 
     context = Context(spark, config)
 
+    val dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1_1_1 =
+      createDfFromResourceFiles(
+        spark,
+        "/data/io/prophecy/pipelines/sony_livy_pipe/graph/Lookup_1_1_1/schema.json",
+        "/data/io/prophecy/pipelines/sony_livy_pipe/graph/Lookup_1_1_1/data.json",
+        port = "in"
+      )
+    io.prophecy.pipelines.sony_livy_pipe.graph.Lookup_1_1_1(
+      context,
+      dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1_1_1
+    )
+    val dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1_1 =
+      createDfFromResourceFiles(
+        spark,
+        "/data/io/prophecy/pipelines/sony_livy_pipe/graph/Lookup_1_1/schema.json",
+        "/data/io/prophecy/pipelines/sony_livy_pipe/graph/Lookup_1_1/data.json",
+        port = "in"
+      )
+    io.prophecy.pipelines.sony_livy_pipe.graph
+      .Lookup_1_1(context, dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1_1)
     val dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1 =
       createDfFromResourceFiles(
         spark,
@@ -128,6 +148,15 @@ class Reformat_2_1_2Test extends FunSuite with DataFrameSuiteBase {
       )
     io.prophecy.pipelines.sony_livy_pipe.graph
       .Lookup_1(context, dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1)
+    val dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1_2 =
+      createDfFromResourceFiles(
+        spark,
+        "/data/io/prophecy/pipelines/sony_livy_pipe/graph/Lookup_1_2/schema.json",
+        "/data/io/prophecy/pipelines/sony_livy_pipe/graph/Lookup_1_2/data.json",
+        port = "in"
+      )
+    io.prophecy.pipelines.sony_livy_pipe.graph
+      .Lookup_1_2(context, dfProphecy_pipelines_sony_livy_pipe_graph_Lookup_1_2)
   }
 
 }
