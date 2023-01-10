@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--Take specifing  the project name in the group id-->
+
+    <groupId>sonyprophecy.io_team.sony_scala_git</groupId>
+    <artifactId>sony_scala_git</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>sony_scala_git</name>
+    <description>sony_scala_git</description>
+    <modules>
+      
+        <module>pipelines/pipeline_1/code</module>
+      
+      
+      
+        <module>functions/code</module>
+      
+      <module>aggregator</module>
+    </modules>
+
+    <properties>
+        <scalaBaseVersion>2.12</scalaBaseVersion>
+        <scalaVersion>2.12.15</scalaVersion>
+        <sparkVersion>3.3.0</sparkVersion>
+        <prophecyLibsVersion>6.3.13-SNAPSHOT</prophecyLibsVersion>
+        <revision>1.1</revision>
+    </properties>
+    <repositories>
+      
+       <repository>
+    			<id>central</id>
+    			<name>Central Repository</name>
+    			<url>https://repo.maven.apache.org/maven2</url>
+    			<layout>default</layout>
+    			<snapshots>
+    				<enabled>false</enabled>
+    			</snapshots>
+    		</repository>
+       <repository>
+    			<id>snapshots</id>
+    			<name>Central Snapshots</name>
+    			<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+    			<layout>default</layout>
+    			<snapshots>
+    				<enabled>true</enabled>
+    			</snapshots>
+    		</repository>
+       
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        
+
+        
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scalaVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scalaBaseVersion}</artifactId>
+            <version>${sparkVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scalaBaseVersion}</artifactId>
+            <version>${sparkVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_${scalaBaseVersion}</artifactId>
+            <version>${sparkVersion}</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.xerial.snappy</groupId>
+                    <artifactId>snappy-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>1.0.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-native_${scalaBaseVersion}</artifactId>
+            <version>3.5.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-jackson_${scalaBaseVersion}</artifactId>
+            <version>3.5.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.delta</groupId>
+            <artifactId>delta-core_${scalaBaseVersion}</artifactId>
+            <version>1.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.databricks</groupId>
+            <artifactId>dbutils-api_${scalaBaseVersion}</artifactId>
+            <version>0.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prophecy</groupId>
+            <artifactId>prophecy-libs_${scalaBaseVersion}</artifactId>
+            <version>${sparkVersion}-${prophecyLibsVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_${scalaBaseVersion}</artifactId>
+            <version>3.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.holdenkarau</groupId>
+            <artifactId>spark-testing-base_${scalaBaseVersion}</artifactId>
+            <version>3.0.1_1.1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.amazon.deequ</groupId>
+            <artifactId>deequ</artifactId>
+            <version>1.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>2.7.3</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>4.2.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <args>
+                                <arg>-dependencyfile</arg>
+                                <arg>${project.build.directory}/.scala_dependencies</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
