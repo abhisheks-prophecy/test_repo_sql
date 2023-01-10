@@ -85,6 +85,24 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
+    df_Script_2 = Script_2(spark, df_livy_src_csv_py)
+    df_Script_2 = collectMetrics(
+        spark, 
+        df_Script_2, 
+        "graph", 
+        "HLpRudnxzFDOH6v50FTRn$$8wuAjgdN082A7wiou-BTt", 
+        "i1QoJ8dz-D0slSyVrkf6T$$mzY5TGbgYjL3mnvNxoWTI"
+    )
+    df_Reformat_4 = Reformat_4(spark, df_Script_2)
+    df_Reformat_4 = collectMetrics(
+        spark, 
+        df_Reformat_4, 
+        "graph", 
+        "_6hu-g0ECNB72wApYb9QS$$-GZRkDJSIv9my71HOnwNS", 
+        "SeSwA4cx3e8Bp85gnnw1Q$$xmrsbKC2u-Fmm-E7B6GiD"
+    )
+    df_Reformat_4.cache().count()
+    df_Reformat_4.unpersist()
     df_Filter_2 = Filter_2(spark, df_RowDistributor_1_out1)
     df_Filter_2 = collectMetrics(
         spark, 

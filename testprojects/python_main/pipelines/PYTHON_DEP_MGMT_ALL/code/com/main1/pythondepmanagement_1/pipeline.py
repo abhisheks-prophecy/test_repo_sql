@@ -560,11 +560,20 @@ def main():
     spark.conf.set("prophecy.collect.basic.stats", "true")
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
     spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
-    spark.conf.set("spark_config1", "spark_config1 value")
+    spark.conf.set("spark_config1", "spark./<>;'\"[]{}\\|~*/-+p- config1 value !~_#@%^&*()-=")
     spark.conf.set("spark_config2", "spark_config2 value")
+    spark.conf.set("fs.s3a.access.key", "AKIAR6ESAR2JAQNZNVMH")
+    spark.conf.set("fs.s3a.secret.key", "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")
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_DEP_MGMT_ALL")
-    spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config1", "hadoop_config1 value")
+    spark.sparkContext._jsc\
+        .hadoopConfiguration()\
+        .set(
+        "hadoop_config1",
+        "hadoo./<>;'\"[]{}\\|~*/-+p- config1 value !~_#@%^&*()-="
+    )
     spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config2", "hadoop_config2 value")
+    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.access.key", "AKIAR6ESAR2JAQNZNVMH")
+    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "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")
     
     MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_DEP_MGMT_ALL")
     pipeline(spark)

@@ -40,6 +40,36 @@ class Reformat_2Test(BaseTestCase):
         )
         dfOutComputed = Reformat_2(self.spark, dfIn0)
 
+    def test_unit_test_2(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/in0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/in0/data/test_unit_test_2.json',
+            'in0'
+        )
+        dfOut = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/out/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/out/data/test_unit_test_2.json',
+            'out'
+        )
+        dfOutComputed = Reformat_2(self.spark, dfIn0)
+
+    def test_unit_test_3(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/in0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/in0/data/test_unit_test_3.json',
+            'in0'
+        )
+        dfOut = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/out/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_2/out/data/test_unit_test_3.json',
+            'out'
+        )
+        dfOutComputed = Reformat_2(self.spark, dfIn0)
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os

@@ -213,6 +213,18 @@
     "sourcePort" : "6P3wEhwnkqn3Ru_HerSj_$$pZ6MXoP5vFpLhG5YXvMyP",
     "target" : "Jxv_Oyc8PQrWG1PmyrJWU$$NO49MgMTi0uBbmNDIOcvb",
     "targetPort" : "WhL5zyaHdOHdCJ0Ng4BZz$$6zHhUev3dQvdEKj1YfRy-"
+  }, {
+    "id" : "aa0UOHTjquBbT_9DPXbes",
+    "source" : "zx05CFL6hqZyBtPOu1pkf$$lpZkqTQg5wA92sceBzvlb",
+    "sourcePort" : "s1Tt_dqrlegFG6g3Zv_GA$$HiT49iNoOhQUhnT5w6ngO",
+    "target" : "HLpRudnxzFDOH6v50FTRn$$8wuAjgdN082A7wiou-BTt",
+    "targetPort" : "opkKDilEn0cYE_6crRpxn$$-zDwbQrRbIH9nHDeZBJch"
+  }, {
+    "id" : "1FoWMKEhIDzqP3nRY-Ki5",
+    "source" : "HLpRudnxzFDOH6v50FTRn$$8wuAjgdN082A7wiou-BTt",
+    "sourcePort" : "i1QoJ8dz-D0slSyVrkf6T$$mzY5TGbgYjL3mnvNxoWTI",
+    "target" : "_6hu-g0ECNB72wApYb9QS$$-GZRkDJSIv9my71HOnwNS",
+    "targetPort" : "kBRleodBR8KEJ1Y40Kgh7$$YIAj0i2_2ND2B1TTmY9Vh"
   } ],
   "processes" : {
     "LmVB9Tiv7gOksXKYvwwqv$$vRQhC-glg7Tz8vdDjYpL9" : {
@@ -1600,6 +1612,71 @@
       },
       "properties" : {
         "datasetId" : "datasets/livy_src_csv"
+      }
+    },
+    "HLpRudnxzFDOH6v50FTRn$$8wuAjgdN082A7wiou-BTt" : {
+      "id" : "HLpRudnxzFDOH6v50FTRn$$8wuAjgdN082A7wiou-BTt",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_2",
+        "slug" : "Script_2",
+        "x" : 593.0715744018555,
+        "y" : 14.895833333333343,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "opkKDilEn0cYE_6crRpxn$$-zDwbQrRbIH9nHDeZBJch",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "i1QoJ8dz-D0slSyVrkf6T$$mzY5TGbgYjL3mnvNxoWTI",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          }
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "script" : "from fast_html import render,p\nprint(render(p(\"text\")))\n\nout0=in0",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    },
+    "_6hu-g0ECNB72wApYb9QS$$-GZRkDJSIv9my71HOnwNS" : {
+      "id" : "_6hu-g0ECNB72wApYb9QS$$-GZRkDJSIv9my71HOnwNS",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_4",
+        "slug" : "Reformat_4",
+        "x" : 792.2715744018554,
+        "y" : -3.1041666666666856,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kBRleodBR8KEJ1Y40Kgh7$$YIAj0i2_2ND2B1TTmY9Vh",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "SeSwA4cx3e8Bp85gnnw1Q$$xmrsbKC2u-Fmm-E7B6GiD",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
       }
     },
     "ZZMLx6qIPkco-6Lzn_Bkq$$W6J4G5WzbXaK0Ev-YvUcS" : {
