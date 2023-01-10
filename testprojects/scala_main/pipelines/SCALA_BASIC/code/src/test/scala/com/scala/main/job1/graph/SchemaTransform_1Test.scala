@@ -17,7 +17,7 @@ import java.nio.file.{Files, Paths}
 import java.math.BigDecimal
 
 @RunWith(classOf[JUnitRunner])
-class SCALA_B1ASICTest extends FunSuite with DataFrameSuiteBase {
+class SchemaTransform_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
   var context: Context = null
 
@@ -25,18 +25,19 @@ class SCALA_B1ASICTest extends FunSuite with DataFrameSuiteBase {
 
     val dfIn = createDfFromResourceFiles(
       spark,
-      "/data/com/scala/main/job1/graph/SCALA_B1ASIC/in/schema.json",
-      "/data/com/scala/main/job1/graph/SCALA_B1ASIC/in/data/unit_test_0.json",
+      "/data/com/scala/main/job1/graph/SchemaTransform_1/in/schema.json",
+      "/data/com/scala/main/job1/graph/SchemaTransform_1/in/data/unit_test_0.json",
       "in"
     )
     val dfOut = createDfFromResourceFiles(
       spark,
-      "/data/com/scala/main/job1/graph/SCALA_B1ASIC/out/schema.json",
-      "/data/com/scala/main/job1/graph/SCALA_B1ASIC/out/data/unit_test_0.json",
+      "/data/com/scala/main/job1/graph/SchemaTransform_1/out/schema.json",
+      "/data/com/scala/main/job1/graph/SchemaTransform_1/out/data/unit_test_0.json",
       "out"
     )
 
-    val dfOutComputed = com.scala.main.job1.graph.SCALA_B1ASIC(context, dfIn)
+    val dfOutComputed =
+      com.scala.main.job1.graph.SchemaTransform_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
