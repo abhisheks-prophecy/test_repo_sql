@@ -10,20 +10,55 @@ buildSystemDetails:
   buildSystem: maven
   author: null
   createdAt: '2023-01-10 10:25:52'
-pipelines: {}
-datasets: {}
+pipelines:
+  pipelines/pipeline_1:
+    name: pipeline_1
+    description: ''
+    author: sony@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-01-10 13:21:10'
+    datasets:
+      inputs:
+      - datasets/source_dataset
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/source_dataset:
+    name: source_dataset
+    description: ''
+    author: sony@prophecy.io
+    createdAt: '2023-01-10 13:22:11'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 54
+        datasetType: File
+        description: ''
+        author: sony@prophecy.io
+        createdAt: '2023-01-10 13:22:11'
 templates: {}
 jobs: {}
 functions:
   author: null
   createdAt: '2023-01-10 10:25:52'
   gems: {}
-  udfs: {}
+  udfs:
+    udfs/udf1:
+      name: udf1
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: sony@prophecy.io
+      createdAt: '2023-01-10 13:23:37'
   udafs: {}
   expressions: {}
 subgraphs: {}
 sqlModels: {}
 sqlPipeline: null
-dependencies: '[]'
+dependencies: []
 projectDependencies: {}
 pipelineConfigurations: {}
