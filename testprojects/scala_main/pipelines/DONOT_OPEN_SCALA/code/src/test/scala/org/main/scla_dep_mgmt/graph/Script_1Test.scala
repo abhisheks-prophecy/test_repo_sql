@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Script_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -65,7 +66,7 @@ class Script_1Test extends FunSuite with DataFrameSuiteBase {
       "out0"
     )
 
-    val dfOut0Computed = org.main.scla_dep_mgmt.graph.Script_1(spark,
+    val dfOut0Computed = org.main.scla_dep_mgmt.graph.Script_1(context,
                                                                dfIn0,
                                                                dfIn1,
                                                                dfIn2,
@@ -105,11 +106,13 @@ class Script_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
 
     val dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1 =
       createDfFromResourceFiles(
@@ -119,7 +122,7 @@ class Script_1Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.Lookup_1_1(
-      spark,
+      context,
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
   }
