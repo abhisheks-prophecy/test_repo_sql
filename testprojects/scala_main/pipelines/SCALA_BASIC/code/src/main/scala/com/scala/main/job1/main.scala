@@ -16,21 +16,40 @@ import java.time._
 
 object Main {
 
-  def apply(context: Context): Unit = {
+  def graph(context: Context): Unit = {
     val df_src_parquet_all_type_and_partition_withspacehyphens =
-      src_parquet_all_type_and_partition_withspacehyphens(context)
-    val df_SCALA_BASIC1 = SCALA_BASIC1(
-      context,
-      df_src_parquet_all_type_and_partition_withspacehyphens
-    )
-    val df_SchemaTransform_1 = SchemaTransform_1(
-      context,
-      df_src_parquet_all_type_and_partition_withspacehyphens
-    )
-    val df_SCALA_BASIC12 = SCALA_BASIC12(
-      context,
-      df_src_parquet_all_type_and_partition_withspacehyphens
-    )
+      src_parquet_all_type_and_partition_withspacehyphens(context).interim(
+        "graph",
+        "o8K-lNobc6Z8Asi3dRegs$$Buw8lxPhFtSUcFZhGxXbx",
+        "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn"
+      )
+    val df_SchemaTransform_1 =
+      SchemaTransform_1(context,
+                        df_src_parquet_all_type_and_partition_withspacehyphens
+      ).interim("graph",
+                "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n",
+                "vx64sYjC4vVrmBOSkCOXa$$qpmxU6WcJBG1bBJ5VrLY-"
+      )
+    df_SchemaTransform_1.cache().count()
+    df_SchemaTransform_1.unpersist()
+    val df_SCALA_BASIC12 =
+      SCALA_BASIC12(context,
+                    df_src_parquet_all_type_and_partition_withspacehyphens
+      ).interim("graph",
+                "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0",
+                "1vob0WwUeTByi5ggao1MM$$RLb5byOWJfwhdby-ImTGc"
+      )
+    df_SCALA_BASIC12.cache().count()
+    df_SCALA_BASIC12.unpersist()
+    val df_SCALA_BASIC1 =
+      SCALA_BASIC1(context,
+                   df_src_parquet_all_type_and_partition_withspacehyphens
+      ).interim("graph",
+                "bl47XMiEa-WNOlMEK4sFp$$2Dwp_ulOdXsBz8xjpntdm",
+                "KHx3a7pEn7ZIJRnqGorWt$$RNdicUvC7gj0La9ZxSfE2"
+      )
+    df_SCALA_BASIC1.cache().count()
+    df_SCALA_BASIC1.unpersist()
   }
 
   def main(args: Array[String]): Unit = {
@@ -44,6 +63,13 @@ object Main {
       .getOrCreate()
       .newSession()
     val context = Context(spark, config)
+    MetricsCollector.initializeMetrics(spark)
+    implicit val interimOutputConsole: InterimOutput = InterimOutputHive2("")
+    spark.conf.set("prophecy.collect.basic.stats",          "true")
+    spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
+    spark.conf.set("spark.sql.optimizer.excludedRules",
+                   "org.apache.spark.sql.catalyst.optimizer.ColumnPruning"
+    )
     spark.conf.set("spark_config1",                  "spark_config_value_1")
     spark.conf.set("spark_config2",                  "spark_config_value_2")
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_BASIC")
@@ -52,7 +78,7 @@ object Main {
     spark.sparkContext.hadoopConfiguration
       .set("hadoop_config2",      "hadoop_config_value2")
     MetricsCollector.start(spark, "pipelines/SCALA_BASIC")
-    apply(context)
+    graph(context)
     MetricsCollector.end(spark)
   }
 

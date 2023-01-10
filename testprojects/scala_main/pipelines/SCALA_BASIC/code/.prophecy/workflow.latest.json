@@ -138,7 +138,7 @@
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Disabled",
+    "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
@@ -165,6 +165,71 @@
     "targetPort" : "qCaups1PStyAXXib1un7c$$i_76JB0Rt4nZ49W42v46U"
   } ],
   "processes" : {
+    "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n" : {
+      "id" : "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : -786.4000000000001,
+        "y" : 363.6,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qCaups1PStyAXXib1un7c$$i_76JB0Rt4nZ49W42v46U",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "vx64sYjC4vVrmBOSkCOXa$$qpmxU6WcJBG1bBJ5VrLY-",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "transformations" : [ ]
+      }
+    },
+    "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0" : {
+      "id" : "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "SCALA_BASIC12",
+        "slug" : "SCALA_BASIC12",
+        "x" : -521.1,
+        "y" : 38.39999999999998,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2Gz2HS8MDf_HK-44Trsh5$$eiJ0Rvj3-tu3lppCP5uFr",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "1vob0WwUeTByi5ggao1MM$$RLb5byOWJfwhdby-ImTGc",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          }
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "script" : "print(s\"Config: ${Config.c_test}\")\n\nvar out0=in0",
+        "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
+        "scriptMethodFooter" : "    out0\n}"
+      }
+    },
     "bl47XMiEa-WNOlMEK4sFp$$2Dwp_ulOdXsBz8xjpntdm" : {
       "id" : "bl47XMiEa-WNOlMEK4sFp$$2Dwp_ulOdXsBz8xjpntdm",
       "component" : "Reformat",
@@ -289,71 +354,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/src_csv_special_char_column_name"
-      }
-    },
-    "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n" : {
-      "id" : "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n",
-      "component" : "SchemaTransform",
-      "metadata" : {
-        "label" : "SchemaTransform_1",
-        "slug" : "SchemaTransform_1",
-        "x" : -786.4000000000001,
-        "y" : 363.6,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "qCaups1PStyAXXib1un7c$$i_76JB0Rt4nZ49W42v46U",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "vx64sYjC4vVrmBOSkCOXa$$qpmxU6WcJBG1bBJ5VrLY-",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ ],
-        "transformations" : [ ]
-      }
-    },
-    "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0" : {
-      "id" : "qS7udi_fVyLwNFW-Mm0CD$$E1cMJlFkiBy9SppQZb6w0",
-      "component" : "Script",
-      "metadata" : {
-        "label" : "SCALA_BASIC12",
-        "slug" : "SCALA_BASIC12",
-        "x" : -521.1,
-        "y" : 38.39999999999998,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "2Gz2HS8MDf_HK-44Trsh5$$eiJ0Rvj3-tu3lppCP5uFr",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "1vob0WwUeTByi5ggao1MM$$RLb5byOWJfwhdby-ImTGc",
-          "slug" : "out0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ ]
-          }
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : true
-      },
-      "properties" : {
-        "script" : "print(s\"Config: ${Config.c_test}\")\n\nvar out0=in0",
-        "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
-        "scriptMethodFooter" : "    out0\n}"
       }
     }
   },
