@@ -11,3 +11,7 @@ j
 *** Release notes for version: 1.1 ***
 
 w
+
+*** Release notes for version: 2 ***
+
+b
