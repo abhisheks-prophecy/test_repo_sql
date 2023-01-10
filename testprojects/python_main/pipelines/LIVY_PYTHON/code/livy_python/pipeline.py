@@ -25,6 +25,43 @@ def pipeline(spark: SparkSession) -> None:
         "sEqrqRgL-8RgpQvmEL4qv$$oEdp_cRkhh3jJCtYi3j2w"
     )
     df_Subgraph_4 = Subgraph_4(spark, df_livy_src_csv_py)
+    df_SQLStatement_1_output_1, df_SQLStatement_1_out1, df_SQLStatement_1_out2 = SQLStatement_1(
+        spark, 
+        df_Subgraph_4, 
+        df_Subgraph_4, 
+        df_Subgraph_4
+    )
+    df_SQLStatement_1_output_1 = collectMetrics(
+        spark, 
+        df_SQLStatement_1_output_1, 
+        "graph", 
+        "9-xNzDAfIfX0jip9-OCbN$$rgiOyR9RmNVietEkrnYzX", 
+        "Zg1yBISd3Xj7tCv1qkHw_$$MO01q71plfyyDKkq0iCRY"
+    )
+    df_SQLStatement_1_out1 = collectMetrics(
+        spark, 
+        df_SQLStatement_1_out1, 
+        "graph", 
+        "9-xNzDAfIfX0jip9-OCbN$$rgiOyR9RmNVietEkrnYzX", 
+        "Q970Kv4asYbHlWdUADK3a$$Lj6wCeZUPLMjYT7ZWdk0M"
+    )
+    df_SQLStatement_1_out2 = collectMetrics(
+        spark, 
+        df_SQLStatement_1_out2, 
+        "graph", 
+        "9-xNzDAfIfX0jip9-OCbN$$rgiOyR9RmNVietEkrnYzX", 
+        "Lom86pdI8EPn8HYZIUife$$bsR6P5ngNVcCbYTuCqKFZ"
+    )
+    df_Reformat_5 = Reformat_5(spark, df_SQLStatement_1_out1)
+    df_Reformat_5 = collectMetrics(
+        spark, 
+        df_Reformat_5, 
+        "graph", 
+        "SAvIjpKonhri_rQm4i94P$$5PfK4KJufGSLrwml4L-L8", 
+        "VJ287DfF_Qxtn3OWXNo13$$jG9xvPkR2IRkOIlpqyUOq"
+    )
+    df_Reformat_5.cache().count()
+    df_Reformat_5.unpersist()
     df_RowDistributor_1_out0, df_RowDistributor_1_out1 = RowDistributor_1(spark, df_Subgraph_4)
     df_RowDistributor_1_out0 = collectMetrics(
         spark, 
@@ -85,6 +122,16 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
+    df_Filter_1 = Filter_1(spark, df_SQLStatement_1_out2)
+    df_Filter_1 = collectMetrics(
+        spark, 
+        df_Filter_1, 
+        "graph", 
+        "ffkpa2xcEAKQd_V9dtBkb$$cmhhOFAt_zkewnQTRJdl_", 
+        "Vl3e150CwE1sSMZmmEx5q$$2E7cNVITsy5IcsyH8j1wB"
+    )
+    df_Filter_1.cache().count()
+    df_Filter_1.unpersist()
     df_Script_2 = Script_2(spark, df_livy_src_csv_py)
     df_Script_2 = collectMetrics(
         spark, 
@@ -103,6 +150,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_4.cache().count()
     df_Reformat_4.unpersist()
+    Script_3(spark, df_SQLStatement_1_output_1)
     df_Filter_2 = Filter_2(spark, df_RowDistributor_1_out1)
     df_Filter_2 = collectMetrics(
         spark, 
