@@ -23,6 +23,21 @@ pipelines:
       inputs:
       - datasets/source_dataset
       outputs: []
+    subgraphs:
+    - subgraphs/maingraph
+    dependencies: {}
+  pipelines/pipeline_2:
+    name: pipeline_2
+    description: ''
+    author: sony@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-01-11 03:47:15'
+    datasets:
+      inputs:
+      - datasets/source_dataset
+      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
@@ -45,18 +60,18 @@ functions:
   author: null
   createdAt: '2023-01-10 10:25:52'
   gems: {}
-  udfs:
-    udfs/udf1:
-      name: udf1
-      description: ''
-      tags: []
-      inputs: []
-      outputs: []
-      author: sony@prophecy.io
-      createdAt: '2023-01-10 13:23:37'
+  udfs: {}
   udafs: {}
   expressions: {}
-subgraphs: {}
+subgraphs:
+  subgraphs/maingraph:
+    name: maingraph_released
+    description: ''
+    author: sony@prophecy.io
+    language: scala
+    artefactID: ''
+    mode: batch
+    createdAt: '2023-01-11 05:39:11'
 sqlModels: {}
 sqlPipeline: null
 dependencies: []

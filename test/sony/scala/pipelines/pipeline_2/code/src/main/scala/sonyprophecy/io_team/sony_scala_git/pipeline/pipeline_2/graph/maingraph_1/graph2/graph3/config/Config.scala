@@ -1,4 +1,4 @@
-package sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_1.graph.Subgraph_1.config
+package sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_2.graph.maingraph_1.graph2.graph3.config
 
 import io.prophecy.libs._
 import pureconfig._

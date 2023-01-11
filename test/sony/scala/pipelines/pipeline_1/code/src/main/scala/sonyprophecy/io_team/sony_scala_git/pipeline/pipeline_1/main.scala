@@ -6,7 +6,7 @@ import sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_1.config._
 import sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_1.udfs.UDFs._
 import sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_1.udfs._
 import sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_1.graph._
-import sonyprophecy.io_team.sony_scala_git.pipeline.pipeline_1.graph.Subgraph_1
+import sonyprophecy.io_team._
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -19,8 +19,9 @@ object Main {
   def apply(context: Context): Unit = {
     val df_git_dataet = git_dataet(context)
     val df_Reformat_1 = Reformat_1(context, df_git_dataet)
-    val df_Subgraph_1 = Subgraph_1.apply(
-      Subgraph_1.config.Context(context.spark, context.config.Subgraph_1),
+    val df_maingraph = sony_scala_git.subgraph.maingraph.apply(
+      sony_scala_git.subgraph.maingraph.config
+        .Context(context.spark, context.config.maingraph),
       df_Reformat_1
     )
   }

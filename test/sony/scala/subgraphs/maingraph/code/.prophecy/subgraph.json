@@ -1,0 +1,399 @@
+{
+  "id" : "9ok8_V7enD_ma9jua6Fw3",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "graph2",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "graph2_var1",
+              "kind" : {
+                "type" : "string",
+                "value" : "graph2 var value default"
+              },
+              "optional" : true,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "graph2_var2",
+              "kind" : {
+                "type" : "int",
+                "value" : 23
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "added_from_inside_graph3_var3",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "graph3",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            }, {
+              "name" : "graph2_newvar",
+              "kind" : {
+                "type" : "int",
+                "value" : 12
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
+        }, {
+          "name" : "maingraph_var1_edited_from_pipeline_config",
+          "kind" : {
+            "type" : "string",
+            "value" : "main graph var default value"
+          },
+          "optional" : true,
+          "comment" : "description added from maingraph config",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "maingraph_var2",
+          "kind" : {
+            "type" : "float",
+            "value" : 33
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "maingraph_var3",
+          "kind" : {
+            "type" : "string",
+            "value" : "optional field - default value"
+          },
+          "optional" : true,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "maingraph_newvar",
+          "kind" : {
+            "type" : "string",
+            "value" : "default var"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "maingraph_var4",
+          "kind" : {
+            "type" : "string",
+            "value" : "default var 4"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "newvar",
+          "kind" : {
+            "type" : "string",
+            "value" : "asdf"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        } ]
+      }
+    },
+    "configPathInPipelineConfig" : [ "maingraph" ]
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "tGrgdMsA6lffPw0h84724",
+      "slug" : "in0"
+    } ],
+    "outputs" : [ {
+      "id" : "M_SiW8Xn8_66MzgGstx4_",
+      "slug" : "out0"
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "sonyprophecy.io_team.sony_scala_git.subgraph.maingraph"
+  },
+  "connections" : [ {
+    "id" : "5uWvQ9uhLCInIaQGxoRI5",
+    "source" : "9ok8_V7enD_ma9jua6Fw3",
+    "sourcePort" : "tGrgdMsA6lffPw0h84724",
+    "target" : "qShXUUpizkQUtujDI1Z-4",
+    "targetPort" : "lLV2dZby66uju7ORbQw3m"
+  }, {
+    "id" : "p8miGLJwcHqHiNH7VthxM",
+    "source" : "OZDC5cWSN7K_73SB0Ncf5",
+    "sourcePort" : "NVVshvdAWfJCNEylnQWKU",
+    "target" : "9ok8_V7enD_ma9jua6Fw3",
+    "targetPort" : "M_SiW8Xn8_66MzgGstx4_"
+  }, {
+    "id" : "LclEvRzIXD_qcvG9ClFHe",
+    "source" : "qShXUUpizkQUtujDI1Z-4",
+    "sourcePort" : "eHBsv3osOzDtvKqvEZpZ6",
+    "target" : "0Mhl6We-aifvBp_ADH-6t",
+    "targetPort" : "i1XH0emjzwOBOZptF7rBw"
+  }, {
+    "id" : "pK4rDPTOBWmNtn8RpNXaT",
+    "source" : "0Mhl6We-aifvBp_ADH-6t",
+    "sourcePort" : "XAhS9tyWfqlr5zUmtxzoq",
+    "target" : "OZDC5cWSN7K_73SB0Ncf5",
+    "targetPort" : "TP2S-89iowhPI35WkCSHu"
+  } ],
+  "processes" : {
+    "qShXUUpizkQUtujDI1Z-4" : {
+      "id" : "qShXUUpizkQUtujDI1Z-4",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1_1_1",
+        "slug" : "Reformat_1_1_1",
+        "x" : 520.4,
+        "y" : 204.8,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lLV2dZby66uju7ORbQw3m",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "eHBsv3osOzDtvKqvEZpZ6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      }
+    },
+    "0Mhl6We-aifvBp_ADH-6t" : {
+      "id" : "0Mhl6We-aifvBp_ADH-6t",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_4",
+        "slug" : "Reformat_4",
+        "x" : 813.1999999999999,
+        "y" : 148.10000000000008,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i1XH0emjzwOBOZptF7rBw",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "XAhS9tyWfqlr5zUmtxzoq",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      }
+    },
+    "OZDC5cWSN7K_73SB0Ncf5" : {
+      "id" : "OZDC5cWSN7K_73SB0Ncf5",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "graph2",
+        "slug" : "graph2",
+        "x" : 1089.2,
+        "y" : 146.2000000000001,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "configPathInPipelineConfig" : [ "maingraph", "graph2" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TP2S-89iowhPI35WkCSHu",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "NVVshvdAWfJCNEylnQWKU",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "---VyRmsfxckf2zn7YVEU",
+        "source" : "OZDC5cWSN7K_73SB0Ncf5",
+        "sourcePort" : "TP2S-89iowhPI35WkCSHu",
+        "target" : "gFEjlNI7mSWY60QBEVCGE",
+        "targetPort" : "Am8_dKQrIRwZ8aHMEbt7Q"
+      }, {
+        "id" : "anAdTMS_7yQUGTz-7AEYx",
+        "source" : "gFEjlNI7mSWY60QBEVCGE",
+        "sourcePort" : "njijWXu_k3IDxNX5A2jr6",
+        "target" : "ZQi_N4OX9j8DIu3Muf9uL",
+        "targetPort" : "b-5VDByfwSP9pVXqr_2Hp"
+      }, {
+        "id" : "ybbhrW42jMEFvgV4WA-3L",
+        "source" : "ZQi_N4OX9j8DIu3Muf9uL",
+        "sourcePort" : "qxfpI2mzqZDQf2vNBXDpi",
+        "target" : "OZDC5cWSN7K_73SB0Ncf5",
+        "targetPort" : "NVVshvdAWfJCNEylnQWKU"
+      } ],
+      "processes" : {
+        "ZQi_N4OX9j8DIu3Muf9uL" : {
+          "id" : "ZQi_N4OX9j8DIu3Muf9uL",
+          "component" : "Subgraph",
+          "metadata" : {
+            "label" : "graph3",
+            "slug" : "graph3",
+            "x" : 912.8,
+            "y" : -59.499999999999886,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false,
+            "configPathInPipelineConfig" : [ "maingraph", "graph2", "graph3" ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "b-5VDByfwSP9pVXqr_2Hp",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "qxfpI2mzqZDQf2vNBXDpi",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : { },
+          "connections" : [ {
+            "id" : "41bk9JoQUN09WgfwdBrxP",
+            "source" : "ZQi_N4OX9j8DIu3Muf9uL",
+            "sourcePort" : "b-5VDByfwSP9pVXqr_2Hp",
+            "target" : "0XIEdfXUeYci7LCWqx424",
+            "targetPort" : "dWJcm5tmGCpLLIRM5w4Nh"
+          }, {
+            "id" : "drNUZu5rUS_5L84BXWxWb",
+            "source" : "0XIEdfXUeYci7LCWqx424",
+            "sourcePort" : "QKOaX3MQAdtAv3XJHx7kZ",
+            "target" : "ZQi_N4OX9j8DIu3Muf9uL",
+            "targetPort" : "qxfpI2mzqZDQf2vNBXDpi"
+          } ],
+          "processes" : {
+            "0XIEdfXUeYci7LCWqx424" : {
+              "id" : "0XIEdfXUeYci7LCWqx424",
+              "component" : "Reformat",
+              "metadata" : {
+                "label" : "Reformat_3",
+                "slug" : "Reformat_3",
+                "x" : 538.4,
+                "y" : 30.500000000000114,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "dWJcm5tmGCpLLIRM5w4Nh",
+                  "slug" : "in"
+                } ],
+                "outputs" : [ {
+                  "id" : "QKOaX3MQAdtAv3XJHx7kZ",
+                  "slug" : "out"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false
+              },
+              "properties" : {
+                "columnsSelector" : [ ],
+                "expressions" : [ ]
+              }
+            }
+          },
+          "externalDependencies" : [ ]
+        },
+        "gFEjlNI7mSWY60QBEVCGE" : {
+          "id" : "gFEjlNI7mSWY60QBEVCGE",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_2",
+            "slug" : "Reformat_2",
+            "x" : 203.60000000000002,
+            "y" : 64.60000000000002,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "Am8_dKQrIRwZ8aHMEbt7Q",
+              "slug" : "in"
+            } ],
+            "outputs" : [ {
+              "id" : "njijWXu_k3IDxNX5A2jr6",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ {
+              "target" : "_c0",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "'$added_from_inside_graph3_var3'"
+              },
+              "description" : "",
+              "_row_id" : "2110971659"
+            }, {
+              "target" : "_c2",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "'$graph2_newvar'"
+              },
+              "description" : "",
+              "_row_id" : "2068998600"
+            }, {
+              "target" : "_c3",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "'$graph2_var2'"
+              },
+              "description" : "",
+              "_row_id" : "808668589"
+            } ]
+          }
+        }
+      },
+      "externalDependencies" : [ ]
+    }
+  },
+  "externalDependencies" : [ ]
+}
