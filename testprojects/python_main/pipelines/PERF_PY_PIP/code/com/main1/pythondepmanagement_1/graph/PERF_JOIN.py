@@ -14,4 +14,4 @@ def PERF_JOIN(spark: SparkSession, in0: DataFrame, in1: DataFrame, ) -> DataFram
             & ~ col("in0.c_string").like("%asdasdrewasdasd%")
           )
         )\
-        .select(col("in0.first_name").alias("first_name"), col("in1.c_short").alias("c_short"))
+        .select(col("in0.cmls_3ds_authntn_mthd").alias("first_name"), col("in1.c_short").alias("c_short"), col("in0.c_int").alias("c_int"), col("in0.c_decimal").alias("c_decimal"))
