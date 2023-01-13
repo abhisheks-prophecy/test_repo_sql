@@ -30,6 +30,19 @@ pipelines:
       outputs:
       - datasets/target_dataset
     dependencies: {}
+  pipelines/sony_visa_replica_clone:
+    name: sony_visa_replica_clone
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-13 09:30:19'
+    datasets:
+      inputs:
+      - datasets/livy_csv_dataset
+      outputs:
+      - datasets/target_dataset
+    dependencies: {}
   pipelines/sony_visa_replica:
     name: sony_visa_replica
     description: ''
