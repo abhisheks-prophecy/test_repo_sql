@@ -16,10 +16,7 @@ object PERF_REFORMAT_CHANGE {
 
   def apply(context: Context, in: DataFrame): DataFrame =
     in.select(
-      concat(lit("myname"),
-             col("cmls_3ds_authntn_mthd"),
-             col("cmls_acct_cobrnd_bus_id_drvd")
-      ).as("first_name"),
+      concat(lit("hello"), col("cmls_3ds_authntn_mthd")).as("first_name"),
       col("cmls_acct_cobrnd_bus_id_drvd").cast(ShortType).as("c_short"),
       col("cmls_acct_cobrnd_bus_id_drvd").cast(IntegerType).as("c_int"),
       col("cmls_acct_cobrnd_bus_id_drvd").cast(LongType).as("c_long"),

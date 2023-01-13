@@ -59,6 +59,25 @@ class SCALA_BASIC12Test extends FunSuite with DataFrameSuiteBase {
 
   }
 
+  test("Unit Test 2") {
+
+    val dfIn0 = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/SCALA_BASIC12/in0/schema.json",
+      "/data/com/scala/main/job1/graph/SCALA_BASIC12/in0/data/unit_test_2.json",
+      "in0"
+    )
+    val dfOut0 = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/SCALA_BASIC12/out0/schema.json",
+      "/data/com/scala/main/job1/graph/SCALA_BASIC12/out0/data/unit_test_2.json",
+      "out0"
+    )
+
+    val dfOut0Computed = com.scala.main.job1.graph.SCALA_BASIC12(context, dfIn0)
+
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
