@@ -21,15 +21,17 @@ object livy_src_csv_1_1 {
         StructType(
           Array(
             StructField("year",                 StringType, true),
+            StructField("lookup1",              StringType, true),
             StructField("industry_code_ANZSIC", StringType, true),
             StructField("industry_name_ANZSIC", StringType, true),
             StructField("rme_size_grp",         StringType, true),
             StructField("variable",             StringType, true),
             StructField("value",                StringType, true),
-            StructField("unit",                 StringType, true)
+            StructField("unit",                 StringType, true),
+            StructField("c_configs",            StringType, true)
           )
         )
       )
-      .load("file:/storage/workflowdata/annual-enterprise")
+      .load("file:/storage/workflowdata/annual-enterprise/")
 
 }
