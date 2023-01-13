@@ -15,6 +15,6 @@ import java.time._
 object OrderBy_1 {
 
   def apply(context: Context, in: DataFrame): DataFrame =
-    in.orderBy(col("year").desc)
+    in.orderBy(col("year").desc, col("industry_code_ANZSIC").asc)
 
 }
