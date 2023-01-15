@@ -13,5 +13,8 @@ import org.apache.spark.sql.expressions._
 import java.time._
 
 object Filter_3 {
-  def apply(context: Context, in: DataFrame): DataFrame = in.filter(lit(true))
+
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.filter(col("`c   short  --`") > lit(10))
+
 }

@@ -16,9 +16,7 @@ object Deduplicate_1 {
 
   def apply(context: Context, in: DataFrame): DataFrame = {
     import org.apache.spark.sql.expressions.Window
-    in.dropDuplicates(
-      List("c  - int", "- c long", "c_decimal  -  ", "c_float-__  ")
-    )
+    in.dropDuplicates(List("c  - int", "- c long", "c_decimal  -  "))
   }
 
 }

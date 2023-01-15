@@ -19,7 +19,7 @@ object Join_1 {
       .as("in0")
       .join(in1.as("in1"), expr(context.config.c_join_expr), "inner")
       .select(
-        lit(context.config.c_join_cshort).as("c   short  --"),
+        expr(context.config.c_join_cshort).as("c   short  --"),
         col("in0.`c-int-column type`").as("c-int-column type"),
         col("in0.`-- c-long`").as("-- c-long"),
         col("in0.`c-decimal`").as("c-decimal"),
@@ -27,16 +27,6 @@ object Join_1 {
         col("in0.`c--boolean`").as("c--boolean"),
         col("in0.`c- - -double`").as("c- - -double"),
         col("in0.`c___-- string`").as("c___-- string"),
-        col("in0.`c  date`").as("c  date"),
-        col("in0.c_timestamp").as("c_timestamp"),
-        col("in1.`c   short  --`").as("c   short  --"),
-        col("in1.`c-int-column type`").as("c-int-column type"),
-        col("in1.`-- c-long`").as("-- c-long"),
-        col("in1.`c-decimal`").as("c-decimal"),
-        col("in1.`c  float`").as("c  float"),
-        col("in1.`c--boolean`").as("c--boolean"),
-        col("in1.`c- - -double`").as("c- - -double"),
-        col("in1.`c___-- string`").as("c___-- string"),
         col("in1.`c  date`").as("c  date"),
         col("in1.c_timestamp").as("c_timestamp")
       )

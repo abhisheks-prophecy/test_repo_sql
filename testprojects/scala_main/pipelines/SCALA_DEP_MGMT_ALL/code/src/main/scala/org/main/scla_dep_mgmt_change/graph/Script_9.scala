@@ -13,12 +13,12 @@ import org.apache.spark.sql.expressions._
 import java.time._
 
 object Script_9 {
-  def apply(context: Context, in0: DataFrame): (DataFrame, DataFrame, DataFrame) = {
+  def apply(context: Context, in0: DataFrame, in1: DataFrame): (DataFrame, DataFrame, DataFrame) = {
     val spark = context.spark
     val Config = context.config
     var out0=in0
-    var out1=in0
-    var out2=in0
+    var out1=in1
+    var out2=in1
     (out0, out1, out2)
   }
 

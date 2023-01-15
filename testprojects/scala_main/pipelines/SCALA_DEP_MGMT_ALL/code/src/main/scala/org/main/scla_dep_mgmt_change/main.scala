@@ -9,6 +9,7 @@ import org.main.scla_dep_mgmt_change.udfs._
 import org.main.scla_dep_mgmt_change.graph._
 import org.main.scla_dep_mgmt_change.graph.SubGraph_1
 import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1
+import org.main.scla_dep_mgmt_change.graph.Subgraph_2
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -42,11 +43,12 @@ object Main {
       context
     ).interim("graph", "xoDRuSduB1niuIF8PP3ct", "AJqWz1Up0SmtM70ipV65i")
     val df_FlattenSchema_1 =
-      FlattenSchema_1(context, df_src_orc_all_type_no_partition).interim(
-        "graph",
-        "Szohjp1gWxHYvFe2IrcM0$$UyKRJZMAGITZk2c-3nrry",
-        "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd"
-      )
+      FlattenSchema_1(context, df_src_orc_all_type_no_partition)
+        .interim("graph",
+                 "Szohjp1gWxHYvFe2IrcM0$$UyKRJZMAGITZk2c-3nrry",
+                 "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd"
+        )
+        .cache()
     val df_WindowFunction_1 =
       WindowFunction_1(context,
                        df_src_parquet_all_type_and_partition_withspacehyphens
@@ -68,6 +70,11 @@ object Main {
       "FI1jEKVQ6bkCmPl3ojML-$$3tJdDF9N0cONpOP-Xu-2l"
     )
     val df_SubGraph_1 = SubGraph_1.apply(context, df_Deduplicate_2)
+    val df_Script_12_1 = Script_12_1(context).interim(
+      "graph",
+      "nCrxuIc-Tmk2bb4CAzQ-b$$bYGtrcauW3HQdrz0rLJL8",
+      "1Jpk8w_P0a_pf6wOk9qKI$$aFkzeiGkLZCdjHNwXAVbB"
+    )
     val df_Script_12 = Script_12(context).interim(
       "graph",
       "RRao6fAtV9-bAAcIFHpVK$$5yft7FAPiRWuBceDEF0bo",
@@ -83,16 +90,17 @@ object Main {
       "IwIKwcRg959Ki1d-igYP2$$Czi6jKwfFIDDqv8nqlhEf",
       "91MBOyLmS9gSomZqNFDrb$$S2C2OJvbbLO4HrNpJR5ub"
     )
-    val df_Script_8 = Script_8(context, df_Script_7).interim(
-      "graph",
-      "kjm6cQJLBQ7If2meAD1CY$$DPNGtLdU3Jc8CmZXCYvMh",
-      "p6tB4A_Qo8pcYbrr9KwOZ$$59JxpTAUw5ISzCVua2GE5"
-    )
+    val df_Script_8 = Script_8(context, df_Script_7)
+      .interim("graph",
+               "kjm6cQJLBQ7If2meAD1CY$$DPNGtLdU3Jc8CmZXCYvMh",
+               "p6tB4A_Qo8pcYbrr9KwOZ$$59JxpTAUw5ISzCVua2GE5"
+      )
+      .cache()
     val (df_Script_9_out0, df_Script_9_out1, df_Script_9_out2) = {
       val (df_Script_9_out0_temp,
            df_Script_9_out1_temp,
            df_Script_9_out2_temp
-      ) = Script_9(context, df_Script_8)
+      ) = Script_9(context, df_Script_12_1, df_Script_8)
       (df_Script_9_out0_temp.interim(
          "graph",
          "PvlsRiVwRhRzBwXppuR5F$$F5qjPdQS9Bhw0sTvPJYdS",
@@ -158,8 +166,6 @@ object Main {
         "K4iDT2F4Oyo-07xFirqRU$$MOT_KJUj7svHsQ2Omum0F",
         "_XsdFTaDIQf4LRvqNufg4$$4S0LETMYftOF473uP_5ql"
       )
-    df_Script_2.cache().count()
-    df_Script_2.unpersist()
     val df_src_parquet_all_type_no_partition =
       src_parquet_all_type_no_partition(context)
         .interim("graph", "PM7sxRmKo0cGk1IYdBNtT", "zMejsXna2UN-uClx0tfKO")
@@ -241,8 +247,6 @@ object Main {
       "hWAQiNOptWzlVEkn-huuJ$$q-JVLZQnREXaW_I25BSj5",
       "Z4XurMdUJO-ETinTrSyh6$$CxMPDJXpvul_WH8wvOY5y"
     )
-    df_OrderBy_4.cache().count()
-    df_OrderBy_4.unpersist()
     val df_Script_5 = Script_5(context, df_all_type_scala_sg_1_out0).interim(
       "graph",
       "-1sF51qSXmJKE9XJXPJ8W$$_c2ggE1nZMrpb8USN1LhB",
@@ -255,8 +259,6 @@ object Main {
       "Fveo5Vzi24BOiUGy55PZU$$9-p9OnU3R-r06567Tejez",
       "Ft6cGNpKOE2Nirw_XS9_R$$Cd22cRsabCIorU61swO2N"
     )
-    df_Limit_3.cache().count()
-    df_Limit_3.unpersist()
     val df_ConfigAndUDF = ConfigAndUDF(context, df_Script_1).interim(
       "graph",
       "ryf6nWZatrJJgaQGDWPjC",
@@ -283,8 +285,6 @@ object Main {
       "ABXvUNM6audpzrMLv5LDr$$gN9X6f19SCw8Y7mEDLIgk",
       "-iLcTHeyPi06v3tqrYjBU$$7s_wmQnvqOe_tiBl8SbF_"
     )
-    df_Filter_3.cache().count()
-    df_Filter_3.unpersist()
     val df_Script_17 = Script_17(context, df_Script_9_out2).interim(
       "graph",
       "rk2vOthe2UTH1jROrvhxi$$rOTXHJiN102NYZhbuSHuA",
@@ -317,8 +317,6 @@ object Main {
       "ciWzfAl9aodUAUcxhIsRU$$FUfG9VfSP7fv8ycEGTlrM",
       "IWrjh8haSj1CB9Wk6h9AR$$l8AFjzZT0OU-Jv2Lc_VOR"
     )
-    df_Filter_4.cache().count()
-    df_Filter_4.unpersist()
     val df_Script_16 = Script_16(context, df_Script_9_out0).interim(
       "graph",
       "9nWzQRJJA5t5wjl3ercNJ$$5yZEgZZ8xb6xoNauyiNFY",
@@ -389,6 +387,69 @@ object Main {
               "6MGeoO_3CAkDyZvPYAGOY$$W7ZInyQSxiNrP-XuCd9hK",
               "9nSC-MM8SEHYGTWCQwmW8$$82qHa1CcCeW1MGcYp5jb4"
     )
+    val df_OrderBy_6 = OrderBy_6(context, df_SQLStatement_1_out).interim(
+      "graph",
+      "0RMNXYh8g4Ll-VyJr8jJR$$lsQ_tpR5ggnXVOArbueFm",
+      "miS1YaOwxRQTAQ3ED1fZj$$nwRJzE6C20e8cOD03DZ0y"
+    )
+    val df_Reformat_8 = Reformat_8(context, df_Script_6).interim(
+      "graph",
+      "VojrEOLLM7nesHVbUffgG$$ujNbJd_Qe--3wvxRqPV3F",
+      "USRNNEY4yPLG763IDrN7e$$ALfX5lz8yMMHXG3htDpVy"
+    )
+    val (df_Subgraph_2_out0,
+         df_Subgraph_2_out1,
+         df_Subgraph_2_out2,
+         df_Subgraph_2_out3,
+         df_Subgraph_2_out4,
+         df_Subgraph_2_out5,
+         df_Subgraph_2_out6,
+         df_Subgraph_2_out7
+    ) = {
+      val (df_Subgraph_2_out0_temp,
+           df_Subgraph_2_out1_temp,
+           df_Subgraph_2_out2_temp,
+           df_Subgraph_2_out3_temp,
+           df_Subgraph_2_out4_temp,
+           df_Subgraph_2_out5_temp,
+           df_Subgraph_2_out6_temp,
+           df_Subgraph_2_out7_temp
+      ) = Subgraph_2.apply(context,
+                           df_Deduplicate_2,
+                           df_OrderBy_4,
+                           df_Limit_3,
+                           df_OrderBy_6,
+                           df_Filter_4,
+                           df_Script_2,
+                           df_Reformat_8,
+                           df_Filter_3
+      )
+      (df_Subgraph_2_out0_temp,
+       df_Subgraph_2_out1_temp,
+       df_Subgraph_2_out2_temp,
+       df_Subgraph_2_out3_temp,
+       df_Subgraph_2_out4_temp,
+       df_Subgraph_2_out5_temp,
+       df_Subgraph_2_out6_temp,
+       df_Subgraph_2_out7_temp
+      )
+    }
+    df_Subgraph_2_out0.cache().count()
+    df_Subgraph_2_out0.unpersist()
+    df_Subgraph_2_out1.cache().count()
+    df_Subgraph_2_out1.unpersist()
+    df_Subgraph_2_out2.cache().count()
+    df_Subgraph_2_out2.unpersist()
+    df_Subgraph_2_out3.cache().count()
+    df_Subgraph_2_out3.unpersist()
+    df_Subgraph_2_out4.cache().count()
+    df_Subgraph_2_out4.unpersist()
+    df_Subgraph_2_out5.cache().count()
+    df_Subgraph_2_out5.unpersist()
+    df_Subgraph_2_out6.cache().count()
+    df_Subgraph_2_out6.unpersist()
+    df_Subgraph_2_out7.cache().count()
+    df_Subgraph_2_out7.unpersist()
     Script_4(context, df_SetOperation_1)
     val df_UTGenAllType =
       UTGenAllType(context, df_src_unittest_parquet_all).interim(
@@ -398,13 +459,6 @@ object Main {
       )
     df_UTGenAllType.cache().count()
     df_UTGenAllType.unpersist()
-    val df_Reformat_8 = Reformat_8(context, df_Script_6).interim(
-      "graph",
-      "VojrEOLLM7nesHVbUffgG$$ujNbJd_Qe--3wvxRqPV3F",
-      "USRNNEY4yPLG763IDrN7e$$ALfX5lz8yMMHXG3htDpVy"
-    )
-    df_Reformat_8.cache().count()
-    df_Reformat_8.unpersist()
     val df_OrderBy_5 = OrderBy_5(context, df_all_type_scala_sg_1_out2).interim(
       "graph",
       "ob-z78F3IzAX2uhlQdAzt$$R5-sxgmSe6F4lNqqwQk1S",
@@ -412,13 +466,6 @@ object Main {
     )
     df_OrderBy_5.cache().count()
     df_OrderBy_5.unpersist()
-    val df_OrderBy_6 = OrderBy_6(context, df_SQLStatement_1_out).interim(
-      "graph",
-      "0RMNXYh8g4Ll-VyJr8jJR$$lsQ_tpR5ggnXVOArbueFm",
-      "miS1YaOwxRQTAQ3ED1fZj$$nwRJzE6C20e8cOD03DZ0y"
-    )
-    df_OrderBy_6.cache().count()
-    df_OrderBy_6.unpersist()
     val df_Reformat_1 =
       Reformat_1(context, df_all_type_scala_sg_1_out1).interim(
         "graph",
