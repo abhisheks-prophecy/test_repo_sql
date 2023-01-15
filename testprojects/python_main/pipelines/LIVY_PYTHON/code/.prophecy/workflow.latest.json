@@ -1121,8 +1121,8 @@
       "metadata" : {
         "label" : "Reformat_6",
         "slug" : "Reformat_6",
-        "x" : 232.03864086998828,
-        "y" : 50.195633951822884,
+        "x" : 180.43864086998826,
+        "y" : 44.195633951822884,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1141,7 +1141,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##value", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##industry_code_ANZSIC", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##industry_name_ANZSIC", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##unit", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##year" ],
+        "columnsSelector" : [ "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##value", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##industry_code_ANZSIC", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##unit", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##year", "ouZR6mgGH7hROvUBbOAqa$$tkk3EGS73DajFKVuDbOoW##industry_name_ANZSIC" ],
         "expressions" : [ {
           "target" : "a1",
           "expression" : {
@@ -1913,8 +1913,8 @@
       "metadata" : {
         "label" : "livy_src_csv_py",
         "slug" : "livy_src_csv_py",
-        "x" : 9.399999999999949,
-        "y" : 243.60000000000002,
+        "x" : -56.60000000000005,
+        "y" : 218.40000000000003,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1996,7 +1996,7 @@
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "from fast_html import render,p\nprint(render(p(\"text\")))\n\nout0=in0",
+        "script" : "# from fast_html import render,p\n# print(render(p(\"text\")))\n\nout0=in0",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }
@@ -2043,7 +2043,7 @@
           "path" : "output_1",
           "id" : "Zg1yBISd3Xj7tCv1qkHw_$$MO01q71plfyyDKkq0iCRY",
           "language" : "sql",
-          "content" : "select * from input_0,in1 where input_0.industry_code_ANZSIC=in1.industry_code_ANZSIC"
+          "content" : "select input_0.year,input_0.variable,in1.value,input_0.unit,input_0.c_config from input_0,in1 where input_0.industry_code_ANZSIC=in1.industry_code_ANZSIC"
         }, {
           "path" : "out1",
           "id" : "Q970Kv4asYbHlWdUADK3a$$Lj6wCeZUPLMjYT7ZWdk0M",
