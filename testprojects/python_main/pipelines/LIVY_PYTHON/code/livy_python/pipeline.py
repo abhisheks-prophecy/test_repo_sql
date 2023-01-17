@@ -55,13 +55,11 @@ def pipeline(spark: SparkSession) -> None:
     df_Reformat_5 = Reformat_5(spark, df_SQLStatement_1_out1)
     df_Reformat_5 = collectMetrics(
         spark, 
-        df_Reformat_5, 
+        df_Reformat_5.cache(), 
         "graph", 
         "SAvIjpKonhri_rQm4i94P$$5PfK4KJufGSLrwml4L-L8", 
         "VJ287DfF_Qxtn3OWXNo13$$jG9xvPkR2IRkOIlpqyUOq"
     )
-    df_Reformat_5.cache().count()
-    df_Reformat_5.unpersist()
     df_RowDistributor_1_out0, df_RowDistributor_1_out1 = RowDistributor_1(spark, df_Subgraph_4)
     df_RowDistributor_1_out0 = collectMetrics(
         spark, 
@@ -94,6 +92,42 @@ def pipeline(spark: SparkSession) -> None:
         "J--b-oIjydkxvRor0nfJk$$zRFrI8FeENs7PJUBEUZkj", 
         "6P3wEhwnkqn3Ru_HerSj_$$pZ6MXoP5vFpLhG5YXvMyP"
     )
+    df_Reformat_6 = Reformat_6(spark, df_livy_src_csv_py)
+    df_Reformat_6 = collectMetrics(
+        spark, 
+        df_Reformat_6, 
+        "graph", 
+        "PNhi4lmIelHMypOn-G-V6$$wWaUyMIBzMWnm9LVoVXyw", 
+        "4DXqAMUe4cjwmlGQNilYM$$AcStS37btFdHIOEaC5gKR"
+    )
+    df_FlattenSchema_1 = FlattenSchema_1(spark, df_Reformat_6)
+    df_FlattenSchema_1 = collectMetrics(
+        spark, 
+        df_FlattenSchema_1, 
+        "graph", 
+        "PLXJZjPpniwsyKT9H5oQ2$$rhAROnhkWDMD8khXJ86ov", 
+        "oDu2VjkQRtQXUJYy-UlAN$$rPnNW_t_L3QL3ciDEnC-V"
+    )
+    df_FlattenSchema_1.cache().count()
+    df_FlattenSchema_1.unpersist()
+    df_Filter_1 = Filter_1(spark, df_SQLStatement_1_out2)
+    df_Filter_1 = collectMetrics(
+        spark, 
+        df_Filter_1, 
+        "graph", 
+        "ffkpa2xcEAKQd_V9dtBkb$$cmhhOFAt_zkewnQTRJdl_", 
+        "Vl3e150CwE1sSMZmmEx5q$$2E7cNVITsy5IcsyH8j1wB"
+    )
+    df_Join_1 = Join_1(spark, df_Reformat_5, df_Filter_1)
+    df_Join_1 = collectMetrics(
+        spark, 
+        df_Join_1, 
+        "graph", 
+        "mcREc5ULGIDbqTQT4PGMV$$h8W-DxAvdqrRtw3o8UMa2", 
+        "TO8KMHbkL8JSdhy5QTkNY$$BA9F3bRXOFpnbcAnDFSEr"
+    )
+    df_Join_1.cache().count()
+    df_Join_1.unpersist()
     df_Reformat_3 = Reformat_3(spark, df_Script_1)
     df_Reformat_3 = collectMetrics(
         spark, 
@@ -107,7 +141,7 @@ def pipeline(spark: SparkSession) -> None:
     df_Reformat_2 = Reformat_2(spark, df_RowDistributor_1_out0)
     df_Reformat_2 = collectMetrics(
         spark, 
-        df_Reformat_2, 
+        df_Reformat_2.cache(), 
         "graph", 
         "-JMYTUou3YiFhB2tmOsc2$$8GHDhvfsV8g3p9540HDNx", 
         "KOVVuemi6iWTgEkkqxTOu$$sRJ676Y739CsKUd1s-dI6"
@@ -122,16 +156,6 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
-    df_Filter_1 = Filter_1(spark, df_SQLStatement_1_out2)
-    df_Filter_1 = collectMetrics(
-        spark, 
-        df_Filter_1, 
-        "graph", 
-        "ffkpa2xcEAKQd_V9dtBkb$$cmhhOFAt_zkewnQTRJdl_", 
-        "Vl3e150CwE1sSMZmmEx5q$$2E7cNVITsy5IcsyH8j1wB"
-    )
-    df_Filter_1.cache().count()
-    df_Filter_1.unpersist()
     df_Script_2 = Script_2(spark, df_livy_src_csv_py)
     df_Script_2 = collectMetrics(
         spark, 

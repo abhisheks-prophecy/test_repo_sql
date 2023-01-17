@@ -86,6 +86,21 @@ class Script_2Test(BaseTestCase):
         )
         dfOut0Computed = Script_2(self.spark, dfIn0)
 
+    def test_unit_test_5(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/in0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/in0/data/test_unit_test_5.json',
+            'in0'
+        )
+        dfOut0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/out0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Script_2/out0/data/test_unit_test_5.json',
+            'out0'
+        )
+        dfOut0Computed = Script_2(self.spark, dfIn0)
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os

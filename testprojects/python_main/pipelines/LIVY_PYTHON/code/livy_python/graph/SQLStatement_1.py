@@ -13,7 +13,9 @@ def SQLStatement_1(
     input_0.createOrReplaceTempView("input_0")
     in1.createOrReplaceTempView("in1")
     in2.createOrReplaceTempView("in2")
-    df1 = spark.sql("select * from input_0,in1 where input_0.industry_code_ANZSIC=in1.industry_code_ANZSIC")
+    df1 = spark.sql(
+        "select input_0.year,input_0.variable,in1.value,input_0.unit,input_0.c_config from input_0,in1 where input_0.industry_code_ANZSIC=in1.industry_code_ANZSIC"
+    )
     df2 = spark.sql("select * from in1 where industry_code_ANZSIC like '%A%'")
     df3 = spark.sql("select * from in2 where variable like '%Total%'")
 

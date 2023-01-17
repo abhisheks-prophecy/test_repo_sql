@@ -5,8 +5,8 @@ from livy_python.config.ConfigStore import *
 from livy_python.udfs.UDFs import *
 
 def Script_2(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    from fast_html import render, p
-    print(render(p("text")))
+    # from fast_html import render,p
+    # print(render(p("text")))
     out0 = in0
 
     return out0
