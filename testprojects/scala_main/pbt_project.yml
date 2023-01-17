@@ -97,6 +97,18 @@ pipelines:
       outputs:
       - datasets/dest_jdbc_userandpass_test_table
     dependencies: {}
+  pipelines/PERF_UNITEST_GENERATE:
+    name: PERF_UNITEST_GENERATE
+    description: PERF_UNITEST_GENERATE
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-17 17:07:41'
+    datasets:
+      inputs:
+      - datasets/src_json_input_custs
+      outputs: []
+    dependencies: {}
   pipelines/PERF_SC_PIP:
     name: PERF_SC_PIP
     description: this is dependency management pipeline

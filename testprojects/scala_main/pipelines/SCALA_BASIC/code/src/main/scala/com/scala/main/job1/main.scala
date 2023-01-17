@@ -8,6 +8,8 @@ import com.scala.main.job1.udfs.UDFs._
 import com.scala.main.job1.udfs._
 import com.scala.main.job1.graph._
 import com.scala.main.job1.graph.SubgraphMain
+import com.scala.main.job1.graph.Subgraph_1
+import com.scala.main.job1.graph.Subgraph_3
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -51,6 +53,18 @@ object Main {
       "9SxukrkbLjB9767nnjjyc$$HKrQPtYnAcfBjk1YLp12B",
       "q2OHFdKSlaApfiB-p2kod$$gjcVI8oVJu6r8jvarb7gm"
     )
+    val df_Subgraph_1 = Subgraph_1.apply(
+      context,
+      df_src_parquet_all_type_and_partition_withspacehyphens1
+    )
+    val df_Subgraph_3 = Subgraph_3.apply(context, df_Subgraph_1)
+    val df_Reformat_7 = Reformat_7(context, df_Subgraph_3).interim(
+      "graph",
+      "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1",
+      "H6Z_aAnftBpk4a-USAecW$$DfJIjJOqY8XnYd8OGH-ZP"
+    )
+    df_Reformat_7.cache().count()
+    df_Reformat_7.unpersist()
     val df_SCALA_BASIC1 =
       SCALA_BASIC1(context,
                    df_src_parquet_all_type_and_partition_withspacehyphens1
