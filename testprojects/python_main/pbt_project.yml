@@ -126,6 +126,18 @@ pipelines:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
       outputs: []
     dependencies: {}
+  pipelines/PERF_UNITEST_GENERATE:
+    name: PERF_UNITEST_GENERATE
+    description: PERF_UNITEST_GENERATE
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-17 17:07:23'
+    datasets:
+      inputs:
+      - datasets/src_json_input_custs
+      outputs: []
+    dependencies: {}
   pipelines/LIVY_PYTHON:
     name: LIVY_PYTHON
     description: LIVY_PYTHON
