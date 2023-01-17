@@ -2,6 +2,7 @@ package io.prophecy.pipelines.scala_azure.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scala_azure.config.ConfigStore._
+import io.prophecy.pipelines.scala_azure.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -11,8 +12,8 @@ import java.time._
 
 object src_azure {
 
-  def apply(spark: SparkSession): DataFrame =
-    spark.read
+  def apply(context: Context): DataFrame =
+    context.spark.read
       .format("csv")
       .option("header", true)
       .option("sep",    ",")
