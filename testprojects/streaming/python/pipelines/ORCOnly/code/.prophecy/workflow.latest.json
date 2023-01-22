@@ -1,0 +1,152 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "10",
+    "frontEndLanguage" : "sql",
+    "mode" : "stream",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "orconly"
+  },
+  "connections" : [ {
+    "id" : "TRz-WCWF0iuo3S6QPtiuY",
+    "source" : "UYFb-Lqt02hVYdmbILCda$$JL0AJTJ3nnPOmhBG81uX8",
+    "sourcePort" : "eoJV17-nIQUr8j6syqdPk$$L2I1Byij1fBtPE_DtEvpp",
+    "target" : "FilbH0Xx3LTqwntzt6_pk$$5iALT7PPHkYfjeXjdTg2u",
+    "targetPort" : "AQ71I68eDj5WDPgSXGfDh$$LvnCBXpSaTwusMZ0v8DcL"
+  }, {
+    "id" : "tbOYt9s4-mh5uGF2xcku5",
+    "source" : "FilbH0Xx3LTqwntzt6_pk$$5iALT7PPHkYfjeXjdTg2u",
+    "sourcePort" : "Cuc9VerVhQnFrk6y0EdQk$$2LOEMNfdS5OceIMpe5U_U",
+    "target" : "lidFBc45bf1LvAY3sd8AI$$Sgb5jxi9czUewzWKCKx-n",
+    "targetPort" : "Slq4Rq8WLSXjp40jhDBiQ$$GO_NO2ND9s1pfm7dHnEqm"
+  } ],
+  "processes" : {
+    "UYFb-Lqt02hVYdmbILCda$$JL0AJTJ3nnPOmhBG81uX8" : {
+      "id" : "UYFb-Lqt02hVYdmbILCda$$JL0AJTJ3nnPOmhBG81uX8",
+      "component" : "StreamingSource",
+      "metadata" : {
+        "label" : "ORCSource",
+        "slug" : "ORCSource",
+        "x" : 455.2,
+        "y" : 205.40416666666653,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "eoJV17-nIQUr8j6syqdPk$$L2I1Byij1fBtPE_DtEvpp",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/s3_orc_autoloader_dirlist"
+      }
+    },
+    "lidFBc45bf1LvAY3sd8AI$$Sgb5jxi9czUewzWKCKx-n" : {
+      "id" : "lidFBc45bf1LvAY3sd8AI$$Sgb5jxi9czUewzWKCKx-n",
+      "component" : "StreamingTarget",
+      "metadata" : {
+        "label" : "ORCTarget",
+        "slug" : "ORCTarget",
+        "x" : 1233.6833333333334,
+        "y" : 179.99999999999994,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Slq4Rq8WLSXjp40jhDBiQ$$GO_NO2ND9s1pfm7dHnEqm",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/s3_orc_autoloader_dirlist_target"
+      }
+    },
+    "FilbH0Xx3LTqwntzt6_pk$$5iALT7PPHkYfjeXjdTg2u" : {
+      "id" : "FilbH0Xx3LTqwntzt6_pk$$5iALT7PPHkYfjeXjdTg2u",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_1",
+        "slug" : "Filter_1",
+        "x" : 706.8833333333336,
+        "y" : 181.20000000000005,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AQ71I68eDj5WDPgSXGfDh$$LvnCBXpSaTwusMZ0v8DcL",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Cuc9VerVhQnFrk6y0EdQk$$2LOEMNfdS5OceIMpe5U_U",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "true"
+        }
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

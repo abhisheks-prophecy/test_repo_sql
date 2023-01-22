@@ -2,6 +2,7 @@ package io.prophecy.pipelines.scala_azure
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scala_azure.config.ConfigStore._
+import io.prophecy.pipelines.scala_azure.config.Context
 import io.prophecy.pipelines.scala_azure.config._
 import io.prophecy.pipelines.scala_azure.udfs.UDFs._
 import io.prophecy.pipelines.scala_azure.udfs._
@@ -15,13 +16,13 @@ import java.time._
 
 object Main {
 
-  def apply(spark: SparkSession): Unit = {
-    val df_src_azure  = src_azure(spark)
-    val df_Reformat_1 = Reformat_1(spark, df_src_azure)
+  def apply(context: Context): Unit = {
+    val df_src_azure  = src_azure(context)
+    val df_Reformat_1 = Reformat_1(context, df_src_azure)
   }
 
   def main(args: Array[String]): Unit = {
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(args)
+    val config = ConfigurationFactoryImpl.fromCLI(args)
     val spark: SparkSession = SparkSession
       .builder()
       .appName("Prophecy Pipeline")
@@ -30,12 +31,10 @@ object Main {
       .enableHiveSupport()
       .getOrCreate()
       .newSession()
+    val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_AZURE")
-    MetricsCollector.start(
-      spark,
-      spark.conf.get("prophecy.project.id") + "/" + "pipelines/SCALA_AZURE"
-    )
-    apply(spark)
+    MetricsCollector.start(spark,                    "pipelines/SCALA_AZURE")
+    apply(context)
     MetricsCollector.end(spark)
   }
 
