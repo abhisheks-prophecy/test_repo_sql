@@ -1,0 +1,41 @@
+name: git_project
+description: ''
+version: 1-SNAPSHOT
+author: abhisheks+backend@simpledatalabs.com
+language: python
+buildSystem: wheel
+pipelines:
+  pipelines/pipe1:
+    name: pipe1
+    description: ''
+    author: abhisheks+backend@simpledatalabs.com
+    mode: batch
+    language: python
+    createdAt: '2023-01-09 09:50:26'
+    datasets:
+      inputs:
+      - datasets/d1
+      outputs: []
+    dependencies: {}
+datasets:
+  datasets/d1:
+    name: d1
+    description: ''
+    author: abhisheks+backend@simpledatalabs.com
+    createdAt: '2023-01-09 09:51:21'
+    physicalDatasets:
+      dev:
+        fabricId: 267
+        datasetType: File
+        description: ''
+        author: abhisheks+backend@simpledatalabs.com
+        createdAt: '2023-01-09 09:51:21'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
