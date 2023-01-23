@@ -304,6 +304,26 @@ class Reformat_1Test(BaseTestCase):
             self.maxUnequalRowsToShow
         )
 
+    def test_unit_test_7(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_1/in0/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_1/in0/data/test_unit_test_7.json',
+            'in0'
+        )
+        dfOut = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_1/out/schema.json',
+            'test/resources/data/pythonbasic/test/mainone/graph/Reformat_1/out/data/test_unit_test_7.json',
+            'out'
+        )
+        dfOutComputed = Reformat_1(self.spark, dfIn0)
+        assertDFEquals(
+            dfOut.select("c   short  --", "c-int-column type", "-- c-long", "c-decimal", "c  float"),
+            dfOutComputed.select("c   short  --", "c-int-column type", "-- c-long", "c-decimal", "c  float"),
+            self.maxUnequalRowsToShow
+        )
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os
