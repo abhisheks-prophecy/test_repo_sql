@@ -16,7 +16,7 @@ object SQLStatement_2 {
 
   def apply(context: Context, in0: DataFrame): DataFrame = {
     in0.createOrReplaceTempView("in0")
-    context.spark.sql("select * from in0")
+    context.spark.sql("")
   }
 
 }
