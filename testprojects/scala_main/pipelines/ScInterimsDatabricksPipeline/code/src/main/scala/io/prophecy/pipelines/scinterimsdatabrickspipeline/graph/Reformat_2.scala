@@ -12,11 +12,20 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object SQLStatement_2_1 {
+object Reformat_2 {
 
-  def apply(context: Context, in0: DataFrame): DataFrame = {
-    in0.createOrReplaceTempView("in0")
-    context.spark.sql("select * from in0")
-  }
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.select(
+      col("year"),
+      col("industry_code_ANZSIC"),
+      col("industry_name_ANZSIC"),
+      col("rme_size_grp"),
+      col("variable"),
+      col("value"),
+      col("unit"),
+      lookup("Lookup_2", col("year"), col("industry_name_ANZSIC"))
+        .getField("industry_code_ANZSIC")
+        .as("lookup_1")
+    )
 
 }
