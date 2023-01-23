@@ -84,14 +84,6 @@ def pipeline(spark: SparkSession) -> None:
         "ISaF3Q4I-FudtVSXTdXHt$$6W-4kvVqiAX0YhO5TKPng"
     )
     df_pythonLivySG1_1 = pythonLivySG1_1(spark, df_SetOperation_1)
-    df_Script_1 = Script_1(spark, df_pythonLivySG1_1)
-    df_Script_1 = collectMetrics(
-        spark, 
-        df_Script_1, 
-        "graph", 
-        "J--b-oIjydkxvRor0nfJk$$zRFrI8FeENs7PJUBEUZkj", 
-        "6P3wEhwnkqn3Ru_HerSj_$$pZ6MXoP5vFpLhG5YXvMyP"
-    )
     df_Reformat_6 = Reformat_6(spark, df_livy_src_csv_py)
     df_Reformat_6 = collectMetrics(
         spark, 
@@ -110,6 +102,14 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_FlattenSchema_1.cache().count()
     df_FlattenSchema_1.unpersist()
+    df_Script_1 = Script_1(spark, df_pythonLivySG1_1)
+    df_Script_1 = collectMetrics(
+        spark, 
+        df_Script_1, 
+        "graph", 
+        "fOZph6tqo_K1Rt9vgTVa0$$AiVZhCjnpc0OShMUVKXaN", 
+        "yCS9zJWNTbhfBGi7d_rhx$$e5-ARkRu0s7eOa5ZVi_hE"
+    )
     df_Filter_1 = Filter_1(spark, df_SQLStatement_1_out2)
     df_Filter_1 = collectMetrics(
         spark, 
