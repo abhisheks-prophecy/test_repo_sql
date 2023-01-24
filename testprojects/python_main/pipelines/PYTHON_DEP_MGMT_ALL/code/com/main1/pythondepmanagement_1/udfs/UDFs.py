@@ -25,6 +25,7 @@ def registerUDFs(spark: SparkSession):
     spark.udf.register("udf_timestamptype", udf_timestamptype)
     spark.udf.register("udf_arraytype", udf_arraytype)
     spark.udf.register("udf_maptype", udf_maptype)
+    spark.udf.register("udf_tokenize", udf_tokenize)
 
 @udf(returnType = IntegerType())
 def squared(input):
@@ -95,3 +96,16 @@ StructField("char", StringType(), False), StructField("count", IntegerType(), Fa
 )
 def udf_maptype():
     return [{"char" : "char1", "count" : 10}]
+
+@udf(returnType = ArrayType(StringType()))
+def udf_tokenize(text):
+    # Tokenize the text
+    tokens = text.split(" ")
+    '''Remove stop words'''
+    stop_words = {"the", "is", "are", "and", "to", "of", "in"}
+    tokens = [token for token in tokens if token not in stop_words]
+    """Perform stemming"""
+    stemmer = SnowballStemmer("english")
+    tokens = [stemmer.stem(token) for token in tokens]
+
+    return tokens

@@ -7,7 +7,12 @@
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ {
+        "name" : "squared_udf",
+        "code" : "@udf(returnType=IntegerType())\ndef squared_offset(value=N):\n    return ((value*value) + int_value - float_value) if value else int_value",
+        "language" : "python"
+      } ],
+      "initialCode" : "int_value=15"
     },
     "udafs" : {
       "language" : "python",
@@ -539,7 +544,7 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "c date",
+              "name" : "c  date",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
@@ -555,7 +560,7 @@
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "import subprocess\nresult=subprocess.run([\"ls\"], capture_output=True, text=True)\n# result1=subprocess.run([\"pwd\"], capture_output=True, text=True)\ndata = [StructField(item, StringType(), True) for item in result.stdout.split(\"\\n\")]\n# data.append((result1.stdout,))\nprint(data)\ndeptDF = spark.createDataFrame(data=[], schema=StructType(data))\ndeptDF.printSchema()\nout0=in0.select(\"c date\")",
+        "script" : "import subprocess\nresult=subprocess.run([\"ls\"], capture_output=True, text=True)\n# result1=subprocess.run([\"pwd\"], capture_output=True, text=True)\ndata = [StructField(item, StringType(), True) for item in result.stdout.split(\"\\n\")]\n# data.append((result1.stdout,))\nprint(data)\ndeptDF = spark.createDataFrame(data=[], schema=StructType(data))\ndeptDF.printSchema()\nout0=in0.select(\"c  date\")",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }

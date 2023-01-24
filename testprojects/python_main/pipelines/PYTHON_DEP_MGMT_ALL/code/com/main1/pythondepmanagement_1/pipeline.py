@@ -477,7 +477,11 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Script_11.cache().count()
     df_Script_11.unpersist()
-    df_SQLStatement_1_out, df_SQLStatement_1_out1 = SQLStatement_1(spark, df_all_type_part_parquet)
+    df_SQLStatement_1_out, df_SQLStatement_1_out1, df_SQLStatement_1_out2 = SQLStatement_1(
+        spark, 
+        df_all_type_part_parquet, 
+        df_all_type_part_parquet
+    )
     df_SQLStatement_1_out = collectMetrics(
         spark, 
         df_SQLStatement_1_out, 
@@ -492,8 +496,17 @@ def pipeline(spark: SparkSession) -> None:
         "gjMe6lyUngJb9qtWsPJdG$$a5FgmlsagVGQ-Ir816l6x", 
         "mmAThmA8eZ8TWGKyEYAeT$$-SVeAEm5c4CGAt7992p5j"
     )
+    df_SQLStatement_1_out2 = collectMetrics(
+        spark, 
+        df_SQLStatement_1_out2, 
+        "graph", 
+        "gjMe6lyUngJb9qtWsPJdG$$a5FgmlsagVGQ-Ir816l6x", 
+        "klZjo-VL4nM-x2mJw2x9v$$mUt9_Lydb9sTlfHI8OkBM"
+    )
     df_SQLStatement_1_out1.cache().count()
     df_SQLStatement_1_out1.unpersist()
+    df_SQLStatement_1_out2.cache().count()
+    df_SQLStatement_1_out2.unpersist()
     df_Reformat_15 = Reformat_15(spark, df_csv_all_type)
     df_Reformat_15 = collectMetrics(
         spark, 
