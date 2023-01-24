@@ -1,6 +1,6 @@
 name: ScalaProject
 description: ''
-version: Rel_0.0000009
+version: Rel_0.0000011
 author: abhisheks+e2etests@simpledatalabs.com
 language: scala
 buildSystem: maven
@@ -49,7 +49,8 @@ pipelines:
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
-      outputs: []
+      outputs:
+      - datasets/dest_test
     dependencies: {}
   pipelines/SCALA_AZURE:
     name: SCALA_AZURE
@@ -158,6 +159,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:15:36'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -170,6 +172,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:15:27'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -182,6 +185,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-20 08:53:12'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -194,6 +198,7 @@ datasets:
     description: this is delta dataset for scala
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:16:54'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -206,6 +211,7 @@ datasets:
     description: parquet white spaces
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:21:45'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -218,6 +224,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:23:05'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -230,6 +237,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:34:18'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -242,6 +250,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-22 05:46:08'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -254,6 +263,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-10-11 08:10:38'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -266,6 +276,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:25:53'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -278,6 +289,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-15 09:13:49'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -290,6 +302,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-20 13:02:06'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -302,6 +315,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-10-12 13:01:36'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -314,6 +328,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-11-23 09:01:51'
+    mode: batch
     physicalDatasets:
       dev_unity_catalog:
         fabricId: 2601
@@ -326,6 +341,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-15 15:20:54'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -338,6 +354,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:27:11'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -350,6 +367,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-29 06:10:10'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -362,6 +380,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:27:02'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -374,6 +393,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:28:28'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -386,6 +406,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:34:29'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -398,6 +419,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-11 04:34:22'
+    mode: batch
     physicalDatasets:
       captain_livy:
         fabricId: 1654
@@ -410,6 +432,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-05 03:42:32'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -422,6 +445,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-21 07:09:44'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -434,6 +458,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-11-23 09:10:47'
+    mode: batch
     physicalDatasets:
       dev_unity_catalog:
         fabricId: 2601
@@ -446,6 +471,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-15 09:08:20'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -458,6 +484,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:24:25'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -470,6 +497,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:21:54'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -482,6 +510,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-15 15:22:09'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -494,6 +523,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-12 15:42:36'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -506,6 +536,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:19:37'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -518,6 +549,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-15 09:05:09'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -530,6 +562,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-15 15:21:42'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -542,6 +575,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:19:30'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -554,6 +588,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:23:14'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -566,6 +601,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:33:07'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -578,6 +614,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-15 09:09:31'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -590,6 +627,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-12 12:44:41'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -602,6 +640,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-15 09:08:32'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -614,6 +653,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:35:56'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -626,6 +666,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-15 15:19:50'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -638,6 +679,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:18:13'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -650,6 +692,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:18:20'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -662,6 +705,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:25:44'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -674,6 +718,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-23 07:30:48'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -686,6 +731,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:32:56'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -698,6 +744,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:36:02'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -710,6 +757,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-29 05:29:36'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -722,6 +770,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:13:30'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -734,6 +783,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:24:34'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -747,6 +797,7 @@ datasets:
       Input_File'
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-10-13 03:29:07'
+    mode: batch
     physicalDatasets:
       dev1:
         fabricId: 1770
@@ -760,6 +811,7 @@ datasets:
       Output_File'
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-10-13 03:29:06'
+    mode: batch
     physicalDatasets:
       dev1:
         fabricId: 1770
@@ -772,6 +824,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:38:32'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -785,6 +838,7 @@ datasets:
       Input_File_1'
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-10-13 03:29:05'
+    mode: batch
     physicalDatasets:
       dev1:
         fabricId: 1770
@@ -797,6 +851,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-01-15 15:21:19'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -809,6 +864,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:17:03'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -821,6 +877,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:38:25'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 299
@@ -833,6 +890,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2022-12-15 09:04:52'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 2730
@@ -840,6 +898,45 @@ datasets:
         description: ''
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2022-12-15 09:04:52'
+  datasets/kajari12323:
+    name: kajari12323
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-19 11:03:54'
+    mode: batch
+    physicalDatasets:
+      dev_shared:
+        fabricId: 2068
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-19 11:03:54'
+  datasets/kajari123213:
+    name: kajari123213
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-19 11:09:37'
+    mode: batch
+    physicalDatasets:
+      dev_shared:
+        fabricId: 2068
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-19 11:09:37'
+  datasets/dest_test:
+    name: dest_test
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-20 07:22:33'
+    mode: batch
+    physicalDatasets:
+      dev_shared:
+        fabricId: 2068
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-20 07:22:33'
 templates:
   templates/maven:
     name: maven
@@ -958,31 +1055,43 @@ subgraphs:
     description: livyscalaSG1
     author: abhisheks+e2etests@simpledatalabs.com
     language: scala
+    mode: batch
     createdAt: '2022-10-11 08:13:09'
   subgraphs/all_type:
     name: all_type_scala_sg
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     language: scala
+    mode: batch
     createdAt: '2022-06-29 04:22:03'
   subgraphs/test2sg:
     name: test2sg
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     language: scala
+    mode: batch
     createdAt: '2022-08-23 10:26:12'
   subgraphs/lineageTest:
     name: lineageTest
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     language: scala
+    mode: batch
     createdAt: '2022-08-23 10:22:12'
   subgraphs/all_sg:
     name: all_sg
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     language: scala
+    mode: batch
     createdAt: '2022-06-28 17:47:43'
+  subgraphs/kajari1:
+    name: kajari1
+    description: dsfsd
+    author: abhisheks+e2etests@prophecy.io
+    language: scala
+    mode: batch
+    createdAt: '2023-01-19 06:52:49'
 sqlModels: {}
 sqlPipeline: null
 dependencies:

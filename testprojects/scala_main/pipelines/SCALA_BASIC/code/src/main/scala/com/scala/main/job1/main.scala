@@ -10,6 +10,7 @@ import com.scala.main.job1.graph._
 import com.scala.main.job1.graph.SubgraphMain
 import com.scala.main.job1.graph.Subgraph_1
 import com.scala.main.job1.graph.Subgraph_3
+import com.scala.main.job1.graph.Subgraph_4
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -35,6 +36,15 @@ object Main {
       )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
+    val df_SQLStatement_1 =
+      SQLStatement_1(context,
+                     df_src_parquet_all_type_and_partition_withspacehyphens1
+      ).interim("graph",
+                "zTa3HjcrPr0ScL9QOW8BT$$M0QbyIk9v3R_9OpyenlDu",
+                "1PGrDaLBabY__VcXs-VxW$$yrlYSve4Cnw5uVZQjLJpA"
+      )
+    df_SQLStatement_1.cache().count()
+    df_SQLStatement_1.unpersist()
     val df_SCALA_BASIC12 =
       SCALA_BASIC12(context,
                     df_src_parquet_all_type_and_partition_withspacehyphens1
@@ -63,8 +73,23 @@ object Main {
       "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1",
       "H6Z_aAnftBpk4a-USAecW$$DfJIjJOqY8XnYd8OGH-ZP"
     )
-    df_Reformat_7.cache().count()
-    df_Reformat_7.unpersist()
+    val df_Subgraph_4 = Subgraph_4.apply(context, df_Reformat_7)
+    val df_Reformat_10 = Reformat_10(context, df_Subgraph_4).interim(
+      "graph",
+      "cxC3W007DVzCvlwaUSQWg$$ckcxE7qTOTY5b8BHciWQ2",
+      "VJzZuiwZgT0rxBlvzkHAY$$80GGHEDnLkXPhO1zGDxko"
+    )
+    df_Reformat_10.cache().count()
+    df_Reformat_10.unpersist()
+    val df_Reformat_11 =
+      Reformat_11(context,
+                  df_src_parquet_all_type_and_partition_withspacehyphens1
+      ).interim("graph",
+                "wBnTj5gIWVWRXByB_Vj42$$_zH02tlhIB2gsjSBDPH__",
+                "8szzm0jUStMGE_YkdoO_L$$Z_J2k0B1M3TU5sdgZB-UM"
+      )
+    df_Reformat_11.cache().count()
+    df_Reformat_11.unpersist()
     val df_SCALA_BASIC1 =
       SCALA_BASIC1(context,
                    df_src_parquet_all_type_and_partition_withspacehyphens1
@@ -79,8 +104,11 @@ object Main {
       "Jsldsl3d5xD4SRjpdKI-Z$$DuCm45gqMbljkiKqBMQjw",
       "sPVo9omm0xwOufqyXCGI8$$F12AVA_FrP1_w296nytQb"
     )
-    df_Reformat_4.cache().count()
-    df_Reformat_4.unpersist()
+    withSubgraphName("graph", context.spark) {
+      withTargetId("dest_test", context.spark) {
+        dest_test(context, df_Reformat_4)
+      }
+    }
   }
 
   def main(args: Array[String]): Unit = {

@@ -9,7 +9,8 @@ import io.prophecy.libs._
 case class Config(
   c_test:    Option[String] = None,
   c_array:   List[String] = List("dasdsad", "sadasdsad", "yes sir", "2yes sir"),
-  c_record3: C_record3 = C_record3()
+  c_record3: C_record3 = C_record3(),
+  bool:      Boolean = true
 ) extends ConfigBase
 
 object C_record3 {
