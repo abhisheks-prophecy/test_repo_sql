@@ -1995,6 +1995,35 @@ object PERF_REFORMAT {
     )
   }
 
+  def c_complex_expression_2(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
+    greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
+      lit(3.141592653589793d)
+    ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
+      lit(12332.123456d),
+      4
+    ) - instr(lit("SparkSQL"), "SQL") - length(lit("Spark SQL ")) - levenshtein(
+      lit("kitten"),
+      lit("sitting")
+    ) + expr("log(10.0D, 100)") * log10(lit(10)) * log2(lit(2)) + locate(
+      "bar",
+      lit("foobarbar"),
+      5
+    ) - months_between(lit("1997-02-28 10:30:00"), lit("1996-10-30")) + nanvl(
+      lit("NaN").cast(DoubleType),
+      lit(123)
+    ) + rand() - round(lit(2.5d), 0) + sin(lit(0)) * sinh(lit(0)) + size(
+      array(lit(1), lit(2), lit(3))
+    ) + sqrt(lit(4)) + abs(lit(1.23d)) + acos(lit(1)) - ascii(lit("2")) - asin(
+      lit(0)
+    ) + bin(lit(13)) + lit("10").cast(IntegerType) + cbrt(lit(27.0d)) + ceil(
+      lit(-2.1d)
+    ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
+      lit("2016-07-30")
+    ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
+
   def c_complex_expression_1(context: Context) = {
     val spark  = context.spark
     val Config = context.config
@@ -2132,35 +2161,6 @@ object PERF_REFORMAT {
                lit(Config.c_record_complex.cr_array_record(0).crar_double)
         )
       )
-  }
-
-  def c_complex_expression_2(context: Context) = {
-    val spark  = context.spark
-    val Config = context.config
-    greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
-      lit(3.141592653589793d)
-    ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
-      lit(12332.123456d),
-      4
-    ) - instr(lit("SparkSQL"), "SQL") - length(lit("Spark SQL ")) - levenshtein(
-      lit("kitten"),
-      lit("sitting")
-    ) + expr("log(10.0D, 100)") * log10(lit(10)) * log2(lit(2)) + locate(
-      "bar",
-      lit("foobarbar"),
-      5
-    ) - months_between(lit("1997-02-28 10:30:00"), lit("1996-10-30")) + nanvl(
-      lit("NaN").cast(DoubleType),
-      lit(123)
-    ) + rand() - round(lit(2.5d), 0) + sin(lit(0)) * sinh(lit(0)) + size(
-      array(lit(1), lit(2), lit(3))
-    ) + sqrt(lit(4)) + abs(lit(1.23d)) + acos(lit(1)) - ascii(lit("2")) - asin(
-      lit(0)
-    ) + bin(lit(13)) + lit("10").cast(IntegerType) + cbrt(lit(27.0d)) + ceil(
-      lit(-2.1d)
-    ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
-      lit("2016-07-30")
-    ) + least(col("c_decimal"), col("c_int"), col("c_long"))
   }
 
 }

@@ -297,8 +297,14 @@ object Main {
       "n0VmJXrJcJhCDBbma0KdJ$$k94j1JSMRlVwaZ6r7RhGb",
       "Q5r1wB6YPEzdTGEVZN4dU$$Z-m7r-v8lekG4XOCQmIO2"
     )
-    val (df_SQLStatement_1_out, df_SQLStatement_1_out1) = {
-      val (df_SQLStatement_1_out_temp, df_SQLStatement_1_out1_temp) =
+    val (df_SQLStatement_1_out,
+         df_SQLStatement_1_out1,
+         df_SQLStatement_1_out2
+    ) = {
+      val (df_SQLStatement_1_out_temp,
+           df_SQLStatement_1_out1_temp,
+           df_SQLStatement_1_out2_temp
+      ) =
         SQLStatement_1(context, df_Aggregate_1, df_Aggregate_1, df_Aggregate_1)
       (df_SQLStatement_1_out_temp.interim(
          "graph",
@@ -309,9 +315,16 @@ object Main {
          "graph",
          "azjqEoM7Qc0DPek_wQxSJ$$nfc8jjh6tJ-azZxb5MxeI",
          "bRcVgEd4wZ_Z5H6Avo0V1$$BjoiTeZgWcQIL3i5UbLP5"
+       ),
+       df_SQLStatement_1_out2_temp.interim(
+         "graph",
+         "azjqEoM7Qc0DPek_wQxSJ$$nfc8jjh6tJ-azZxb5MxeI",
+         "iCDpy1CVEYIZTX27QQUGW$$mIbXM1H7DYzH9AxP3jIYL"
        )
       )
     }
+    df_SQLStatement_1_out2.cache().count()
+    df_SQLStatement_1_out2.unpersist()
     val df_Filter_4 = Filter_4(context, df_SQLStatement_1_out1).interim(
       "graph",
       "ciWzfAl9aodUAUcxhIsRU$$FUfG9VfSP7fv8ycEGTlrM",

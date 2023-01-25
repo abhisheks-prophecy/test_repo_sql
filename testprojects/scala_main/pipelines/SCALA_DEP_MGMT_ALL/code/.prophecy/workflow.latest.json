@@ -59,8 +59,12 @@
         "name" : "udf_string_length10",
         "code" : "udf((s: String) => s.length)",
         "language" : "scala"
+      }, {
+        "name" : "udf_complex_window",
+        "code" : "udf((s: String) => s.length)\n// udf((column: String, windowSize: Int) => {\n//   val windowSpec = Window.orderBy(\"timestamp\").rowsBetween(-windowSize / 2, windowSize / 2)\n//   val df = Seq((1, \"a\", 10.0), (2, \"b\", 20.0), (3, \"c\", 30.0), (4, \"d\", 40.0)).toDF(\"id\", \"name\", \"value\")\n//   df.withColumn(\"moving_avg\", avg(column).over(windowSpec)).select(\"id\").count()\n// })",
+        "language" : "scala"
       } ],
-      "initialCode" : "var int_value = 10\nvar string_value = \"string value\"\nval colors = Map(\"red\" -> \"#FF0000\", \"azure\" -> \"#F0FFFF\", \"peru\" -> \"#CD853F\")\nval nums: Map[Int, Int] = Map()\nval fruit = Set(\"apples\", \"oranges\", \"pears\")\nval t = (4,3,2,1)\nval sum = t._1 + t._2 + t._3 + t._4\nval ita = Iterator(20,40,2,50,69, 90)\nval itb = Iterator(20,40,2,50,69, 90)"
+      "initialCode" : "import org.apache.spark.sql.expressions.Window\nimport org.apache.spark.sql.functions._\n\nvar int_value = 10\nvar string_value = \"string value\"\nval colors = Map(\"red\" -> \"#FF0000\", \"azure\" -> \"#F0FFFF\", \"peru\" -> \"#CD853F\")\nval nums: Map[Int, Int] = Map()\nval fruit = Set(\"apples\", \"oranges\", \"pears\")\nval t = (4,3,2,1)\nval sum = t._1 + t._2 + t._3 + t._4\nval ita = Iterator(20,40,2,50,69, 90)\nval itb = Iterator(20,40,2,50,69, 90)"
     },
     "udafs" : {
       "language" : "scala",
@@ -6817,7 +6821,7 @@
       "metadata" : {
         "label" : "Filter_5",
         "slug" : "Filter_5",
-        "x" : -420,
+        "x" : -460,
         "y" : -900,
         "phase" : 0,
         "cache" : false,
@@ -7227,7 +7231,7 @@
         "label" : "Join_1",
         "slug" : "Join_1",
         "x" : -540,
-        "y" : -340,
+        "y" : -320,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -8649,8 +8653,8 @@
       "metadata" : {
         "label" : "SQLStatement_1",
         "slug" : "SQLStatement_1",
-        "x" : -517.7068206787109,
-        "y" : -758.4106933593747,
+        "x" : -540,
+        "y" : -740,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -8678,6 +8682,10 @@
           "id" : "bRcVgEd4wZ_Z5H6Avo0V1$$BjoiTeZgWcQIL3i5UbLP5",
           "slug" : "out1",
           "isStreaming" : false
+        }, {
+          "id" : "iCDpy1CVEYIZTX27QQUGW$$mIbXM1H7DYzH9AxP3jIYL",
+          "slug" : "out2",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -8693,6 +8701,11 @@
           "id" : "bRcVgEd4wZ_Z5H6Avo0V1$$BjoiTeZgWcQIL3i5UbLP5",
           "language" : "sql",
           "content" : "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
+        }, {
+          "path" : "out2",
+          "id" : "iCDpy1CVEYIZTX27QQUGW$$mIbXM1H7DYzH9AxP3jIYL",
+          "language" : "sql",
+          "content" : "SELECT col1, col2, c9_udf1_c1,\n       case when col1='NY' then 'New York'\n            when col1='CA' then 'California'\n            when col1='FL' then 'Florida'\n            else 'Other' end as state,\n       c9_udf1_c1 + 5 as age_plus_5,\n       concat(col1, ' ', col2) as full_name\nFROM in0\nWHERE c8_c2 like '%100%'\nORDER BY c9_udf1_c1 DESC"
         } ],
         "inputPortNames" : [ "in0", "in1", "in2" ]
       }
