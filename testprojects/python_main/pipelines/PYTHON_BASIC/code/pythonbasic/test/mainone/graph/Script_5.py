@@ -13,6 +13,6 @@ def Script_5(spark: SparkSession, in0: DataFrame) -> DataFrame:
     print(data)
     deptDF = spark.createDataFrame(data = [], schema = StructType(data))
     deptDF.printSchema()
-    out0 = in0.select("c date")
+    out0 = in0.select("c  date")
 
     return out0

@@ -47,6 +47,10 @@
         "name" : "udf_maptype",
         "code" : "@udf(returnType=ArrayType(StructType([\n    StructField(\"char\", StringType(), False),\n    StructField(\"count\", IntegerType(), False)\n])))\ndef udf_maptype():\n    return [{\"char\": \"char1\", \"count\": 10}]",
         "language" : "python"
+      }, {
+        "name" : "udf_tokenize",
+        "code" : "@udf(returnType=ArrayType(StringType()))\ndef tokenize_udf(text):\n    # Tokenize the text\n    tokens = text.split(\" \")\n    '''Remove stop words'''\n    stop_words = {\"the\", \"is\", \"are\", \"and\", \"to\", \"of\", \"in\"}\n    tokens = [token for token in tokens if token not in stop_words]\n    \"\"\"Perform stemming\"\"\"\n    stemmer = SnowballStemmer(\"english\")\n    tokens = [stemmer.stem(token) for token in tokens]\n    return tokens",
+        "language" : "python"
       } ],
       "initialCode" : "initial=10"
     },
@@ -1284,6 +1288,12 @@
     "sourcePort" : "KGT7Fiv7NoMlFg7jKpeyQ$$U9WX6BlC808i0fnMn8xb7",
     "target" : "8kYLRQLDi8b18GgrD3bqY$$p95j20cwGehxiufSVYfBa",
     "targetPort" : "yDSBzXXDUztd7Aw32nztB$$kdlN0PaUFzu9_O9R20Dcj"
+  }, {
+    "id" : "JiMUDXyMAYTyVE7tadGfr",
+    "source" : "4h71IOPBDFyzOnxjjfKPl$$8MhjH0PVU12ED2fJyDLpS",
+    "sourcePort" : "K1XpTR7-jgHPuX6PHVdPr$$wHEmbxozybFo-eRVP11a3",
+    "target" : "gjMe6lyUngJb9qtWsPJdG$$a5FgmlsagVGQ-Ir816l6x",
+    "targetPort" : "8tG5TcXZ9hBHHcD8h5oUe$$x9XVUbhhL_LDm4LwpNArc"
   } ],
   "processes" : {
     "JFnDL5Prrj2Z6OXTovov1$$ve0XgF2vT-qYRHHPUnJog" : {
@@ -6916,6 +6926,10 @@
           "id" : "49iNDqsgMEkk9hvsuBLgh$$zcL9XxTeCsJA9Xxkmhp4y",
           "slug" : "in0",
           "isStreaming" : false
+        }, {
+          "id" : "8tG5TcXZ9hBHHcD8h5oUe$$x9XVUbhhL_LDm4LwpNArc",
+          "slug" : "input1",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "p0CRooVi1DlyYp3KyzjcP$$2Tb7QiSl_GDPSBf5tK94C",
@@ -6924,6 +6938,10 @@
         }, {
           "id" : "mmAThmA8eZ8TWGKyEYAeT$$-SVeAEm5c4CGAt7992p5j",
           "slug" : "out1",
+          "isStreaming" : false
+        }, {
+          "id" : "klZjo-VL4nM-x2mJw2x9v$$mUt9_Lydb9sTlfHI8OkBM",
+          "slug" : "out2",
           "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
@@ -6940,8 +6958,13 @@
           "id" : "mmAThmA8eZ8TWGKyEYAeT$$-SVeAEm5c4CGAt7992p5j",
           "language" : "sql",
           "content" : "select * from in0 where in0.`c  - int` != '$c_int' and in0.`c-string` not like '$c_sql_pattern'"
+        }, {
+          "path" : "out2",
+          "id" : "klZjo-VL4nM-x2mJw2x9v$$mUt9_Lydb9sTlfHI8OkBM",
+          "language" : "sql",
+          "content" : "SELECT `c- short`, `c  - int`, `c-string`,\n       case when `c-string`='NY' then 'New York'\n            when `c-string`='CA' then 'California'\n            when `c-string`='FL' then 'Florida'\n            else 'Other' end as state,\n       `c  - int` + 5 as age_plus_5,\n       concat(`c- short`, ' ', c_double) as full_name\nFROM input1\nWHERE p_string like '%a%'\nORDER BY `c-string` DESC"
         } ],
-        "inputPortNames" : [ "in0" ]
+        "inputPortNames" : [ "in0", "input1" ]
       }
     },
     "-3VpysfVzMeGJlzqBNlq_$$ZaNTPymddlozSuJherlQv" : {
@@ -8940,7 +8963,7 @@
         "label" : "avro",
         "slug" : "avro",
         "x" : 640,
-        "y" : 720,
+        "y" : 700,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
