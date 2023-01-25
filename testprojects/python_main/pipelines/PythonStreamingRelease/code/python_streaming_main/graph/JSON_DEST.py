@@ -12,4 +12,5 @@ def JSON_DEST(spark: SparkSession, in0: DataFrame):
         .queryName("JSON_DEST_5n7jWSD3Tg66A4kDm3DnQ$$pT3unTr2J4TQJaavPsGEn")\
         .outputMode("append")\
         .partitionBy("p_int", "p_float", "p_string")\
+        .trigger(processingTime = "2 minutes")\
         .start()

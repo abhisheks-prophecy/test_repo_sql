@@ -15,6 +15,5 @@ def DEST_CSV(spark: SparkSession, in0: DataFrame):
         .option("ignoreTrailingWhiteSpace", True)\
         .outputMode("append")\
         .partitionBy("p_int", "p_float", "p_string")\
-        .trigger(processingTime = "2 minutes")\
         .option("path", "dbfs:/tmp/streaming/target_release/csv/all_type_with_partition")\
         .start()

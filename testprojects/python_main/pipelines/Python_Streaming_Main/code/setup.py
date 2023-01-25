@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 setup(
-    name = 'Python_Streaming_Main',
+    name = 'PythonStreamingAll',
     version = '1.0',
     packages = find_packages(include = ('python_streaming_main*', )) + ["prophecy_config_instances"],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},
     package_data = {'prophecy_config_instances' : ['*.json', '*.py']},
     description = 'workflow',
     install_requires = [
-'prophecy-libs==1.3.19'],
+'prophecy-libs==1.3.20'],
     entry_points = {
 'console_scripts' : [
 'main = python_streaming_main.pipeline:main'], },

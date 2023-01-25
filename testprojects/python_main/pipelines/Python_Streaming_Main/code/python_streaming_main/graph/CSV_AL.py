@@ -17,4 +17,4 @@ def CSV_AL(spark: SparkSession) -> DataFrame:
             StructField("c_tinyint", StringType(), True), StructField("c_smallint", StringType(), True), StructField("c_int", StringType(), True), StructField("c_bigint", StringType(), True), StructField("c_float", StringType(), True), StructField("c_double", StringType(), True), StructField("c_string", StringType(), True), StructField("c_boolean", StringType(), True), StructField("p_int", IntegerType(), True), StructField("p_float", DoubleType(), True), StructField("p_string", StringType(), True)
         ])
         )\
-        .load("s3a://qa-prophecy/streaming/csv/all_type_with_partition")
+        .load("dbfs:/Prophecy/qa_data/streaming/csv/all_type_with_partition")

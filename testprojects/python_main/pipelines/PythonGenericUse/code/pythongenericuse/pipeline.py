@@ -22,10 +22,7 @@ def main():
     spark.conf.set("s1", "test1")
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PythonGenericUse")
     
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PythonGenericUse"
-    )
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/PythonGenericUse")
     pipeline(spark)
     MetricsCollector.end(spark)
 
