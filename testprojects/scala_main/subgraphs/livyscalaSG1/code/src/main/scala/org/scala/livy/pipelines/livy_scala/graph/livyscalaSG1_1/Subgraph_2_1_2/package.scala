@@ -1,9 +1,9 @@
-package org.scala.livy.pipelines.livy_scala.graph.Subgraph_4
+package org.scala.livy.pipelines.livy_scala.graph.livyscalaSG1_1
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.livy_scala.config.ConfigStore._
 import io.prophecy.pipelines.livy_scala.config.Context
-import io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
+import io.prophecy.pipelines.livy_scala.graph.livyscalaSG1_1.Subgraph_2_1_2.Subgraph_3_1_2
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._

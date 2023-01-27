@@ -49,6 +49,7 @@ pipelines:
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
+      - datasets/src_unittest_parquet_all
       outputs:
       - datasets/dest_test
     dependencies: {}
@@ -950,6 +951,19 @@ datasets:
         description: ''
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-01-23 15:00:59'
+  datasets/qa_20k_tables_test_table_number_10002:
+    name: qa_20k_tables_test_table_number_10002
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-25 15:31:38'
+    mode: batch
+    physicalDatasets:
+      dev_shared:
+        fabricId: 2068
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-25 15:31:38'
 templates:
   templates/maven:
     name: maven
@@ -1098,13 +1112,6 @@ subgraphs:
     language: scala
     mode: batch
     createdAt: '2022-06-28 17:47:43'
-  subgraphs/kajari1:
-    name: kajari1
-    description: dsfsd
-    author: abhisheks+e2etests@prophecy.io
-    language: scala
-    mode: batch
-    createdAt: '2023-01-19 06:52:49'
 sqlModels: {}
 sqlPipeline: null
 dependencies:

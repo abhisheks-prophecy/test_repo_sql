@@ -1,4 +1,4 @@
-package org.scala.livy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
+package org.scala.livy.pipelines.livy_scala.graph.livyscalaSG1_1.Subgraph_2_1_2.Subgraph_3_1_2
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.livy_scala.config.ConfigStore._
