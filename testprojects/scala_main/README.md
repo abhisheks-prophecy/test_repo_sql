@@ -371,3 +371,7 @@ release
 *** Release notes for version: 0.001 ***
 
 test
+
+*** Release notes for version: 0.002 ***
+
+test
