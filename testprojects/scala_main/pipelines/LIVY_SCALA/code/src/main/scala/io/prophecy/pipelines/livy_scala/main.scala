@@ -50,6 +50,7 @@ object Main {
     val df_Reformat_3       = Reformat_3(context,       df_livy_src_csv).cache()
     val df_FlattenSchema_1  = FlattenSchema_1(context,  df_Reformat_3)
     val df_Join_1           = Join_1(context,           df_SetOperation_1, df_Reformat_1)
+    val df_Reformat_7       = Reformat_7(context,       df_livy_src_csv)
     val df_Filter_2         = Filter_2(context,         df_RowDistributor_1_out1)
     val df_Aggregate_1      = Aggregate_1(context,      df_Filter_1)
     val df_WindowFunction_1 = WindowFunction_1(context, df_OrderBy_1)

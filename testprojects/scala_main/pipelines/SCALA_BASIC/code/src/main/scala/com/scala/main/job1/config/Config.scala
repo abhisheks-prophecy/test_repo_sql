@@ -7,10 +7,12 @@ import pureconfig.generic.ProductHint
 import io.prophecy.libs._
 
 case class Config(
-  c_test:    Option[String] = None,
-  c_array:   List[String] = List("dasdsad", "sadasdsad", "yes sir", "2yes sir"),
-  c_record3: C_record3 = C_record3(),
-  bool:      Boolean = true
+  @Description("test_str") c_test: Option[String] = None,
+  @Description("array desc") c_array: List[String] =
+    List("dasdsad", "sadasdsad", "yes sir", "2yes sir"),
+  @Description("record ddesc") c_record3: C_record3 = C_record3(),
+  @Description("bool desc") bool:         Boolean = true,
+  @Description("double desc") double:     Double = 234324.0d
 ) extends ConfigBase
 
 object C_record3 {
@@ -20,7 +22,7 @@ object C_record3 {
 
 }
 
-case class C_record3(c_val3: C_val3 = C_val3())
+case class C_record3(@Description("c value record") c_val3: C_val3 = C_val3())
 
 object C_val3 {
 
@@ -29,4 +31,4 @@ object C_val3 {
 
 }
 
-case class C_val3(crr: String = "asdasdasd")
+case class C_val3(@Description("crr desc") crr: String = "asdasdasd")

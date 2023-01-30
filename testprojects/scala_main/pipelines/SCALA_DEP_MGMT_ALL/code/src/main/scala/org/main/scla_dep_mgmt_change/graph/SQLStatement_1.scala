@@ -19,7 +19,7 @@ object SQLStatement_1 {
     in0:     DataFrame,
     in1:     DataFrame,
     in2:     DataFrame
-  ): (DataFrame, DataFrame) = {
+  ): (DataFrame, DataFrame, DataFrame) = {
     in0.createOrReplaceTempView("in0")
     in1.createOrReplaceTempView("in1")
     in2.createOrReplaceTempView("in2")
@@ -28,7 +28,17 @@ object SQLStatement_1 {
      ),
      context.spark.sql(
        "select * from in0 where cast(SUBSTRING(in0.c9_udf1_c2, 1,2) as int) > -1"
-     )
+     ),
+     context.spark.sql("""SELECT col1, col2, c9_udf1_c1,
+       case when col1='NY' then 'New York'
+            when col1='CA' then 'California'
+            when col1='FL' then 'Florida'
+            else 'Other' end as state,
+       c9_udf1_c1 + 5 as age_plus_5,
+       concat(col1, ' ', col2) as full_name
+FROM in0
+WHERE c8_c2 like '%100%'
+ORDER BY c9_udf1_c1 DESC""")
     )
   }
 

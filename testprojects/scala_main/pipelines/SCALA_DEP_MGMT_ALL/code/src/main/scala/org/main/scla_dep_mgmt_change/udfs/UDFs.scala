@@ -7,6 +7,8 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql._
 
 object UDFs extends Serializable {
+  import org.apache.spark.sql.expressions.Window
+  import org.apache.spark.sql.functions._
   var int_value    = 10
   var string_value = "string value"
 
@@ -34,6 +36,7 @@ object UDFs extends Serializable {
     spark.udf.register("udf_string_length8",   udf_string_length8)
     spark.udf.register("udf_string_length9",   udf_string_length9)
     spark.udf.register("udf_string_length10",  udf_string_length10)
+    spark.udf.register("udf_complex_window",   udf_complex_window)
   }
 
   def udf_multiply = udf((value: Int) => value * int_value)
@@ -61,4 +64,5 @@ object UDFs extends Serializable {
   def udf_string_length8  = udf((s: String) => s.length)
   def udf_string_length9  = udf((s: String) => s.length)
   def udf_string_length10 = udf((s: String) => s.length)
+  def udf_complex_window  = udf((s: String) => s.length)
 }

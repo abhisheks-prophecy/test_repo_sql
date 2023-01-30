@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "2068",
+    "fabricId" : "2601",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -22,7 +22,8 @@
             "type" : "string",
             "value" : "this is something new son"
           },
-          "optional" : true
+          "optional" : true,
+          "comment" : "test_str"
         }, {
           "name" : "c_array",
           "kind" : {
@@ -33,7 +34,8 @@
             },
             "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
           },
-          "optional" : false
+          "optional" : false,
+          "comment" : "array desc"
         }, {
           "name" : "c_record3",
           "kind" : {
@@ -48,20 +50,32 @@
                     "type" : "string",
                     "value" : "asdasdasd"
                   },
-                  "optional" : false
+                  "optional" : false,
+                  "comment" : "crr desc"
                 } ]
               },
-              "optional" : false
+              "optional" : false,
+              "comment" : "c value record"
             } ]
           },
-          "optional" : false
+          "optional" : false,
+          "comment" : "record ddesc"
         }, {
           "name" : "bool",
           "kind" : {
             "type" : "boolean",
             "value" : true
           },
-          "optional" : false
+          "optional" : false,
+          "comment" : "bool desc"
+        }, {
+          "name" : "double",
+          "kind" : {
+            "type" : "double",
+            "value" : 234324
+          },
+          "optional" : false,
+          "comment" : "double desc"
         } ]
       },
       "oldCommon" : {
@@ -236,6 +250,12 @@
     "sourcePort" : "Yui765QKx0wOKHaOnjtzk$$Q04y-nxgyv0ZfORhocEUn",
     "target" : "wBnTj5gIWVWRXByB_Vj42$$_zH02tlhIB2gsjSBDPH__",
     "targetPort" : "lJZpERs_sfC53Vd26EOYk$$ut0CARy6r0yKTbtsyJ6iD"
+  }, {
+    "id" : "LI-up9lMiVLxT4lvecqyN",
+    "source" : "NoKx1LDIsuXsvqjkvvQGS$$Pt-_yUwQDirt2_lNO4sNz",
+    "sourcePort" : "UCOvr8gNsYNgm3p_zuKB-$$FlBkKC_1X8oPvLJZn3tgc",
+    "target" : "P3UJaq1zYxKBPRBT2Nix2$$UUVWo39lK-Rc0dWzHYL6T",
+    "targetPort" : "8AxXaA-lnhsQgz2pktczG$$Eq6lBk6GxoBy1pEQBEXLS"
   } ],
   "processes" : {
     "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n" : {
@@ -276,7 +296,7 @@
       "metadata" : {
         "label" : "SQLStatement_1",
         "slug" : "SQLStatement_1",
-        "x" : -1820,
+        "x" : -1760,
         "y" : -1120,
         "phase" : 0,
         "cache" : false,
@@ -478,6 +498,38 @@
         "expressions" : [ ]
       }
     },
+    "P3UJaq1zYxKBPRBT2Nix2$$UUVWo39lK-Rc0dWzHYL6T" : {
+      "id" : "P3UJaq1zYxKBPRBT2Nix2$$UUVWo39lK-Rc0dWzHYL6T",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_12",
+        "slug" : "Reformat_12",
+        "x" : -1740,
+        "y" : -1280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8AxXaA-lnhsQgz2pktczG$$Eq6lBk6GxoBy1pEQBEXLS",
+          "slug" : "in",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "aza90BMYPUBl-DRLrKeot$$-WGfX3ftxN0ESB6ezWPXM",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      }
+    },
     "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD" : {
       "id" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
       "component" : "Subgraph",
@@ -505,11 +557,7 @@
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
-      "properties" : {
-        "externalId" : "subgraphs/kajari1",
-        "name" : "kajari1",
-        "packageName" : "io.prophecy.subgraphs.kajari1"
-      },
+      "properties" : { },
       "connections" : [ {
         "id" : "EdKvHRKo_nLsExs6P1LqP",
         "source" : "Ab1UUib644jbaKEWI1-kq$$OQ-A2zCgea81HNpeYaocD",
@@ -792,8 +840,8 @@
       "metadata" : {
         "label" : "Reformat_11",
         "slug" : "Reformat_11",
-        "x" : -1620,
-        "y" : -460,
+        "x" : -1720,
+        "y" : -520,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -829,7 +877,7 @@
         "label" : "Subgraph_1",
         "slug" : "Subgraph_1",
         "x" : -1540,
-        "y" : -640,
+        "y" : -600,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -948,8 +996,8 @@
       "metadata" : {
         "label" : "SCALA_BASIC1",
         "slug" : "SCALA_BASIC1",
-        "x" : -1200,
-        "y" : -760,
+        "x" : -1220,
+        "y" : -800,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1051,7 +1099,7 @@
         "label" : "Subgraph_3",
         "slug" : "Subgraph_3",
         "x" : -1300,
-        "y" : -640,
+        "y" : -620,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1126,8 +1174,8 @@
       "metadata" : {
         "label" : "src_parquet_all_type_and_partition_withspacehyphens1",
         "slug" : "src_parquet_all_type_and_partition_withspacehyphens1",
-        "x" : -2020,
-        "y" : -800,
+        "x" : -2180,
+        "y" : -820,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1274,6 +1322,33 @@
       },
       "properties" : {
         "datasetId" : "datasets/dest_test"
+      }
+    },
+    "NoKx1LDIsuXsvqjkvvQGS$$Pt-_yUwQDirt2_lNO4sNz" : {
+      "id" : "NoKx1LDIsuXsvqjkvvQGS$$Pt-_yUwQDirt2_lNO4sNz",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_unittest_parquet_all",
+        "slug" : "src_unittest_parquet_all",
+        "x" : -2080,
+        "y" : -1160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "UCOvr8gNsYNgm3p_zuKB-$$FlBkKC_1X8oPvLJZn3tgc",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_unittest_parquet_all"
       }
     }
   },

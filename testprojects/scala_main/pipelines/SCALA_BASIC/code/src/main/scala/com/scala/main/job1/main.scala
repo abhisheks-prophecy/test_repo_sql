@@ -73,6 +73,19 @@ object Main {
       "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1",
       "H6Z_aAnftBpk4a-USAecW$$DfJIjJOqY8XnYd8OGH-ZP"
     )
+    val df_src_unittest_parquet_all = src_unittest_parquet_all(context).interim(
+      "graph",
+      "NoKx1LDIsuXsvqjkvvQGS$$Pt-_yUwQDirt2_lNO4sNz",
+      "UCOvr8gNsYNgm3p_zuKB-$$FlBkKC_1X8oPvLJZn3tgc"
+    )
+    val df_Reformat_12 =
+      Reformat_12(context, df_src_unittest_parquet_all).interim(
+        "graph",
+        "P3UJaq1zYxKBPRBT2Nix2$$UUVWo39lK-Rc0dWzHYL6T",
+        "aza90BMYPUBl-DRLrKeot$$-WGfX3ftxN0ESB6ezWPXM"
+      )
+    df_Reformat_12.cache().count()
+    df_Reformat_12.unpersist()
     val df_Subgraph_4 = Subgraph_4.apply(context, df_Reformat_7)
     val df_Reformat_10 = Reformat_10(context, df_Subgraph_4).interim(
       "graph",
