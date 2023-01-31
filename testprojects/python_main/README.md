@@ -343,3 +343,7 @@ sd
 *** Release notes for version: 0.006 ***
 
 b
+
+*** Release notes for version: 0.008 ***
+
+sd
