@@ -97,7 +97,7 @@
       },
       "scalalibsResolutionMode" : {
         "DBFS" : {
-          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-3.0.1-6.3.12.2.jar"
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-3.0.1-6.3.12.3.jar"
         }
       }
     }, {
@@ -250,6 +250,19 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "3854",
+      "name" : "dev_prophecy_donotdelete",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "3817",
       "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
@@ -306,7 +319,7 @@
       },
       "scalalibsResolutionMode" : {
         "DBFS" : {
-          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.12.2.jar"
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.12.3.jar"
         }
       }
     }, {
@@ -328,6 +341,19 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium" ]
+      }
+    }, {
+      "id" : "3855",
+      "name" : "dev_expired_donotdelete",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "3822",
@@ -495,7 +521,8 @@
               "type" : "string",
               "value" : "this is something new son"
             },
-            "optional" : true
+            "optional" : true,
+            "comment" : "test_str"
           }, {
             "name" : "c_array",
             "kind" : {
@@ -506,7 +533,8 @@
               },
               "value" : [ "dasdsad", "sadasdsad", "yes sir", "2yes sir" ]
             },
-            "optional" : false
+            "optional" : false,
+            "comment" : "array desc"
           }, {
             "name" : "c_record3",
             "kind" : {
@@ -521,20 +549,32 @@
                       "type" : "string",
                       "value" : "asdasdasd"
                     },
-                    "optional" : false
+                    "optional" : false,
+                    "comment" : "crr desc"
                   } ]
                 },
-                "optional" : false
+                "optional" : false,
+                "comment" : "c value record"
               } ]
             },
-            "optional" : false
+            "optional" : false,
+            "comment" : "record ddesc"
           }, {
             "name" : "bool",
             "kind" : {
               "type" : "boolean",
               "value" : true
             },
-            "optional" : false
+            "optional" : false,
+            "comment" : "bool desc"
+          }, {
+            "name" : "double",
+            "kind" : {
+              "type" : "double",
+              "value" : 234324
+            },
+            "optional" : false,
+            "comment" : "double desc"
           } ],
           "instances" : {
             "ScalaProjectCloneExternalGit" : [ "test-random3", "test-random1", "test-random2", "default", "test_all_instancevalues" ]
