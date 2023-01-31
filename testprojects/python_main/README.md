@@ -339,3 +339,7 @@ test
 *** Release notes for version: 0.002 ***
 
 sd
+
+*** Release notes for version: 0.006 ***
+
+b
