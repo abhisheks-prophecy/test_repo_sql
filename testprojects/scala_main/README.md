@@ -399,3 +399,7 @@ changes
 *** Release notes for version: 0.0099 ***
 
 Changes
+
+*** Release notes for version: 1.000 ***
+
+Changes
