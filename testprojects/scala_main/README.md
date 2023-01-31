@@ -375,3 +375,11 @@ test
 *** Release notes for version: 0.002 ***
 
 test
+
+*** Release notes for version: 0.003 ***
+
+0.003
+
+*** Release notes for version: 0.004 ***
+
+ds
