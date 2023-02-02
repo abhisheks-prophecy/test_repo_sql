@@ -415,3 +415,7 @@ d
 *** Release notes for version: 0.01 ***
 
 test
+
+*** Release notes for version: 0.02 ***
+
+sd
