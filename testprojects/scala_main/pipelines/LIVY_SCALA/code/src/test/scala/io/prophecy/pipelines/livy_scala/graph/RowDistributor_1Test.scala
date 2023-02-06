@@ -68,6 +68,53 @@ class RowDistributor_1Test extends FunSuite with DataFrameSuiteBase {
     Assert.assertTrue(msgOut0, resOut0.isRight)
   }
 
+  test("Unit Test 1") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/RowDistributor_1/in/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/RowDistributor_1/in/data/unit_test_1.json",
+      "in"
+    )
+    val dfOut1 = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/RowDistributor_1/out1/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/RowDistributor_1/out1/data/unit_test_1.json",
+      "out1"
+    )
+    val dfOut0 = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/RowDistributor_1/out0/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/RowDistributor_1/out0/data/unit_test_1.json",
+      "out0"
+    )
+
+    val (dfOut0Computed, dfOut1Computed) =
+      io.prophecy.pipelines.livy_scala.graph.RowDistributor_1(context, dfIn)
+    val resOut0 = assertDFEquals(
+      dfOut0.select("year",
+                    "industry_code_ANZSIC",
+                    "industry_name_ANZSIC",
+                    "rme_size_grp",
+                    "variable",
+                    "value",
+                    "unit"
+      ),
+      dfOut0Computed.select("year",
+                            "industry_code_ANZSIC",
+                            "industry_name_ANZSIC",
+                            "rme_size_grp",
+                            "variable",
+                            "value",
+                            "unit"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msgOut0 = if (resOut0.isLeft) resOut0.left.get.getMessage else ""
+    Assert.assertTrue(msgOut0, resOut0.isRight)
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
