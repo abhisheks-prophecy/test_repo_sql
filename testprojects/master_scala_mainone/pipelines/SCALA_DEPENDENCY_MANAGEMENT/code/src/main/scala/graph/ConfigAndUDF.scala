@@ -39,7 +39,9 @@ object ConfigAndUDF {
       udf_string_null_safe(col("first_name")).as("udf_string_null_safe_usage"),
       concat(lit(Config.c_record_complex.cr_array(0).crar_short),
              lit(Config.c_record_complex.cr_record.crr_array_bool(0))
-      ).as("complex_configs")
+      ).as("complex_configs"),
+      concat(get_json_object(lit("{\"a\":\"b\"}"), "$.a"), col("last_name"))
+        .as("expression_with_dollar")
     )
   }
 

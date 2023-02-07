@@ -1,6 +1,7 @@
 package graph
 
 import io.prophecy.libs._
+import config.ConfigStore._
 import config.Context
 import graph.all_types.recursive
 import org.apache.spark._

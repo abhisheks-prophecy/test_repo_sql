@@ -16,7 +16,7 @@ object ComplexExpression {
 
   def apply(context: Context, in: DataFrame): DataFrame =
     in.select(
-      c1.as("c1"),
+      c1(context).as("c1"),
       concat(
         regexp_extract(lit("100-200"), "(d+)-(d+)", 1),
         regexp_replace(lit("100-200"), "(d+)",      "num"),
@@ -82,13 +82,17 @@ object ComplexExpression {
         )
         .otherwise(lit(null))
         .as("c6"),
-      c7.as("c7"),
-      c8.as("c8"),
+      c7(context).as("c7"),
+      c8(context).as("c8"),
       udf_multiply(col("c_int")).as("c9_udf1"),
-      (udf_string_null_safe(col("c_string")) * col("c_int")).as("c9_udf2")
+      (udf_string_null_safe(col("c_string")) * col("c_int")).as("c9_udf2"),
+      concat(get_json_object(lit("{\"a\":10}"), "$.a"), col("c_string"))
+        .as("expression_with_dollar")
     )
 
-  val c1 =
+  def c1(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -113,8 +117,11 @@ object ComplexExpression {
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
 
-  val c7 =
+  def c8(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -139,8 +146,11 @@ object ComplexExpression {
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
 
-  val c8 =
+  def c7(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -165,5 +175,6 @@ object ComplexExpression {
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
 
 }

@@ -1,4 +1,5 @@
 import io.prophecy.libs._
+import config.ConfigStore._
 import config.Context
 import config._
 import udfs.UDFs._
@@ -41,10 +42,7 @@ object Main {
       .newSession()
     val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_SG_SRC")
-    MetricsCollector.start(
-      spark,
-      spark.conf.get("prophecy.project.id") + "/" + "pipelines/SCALA_SG_SRC"
-    )
+    MetricsCollector.start(spark,                    "pipelines/SCALA_SG_SRC")
     apply(context)
     MetricsCollector.end(spark)
   }

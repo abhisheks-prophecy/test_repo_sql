@@ -1,12 +1,13 @@
 package io.prophecy.pipelines.scaladoanything.config
 
 import io.prophecy.pipelines.scaladoanything.config.ConfigStore._
+import io.prophecy.pipelines.scaladoanything.config.Context
 import pureconfig.ConfigReader.Result
 import pureconfig._
 import pureconfig.generic.ProductHint
 import pureconfig.generic.auto._
 import io.prophecy.libs._
-object ConfigStore { implicit var Config: Config = _ }
+object ConfigStore
 
 object ConfigurationFactoryImpl extends ConfigurationFactory[Config] {
 

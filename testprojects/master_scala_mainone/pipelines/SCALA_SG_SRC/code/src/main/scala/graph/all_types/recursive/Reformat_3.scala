@@ -1,6 +1,7 @@
 package graph.all_types.recursive
 
 import io.prophecy.libs._
+import config.ConfigStore._
 import config.Context
 import udfs.UDFs._
 import udfs._
