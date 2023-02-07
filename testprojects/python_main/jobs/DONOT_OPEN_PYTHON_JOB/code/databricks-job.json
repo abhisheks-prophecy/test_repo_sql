@@ -1,15 +1,15 @@
 {
-  "fabric_id" : "299",
+  "fabric_id" : "2730",
   "components" : [ {
     "PipelineComponent" : {
       "id" : "pipelines/DONOT_OPEN_PYTHON",
       "nodeName" : "DONOT_OPEN_PYTHON",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/DONOT_OPEN_PYTHON-1.0-py3-none-any.whl",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl",
       "language" : "python"
     }
   }, {
     "ScriptComponent" : {
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/REL_PYTHON_DONOT_OPEN_JOB/Script_1--342935075.py",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_PYTHON_DONOT_OPEN_JOB/Script_1--342935075.py",
       "nodeName" : "Script_1",
       "id" : "dlNkaBZ5N_M0Meik4FAR-",
       "language" : "python",
@@ -26,14 +26,19 @@
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/DONOT_OPEN_PYTHON_JOB",
-          "prophecy.metadata.fabric.id" : "299",
+          "prophecy.metadata.fabric.id" : "2730",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "prophecy.packages.path" : "{\"pipelines/DONOT_OPEN_PYTHON\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/10972/DONOT_OPEN_PYTHON-1.0-py3-none-any.whl\"}",
+          "prophecy.packages.path" : "{\"pipelines/DONOT_OPEN_PYTHON\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.metadata.is.interactive.run" : "false"
+          "prophecy.metadata.is.interactive.run" : "false",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws"
         },
         "num_workers" : 1,
+        "aws_attributes" : {
+          "first_on_demand" : 1,
+          "availability" : "SPOT_WITH_FALLBACK"
+        },
         "driver_node_type_id" : "i3.xlarge"
       }
     } ],
@@ -46,20 +51,20 @@
       "task_key" : "DONOT_OPEN_PYTHON",
       "job_cluster_key" : "REL_PYTHON_DONOT_OPEN_JOB_default_small",
       "python_wheel_task" : {
-        "package_name" : "DONOT_OPEN_PYTHON",
+        "package_name" : "REL_PY_DONOT_OPEN",
         "entry_point" : "main",
         "parameters" : [ "-i", "default", "-C", "CONFIG_DOUBLE=12.12", "CONFIG_STR=jdbc_url-${JDBC_URL}", "CONFIG_FLOAT=12.12", "CONFIG_DB_SECRETS=qasecrets:mysql_user", "JDBC_URL=jdbc:mysql://18.144.156.219:3306/test_database", "CONFIG_INT=12", "CONFIG_BOOLEAN=false", "JDBC_SOURCE_TABLE=test_table", "CONFIG_SHORT=12" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:6.1.8-3.2.0"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.12.2"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.11"
+          "package" : "prophecy-libs==1.3.20"
         }
       }, {
-        "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/pipelines/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/DONOT_OPEN_PYTHON-1.0-py3-none-any.whl"
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl"
       }, {
         "maven" : {
           "coordinates" : "mysql:mysql-connector-java:8.0.29",
@@ -100,7 +105,7 @@
       } ],
       "job_cluster_key" : "REL_PYTHON_DONOT_OPEN_JOB_default_small",
       "spark_python_task" : {
-        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/scripts/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/__PROJECT_ID_PLACEHOLDER__/REL_PYTHON_DONOT_OPEN_JOB/Script_1--342935075.py"
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_PYTHON_DONOT_OPEN_JOB/Script_1--342935075.py"
       },
       "email_notifications" : { },
       "max_retries" : 0

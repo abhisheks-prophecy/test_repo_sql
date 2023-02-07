@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -36,7 +37,93 @@ class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      io.prophecy.pipelines.livy_scala.graph.Reformat_1(spark, dfIn)
+      io.prophecy.pipelines.livy_scala.graph.Reformat_1(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("year",
+                   "lookup1",
+                   "industry_code_ANZSIC",
+                   "industry_name_ANZSIC",
+                   "rme_size_grp",
+                   "variable",
+                   "value",
+                   "unit"
+      ),
+      dfOutComputed.select("year",
+                           "lookup1",
+                           "industry_code_ANZSIC",
+                           "industry_name_ANZSIC",
+                           "rme_size_grp",
+                           "variable",
+                           "value",
+                           "unit"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
+  test("Unit Test 1") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/in/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/in/data/unit_test_1.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/out/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/out/data/unit_test_1.json",
+      "out"
+    )
+
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Reformat_1(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("year",
+                   "lookup1",
+                   "industry_code_ANZSIC",
+                   "industry_name_ANZSIC",
+                   "rme_size_grp",
+                   "variable",
+                   "value",
+                   "unit"
+      ),
+      dfOutComputed.select("year",
+                           "lookup1",
+                           "industry_code_ANZSIC",
+                           "industry_name_ANZSIC",
+                           "rme_size_grp",
+                           "variable",
+                           "value",
+                           "unit"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
+  test("Unit Test 2") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/in/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/in/data/unit_test_2.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/out/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/out/data/unit_test_2.json",
+      "out"
+    )
+
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Reformat_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("year",
                    "lookup1",
@@ -69,11 +156,13 @@ class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
 
     val dfProphecy_pipelines_livy_scala_graph_Lookup_1 =
       createDfFromResourceFiles(
@@ -83,7 +172,7 @@ class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     io.prophecy.pipelines.livy_scala.graph
-      .Lookup_1(spark, dfProphecy_pipelines_livy_scala_graph_Lookup_1)
+      .Lookup_1(context, dfProphecy_pipelines_livy_scala_graph_Lookup_1)
   }
 
 }

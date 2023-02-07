@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "674",
+    "fabricId" : "2790",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -105,7 +105,7 @@
           "name" : "CONFIG_STR",
           "kind" : {
             "type" : "string",
-            "value" : "jdbc_url-${JDBC_URL}"
+            "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
           },
           "optional" : false
         }, {
@@ -185,11 +185,132 @@
             "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
           },
           "optional" : false
+        }, {
+          "name" : "c_array_long",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "long",
+              "value" : null
+            },
+            "value" : [ 10 ]
+          },
+          "optional" : false
+        }, {
+          "name" : "c_array_string",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "string",
+              "value" : null
+            },
+            "value" : [ "this is string1", "this is string2" ]
+          },
+          "optional" : false
+        }, {
+          "name" : "c_record_complex",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "cr_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crar_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_long",
+                    "kind" : {
+                      "type" : "long",
+                      "value" : null
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crar_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "value" : [ {
+                  "crar_short" : 11,
+                  "crar_long" : 22,
+                  "crar_float" : 33.33
+                } ]
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "crr_array_bool",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "boolean",
+                      "value" : null
+                    },
+                    "value" : [ false, true ]
+                  },
+                  "optional" : false
+                }, {
+                  "name" : "crr_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : [ "concat(first_name, last_name)", "concat(first_name, first_name)", "concat(first_name, first_name, last_name)" ]
+                  },
+                  "optional" : false
+                } ]
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is a string"
+              },
+              "optional" : false
+            }, {
+              "name" : "cr_int",
+              "kind" : {
+                "type" : "int",
+                "value" : 11
+              },
+              "optional" : false
+            } ]
+          },
+          "optional" : false
+        }, {
+          "name" : "c_string_with_dollar",
+          "kind" : {
+            "type" : "string",
+            "value" : "mynameis$$iam$$anthony $$gonzales$$yes$$  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
+          },
+          "optional" : false
         } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance2"
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
     },
     "sparkConf" : [ {
       "name" : "spark_config1",
@@ -208,56 +329,63 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ {
+      "type" : "coordinates",
       "coordinates" : "mysql:mysql-connector-java:8.0.29",
       "name" : "mysql",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "59965868",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.postgresql:postgresql:42.3.4",
       "name" : "postgres",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "1360721423",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ]
     }, {
-      "repo" : "https://repo.maven.apache.org/maven2/",
+      "type" : "coordinates",
       "coordinates" : "org.scalanlp:epic_2.12:0.5",
       "name" : "epic",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "418005485",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ],
+      "repo" : "https://repo.maven.apache.org/maven2/"
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
       "name" : "cats",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "1575366423",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.springframework:spring-beans:5.3.19",
       "name" : "spring",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "611418782",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
       "name" : "spark-excel",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "368609749",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
-      "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/",
+      "type" : "coordinates",
       "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
       "name" : "prophecy-libs-4.0.0",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "GXM_V",
+      "exclusions" : [ ],
+      "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+    }, {
       "type" : "coordinates",
-      "enabled" : false
+      "coordinates" : "mysql:mysql-connector-java:8.0.28",
+      "name" : "mysql-828",
+      "enabled" : false,
+      "id" : "E6bZY",
+      "exclusions" : [ ]
     } ],
     "isImported" : false,
     "interimMode" : "Full",
@@ -576,8 +704,8 @@
       "metadata" : {
         "label" : "FlattenSchema_1",
         "slug" : "FlattenSchema_1",
-        "x" : -435.3125,
-        "y" : -836.220458984375,
+        "x" : -440,
+        "y" : -840,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -586,11 +714,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -753,8 +883,8 @@
       "metadata" : {
         "label" : "Deduplicate_1",
         "slug" : "Deduplicate_1",
-        "x" : -269.5625,
-        "y" : -997.08349609375,
+        "x" : -260,
+        "y" : -1000,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -763,11 +893,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "haTxie2ZPkt-fw_dzJScB$$9Kc6sjn7QoSXfjPbM3TPq",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "OcRhKi5A8GbNRmjSJ_cwb$$AAP0iEMiVDg3mvHXC8Y01",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -792,10 +924,10 @@
       "id" : "XM4cdlXB7oVFseHwX2LRg",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_3",
-        "slug" : "Source_3",
-        "x" : -1340.125,
-        "y" : 8.5,
+        "label" : "src_avro_CustsDatasetInput",
+        "slug" : "src_avro_CustsDatasetInput",
+        "x" : -1340,
+        "y" : 0,
         "phase" : 0,
         "cache" : true,
         "detailedStats" : false,
@@ -805,13 +937,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "gB7zngP2OXebTsbxfm4vF",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_avro_CustsDatasetInput"
+        "datasetId" : "datasets/src_avro_CustsDatasetInput"
       }
     },
     "ntYO_C9LBj2oXcT9ScxKC" : {
@@ -820,8 +953,8 @@
       "metadata" : {
         "label" : "Script_1",
         "slug" : "Script_1",
-        "x" : -1079.8125,
-        "y" : -153.25,
+        "x" : -1080,
+        "y" : -160,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -830,32 +963,115 @@
       "ports" : {
         "inputs" : [ {
           "id" : "E_UkoTvi9CE_4ReA7nRZA",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "J9MyGMy0_1mcWhhX_9xel",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         }, {
           "id" : "YudYRvjPU1sMOuUClrGhK",
-          "slug" : "in2"
+          "slug" : "in2",
+          "isStreaming" : false
         }, {
           "id" : "wyX6ttzQBx9uYiqvCACzU",
-          "slug" : "in3"
+          "slug" : "in3",
+          "isStreaming" : false
         }, {
           "id" : "BAfeMyFqBzGkvJHm3xTch",
-          "slug" : "in4"
+          "slug" : "in4",
+          "isStreaming" : false
         }, {
           "id" : "GLcGfxB9MA6AUeTgSbNxY",
-          "slug" : "in5"
+          "slug" : "in5",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "8hkvbnxtCb0LGV132c6CU",
-          "slug" : "out0"
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "var result=Config.c_0*Config.c_1\nassert(result==0)\nvar out0=in0.filter(col(\"customer_id\")  > 5)\nvar out1=in1.filter(col(\"customer_id\")  > 5)\nvar out2=in2.filter(col(\"first_name\") === \"%A%\" )\nvar out3=in3.distinct()\nvar out4=in4.filter(col(\"customer_id\")  > 5)\nvar out5=in5.filter(col(\"customer_id\")  > 5)\nout0=out1.union(out2).union(out3).union(out4).union(out5)",
+        "script" : "var result=Config.c_0*Config.c_1\nassert(result==0)\nvar out0=in0.filter(col(\"customer_id\")  > 5)\nvar out1=in1.filter(col(\"customer_id\")  > 5)\nvar out2=in2.filter(col(\"first_name\") === \"%A%\" )\nvar out3=in3.distinct()\nvar out4=in4.filter(col(\"customer_id\")  > 5)\nvar out5=in5.filter(col(\"customer_id\")  > 5)\n\nprint(s\"Int:${Config.CONFIG_INT},Float: ${Config.CONFIG_FLOAT},Double:${Config.CONFIG_DOUBLE}\")\n\nout0=out1.union(out2).union(out3).union(out4).union(out5)",
         "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame, in3: DataFrame, in4: DataFrame, in5: DataFrame): DataFrame = {",
         "scriptMethodFooter" : "    out0\n}"
       }
@@ -866,8 +1082,8 @@
       "metadata" : {
         "label" : "SubGraph_1",
         "slug" : "SubGraph_1",
-        "x" : -133.3125,
-        "y" : -798.131103515625,
+        "x" : -140,
+        "y" : -800,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -876,11 +1092,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "MVB0VUwSHdSZ31aJ6DtIo$$B6qH63IUqFTk_PZBVKlDs",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "oVUu8jP97V1RuFgVQvWFb$$yh2Aw5uiUOFw8PawEPghe",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -920,11 +1138,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "22HzQtILfB9mJH9qZ--9O$$5A7PUG6rhPB5cXIW_WoVm",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "7PlOCNRfqR9BI6pdIHB8P$$msMi87LZqpk37MvJ9o7te",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1026,8 +1246,8 @@
       "metadata" : {
         "label" : "Repartition_3",
         "slug" : "Repartition_3",
-        "x" : 18.4375,
-        "y" : -1147.08349609375,
+        "x" : 20,
+        "y" : -1140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1036,11 +1256,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "Q-d607OQu21JpBlVL757z$$S4qdyzQojrnKqmw5hDi-P",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "VE-plh40cOeg9G005TysE$$b0LQzqSl6POGMQ4j4vs3c",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1051,7 +1273,7 @@
           "format" : "sql",
           "expression" : "concat(`c- short`, `c  - int`)"
         } ],
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Q-d607OQu21JpBlVL757z$$S4qdyzQojrnKqmw5hDi-P##c- short", "Q-d607OQu21JpBlVL757z$$S4qdyzQojrnKqmw5hDi-P##c  - int" ],
         "repartitionType" : "hash_repartitioning",
         "rangeExpressions" : [ ],
         "defaultPartitions" : null,
@@ -1064,8 +1286,8 @@
       "metadata" : {
         "label" : "ComplexExpression",
         "slug" : "ComplexExpression",
-        "x" : -435.5,
-        "y" : -634,
+        "x" : -440,
+        "y" : -640,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1074,11 +1296,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "Fewi1hk2_IoYPacuSoDef",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "MwSfNu4URv3g0PC7kc9CR",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1155,7 +1379,15 @@
             "expression" : "udf_string_null_safe(c_string) * c_int"
           },
           "description" : ""
-        } ]
+        }, {
+          "target" : "expression_with_dollar",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat(get_json_object('{\"a\":10}', '$$.a'), '$c_string_with_dollar')"
+          },
+          "description" : ""
+        } ],
+        "mdUsers" : null
       }
     },
     "h5XiG-HuGCGv4oeFsPFsp" : {
@@ -1164,8 +1396,8 @@
       "metadata" : {
         "label" : "Script_2",
         "slug" : "Script_2",
-        "x" : -935.8125,
-        "y" : -381.25,
+        "x" : -940,
+        "y" : -380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1174,11 +1406,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "-GPZh4N5bMGai6w8HiBqH",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "pOEwcWysgxUYA9RF4iwl-",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1195,8 +1429,8 @@
       "metadata" : {
         "label" : "OrderBy_3",
         "slug" : "OrderBy_3",
-        "x" : -126.3125,
-        "y" : -655.516845703125,
+        "x" : -120,
+        "y" : -660,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1205,11 +1439,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "4LJrAh5lMZfSZyFPnbKRR$$LvAuYsRxdLhKRvUAM41eW",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "3QwZLdav6axGl_0dxx9N_$$CvmPmUKZnuBwQ1mj-VrK0",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1285,8 +1521,8 @@
       "metadata" : {
         "label" : "WindowFunction_1",
         "slug" : "WindowFunction_1",
-        "x" : -489.5625,
-        "y" : -989.0497436523438,
+        "x" : -480,
+        "y" : -980,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1295,11 +1531,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ZI6503KG1AFpFwonVJIpj$$L88C8lGGvDUm906o1h4fm",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "Xh1IgHG5x-W2wGzFMUf9N$$f3xyINARrBYxOtt8dLXCx",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1373,8 +1611,8 @@
       "metadata" : {
         "label" : "OrderBy_4",
         "slug" : "OrderBy_4",
-        "x" : 270.6432291666665,
-        "y" : -1030.9383544921873,
+        "x" : 280,
+        "y" : -1040,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1383,11 +1621,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "EKIlBivYvahHyPXDbq-P9$$OXaI16jFu1UKK-sVXqYUO",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "Z4XurMdUJO-ETinTrSyh6$$CxMPDJXpvul_WH8wvOY5y",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1409,8 +1649,8 @@
       "metadata" : {
         "label" : "Script_3",
         "slug" : "Script_3",
-        "x" : 43.34375,
-        "y" : -232.25,
+        "x" : 40,
+        "y" : -240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1419,17 +1659,21 @@
       "ports" : {
         "inputs" : [ {
           "id" : "pBaKj04M-uLVUAI_DPmC3",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "W9B5lL5fgIc0xXzBGq-9J",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         }, {
           "id" : "Gjt8wQXhYNnF3D1PYq2jM",
-          "slug" : "in3"
+          "slug" : "in3",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "_OQB7vQzBoBVAscfGCmoN",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1446,8 +1690,8 @@
       "metadata" : {
         "label" : "Limit_3",
         "slug" : "Limit_3",
-        "x" : 205.6432291666665,
-        "y" : -897.9383544921873,
+        "x" : 200,
+        "y" : -900,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1456,11 +1700,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ZYJmqnjEJBbOpLKMpaF2g$$n0EAWFoHINiSnKpYYkZTg",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "Ft6cGNpKOE2Nirw_XS9_R$$Cd22cRsabCIorU61swO2N",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1475,8 +1721,8 @@
       "metadata" : {
         "label" : "OrderBy_2",
         "slug" : "OrderBy_2",
-        "x" : -329.8125,
-        "y" : -397.25,
+        "x" : -320,
+        "y" : -400,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1485,11 +1731,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "PycfXS034zLr43mQDBf7Y",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "1DyiAt45y3SZCoDDCNVmw",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1569,11 +1817,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "kcP0ocyE0J4gddXCA8Z84$$KcQim55sOn2XR0_OTa4y_",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "CYHjgxwrG-UxafTq3mty0$$bE3Abq_bfr4CAfbtMpdRX",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1586,10 +1836,10 @@
       "id" : "nCk_vxm7W80JgQ2ANSHA_",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_7",
-        "slug" : "Source_7",
-        "x" : -1267.8125,
-        "y" : 154.75,
+        "label" : "dataset_cust_in_3",
+        "slug" : "dataset_cust_in_3",
+        "x" : -1260,
+        "y" : 160,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1599,21 +1849,22 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "DqVz4ONoErO0RNOWar0yr",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "QQ_f4SrARPaP0ZtL6uV0r" : {
       "id" : "QQ_f4SrARPaP0ZtL6uV0r",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_5",
-        "slug" : "Source_5",
+        "label" : "dataset_cust_in_1",
+        "slug" : "dataset_cust_in_1",
         "x" : -1302.8125,
         "y" : -277.25,
         "phase" : 0,
@@ -1625,23 +1876,24 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "FtKm0kyfkwIxab-8yOffM",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "A7YBjCffwys4LPAleAKpC" : {
       "id" : "A7YBjCffwys4LPAleAKpC",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_6",
-        "slug" : "Source_6",
-        "x" : -1335.8125,
-        "y" : -134.25,
+        "label" : "dataset_cust_in_4",
+        "slug" : "dataset_cust_in_4",
+        "x" : -1340,
+        "y" : -140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1651,13 +1903,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "bsEyEzvvLYNF6CFSyeX9o",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "BtjgWEFk-IrCWsqN3RqDF" : {
@@ -1676,11 +1929,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "PkL0GFZquvxBgZqkBVuhp",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "vz8yOBdktTG02eFYUsCr_",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1693,10 +1948,10 @@
       "id" : "osOfTnoQY4cOYhV6LnBYq",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_8",
-        "slug" : "Source_8",
-        "x" : -1137.8125,
-        "y" : 194.75,
+        "label" : "dataset_cust_in_2",
+        "slug" : "dataset_cust_in_2",
+        "x" : -1140,
+        "y" : 200,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1706,23 +1961,24 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "pkhXK0L27Mh9R-Iq9ZFdV",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "mIzhZK1DvRR0LaQOQgY-y$$RPrxiTU9k2wWEIk8Ctc8E" : {
       "id" : "mIzhZK1DvRR0LaQOQgY-y$$RPrxiTU9k2wWEIk8Ctc8E",
       "component" : "Target",
       "metadata" : {
-        "label" : "Target_2",
-        "slug" : "Target_2",
-        "x" : -794.3125,
-        "y" : -930.2613525390625,
+        "label" : "dest_jdbc_dbsecrets_test_table",
+        "slug" : "dest_jdbc_dbsecrets_test_table",
+        "x" : -800,
+        "y" : -940,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1731,14 +1987,15 @@
       "ports" : {
         "inputs" : [ {
           "id" : "xbAHEyyYFYTLaQSorUpbe$$clJ5JsL9v8YYpQW38H83_",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/dest_jdbc_dbsecrets_test_table"
+        "datasetId" : "datasets/dest_jdbc_dbsecrets_test_table"
       }
     },
     "JDdGnXnYzeiw8aXJ5gB5q" : {
@@ -1747,8 +2004,8 @@
       "metadata" : {
         "label" : "Repartition_1",
         "slug" : "Repartition_1",
-        "x" : -276.75,
-        "y" : 154,
+        "x" : -280,
+        "y" : 160,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1757,11 +2014,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "IiYV6sFyghqrvgVoXxIS-",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "sNPPOS1ix-ZWOvC-Q0cPD",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1804,10 +2063,10 @@
       "id" : "xoDRuSduB1niuIF8PP3ct",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_9",
-        "slug" : "Source_9",
-        "x" : -633.65625,
-        "y" : -837.220458984375,
+        "label" : "src_orc_all_type_no_partition",
+        "slug" : "src_orc_all_type_no_partition",
+        "x" : -640,
+        "y" : -840,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1817,13 +2076,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "AJqWz1Up0SmtM70ipV65i",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_orc_all_type_no_partition"
+        "datasetId" : "datasets/src_orc_all_type_no_partition"
       }
     },
     "gNCO_k3OESC15dRefnTjD" : {
@@ -1832,8 +2092,8 @@
       "metadata" : {
         "label" : "Filter_1",
         "slug" : "Filter_1",
-        "x" : -394.75,
-        "y" : -110,
+        "x" : -400,
+        "y" : -100,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1842,11 +2102,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "13zpi94KS66TVj6NFWw3X",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "7ecj16KrYrMc5jCMOyV_-",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1863,10 +2125,10 @@
       "id" : "Fmg6g-ViOm77hFxIpAPch",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_11",
-        "slug" : "Source_11",
-        "x" : -1394.65625,
-        "y" : -701.220458984375,
+        "label" : "src_delta_all_type_no_partition",
+        "slug" : "src_delta_all_type_no_partition",
+        "x" : -1400,
+        "y" : -700,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1876,13 +2138,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "ee0X8XILMHhyMro4U1_V7",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_delta_all_type_no_partition"
+        "datasetId" : "datasets/src_delta_all_type_no_partition"
       }
     },
     "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz" : {
@@ -1901,11 +2164,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "eu-qSN6hufjkkVj59ZRtc$$lGA-tjsx0xYoprVMYfE5H",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "r0a543LnVEGLj4EiHP7P0$$F6WweoNFKHeQEZHINdKwA",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1928,8 +2193,8 @@
       "metadata" : {
         "label" : "all_type_parquet",
         "slug" : "all_type_parquet",
-        "x" : -686.3125,
-        "y" : -1049.2613525390625,
+        "x" : -680,
+        "y" : -1040,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1939,23 +2204,24 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "pIPX9BUJ7XgmTvGgmV8Hu$$y6Sz1JeyfULGcGgi8slvs",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_and_partition_withspacehyphens"
+        "datasetId" : "datasets/src_parquet_all_type_and_partition_withspacehyphens"
       }
     },
     "FMl2GuBQkrf6_L2-1_mJj$$StZaODbsxnN9fIdLwaO0z" : {
       "id" : "FMl2GuBQkrf6_L2-1_mJj$$StZaODbsxnN9fIdLwaO0z",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_14",
-        "slug" : "Source_14",
-        "x" : -1273.3125,
-        "y" : -911.2613525390625,
+        "label" : "src_jdbc_dbsecrets_test_table",
+        "slug" : "src_jdbc_dbsecrets_test_table",
+        "x" : -1280,
+        "y" : -920,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1965,13 +2231,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "SmN3D2QHD52ep_LvBEm_y$$7ZYjSWohGfpYZvd31RArp",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_jdbc_dbsecrets_test_table"
+        "datasetId" : "datasets/src_jdbc_dbsecrets_test_table"
       }
     },
     "X5J7daeiMxXXaSTwpkDu9$$bZ2O5xQ9NUIlbSkMbv1MY" : {
@@ -1980,8 +2247,8 @@
       "metadata" : {
         "label" : "SchemaTransform_1",
         "slug" : "SchemaTransform_1",
-        "x" : 56.4375,
-        "y" : -791.6150512695312,
+        "x" : 60,
+        "y" : -800,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1990,11 +2257,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "j0jgafK1twbf13t_PpG-w$$RQPFitog1onf-hAC43enD",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "02JU61gNQIeeb7iKJc5Z5$$_IQVWieQ7Tfs3dWmwjS8M",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2058,8 +2327,8 @@
       "metadata" : {
         "label" : "RowDistributor_1",
         "slug" : "RowDistributor_1",
-        "x" : -124.5625,
-        "y" : -999.08349609375,
+        "x" : -120,
+        "y" : -1000,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2068,14 +2337,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "eA_KOiCR7IvuiuAGc4Fdd$$dH70-MPHr2Ho3zklORvor",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "out0",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         }, {
           "id" : "out1",
-          "slug" : "out1"
+          "slug" : "out1",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2114,14 +2386,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "mkp-DwfZELIpJaYfvlqiR$$x0kDf1i7kD1o9imUjC8-d",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "G6VF-g4CbzeQGdHXMcOky$$xpE2M_ZfKih-I1q5dcmmR",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "9nSC-MM8SEHYGTWCQwmW8$$82qHa1CcCeW1MGcYp5jb4",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2136,8 +2411,8 @@
       "metadata" : {
         "label" : "Filter_2",
         "slug" : "Filter_2",
-        "x" : -509.8125,
-        "y" : -387.25,
+        "x" : -500,
+        "y" : -380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2146,11 +2421,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "eRrJqCo3Ex7aYDol_bGGb",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "V_c7nCHezVT96rpb-8TzQ",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2169,8 +2446,8 @@
       "metadata" : {
         "label" : "Join_1",
         "slug" : "Join_1",
-        "x" : -269.75,
-        "y" : 292,
+        "x" : -260,
+        "y" : 300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2179,14 +2456,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "hQXFj8zsdEHYEFf19x_VH",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "LkmdxSH8jajayU0pXbvTz",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "Vgk6IkOJ1X4GCgsQt0iEM",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2361,6 +2641,17 @@
           },
           "description" : ""
         } ],
+        "hints" : [ {
+          "id" : "hQXFj8zsdEHYEFf19x_VH",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "LkmdxSH8jajayU0pXbvTz",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
         "activeTab" : "expressions",
         "columnsSelector" : [ "hQXFj8zsdEHYEFf19x_VH##-- c-long", "LkmdxSH8jajayU0pXbvTz##-- c-long", "hQXFj8zsdEHYEFf19x_VH##c   short  --", "hQXFj8zsdEHYEFf19x_VH##c-int-column type", "hQXFj8zsdEHYEFf19x_VH##-- c-long", "hQXFj8zsdEHYEFf19x_VH##c-decimal", "hQXFj8zsdEHYEFf19x_VH##c  float", "hQXFj8zsdEHYEFf19x_VH##c--boolean", "hQXFj8zsdEHYEFf19x_VH##c- - -double", "hQXFj8zsdEHYEFf19x_VH##c___-- string", "hQXFj8zsdEHYEFf19x_VH##c  date", "hQXFj8zsdEHYEFf19x_VH##c_timestamp", "LkmdxSH8jajayU0pXbvTz##c   short  --", "LkmdxSH8jajayU0pXbvTz##c-int-column type", "LkmdxSH8jajayU0pXbvTz##-- c-long", "LkmdxSH8jajayU0pXbvTz##c-decimal", "LkmdxSH8jajayU0pXbvTz##c  float", "LkmdxSH8jajayU0pXbvTz##c--boolean", "LkmdxSH8jajayU0pXbvTz##c- - -double", "LkmdxSH8jajayU0pXbvTz##c___-- string", "LkmdxSH8jajayU0pXbvTz##c  date", "LkmdxSH8jajayU0pXbvTz##c_timestamp" ],
         "whereClause" : null,
@@ -2373,8 +2664,8 @@
       "metadata" : {
         "label" : "Script_4",
         "slug" : "Script_4",
-        "x" : -835.5887586805557,
-        "y" : -752.5155029296873,
+        "x" : -840,
+        "y" : -760,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2383,7 +2674,8 @@
       "ports" : {
         "inputs" : [ {
           "id" : "BkPB1QeuCY6n9xj-fulkg$$9RDez8X4EUSmv2RKz2jMe",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -2401,8 +2693,8 @@
       "metadata" : {
         "label" : "Filter_3",
         "slug" : "Filter_3",
-        "x" : 88.43465576171866,
-        "y" : -437.7159912109373,
+        "x" : 80,
+        "y" : -440,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2411,11 +2703,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "N3z5hMxgh2m4gPKNVJbAk$$tk-CwpVE_UfeJkK_BUlY0",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "xcV8q1WDg1H5LlxglSk_3$$NpPF4lWJWyFgVGi9PMTzE",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2432,10 +2726,10 @@
       "id" : "vmRKV0Nd6-lh2PBG9DCyM$$r1IXlDV-WCE_ANbMUvQcs",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_15",
-        "slug" : "Source_15",
-        "x" : -1301.3567708333335,
-        "y" : -1034.1775390624998,
+        "label" : "src_catalog_table_test_catalog_source",
+        "slug" : "src_catalog_table_test_catalog_source",
+        "x" : -1280,
+        "y" : -1060,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2445,13 +2739,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "RiRMBmFnYhsz_jKLJYl4P$$UkVrz2ppXuwUgrdRSOXCa",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_catalog_table_test_catalog_source"
+        "datasetId" : "datasets/src_catalog_table_test_catalog_source"
       }
     },
     "nQiz2d6SRIARVLzvC1odD$$pbN4wtXHyLQPsfLa3oD2E" : {
@@ -2470,20 +2765,25 @@
       "ports" : {
         "inputs" : [ {
           "id" : "TT9pNeZUHxFRrbcorxVTo$$P0N0X48dN7p_DDB_ia11-",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "ikpYG5W1y6upHiyidQWk2$$Rw1xIEZtGpRQ31bCJMUbl",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         }, {
           "id" : "yJx_VuCHzuYguycA6wjN4$$6fCowryk88XGX2ksX6li5",
-          "slug" : "in2"
+          "slug" : "in2",
+          "isStreaming" : false
         }, {
           "id" : "DdA0RlfCbb4Q5tyCNiPzg$$CZEA2S8hHwMY9aCnfYTk9",
-          "slug" : "in3"
+          "slug" : "in3",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "1JtuFC7vRxCs9lBruBSNR$$L66u-4UA2FQ-8W5AS58-d",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2500,8 +2800,8 @@
       "metadata" : {
         "label" : "Reformat_8",
         "slug" : "Reformat_8",
-        "x" : -790.3125,
-        "y" : 90.85015869140625,
+        "x" : -800,
+        "y" : 100,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2510,11 +2810,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "WSRRwJAXntZlZJ8WZ6PaM$$AxRYJ0kfhBaiOuvYDO5BZ",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "USRNNEY4yPLG763IDrN7e$$ALfX5lz8yMMHXG3htDpVy",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2584,7 +2886,8 @@
             "expression" : "Lookup_2(customer_id,first_name)['email']"
           },
           "description" : ""
-        } ]
+        } ],
+        "mdUsers" : null
       }
     },
     "UHoS8-V7U5z3PU0gYfRtc$$Lx0Wdr9ppHegYJFtR6E4e" : {
@@ -2603,7 +2906,8 @@
       "ports" : {
         "inputs" : [ {
           "id" : "GtBsAzutXvA2QpHbBsing$$m9ZW_aCeSLhwJiNgtzO1U",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -2622,8 +2926,8 @@
       "metadata" : {
         "label" : "SQLStatement_1",
         "slug" : "SQLStatement_1",
-        "x" : -121.56534423828134,
-        "y" : -407.7159912109373,
+        "x" : -120,
+        "y" : -400,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2632,14 +2936,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "z4PkbYuQOlzM0Yz5D-O04$$5j-nP0Fn3mcf-Jqt2jXHL",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "HIAzmUBvAuY06e7zVKea-$$1sUUSztQfxfgEeLZnXJCU",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         }, {
           "id" : "p2K-Fbo4t_uOj5y-DZlr5$$Cn8AVElyltmzC1v1Wk314",
-          "slug" : "out1"
+          "slug" : "out1",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2665,8 +2972,8 @@
       "metadata" : {
         "label" : "ConfigAndUDF",
         "slug" : "ConfigAndUDF",
-        "x" : -726.8125,
-        "y" : -376.25,
+        "x" : -720,
+        "y" : -380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2675,11 +2982,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "bHjcZoqOT_EtZCxAXMc0d",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "bY6dBUB7OHy6i8vc1uwbD",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2746,7 +3055,7 @@
           "target" : "config_values",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(`customer_id`, '$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT')"
+            "expression" : "concat(`customer_id`, '$c_array_string[0]','$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT')"
           },
           "description" : ""
         }, {
@@ -2763,7 +3072,22 @@
             "expression" : "udf_string_null_safe(first_name)"
           },
           "description" : ""
-        } ]
+        }, {
+          "target" : "complex_configs",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('$c_record_complex.cr_array[0].crar_short', '$c_record_complex.cr_record.crr_array_bool[0]')"
+          },
+          "description" : ""
+        }, {
+          "target" : "expression_with_dollar",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat(get_json_object('{\"a\":\"b\"}', '$$.a'), '$c_string_with_dollar')"
+          },
+          "description" : ""
+        } ],
+        "mdUsers" : null
       }
     },
     "yfeifaX7xpRlj28Ls-8Vf$$29PiihbU95u1gXWccO3GA" : {
@@ -2772,8 +3096,8 @@
       "metadata" : {
         "label" : "Repartition_2",
         "slug" : "Repartition_2",
-        "x" : -160.5625,
-        "y" : -1144.08349609375,
+        "x" : -160,
+        "y" : -1140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2782,11 +3106,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "go2Oy4mID3WAuRebPwo-Q$$P2clas4r_cWvG33pJ9zdT",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "xIA_sDLdYIaSR9jB4VXlg$$Rv5ZSnqWe9vse2SDVvmu_",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2805,10 +3131,10 @@
       "id" : "nEj64p7qzVS7z0LXXTFkx",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_1",
-        "slug" : "Source_1",
-        "x" : -795.75,
-        "y" : -179,
+        "label" : "src_csv_special_char_column_name",
+        "slug" : "src_csv_special_char_column_name",
+        "x" : -800,
+        "y" : -180,
         "phase" : 0,
         "cache" : true,
         "detailedStats" : false,
@@ -2818,13 +3144,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "2G70-QEVG04zcV_iAsqv1",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_csv_special_char_column_name"
+        "datasetId" : "datasets/src_csv_special_char_column_name"
       }
     },
     "hxZRArGTe6IeA715uZ9hX" : {
@@ -2833,8 +3160,8 @@
       "metadata" : {
         "label" : "OrderBy_1",
         "slug" : "OrderBy_1",
-        "x" : -335.75,
-        "y" : 18,
+        "x" : -340,
+        "y" : 20,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2843,11 +3170,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "8Muv01GyioGtFMSCUwonj",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "NGuAUZuZAsYsYcFmYLp2B",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2959,8 +3288,8 @@
       "metadata" : {
         "label" : "everythingSG_1",
         "slug" : "everythingSG_1",
-        "x" : -476.58875868055566,
-        "y" : -1305.261352539062,
+        "x" : -480,
+        "y" : -1300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2969,26 +3298,33 @@
       "ports" : {
         "inputs" : [ {
           "id" : "8cOyKDitwWNws199-uwGr$$_trkl6pjRlBVCvBO_9bPt",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "U5kJc-n5-9SK0A38emWw8$$Jt16w_ah6RfFVajWjE7Bz",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         }, {
           "id" : "eftYRs2qpBm-WdRjGh6tm$$9W5rEcxRoUO4-Dr0n5Fp_",
-          "slug" : "in2"
+          "slug" : "in2",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "IsFRNPN7cAlaurXwZ5t--$$CEQGeBJcJ5El_DzzyTpXu",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         }, {
           "id" : "bCekW2rKYT5xsBFm051bi$$St_CUqvVI6O2d1iHWopA_",
-          "slug" : "out1"
+          "slug" : "out1",
+          "isStreaming" : false
         }, {
           "id" : "jFmgDSLCtFcBOpuww-WGt$$14S35g1pzNz7JXT7dtbwz",
-          "slug" : "out2"
+          "slug" : "out2",
+          "isStreaming" : false
         }, {
           "id" : "KcRh4hMxZDBsZlghLGw--$$zf6ykwJ7HXqqIX2VvyNjS",
-          "slug" : "out3"
+          "slug" : "out3",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3160,11 +3496,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "0DBiwaqxu5SSNXldgui02$$YNC87_BQAsO2jP6vTFXv7",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "PUGf084X7wJ-5BnIcl5OP$$oF6v237JoMMWOYyTzKdZA",
-              "slug" : "out0"
+              "slug" : "out0",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -3206,11 +3544,13 @@
               "ports" : {
                 "inputs" : [ {
                   "id" : "Rkd3bG4lx7BVaOpW-8rAP$$n0c6eTpAcnm4gXXWqXjE6",
-                  "slug" : "in0"
+                  "slug" : "in0",
+                  "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "0eXnUYke9THBX4P1o1zYR$$wJzTZ4qLDi9wfdgB978y0",
-                  "slug" : "out0"
+                  "slug" : "out0",
+                  "isStreaming" : false
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -3252,11 +3592,13 @@
                   "ports" : {
                     "inputs" : [ {
                       "id" : "jATJsX8MQmiLDQbFFByen$$Kw5omQuIngh99Trtd51jn",
-                      "slug" : "in"
+                      "slug" : "in",
+                      "isStreaming" : false
                     } ],
                     "outputs" : [ {
                       "id" : "qS_8hLjIGlQsdomnvr-KM$$DAfbiSoAUqr-KCG-SCKma",
-                      "slug" : "out"
+                      "slug" : "out",
+                      "isStreaming" : false
                     } ],
                     "selectedInputFields" : [ ],
                     "isCustomOutputSchema" : false
@@ -3478,11 +3820,13 @@
                   "ports" : {
                     "inputs" : [ {
                       "id" : "j5Eu-9n0G1Sc0awyhcsOm$$dUnZRM2Qn3dtL0hCQOCQG",
-                      "slug" : "in0"
+                      "slug" : "in0",
+                      "isStreaming" : false
                     } ],
                     "outputs" : [ {
                       "id" : "3dbp1qUV7HpphANP4X9DB$$G8cZ51yAtiqrE7mOhTRMT",
-                      "slug" : "out0"
+                      "slug" : "out0",
+                      "isStreaming" : false
                     } ],
                     "selectedInputFields" : [ ],
                     "isCustomOutputSchema" : false
@@ -3524,11 +3868,13 @@
                       "ports" : {
                         "inputs" : [ {
                           "id" : "NGqZA7rcR0E4ZfMPC3VEq$$mKIYn-rNr37Dx8rH3wSdo",
-                          "slug" : "in0"
+                          "slug" : "in0",
+                          "isStreaming" : false
                         } ],
                         "outputs" : [ {
                           "id" : "7dwwKuijSsrOn2b9rqBu0$$74xFG2ScqWoLmw2kFW7l6",
-                          "slug" : "out0"
+                          "slug" : "out0",
+                          "isStreaming" : false
                         } ],
                         "selectedInputFields" : [ ],
                         "isCustomOutputSchema" : false
@@ -3564,11 +3910,13 @@
                           "ports" : {
                             "inputs" : [ {
                               "id" : "ynThlDBYp6vxrv9MazrAc$$7rtW3AyxaHvsdP0FlYViQ",
-                              "slug" : "in"
+                              "slug" : "in",
+                              "isStreaming" : false
                             } ],
                             "outputs" : [ {
                               "id" : "MTVGjq3z1OAMDnj7IHCLz$$sXc4r2YO-3sG6dxcfyW8-",
-                              "slug" : "out"
+                              "slug" : "out",
+                              "isStreaming" : false
                             } ],
                             "selectedInputFields" : [ ],
                             "isCustomOutputSchema" : false
@@ -3792,11 +4140,13 @@
                       "ports" : {
                         "inputs" : [ {
                           "id" : "nG5WoZBtICRTANwhkiEmG$$yP6JZ9S7Dr09JJHvYTz8-",
-                          "slug" : "in"
+                          "slug" : "in",
+                          "isStreaming" : false
                         } ],
                         "outputs" : [ {
                           "id" : "r86tzcI-HuWEQDCeDgsaB$$_FO3voLaDHv4ECFwVhqzO",
-                          "slug" : "out"
+                          "slug" : "out",
+                          "isStreaming" : false
                         } ],
                         "selectedInputFields" : [ ],
                         "isCustomOutputSchema" : false
@@ -4022,11 +4372,13 @@
               "ports" : {
                 "inputs" : [ {
                   "id" : "24t3cwqthmZoUjp85pEOq$$GTRUp1uAcpqjGIOuEvwYt",
-                  "slug" : "in"
+                  "slug" : "in",
+                  "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "gcqxL_GTQsTmJE5uAFZc2$$rHIjcOvrvOK26KWiIsSG1",
-                  "slug" : "out"
+                  "slug" : "out",
+                  "isStreaming" : false
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -4250,11 +4602,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "zgOKnZ0r5A844xdRid2Wh$$CFzY2K8sc_IPANnf4vP6R",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "YCc7Bg9MF6bugh1dQnsfq$$emAGCBCiAuXT_3xnR5lAu",
-              "slug" : "out0"
+              "slug" : "out0",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -4281,14 +4635,17 @@
           "ports" : {
             "inputs" : [ {
               "id" : "bY-L4tfb2MtY1gYbyJ9vc$$GqZG7GImH3wdSl1tqyhs4",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "out0$$p2Sd3MEnceSSdz9012q3O",
-              "slug" : "out0"
+              "slug" : "out0",
+              "isStreaming" : false
             }, {
               "id" : "out1$$brppcRJ4OEoAWPesxLwAV",
-              "slug" : "out1"
+              "slug" : "out1",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -4327,14 +4684,17 @@
           "ports" : {
             "inputs" : [ {
               "id" : "3TItDiFFV7Por6ApmAxId$$-opab8OKFVNLGSTNGQC14",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             }, {
               "id" : "VqxmTIBGc3W_uVkp2ZKiI$$GUabMpZLT8PrATMW6_DAX",
-              "slug" : "in1"
+              "slug" : "in1",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "aEL_fDC7jPCTy4wXza8-v$$1fx3FR5WwtlLGCEFxMFqy",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -4595,11 +4955,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "r0vPPAKwklCH3mHRHehXg$$e0XJ2OTMsmZy0q3BWmlMR",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "NRcYDFEfMdGRJOkB42L4s$$D7cUafvXyKDnwX_XADMv6",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -4624,11 +4986,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "i5vPX-2-4usyoXV07tcUK$$lWNotHgeh3J9RnqcNew60",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "MjDnwoouFjkC0ZsN-GcRZ$$pAXcYJ820F1dStXDMIWqH",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -4655,13 +5019,14 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "AkcClQlLEjW2_hZLVHd_K$$SA-cROB8PXlFV8Wu7PKnF",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+            "datasetId" : "datasets/dataset_cust_in"
           }
         },
         "UHalLyvCgbZTCWcD0QsBK$$GdqlyAdFgm2s5wODINHSg" : {
@@ -4680,7 +5045,8 @@
           "ports" : {
             "inputs" : [ {
               "id" : "H0dw6U1PxuuE1OQ1Ed52K$$9WMKg2pSfxdu5vPDVsWGC",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ ],
             "selectedInputFields" : [ ],
@@ -4706,11 +5072,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "4kYYZWNhf7Y5_ufwugJYa$$F7NudPyUUUk7MAW13ofcM",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "JlARlNTpqpXju3Yb5n7Jb$$dexkwVIzrWlt4LFbKox4F",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -4983,11 +5351,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "PzASxtCD3YAQjLaGtDDdI$$gkVpeYoJU_JMyUvNarKa-",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "LLew197ZSyrWJ2fjA9C6x$$usoHZqM4EAM0SPdubW248",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5209,11 +5579,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "jdOWLZNbX0SEYgWB0bQqz$$tuTzDRh9z1RC1NhCojtBD",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "6vGXt22DPL9pliXyv085d$$WBiKdlYVQSR6QM_qVmgtR",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5242,11 +5614,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "nx1-5JKsQ4pPG3d-QlgZ1$$Ytm1VAAJr4dvOTT7rg4sc",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "FRO7Stm4Ff7dh8Xa6fC0w$$G_QbxFH3Mdn5Dzz9jJzLS",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5386,14 +5760,17 @@
           "ports" : {
             "inputs" : [ {
               "id" : "Ud3RI60iCSN-TDXeYMq1e$$mipG9waAcN-dbCrEsbiPy",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             }, {
               "id" : "ynVaBwtCDdxfjH3DtdR0Y$$kO-CKRvuj2KWBOP_gOMyY",
-              "slug" : "in1"
+              "slug" : "in1",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "v7x2C2MRazGWjKkQERttd$$2SSatSnowt4bednaZwF_0",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5418,11 +5795,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "8btip9sItc9iXkugGvA6i$$Rjju3abfPL-gRl7Qu5AAT",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "YM9zrAKAXA7H536kn3q38$$J9voViO87JwI2b7SDfQ9b",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5616,11 +5995,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "JOEglH0XiZZT5FLXJ7cgs$$DdbCGjKwPUCF4pYd8qFd6",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "Jjk3m71fE08G6q2zh26ZY$$c7vBF9LBXOj8Sp0l_6cyC",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5653,7 +6034,8 @@
           "ports" : {
             "inputs" : [ {
               "id" : "LfLAlrBUInfh8Bw0FL-t8$$Vt2MuIkABj5ykXses4Pqs",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ ],
             "selectedInputFields" : [ ],
@@ -5682,11 +6064,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "efnsg6oA2Pj99oiTf1261$$YGNpALYEjWnsUiCejrM6D",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "nmvAoqvzzBrF5cIxBRAI1$$v5iVyjx5k9-UOp6iJpsjC",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5763,11 +6147,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "5S6uXAvWRQ7dfuGA9mMYn$$YF6xY1rap3JrJd0tXDSCO",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "01HxfgL5Kj9sroiuQyzHJ$$BiCTgt30b8Zpn9oQaQZNq",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5866,11 +6252,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "YUA6Pn3aB360iJEr2-5wP$$szaF7Ya6MESvHb6Z0hgRk",
-              "slug" : "in"
+              "slug" : "in",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "W3MRq-d9zKu8u1rJGpB55$$WjgM43hYdsgmV2JI7rdYQ",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -5951,8 +6339,8 @@
       "metadata" : {
         "label" : "Reformat_7",
         "slug" : "Reformat_7",
-        "x" : -7.588758680555657,
-        "y" : -1331.0788574218743,
+        "x" : 0,
+        "y" : -1340,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -5961,11 +6349,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "8jblrRnNzRsSSBd0T8z6F$$w4EwpGzOx1TSUP3Gaq9DP",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "6_iM00WB8hZdwnO3caZyU$$ArJ833Xcbh66jXZjJk9xq",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -5979,17 +6369,18 @@
             "expression" : "c_new_str"
           },
           "description" : ""
-        } ]
+        } ],
+        "mdUsers" : null
       }
     },
     "9MW3M6D_dPk34335bQHHC" : {
       "id" : "9MW3M6D_dPk34335bQHHC",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_4",
-        "slug" : "Source_4",
-        "x" : -1257.8125,
-        "y" : -430.25,
+        "label" : "dataset_cust_in",
+        "slug" : "dataset_cust_in",
+        "x" : -1260,
+        "y" : -440,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -5999,23 +6390,24 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "iZ223SCz_w9vGNJJkCIw-",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/A4ifzK0R_project_5689.git&subPath=&tag=scala_project/0.1.3&projectSubscriptionProjectId=5689&path=datasets/dataset_cust_in"
+        "datasetId" : "datasets/dataset_cust_in"
       }
     },
     "PM7sxRmKo0cGk1IYdBNtT" : {
       "id" : "PM7sxRmKo0cGk1IYdBNtT",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_2",
-        "slug" : "Source_2",
-        "x" : -679.5,
-        "y" : -691,
+        "label" : "src_parquet_all_type_no_partition",
+        "slug" : "src_parquet_all_type_no_partition",
+        "x" : -680,
+        "y" : -700,
         "phase" : 0,
         "cache" : true,
         "detailedStats" : false,
@@ -6025,13 +6417,14 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "zMejsXna2UN-uClx0tfKO",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "datasetId" : "gitUri=http://gitserver:3000/Z9fNRzJ4_team_1793/4huAEWx3_project_6154.git&subPath=&tag=PythonMainProject/1.1666726972889&projectSubscriptionProjectId=6154&path=datasets/src_parquet_all_type_no_partition"
+        "datasetId" : "datasets/src_parquet_all_type_no_partition"
       }
     },
     "5jhe2NMutKCmtfsWW03Dh" : {
@@ -6050,11 +6443,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "PgOWNogdtVqNmB4gdOmUo",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "SzVxzITqrWe5YCf4ZUe7t",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

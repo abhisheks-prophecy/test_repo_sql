@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -35,7 +36,145 @@ class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = com.scala.main.job1.graph.Reformat_1(spark, dfIn)
+    val dfOutComputed = com.scala.main.job1.graph.Reformat_1(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("c   short  --",
+                   "c-int-column type",
+                   "-- c-long",
+                   "c-decimal",
+                   "c  float",
+                   "c--boolean",
+                   "c- - -double",
+                   "c___-- string",
+                   "c  date",
+                   "c_timestamp"
+      ),
+      dfOutComputed.select("c   short  --",
+                           "c-int-column type",
+                           "-- c-long",
+                           "c-decimal",
+                           "c  float",
+                           "c--boolean",
+                           "c- - -double",
+                           "c___-- string",
+                           "c  date",
+                           "c_timestamp"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
+  test("Unit Test 1") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_1/in/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_1/in/data/unit_test_1.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_1/out/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_1/out/data/unit_test_1.json",
+      "out"
+    )
+
+    val dfOutComputed = com.scala.main.job1.graph.Reformat_1(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("c   short  --",
+                   "c-int-column type",
+                   "-- c-long",
+                   "c-decimal",
+                   "c  float",
+                   "c--boolean",
+                   "c- - -double",
+                   "c___-- string",
+                   "c  date",
+                   "c_timestamp"
+      ),
+      dfOutComputed.select("c   short  --",
+                           "c-int-column type",
+                           "-- c-long",
+                           "c-decimal",
+                           "c  float",
+                           "c--boolean",
+                           "c- - -double",
+                           "c___-- string",
+                           "c  date",
+                           "c_timestamp"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
+  test("Unit Test 2") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_1/in/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_1/in/data/unit_test_2.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_1/out/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_1/out/data/unit_test_2.json",
+      "out"
+    )
+
+    val dfOutComputed = com.scala.main.job1.graph.Reformat_1(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("c   short  --",
+                   "c-int-column type",
+                   "-- c-long",
+                   "c-decimal",
+                   "c  float",
+                   "c--boolean",
+                   "c- - -double",
+                   "c___-- string",
+                   "c  date",
+                   "c_timestamp"
+      ),
+      dfOutComputed.select("c   short  --",
+                           "c-int-column type",
+                           "-- c-long",
+                           "c-decimal",
+                           "c  float",
+                           "c--boolean",
+                           "c- - -double",
+                           "c___-- string",
+                           "c  date",
+                           "c_timestamp"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
+  test("Unit Test 3") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_1/in/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_1/in/data/unit_test_3.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_1/out/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_1/out/data/unit_test_3.json",
+      "out"
+    )
+
+    val dfOutComputed = com.scala.main.job1.graph.Reformat_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -72,11 +211,13 @@ class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
   }
 
 }

@@ -8,6 +8,7 @@ import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.expressions._
 import java.time._
 
 object ComplexExpression {
@@ -44,10 +45,10 @@ object ComplexExpression {
           ) + dayofyear(col("c_date")) - dayofweek(col("c_date")) < date_sub(
             current_timestamp(),
             2
-          )).or(array_contains(array(lit(1), lit(2), lit(3)), 2))
+          )).or(array_contains(array(lit(1), lit(2), lit(3)), lit(2)))
             .or(
               array_contains(array(lit(10), lit(12), lit(13), lit(14), lit(15)),
-                             11
+                             lit(11)
               )
             )
         )

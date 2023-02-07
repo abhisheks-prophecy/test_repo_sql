@@ -1,0 +1,17 @@
+<assembly 
+xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 https://maven.apache.org/xsd/assembly-2.1.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/ASSEMBLY/2.1.1">
+    <id>all-jar</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <unpack>true</unpack>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <includes>
+                <include>sonyprophecy.io_team.sony_scala_git:*:*</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+</assembly>

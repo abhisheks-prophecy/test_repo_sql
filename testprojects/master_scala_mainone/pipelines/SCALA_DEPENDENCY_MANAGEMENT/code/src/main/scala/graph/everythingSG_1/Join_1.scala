@@ -2,6 +2,7 @@ package graph.everythingSG_1
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object Join_1 {
 
-  def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame): DataFrame =
+  def apply(context: Context, in0: DataFrame, in1: DataFrame): DataFrame =
     in0
       .as("in0")
       .join(in1.as("in1"),

@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,8 +14,8 @@ import java.time._
 
 object RowDistributor_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): (DataFrame, DataFrame) =
-    (in.filter(expr(Config.c_rd_expr)),
+  def apply(context: Context, in: DataFrame): (DataFrame, DataFrame) =
+    (in.filter(expr(context.config.c_rd_expr)),
      in.filter(col("`c -  boolean _  `").isin(true, false))
     )
 

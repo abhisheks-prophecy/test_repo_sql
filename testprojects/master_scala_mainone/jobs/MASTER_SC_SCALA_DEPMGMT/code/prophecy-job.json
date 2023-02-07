@@ -1,12 +1,12 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "674",
+    "fabricId" : "2790",
     "jobId" : "jobs/MASTER_SC_SCALA_DEPMGMT",
     "name" : "MASTER_SC_SCALA_DEPMGMT",
     "schedule" : "0 0 0 * * ? 2090",
     "jobClusterMode" : {
-      "clusterMode" : "Single"
+      "clusterMode" : "Multi"
     },
     "enabled" : true,
     "defaultClusterSize" : "small",
@@ -32,20 +32,126 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium-1" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
-      "id" : "674",
-      "name" : "dev",
+      "id" : "3340",
+      "name" : "SingleCluster_1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
-      "id" : "2683",
-      "name" : "TEST-Automated_Livy1",
+      "id" : "2769",
+      "name" : "Config_11_2_version",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3348",
+      "name" : "GCP-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3360",
+      "name" : "captain_livy_3_fs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.21-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-3.0.1-6.3.16.jar"
+        }
+      }
+    }, {
+      "id" : "3331",
+      "name" : "FabricAutomatedEBS",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
+      }
+    }, {
+      "id" : "3351",
+      "name" : "LivyClusterAttachDetach",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3347",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2755",
+      "name" : "dev_dbfs_sc_release",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/tmp/libs/6.1.0"
+        }
       }
     }, {
       "id" : "2689",
@@ -55,35 +161,20 @@
         "availableClusterSizes" : [ "small" ]
       }
     }, {
-      "id" : "2247",
-      "name" : "jobFabric1",
+      "id" : "2790",
+      "name" : "dev",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "medium", "large", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
-      "id" : "2682",
-      "name" : "Livypython-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "1580",
-      "name" : "captain_livy",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium" ]
-      }
-    }, {
-      "id" : "2665",
-      "name" : "SingleCluster_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
-      }
-    }, {
-      "id" : "2704",
+      "id" : "3343",
       "name" : "TEST-Automated_Databricks1",
       "clusterSizes" : {
         "default" : "small",
@@ -96,11 +187,84 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2676",
-      "name" : "FabricAutomatedADVJobSize",
+      "id" : "2247",
+      "name" : "jobFabric1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      }
+    }, {
+      "id" : "3332",
+      "name" : "Config_unity_catalog_shared",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1580",
+      "name" : "captain_livy_230",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3350",
+      "name" : "Automated-LivyFileSystem",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3359",
+      "name" : "captain_livy_230_fs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.21-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.16.jar"
+        }
+      }
+    }, {
+      "id" : "3079",
+      "name" : "Livy-FS_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_python/prophecy_libs-1.3.13-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-6.2.11-2.3.0.jar"
+        }
       }
     }, {
       "id" : "2016",
@@ -108,13 +272,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium", "adv-json1" ]
-      }
-    }, {
-      "id" : "2659",
-      "name" : "JobFabricMain_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       }
     }, {
       "id" : "2699",
@@ -134,6 +291,49 @@
         }
       }
     }, {
+      "id" : "3349",
+      "name" : "TEST-Automated_Livy1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3338",
+      "name" : "Livyscala-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3333",
+      "name" : "FabricAutomatedADVJobSize",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
       "id" : "1770",
       "name" : "devnew",
       "clusterSizes" : {
@@ -141,18 +341,34 @@
         "availableClusterSizes" : [ "small" ]
       }
     }, {
-      "id" : "2655",
-      "name" : "ACLFabric",
+      "id" : "3354",
+      "name" : "Automated-LivyFileSystem3_0_0",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.19-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.12.1.jar"
+        }
       }
     }, {
-      "id" : "2698",
-      "name" : "Livyscala-TEST_Automated",
+      "id" : "3334",
+      "name" : "JobFabricMain_1",
       "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3" ]
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     } ]
   },
@@ -163,8 +379,8 @@
       "metadata" : {
         "label" : "Script_1",
         "slug" : "Script_1",
-        "x" : 372.09393310546875,
-        "y" : 100
+        "x" : 360,
+        "y" : 140
       },
       "ports" : {
         "inputs" : [ {
@@ -194,8 +410,8 @@
       "metadata" : {
         "label" : "Pipeline_1",
         "slug" : "Pipeline_1",
-        "x" : 279.2939453125,
-        "y" : -92.25151824951172
+        "x" : 280,
+        "y" : -100
       },
       "ports" : {
         "inputs" : [ {
@@ -218,7 +434,9 @@
         "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default", "TEST-Automated_Databricks.1", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "instances" : {
+            "ScalaExtGitMainProject" : [ "devnew", "dev_gcp", "dev", "TEST-Automated_Livy.1", "default", "captain_livy", "TEST-Automated_Databricks.1" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -230,10 +448,10 @@
       "metadata" : {
         "label" : "Cluster_1",
         "slug" : "Cluster_1",
-        "x" : -665.2000122070312,
-        "y" : -158.65151977539062,
-        "width" : 502.09393310546875,
-        "height" : 263.8515319824219
+        "x" : -640,
+        "y" : -200,
+        "width" : 501.9999694824219,
+        "height" : 358
       },
       "ports" : {
         "inputs" : [ ],
@@ -249,8 +467,8 @@
       "metadata" : {
         "label" : "Cluster_2",
         "slug" : "Cluster_2",
-        "x" : -31.506099700927734,
-        "y" : 136.54800415039062,
+        "x" : -40,
+        "y" : 140,
         "width" : 647.9971923828125,
         "height" : 279.9999694824219
       },
@@ -266,10 +484,10 @@
       "id" : "UFs7O-iOIs0IUTUxIogFv$$fjpB8BOIaME7Bkc7B2VDy",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_4",
-        "slug" : "Pipeline_4",
-        "x" : -290.9530334472656,
-        "y" : 254.1484832763672
+        "label" : "SC_DEP_MGMT",
+        "slug" : "SC_DEP_MGMT",
+        "x" : 180,
+        "y" : 220
       },
       "ports" : {
         "inputs" : [ {
@@ -289,14 +507,286 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/SCALA_SG_SRC",
+        "pipelineId" : "pipelines/SCALA_DEPENDENCY_MANAGEMENT",
         "configurations" : {
-          "schema" : [ ],
-          "instances" : [ "default", "TEST-Automated_Databricks.1", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
-          "overrides" : { },
-          "selectedInstance" : "default"
+          "schema" : [ {
+            "name" : "JDBC_USER",
+            "kind" : {
+              "type" : "string",
+              "value" : "test_user"
+            },
+            "optional" : false,
+            "comment" : "new comment"
+          }, {
+            "name" : "SOURCE_TABLE",
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            },
+            "optional" : false,
+            "comment" : "new comment2"
+          }, {
+            "name" : "db_secrets",
+            "kind" : {
+              "type" : "databricks_secret",
+              "value" : "qasecrets_mysql:username"
+            },
+            "optional" : true,
+            "comment" : "new comment"
+          }, {
+            "name" : "JDBC_URL",
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+            },
+            "optional" : false,
+            "comment" : "new comment"
+          }, {
+            "name" : "JDBC_SOURCE_TABLE",
+            "kind" : {
+              "type" : "string",
+              "value" : "test_table"
+            },
+            "optional" : false,
+            "comment" : "new comment"
+          }, {
+            "name" : "CONFIG_BOOLEAN",
+            "kind" : {
+              "type" : "boolean",
+              "value" : false
+            },
+            "optional" : false,
+            "comment" : "new comment"
+          }, {
+            "name" : "CONFIG_DOUBLE",
+            "kind" : {
+              "type" : "double",
+              "value" : 12
+            },
+            "optional" : false,
+            "comment" : "new comment"
+          }, {
+            "name" : "CONFIG_INT",
+            "kind" : {
+              "type" : "int",
+              "value" : 12
+            },
+            "optional" : false,
+            "comment" : "new comment1"
+          }, {
+            "name" : "CONFIG_FLOAT",
+            "kind" : {
+              "type" : "float",
+              "value" : 12
+            },
+            "optional" : false,
+            "comment" : "new comment"
+          }, {
+            "name" : "CONFIG_STR",
+            "kind" : {
+              "type" : "string",
+              "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_0",
+            "kind" : {
+              "type" : "int",
+              "value" : 0
+            },
+            "optional" : false
+          }, {
+            "name" : "c_1",
+            "kind" : {
+              "type" : "int",
+              "value" : 1
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_long",
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_long"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_st_rename",
+            "kind" : {
+              "type" : "string",
+              "value" : "c_array_boolean_renamed"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_rd_expr",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "`c_decimal  -  ` >= 12321 "
+            },
+            "optional" : false
+          }, {
+            "name" : "c_limit_11",
+            "kind" : {
+              "type" : "int",
+              "value" : 11
+            },
+            "optional" : false
+          }, {
+            "name" : "c_row",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "row_number()"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_sql_expr",
+            "kind" : {
+              "type" : "string",
+              "value" : "%1%"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_regex1",
+            "kind" : {
+              "type" : "string",
+              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_regex2",
+            "kind" : {
+              "type" : "string",
+              "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_long",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "long",
+                "value" : null
+              },
+              "value" : [ 10 ]
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_string",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "string",
+                "value" : null
+              },
+              "value" : [ "this is string1", "this is string2" ]
+            },
+            "optional" : false
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_array",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_short" : 11,
+                    "crar_long" : 22,
+                    "crar_float" : 33.33
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_array_bool",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "value" : [ false, true ]
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_spark_expression",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "value" : [ "concat(first_name, last_name)", "concat(first_name, first_name)", "concat(first_name, first_name, last_name)" ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is a string"
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_int",
+                "kind" : {
+                  "type" : "int",
+                  "value" : 11
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false
+          } ],
+          "instances" : {
+            "ScalaExtGitMainProject" : [ "devnew", "test-instance2", "dev_gcp", "dev", "test-instance1", "default", "captain_livy" ]
+          },
+          "overrides" : {
+            "CONFIG_BOOLEAN" : true,
+            "CONFIG_DOUBLE" : 22,
+            "CONFIG_INT" : 22,
+            "CONFIG_FLOAT" : 22
+          },
+          "selectedInstance" : "test-instance2"
         }
-      }
+      },
+      "parent" : "2VqhFiGQiffqC_Xv5SiwE"
     },
     "9WE7UsQ0PBHKjsWwUWJDk$$bMpGH-L0rLcEaR3CXbZhV" : {
       "id" : "9WE7UsQ0PBHKjsWwUWJDk$$bMpGH-L0rLcEaR3CXbZhV",
@@ -304,8 +794,8 @@
       "metadata" : {
         "label" : "Pipeline_3",
         "slug" : "Pipeline_3",
-        "x" : 65.60004425048828,
-        "y" : 137.2004852294922
+        "x" : 60,
+        "y" : 140
       },
       "ports" : {
         "inputs" : [ {
@@ -328,7 +818,9 @@
         "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default", "TEST-Automated_Databricks.1", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "instances" : {
+            "ScalaExtGitMainProject" : [ "devnew", "dev_gcp", "dev", "TEST-Automated_Livy.1", "default", "captain_livy", "TEST-Automated_Databricks.1" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -339,10 +831,10 @@
       "id" : "9wQmkNAMPnzs0IBSBwE8Q",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "SCALA_DEPENDENCY_MANAGEMENT",
-        "slug" : "SCALA_DEPENDENCY_MANAGEMENT",
-        "x" : 50,
-        "y" : 103.85151672363281
+        "label" : "SC_SG",
+        "slug" : "SC_SG",
+        "x" : 60,
+        "y" : 80
       },
       "ports" : {
         "inputs" : [ {
@@ -362,163 +854,14 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/SCALA_DEPENDENCY_MANAGEMENT",
+        "pipelineId" : "pipelines/SCALA_SG_SRC",
         "configurations" : {
-          "schema" : [ {
-            "name" : "JDBC_USER",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_user"
-            }
-          }, {
-            "name" : "SOURCE_TABLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_table"
-            }
-          }, {
-            "name" : "db_secrets",
-            "optional" : true,
-            "kind" : {
-              "type" : "databricks_secret",
-              "value" : "qasecrets_mysql:username"
-            }
-          }, {
-            "name" : "JDBC_URL",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
-          }, {
-            "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "test_table"
-            }
-          }, {
-            "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
-            "kind" : {
-              "type" : "boolean",
-              "value" : "false"
-            }
-          }, {
-            "name" : "CONFIG_DOUBLE",
-            "optional" : false,
-            "kind" : {
-              "type" : "double",
-              "value" : "12"
-            }
-          }, {
-            "name" : "CONFIG_INT",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "12"
-            }
-          }, {
-            "name" : "CONFIG_FLOAT",
-            "optional" : false,
-            "kind" : {
-              "type" : "float",
-              "value" : "12"
-            }
-          }, {
-            "name" : "CONFIG_STR",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "jdbc_url-${JDBC_URL}"
-            }
-          }, {
-            "name" : "c_0",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "0"
-            }
-          }, {
-            "name" : "c_1",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "1"
-            }
-          }, {
-            "name" : "c_st_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
-            }
-          }, {
-            "name" : "c_st_long",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "c_array_long"
-            }
-          }, {
-            "name" : "c_st_rename",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "c_array_boolean_renamed"
-            }
-          }, {
-            "name" : "c_rd_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "`c_decimal  -  ` >= 12321 "
-            }
-          }, {
-            "name" : "c_limit_11",
-            "optional" : false,
-            "kind" : {
-              "type" : "int",
-              "value" : "11"
-            }
-          }, {
-            "name" : "c_row",
-            "optional" : false,
-            "kind" : {
-              "type" : "spark_expression",
-              "value" : "row_number()"
-            }
-          }, {
-            "name" : "c_sql_expr",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "%1%"
-            }
-          }, {
-            "name" : "c_regex1",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
-            }
-          }, {
-            "name" : "c_regex2",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
-            }
-          } ],
-          "instances" : [ "default", "test-instance1", "test-instance2", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
-          "overrides" : {
-            "CONFIG_DOUBLE" : "111",
-            "CONFIG_INT" : "111",
-            "CONFIG_FLOAT" : "222"
+          "schema" : [ ],
+          "instances" : {
+            "ScalaExtGitMainProject" : [ "devnew", "dev_gcp", "dev", "TEST-Automated_Livy.1", "default", "captain_livy", "TEST-Automated_Databricks.1" ]
           },
-          "selectedInstance" : "test-instance2"
+          "overrides" : { },
+          "selectedInstance" : "default"
         }
       },
       "parent" : "2VqhFiGQiffqC_Xv5SiwE"
@@ -529,8 +872,8 @@
       "metadata" : {
         "label" : "Script_2",
         "slug" : "Script_2",
-        "x" : -524.7060546875,
-        "y" : 260.5484619140625
+        "x" : -1020,
+        "y" : 80
       },
       "ports" : {
         "inputs" : [ {
@@ -559,8 +902,8 @@
       "metadata" : {
         "label" : "Pipeline_2",
         "slug" : "Pipeline_2",
-        "x" : 445.2000427246094,
-        "y" : 139.60047912597656
+        "x" : 440,
+        "y" : 140
       },
       "ports" : {
         "inputs" : [ {
@@ -584,153 +927,272 @@
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_USER",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_user"
-            }
+            },
+            "optional" : false,
+            "comment" : "new comment"
           }, {
             "name" : "SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false,
+            "comment" : "new comment2"
           }, {
             "name" : "db_secrets",
-            "optional" : true,
             "kind" : {
               "type" : "databricks_secret",
               "value" : "qasecrets_mysql:username"
-            }
+            },
+            "optional" : true,
+            "comment" : "new comment"
           }, {
             "name" : "JDBC_URL",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
+            },
+            "optional" : false,
+            "comment" : "new comment"
           }, {
             "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false,
+            "comment" : "new comment"
           }, {
             "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
             "kind" : {
               "type" : "boolean",
-              "value" : "false"
-            }
+              "value" : false
+            },
+            "optional" : false,
+            "comment" : "new comment"
           }, {
             "name" : "CONFIG_DOUBLE",
-            "optional" : false,
             "kind" : {
               "type" : "double",
-              "value" : "123"
-            }
+              "value" : 123
+            },
+            "optional" : false,
+            "comment" : "new comment"
           }, {
             "name" : "CONFIG_INT",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "3243423"
-            }
+              "value" : 3243423
+            },
+            "optional" : false,
+            "comment" : "new comment1"
           }, {
             "name" : "CONFIG_FLOAT",
-            "optional" : false,
             "kind" : {
               "type" : "float",
-              "value" : "3454.34534"
-            }
+              "value" : 3454.34534
+            },
+            "optional" : false,
+            "comment" : "new comment"
           }, {
             "name" : "CONFIG_STR",
-            "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "jdbc_url-${JDBC_URL}"
-            }
+              "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
+            },
+            "optional" : false
           }, {
             "name" : "c_0",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "0"
-            }
+              "value" : 0
+            },
+            "optional" : false
           }, {
             "name" : "c_1",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "1"
-            }
+              "value" : 1
+            },
+            "optional" : false
           }, {
             "name" : "c_st_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_long",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c_array_long"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_rename",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c_array_boolean_renamed"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_rd_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "`c_decimal  -  ` >= 12321 "
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_limit_11",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "11"
-            }
+              "value" : 11
+            },
+            "optional" : false
           }, {
             "name" : "c_row",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "row_number()"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_sql_expr",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "%1%"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_regex1",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_regex2",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
-            }
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_long",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "long",
+                "value" : null
+              },
+              "value" : [ 10 ]
+            },
+            "optional" : false
+          }, {
+            "name" : "c_array_string",
+            "kind" : {
+              "type" : "array",
+              "elementType" : {
+                "type" : "string",
+                "value" : null
+              },
+              "value" : [ "this is string1", "this is string2" ]
+            },
+            "optional" : false
+          }, {
+            "name" : "c_record_complex",
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "cr_array",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "crar_short",
+                      "kind" : {
+                        "type" : "short",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_long",
+                      "kind" : {
+                        "type" : "long",
+                        "value" : null
+                      },
+                      "optional" : false
+                    }, {
+                      "name" : "crar_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : null
+                      },
+                      "optional" : false
+                    } ]
+                  },
+                  "value" : [ {
+                    "crar_short" : 44,
+                    "crar_long" : 55,
+                    "crar_float" : 66.66
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_record",
+                "kind" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crr_array_bool",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "boolean",
+                        "value" : null
+                      },
+                      "value" : [ false, true ]
+                    },
+                    "optional" : false
+                  }, {
+                    "name" : "crr_array_spark_expression",
+                    "kind" : {
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "spark_expression",
+                        "value" : null
+                      },
+                      "value" : [ "concat(first_name, last_name)", "concat(first_name, first_name)", "concat(first_name, first_name, last_name)" ]
+                    },
+                    "optional" : false
+                  } ]
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_string",
+                "kind" : {
+                  "type" : "string",
+                  "value" : "this is another string  "
+                },
+                "optional" : false
+              }, {
+                "name" : "cr_int",
+                "kind" : {
+                  "type" : "int",
+                  "value" : 22
+                },
+                "optional" : false
+              } ]
+            },
+            "optional" : false
           } ],
-          "instances" : [ "default", "test-instance1", "test-instance2", "dev", "captain_livy", "TEST-Automated_Livy.1", "devnew", "dev_gcp" ],
+          "instances" : {
+            "ScalaExtGitMainProject" : [ "devnew", "test-instance2", "dev_gcp", "dev", "test-instance1", "default", "captain_livy" ]
+          },
           "overrides" : {
             "CONFIG_DOUBLE" : "1",
             "CONFIG_INT" : "1",

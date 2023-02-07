@@ -2,6 +2,7 @@ package orc.scala.everythingsg
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object FlattenSchema_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.withColumn("c_array--long", explode_outer(col("c_array--long")))
       .withColumn("c_array -- decimal",
                   explode_outer(col("c_array -- decimal"))

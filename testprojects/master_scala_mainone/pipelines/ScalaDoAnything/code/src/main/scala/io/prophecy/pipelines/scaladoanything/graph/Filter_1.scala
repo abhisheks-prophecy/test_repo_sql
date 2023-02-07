@@ -2,6 +2,7 @@ package io.prophecy.pipelines.scaladoanything.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scaladoanything.config.ConfigStore._
+import io.prophecy.pipelines.scaladoanything.config.Context
 import io.prophecy.pipelines.scaladoanything.udfs.UDFs._
 import io.prophecy.pipelines.scaladoanything.udfs._
 import org.apache.spark._
@@ -13,11 +14,11 @@ import java.time._
 
 object Filter_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.filter(
       col("`c-string`")
         .like("%3%")
-        .or(col("`c-string`").like(Config.c_regex_filter))
+        .or(col("`c-string`").like(context.config.c_regex_filter))
     )
 
 }

@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.apache.spark._
@@ -13,9 +14,9 @@ import java.time._
 
 object ComplexExpression {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.select(
-      c1.as("c1"),
+      c1(context).as("c1"),
       concat(
         regexp_extract(lit("100-200"), "(d+)-(d+)", 1),
         regexp_replace(lit("100-200"), "(d+)",      "num"),
@@ -81,13 +82,15 @@ object ComplexExpression {
         )
         .otherwise(lit(null))
         .as("c6"),
-      c7.as("c7"),
-      c8.as("c8"),
+      c7(context).as("c7"),
+      c8(context).as("c8"),
       udf_multiply(col("c_int")).as("c9_udf1"),
       (udf_string_null_safe(col("c_string")) * col("c_int")).as("c9_udf2")
     )
 
-  val c8 =
+  def c7(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -112,8 +115,11 @@ object ComplexExpression {
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
 
-  val c7 =
+  def c1(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -138,8 +144,11 @@ object ComplexExpression {
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
 
-  val c1 =
+  def c8(context: Context) = {
+    val spark  = context.spark
+    val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
       lit(3.141592653589793d)
     ) * exp(lit(2)) * expm1(lit(0)) + factorial(lit(5)) + format_number(
@@ -164,5 +173,6 @@ object ComplexExpression {
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
+  }
 
 }

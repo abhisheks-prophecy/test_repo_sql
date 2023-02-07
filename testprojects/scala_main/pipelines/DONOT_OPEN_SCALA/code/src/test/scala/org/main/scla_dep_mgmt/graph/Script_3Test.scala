@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Script_3Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -48,7 +49,7 @@ class Script_3Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOut0Computed =
-      org.main.scla_dep_mgmt.graph.Script_3(spark, dfIn0, dfIn1, dfIn3)
+      org.main.scla_dep_mgmt.graph.Script_3(context, dfIn0, dfIn1, dfIn3)
     val res = assertDFEquals(dfOut0.select("c   short  --"),
                              dfOut0Computed.select("c   short  --"),
                              maxUnequalRowsToShow,
@@ -64,11 +65,13 @@ class Script_3Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
 
     val dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1 =
       createDfFromResourceFiles(
@@ -78,7 +81,7 @@ class Script_3Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.Lookup_1_1(
-      spark,
+      context,
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
   }

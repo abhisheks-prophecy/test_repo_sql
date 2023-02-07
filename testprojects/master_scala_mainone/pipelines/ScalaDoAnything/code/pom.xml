@@ -1,7 +1,7 @@
 <project 
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ScalaMainProject</groupId>
+    <groupId>ScalaExtGitMainProject</groupId>
     <artifactId>ScalaDoAnything</artifactId>
     <description>workflow</description>
     <version>1.0</version>
@@ -10,7 +10,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <scalaBaseVersion>2.12</scalaBaseVersion>
         <scalaVersion>2.12.15</scalaVersion>
         <sparkVersion>3.3.0</sparkVersion>
-        <prophecyLibsVersion>5.2.0-projectID-fixes</prophecyLibsVersion>
+        <prophecyLibsVersion>6.3.11</prophecyLibsVersion>
     </properties>
     <repositories>
         <repository>
@@ -23,12 +23,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             </snapshots>
         </repository>
         <repository>
-            <id>prophecy</id>
-            <name>Prophecy Repository</name>
-            <url>https://prophecyio.jfrog.io/artifactory/default-sbt-release/</url>
+            <id>snapshots</id>
+            <name>Central Snapshots</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
             <layout>default</layout>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -109,7 +109,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <dependency>
             <groupId>io.prophecy</groupId>
             <artifactId>prophecy-libs_${scalaBaseVersion}</artifactId>
-            <version>${prophecyLibsVersion}-${sparkVersion}</version>
+            <version>${sparkVersion}-${prophecyLibsVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>

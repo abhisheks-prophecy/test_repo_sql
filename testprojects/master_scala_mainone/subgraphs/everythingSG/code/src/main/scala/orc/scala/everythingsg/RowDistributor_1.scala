@@ -2,6 +2,7 @@ package orc.scala.everythingsg
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object RowDistributor_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): (DataFrame, DataFrame) =
+  def apply(context: Context, in: DataFrame): (DataFrame, DataFrame) =
     (in.filter(col("`c- short`") > lit(-10)),
      in.filter(col("`c  - int`") > lit(-100))
     )

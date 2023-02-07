@@ -2,6 +2,7 @@ package io.prophecy.pipelines.scaladoanything.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scaladoanything.config.ConfigStore._
+import io.prophecy.pipelines.scaladoanything.config.Context
 import io.prophecy.pipelines.scaladoanything.udfs.UDFs._
 import io.prophecy.pipelines.scaladoanything.udfs._
 import org.apache.spark._
@@ -13,11 +14,12 @@ import java.time._
 
 object Join_1 {
 
-  def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame): DataFrame =
-    in0
-      .as("in0")
-      .join(in1.as("in1"), expr(Config.c_join_condition), "inner")
-      .where(col("in0.`c  float`") < lit(Config.c_int))
+  def apply(context: Context, in0: DataFrame, in1: DataFrame): DataFrame = {
+    val Config = context.config
+    var res    = in0.as("in0")
+    res = res.join(in1.as("in1"), expr(Config.c_join_condition), "inner")
+    res
+      .where(col("in0.`c  float`") < lit(context.config.c_int))
       .select(
         col("in0.`c   short  --`").as("c   short  --"),
         col("in0.`c-int-column type`").as("c-int-column type"),
@@ -46,5 +48,6 @@ object Join_1 {
           lit(Config.c_string1)
         ).as("c_new_col")
       )
+  }
 
 }
