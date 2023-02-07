@@ -1,7 +1,7 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "674",
+    "fabricId" : "2790",
     "jobId" : "jobs/MASTER_PY_SC_DEPMGMT",
     "name" : "MASTER_PY_SC_DEPMGMT",
     "schedule" : "0 0 0 * * ? 2090",
@@ -9,7 +9,7 @@
       "clusterMode" : "Single"
     },
     "enabled" : true,
-    "defaultClusterSize" : "medium",
+    "defaultClusterSize" : "small",
     "alerting" : {
       "emails" : "",
       "onStart" : false,
@@ -27,52 +27,11 @@
       }
     },
     "availableFabrics" : [ {
-      "id" : "2714",
-      "name" : "JobFabricMain_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "2071",
       "name" : "dev_shared",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium-1" ]
-      }
-    }, {
-      "id" : "2723",
-      "name" : "TEST-Automated_Livy1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
-      }
-    }, {
-      "id" : "2712",
-      "name" : "Livyscala-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small", "small2", "small3" ]
-      }
-    }, {
-      "id" : "674",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
-      }
-    }, {
-      "id" : "2706",
-      "name" : "FabricAutomatedEBS",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -81,7 +40,7 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2725",
+      "id" : "3340",
       "name" : "SingleCluster_1",
       "clusterSizes" : {
         "default" : "small",
@@ -94,7 +53,7 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "2717",
+      "id" : "2769",
       "name" : "Config_11_2_version",
       "clusterSizes" : {
         "default" : "small",
@@ -107,6 +66,94 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "3348",
+      "name" : "GCP-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3360",
+      "name" : "captain_livy_3_fs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.21-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-3.0.1-6.3.16.jar"
+        }
+      }
+    }, {
+      "id" : "3331",
+      "name" : "FabricAutomatedEBS",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
+      }
+    }, {
+      "id" : "3351",
+      "name" : "LivyClusterAttachDetach",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3347",
+      "name" : "Livypython-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2755",
+      "name" : "dev_dbfs_sc_release",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/tmp/libs/6.1.0"
+        }
+      }
+    }, {
       "id" : "2689",
       "name" : "dev_acl_sdl",
       "clusterSizes" : {
@@ -114,11 +161,24 @@
         "availableClusterSizes" : [ "small" ]
       }
     }, {
-      "id" : "2726",
-      "name" : "GCP-TEST_Automated",
+      "id" : "2790",
+      "name" : "dev",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1" ]
+        "availableClusterSizes" : [ "small", "medium", "large", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3343",
+      "name" : "TEST-Automated_Databricks1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -134,11 +194,11 @@
         "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       }
     }, {
-      "id" : "2710",
-      "name" : "FabricAutomatedADVJobSize",
+      "id" : "3332",
+      "name" : "Config_unity_catalog_shared",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -148,10 +208,63 @@
       }
     }, {
       "id" : "1580",
-      "name" : "captain_livy",
+      "name" : "captain_livy_230",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3350",
+      "name" : "Automated-LivyFileSystem",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3359",
+      "name" : "captain_livy_230_fs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.21-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.16.jar"
+        }
+      }
+    }, {
+      "id" : "3079",
+      "name" : "Livy-FS_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_python/prophecy_libs-1.3.13-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-6.2.11-2.3.0.jar"
+        }
       }
     }, {
       "id" : "2016",
@@ -159,19 +272,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "medium", "adv-json1" ]
-      }
-    }, {
-      "id" : "2713",
-      "name" : "TEST-Automated_Databricks1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
       }
     }, {
       "id" : "2699",
@@ -191,11 +291,47 @@
         }
       }
     }, {
-      "id" : "2720",
-      "name" : "Livypython-TEST_Automated",
+      "id" : "3349",
+      "name" : "TEST-Automated_Livy1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "small_new" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3338",
+      "name" : "Livyscala-TEST_Automated",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3333",
+      "name" : "FabricAutomatedADVJobSize",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
       }
     }, {
       "id" : "1770",
@@ -203,6 +339,36 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "3354",
+      "name" : "Automated-LivyFileSystem3_0_0",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.19-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.12.1.jar"
+        }
+      }
+    }, {
+      "id" : "3334",
+      "name" : "JobFabricMain_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     } ]
   },
@@ -213,8 +379,8 @@
       "metadata" : {
         "label" : "Script_3",
         "slug" : "Script_3",
-        "x" : 547,
-        "y" : 217.8000030517578
+        "x" : 540,
+        "y" : 220
       },
       "ports" : {
         "inputs" : [ {
@@ -241,9 +407,9 @@
       "id" : "z-FZQkGoJxcPJuMDFqvBO$$_ZukdYxT356vzoNNj5gug",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Pipeline_1",
-        "slug" : "Pipeline_1",
-        "x" : 50,
+        "label" : "PY_SG1",
+        "slug" : "PY_SG1",
+        "x" : 60,
         "y" : 100
       },
       "ports" : {
@@ -271,7 +437,7 @@
             "PythonGitExtMainProject" : [ "devnew", "dev_gcp", "dev", "TEST-Automated_Livy.1", "default", "captain_livy", "TEST-Automated_Databricks.1" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : "captain_livy"
         }
       },
       "parent" : "Tcoe_hM-APblE7Ds2-Duh"
@@ -282,8 +448,8 @@
       "metadata" : {
         "label" : "Pipeline_2",
         "slug" : "Pipeline_2",
-        "x" : 369.3999938964844,
-        "y" : 34.20000076293945
+        "x" : 440,
+        "y" : -40
       },
       "ports" : {
         "inputs" : [ {
@@ -320,8 +486,8 @@
       "metadata" : {
         "label" : "Script_2",
         "slug" : "Script_2",
-        "x" : -565.4000244140625,
-        "y" : 213
+        "x" : -560,
+        "y" : 220
       },
       "ports" : {
         "inputs" : [ {
@@ -350,8 +516,8 @@
       "metadata" : {
         "label" : "Script_1",
         "slug" : "Script_1",
-        "x" : 333.79998779296875,
-        "y" : 106.19999694824219
+        "x" : 340,
+        "y" : 100
       },
       "ports" : {
         "inputs" : [ {
@@ -381,8 +547,8 @@
       "metadata" : {
         "label" : "PYTHON_DEP_MANAGEMENT_ALL",
         "slug" : "PYTHON_DEP_MANAGEMENT_ALL",
-        "x" : 56,
-        "y" : 107.19999694824219
+        "x" : 60,
+        "y" : 100
       },
       "ports" : {
         "inputs" : [ {
@@ -406,136 +572,147 @@
         "configurations" : {
           "schema" : [ {
             "name" : "JDBC_URL",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
-            }
+            },
+            "optional" : false,
+            "comment" : "sadfsdf"
           }, {
             "name" : "JDBC_SOURCE_TABLE",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "test_table"
-            }
+            },
+            "optional" : false,
+            "comment" : " dsfadsf. 34%@#$@#dsaf "
           }, {
             "name" : "CONFIG_BOOLEAN",
-            "optional" : false,
             "kind" : {
               "type" : "boolean",
-              "value" : "true"
-            }
+              "value" : false
+            },
+            "optional" : false,
+            "comment" : " dsfadsf. 34%@#$@#dsaf "
           }, {
             "name" : "CONFIG_DOUBLE",
-            "optional" : false,
             "kind" : {
               "type" : "double",
-              "value" : "10012321.1232"
-            }
+              "value" : 10012321.1232
+            },
+            "optional" : false,
+            "comment" : " dsfadsf. 34%@#$@#dsaf "
           }, {
             "name" : "CONFIG_INT",
-            "optional" : true,
             "kind" : {
               "type" : "int",
-              "value" : "97988"
-            }
+              "value" : 12
+            },
+            "optional" : true,
+            "comment" : "asdasd"
           }, {
             "name" : "CONFIG_FLOAT",
-            "optional" : false,
             "kind" : {
               "type" : "float",
-              "value" : "4567546.34543"
-            }
+              "value" : 4567546.34543
+            },
+            "optional" : false,
+            "comment" : "asd"
           }, {
             "name" : "CONFIG_SHORT",
-            "optional" : false,
             "kind" : {
               "type" : "short",
-              "value" : "120"
-            }
+              "value" : 120
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_DB_SECRETS",
-            "optional" : false,
             "kind" : {
               "type" : "databricks_secret",
               "value" : "qasecrets:mysql_user"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "CONFIG_STR",
-            "optional" : true,
             "kind" : {
               "type" : "string",
               "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
-            }
+            },
+            "optional" : true
           }, {
             "name" : "c_0",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "0"
-            }
+              "value" : 0
+            },
+            "optional" : false
           }, {
             "name" : "c_1",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "1"
-            }
+              "value" : 1
+            },
+            "optional" : false
           }, {
             "name" : "c_row",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "row_number()"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_limit_45",
-            "optional" : false,
             "kind" : {
               "type" : "int",
-              "value" : "45"
-            }
+              "value" : 45
+            },
+            "optional" : false
           }, {
             "name" : "c_st_expr",
-            "optional" : false,
             "kind" : {
               "type" : "spark_expression",
               "value" : "concat(`c   short  --`, `c-int-column type`)"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_st_renamed",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "c-decimal renamed"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_sql_expr",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "%1%"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_regex1",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
-            }
+            },
+            "optional" : false
           }, {
             "name" : "c_regex2",
-            "optional" : false,
             "kind" : {
               "type" : "string",
               "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
-            }
+            },
+            "optional" : false
           } ],
           "instances" : {
             "PythonGitExtMainProject" : [ "devnew", "test-instance2", "dev_gcp", "dev", "TEST-Automated_Livy.1", "test-instance1", "default", "captain_livy" ]
           },
-          "overrides" : { },
-          "selectedInstance" : "default"
+          "overrides" : {
+            "CONFIG_INT" : 33,
+            "CONFIG_FLOAT" : 33,
+            "CONFIG_SHORT" : 33,
+            "CONFIG_DOUBLE" : 33
+          },
+          "selectedInstance" : "test-instance2"
         }
       },
       "parent" : "2qD9Nje0QFjUu3JbhGlpN"
@@ -546,8 +723,8 @@
       "metadata" : {
         "label" : "Cluster_2",
         "slug" : "Cluster_2",
-        "x" : -185.1999969482422,
-        "y" : -82.80000305175781,
+        "x" : -180,
+        "y" : -80,
         "width" : 463.79998779296875,
         "height" : 266.20001220703125
       },
@@ -559,14 +736,52 @@
         "clusterSize" : "adv-json1"
       }
     },
+    "DARRMMnapJNDAgyvr0MSW$$S0t7jw7cr0D3nfbOAfomg" : {
+      "id" : "DARRMMnapJNDAgyvr0MSW$$S0t7jw7cr0D3nfbOAfomg",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "PY_SG",
+        "slug" : "PY_SG",
+        "x" : -880,
+        "y" : -20
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AG09k9ZEz0X_FszbE31Ko$$WVKVBZAp8mkk87RFVv6Lv"
+        } ],
+        "outputs" : [ {
+          "id" : "m25eOyXlxpulQ4h4Lpm1D$$FDRlBdPZZHuMRiVm50lxA"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/PYTHON_SUBGRAPH_CREATOR",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "PythonGitExtMainProject" : [ "devnew", "dev_gcp", "dev", "TEST-Automated_Livy.1", "default", "captain_livy", "TEST-Automated_Databricks.1" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
     "Tcoe_hM-APblE7Ds2-Duh" : {
       "id" : "Tcoe_hM-APblE7Ds2-Duh",
       "component" : "Cluster",
       "metadata" : {
         "label" : "Cluster_1",
         "slug" : "Cluster_1",
-        "x" : -621.7999877929688,
-        "y" : -207.39999389648438,
+        "x" : -620,
+        "y" : -200,
         "width" : 350,
         "height" : 260
       },

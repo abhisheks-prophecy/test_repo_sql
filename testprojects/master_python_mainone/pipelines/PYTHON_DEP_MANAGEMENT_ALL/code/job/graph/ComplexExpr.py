@@ -199,5 +199,6 @@ def ComplexExpr(spark: SparkSession, in0: DataFrame) -> DataFrame:
               .otherwise(concat(col("c_string"), lit("Z")))
           )\
           .otherwise(lit(None))\
-          .alias("c6")
+          .alias("c6"), 
+        concat(get_json_object(lit("{\"a\":10}"), "$.a"), col("c_string")).alias("expression_with_dollar")
     )
