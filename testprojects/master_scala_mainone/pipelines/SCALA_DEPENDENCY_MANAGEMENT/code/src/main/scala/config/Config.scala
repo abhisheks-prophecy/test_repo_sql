@@ -33,7 +33,9 @@ case class Config(
   c_regex2:         String = "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})",
   c_array_long:     List[Long] = List(10L),
   c_array_string:   List[String] = List("this is string1", "this is string2"),
-  c_record_complex: C_record_complex = C_record_complex()
+  c_record_complex: C_record_complex = C_record_complex(),
+  c_string_with_dollar: String =
+    "mynameis$$iam$$anthony $$gonzales$$yes$$  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
 ) extends ConfigBase
 
 object C_record_complex {

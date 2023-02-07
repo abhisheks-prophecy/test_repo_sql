@@ -751,55 +751,55 @@ subgraphs:
 sqlModels: {}
 sqlPipeline: null
 dependencies:
-- coordinates: mysql:mysql-connector-java:8.0.29
+- type: coordinates
+  coordinates: mysql:mysql-connector-java:8.0.29
   name: mysql
-  exclusions: []
+  enabled: false
   id: '59965868'
-  type: coordinates
-  enabled: false
-- coordinates: org.postgresql:postgresql:42.3.4
-  name: postgres
   exclusions: []
-  id: '1360721423'
-  type: coordinates
+- type: coordinates
+  coordinates: org.postgresql:postgresql:42.3.4
+  name: postgres
   enabled: false
-- repo: https://repo.maven.apache.org/maven2/
+  id: '1360721423'
+  exclusions: []
+- type: coordinates
   coordinates: org.scalanlp:epic_2.12:0.5
   name: epic
-  exclusions: []
+  enabled: false
   id: '418005485'
-  type: coordinates
-  enabled: false
-- coordinates: org.typelevel:cats-core_2.12:2.6.1
+  exclusions: []
+  repo: https://repo.maven.apache.org/maven2/
+- type: coordinates
+  coordinates: org.typelevel:cats-core_2.12:2.6.1
   name: cats
-  exclusions: []
+  enabled: false
   id: '1575366423'
-  type: coordinates
-  enabled: false
-- coordinates: org.springframework:spring-beans:5.3.19
+  exclusions: []
+- type: coordinates
+  coordinates: org.springframework:spring-beans:5.3.19
   name: spring
-  exclusions: []
+  enabled: false
   id: '611418782'
-  type: coordinates
-  enabled: false
-- coordinates: com.crealytics:spark-excel_2.12:3.2.1_0.17.1
-  name: spark-excel
   exclusions: []
-  id: '368609749'
-  type: coordinates
+- type: coordinates
+  coordinates: com.crealytics:spark-excel_2.12:3.2.1_0.17.1
+  name: spark-excel
   enabled: false
-- repo: https://prophecyio.jfrog.io/artifactory/default-sbt-release/
+  id: '368609749'
+  exclusions: []
+- type: coordinates
   coordinates: io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0
   name: prophecy-libs-4.0.0
-  exclusions: []
+  enabled: false
   id: GXM_V
-  type: coordinates
-  enabled: false
-- coordinates: mysql:mysql-connector-java:8.0.28
-  name: mysql-828
   exclusions: []
-  id: E6bZY
-  type: coordinates
+  repo: https://prophecyio.jfrog.io/artifactory/default-sbt-release/
+- type: coordinates
+  coordinates: mysql:mysql-connector-java:8.0.28
+  name: mysql-828
   enabled: false
+  id: E6bZY
+  exclusions: []
 projectDependencies: {}
 pipelineConfigurations: {}

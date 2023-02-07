@@ -293,6 +293,13 @@
             } ]
           },
           "optional" : false
+        }, {
+          "name" : "c_string_with_dollar",
+          "kind" : {
+            "type" : "string",
+            "value" : "mynameis$$iam$$anthony $$gonzales$$yes$$  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
+          },
+          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -301,7 +308,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance1",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -1376,7 +1383,7 @@
           "target" : "expression_with_dollar",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(get_json_object('{\"a\":10}', '$$.a'), c_string)"
+            "expression" : "concat(get_json_object('{\"a\":10}', '$$.a'), '$c_string_with_dollar')"
           },
           "description" : ""
         } ],
@@ -3076,7 +3083,7 @@
           "target" : "expression_with_dollar",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(get_json_object('{\"a\":\"b\"}', '$$.a'), last_name)"
+            "expression" : "concat(get_json_object('{\"a\":\"b\"}', '$$.a'), '$c_string_with_dollar')"
           },
           "description" : ""
         } ],
