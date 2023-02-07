@@ -165,6 +165,13 @@
             "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
           },
           "optional" : false
+        }, {
+          "name" : "c_string_with_dollar",
+          "kind" : {
+            "type" : "string",
+            "value" : "mynameis$$iam$$anthony $$gonzales  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
+          },
+          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -7819,7 +7826,7 @@
           "target" : "expression_with_dollar",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(get_json_object('{\"a\":\"b\"}', '$$.a'), `c___-- string`)"
+            "expression" : "concat(get_json_object('{\"a\":\"b\"}', '$$.a'), `c___-- string`, '$c_string_with_dollar')"
           },
           "description" : ""
         } ]

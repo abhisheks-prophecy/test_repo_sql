@@ -886,60 +886,60 @@ subgraphs:
 sqlModels: {}
 sqlPipeline: null
 dependencies:
-- coordinates: mysql:mysql-connector-java:8.0.29
+- type: coordinates
+  coordinates: mysql:mysql-connector-java:8.0.29
   name: mysql
-  exclusions: []
+  enabled: false
   id: '1658827323'
-  type: coordinates
-  enabled: false
-- package: matplotlib==3.5.2
-  name: matplotlib
+  exclusions: []
+- type: pypi
   id: '410081255'
-  type: pypi
+  name: matplotlib
   enabled: false
-- package: pandas>=1.4.2
-  name: pandas
+  package: matplotlib==3.5.2
+- type: pypi
   id: '171138274'
-  type: pypi
+  name: pandas
   enabled: false
-- package: numpy==1.22.*
-  name: numpy
+  package: pandas>=1.4.2
+- type: pypi
   id: '2121735476'
-  type: pypi
+  name: numpy
   enabled: false
-- package: requests~=2.28.0
-  name: requests
+  package: numpy==1.22.*
+- type: pypi
   id: '211888696'
-  type: pypi
+  name: requests
   enabled: false
-- package: scipy>=1.6.3,<=1.8.1
-  repo: ''
+  package: requests~=2.28.0
+- type: pypi
+  package: scipy>=1.6.3,<=1.8.1
   name: scipy
+  enabled: false
   id: '69834547'
-  type: pypi
-  enabled: false
-- package: torch==1.11.0
-  name: torch
+  repo: ''
+- type: pypi
   id: '1722369069'
-  type: pypi
+  name: torch
   enabled: false
-- coordinates: com.crealytics:spark-excel_2.12:3.2.1_0.17.1
+  package: torch==1.11.0
+- type: coordinates
+  coordinates: com.crealytics:spark-excel_2.12:3.2.1_0.17.1
   name: spark-excel
-  exclusions: []
+  enabled: false
   id: '40864959'
-  type: coordinates
-  enabled: false
-- coordinates: org.apache.commons:commons-lang3:3.8
-  name: apache-commons
   exclusions: []
+- type: coordinates
+  coordinates: org.apache.commons:commons-lang3:3.8
+  name: apache-commons
+  enabled: false
   id: '424233105'
-  type: coordinates
-  enabled: false
-- package: ComponentBuilderPython
-  repo: https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple
+  exclusions: []
+- type: pypi
+  package: ComponentBuilderPython
   name: component-builder-with-url
-  id: '701579940'
-  type: pypi
   enabled: false
+  id: '701579940'
+  repo: https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple
 projectDependencies: {}
 pipelineConfigurations: {}
