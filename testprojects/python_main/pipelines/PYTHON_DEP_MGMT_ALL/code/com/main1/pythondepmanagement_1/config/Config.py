@@ -38,7 +38,58 @@ class Config(ConfigBase):
             c_wf_orderby_expr: str=None, 
             c_regex1: str=None, 
             c_regex2: str=None, 
-            c_str: str=None
+            c_str: str=None, 
+            c_config_1: str=None, 
+            c_config_2: str=None, 
+            c_config_3: str=None, 
+            c_config_4: str=None, 
+            c_config_5: str=None, 
+            c_config_6: str=None, 
+            c_config_7: str=None, 
+            c_config_8: str=None, 
+            c_config_9: str=None, 
+            c_config_10: str=None, 
+            c_config_11: str=None, 
+            c_config_12: str=None, 
+            c_config_13: str=None, 
+            c_config_14: str=None, 
+            c_config_15: str=None, 
+            c_config_16: str=None, 
+            c_config_17: str=None, 
+            c_config_18: str=None, 
+            c_config_19: str=None, 
+            c_config_20: str=None, 
+            c_config_21: str=None, 
+            c_config_22: str=None, 
+            c_config_23: str=None, 
+            c_config_24: str=None, 
+            c_config_25: str=None, 
+            c_config_26: str=None, 
+            c_config_27: str=None, 
+            c_config_28: str=None, 
+            c_config_29: str=None, 
+            c_config_30: str=None, 
+            c_config_31: str=None, 
+            c_config_32: str=None, 
+            c_config_33: str=None, 
+            c_config_34: str=None, 
+            c_config_35: str=None, 
+            c_config_36: str=None, 
+            c_config_37: str=None, 
+            c_config_38: str=None, 
+            c_config_39: str=None, 
+            c_config_40: str=None, 
+            c_config_41: str=None, 
+            c_config_42: str=None, 
+            c_config_43: str=None, 
+            c_config_44: str=None, 
+            c_config_45: str=None, 
+            c_config_46: str=None, 
+            c_config_47: str=None, 
+            c_config_48: str=None, 
+            c_config_49: str=None, 
+            c_config_50: str=None, 
+            AI_MIN_DATETIME: str=None
     ):
         self.spark = None
         self.update(
@@ -75,17 +126,68 @@ class Config(ConfigBase):
             c_wf_orderby_expr, 
             c_regex1, 
             c_regex2, 
-            c_str
+            c_str, 
+            c_config_1, 
+            c_config_2, 
+            c_config_3, 
+            c_config_4, 
+            c_config_5, 
+            c_config_6, 
+            c_config_7, 
+            c_config_8, 
+            c_config_9, 
+            c_config_10, 
+            c_config_11, 
+            c_config_12, 
+            c_config_13, 
+            c_config_14, 
+            c_config_15, 
+            c_config_16, 
+            c_config_17, 
+            c_config_18, 
+            c_config_19, 
+            c_config_20, 
+            c_config_21, 
+            c_config_22, 
+            c_config_23, 
+            c_config_24, 
+            c_config_25, 
+            c_config_26, 
+            c_config_27, 
+            c_config_28, 
+            c_config_29, 
+            c_config_30, 
+            c_config_31, 
+            c_config_32, 
+            c_config_33, 
+            c_config_34, 
+            c_config_35, 
+            c_config_36, 
+            c_config_37, 
+            c_config_38, 
+            c_config_39, 
+            c_config_40, 
+            c_config_41, 
+            c_config_42, 
+            c_config_43, 
+            c_config_44, 
+            c_config_45, 
+            c_config_46, 
+            c_config_47, 
+            c_config_48, 
+            c_config_49, 
+            c_config_50, 
+            AI_MIN_DATETIME
         )
 
     def update(
             self,
             JDBC_URL: str="jdbc:mysql://18.144.156.219:3306/test_database", 
             JDBC_SOURCE_TABLE: str="test_table", 
-            CONFIG_STR: str=None, 
+            CONFIG_STR: str="jdbc_url-${JDBC_URL}", 
             CONFIG_BOOLEAN: bool=True, 
             CONFIG_DOUBLE: float=1.00123211232E7, 
-            CONFIG_INT: int=None, 
+            CONFIG_INT: int=97987, 
             CONFIG_FLOAT: float=4567546.5, 
             CONFIG_SHORT: int=120, 
             CONFIG_DB_SECRETS: str="qasecrets:mysql_user", 
@@ -113,7 +215,58 @@ class Config(ConfigBase):
             c_wf_orderby_expr: str="concat(`c -  boolean _  `, c_double)", 
             c_regex1: str="^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})", 
             c_regex2: str="((?=.*)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%]).{6,20})", 
-            c_str: str="stringwith$$one#%^&*()-=!@#"
+            c_str: str="stringwith$$one#%^&*()-=!@#", 
+            c_config_1: str="this is a test!@#^&*()_=-", 
+            c_config_2: str="this is a test!@#^&*()_=-", 
+            c_config_3: str="this is a test!@#^&*()_=-", 
+            c_config_4: str="this is a test!@#^&*()_=-", 
+            c_config_5: str="this is a test!@#^&*()_=-", 
+            c_config_6: str="this is a test!@#^&*()_=-", 
+            c_config_7: str="this is a test!@#^&*()_=-", 
+            c_config_8: str=None, 
+            c_config_9: str="this is a test!@#^&*()_=-", 
+            c_config_10: str="this is a test!@#^&*()_=-", 
+            c_config_11: str="this is a test!@#^&*()_=- asd", 
+            c_config_12: str="this is a test!@#^&*()_=- asd", 
+            c_config_13: str="this is a test!@#^&*()_=- asd", 
+            c_config_14: str="this is a test!@#^&*()_=- asd", 
+            c_config_15: str="this is a test!@#^&*()_=- asd", 
+            c_config_16: str="this is a test!@#^&*()_=- asd", 
+            c_config_17: str="this is a test!@#^&*()_=- asd", 
+            c_config_18: str="this is a test!@#^&*()_=- asd", 
+            c_config_19: str="this is a test!@#^&*()_=- asd", 
+            c_config_20: str="this is a test!@#^&*()_=- asd", 
+            c_config_21: str="this is a test!@#^&*()_=- asd", 
+            c_config_22: str="this is a test!@#^&*()_=- asd", 
+            c_config_23: str="this is a test!@#^&*()_=- asd", 
+            c_config_24: str="this is a test!@#^&*()_=- asd", 
+            c_config_25: str="this is a test!@#^&*()_=- asd", 
+            c_config_26: str=None, 
+            c_config_27: str="this is a test!@#^&*()_=- asd", 
+            c_config_28: str="this is a test!@#^&*()_=- asd", 
+            c_config_29: str="this is a test!@#^&*()_=- asd", 
+            c_config_30: str="this is a test!@#^&*()_=- asd", 
+            c_config_31: str="this is a test!@#^&*()_=- asd", 
+            c_config_32: str="this is a test!@#^&*()_=- asd", 
+            c_config_33: str="this is a test!@#^&*()_=- asd", 
+            c_config_34: str="this is a test!@#^&*()_=- asd", 
+            c_config_35: str="this is a test!@#^&*()_=- asd", 
+            c_config_36: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_37: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_38: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_39: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_40: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_41: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_42: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_43: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_44: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_45: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_46: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_47: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_48: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_49: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_50: str="this is a test!@#^&*()_=- asdasd", 
+            AI_MIN_DATETIME: str="2020-01-02 11:11:11"
     ):
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
@@ -152,4 +305,55 @@ class Config(ConfigBase):
         self.c_regex1 = c_regex1
         self.c_regex2 = c_regex2
         self.c_str = c_str
+        self.c_config_1 = c_config_1
+        self.c_config_2 = c_config_2
+        self.c_config_3 = c_config_3
+        self.c_config_4 = c_config_4
+        self.c_config_5 = c_config_5
+        self.c_config_6 = c_config_6
+        self.c_config_7 = c_config_7
+        self.c_config_8 = c_config_8
+        self.c_config_9 = c_config_9
+        self.c_config_10 = c_config_10
+        self.c_config_11 = c_config_11
+        self.c_config_12 = c_config_12
+        self.c_config_13 = c_config_13
+        self.c_config_14 = c_config_14
+        self.c_config_15 = c_config_15
+        self.c_config_16 = c_config_16
+        self.c_config_17 = c_config_17
+        self.c_config_18 = c_config_18
+        self.c_config_19 = c_config_19
+        self.c_config_20 = c_config_20
+        self.c_config_21 = c_config_21
+        self.c_config_22 = c_config_22
+        self.c_config_23 = c_config_23
+        self.c_config_24 = c_config_24
+        self.c_config_25 = c_config_25
+        self.c_config_26 = c_config_26
+        self.c_config_27 = c_config_27
+        self.c_config_28 = c_config_28
+        self.c_config_29 = c_config_29
+        self.c_config_30 = c_config_30
+        self.c_config_31 = c_config_31
+        self.c_config_32 = c_config_32
+        self.c_config_33 = c_config_33
+        self.c_config_34 = c_config_34
+        self.c_config_35 = c_config_35
+        self.c_config_36 = c_config_36
+        self.c_config_37 = c_config_37
+        self.c_config_38 = c_config_38
+        self.c_config_39 = c_config_39
+        self.c_config_40 = c_config_40
+        self.c_config_41 = c_config_41
+        self.c_config_42 = c_config_42
+        self.c_config_43 = c_config_43
+        self.c_config_44 = c_config_44
+        self.c_config_45 = c_config_45
+        self.c_config_46 = c_config_46
+        self.c_config_47 = c_config_47
+        self.c_config_48 = c_config_48
+        self.c_config_49 = c_config_49
+        self.c_config_50 = c_config_50
+        self.AI_MIN_DATETIME = AI_MIN_DATETIME
         pass

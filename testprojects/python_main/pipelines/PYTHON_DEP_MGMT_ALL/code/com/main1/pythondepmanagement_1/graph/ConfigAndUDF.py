@@ -21,6 +21,7 @@ def ConfigAndUDF(spark: SparkSession, in0: DataFrame) -> DataFrame:
         random_string(lit(10), col("`c___-- string`")).alias("random_string_value"), 
         concat(
             col("`c  date`"), 
+            lit(Config.c_config_38), 
             lit(Config.CONFIG_DB_SECRETS), 
             lit(Config.CONFIG_STR), 
             lit(Config.CONFIG_BOOLEAN), 

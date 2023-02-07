@@ -1,33 +1,4 @@
 version: 1
-dependencies:
-- name: mysql
-  id: '1658827323'
-  type: workflow
-  enabled: true
-- name: matplotlib
-  id: '410081255'
-  type: workflow
-  enabled: true
-- name: pandas
-  id: '171138274'
-  type: workflow
-  enabled: true
-- name: numpy
-  id: '2121735476'
-  type: workflow
-  enabled: true
-- name: requests
-  id: '211888696'
-  type: workflow
-  enabled: true
-- name: scipy
-  id: '69834547'
-  type: workflow
-  enabled: true
-- name: torch
-  id: '1722369069'
-  type: workflow
-  enabled: true
 configurations:
 - test-instance7
 - test-instance2
@@ -38,3 +9,32 @@ configurations:
 - default
 - test-instance4
 - test-instance8
+dependencies:
+- type: workflow
+  id: '1658827323'
+  name: mysql
+  enabled: true
+- type: workflow
+  id: '410081255'
+  name: matplotlib
+  enabled: true
+- type: workflow
+  id: '171138274'
+  name: pandas
+  enabled: true
+- type: workflow
+  id: '2121735476'
+  name: numpy
+  enabled: true
+- type: workflow
+  id: '211888696'
+  name: requests
+  enabled: true
+- type: workflow
+  id: '69834547'
+  name: scipy
+  enabled: true
+- type: workflow
+  id: '1722369069'
+  name: torch
+  enabled: true

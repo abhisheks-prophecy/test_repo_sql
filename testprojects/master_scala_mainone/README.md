@@ -227,3 +227,7 @@ changes
 *** Release notes for version: 1.16 ***
 
 Changes
+
+*** Release notes for version: 1.17 ***
+
+changes

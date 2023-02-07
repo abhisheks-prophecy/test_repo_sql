@@ -14,11 +14,13 @@
   "ports" : {
     "inputs" : [ {
       "id" : "O3D1a0kEkcYSTfyCm9_Y-",
-      "slug" : "in0"
+      "slug" : "in0",
+      "isStreaming" : false
     } ],
     "outputs" : [ {
       "id" : "hgJk0xNelegW1n8qDMDhw",
-      "slug" : "out0"
+      "slug" : "out0",
+      "isStreaming" : false
     } ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
@@ -888,8 +890,72 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
-            "expressions" : [ ]
+            "columnsSelector" : [ "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##year", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##industry_name_ANZSIC", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##variable", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##rme_size_grp", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##industry_code_ANZSIC", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##value", "o1NJfmoHv9ux0Z9pFiANB$$JrsI2PfdoqDUXHHTZHe19##unit" ],
+            "expressions" : [ {
+              "target" : "year",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "year"
+              },
+              "description" : "",
+              "_row_id" : "736636859240034864"
+            }, {
+              "target" : "industry_code_ANZSIC",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "industry_code_ANZSIC"
+              },
+              "description" : "",
+              "_row_id" : "7829222682807572621"
+            }, {
+              "target" : "industry_name_ANZSIC",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "industry_name_ANZSIC"
+              },
+              "description" : "",
+              "_row_id" : "2575437409827666685"
+            }, {
+              "target" : "rme_size_grp",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "rme_size_grp"
+              },
+              "description" : "",
+              "_row_id" : "52329170302038231"
+            }, {
+              "target" : "variable",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "variable"
+              },
+              "description" : "",
+              "_row_id" : "6624685247687924955"
+            }, {
+              "target" : "value",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "value"
+              },
+              "description" : "",
+              "_row_id" : "20323798182131425"
+            }, {
+              "target" : "unit",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "unit"
+              },
+              "description" : "",
+              "_row_id" : "6448793078290659390"
+            }, {
+              "target" : "c_config",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "concat('$c_string', '$c_int')"
+              },
+              "description" : "",
+              "_row_id" : "c_29"
+            } ]
           },
           "test" : {
             "unitTests" : [ {

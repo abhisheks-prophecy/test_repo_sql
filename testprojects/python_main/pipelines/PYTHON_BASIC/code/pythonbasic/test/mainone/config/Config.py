@@ -3,9 +3,10 @@ from prophecy.config import ConfigBase
 
 class Config(ConfigBase):
 
-    def __init__(self, ):
+    def __init__(self, c_string: str=None):
         self.spark = None
-        self.update()
+        self.update(c_string)
 
-    def update(self, ):
+    def update(self, c_string: str="test string"):
+        self.c_string = c_string
         pass

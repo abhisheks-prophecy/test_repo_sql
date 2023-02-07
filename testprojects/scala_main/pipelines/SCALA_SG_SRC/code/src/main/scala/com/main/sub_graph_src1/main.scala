@@ -2,6 +2,7 @@ package com.main.sub_graph_src1
 
 import io.prophecy.libs._
 import com.main.sub_graph_src1.config.ConfigStore._
+import com.main.sub_graph_src1.config.Context
 import com.main.sub_graph_src1.config._
 import com.main.sub_graph_src1.udfs.UDFs._
 import com.main.sub_graph_src1.udfs._
@@ -16,20 +17,29 @@ import java.time._
 
 object Main {
 
-  def graph(spark: SparkSession): Unit = {
+  def graph(context: Context): Unit = {
     val df_src_parquet_all_type_and_partition_withspacehyphens =
-      src_parquet_all_type_and_partition_withspacehyphens(spark).interim(
+      src_parquet_all_type_and_partition_withspacehyphens(context).interim(
         "graph",
         "8qziesy9-ngcOeLhVFmCK$$oTFH-zftsblU11s6LLMBZ",
         "tZblttEX9pep-3_lCvBEW$$zkLqZI_HCzpfACOL1uLTn"
       )
-    val df_Reformat_2 = Reformat_2(
-      spark,
-      df_src_parquet_all_type_and_partition_withspacehyphens
-    ).interim("graph",
-              "zS5n3k8HQ3HkziA9bYBKF$$PDoyluybxcGiqi79lWkPX",
-              "Yg9BtDqf0TxmaRYho1Lh9$$0p_ZBE_H6Fgrzgzdg6M4u"
-    )
+    val df_Reformat_1 =
+      Reformat_1(context,
+                 df_src_parquet_all_type_and_partition_withspacehyphens
+      ).interim("graph",
+                "sguXN3Qzk-rrsIeKc-lwj$$6nXDsqNXOLVMJZNMjkPv0",
+                "97nBNPy4v0oHeGU_zRGWw$$luZlhcxAsoGVl412RoaFq"
+      )
+    df_Reformat_1.cache().count()
+    df_Reformat_1.unpersist()
+    val df_Reformat_2 =
+      Reformat_2(context,
+                 df_src_parquet_all_type_and_partition_withspacehyphens
+      ).interim("graph",
+                "zS5n3k8HQ3HkziA9bYBKF$$PDoyluybxcGiqi79lWkPX",
+                "Yg9BtDqf0TxmaRYho1Lh9$$0p_ZBE_H6Fgrzgzdg6M4u"
+      )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
     val (df_Subgraph_1_out0, df_Subgraph_1_out1, df_Subgraph_1_out2) = {
@@ -37,7 +47,7 @@ object Main {
            df_Subgraph_1_out1_temp,
            df_Subgraph_1_out2_temp
       ) = Subgraph_1.apply(
-        spark,
+        context,
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens
@@ -53,19 +63,10 @@ object Main {
     df_Subgraph_1_out1.unpersist()
     df_Subgraph_1_out2.cache().count()
     df_Subgraph_1_out2.unpersist()
-    val df_Reformat_1 = Reformat_1(
-      spark,
-      df_src_parquet_all_type_and_partition_withspacehyphens
-    ).interim("graph",
-              "sguXN3Qzk-rrsIeKc-lwj$$6nXDsqNXOLVMJZNMjkPv0",
-              "97nBNPy4v0oHeGU_zRGWw$$luZlhcxAsoGVl412RoaFq"
-    )
-    df_Reformat_1.cache().count()
-    df_Reformat_1.unpersist()
   }
 
   def main(args: Array[String]): Unit = {
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(args)
+    val config = ConfigurationFactoryImpl.fromCLI(args)
     val spark: SparkSession = SparkSession
       .builder()
       .appName("Prophecy Pipeline")
@@ -74,6 +75,7 @@ object Main {
       .enableHiveSupport()
       .getOrCreate()
       .newSession()
+    val context = Context(spark, config)
     MetricsCollector.initializeMetrics(spark)
     implicit val interimOutputConsole: InterimOutput = InterimOutputHive2("")
     spark.conf.set("prophecy.collect.basic.stats",          "true")
@@ -83,7 +85,7 @@ object Main {
     )
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_SG_SRC")
     MetricsCollector.start(spark,                    "pipelines/SCALA_SG_SRC")
-    graph(spark)
+    graph(context)
     MetricsCollector.end(spark)
   }
 

@@ -1,0 +1,148 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "10",
+    "frontEndLanguage" : "sql",
+    "mode" : "stream",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "deltaonly"
+  },
+  "connections" : [ {
+    "id" : "Ybg8OVh4GXsp-a-PtnFhe",
+    "source" : "HPDOslmwYG3oH1cMxI0Ih$$CEe5vMuQNT3K5UQiVp2R1",
+    "sourcePort" : "PyVwFNYAlM0T-JmCJu8u7$$ZYr1tH1bawlAgNDO0U220",
+    "target" : "wB-3BxCn__La64BrZ0Ohd$$w6_ylhNd3y3l2yrYhVHQ_",
+    "targetPort" : "36RJm2qhUVfZgDs-TkPO0$$sO58BH5RWTP3K3uz6b7-1"
+  }, {
+    "id" : "TwgTKHelaDdHaagESZ6iK",
+    "source" : "wB-3BxCn__La64BrZ0Ohd$$w6_ylhNd3y3l2yrYhVHQ_",
+    "sourcePort" : "roCapAWP-oof4gJW-sIcg$$W9Li8k3_oTOfxYS2uFA4X",
+    "target" : "IY2NImjWEEJNUdj6d0Sdr$$IvqaqWSk1uIvtmX3m9aRO",
+    "targetPort" : "EjHunS8j43QmJym4lL4wX$$bzbIV9AlfFu2KridAXLFb"
+  } ],
+  "processes" : {
+    "wB-3BxCn__La64BrZ0Ohd$$w6_ylhNd3y3l2yrYhVHQ_" : {
+      "id" : "wB-3BxCn__La64BrZ0Ohd$$w6_ylhNd3y3l2yrYhVHQ_",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_2",
+        "slug" : "Limit_2",
+        "x" : 822.1499999999999,
+        "y" : 195.60000000000002,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "36RJm2qhUVfZgDs-TkPO0$$sO58BH5RWTP3K3uz6b7-1",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "roCapAWP-oof4gJW-sIcg$$W9Li8k3_oTOfxYS2uFA4X",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      }
+    },
+    "HPDOslmwYG3oH1cMxI0Ih$$CEe5vMuQNT3K5UQiVp2R1" : {
+      "id" : "HPDOslmwYG3oH1cMxI0Ih$$CEe5vMuQNT3K5UQiVp2R1",
+      "component" : "StreamingSource",
+      "metadata" : {
+        "label" : "DeltaSource",
+        "slug" : "DeltaSource",
+        "x" : 385.6000000000001,
+        "y" : 272.6,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PyVwFNYAlM0T-JmCJu8u7$$ZYr1tH1bawlAgNDO0U220",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/s3_delta_autoloader_dirlist"
+      }
+    },
+    "IY2NImjWEEJNUdj6d0Sdr$$IvqaqWSk1uIvtmX3m9aRO" : {
+      "id" : "IY2NImjWEEJNUdj6d0Sdr$$IvqaqWSk1uIvtmX3m9aRO",
+      "component" : "StreamingTarget",
+      "metadata" : {
+        "label" : "DeltaTarget",
+        "slug" : "DeltaTarget",
+        "x" : 1291.35,
+        "y" : 166.8,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EjHunS8j43QmJym4lL4wX$$bzbIV9AlfFu2KridAXLFb",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/s3_delta_autoloader_target"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

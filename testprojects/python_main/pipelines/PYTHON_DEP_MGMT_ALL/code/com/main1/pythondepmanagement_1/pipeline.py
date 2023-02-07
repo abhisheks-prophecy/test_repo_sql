@@ -129,6 +129,70 @@ def pipeline(spark: SparkSession) -> None:
         "e8gYR43R2yAepDV8orPFH$$mqYXtHvju6Wt2CQ248Vf9", 
         "7Jv_nxOWQ3vIMtWiogYvM$$36XNVyAh1tPUEZN2JMuoK"
     )
+    df_Script_4 = Script_4(spark)
+    df_Script_4 = collectMetrics(
+        spark, 
+        df_Script_4, 
+        "graph", 
+        "lY2wiyCbPyvB-4x5W9gPf$$FDN9-_Juqk0WtKuFeXk4v", 
+        "QMatwwpfn7YoGtUPWDu2x$$auqaJuVTRBwQENaisUZAM"
+    )
+    df_Script_10 = Script_10(spark, df_Script_4)
+    df_Script_10 = collectMetrics(
+        spark, 
+        df_Script_10, 
+        "graph", 
+        "Y8pV9KYei6ZrtKjDNfnN2$$jDK-OEV-6QbchelPYUCi4", 
+        "ZxjsypY1vN6TOit7_cv5l$$zlKxZKzlpE325XPhRKZyf"
+    )
+    df_Script_10_1 = Script_10_1(spark, df_Script_10)
+    df_Script_10_1 = collectMetrics(
+        spark, 
+        df_Script_10_1, 
+        "graph", 
+        "oTF8w9KEvtcB1J-Q-ck4M$$vTpBZUjZEUiCVTLEU4pMv", 
+        "DVVHE17maXZzoVCzqPO1p$$lPc6KUQDM_dkoHnMsaUdk"
+    )
+    df_Script_10_1_1 = Script_10_1_1(spark, df_Script_10_1)
+    df_Script_10_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1, 
+        "graph", 
+        "LQJfAYnHylyTO9g9T8F6k$$rfkg45iXbMXOdnnfzVLLD", 
+        "mjiwQmxd9Pd8ZgJqo2yfy$$etodXNGoNHZRP1B3bn83z"
+    )
+    df_Script_10_1_1_1 = Script_10_1_1_1(spark, df_Script_10_1_1)
+    df_Script_10_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1, 
+        "graph", 
+        "C4OH4KEMEBm6jIm06xz98$$-KTiKRyjUjSwDpp1FEEgk", 
+        "KGT7Fiv7NoMlFg7jKpeyQ$$U9WX6BlC808i0fnMn8xb7"
+    )
+    df_Script_10_1_1_1_1 = Script_10_1_1_1_1(spark, df_Script_10_1_1_1)
+    df_Script_10_1_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1, 
+        "graph", 
+        "3VC7efSICkJQ9MwJ1XFxI$$YKLGqI88c4UEgqDhM6MTL", 
+        "lqPmflqoStkJIOn21_LST$$YHVsS6mhMbxXyZjeii36R"
+    )
+    df_Script_10_1_1_1_1_1 = Script_10_1_1_1_1_1(spark, df_Script_10_1_1_1_1)
+    df_Script_10_1_1_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1, 
+        "graph", 
+        "etmsIXXRFdd9pc4vvnXGK$$sMI3v9zLYqdxC9C5nf_eP", 
+        "5cxG2eRSKjI2XPFjqGh6C$$pfCwKDxam7E0TJa-Qc8QQ"
+    )
+    df_Script_10_1_1_1_1_1_1 = Script_10_1_1_1_1_1_1(spark, df_Script_10_1_1_1_1_1)
+    df_Script_10_1_1_1_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1, 
+        "graph", 
+        "rD1a31yR5mboCBDwddTyd$$DCsEUxqhwUwpvK9FH04fr", 
+        "LGD9vYVhi4aVSaAdTor-w$$Z79neyDC7HI0IARnomizN"
+    )
     df_Join_6 = Join_6(spark, df_all_type_part_parquet, df_all_type_part_parquet)
     df_Join_6 = collectMetrics(
         spark, 
@@ -210,15 +274,15 @@ def pipeline(spark: SparkSession) -> None:
         "5CWHE-tPSkfgaUUbMv5u5$$bz3wkz4t1Qs8S2xkBshkc", 
         "O7MlD4SsSNAngvEmyO2mL$$EPYlbrlI9CP94b-tBwNsN"
     )
-    df_OrderBy_3 = OrderBy_3(spark, df_avro)
-    df_OrderBy_3 = collectMetrics(
+    df_UTGenOrderBy_3 = UTGenOrderBy_3(spark, df_avro)
+    df_UTGenOrderBy_3 = collectMetrics(
         spark, 
-        df_OrderBy_3, 
+        df_UTGenOrderBy_3, 
         "graph", 
         "F-O0ZWyymLHQ7NAiD4HwH$$mRW3uIYVYRgYXJeBJQ7JX", 
         "23_EUJ5mmZmxkUF_FP06-$$05CM-G0C71N7lAUdf7DdA"
     )
-    df_Reformat_7 = Reformat_7(spark, df_OrderBy_3)
+    df_Reformat_7 = Reformat_7(spark, df_UTGenOrderBy_3)
     df_Reformat_7 = collectMetrics(
         spark, 
         df_Reformat_7, 
@@ -234,6 +298,49 @@ def pipeline(spark: SparkSession) -> None:
         "SdsAu-JEcKL4oHBjOOWw5$$xyS1iKUMKSKDsyjxCiYZL", 
         "OQ4wWZItknICGVTFmZ7Df$$sJY9WA14U_nDYll42Tk8T"
     )
+    df_Script_10_1_1_1_1_1_1_1 = Script_10_1_1_1_1_1_1_1(spark, df_Script_10_1_1_1_1_1_1)
+    df_Script_10_1_1_1_1_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1, 
+        "graph", 
+        "FBexJVOppwC2UYrLKfUOF$$cE8m7D92aovlUPzOg7Y3p", 
+        "TWz7U4Dv2ITMhldL03IbO$$vq96vACQVKUxBQEJtt0zL"
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_output0, df_Script_10_1_1_1_1_1_1_1_1_output1, df_Script_10_1_1_1_1_1_1_1_1_output2 = Script_10_1_1_1_1_1_1_1_1(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_output0 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1_1_output0, 
+        "graph", 
+        "pYIghOBjIgYcw74vG9bbQ$$gHF2OQST_t8VtlB3ylKOV", 
+        "-_aWa_jQ4lRQN-n0DRweO$$0QqcxYzVUc7m7F0HYRt5Y"
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_output1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1_1_output1, 
+        "graph", 
+        "pYIghOBjIgYcw74vG9bbQ$$gHF2OQST_t8VtlB3ylKOV", 
+        "a8Qx4sS8LpZ98GFsPPo88$$sQ-OxebwVBEt2otlf0Tki"
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_output2 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1_1_output2, 
+        "graph", 
+        "pYIghOBjIgYcw74vG9bbQ$$gHF2OQST_t8VtlB3ylKOV", 
+        "1DVFl12tqxqRe_cXY1PNS$$dV5ZX3t9BH7HC5cL7-Xom"
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_1 = Script_10_1_1_1_1_1_1_1_1_1(spark, df_Script_10_1_1_1_1_1_1_1_1_output0)
+    df_Script_10_1_1_1_1_1_1_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1_1_1, 
+        "graph", 
+        "thUTfJIgnC7MWUYGGusi8$$QeCg-kRxLw2JH_QFD5W5-", 
+        "yxWh_nrSAuBr-WU2G6hH1$$V-n-1P6v5VByaT2w-JAg6"
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_1.cache().count()
+    df_Script_10_1_1_1_1_1_1_1_1_1.unpersist()
     df_catalog = catalog(spark)
     df_catalog = collectMetrics(
         spark, 
@@ -250,6 +357,24 @@ def pipeline(spark: SparkSession) -> None:
         "LEDjjajm33AFBjMK7JioI$$rVWjZayD16h1-uiVX4Hdm", 
         "fbhuMh-rzp5KYLcyDkDFf$$hmxqhdByTaoXKqNkuTfOf"
     )
+    df_src_ut_parquet_all = src_ut_parquet_all(spark)
+    df_src_ut_parquet_all = collectMetrics(
+        spark, 
+        df_src_ut_parquet_all, 
+        "graph", 
+        "2gdpmd5LP9WpcJvc7sBWg$$CcRfyYPTUGbcDheu3WiMB", 
+        "0NWji28TTLxZHhoBCEBHk$$LnAcQC6vvtD6CMfGObhj_"
+    )
+    df_UTGenAllReformat_12 = UTGenAllReformat_12(spark, df_src_ut_parquet_all)
+    df_UTGenAllReformat_12 = collectMetrics(
+        spark, 
+        df_UTGenAllReformat_12, 
+        "graph", 
+        "xFJ677pxDBcB70K6jtp4d$$9tPV0j5HB9l1XWUZh_piT", 
+        "VeZntApaeK-RzMXX89SZY$$-SPdWodOllgm5Z0QrisTq"
+    )
+    df_UTGenAllReformat_12.cache().count()
+    df_UTGenAllReformat_12.unpersist()
     df_Aggregate_1_1 = Aggregate_1_1(spark, df_SetOperation_1)
     df_Aggregate_1_1 = collectMetrics(
         spark, 
@@ -266,6 +391,16 @@ def pipeline(spark: SparkSession) -> None:
         "UM37Y4sZy0XbEvnMP3z0d$$PJ-qsFp1oBTaLAY-uUmOZ", 
         "eXuydhO1EqpAMfbq8b8LT$$dqKKSFDwQjydqmvIi4Dft"
     )
+    df_Script_10_1_1_1_1_1_1_1_1_1_1 = Script_10_1_1_1_1_1_1_1_1_1_1(spark, df_Script_10_1_1_1)
+    df_Script_10_1_1_1_1_1_1_1_1_1_1 = collectMetrics(
+        spark, 
+        df_Script_10_1_1_1_1_1_1_1_1_1_1, 
+        "graph", 
+        "8kYLRQLDi8b18GgrD3bqY$$p95j20cwGehxiufSVYfBa", 
+        "ajqnr1h_8Jxe7AIhYS7NP$$Jt1vVgln81IBnRUh1phtN"
+    )
+    df_Script_10_1_1_1_1_1_1_1_1_1_1.cache().count()
+    df_Script_10_1_1_1_1_1_1_1_1_1_1.unpersist()
     df_text = text(spark)
     df_text = collectMetrics(
         spark, 
@@ -306,10 +441,10 @@ def pipeline(spark: SparkSession) -> None:
         "iEAhKfffRKYROLhkq6LCM$$FUrIc9QCdGEO7TuzFhdTJ", 
         "AkoFj0jmMBshTbQIjr103$$OaRGS-kcQrvnXd_bho8ve"
     )
-    df_Reformat_16 = Reformat_16(spark, df_json_in)
-    df_Reformat_16 = collectMetrics(
+    df_VeryLargeExpr = VeryLargeExpr(spark, df_json_in)
+    df_VeryLargeExpr = collectMetrics(
         spark, 
-        df_Reformat_16, 
+        df_VeryLargeExpr, 
         "graph", 
         "HlaWDG5dsklrL9pm8GG8M$$PhFCGBTLGIr5vXoTnP5v6", 
         "NumrPyiY_QXIWM_GXd7Un$$36iPKHFjqehM2767gFFSP"
@@ -332,7 +467,21 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_9.cache().count()
     df_Reformat_9.unpersist()
-    df_SQLStatement_1_out, df_SQLStatement_1_out1 = SQLStatement_1(spark, df_all_type_part_parquet)
+    df_Script_11 = Script_11(spark, df_Script_10_1_1_1_1_1_1_1_1_output1)
+    df_Script_11 = collectMetrics(
+        spark, 
+        df_Script_11, 
+        "graph", 
+        "oe5VAiZiKLu7SUG99Oai7$$71QliKPCawKw68wVndpcV", 
+        "vmuEUuPBRL9z_m1bXRtLz$$oB5Mph0woDZxBk9is6Obu"
+    )
+    df_Script_11.cache().count()
+    df_Script_11.unpersist()
+    df_SQLStatement_1_out, df_SQLStatement_1_out1, df_SQLStatement_1_out2 = SQLStatement_1(
+        spark, 
+        df_all_type_part_parquet, 
+        df_all_type_part_parquet
+    )
     df_SQLStatement_1_out = collectMetrics(
         spark, 
         df_SQLStatement_1_out, 
@@ -347,8 +496,17 @@ def pipeline(spark: SparkSession) -> None:
         "gjMe6lyUngJb9qtWsPJdG$$a5FgmlsagVGQ-Ir816l6x", 
         "mmAThmA8eZ8TWGKyEYAeT$$-SVeAEm5c4CGAt7992p5j"
     )
+    df_SQLStatement_1_out2 = collectMetrics(
+        spark, 
+        df_SQLStatement_1_out2, 
+        "graph", 
+        "gjMe6lyUngJb9qtWsPJdG$$a5FgmlsagVGQ-Ir816l6x", 
+        "klZjo-VL4nM-x2mJw2x9v$$mUt9_Lydb9sTlfHI8OkBM"
+    )
     df_SQLStatement_1_out1.cache().count()
     df_SQLStatement_1_out1.unpersist()
+    df_SQLStatement_1_out2.cache().count()
+    df_SQLStatement_1_out2.unpersist()
     df_Reformat_15 = Reformat_15(spark, df_csv_all_type)
     df_Reformat_15 = collectMetrics(
         spark, 
@@ -379,7 +537,7 @@ def pipeline(spark: SparkSession) -> None:
         df_Limit_5, 
         df_OrderBy_4, 
         df_Limit_4, 
-        df_Reformat_16, 
+        df_VeryLargeExpr, 
         df_Reformat_15, 
         df_OrderBy_1
     )
@@ -426,6 +584,16 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_11.cache().count()
     df_Reformat_11.unpersist()
+    df_Script_12 = Script_12(spark, df_Script_10_1_1_1_1_1_1_1_1_output2)
+    df_Script_12 = collectMetrics(
+        spark, 
+        df_Script_12, 
+        "graph", 
+        "I3JANHzf1GVbjRXxw3kQe$$U8_HNjQP9CDilu1Em8Vlj", 
+        "vDDKfjiuErpQ8qOGkZoBa$$dhu6sUv80Tcbc-qI0Hbyi"
+    )
+    df_Script_12.cache().count()
+    df_Script_12.unpersist()
     df_SubGraph_7 = SubGraph_7(spark, df_Script_3)
     df_Filter_3 = Filter_3(spark, df_SubGraph_7)
     df_Filter_3 = collectMetrics(
@@ -462,10 +630,10 @@ def pipeline(spark: SparkSession) -> None:
         "THZf4U0Afr0WwFlHIExkT$$ZcG-fixeZPUAPkqvmsgpR"
     )
     Script_2(spark, df_WindowFunction_1)
-    df_SetOperation_2 = SetOperation_2(spark, df_csv_all_type, df_csv_all_type)
-    df_SetOperation_2 = collectMetrics(
+    df_UTGenSetOperation_2 = UTGenSetOperation_2(spark, df_csv_all_type, df_csv_all_type)
+    df_UTGenSetOperation_2 = collectMetrics(
         spark, 
-        df_SetOperation_2, 
+        df_UTGenSetOperation_2, 
         "graph", 
         "nhcr8lRzD1Z62M29QSJV2$$G3wZPVKTwdIe7pFbDPx8A", 
         "8BO0wVrXpfywc10AAtnm3$$HOGG5Xn1Bn2NB3wojyJQI"
@@ -498,7 +666,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_OrderBy_5.cache().count()
     df_OrderBy_5.unpersist()
-    df_Script_7 = Script_7(spark, df_SetOperation_2)
+    df_Script_7 = Script_7(spark, df_UTGenSetOperation_2)
     df_Script_7 = collectMetrics(
         spark, 
         df_Script_7, 
@@ -542,16 +710,22 @@ def main():
     spark.conf.set("prophecy.collect.basic.stats", "true")
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
     spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
-    spark.conf.set("spark_config1", "spark_config1 value")
+    spark.conf.set("spark_config1", "spark./<>;'\"[]{}\\|~*/-+p- config1 value !~_#@%^&*()-=")
     spark.conf.set("spark_config2", "spark_config2 value")
+    spark.conf.set("fs.s3a.access.key", "AKIAR6ESAR2JAQNZNVMH")
+    spark.conf.set("fs.s3a.secret.key", "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")
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_DEP_MGMT_ALL")
-    spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config1", "hadoop_config1 value")
-    spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config2", "hadoop_config2 value")
-    
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_DEP_MGMT_ALL"
+    spark.sparkContext._jsc\
+        .hadoopConfiguration()\
+        .set(
+        "hadoop_config1",
+        "hadoo./<>;'\"[]{}\\|~*/-+p- config1 value !~_#@%^&*()-="
     )
+    spark.sparkContext._jsc.hadoopConfiguration().set("hadoop_config2", "hadoop_config2 value")
+    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.access.key", "AKIAR6ESAR2JAQNZNVMH")
+    spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "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")
+    
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_DEP_MGMT_ALL")
     pipeline(spark)
     MetricsCollector.end(spark)
 
