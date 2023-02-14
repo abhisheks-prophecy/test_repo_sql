@@ -6,6 +6,7 @@ from .DELTA_DEST import *
 from .SPLUNK_DEST import *
 from .Reformat_2 import *
 from .DELTA_SRC import *
+from .Aggregate_1 import *
 from .JSON_SRC import *
 from .Filter_1 import *
 from .Deduplicate_1 import *
@@ -13,6 +14,7 @@ from .DEST_PARQ import *
 from .DEST_ORC import *
 from .SQLStatement_1 import *
 from .DEST_CSV import *
+from .SRC_KAFKA import *
 from .Filter_2 import *
 from .Reformat_1 import *
 from .SchemaTransform_1 import *
@@ -21,5 +23,8 @@ from .SetOperation_1 import *
 from .Script_1 import *
 from .src_parquet_all_type_and_partition_withspacehyphens_renamed import *
 from .FlattenSchema_1 import *
+from .FlattenSchema_2 import *
+from .DEST_KAFKA import *
 from .Parquet_Standard import *
 from .SQS_PARQUET import *
+from .Watermark_1 import *

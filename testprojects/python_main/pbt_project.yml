@@ -97,7 +97,6 @@ pipelines:
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
-      - datasets/src_ut_parquet_all
       outputs: []
     dependencies: {}
   pipelines/PYTHON_GCP:
@@ -193,12 +192,14 @@ pipelines:
       - datasets/src_streaming_csv_autoloader
       - datasets/src_streaming_delta
       - datasets/src_streaming_json
+      - datasets/src_streaming_kafka
       - datasets/src_streaming_parquet_standard
       - datasets/src_streaming_sqs_csv
       outputs:
       - datasets/dest_csv
       - datasets/dest_delta
       - datasets/dest_streaming_json
+      - datasets/dest_streaming_kafka
       - datasets/dest_streaming_orc
       - datasets/dest_streaming_parquet
       - datasets/dest_streaming_splunk
@@ -1130,6 +1131,32 @@ datasets:
         description: ''
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-01-24 06:46:01'
+  datasets/src_streaming_kafka:
+    name: src_streaming_kafka
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-14 10:06:56'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-14 10:06:56'
+  datasets/dest_streaming_kafka:
+    name: dest_streaming_kafka
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-14 10:15:28'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-14 10:15:28'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
