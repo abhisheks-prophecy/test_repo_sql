@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,12 +14,14 @@ import java.time._
 
 object SQLStatement_1 {
 
-  def apply(spark: SparkSession, in0: DataFrame): (DataFrame, DataFrame) = {
+  def apply(context: Context, in0: DataFrame): (DataFrame, DataFrame) = {
     in0.createOrReplaceTempView("in0")
-    (spark.sql(
+    (context.spark.sql(
        "select * from in0 where in0.customer_id not like '$c_sql_expr'"
      ),
-     spark.sql("select * from in0 where in0.first_name not like '$c_sql_expr'")
+     context.spark.sql(
+       "select * from in0 where in0.first_name not like '$c_sql_expr'"
+     )
     )
   }
 

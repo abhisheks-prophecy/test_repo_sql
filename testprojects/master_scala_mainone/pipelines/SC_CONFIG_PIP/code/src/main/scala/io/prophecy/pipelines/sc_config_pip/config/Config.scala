@@ -1,6 +1,7 @@
 package io.prophecy.pipelines.sc_config_pip.config
 
 import io.prophecy.pipelines.sc_config_pip.config.ConfigStore._
+import io.prophecy.pipelines.sc_config_pip.config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._

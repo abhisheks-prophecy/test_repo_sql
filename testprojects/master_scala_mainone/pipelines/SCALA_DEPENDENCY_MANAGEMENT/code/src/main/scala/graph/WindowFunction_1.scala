@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,11 +14,11 @@ import java.time._
 
 object WindowFunction_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+  def apply(context: Context, in: DataFrame): DataFrame = {
     import org.apache.spark.sql.expressions.{Window, WindowSpec}
     in.withColumn(
         "c_date-for today",
-        expr(Config.c_row).over(
+        expr(context.config.c_row).over(
           Window
             .partitionBy(col("`c- short`"),
                          col("`c  - int`"),
