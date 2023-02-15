@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -11,9 +12,9 @@ import java.time._
 
 object src_avro_CustsDatasetInput {
 
-  def apply(spark: SparkSession): DataFrame = {
+  def apply(context: Context): DataFrame = {
     import org.apache.avro.Schema
-    var reader = spark.read.format("avro")
+    var reader = context.spark.read.format("avro")
     reader = reader
     reader
       .load("dbfs:/Prophecy/qa_data/avro/CustomersDatasetInput.avro")

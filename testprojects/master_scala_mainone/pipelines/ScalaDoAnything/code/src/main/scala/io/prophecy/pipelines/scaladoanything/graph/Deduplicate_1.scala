@@ -2,6 +2,7 @@ package io.prophecy.pipelines.scaladoanything.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scaladoanything.config.ConfigStore._
+import io.prophecy.pipelines.scaladoanything.config.Context
 import io.prophecy.pipelines.scaladoanything.udfs.UDFs._
 import io.prophecy.pipelines.scaladoanything.udfs._
 import org.apache.spark._
@@ -13,7 +14,8 @@ import java.time._
 
 object Deduplicate_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     import org.apache.spark.sql.expressions.Window
     in.withColumn(
         "row_number",

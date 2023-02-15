@@ -21,7 +21,7 @@ class Config(ConfigBase):
             c_long: int=4324234, 
             c_dbsecrets: str="qasecrets_mysql:username", 
             c_spark_expression: str="concat('a', first_name)", 
-            c_float: float=-12312.123046875, 
+            c_float: float=-12312.123, 
             c_boolean: bool=True
     ):
         self.c_string = c_string

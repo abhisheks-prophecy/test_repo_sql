@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -12,5 +13,5 @@ import org.apache.spark.sql.expressions._
 import java.time._
 
 object Repartition_2 {
-  def apply(spark: SparkSession, in: DataFrame): DataFrame = in.repartition(10)
+  def apply(context: Context, in: DataFrame): DataFrame = in.repartition(10)
 }

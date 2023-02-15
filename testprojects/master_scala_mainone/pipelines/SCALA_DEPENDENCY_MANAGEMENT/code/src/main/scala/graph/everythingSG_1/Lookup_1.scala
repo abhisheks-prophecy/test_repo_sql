@@ -2,6 +2,7 @@ package graph.everythingSG_1
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,10 +14,10 @@ import java.time._
 
 object Lookup_1 {
 
-  def apply(spark: SparkSession, in0: DataFrame): Unit =
+  def apply(context: Context, in0: DataFrame): Unit =
     createLookup("Lookup_1",
                  in0,
-                 spark,
+                 context.spark,
                  List("customer_id", "first_name"),
                  "last_name",
                  "phone"

@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Reformat_3Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -35,7 +36,7 @@ class Reformat_3Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = graph.Reformat_3(spark, dfIn)
+    val dfOutComputed = graph.Reformat_3(context, dfIn)
     val res = assertDFEquals(dfOut.select("c   short  --", "c_next"),
                              dfOutComputed.select("c   short  --", "c_next"),
                              maxUnequalRowsToShow,
@@ -60,7 +61,7 @@ class Reformat_3Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = graph.Reformat_3(spark, dfIn)
+    val dfOutComputed = graph.Reformat_3(context, dfIn)
     val res = assertDFEquals(dfOut.select("c   short  --", "c_next"),
                              dfOutComputed.select("c   short  --", "c_next"),
                              maxUnequalRowsToShow,
@@ -76,11 +77,13 @@ class Reformat_3Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
   }
 
 }
