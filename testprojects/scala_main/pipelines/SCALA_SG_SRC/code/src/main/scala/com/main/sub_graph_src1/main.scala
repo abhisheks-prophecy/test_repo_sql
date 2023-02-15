@@ -84,9 +84,9 @@ object Main {
                    "org.apache.spark.sql.catalyst.optimizer.ColumnPruning"
     )
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_SG_SRC")
-    MetricsCollector.start(spark,                    "pipelines/SCALA_SG_SRC")
-    graph(context)
-    MetricsCollector.end(spark)
+    MetricsCollector.instrument(spark,               "pipelines/SCALA_SG_SRC") {
+      graph(context)
+    }
   }
 
 }
