@@ -25,14 +25,17 @@
         "spark_version" : "10.4.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
-          "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/REL_SC_DBFSLIBS",
           "prophecy.metadata.fabric.id" : "2404",
+          "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/REL_SC_DBFSLIBS",
+          "prophecy.metadata.is.interactive.run" : "false",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
-          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.packages.path" : "{\"pipelines/SCALA_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.metadata.is.interactive.run" : "false",
-          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws"
+          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
+          "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -53,9 +56,9 @@
         "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
-        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-3.2.0-6.3.12.3.jar"
+        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-3.2.0-6.3.20.jar"
       }, {
-        "whl" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/prophecy_libs-1.3.20-py3-none-any.whl"
+        "whl" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/prophecy_libs-1.3.22-py3-none-any.whl"
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar"
       } ],

@@ -419,3 +419,15 @@ test
 *** Release notes for version: 0.02 ***
 
 sd
+
+*** Release notes for version: 2.7.0.1 ***
+
+test
+
+*** Release notes for version: 2.7.0.2 ***
+
+s
+
+*** Release notes for version: 2.7.0.3 ***
+
+d

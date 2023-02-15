@@ -70,6 +70,53 @@ class SetOperation_1Test extends FunSuite with DataFrameSuiteBase {
     Assert.assertTrue(msg, res.isRight)
   }
 
+  test("Unit Test 1") {
+
+    val dfIn0 = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/SetOperation_1/in0/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/SetOperation_1/in0/data/unit_test_1.json",
+      "in0"
+    )
+    val dfIn1 = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/SetOperation_1/in1/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/SetOperation_1/in1/data/unit_test_1.json",
+      "in1"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/SetOperation_1/out/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/SetOperation_1/out/data/unit_test_1.json",
+      "out"
+    )
+
+    val dfOutComputed = io.prophecy.pipelines.livy_scala.graph
+      .SetOperation_1(context, dfIn0, dfIn1)
+    val res = assertDFEquals(
+      dfOut.select("year",
+                   "industry_code_ANZSIC",
+                   "industry_name_ANZSIC",
+                   "rme_size_grp",
+                   "variable",
+                   "value",
+                   "unit"
+      ),
+      dfOutComputed.select("year",
+                           "industry_code_ANZSIC",
+                           "industry_name_ANZSIC",
+                           "rme_size_grp",
+                           "variable",
+                           "value",
+                           "unit"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")

@@ -150,6 +150,51 @@ class Reformat_1Test extends FunSuite with DataFrameSuiteBase {
     Assert.assertTrue(msg, res.isRight)
   }
 
+  test("Unit Test 3") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/in/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/in/data/unit_test_3.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/out/schema.json",
+      "/data/io/prophecy/pipelines/livy_scala/graph/Reformat_1/out/data/unit_test_3.json",
+      "out"
+    )
+
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Reformat_1(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("year",
+                   "lookup1",
+                   "industry_code_ANZSIC",
+                   "industry_name_ANZSIC",
+                   "rme_size_grp",
+                   "variable",
+                   "value",
+                   "unit",
+                   "c_configs"
+      ),
+      dfOutComputed.select("year",
+                           "lookup1",
+                           "industry_code_ANZSIC",
+                           "industry_name_ANZSIC",
+                           "rme_size_grp",
+                           "variable",
+                           "value",
+                           "unit",
+                           "c_configs"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
