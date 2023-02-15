@@ -359,3 +359,7 @@ test
 *** Release notes for version: 0.11 ***
 
 test
+
+*** Release notes for version: 2.7.0.5 ***
+
+d
