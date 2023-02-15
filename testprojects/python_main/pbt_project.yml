@@ -194,10 +194,12 @@ pipelines:
       - datasets/src_streaming_json
       - datasets/src_streaming_kafka
       - datasets/src_streaming_parquet_standard
+      - datasets/src_streaming_qa_kafka
       - datasets/src_streaming_sqs_csv
       outputs:
       - datasets/dest_csv
       - datasets/dest_delta
+      - datasets/dest_qa_kafka
       - datasets/dest_streaming_json
       - datasets/dest_streaming_kafka
       - datasets/dest_streaming_orc
@@ -1157,6 +1159,71 @@ datasets:
         description: ''
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-02-14 10:15:28'
+  datasets/srcStreamingKafkaDELTE:
+    name: srcStreamingKafkaDELTE
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-15 07:07:39'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-15 07:07:40'
+  datasets/asdasds:
+    name: asdasds
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-15 07:18:25'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-15 07:18:26'
+  datasets/src_streaming_qa_kafka:
+    name: src_streaming_qa_kafka
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-15 09:39:39'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-15 09:39:39'
+  datasets/asdasdasdasddel:
+    name: asdasdasdasddel
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-15 09:55:05'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-15 09:55:05'
+  datasets/dest_qa_kafka:
+    name: dest_qa_kafka
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-15 14:47:38'
+    mode: stream
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-15 14:47:38'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
