@@ -5,16 +5,16 @@ from prophecy.libs import typed_lit
 from python_streaming_main.config.ConfigStore import *
 from python_streaming_main.udfs.UDFs import *
 
-def SRC_KAFKA(spark: SparkSession) -> DataFrame:
+def QA_KAFKA(spark: SparkSession) -> DataFrame:
     consumer_options = {
-        "kafka.sasl.jaas.config": "kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule required username=\"rxiuwdvx\" password=\"nEnzuoVESMBR1hrGZxec_-4BlWsHJ9Bo\";",
-        "kafka.sasl.mechanism": "SCRAM-SHA-256",
-        "kafka.security.protocol": "SASL_SSL",
+        "kafka.sasl.jaas.config": "kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule required username=\"ehtbzofh\" password=\"ho5NvESLghrW69UKaRlqe118Co9OzUV3\";",
+        "kafka.sasl.mechanism": "SCRAM-SHA-512",
+        "kafka.security.protocol": "SASL_PLAINTEXT",
         "kafka.bootstrap.servers": "dory-01.srvs.cloudkafka.com:9094,dory-02.srvs.cloudkafka.com:9094,dory-03.srvs.cloudkafka.com:9094",
         "kafka.session.timeout.ms": "6000",
         "group.id": "",
     }
-    consumer_options["subscribe"] = "rxiuwdvx-demo-producer"
+    consumer_options["subscribe"] = "ehtbzofh-test-topic-1"
     consumer_options["startingOffsets"] = "earliest"
     consumer_options["includeHeaders"] = False
 

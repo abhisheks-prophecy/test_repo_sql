@@ -7,9 +7,7 @@ from python_streaming_main.udfs.UDFs import *
 
 def DEST_KAFKA(spark: SparkSession, in0: DataFrame):
     df1 = in0.select([to_json(struct("*")).cast('string').alias("value")])
-    writer = df1.writeStream\
-                 .format("kafka")\
-                 .option("checkpointLocation", "dbfs:/tmp/streaming_release/test/dest_streaming_kafka_cp1")
+    writer = df1.writeStream.format("kafka").option("checkpointLocation", "dbfs:/tmp/randomcheck/qa_dest_kafka")
     writer\
         .outputMode("complete")\
         .options(

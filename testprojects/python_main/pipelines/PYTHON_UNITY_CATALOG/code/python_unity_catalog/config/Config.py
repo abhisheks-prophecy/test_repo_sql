@@ -1,4 +1,5 @@
 from prophecy.config import ConfigBase
+prophecy_spark_context = None
 
 
 class Config(ConfigBase):
@@ -24,11 +25,13 @@ class Config(ConfigBase):
             c_float: float=-12312.123, 
             c_boolean: bool=True
     ):
+        global prophecy_spark_context
+        prophecy_spark_context = self.spark
         self.c_string = c_string
         self.c_long = self.get_int_value(c_long)
 
         if c_dbsecrets is not None:
-            self.c_dbsecrets = self.get_dbutils(self.spark).secrets.get(*c_dbsecrets.split(":"))
+            self.c_dbsecrets = self.get_dbutils(prophecy_spark_context).secrets.get(*c_dbsecrets.split(":"))
 
         self.c_spark_expression = c_spark_expression
         self.c_float = self.get_float_value(c_float)
