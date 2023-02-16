@@ -435,3 +435,7 @@ d
 *** Release notes for version: 2.7.6 ***
 
 test
+
+*** Release notes for version: 2.7.7.1 ***
+
+test
