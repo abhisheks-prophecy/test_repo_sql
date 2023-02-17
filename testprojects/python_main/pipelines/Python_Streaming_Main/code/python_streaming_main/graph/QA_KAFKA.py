@@ -9,7 +9,7 @@ def QA_KAFKA(spark: SparkSession) -> DataFrame:
     consumer_options = {
         "kafka.sasl.jaas.config": "kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule required username=\"ehtbzofh\" password=\"ho5NvESLghrW69UKaRlqe118Co9OzUV3\";",
         "kafka.sasl.mechanism": "SCRAM-SHA-512",
-        "kafka.security.protocol": "SASL_PLAINTEXT",
+        "kafka.security.protocol": "SASL_SSL",
         "kafka.bootstrap.servers": "dory-01.srvs.cloudkafka.com:9094,dory-02.srvs.cloudkafka.com:9094,dory-03.srvs.cloudkafka.com:9094",
         "kafka.session.timeout.ms": "6000",
         "group.id": "",
