@@ -49,6 +49,19 @@ object Main {
                  "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd"
         )
         .cache()
+    val df_Script_1 =
+      Script_1(context, df_src_avro_CustsDatasetInput_1).interim(
+        "graph",
+        "zvL4eQufcf7JXDWE5naBz$$FaOjEEhgZ-ohY-GFzOtkz",
+        "zvrtFJPhpuoVXq8RQ6UgB$$oj1NDu1sKgKz7Ldy31y9n"
+      )
+    val df_call_func = call_func(context, df_Script_1).interim(
+      "graph",
+      "jDGCmYurLPi5p2PI0NGES$$ppPGE4WaX6-Zibw1VKZeH",
+      "kcQDaPwg6yVi98DcYU8IQ$$IoQqIwKAkSnY95_gSy2rx"
+    )
+    df_call_func.cache().count()
+    df_call_func.unpersist()
     val df_WindowFunction_1 =
       WindowFunction_1(context,
                        df_src_parquet_all_type_and_partition_withspacehyphens
@@ -179,12 +192,6 @@ object Main {
       "ASVQUSGemiDjwc6M_V35W$$dFto0bYXNQ_A7n3kGM0jR",
       "U-eeoR9aJ66XXBnbWbzyj$$K894Ue9hU76yLTlb2svbu"
     )
-    val df_Script_1 =
-      Script_1(context, df_src_avro_CustsDatasetInput_1).interim(
-        "graph",
-        "zvL4eQufcf7JXDWE5naBz$$FaOjEEhgZ-ohY-GFzOtkz",
-        "zvrtFJPhpuoVXq8RQ6UgB$$oj1NDu1sKgKz7Ldy31y9n"
-      )
     val df_OrderBy_3 = OrderBy_3(context, df_ComplexExpression).interim(
       "graph",
       "hx5wO_87IAH8xNU8kd6u0$$NZNcKwMNB77oH_rUMhHw2",

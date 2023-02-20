@@ -1504,6 +1504,12 @@
     "sourcePort" : "-iLcTHeyPi06v3tqrYjBU$$7s_wmQnvqOe_tiBl8SbF_",
     "target" : "aWLtOuKeHLQQID3VG2277$$_H5eO61j3PJHZ0OOK84Tk",
     "targetPort" : "jVCVCrCv3wxTzmUmaCSbe$$SE6FimBeGGv-4oGna9We6"
+  }, {
+    "id" : "ZH2VeYyval1jW5-Rc9sFX",
+    "source" : "zvL4eQufcf7JXDWE5naBz$$FaOjEEhgZ-ohY-GFzOtkz",
+    "sourcePort" : "zvrtFJPhpuoVXq8RQ6UgB$$oj1NDu1sKgKz7Ldy31y9n",
+    "target" : "jDGCmYurLPi5p2PI0NGES$$ppPGE4WaX6-Zibw1VKZeH",
+    "targetPort" : "0QSzrfWnlvh3xvOAtkF3w$$4X9OiK0a7j8KvvNpbfDTM"
   } ],
   "processes" : {
     "QA8k3yf3NHL4Dj0WAvlcE$$6k8gyMJ_bK4ZvWD-WkPiK" : {
@@ -1539,7 +1545,7 @@
           "target" : "col1",
           "expression" : {
             "format" : "sql",
-            "expression" : "Lookup_2(p_string,p_long)['c_date-for today']"
+            "expression" : "Lookup_2(p_string, p_long)['c_date-for today']"
           },
           "description" : ""
         } ]
@@ -1752,6 +1758,120 @@
         "columnsSelector" : [ "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_int", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_string", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_long", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_boolean", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_date", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_timestamp", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_float", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_array_decimal", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_struct", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_struct.c_array_int", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_struct.c_timestamp", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_struct.c_short", "RINinM9axq6cPMpFxOj8x$$ThZ46n6o7RTdswirNeZnH##c_struct.c_decimal" ],
         "explodeColumns" : [ "c_array_int", "c_array_string", "c_array_long", "c_array_boolean", "c_array_date", "c_array_timestamp", "c_array_float", "c_array_decimal", "c_struct.c_array_int" ],
         "delimiter" : "-"
+      }
+    },
+    "jDGCmYurLPi5p2PI0NGES$$ppPGE4WaX6-Zibw1VKZeH" : {
+      "id" : "jDGCmYurLPi5p2PI0NGES$$ppPGE4WaX6-Zibw1VKZeH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "call_func",
+        "slug" : "call_func",
+        "x" : -1020,
+        "y" : -760,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0QSzrfWnlvh3xvOAtkF3w$$4X9OiK0a7j8KvvNpbfDTM",
+          "slug" : "in",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "kcQDaPwg6yVi98DcYU8IQ$$IoQqIwKAkSnY95_gSy2rx",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c1",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "a",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "b",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c3",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "0QSzrfWnlvh3xvOAtkF3w$$4X9OiK0a7j8KvvNpbfDTM##country_code" ],
+        "expressions" : [ {
+          "target" : "c1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "call_func('named_struct', 'a', 'test', 'b', 2, 'c', 3)"
+          },
+          "description" : ""
+        }, {
+          "target" : "c2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "expr('$c_record_complex.cr_array_record[0].crar_spark_expression')"
+          },
+          "description" : ""
+        }, {
+          "target" : "c3",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "call_func('qa_mask_zip_code', country_code)"
+          },
+          "description" : ""
+        } ]
       }
     },
     "vpuiPUloPPI5wKsdnBW2X$$9hYAzmyJqyva6xBUJQas7" : {
@@ -2183,56 +2303,56 @@
           "target" : "c1",
           "expression" : {
             "format" : "sql",
-            "expression" : "((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL') - length('Spark SQL ') - levenshtein('kitten', 'sitting') + ((log(10.0D, 100) * log10(10)) * log2(2)) + locate('bar', 'foobarbar', 5) - months_between('1997-02-28 10:30:00', '1996-10-30') + nanvl(CAST('NaN' AS DOUBLE), 123) + rand() - round(2.5D, 0) + ((sin(0) * sinh(0))) + size(array(1, 2, 3)) + sqrt(4) + abs(1.23) + acos(1) - ascii('2') - asin(0) + bin(13) + cast('10' as int) + cbrt(27.0) + ceil(-2.1) - coalesce(NULL, 1, NULL) + conv('100', 2, 10) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
+            "expression" : "((((((((((((((((((((((((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL')) - length('Spark SQL ')) - levenshtein('kitten', 'sitting')) + ((call_func('log', 10.0D, 100) * log10(10)) * log2(2))) + locate('bar', 'foobarbar', 5)) - months_between('1997-02-28 10:30:00', '1996-10-30')) + nanvl(CAST('NaN' AS DOUBLE), 123)) + rand()) - round(CAST('2.5' AS FLOAT), 0)) + (sin(0) * sinh(0))) + size(array(1, 2, 3))) + sqrt(4)) + abs(1.23D)) + acos(1)) - ascii('2')) - asin(0)) + bin(13)) + CAST('10' AS INT)) + cbrt(CAST('27.0' AS FLOAT))) + ceil((- 2.1D))) - coalesce(NULL, 1, NULL)) + conv('100', 2, 10)) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
           },
           "description" : ""
         }, {
           "target" : "c2",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(regexp_extract('100-200', '(d+)-(d+)', 1), regexp_replace('100-200', '(d+)', 'num'), repeat('123', 2), reverse('Spark SQL'), rpad('hi', 5, '??'), rtrim('  LQSa  '), sha2('Spark', 256), substring('Spark SQL', 5, 2), trim('    SparkSQL   '), decode(encode('abc', 'utf-8'), 'utf-8'), format_string('Hello World %d %s', 100, 'days'), lower('SparkSql'), lpad('hi', 5, '??'), ltrim('    SparkSQL   '), hex('Spark SQL'), md5('Spark'), hash('Spark', array(1.1, 2.123, 3.123), 2), base64(c_string))"
+            "expression" : "concat(regexp_extract('100-200', '(d+)-(d+)', 1), regexp_replace('100-200', '(d+)', 'num'), repeat('123', 2), reverse('Spark SQL'), rpad('hi', 5, '??'), rtrim('  LQSa  '), sha2('Spark', 256), substring('Spark SQL', 5, 2), trim('    SparkSQL   '), decode(encode('abc', 'utf-8'), 'utf-8'), format_string('Hello World %d %s', 100, 'days'), lower('SparkSql'), lpad('hi', 5, '??'), ltrim('    SparkSQL   '), hex('Spark SQL'), md5('Spark'), hash('Spark', array(1.1D, 2.123D, 3.123D), 2), base64(c_string))"
           },
           "description" : ""
         }, {
           "target" : "c3",
           "expression" : {
             "format" : "sql",
-            "expression" : "(isnan(cast(c_short as double)) or isnull(c_decimal) or (c_string LIKE '%9%') or ((((datediff(c_date, c_timestamp) + last_day(c_date)) + dayofyear(c_date)) - dayofweek(c_date)) < date_sub(current_timestamp(), 2)) or (array_contains(array(1, 2, 3), 2)) or (array_contains(array(10,12,13,14,15), 11))) and c_int%2==0"
+            "expression" : "((((isnan(CAST(c_short AS DOUBLE)) OR isnull(c_decimal)) OR c_string LIKE '%9%') OR ((((((datediff(c_date, c_timestamp) + last_day(c_date)) + dayofyear(c_date)) - dayofweek(c_date)) < date_sub(current_timestamp(), 2)) OR array_contains(array(1, 2, 3), 2)) OR array_contains(array(10, 12, 13, 14, 15), 11))) AND ((c_int % 2) = 0))"
           },
           "description" : ""
         }, {
           "target" : "c4",
           "expression" : {
             "format" : "sql",
-            "expression" : "CASE WHEN c_int%11 = 0 THEN sort_array(split(c_string, 'a')) WHEN c_int%9 = 0 THEN sort_array(split(c_string, '[#%]')) WHEN c_int%7 = 0 THEN split(c_string, '[@4]') WHEN c_int%5 = 0 THEN sort_array(split(c_string, 's')) ELSE sort_array(array('b', 'd', 'c', 'a'), true) END"
+            "expression" : "CASE WHEN ((c_int % 11) = 0) THEN sort_array(split(c_string, 'a')) WHEN ((c_int % 9) = 0) THEN sort_array(split(c_string, '[#%]')) WHEN ((c_int % 7) = 0) THEN split(c_string, '[@4]') WHEN ((c_int % 5) = 0) THEN sort_array(split(c_string, 's')) ELSE sort_array(array('b', 'd', 'c', 'a'), true) END"
           },
           "description" : ""
         }, {
           "target" : "c5",
           "expression" : {
             "format" : "sql",
-            "expression" : "date_add(from_unixtime(\"2021-01-01 10:10:10\", 'yyyy-MM-dd HH:mm:ss'), 2)"
+            "expression" : "date_add(from_unixtime('2021-01-01 10:10:10', 'yyyy-MM-dd HH:mm:ss'), 2)"
           },
           "description" : ""
         }, {
           "target" : "c6",
           "expression" : {
             "format" : "sql",
-            "expression" : "case\n    when c_int > 10 then\n        case \n            when NOT (NOT (c_string like '%1%')) then 'A'\n            when NOT (NOT (trim(trim(c_string)) = '')) then 'B'\n            else 'X'\n        end\n    when c_int <= 10 then\n        case\n            when NOT (NOT (c_string like '%1%')) then 'C'\n            when NOT (NOT (c_string not like '%2%')) then 'D'\n            else 'Z'\n        end\n    else null\nend"
+            "expression" : "CASE WHEN (c_int > 10) THEN CASE WHEN (NOT (NOT c_string LIKE '%1%')) THEN 'A' WHEN (NOT (NOT (trim(trim(c_string)) = ''))) THEN 'B' ELSE 'X' END WHEN (c_int <= 10) THEN CASE WHEN (NOT (NOT c_string LIKE '%1%')) THEN 'C' WHEN (NOT (NOT (NOT c_string LIKE '%2%'))) THEN 'D' ELSE 'Z' END ELSE NULL END"
           },
           "description" : ""
         }, {
           "target" : "c7",
           "expression" : {
             "format" : "sql",
-            "expression" : "((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL') - length('Spark SQL ') - levenshtein('kitten', 'sitting') + ((log(10.0D, 100) * log10(10)) * log2(2)) + locate('bar', 'foobarbar', 5) - months_between('1997-02-28 10:30:00', '1996-10-30') + nanvl(CAST('NaN' AS DOUBLE), 123) + rand() - round(2.5D, 0) + ((sin(0) * sinh(0))) + size(array(1, 2, 3)) + sqrt(4) + abs(1.23) + acos(1) - ascii('2') - asin(0) + bin(13) + cast('10' as int) + cbrt(27.0) + ceil(-2.1) - coalesce(NULL, 1, NULL) + conv('100', 2, 10) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
+            "expression" : "((((((((((((((((((((((((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL')) - length('Spark SQL ')) - levenshtein('kitten', 'sitting')) + ((call_func('log', 10.0D, 100) * log10(10)) * log2(2))) + locate('bar', 'foobarbar', 5)) - months_between('1997-02-28 10:30:00', '1996-10-30')) + nanvl(CAST('NaN' AS DOUBLE), 123)) + rand()) - round(CAST('2.5' AS FLOAT), 0)) + (sin(0) * sinh(0))) + size(array(1, 2, 3))) + sqrt(4)) + abs(1.23D)) + acos(1)) - ascii('2')) - asin(0)) + bin(13)) + CAST('10' AS INT)) + cbrt(CAST('27.0' AS FLOAT))) + ceil((- 2.1D))) - coalesce(NULL, 1, NULL)) + conv('100', 2, 10)) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
           },
           "description" : ""
         }, {
           "target" : "c8",
           "expression" : {
             "format" : "sql",
-            "expression" : "((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL') - length('Spark SQL ') - levenshtein('kitten', 'sitting') + ((log(10.0D, 100) * log10(10)) * log2(2)) + locate('bar', 'foobarbar', 5) - months_between('1997-02-28 10:30:00', '1996-10-30') + nanvl(CAST('NaN' AS DOUBLE), 123) + rand() - round(2.5D, 0) + ((sin(0) * sinh(0))) + size(array(1, 2, 3)) + sqrt(4) + abs(1.23) + acos(1) - ascii('2') - asin(0) + bin(13) + cast('10' as int) + cbrt(27.0) + ceil(-2.1) - coalesce(NULL, 1, NULL) + conv('100', 2, 10) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
+            "expression" : "((((((((((((((((((((((((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL')) - length('Spark SQL ')) - levenshtein('kitten', 'sitting')) + ((call_func('log', 10.0D, 100) * log10(10)) * log2(2))) + locate('bar', 'foobarbar', 5)) - months_between('1997-02-28 10:30:00', '1996-10-30')) + nanvl(CAST('NaN' AS DOUBLE), 123)) + rand()) - round(CAST('2.5' AS FLOAT), 0)) + (sin(0) * sinh(0))) + size(array(1, 2, 3))) + sqrt(4)) + abs(1.23D)) + acos(1)) - ascii('2')) - asin(0)) + bin(13)) + CAST('10' AS INT)) + cbrt(CAST('27.0' AS FLOAT))) + ceil((- 2.1D))) - coalesce(NULL, 1, NULL)) + conv('100', 2, 10)) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
           },
           "description" : ""
         }, {
@@ -2246,7 +2366,7 @@
           "target" : "c9_udf2",
           "expression" : {
             "format" : "sql",
-            "expression" : "udf_string_null_safe(c_string) * c_int"
+            "expression" : "(udf_string_null_safe(c_string) * c_int)"
           },
           "description" : ""
         }, {
@@ -2409,7 +2529,7 @@
         "label" : "OrderBy_3",
         "slug" : "OrderBy_3",
         "x" : -1120,
-        "y" : -840,
+        "y" : -860,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2900,7 +3020,7 @@
               "alias" : "in1",
               "expression" : {
                 "format" : "sql",
-                "expression" : "in0.`c  - int`=in1.`c  - int`"
+                "expression" : "(in0.`c  - int` = in1.`c  - int`)"
               },
               "joinType" : "inner"
             } ],
@@ -3166,7 +3286,7 @@
             "columnsSelector" : [ "jdOWLZNbX0SEYgWB0bQqz$$SmBkhQBGlfiy0UJbw9b-a##c  - int" ],
             "condition" : {
               "format" : "sql",
-              "expression" : "`c  - int` > -100"
+              "expression" : "(`c  - int` > (- 100))"
             }
           }
         },
@@ -3984,7 +4104,7 @@
               "target" : "lookup1",
               "expression" : {
                 "format" : "sql",
-                "expression" : "LookupTest(customer_id,first_name)['phone']"
+                "expression" : "LookupTest(customer_id, first_name)['phone']"
               },
               "description" : ""
             } ]
@@ -5847,14 +5967,14 @@
               "id" : "out0",
               "model" : {
                 "format" : "sql",
-                "expression" : "`c- short` > -10"
+                "expression" : "(`c- short` > (- 10))"
               }
             }, {
               "path" : "out1",
               "id" : "out1",
               "model" : {
                 "format" : "sql",
-                "expression" : "`c  - int` > -100"
+                "expression" : "(`c  - int` > (- 100))"
               }
             } ]
           }
@@ -6248,7 +6368,7 @@
         "columnsSelector" : [ "1K-_b3LlbLacTxoC1G8Np$$ACA6DtoAcpijrDjviQ0w1##c   short  --" ],
         "condition" : {
           "format" : "sql",
-          "expression" : "`c   short  --` > 10"
+          "expression" : "(`c   short  --` > 10)"
         }
       }
     },
@@ -6320,7 +6440,7 @@
         "columnsSelector" : [ ],
         "condition" : {
           "format" : "sql",
-          "expression" : "c9_udf1_c2 not like '$c_regex1' and col2 not like '$c_regex2'"
+          "expression" : "((NOT c9_udf1_c2 LIKE '$c_regex1') AND (NOT col2 LIKE '$c_regex2'))"
         }
       }
     },
@@ -6432,7 +6552,7 @@
         "label" : "Aggregate_1",
         "slug" : "Aggregate_1",
         "x" : -900,
-        "y" : -840,
+        "y" : -860,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -7142,7 +7262,7 @@
           "id" : "out0",
           "model" : {
             "format" : "sql",
-            "expression" : "`c_decimal  -  ` >= '$c_12321'"
+            "expression" : "(`c_decimal  -  ` >= '$c_12321')"
           }
         }, {
           "path" : "out1",
@@ -8050,7 +8170,7 @@
           "target" : "lookup1",
           "expression" : {
             "format" : "sql",
-            "expression" : "Lookup_1(customer_id,first_name)[\"email\"]"
+            "expression" : "Lookup_1(customer_id, first_name)['email']"
           },
           "description" : ""
         } ]
@@ -8092,8 +8212,8 @@
       "metadata" : {
         "label" : "ConfigAndUDF",
         "slug" : "ConfigAndUDF",
-        "x" : -1120,
-        "y" : -680,
+        "x" : -1100,
+        "y" : -640,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -8175,14 +8295,14 @@
           "target" : "config_values",
           "expression" : {
             "format" : "sql",
-            "expression" : "concat(`customer_id`, '$c_config_45','$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT')"
+            "expression" : "concat(customer_id, '$c_config_45', '$CONFIG_STR', '$CONFIG_BOOLEAN', '$CONFIG_DOUBLE', '$CONFIG_INT', '$CONFIG_FLOAT')"
           },
           "description" : ""
         }, {
           "target" : "udf_multiply_usage",
           "expression" : {
             "format" : "sql",
-            "expression" : "udf_multiply(CAST(customer_id as INT))"
+            "expression" : "udf_multiply(CAST(customer_id AS INT))"
           },
           "description" : ""
         }, {
@@ -8217,7 +8337,7 @@
           "target" : "c_another_complex_expression",
           "expression" : {
             "format" : "sql",
-            "expression" : "CASE WHEN (NOT CAST(CASE WHEN coalesce(((((string_length(CAST(first_name AS STRING)) = 8) AND (string_length(CAST(first_name AS STRING)) = 8)) AND ((string_length(CAST(first_name AS STRING)) = 8) AND (string_length(CAST(first_name AS STRING)) = cast('$c_record_complex.cr_array_record[0].crar_int' as int)))) AND ((((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10)) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10))), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) WHEN coalesce(((array_contains(array(6, 7), string_length(CAST(first_name AS STRING))) AND array_contains(array(6, 7), string_length(CAST(first_name AS STRING)))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) ELSE CAST(0 AS BOOLEAN) END AS BOOLEAN)) THEN date_format(to_timestamp('$AI_MIN_DATETIME', 'yyyy-MM-dd HH:mm:ss'), 'yyyyMMdd') WHEN coalesce(((string_length(CAST(first_name AS STRING)) = 8) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(first_name AS STRING) WHEN coalesce((array_contains(array(6, 7), string_length(CAST(first_name AS STRING))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING) ELSE concat('$c_array_complex[0].car_record.carr_double', '$c_record_complex.cr_array_record[0].crar_double') END"
+            "expression" : "CASE WHEN (NOT CAST(CASE WHEN coalesce(((((string_length(CAST(first_name AS STRING)) = 8) AND (string_length(CAST(first_name AS STRING)) = 8)) AND ((string_length(CAST(first_name AS STRING)) = 8) AND (string_length(CAST(first_name AS STRING)) = CAST('$c_record_complex.cr_array_record[0].crar_int' AS INT)))) AND ((((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10)) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 10))), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) WHEN coalesce(((array_contains(array(6, 7), string_length(CAST(first_name AS STRING))) AND array_contains(array(6, 7), string_length(CAST(first_name AS STRING)))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(1 AS BOOLEAN) ELSE CAST(0 AS BOOLEAN) END AS BOOLEAN)) THEN date_format(to_timestamp('$AI_MIN_DATETIME', 'yyyy-MM-dd HH:mm:ss'), 'yyyyMMdd') WHEN coalesce(((string_length(CAST(first_name AS STRING)) = 8) AND ((NOT isnull(CASE WHEN (length(trim(CAST(first_name AS STRING))) = 8) THEN date_format(to_date(trim(CAST(first_name AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST(first_name AS STRING) WHEN coalesce((array_contains(array(6, 7), string_length(CAST(first_name AS STRING))) AND ((NOT isnull(CASE WHEN (length(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING))) = 8) THEN date_format(to_date(trim(CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING)), 'yyyyMMdd'), 'yyyyMMdd') END)) = 1)), CAST(0 AS BOOLEAN)) THEN CAST((19000000 + CAST(first_name AS DECIMAL(9,0))) AS STRING) ELSE concat('$c_array_complex[0].car_record.carr_double', '$c_record_complex.cr_array_record[0].crar_double') END"
           },
           "description" : ""
         } ]
@@ -8503,7 +8623,7 @@
           "target" : "cast_c9_sql",
           "expression" : {
             "format" : "sql",
-            "expression" : "cast(SUBSTRING(c9_udf1_c2, 1,2) as int)"
+            "expression" : "CAST(substring(c9_udf1_c2, 1, 2) AS INT)"
           },
           "description" : ""
         }, {
