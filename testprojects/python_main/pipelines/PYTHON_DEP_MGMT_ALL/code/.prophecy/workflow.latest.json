@@ -1503,6 +1503,12 @@
     "sourcePort" : "K1XpTR7-jgHPuX6PHVdPr$$wHEmbxozybFo-eRVP11a3",
     "target" : "gjMe6lyUngJb9qtWsPJdG$$a5FgmlsagVGQ-Ir816l6x",
     "targetPort" : "8tG5TcXZ9hBHHcD8h5oUe$$x9XVUbhhL_LDm4LwpNArc"
+  }, {
+    "id" : "IXZkazQghbeONrJezys0l",
+    "source" : "m7IaU0XgW06uSIbFGef0B$$8YjTXHRWeIcuhvz_iG2NZ",
+    "sourcePort" : "gC-8YSjj5-83Mi4jzyWeE$$eWVZk_fAShNrHFWsAWIsA",
+    "target" : "hfO-eOQ0xKNtnRtvSSV4t$$DqsYwlOwb_iu0xyhymWP1",
+    "targetPort" : "7aUSkLyJgERACIQUBpyBc$$DyWoCvhZijyWaiPm8bOat"
   } ],
   "processes" : {
     "JFnDL5Prrj2Z6OXTovov1$$ve0XgF2vT-qYRHHPUnJog" : {
@@ -8457,6 +8463,120 @@
         "limit" : "'$c_int_11'"
       }
     },
+    "hfO-eOQ0xKNtnRtvSSV4t$$DqsYwlOwb_iu0xyhymWP1" : {
+      "id" : "hfO-eOQ0xKNtnRtvSSV4t$$DqsYwlOwb_iu0xyhymWP1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "call_func",
+        "slug" : "call_func",
+        "x" : 20,
+        "y" : 1100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7aUSkLyJgERACIQUBpyBc$$DyWoCvhZijyWaiPm8bOat",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "PI6oCR2ZnJ8q_6JSAamDE$$jTRIjq7nxEmJFH9tZVvsC",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c1",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c2",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "a",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "b",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c4",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "7aUSkLyJgERACIQUBpyBc$$DyWoCvhZijyWaiPm8bOat##c_string" ],
+        "expressions" : [ {
+          "target" : "c1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "call_func('qa_mask_zip_code', c_string)"
+          },
+          "description" : ""
+        }, {
+          "target" : "c2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "call_func('named_struct', 'a', 'test', 'b', 2, 'c', 3)"
+          },
+          "description" : ""
+        }, {
+          "target" : "c4",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "expr('$EXPR_COMPLEX_DATES')"
+          },
+          "description" : ""
+        } ]
+      }
+    },
     "fjLmZ6vfR2C-j7IKuv_0q$$Msx0xcxDAiyQFIgcTIVlq" : {
       "id" : "fjLmZ6vfR2C-j7IKuv_0q$$Msx0xcxDAiyQFIgcTIVlq",
       "component" : "Script",
@@ -9368,7 +9488,7 @@
           "target" : "c2",
           "expression" : {
             "format" : "sql",
-            "expression" : "((((((((((((((((((((((((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL')) - length('Spark SQL ')) - levenshtein('kitten', 'sitting')) + ((log(10.0D, 100) * log10(10)) * log2(2))) + locate('bar', 'foobarbar', 5)) - months_between('1997-02-28 10:30:00', '1996-10-30')) + nanvl(CAST('NaN' AS DOUBLE), 123)) + rand()) + (10 % 3)) - round(CAST('2.5' AS FLOAT), 0)) + (sin(0) * sinh(0))) + sqrt(4)) + abs(1.23D)) + acos(1)) - ascii('2')) - asin(0)) + bin(13)) + CAST('10' AS INT)) + cbrt(CAST('27.0' AS FLOAT))) + ceil(-2.1D)) - coalesce(NULL, 1, NULL)) + conv('100', 2, 10)) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
+            "expression" : "((((((((((((((((((((((((((((greatest(c_int, 9, 2) + floor(c_decimal)) + ((degrees(3.141592653589793D) * exp(2)) * expm1(0))) + factorial(5)) + format_number(12332.123456D, 4)) - instr('SparkSQL', 'SQL')) - length('Spark SQL ')) - levenshtein('kitten', 'sitting')) + ((call_func('log', 10.0D, 100) * log10(10)) * log2(2))) + locate('bar', 'foobarbar', 5)) - months_between('1997-02-28 10:30:00', '1996-10-30')) + nanvl(CAST('NaN' AS DOUBLE), 123)) + rand()) + (10 % 3)) - round(CAST('2.5' AS FLOAT), 0)) + (sin(0) * sinh(0))) + sqrt(4)) + abs(1.23D)) + acos(1)) - ascii('2')) - asin(0)) + bin(13)) + CAST('10' AS INT)) + cbrt(CAST('27.0' AS FLOAT))) + ceil(-2.1D)) - coalesce(NULL, 1, NULL)) + conv('100', 2, 10)) + year('2016-07-30')) + least(c_decimal, c_int, c_long))"
           },
           "description" : ""
         }, {

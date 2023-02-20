@@ -48,7 +48,7 @@
       "name" : "dev_unity_catalog",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "adv-unrestricted-shared", "adv-power-shared", "adv-shared-compute" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -61,7 +61,7 @@
       "name" : "dev",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2", "adv-jsoncomplex" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -199,19 +199,6 @@
         }
       }
     }, {
-      "id" : "3228",
-      "name" : "livyTest",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "4653",
       "name" : "SingleCluster_1",
       "clusterSizes" : {
@@ -240,6 +227,21 @@
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4725",
+      "name" : "whl_dbfs",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/1.4.0"
+        }
       },
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }

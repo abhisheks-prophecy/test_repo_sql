@@ -228,6 +228,22 @@ pipelines:
       - datasets/dest_streaming_orc
       - datasets/dest_streaming_parquet
     dependencies: {}
+  pipelines/PythonUCTranspileTest:
+    name: PythonUCTranspileTest
+    description: PYTHON_UNITY_CATALOG
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-02-20 13:19:25'
+    datasets:
+      inputs:
+      - datasets/qa_database_all_type_parquet
+      - datasets/src_catalog_accessible
+      - datasets/src_parquet_unity_catalog
+      outputs:
+      - datasets/dest_uc_out2
+      - datasets/dest_uc_target
+    dependencies: {}
 datasets:
   datasets/dest_avro_CustsDatasetInput:
     name: dest_avro_CustsDatasetInput
