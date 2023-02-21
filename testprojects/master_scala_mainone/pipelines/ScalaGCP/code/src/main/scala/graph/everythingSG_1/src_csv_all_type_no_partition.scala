@@ -2,6 +2,7 @@ package graph.everythingSG_1
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -11,8 +12,8 @@ import java.time._
 
 object src_csv_all_type_no_partition {
 
-  def apply(spark: SparkSession): DataFrame =
-    spark.read
+  def apply(context: Context): DataFrame =
+    context.spark.read
       .format("csv")
       .option("header", true)
       .option("sep",    ",")

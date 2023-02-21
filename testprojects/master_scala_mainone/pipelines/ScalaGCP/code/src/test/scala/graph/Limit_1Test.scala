@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Limit_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -35,7 +36,7 @@ class Limit_1Test extends FunSuite with DataFrameSuiteBase {
                                 "out"
       )
 
-    val dfOutComputed = graph.Limit_1(spark, dfIn)
+    val dfOutComputed = graph.Limit_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -81,7 +82,7 @@ class Limit_1Test extends FunSuite with DataFrameSuiteBase {
                                 "out"
       )
 
-    val dfOutComputed = graph.Limit_1(spark, dfIn)
+    val dfOutComputed = graph.Limit_1(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -118,11 +119,13 @@ class Limit_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
   }
 
 }
