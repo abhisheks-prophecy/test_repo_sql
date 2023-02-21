@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from streamingallpipeline.streaming.main.one.this.config.ConfigStore import *
 from streamingallpipeline.streaming.main.one.this.udfs.UDFs import *
 
@@ -19,6 +20,5 @@ def CSVTarget(spark: SparkSession, in0: DataFrame):
         .option("ignoreTrailingWhiteSpace", True)\
         .outputMode("append")\
         .partitionBy("p_int", "p_float", "p_string")\
-        .trigger(processingTime = "1 minute")\
         .option("path", "s3a://qa-prophecy/streaming/target/csv/all_type_with_partition")\
         .start()
