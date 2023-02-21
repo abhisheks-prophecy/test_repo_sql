@@ -29,10 +29,7 @@ def main():
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_SUBGRAPH_CREATOR")
     
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_SUBGRAPH_CREATOR"
-    )
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_SUBGRAPH_CREATOR")
     pipeline(spark)
     MetricsCollector.end(spark)
 

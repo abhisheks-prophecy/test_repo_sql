@@ -88,7 +88,7 @@
     "job_clusters" : [ {
       "job_cluster_key" : "REL_PYTHON_SINGLE_CLUSTER_JOB_default_small",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2068",
@@ -98,7 +98,10 @@
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.packages.path" : "{\"pipelines/PYTHON_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl\",\"pipelines/PYTHON_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl\",\"pipelines/PYTHON_DEP_MGMT_ALL\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__"
+          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
+          "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -110,7 +113,7 @@
     }, {
       "job_cluster_key" : "Cluster_2",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2068",
@@ -120,7 +123,10 @@
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.packages.path" : "{\"pipelines/PYTHON_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl\",\"pipelines/PYTHON_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl\",\"pipelines/PYTHON_DEP_MGMT_ALL\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__"
+          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
+          "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -132,7 +138,7 @@
     }, {
       "job_cluster_key" : "Cluster_1",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2068",
@@ -142,7 +148,10 @@
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.packages.path" : "{\"pipelines/PYTHON_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl\",\"pipelines/PYTHON_SG_SRC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl\",\"pipelines/PYTHON_DEP_MGMT_ALL\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__"
+          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
+          "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
         },
         "num_workers" : 2,
         "aws_attributes" : {
@@ -170,15 +179,15 @@
       "python_wheel_task" : {
         "package_name" : "PYTHON_BASIC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -191,15 +200,15 @@
       "python_wheel_task" : {
         "package_name" : "PYTHON_BASIC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -212,15 +221,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_PIP_SG_SRC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
@@ -236,15 +245,15 @@
       "python_wheel_task" : {
         "package_name" : "PYTHON_BASIC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -260,15 +269,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_PIP_SG_SRC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
@@ -284,15 +293,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_PIP_SG_SRC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
@@ -308,15 +317,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_PIP_DEP_MGMT_ALL",
         "entry_point" : "main",
-        "parameters" : [ "-i", "test-instance5", "-C", "CONFIG_DOUBLE=33", "CONFIG_FLOAT=33.33", "CONFIG_INT=33", "CONFIG_BOOLEAN=true", "CONFIG_SHORT=33" ]
+        "parameters" : [ "-i", "test-instance5", "-O", "{\"CONFIG_DOUBLE\":33,\"CONFIG_FLOAT\":33.33,\"CONFIG_INT\":33,\"CONFIG_BOOLEAN\":true,\"CONFIG_SHORT\":33}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.20"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.22"
+          "package" : "prophecy-libs==1.4.0"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl"

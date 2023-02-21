@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from com.main1.pythondepmanagement_1.config.ConfigStore import *
 from com.main1.pythondepmanagement_1.udfs.UDFs import *
 
@@ -32,5 +33,7 @@ def ConfigAndUDF(spark: SparkSession, in0: DataFrame) -> DataFrame:
           )\
           .alias("config_values"), 
         udf_scipy_dependency().alias("udf_scipy_dependency"), 
-        concat(lit(Config.c_str), col("`c  date`")).alias("c_config_str")
+        concat(lit(Config.c_str), col("`c  date`")).alias("c_config_str"), 
+        concat(lit(Config.c_record_complex.cr_array_int[0]), lit(Config.c_array_complex[0].car_record.carr_array_int[0]))\
+          .alias("c_complex_string")
     )

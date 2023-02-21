@@ -162,6 +162,53 @@ class Reformat_5Test extends FunSuite with DataFrameSuiteBase {
     Assert.assertTrue(msg, res.isRight)
   }
 
+  test("Unit Test 3") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Subgraph_1/Subgraph_2/Reformat_5/in/schema.json",
+      "/data/com/scala/main/job1/graph/Subgraph_1/Subgraph_2/Reformat_5/in/data/unit_test_3.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Subgraph_1/Subgraph_2/Reformat_5/out/schema.json",
+      "/data/com/scala/main/job1/graph/Subgraph_1/Subgraph_2/Reformat_5/out/data/unit_test_3.json",
+      "out"
+    )
+
+    val dfOutComputed =
+      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(context, dfIn)
+    val res = assertDFEquals(
+      dfOut.select("c   short  --",
+                   "c-int-column type",
+                   "-- c-long",
+                   "c-decimal",
+                   "c  float",
+                   "c--boolean",
+                   "c- - -double",
+                   "c___-- string",
+                   "c  date",
+                   "c_timestamp"
+      ),
+      dfOutComputed.select("c   short  --",
+                           "c-int-column type",
+                           "-- c-long",
+                           "c-decimal",
+                           "c  float",
+                           "c--boolean",
+                           "c- - -double",
+                           "c___-- string",
+                           "c  date",
+                           "c_timestamp"
+      ),
+      maxUnequalRowsToShow,
+      1.0
+    )
+    val msg = if (res.isLeft) res.left.get.getMessage else ""
+    Assert.assertTrue(msg, res.isRight)
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
