@@ -959,56 +959,56 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ {
+      "type" : "coordinates",
       "coordinates" : "mysql:mysql-connector-java:8.0.29",
       "name" : "mysql",
-      "exclusions" : [ ],
+      "enabled" : true,
       "id" : "59965868",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.postgresql:postgresql:42.3.4",
       "name" : "postgres",
-      "exclusions" : [ ],
+      "enabled" : true,
       "id" : "1360721423",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ]
     }, {
-      "repo" : "https://repo.maven.apache.org/maven2/",
+      "type" : "coordinates",
       "coordinates" : "org.scalanlp:epic_2.12:0.5",
       "name" : "epic",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "418005485",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ],
+      "repo" : "https://repo.maven.apache.org/maven2/"
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
       "name" : "cats",
-      "exclusions" : [ ],
+      "enabled" : true,
       "id" : "1575366423",
-      "type" : "coordinates",
-      "enabled" : true
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.springframework:spring-beans:5.3.19",
       "name" : "spring",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "611418782",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
       "name" : "spark-excel",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "368609749",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
-      "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/",
+      "type" : "coordinates",
       "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
       "name" : "prophecy-libs-4.0.0",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "GXM_V",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ],
+      "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
     } ],
     "isImported" : false,
     "interimMode" : "Full",
@@ -1154,7 +1154,7 @@
       "metadata" : {
         "label" : "PERF_ROWDISTRIBUTOR",
         "slug" : "PERF_ROWDISTRIBUTOR",
-        "x" : 755.5008042184892,
+        "x" : 760,
         "y" : 520,
         "phase" : 0,
         "cache" : false,
@@ -1203,7 +1203,7 @@
       "metadata" : {
         "label" : "PERF_SCRIPT",
         "slug" : "PERF_SCRIPT",
-        "x" : 967.3347261697273,
+        "x" : 960,
         "y" : 620,
         "phase" : 0,
         "cache" : false,
@@ -1240,8 +1240,8 @@
       "metadata" : {
         "label" : "PERF_REPARTITION",
         "slug" : "PERF_REPARTITION",
-        "x" : 120.78735256331791,
-        "y" : 333.88566406250015,
+        "x" : 120,
+        "y" : 340,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1277,8 +1277,8 @@
       "metadata" : {
         "label" : "PERF_REFORMAT_CHANGE",
         "slug" : "PERF_REFORMAT_CHANGE",
-        "x" : 275.6736013711612,
-        "y" : 220.64,
+        "x" : 280,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -15113,7 +15113,7 @@
       "metadata" : {
         "label" : "PERF_FILTER",
         "slug" : "PERF_FILTER",
-        "x" : 755.5004773042622,
+        "x" : 760,
         "y" : 120,
         "phase" : 0,
         "cache" : false,
@@ -15148,8 +15148,8 @@
       "metadata" : {
         "label" : "PERF_JOIN",
         "slug" : "PERF_JOIN",
-        "x" : 780.7007362138562,
-        "y" : 305.6,
+        "x" : 780,
+        "y" : 300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -15225,7 +15225,7 @@
       "metadata" : {
         "label" : "PERF_ORDERBY",
         "slug" : "PERF_ORDERBY",
-        "x" : 967.3343733304317,
+        "x" : 960,
         "y" : 120,
         "phase" : 0,
         "cache" : false,
@@ -29138,8 +29138,8 @@
       "metadata" : {
         "label" : "PERF_FLATTEN",
         "slug" : "PERF_FLATTEN",
-        "x" : 323.1943772027931,
-        "y" : 25.360195312500196,
+        "x" : 320,
+        "y" : 20,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -29182,8 +29182,8 @@
       "metadata" : {
         "label" : "PERF_DEDUPLICATE",
         "slug" : "PERF_DEDUPLICATE",
-        "x" : 320.46729114189804,
-        "y" : 631.2,
+        "x" : 320,
+        "y" : 640,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -29207,7 +29207,7 @@
           "colName" : "cmls_acct_fundg_srce_cd_drvd"
         } ],
         "dedupType" : "any",
-        "columnsSelector" : [ "KPii4-KhJoZiclNr7I_nJ$$Wvx-GVXeDDwqigM3PomFq##cmls_acct_fundg_srce_cd_drvd" ],
+        "columnsSelector" : [ ],
         "orders" : [ ],
         "useOrderBy" : false
       }
@@ -29249,8 +29249,8 @@
       "metadata" : {
         "label" : "PERF_WINDOW",
         "slug" : "PERF_WINDOW",
-        "x" : 403.98748805333355,
-        "y" : 504.64,
+        "x" : 400,
+        "y" : 500,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -29307,8 +29307,8 @@
       "metadata" : {
         "label" : "PERF_AGGREGATE",
         "slug" : "PERF_AGGREGATE",
-        "x" : 271.7474010293431,
-        "y" : 404.48,
+        "x" : 280,
+        "y" : 400,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -29370,7 +29370,7 @@
       "metadata" : {
         "label" : "PERF_SQLSTATEMENT",
         "slug" : "PERF_SQLSTATEMENT",
-        "x" : 967.3340451604471,
+        "x" : 960,
         "y" : 420,
         "phase" : 0,
         "cache" : false,
@@ -29442,8 +29442,8 @@
       "metadata" : {
         "label" : "PERF_SG",
         "slug" : "PERF_SG",
-        "x" : -82.88600911433349,
-        "y" : 528.32,
+        "x" : -80,
+        "y" : 520,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -56797,8 +56797,8 @@
       "metadata" : {
         "label" : "PERF_SRC_2k_COLS",
         "slug" : "PERF_SRC_2k_COLS",
-        "x" : -270.2392688310677,
-        "y" : 304.32000000000005,
+        "x" : -280,
+        "y" : 300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -56824,7 +56824,7 @@
       "metadata" : {
         "label" : "PERF_SCHEMATRANSFORM",
         "slug" : "PERF_SCHEMATRANSFORM",
-        "x" : 1391.0012212380764,
+        "x" : 1400,
         "y" : 120,
         "phase" : 0,
         "cache" : false,

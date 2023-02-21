@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class ConfigAndUDFTest extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -35,7 +36,7 @@ class ConfigAndUDFTest extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = graph.ConfigAndUDF(spark, dfIn)
+    val dfOutComputed = graph.ConfigAndUDF(context, dfIn)
     val res = assertDFEquals(
       dfOut.select("customer_id",         "first_name", "last_name", "phone"),
       dfOutComputed.select("customer_id", "first_name", "last_name", "phone"),
@@ -55,7 +56,7 @@ class ConfigAndUDFTest extends FunSuite with DataFrameSuiteBase {
       "in"
     )
 
-    val dfOutComputed = graph.ConfigAndUDF(spark, dfIn)
+    val dfOutComputed = graph.ConfigAndUDF(context, dfIn)
 
     assertPredicates(
       "out",
@@ -85,7 +86,7 @@ class ConfigAndUDFTest extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = graph.ConfigAndUDF(spark, dfIn)
+    val dfOutComputed = graph.ConfigAndUDF(context, dfIn)
     val res = assertDFEquals(
       dfOut.select(
         "customer_id",
@@ -135,7 +136,7 @@ class ConfigAndUDFTest extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = graph.ConfigAndUDF(spark, dfIn)
+    val dfOutComputed = graph.ConfigAndUDF(context, dfIn)
     val res = assertDFEquals(
       dfOut.select(
         "customer_id",
@@ -191,11 +192,13 @@ class ConfigAndUDFTest extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
   }
 
 }

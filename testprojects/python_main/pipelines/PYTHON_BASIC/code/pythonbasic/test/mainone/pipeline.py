@@ -51,24 +51,6 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
-    df_src_ut_parquet_all = src_ut_parquet_all(spark)
-    df_src_ut_parquet_all = collectMetrics(
-        spark, 
-        df_src_ut_parquet_all, 
-        "graph", 
-        "n8IB0mDftlFk4_ZdZxFcJ$$Yz2a_4thW-2PUQ760nq9q", 
-        "fPAfzwvnxwOkgncRaRFGW$$AxEJ23uHlLdGzQreyK6vB"
-    )
-    df_Reformat_4 = Reformat_4(spark, df_src_ut_parquet_all)
-    df_Reformat_4 = collectMetrics(
-        spark, 
-        df_Reformat_4, 
-        "graph", 
-        "k-O6EK-N1vl8pzW5QUQfb$$QsajY1v-ObdU0aRwkhkwD", 
-        "SNNS-hrQ3atOzE5lbkRuD$$fBjaYTQ470fQQSal6EpgV"
-    )
-    df_Reformat_4.cache().count()
-    df_Reformat_4.unpersist()
     df_Script_5 = Script_5(spark, df_src_csv_special_char_column_name)
     df_Script_5 = collectMetrics(
         spark, 

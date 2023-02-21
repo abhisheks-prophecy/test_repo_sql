@@ -60,5 +60,5 @@ class Aggregate_1Test(BaseTestCase):
         fabricName = os.environ['FABRIC_NAME']
         ConfigStore.Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None)
+            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
         )

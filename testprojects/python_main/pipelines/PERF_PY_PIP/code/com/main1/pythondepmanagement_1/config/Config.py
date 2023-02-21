@@ -1,4 +1,5 @@
 from prophecy.config import ConfigBase
+prophecy_spark_context = None
 
 
 class Config(ConfigBase):
@@ -268,6 +269,8 @@ class Config(ConfigBase):
             c_config_50: str="this is a test!@#^&*()_=- asdasd", 
             AI_MIN_DATETIME: str="2020-01-02 11:11:11"
     ):
+        global prophecy_spark_context
+        prophecy_spark_context = self.spark
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
         self.CONFIG_STR = CONFIG_STR
@@ -278,7 +281,7 @@ class Config(ConfigBase):
         self.CONFIG_SHORT = self.get_int_value(CONFIG_SHORT)
 
         if CONFIG_DB_SECRETS is not None:
-            self.CONFIG_DB_SECRETS = self.get_dbutils(self.spark).secrets.get(*CONFIG_DB_SECRETS.split(":"))
+            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark_context).secrets.get(*CONFIG_DB_SECRETS.split(":"))
 
         self.EXPR_COMPLEX_DATES = EXPR_COMPLEX_DATES
         self.c_int_11 = self.get_int_value(c_int_11)

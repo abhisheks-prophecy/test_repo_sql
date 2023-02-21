@@ -7,6 +7,9 @@ from prophecy.utils import *
 from python_streaming_main.graph import *
 
 def pipeline(spark: SparkSession) -> None:
+    df_QA_KAFKA = QA_KAFKA(spark)
+    df_FlattenSchema_2_1 = FlattenSchema_2_1(spark, df_QA_KAFKA)
+    df_Watermark_2 = Watermark_2(spark, df_FlattenSchema_2_1)
     df_Parquet_Standard = Parquet_Standard(spark)
     df_ORC_ST = ORC_ST(spark)
     df_SQLStatement_1 = SQLStatement_1(spark, df_ORC_ST)
@@ -30,15 +33,22 @@ def pipeline(spark: SparkSession) -> None:
     df_DELTA_SRC = DELTA_SRC(spark)
     df_Reformat_1 = Reformat_1(spark, df_DELTA_SRC)
     DELTA_DEST(spark, df_Reformat_1)
+    df_Aggregate_1_1 = Aggregate_1_1(spark, df_Watermark_2)
+    QA_KAFKA_Dest(spark, df_Aggregate_1_1)
+    df_DEV_KAFKA = DEV_KAFKA(spark)
+    df_FlattenSchema_2 = FlattenSchema_2(spark, df_DEV_KAFKA)
+    df_Watermark_1 = Watermark_1(spark, df_FlattenSchema_2)
     df_CSV_AL = CSV_AL(spark)
     df_Subgraph_1 = Subgraph_1(spark, df_CSV_AL)
     DEST_CSV(spark, df_Subgraph_1)
+    df_Aggregate_1 = Aggregate_1(spark, df_Watermark_1)
     df_SchemaTransform_1 = SchemaTransform_1(spark, df_SetOperation_1)
     df_FlattenSchema_1 = FlattenSchema_1(spark, df_SchemaTransform_1)
     DEST_PARQ(spark, df_FlattenSchema_1)
     df_JSON_SRC = JSON_SRC(spark)
     df_Filter_2 = Filter_2(spark, df_JSON_SRC)
     JSON_DEST(spark, df_Filter_2)
+    DEST_KAFKA(spark, df_Aggregate_1)
 
 def main():
     spark = SparkSession.builder\

@@ -40,6 +40,25 @@ class Reformat_11Test extends FunSuite with DataFrameSuiteBase {
 
   }
 
+  test("Unit Test 1") {
+
+    val dfIn = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_11/in/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_11/in/data/unit_test_1.json",
+      "in"
+    )
+    val dfOut = createDfFromResourceFiles(
+      spark,
+      "/data/com/scala/main/job1/graph/Reformat_11/out/schema.json",
+      "/data/com/scala/main/job1/graph/Reformat_11/out/data/unit_test_1.json",
+      "out"
+    )
+
+    val dfOutComputed = com.scala.main.job1.graph.Reformat_11(context, dfIn)
+
+  }
+
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")

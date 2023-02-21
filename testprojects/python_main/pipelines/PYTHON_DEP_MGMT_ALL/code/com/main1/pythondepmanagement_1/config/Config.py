@@ -1,4 +1,68 @@
 from prophecy.config import ConfigBase
+prophecy_spark_context = None
+
+
+class Cr_array_record(ConfigBase):
+    def __init__(self, cra_int: int=None, cra_bool: bool=None, cra_float: float=None):
+        self.cra_int = cra_int
+        self.cra_bool = cra_bool
+        self.cra_float = cra_float
+        pass
+
+
+class C_record_complex(ConfigBase):
+    def __init__(
+            self,
+            cr_array_int: list=[12, 33], 
+            cr_array_bool: list=[False, True], 
+            cr_array_float: list=[12.0, -12.0, 0.0], 
+            cr_array_double: list=[23123.0, -123213.0, 0.0], 
+            cr_array_string: list=["asdasd234324676$$ adsda sd asd$$$$", "123123", "-131209807685{9}[]{}()-="], 
+            cr_array_spark_expression: list=["concat('a', 'b')", "concat('a', 'b')"], 
+            cr_array_short: list=[12, -22, 0], 
+            cr_array_record: list=None, 
+            cr_double: float=-4.0, 
+            cr_long: int=22, 
+            cr_db_secrets: str="qasecrets_mysql:username"
+    ):
+        self.cr_array_int = cr_array_int
+        self.cr_array_bool = cr_array_bool
+        self.cr_array_float = cr_array_float
+        self.cr_array_double = cr_array_double
+        self.cr_array_string = cr_array_string
+        self.cr_array_spark_expression = cr_array_spark_expression
+        self.cr_array_short = cr_array_short
+        self.cr_array_record = self.get_object(
+            [Cr_array_record(cra_int = 232, cra_bool = True, cra_float = -234324.12)], 
+            cr_array_record, 
+            Cr_array_record
+        )
+        self.cr_double = cr_double
+        self.cr_long = cr_long
+
+        if cr_db_secrets is not None:
+            self.cr_db_secrets = self.get_dbutils(prophecy_spark_context).secrets.get(*cr_db_secrets.split(":"))
+
+        pass
+
+
+class Car_record(ConfigBase):
+    def __init__(self, carr_bool: bool=None, carr_string: str=None, carr_array_int: list=None):
+        self.carr_bool = carr_bool
+        self.carr_string = carr_string
+        self.carr_array_int = carr_array_int
+        pass
+
+
+class C_array_complex(ConfigBase):
+    def __init__(self, car_record: Car_record=None, car_spark_expression: str=None, car_db_secrets: str=None):
+        self.car_record = self.get_object(Car_record(), car_record, Car_record)
+        self.car_spark_expression = car_spark_expression
+
+        if car_db_secrets is not None:
+            self.car_db_secrets = self.get_dbutils(prophecy_spark_context).secrets.get(*car_db_secrets.split(":"))
+
+        pass
 
 
 class Config(ConfigBase):
@@ -89,7 +153,9 @@ class Config(ConfigBase):
             c_config_48: str=None, 
             c_config_49: str=None, 
             c_config_50: str=None, 
-            AI_MIN_DATETIME: str=None
+            AI_MIN_DATETIME: str=None, 
+            c_record_complex: dict=None, 
+            c_array_complex: list=None
     ):
         self.spark = None
         self.update(
@@ -177,7 +243,9 @@ class Config(ConfigBase):
             c_config_48, 
             c_config_49, 
             c_config_50, 
-            AI_MIN_DATETIME
+            AI_MIN_DATETIME, 
+            c_record_complex, 
+            c_array_complex
         )
 
     def update(
@@ -224,8 +292,8 @@ class Config(ConfigBase):
             c_config_6: str="this is a test!@#^&*()_=-", 
             c_config_7: str="this is a test!@#^&*()_=-", 
             c_config_8: str=None, 
-            c_config_9: str="this is a test!@#^&*()_=-", 
-            c_config_10: str="this is a test!@#^&*()_=-", 
+            c_config_9: str=None, 
+            c_config_10: str=None, 
             c_config_11: str="this is a test!@#^&*()_=- asd", 
             c_config_12: str="this is a test!@#^&*()_=- asd", 
             c_config_13: str="this is a test!@#^&*()_=- asd", 
@@ -253,7 +321,7 @@ class Config(ConfigBase):
             c_config_35: str="this is a test!@#^&*()_=- asd", 
             c_config_36: str="this is a test!@#^&*()_=- asdasd", 
             c_config_37: str="this is a test!@#^&*()_=- asdasd", 
-            c_config_38: str="this is a test!@#^&*()_=- asdasd", 
+            c_config_38: str=None, 
             c_config_39: str="this is a test!@#^&*()_=- asdasd", 
             c_config_40: str="this is a test!@#^&*()_=- asdasd", 
             c_config_41: str="this is a test!@#^&*()_=- asdasd", 
@@ -266,8 +334,12 @@ class Config(ConfigBase):
             c_config_48: str="this is a test!@#^&*()_=- asdasd", 
             c_config_49: str="this is a test!@#^&*()_=- asdasd", 
             c_config_50: str="this is a test!@#^&*()_=- asdasd", 
-            AI_MIN_DATETIME: str="2020-01-02 11:11:11"
+            AI_MIN_DATETIME: str="2020-01-02 11:11:11", 
+            c_record_complex: dict={}, 
+            c_array_complex: list=None
     ):
+        global prophecy_spark_context
+        prophecy_spark_context = self.spark
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
         self.CONFIG_STR = CONFIG_STR
@@ -278,7 +350,7 @@ class Config(ConfigBase):
         self.CONFIG_SHORT = self.get_int_value(CONFIG_SHORT)
 
         if CONFIG_DB_SECRETS is not None:
-            self.CONFIG_DB_SECRETS = self.get_dbutils(self.spark).secrets.get(*CONFIG_DB_SECRETS.split(":"))
+            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark_context).secrets.get(*CONFIG_DB_SECRETS.split(":"))
 
         self.EXPR_COMPLEX_DATES = EXPR_COMPLEX_DATES
         self.c_int_11 = self.get_int_value(c_int_11)
@@ -356,4 +428,14 @@ class Config(ConfigBase):
         self.c_config_49 = c_config_49
         self.c_config_50 = c_config_50
         self.AI_MIN_DATETIME = AI_MIN_DATETIME
+        self.c_record_complex = self.get_object(C_record_complex(), c_record_complex, C_record_complex)
+        self.c_array_complex = self.get_object(
+            [C_array_complex(
+               car_record = Car_record(carr_bool = False, carr_string = "sdasdasdd&*^&(())", carr_array_int = [10, 1, 0]), 
+               car_spark_expression = "concat(first_name, last_name)", 
+               car_db_secrets = "qasecrets_mysql:username"
+             )], 
+            c_array_complex, 
+            C_array_complex
+        )
         pass
