@@ -527,3 +527,7 @@ final release
 *** Release notes for version: 12 ***
 
 hg
+
+*** Release notes for version: 1.100 ***
+
+1.100
