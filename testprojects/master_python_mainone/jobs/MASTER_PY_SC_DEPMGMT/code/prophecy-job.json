@@ -79,21 +79,30 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "3360",
-      "name" : "captain_livy_3_fs",
+      "id" : "3399",
+      "name" : "Automated-Databricks-ACLNewDude",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3377",
+      "name" : "dev_expired_donotdelete",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.21-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
-        }
+        "PublicCentral" : { }
       },
       "scalalibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-3.0.1-6.3.16.jar"
-        }
+        "PublicCentral" : { }
       }
     }, {
       "id" : "3331",
@@ -111,6 +120,19 @@
         "CustomArtifactory" : {
           "url" : "https://repo1.maven.org/"
         }
+      }
+    }, {
+      "id" : "3393",
+      "name" : "dev_shared_another",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     }, {
       "id" : "3351",
@@ -233,23 +255,6 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "3359",
-      "name" : "captain_livy_230_fs",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.21-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
-        }
-      },
-      "scalalibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.16.jar"
-        }
-      }
-    }, {
       "id" : "3079",
       "name" : "Livy-FS_Automated",
       "clusterSizes" : {
@@ -317,6 +322,19 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "3378",
+      "name" : "dev_prophecy_donotdelete",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "3333",
       "name" : "FabricAutomatedADVJobSize",
       "clusterSizes" : {
@@ -339,23 +357,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
-      }
-    }, {
-      "id" : "3354",
-      "name" : "Automated-LivyFileSystem3_0_0",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
-      },
-      "pylibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "/app/common/qa_pip_python/prophecy_libs-1.3.19-py3.9.egg,/app/common/qa_python_libs/fast_html-1.0.2-py3.9.egg"
-        }
-      },
-      "scalalibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "local:/storage/workflowdata/qa_daily_jar/prophecy-libs-assembly-2.3.0-6.3.12.1.jar"
-        }
       }
     }, {
       "id" : "3334",
@@ -700,6 +701,13 @@
             "kind" : {
               "type" : "string",
               "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_string_with_dollar",
+            "kind" : {
+              "type" : "string",
+              "value" : "mynameis$$iam$$anthony $$gonzales  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
             },
             "optional" : false
           } ],
