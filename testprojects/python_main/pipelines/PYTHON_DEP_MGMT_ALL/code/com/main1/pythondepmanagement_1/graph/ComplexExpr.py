@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from com.main1.pythondepmanagement_1.config.ConfigStore import *
 from com.main1.pythondepmanagement_1.udfs.UDFs import *
 
@@ -193,5 +194,7 @@ def ComplexExpr(spark: SparkSession, in0: DataFrame) -> DataFrame:
               .otherwise(concat(col("c_string"), lit("Z")))
           )\
           .otherwise(lit(None))\
-          .alias("c6")
+          .alias("c6"), 
+        udf_maptype().alias("c_udf_maptype"), 
+        udf_arraytype(col("c_int"), lit(5)).alias("c_udf_array_type")
     )

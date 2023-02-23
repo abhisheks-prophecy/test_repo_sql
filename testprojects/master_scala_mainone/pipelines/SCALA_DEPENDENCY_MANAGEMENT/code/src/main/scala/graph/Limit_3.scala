@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object Limit_3 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.limit(Config.c_limit_11)
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.limit(context.config.c_limit_11)
 
 }

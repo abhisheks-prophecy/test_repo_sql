@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from job.config.ConfigStore import *
 from job.udfs.UDFs import *
 
@@ -15,6 +16,9 @@ def Script_6(
         in6: DataFrame
 ) -> DataFrame:
     result = Config.c_0 * Config.c_1
+    print(
+        f"Configs are: CONFIG_STR:{Config.CONFIG_STR} \n CONFIG_DOUBLE:{Config.CONFIG_DOUBLE} \n CONFIG_BOOLEAN:{Config.CONFIG_BOOLEAN} \n CONFIG_INT:{Config.CONFIG_INT} \n CONFIG_FLOAT:{Config.CONFIG_FLOAT} \n CONFIG_SHORT:{Config.CONFIG_SHORT} \n CONFIG_DB_SECRETS:{Config.CONFIG_DB_SECRETS}"
+    )
     assert(result == 0)
     out00 = in0.select("c-string").withColumnRenamed("c-string", "c_str_new")
     out1 = in1.select("c-string").withColumnRenamed("c-string", "c_str_new")

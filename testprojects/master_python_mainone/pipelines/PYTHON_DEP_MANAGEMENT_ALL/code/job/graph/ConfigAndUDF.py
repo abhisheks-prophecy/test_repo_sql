@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from job.config.ConfigStore import *
 from job.udfs.UDFs import *
 
@@ -30,5 +31,7 @@ def ConfigAndUDF(spark: SparkSession, in0: DataFrame) -> DataFrame:
             lit(Config.CONFIG_SHORT)
           )\
           .alias("config_values"), 
-        udf_scipy_dependency().alias("udf_scipy_dependency")
+        udf_scipy_dependency().alias("udf_scipy_dependency"), 
+        concat(get_json_object(lit("{\"a\":\"b\"}"), "$.a"), col("`c___-- string`"), lit(Config.c_string_with_dollar))\
+          .alias("expression_with_dollar")
     )

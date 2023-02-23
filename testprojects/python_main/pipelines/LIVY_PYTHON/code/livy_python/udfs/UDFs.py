@@ -12,6 +12,11 @@ from prophecy.lookups import (
     lookup_row_reverse,
     lookup_nth
 )
+a = 10
 
 def registerUDFs(spark: SparkSession):
-    pass
+    spark.udf.register("udf1", udf1)
+
+@udf(returnType = IntegerType())
+def udf1(value):
+    return value * a if value != None else a * a

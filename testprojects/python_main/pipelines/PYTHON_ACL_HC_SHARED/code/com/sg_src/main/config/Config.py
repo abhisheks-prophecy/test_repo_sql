@@ -1,4 +1,5 @@
 from prophecy.config import ConfigBase
+prophecy_spark_context = None
 
 
 class Config(ConfigBase):
@@ -8,9 +9,11 @@ class Config(ConfigBase):
         self.update(c_dbsecrets, c_string)
 
     def update(self, c_dbsecrets: str="qasecrets_mysql:username", c_string: str="test"):
+        global prophecy_spark_context
+        prophecy_spark_context = self.spark
 
         if c_dbsecrets is not None:
-            self.c_dbsecrets = self.get_dbutils(self.spark).secrets.get(*c_dbsecrets.split(":"))
+            self.c_dbsecrets = self.get_dbutils(prophecy_spark_context).secrets.get(*c_dbsecrets.split(":"))
 
         self.c_string = c_string
         pass

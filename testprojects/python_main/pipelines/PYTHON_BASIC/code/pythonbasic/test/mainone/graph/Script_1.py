@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from pythonbasic.test.mainone.config.ConfigStore import *
 from pythonbasic.test.mainone.udfs.UDFs import *
 
@@ -13,6 +14,6 @@ def Script_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
     print(data)
     deptDF = spark.createDataFrame(data = [], schema = StructType(data))
     deptDF.printSchema()
-    out0 = deptDF
+    out0 = in0
 
     return out0

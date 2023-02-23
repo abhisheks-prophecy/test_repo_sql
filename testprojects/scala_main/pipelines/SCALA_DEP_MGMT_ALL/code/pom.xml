@@ -2,7 +2,7 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ScalaProjectCloneExternalGit</groupId>
-    <artifactId>SCALA_DEP_MGMT_ALL</artifactId>
+    <artifactId>REL_SC_PIP_DEP_MGMT_ALL</artifactId>
     <description>workflow</description>
     <version>1.0</version>
     <packaging>jar</packaging>
@@ -10,7 +10,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <scalaBaseVersion>2.12</scalaBaseVersion>
         <scalaVersion>2.12.15</scalaVersion>
         <sparkVersion>3.3.0</sparkVersion>
-        <prophecyLibsVersion>6.2.5</prophecyLibsVersion>
+        <prophecyLibsVersion>7.0.7</prophecyLibsVersion>
     </properties>
     <repositories>
         <repository>
@@ -20,6 +20,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <layout>default</layout>
             <snapshots>
                 <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Central Snapshots</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -42,11 +51,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.29</version>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.3.4</version>
         </dependency>
         <dependency>
             <groupId>org.typelevel</groupId>
@@ -115,7 +119,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <dependency>
             <groupId>io.prophecy</groupId>
             <artifactId>prophecy-libs_${scalaBaseVersion}</artifactId>
-            <version>${prophecyLibsVersion}-${sparkVersion}</version>
+            <version>${sparkVersion}-${prophecyLibsVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>

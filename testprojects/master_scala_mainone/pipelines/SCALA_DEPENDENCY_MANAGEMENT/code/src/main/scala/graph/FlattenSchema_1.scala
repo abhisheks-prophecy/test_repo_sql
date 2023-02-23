@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,7 @@ import java.time._
 
 object FlattenSchema_1 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame =
     in.withColumn("c_array_int",       explode_outer(col("c_array_int")))
       .withColumn("c_array_string",    explode_outer(col("c_array_string")))
       .withColumn("c_array_long",      explode_outer(col("c_array_long")))

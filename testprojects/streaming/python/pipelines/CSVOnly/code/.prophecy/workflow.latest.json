@@ -1,0 +1,275 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "10",
+    "frontEndLanguage" : "sql",
+    "mode" : "stream",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "csvonly"
+  },
+  "connections" : [ {
+    "id" : "nc-FvjXSUkQL2z4ja-n9w",
+    "source" : "Bca44M_6yZrba2IVnnTQN$$EF2OzNlxN5_BtTzEctuTK",
+    "sourcePort" : "8idrMLlf2ZMuf3OCpLBqA$$mMYPDWPgGiHPLbWYWMqtg",
+    "target" : "nZSaQSDh06oygpLdKmhqt$$IsVaomGV61FSTYYXDMZDh",
+    "targetPort" : "fLsHsz6D6mEfCnxSCudt5$$6i9h7r1hRqbNNc-IlOW5P"
+  }, {
+    "id" : "DS0IdDtZXPBBV-pBoSZEi",
+    "source" : "nZSaQSDh06oygpLdKmhqt$$IsVaomGV61FSTYYXDMZDh",
+    "sourcePort" : "f3nlejykFncXgwWjz7hzv$$Cc_k1E8kWYiHar7J0B9Yg",
+    "target" : "nZSaQSDh06oygpLdKmhqt$$0Nd79coElvJriKsDSJjhH",
+    "targetPort" : "fLsHsz6D6mEfCnxSCudt5$$bjtolMkMePrew-5RPypOm"
+  }, {
+    "id" : "4JmLCthBhmBTrJ8TbvAp2",
+    "source" : "nZSaQSDh06oygpLdKmhqt$$0Nd79coElvJriKsDSJjhH",
+    "sourcePort" : "f3nlejykFncXgwWjz7hzv$$vzL9YQ5c1wTg8Bkg0kEUa",
+    "target" : "tSQ55_db1kkKMeZNAZ55f$$uc1USkKeFCt-AJnsllvcz",
+    "targetPort" : "7-ejcDKZKmmcBnMLUo9RV$$WYhOwupE2xA2DuIdY8tef"
+  } ],
+  "processes" : {
+    "nZSaQSDh06oygpLdKmhqt$$IsVaomGV61FSTYYXDMZDh" : {
+      "id" : "nZSaQSDh06oygpLdKmhqt$$IsVaomGV61FSTYYXDMZDh",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_1",
+        "slug" : "Subgraph_1",
+        "x" : 647.6,
+        "y" : 192.40000000000003,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fLsHsz6D6mEfCnxSCudt5$$6i9h7r1hRqbNNc-IlOW5P",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "f3nlejykFncXgwWjz7hzv$$Cc_k1E8kWYiHar7J0B9Yg",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "packageName" : "org.streamingsg",
+        "externalId" : "subgraphs/streamingsgLimit",
+        "name" : "streamingsgLimit"
+      },
+      "connections" : [ {
+        "id" : "QMO-WEHJJfWp1gp57oZyB",
+        "source" : "nZSaQSDh06oygpLdKmhqt$$IsVaomGV61FSTYYXDMZDh",
+        "sourcePort" : "fLsHsz6D6mEfCnxSCudt5$$6i9h7r1hRqbNNc-IlOW5P",
+        "target" : "U0g4XnbwBC4y0MBmhNxI6$$cGzU1VK82duSl_z8qXGYv",
+        "targetPort" : "bjQlbAPHp0Jy4Uwqy0wOn$$hVcPRBbY63ccen7RybfFQ"
+      }, {
+        "id" : "eJmwkZMG1781R1v7lh2bB",
+        "source" : "U0g4XnbwBC4y0MBmhNxI6$$cGzU1VK82duSl_z8qXGYv",
+        "sourcePort" : "A_OzlO83b3Jch4NTfkNq3$$rlv6krD3esXWe9vVK5nKI",
+        "target" : "nZSaQSDh06oygpLdKmhqt$$IsVaomGV61FSTYYXDMZDh",
+        "targetPort" : "f3nlejykFncXgwWjz7hzv$$Cc_k1E8kWYiHar7J0B9Yg"
+      } ],
+      "processes" : {
+        "U0g4XnbwBC4y0MBmhNxI6$$cGzU1VK82duSl_z8qXGYv" : {
+          "id" : "U0g4XnbwBC4y0MBmhNxI6$$cGzU1VK82duSl_z8qXGYv",
+          "component" : "Limit",
+          "metadata" : {
+            "label" : "Limit_2",
+            "slug" : "Limit_2",
+            "x" : 160,
+            "y" : 180,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "bjQlbAPHp0Jy4Uwqy0wOn$$hVcPRBbY63ccen7RybfFQ",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "A_OzlO83b3Jch4NTfkNq3$$rlv6krD3esXWe9vVK5nKI",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "limit" : "10"
+          }
+        }
+      }
+    },
+    "Bca44M_6yZrba2IVnnTQN$$EF2OzNlxN5_BtTzEctuTK" : {
+      "id" : "Bca44M_6yZrba2IVnnTQN$$EF2OzNlxN5_BtTzEctuTK",
+      "component" : "StreamingSource",
+      "metadata" : {
+        "label" : "CSVSource",
+        "slug" : "CSVSource",
+        "x" : 400,
+        "y" : 193.20000000000027,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "8idrMLlf2ZMuf3OCpLBqA$$mMYPDWPgGiHPLbWYWMqtg",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/s3_csv_standard"
+      }
+    },
+    "nZSaQSDh06oygpLdKmhqt$$0Nd79coElvJriKsDSJjhH" : {
+      "id" : "nZSaQSDh06oygpLdKmhqt$$0Nd79coElvJriKsDSJjhH",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "streamingsgLimit_1",
+        "slug" : "streamingsgLimit_1",
+        "x" : 923.2000000000003,
+        "y" : 213.99999999999997,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fLsHsz6D6mEfCnxSCudt5$$bjtolMkMePrew-5RPypOm",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "f3nlejykFncXgwWjz7hzv$$vzL9YQ5c1wTg8Bkg0kEUa",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "packageName" : "org.streamingsg",
+        "externalId" : "subgraphs/streamingsgLimit",
+        "name" : "streamingsgLimit"
+      },
+      "connections" : [ {
+        "id" : "QMO-WEHJJfWp1gp57oZyB",
+        "source" : "nZSaQSDh06oygpLdKmhqt$$0Nd79coElvJriKsDSJjhH",
+        "sourcePort" : "fLsHsz6D6mEfCnxSCudt5$$bjtolMkMePrew-5RPypOm",
+        "target" : "U0g4XnbwBC4y0MBmhNxI6$$3l51miJ8Y50bxxMRu23U9",
+        "targetPort" : "bjQlbAPHp0Jy4Uwqy0wOn$$4YBJpsn3xc8rDY8fUsXCP"
+      }, {
+        "id" : "eJmwkZMG1781R1v7lh2bB",
+        "source" : "U0g4XnbwBC4y0MBmhNxI6$$3l51miJ8Y50bxxMRu23U9",
+        "sourcePort" : "A_OzlO83b3Jch4NTfkNq3$$CcES0O_-pbd9BYG46I8hj",
+        "target" : "nZSaQSDh06oygpLdKmhqt$$0Nd79coElvJriKsDSJjhH",
+        "targetPort" : "f3nlejykFncXgwWjz7hzv$$vzL9YQ5c1wTg8Bkg0kEUa"
+      } ],
+      "processes" : {
+        "U0g4XnbwBC4y0MBmhNxI6$$3l51miJ8Y50bxxMRu23U9" : {
+          "id" : "U0g4XnbwBC4y0MBmhNxI6$$3l51miJ8Y50bxxMRu23U9",
+          "component" : "Limit",
+          "metadata" : {
+            "label" : "Limit_2",
+            "slug" : "Limit_2",
+            "x" : 160,
+            "y" : 180,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "bjQlbAPHp0Jy4Uwqy0wOn$$4YBJpsn3xc8rDY8fUsXCP",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "A_OzlO83b3Jch4NTfkNq3$$CcES0O_-pbd9BYG46I8hj",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "limit" : "10"
+          }
+        }
+      }
+    },
+    "tSQ55_db1kkKMeZNAZ55f$$uc1USkKeFCt-AJnsllvcz" : {
+      "id" : "tSQ55_db1kkKMeZNAZ55f$$uc1USkKeFCt-AJnsllvcz",
+      "component" : "StreamingTarget",
+      "metadata" : {
+        "label" : "CSVTarget",
+        "slug" : "CSVTarget",
+        "x" : 1355.2000000000003,
+        "y" : 224.40000000000003,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7-ejcDKZKmmcBnMLUo9RV$$WYhOwupE2xA2DuIdY8tef",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/s3_csv_standard_target"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

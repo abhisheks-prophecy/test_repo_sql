@@ -1,4 +1,5 @@
 from prophecy.config import ConfigBase
+prophecy_spark_context = None
 
 
 class Config(ConfigBase):
@@ -22,7 +23,8 @@ class Config(ConfigBase):
             c_st_renamed: str=None, 
             c_sql_expr: str=None, 
             c_regex1: str=None, 
-            c_regex2: str=None
+            c_regex2: str=None, 
+            c_string_with_dollar: str=None
     ):
         self.spark = None
         self.update(
@@ -43,7 +45,8 @@ class Config(ConfigBase):
             c_st_renamed, 
             c_sql_expr, 
             c_regex1, 
-            c_regex2
+            c_regex2, 
+            c_string_with_dollar
         )
 
     def update(
@@ -65,8 +68,11 @@ class Config(ConfigBase):
             c_st_renamed: str="c-decimal renamed", 
             c_sql_expr: str="%1%", 
             c_regex1: str="^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})", 
-            c_regex2: str="((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+            c_regex2: str="((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})", 
+            c_string_with_dollar: str="mynameis$$iam$$anthony $$gonzales  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
     ):
+        global prophecy_spark_context
+        prophecy_spark_context = self.spark
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
         self.CONFIG_BOOLEAN = self.get_bool_value(CONFIG_BOOLEAN)
@@ -76,7 +82,7 @@ class Config(ConfigBase):
         self.CONFIG_SHORT = self.get_int_value(CONFIG_SHORT)
 
         if CONFIG_DB_SECRETS is not None:
-            self.CONFIG_DB_SECRETS = self.get_dbutils(self.spark).secrets.get(*CONFIG_DB_SECRETS.split(":"))
+            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark_context).secrets.get(*CONFIG_DB_SECRETS.split(":"))
 
         self.CONFIG_STR = CONFIG_STR
         self.c_0 = self.get_int_value(c_0)
@@ -88,4 +94,5 @@ class Config(ConfigBase):
         self.c_sql_expr = c_sql_expr
         self.c_regex1 = c_regex1
         self.c_regex2 = c_regex2
+        self.c_string_with_dollar = c_string_with_dollar
         pass

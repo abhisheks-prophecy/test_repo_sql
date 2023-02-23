@@ -52,13 +52,55 @@ class RowDistributor_1Test(BaseTestCase):
             self.maxUnequalRowsToShow
         )
 
+    def test_unit_test_1(self):
+        dfIn0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/livy_python/graph/RowDistributor_1/in0/schema.json',
+            'test/resources/data/livy_python/graph/RowDistributor_1/in0/data/test_unit_test_1.json',
+            'in0'
+        )
+        dfOut1 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/livy_python/graph/RowDistributor_1/out1/schema.json',
+            'test/resources/data/livy_python/graph/RowDistributor_1/out1/data/test_unit_test_1.json',
+            'out1'
+        )
+        dfOut0 = createDfFromResourceFiles(
+            self.spark,
+            'test/resources/data/livy_python/graph/RowDistributor_1/out0/schema.json',
+            'test/resources/data/livy_python/graph/RowDistributor_1/out0/data/test_unit_test_1.json',
+            'out0'
+        )
+        dfOut0Computed, dfOut1Computed = RowDistributor_1(self.spark, dfIn0)
+        assertDFEquals(
+            dfOut0.select(
+              "year",
+              "industry_code_ANZSIC",
+              "industry_name_ANZSIC",
+              "rme_size_grp",
+              "variable",
+              "value",
+              "unit"
+            ),
+            dfOut0Computed.select(
+              "year",
+              "industry_code_ANZSIC",
+              "industry_name_ANZSIC",
+              "rme_size_grp",
+              "variable",
+              "value",
+              "unit"
+            ),
+            self.maxUnequalRowsToShow
+        )
+
     def setUp(self):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
         ConfigStore.Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None)
+            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
         )
         dfgraph_Lookup_1 = createDfFromResourceFiles(
             self.spark,

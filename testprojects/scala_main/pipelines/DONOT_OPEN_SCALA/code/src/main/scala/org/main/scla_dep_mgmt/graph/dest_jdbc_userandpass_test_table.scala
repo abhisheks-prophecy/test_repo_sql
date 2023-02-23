@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
 import org.main.scla_dep_mgmt.config.ConfigStore._
+import org.main.scla_dep_mgmt.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -11,7 +12,7 @@ import java.time._
 
 object dest_jdbc_userandpass_test_table {
 
-  def apply(spark: SparkSession, in: DataFrame): Unit =
+  def apply(context: Context, in: DataFrame): Unit =
     in.write
       .format("jdbc")
       .option("url",      "jdbc:mysql://18.144.156.219:3306/test_database")

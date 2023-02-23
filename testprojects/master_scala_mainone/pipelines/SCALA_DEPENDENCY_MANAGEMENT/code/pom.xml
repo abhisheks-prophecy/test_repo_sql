@@ -10,7 +10,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <scalaBaseVersion>2.12</scalaBaseVersion>
         <scalaVersion>2.12.15</scalaVersion>
         <sparkVersion>3.3.0</sparkVersion>
-        <prophecyLibsVersion>6.1.10</prophecyLibsVersion>
+        <prophecyLibsVersion>7.0.8</prophecyLibsVersion>
     </properties>
     <repositories>
         <repository>
@@ -23,12 +23,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             </snapshots>
         </repository>
         <repository>
-            <id>epic_id</id>
-            <name>epic_repo</name>
-            <url>https://repo.maven.apache.org/maven2/</url>
+            <id>snapshots</id>
+            <name>Central Snapshots</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
             <layout>default</layout>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -51,16 +51,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.29</version>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.3.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scalanlp</groupId>
-            <artifactId>epic_2.12</artifactId>
-            <version>0.5</version>
         </dependency>
         <dependency>
             <groupId>org.typelevel</groupId>
@@ -129,7 +119,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <dependency>
             <groupId>io.prophecy</groupId>
             <artifactId>prophecy-libs_${scalaBaseVersion}</artifactId>
-            <version>${prophecyLibsVersion}-${sparkVersion}</version>
+            <version>${sparkVersion}-${prophecyLibsVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
@@ -142,12 +132,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <artifactId>spark-testing-base_${scalaBaseVersion}</artifactId>
             <version>3.0.1_1.1.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.amazon.deequ</groupId>
-            <artifactId>deequ</artifactId>
-            <version>1.0.2</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -167,7 +151,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.2.4</version>
+                <version>4.8.0</version>
                 <configuration>
                     <recompileMode>incremental</recompileMode>
                     <useZincServer>true</useZincServer>

@@ -2,6 +2,7 @@ package io.prophecy.pipelines.sc_config_pip
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.sc_config_pip.config.ConfigStore._
+import io.prophecy.pipelines.sc_config_pip.config.Context
 import io.prophecy.pipelines.sc_config_pip.config._
 import io.prophecy.pipelines.sc_config_pip.udfs.UDFs._
 import io.prophecy.pipelines.sc_config_pip.udfs._
@@ -15,17 +16,21 @@ import java.time._
 
 object Main {
 
-  def apply(spark: SparkSession): Unit = {
+  def apply(context: Context): Unit = {
     val df_src_parquet_all_type_and_partition_withspacehyphens =
-      src_parquet_all_type_and_partition_withspacehyphens(spark)
-    val df_Reformat_2 =
-      Reformat_2(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
-    val df_Reformat_1 =
-      Reformat_1(spark, df_src_parquet_all_type_and_partition_withspacehyphens)
+      src_parquet_all_type_and_partition_withspacehyphens(context)
+    val df_Reformat_2 = Reformat_2(
+      context,
+      df_src_parquet_all_type_and_partition_withspacehyphens
+    )
+    val df_Reformat_1 = Reformat_1(
+      context,
+      df_src_parquet_all_type_and_partition_withspacehyphens
+    )
   }
 
   def main(args: Array[String]): Unit = {
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(args)
+    val config = ConfigurationFactoryImpl.fromCLI(args)
     val spark: SparkSession = SparkSession
       .builder()
       .appName("Prophecy Pipeline")
@@ -34,12 +39,10 @@ object Main {
       .enableHiveSupport()
       .getOrCreate()
       .newSession()
+    val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SC_CONFIG_PIP")
-    MetricsCollector.start(
-      spark,
-      spark.conf.get("prophecy.project.id") + "/" + "pipelines/SC_CONFIG_PIP"
-    )
-    apply(spark)
+    MetricsCollector.start(spark,                    "pipelines/SC_CONFIG_PIP")
+    apply(context)
     MetricsCollector.end(spark)
   }
 
