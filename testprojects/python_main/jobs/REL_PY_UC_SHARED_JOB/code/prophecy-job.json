@@ -1,17 +1,17 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "2730",
-    "jobId" : "jobs/PythonStreamingJobRelease",
-    "name" : "PythonStreamingJobRelease",
+    "fabricId" : "2601",
+    "jobId" : "jobs/REL_PY_UC_SHARED_JOB",
+    "name" : "REL_PY_UC_SHARED_JOB",
     "schedule" : "0 0 0 * * ? 2090",
     "jobClusterMode" : {
       "clusterMode" : "Single"
     },
-    "enabled" : true,
-    "defaultClusterSize" : "small",
+    "enabled" : false,
+    "defaultClusterSize" : "adv-power-shared",
     "alerting" : {
-      "emails" : "abhisheks@prophecy.io,abhisheks@simpledatalabs.com",
+      "emails" : "abhisheks@simpledatalabs.com",
       "onStart" : false,
       "onSuccess" : true,
       "onFailure" : false
@@ -213,6 +213,19 @@
         }
       }
     }, {
+      "id" : "4653",
+      "name" : "SingleCluster_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2080",
       "name" : "dev_gcp",
       "clusterSizes" : {
@@ -331,6 +344,19 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "4659",
+      "name" : "Automated-Databricks-ACLNewDude",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2405",
       "name" : "dev_custom_artifactory",
       "clusterSizes" : {
@@ -389,44 +415,14 @@
     } ]
   },
   "processes" : {
-    "kRGG8Q7aHpVIjf_cOzpvp$$PmrNdsBic0PMuBeQwUIDX" : {
-      "id" : "kRGG8Q7aHpVIjf_cOzpvp$$PmrNdsBic0PMuBeQwUIDX",
-      "component" : "Script",
-      "metadata" : {
-        "label" : "Script_1",
-        "slug" : "Script_1",
-        "x" : 210,
-        "y" : 20
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "AOz-65wAziAP3_9hiIkjn$$95F1hYWwuOXYWzb89iN6f"
-        } ],
-        "outputs" : [ {
-          "id" : "A33CFNs9v7IR84pVSF4ro$$YeE-ER6jG5zjdBeNiCctm"
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "code" : "print(\"hello\")"
-      }
-    },
-    "csb8lnh6oMBjUlsHfPWIr" : {
-      "id" : "csb8lnh6oMBjUlsHfPWIr",
+    "Kq7HT9ChrsgnshljZHe2Q" : {
+      "id" : "Kq7HT9ChrsgnshljZHe2Q",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "PythonStreamingRelease",
-        "slug" : "PythonStreamingRelease",
-        "x" : -150,
-        "y" : 20
+        "label" : "PYTHON_UNITY_CATALOG",
+        "slug" : "PYTHON_UNITY_CATALOG",
+        "x" : 100,
+        "y" : 100
       },
       "ports" : {
         "inputs" : [ {
@@ -446,11 +442,53 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/PythonStreamingRelease",
+        "pipelineId" : "pipelines/PYTHON_UNITY_CATALOG",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "c_string",
+            "kind" : {
+              "type" : "string",
+              "value" : "skjdsadsa"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_long",
+            "kind" : {
+              "type" : "long",
+              "value" : 4324234
+            },
+            "optional" : false
+          }, {
+            "name" : "c_dbsecrets",
+            "kind" : {
+              "type" : "databricks_secret",
+              "value" : "qasecrets_mysql:username"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_spark_expression",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "concat('a', first_name)"
+            },
+            "optional" : false
+          }, {
+            "name" : "c_float",
+            "kind" : {
+              "type" : "float",
+              "value" : -12312.12321
+            },
+            "optional" : false
+          }, {
+            "name" : "c_boolean",
+            "kind" : {
+              "type" : "boolean",
+              "value" : true
+            },
+            "optional" : false
+          } ],
           "instances" : {
-            "PythonProjectCloneExternalGit" : [ "default" ]
+            "PythonProjectCloneExternalGit" : [ "default", "test-config1" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -458,11 +496,5 @@
       }
     }
   },
-  "connections" : [ {
-    "id" : "7_ccZl0uTihEq7BXNignc",
-    "source" : "csb8lnh6oMBjUlsHfPWIr",
-    "target" : "kRGG8Q7aHpVIjf_cOzpvp$$PmrNdsBic0PMuBeQwUIDX",
-    "sourcePort" : "out",
-    "targetPort" : "AOz-65wAziAP3_9hiIkjn$$95F1hYWwuOXYWzb89iN6f"
-  } ]
+  "connections" : [ ]
 }
