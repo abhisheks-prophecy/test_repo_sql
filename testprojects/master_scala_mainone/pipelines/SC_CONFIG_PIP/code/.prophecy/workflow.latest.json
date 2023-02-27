@@ -89,63 +89,63 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ {
+      "type" : "coordinates",
       "coordinates" : "mysql:mysql-connector-java:8.0.29",
       "name" : "mysql",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "59965868",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.postgresql:postgresql:42.3.4",
       "name" : "postgres",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "1360721423",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
-      "repo" : "https://repo.maven.apache.org/maven2/",
+      "type" : "coordinates",
       "coordinates" : "org.scalanlp:epic_2.12:0.5",
       "name" : "epic",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "418005485",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ],
+      "repo" : "https://repo.maven.apache.org/maven2/"
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
       "name" : "cats",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "1575366423",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.springframework:spring-beans:5.3.19",
       "name" : "spring",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "611418782",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
       "name" : "spark-excel",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "368609749",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
-      "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/",
+      "type" : "coordinates",
       "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
       "name" : "prophecy-libs-4.0.0",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "GXM_V",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ],
+      "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
     }, {
+      "type" : "coordinates",
       "coordinates" : "mysql:mysql-connector-java:8.0.28",
       "name" : "mysql-828",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "E6bZY",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     } ],
     "isImported" : false,
     "interimMode" : "Full",
@@ -187,11 +187,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "pWHR0q6RZBT5yLg3mFxRj$$KyJ0_RmB_m1x9jwBD-EF0",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "ZM1nM6rkH29TPJSlGRL3Z$$5K4bOyLV_8iMcMoMdvJwi",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -226,7 +228,8 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "vvNdEyt9JNwH3iM2lWeGZ$$JJPfB8EzpxtktMBDQjp4N",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -251,11 +254,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "rdlC77dfuaGpS8R7qQ4rG$$a0Xmmg53Ar-EvhsBDiz8L",
-          "slug" : "in"
+          "slug" : "in",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "fidhf3Aers8jdqBuCtvyA$$3JjA5o-8A_8dn4VoJZ8hj",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

@@ -19,6 +19,7 @@ import java.math.BigDecimal
 @RunWith(classOf[JUnitRunner])
 class Join_1Test extends FunSuite with DataFrameSuiteBase {
   import sqlContext.implicits._
+  var context: Context = null
 
   test("Unit Test 0") {
 
@@ -41,7 +42,7 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
                                 "out"
       )
 
-    val dfOutComputed = graph.Join_1(spark, dfIn0, dfIn1)
+    val dfOutComputed = graph.Join_1(context, dfIn0, dfIn1)
     val res = assertDFEquals(
       dfOut.select(
         "c   short  --",
@@ -115,7 +116,7 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
                                 "out"
       )
 
-    val dfOutComputed = graph.Join_1(spark, dfIn0, dfIn1)
+    val dfOutComputed = graph.Join_1(context, dfIn0, dfIn1)
     val res = assertDFEquals(
       dfOut.select(
         "c   short  --",
@@ -174,11 +175,13 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
 
     val fabricName = System.getProperty("fabric")
 
-    ConfigStore.Config = ConfigurationFactoryImpl.fromCLI(
+    val config = ConfigurationFactoryImpl.fromCLI(
       Array("--confFile",
             getClass.getResource(s"/config/${fabricName}.json").getPath
       )
     )
+
+    context = Context(spark, config)
   }
 
 }

@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.libs import typed_lit
 from streamingallpipeline.streaming.main.one.this.config.ConfigStore import *
 from streamingallpipeline.streaming.main.one.this.udfs.UDFs import *
 
@@ -12,4 +13,5 @@ def JSONTarget(spark: SparkSession, in0: DataFrame):
         .queryName("JSONTarget_RcRayw_BtDoIwm3b68yfj$$qSRP9VPdht2Erdx64mM5l")\
         .outputMode("append")\
         .partitionBy("p_int", "p_float", "p_string")\
+        .trigger(processingTime = "2 minutes")\
         .start()

@@ -108,11 +108,12 @@ object ComplexExpression {
     ) - months_between(lit("1997-02-28 10:30:00"), lit("1996-10-30")) + nanvl(
       lit("NaN").cast(DoubleType),
       lit(123)
-    ) + rand() - round(lit(2.5d), 0) + sin(lit(0)) * sinh(lit(0)) + size(
-      array(lit(1), lit(2), lit(3))
-    ) + sqrt(lit(4)) + abs(lit(1.23d)) + acos(lit(1)) - ascii(lit("2")) - asin(
+    ) + rand() - round(lit("2.5").cast(FloatType), 0) + sin(lit(0)) * sinh(
       lit(0)
-    ) + bin(lit(13)) + lit("10").cast(IntegerType) + cbrt(lit(27.0d)) + ceil(
+    ) + size(array(lit(1), lit(2), lit(3))) + sqrt(lit(4)) + abs(
+      lit(1.23d)
+    ) + acos(lit(1)) - ascii(lit("2")) - asin(lit(0)) + bin(lit(13)) + lit("10")
+      .cast(IntegerType) + cbrt(lit("27.0").cast(FloatType)) + ceil(
       lit(-2.1d)
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
@@ -137,11 +138,12 @@ object ComplexExpression {
     ) - months_between(lit("1997-02-28 10:30:00"), lit("1996-10-30")) + nanvl(
       lit("NaN").cast(DoubleType),
       lit(123)
-    ) + rand() - round(lit(2.5d), 0) + sin(lit(0)) * sinh(lit(0)) + size(
-      array(lit(1), lit(2), lit(3))
-    ) + sqrt(lit(4)) + abs(lit(1.23d)) + acos(lit(1)) - ascii(lit("2")) - asin(
+    ) + rand() - round(lit("2.5").cast(FloatType), 0) + sin(lit(0)) * sinh(
       lit(0)
-    ) + bin(lit(13)) + lit("10").cast(IntegerType) + cbrt(lit(27.0d)) + ceil(
+    ) + size(array(lit(1), lit(2), lit(3))) + sqrt(lit(4)) + abs(
+      lit(1.23d)
+    ) + acos(lit(1)) - ascii(lit("2")) - asin(lit(0)) + bin(lit(13)) + lit("10")
+      .cast(IntegerType) + cbrt(lit("27.0").cast(FloatType)) + ceil(
       lit(-2.1d)
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
@@ -166,11 +168,12 @@ object ComplexExpression {
     ) - months_between(lit("1997-02-28 10:30:00"), lit("1996-10-30")) + nanvl(
       lit("NaN").cast(DoubleType),
       lit(123)
-    ) + rand() - round(lit(2.5d), 0) + sin(lit(0)) * sinh(lit(0)) + size(
-      array(lit(1), lit(2), lit(3))
-    ) + sqrt(lit(4)) + abs(lit(1.23d)) + acos(lit(1)) - ascii(lit("2")) - asin(
+    ) + rand() - round(lit("2.5").cast(FloatType), 0) + sin(lit(0)) * sinh(
       lit(0)
-    ) + bin(lit(13)) + lit("10").cast(IntegerType) + cbrt(lit(27.0d)) + ceil(
+    ) + size(array(lit(1), lit(2), lit(3))) + sqrt(lit(4)) + abs(
+      lit(1.23d)
+    ) + acos(lit(1)) - ascii(lit("2")) - asin(lit(0)) + bin(lit(13)) + lit("10")
+      .cast(IntegerType) + cbrt(lit("27.0").cast(FloatType)) + ceil(
       lit(-2.1d)
     ) - coalesce(lit(null), lit(1), lit(null)) + conv(lit("100"), 2, 10) + year(
       lit("2016-07-30")
