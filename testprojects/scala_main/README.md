@@ -447,3 +447,7 @@ test
 *** Release notes for version: 2.7.7.3 ***
 
 test
+
+*** Release notes for version: 2.7.7.4 ***
+
+test

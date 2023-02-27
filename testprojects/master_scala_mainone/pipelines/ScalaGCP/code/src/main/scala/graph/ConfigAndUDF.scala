@@ -2,6 +2,7 @@ package graph
 
 import io.prophecy.libs._
 import config.ConfigStore._
+import config.Context
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._
@@ -13,7 +14,8 @@ import java.time._
 
 object ConfigAndUDF {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     in.select(
       col("customer_id"),
       col("first_name"),
@@ -34,5 +36,6 @@ object ConfigAndUDF {
         .as("udf_multiply_usage"),
       udf_string_null_safe(col("first_name")).as("udf_string_null_safe_usage")
     )
+  }
 
 }

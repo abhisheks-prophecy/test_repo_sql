@@ -42,10 +42,7 @@ def main():
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_GCP")
     
-    MetricsCollector.start(
-        spark = spark,
-        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/PYTHON_GCP"
-    )
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_GCP")
     pipeline(spark)
     MetricsCollector.end(spark)
 

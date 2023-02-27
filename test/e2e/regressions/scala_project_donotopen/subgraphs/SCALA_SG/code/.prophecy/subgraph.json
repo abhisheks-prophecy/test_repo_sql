@@ -1,0 +1,140 @@
+{
+  "id" : "SehWRz0ddrBVzlQ2FvkG-",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "Hzv5QRcg6G3r_bJEy_O5u",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "8nJHsKVjWYsD_QvtqHq6w",
+      "slug" : "out0",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "testrancom.SCALA_SG"
+  },
+  "connections" : [ {
+    "id" : "9cZuSBu7S_HpOlXJIncsm",
+    "source" : "SehWRz0ddrBVzlQ2FvkG-",
+    "sourcePort" : "Hzv5QRcg6G3r_bJEy_O5u",
+    "target" : "iCHkMPUewegfzTOnJjf0Y",
+    "targetPort" : "SctlMLi4FVKSUVEj8Iuss"
+  }, {
+    "id" : "K-sAJVzSWbC47hx5nwUIC",
+    "source" : "iCHkMPUewegfzTOnJjf0Y",
+    "sourcePort" : "_0AhmLJHmlIG1ml2L8apB",
+    "target" : "SehWRz0ddrBVzlQ2FvkG-",
+    "targetPort" : "8nJHsKVjWYsD_QvtqHq6w"
+  } ],
+  "processes" : {
+    "iCHkMPUewegfzTOnJjf0Y" : {
+      "id" : "iCHkMPUewegfzTOnJjf0Y",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_2",
+        "slug" : "Reformat_2",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SctlMLi4FVKSUVEj8Iuss",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "_0AhmLJHmlIG1ml2L8apB",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##customer_id", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##first_name", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##last_name", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##phone", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##email", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##country_code", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##account_open_date", "SctlMLi4FVKSUVEj8Iuss$$rEVICWmL_ibEgJM1Vgh0Z##account_flags" ],
+        "expressions" : [ {
+          "_row_id" : "1103211533",
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_id"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "1905709692",
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first_name"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "1736286837",
+          "target" : "last_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "last_name"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "695922968",
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "phone"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "1529383159",
+          "target" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "453409643",
+          "target" : "country_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "country_code"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "1309675979",
+          "target" : "account_open_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_open_date"
+          },
+          "description" : ""
+        }, {
+          "_row_id" : "580288588",
+          "target" : "account_flags",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "account_flags"
+          },
+          "description" : ""
+        } ]
+      }
+    }
+  }
+}

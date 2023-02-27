@@ -235,3 +235,11 @@ changes
 *** Release notes for version: 1.18 ***
 
 1.18
+
+*** Release notes for version: 2.0 ***
+
+master
+
+*** Release notes for version: 1.100 ***
+
+1.100
