@@ -621,6 +621,16 @@ def pipeline(spark: SparkSession) -> None:
         "cKFCDnAFle9Y7_Z75f91D$$-8WecmUvnsMzFmFYraCx4", 
         "0GItvH4CK7tzzNvabLTsh$$r7w5ecu0XsEojWY08vimA"
     )
+    df_call_func = call_func(spark, df_src_parquet_all_type_no_partition)
+    df_call_func = collectMetrics(
+        spark, 
+        df_call_func, 
+        "graph", 
+        "hfO-eOQ0xKNtnRtvSSV4t$$DqsYwlOwb_iu0xyhymWP1", 
+        "PI6oCR2ZnJ8q_6JSAamDE$$jTRIjq7nxEmJFH9tZVvsC"
+    )
+    df_call_func.cache().count()
+    df_call_func.unpersist()
     df_WindowFunction_1 = WindowFunction_1(spark, df_RowDistributor_1_out3)
     df_WindowFunction_1 = collectMetrics(
         spark, 
