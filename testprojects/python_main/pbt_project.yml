@@ -99,7 +99,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2022-07-28 11:58:31'
-    modifiedAt: '2022-07-28 11:58:31'
+    modifiedAt: '2023-02-28 07:30:46'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -112,7 +112,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2022-08-31 07:54:13'
-    modifiedAt: '2022-08-31 07:54:13'
+    modifiedAt: '2023-02-28 05:35:26'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -259,6 +259,34 @@ pipelines:
       - datasets/dest_uc_out2
       - datasets/dest_uc_target
     dependencies: {}
+  pipelines/IO_PYTHON_BASIC:
+    name: SM_IO_PYTHON_BASIC
+    description: PYTHON_BASIC
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: python
+    createdAt: '2023-02-28 07:31:25'
+    modifiedAt: '2023-02-28 07:47:15'
+    datasets:
+      inputs:
+      - datasets/src_csv_special_char_column_name
+      outputs:
+      - datasets/dest_csv_py_io_only
+    dependencies: {}
+  pipelines/EM_DISABLED_PYTHON_BASIC:
+    name: SM_DISABLED_PYTHON_BASIC
+    description: PYTHON_BASIC
+    author: abhisheks+e2etests@simpledatalabs.com
+    mode: batch
+    language: python
+    createdAt: '2023-02-28 07:43:02'
+    modifiedAt: '2023-02-28 07:49:37'
+    datasets:
+      inputs:
+      - datasets/src_csv_special_char_column_name
+      outputs:
+      - datasets/dest_em_disabled
+    dependencies: {}
 datasets:
   datasets/dest_avro_CustsDatasetInput:
     name: dest_avro_CustsDatasetInput
@@ -355,7 +383,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-06-28 14:45:39'
-    modifiedAt: '2022-06-28 14:45:39'
+    modifiedAt: '2023-02-28 07:33:35'
     mode: batch
     physicalDatasets:
       dev:
@@ -1408,6 +1436,36 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-02-15 14:47:38'
         modifiedAt: '2023-02-15 14:47:38'
+  datasets/dest_csv_py_io_only:
+    name: dest_csv_py_io_only
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-28 07:33:50'
+    modifiedAt: '2023-02-28 07:43:38'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-28 07:33:50'
+        modifiedAt: '2023-02-28 07:33:50'
+  datasets/dest_em_disabled:
+    name: dest_em_disabled
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-02-28 07:49:35'
+    modifiedAt: '2023-02-28 07:49:37'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-02-28 07:49:35'
+        modifiedAt: '2023-02-28 07:49:35'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
