@@ -1484,16 +1484,18 @@ jobs:
       onSuccess: false
       onFailure: false
     pipelines:
-    - 7235/pipelines/PYTHON_DEP_MGMT_ALL
-    - 7235/pipelines/PYTHON_BASIC
-    - 7235/pipelines/PYTHON_SG_SRC
+    - pipelines/PYTHON_SG_SRC
+    - pipelines/IO_PYTHON_BASIC
+    - pipelines/PYTHON_DEP_MGMT_ALL
+    - pipelines/EM_DISABLED_PYTHON_BASIC
+    - pipelines/PYTHON_BASIC
     jobClusterMode:
       clusterMode:
         Single: {}
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 11:54:59'
-    modifiedAt: '2023-02-27 11:36:49'
+    modifiedAt: '2023-02-28 07:58:41'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/REL_PY_CUSTOMLIBS:
     name: REL_PY_CUSTOMLIBS
