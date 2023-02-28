@@ -76,6 +76,59 @@
           },
           "optional" : false,
           "comment" : "double desc"
+        }, {
+          "name" : "record_array",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "23" ]
+              },
+              "optional" : false,
+              "comment" : "wer"
+            } ]
+          },
+          "optional" : false,
+          "comment" : "sewr"
+        }, {
+          "name" : "array_record",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "werw",
+                "kind" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "optional" : false
+              }, {
+                "name" : "ewr",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : null
+                },
+                "optional" : false
+              } ]
+            },
+            "value" : [ {
+              "werw" : "332",
+              "ewr" : [ "12" ]
+            } ]
+          },
+          "optional" : false,
+          "comment" : "sdf"
         } ]
       },
       "oldCommon" : {
@@ -84,7 +137,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-random1",
+      "selected" : "default",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
