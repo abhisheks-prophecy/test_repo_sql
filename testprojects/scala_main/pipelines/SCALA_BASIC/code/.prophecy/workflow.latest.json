@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "2730",
+    "fabricId" : "4887",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -129,69 +129,6 @@
           },
           "optional" : false,
           "comment" : "sdf"
-        }, {
-          "name" : "r1",
-          "kind" : {
-            "type" : "record",
-            "fields" : [ {
-              "name" : "r2",
-              "kind" : {
-                "type" : "record",
-                "fields" : [ {
-                  "name" : "r3",
-                  "kind" : {
-                    "type" : "record",
-                    "fields" : [ {
-                      "name" : "array",
-                      "kind" : {
-                        "type" : "array",
-                        "elementType" : {
-                          "type" : "record",
-                          "fields" : [ {
-                            "name" : "key1",
-                            "kind" : {
-                              "type" : "string",
-                              "value" : null
-                            },
-                            "optional" : false
-                          }, {
-                            "name" : "aaa11",
-                            "kind" : {
-                              "type" : "array",
-                              "elementType" : {
-                                "type" : "string",
-                                "value" : null
-                              },
-                              "value" : null
-                            },
-                            "optional" : false
-                          } ]
-                        },
-                        "value" : [ {
-                          "key1" : "re",
-                          "aaa11" : [ "34", "343" ]
-                        }, {
-                          "key1" : "323",
-                          "aaa11" : [ "434" ]
-                        } ]
-                      },
-                      "optional" : false
-                    } ]
-                  },
-                  "optional" : false
-                } ]
-              },
-              "optional" : false
-            } ]
-          },
-          "optional" : false
-        }, {
-          "name" : "secret",
-          "kind" : {
-            "type" : "databricks_secret",
-            "value" : null
-          },
-          "optional" : false
         } ]
       },
       "oldCommon" : {
@@ -1473,38 +1410,5 @@
     "outputs" : [ ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.metainfo.configuration.common.fields[8].kind.value",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "default values error for key: secret value: null",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.metainfo.configuration.instances.test-random1",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Configuration Instance: test-random1 Incorrect datatype for key: c_array.[1] Expected: string Found: null",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

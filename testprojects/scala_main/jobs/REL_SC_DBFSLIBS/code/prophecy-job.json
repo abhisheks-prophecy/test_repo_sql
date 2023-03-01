@@ -45,11 +45,37 @@
         }
       }
     }, {
+      "id" : "4878",
+      "name" : "Automated-Databricks-ACLNewDude",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "4829",
       "name" : "AdvJson_adv_json_power_shared",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json-1" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4881",
+      "name" : "JobFabricMain_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -218,30 +244,21 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "4833",
-      "name" : "JobFabricMain_1",
+      "id" : "4887",
+      "name" : "dev_customartifactory",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "4862",
-      "name" : "Automated-Databricks-ACLNewDude",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2080",
@@ -589,69 +606,6 @@
             },
             "optional" : false,
             "comment" : "sdf"
-          }, {
-            "name" : "r1",
-            "kind" : {
-              "type" : "record",
-              "fields" : [ {
-                "name" : "r2",
-                "kind" : {
-                  "type" : "record",
-                  "fields" : [ {
-                    "name" : "r3",
-                    "kind" : {
-                      "type" : "record",
-                      "fields" : [ {
-                        "name" : "array",
-                        "kind" : {
-                          "type" : "array",
-                          "elementType" : {
-                            "type" : "record",
-                            "fields" : [ {
-                              "name" : "key1",
-                              "kind" : {
-                                "type" : "string",
-                                "value" : null
-                              },
-                              "optional" : false
-                            }, {
-                              "name" : "aaa11",
-                              "kind" : {
-                                "type" : "array",
-                                "elementType" : {
-                                  "type" : "string",
-                                  "value" : null
-                                },
-                                "value" : null
-                              },
-                              "optional" : false
-                            } ]
-                          },
-                          "value" : [ {
-                            "key1" : "re",
-                            "aaa11" : [ "34", "343" ]
-                          }, {
-                            "key1" : "323",
-                            "aaa11" : [ "434" ]
-                          } ]
-                        },
-                        "optional" : false
-                      } ]
-                    },
-                    "optional" : false
-                  } ]
-                },
-                "optional" : false
-              } ]
-            },
-            "optional" : false
-          }, {
-            "name" : "secret",
-            "kind" : {
-              "type" : "databricks_secret",
-              "value" : null
-            },
-            "optional" : false
           } ],
           "instances" : {
             "ScalaProjectCloneExternalGit" : [ "test-random3", "test-random1", "test-random2", "default", "test_all_instancevalues" ]
