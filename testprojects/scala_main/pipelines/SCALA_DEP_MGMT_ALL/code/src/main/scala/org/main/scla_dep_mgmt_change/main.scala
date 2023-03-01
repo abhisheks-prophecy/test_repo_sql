@@ -299,6 +299,12 @@ object Main {
     )
     df_Script_17.cache().count()
     df_Script_17.unpersist()
+    val df_SetOperation_2 =
+      SetOperation_2(context, df_Script_6, df_Script_6).interim(
+        "graph",
+        "0D6KA6M69NaxwLh4YHL36$$DBCL7Ij7iKu5Ru7REo8Ff",
+        "bal6pUnNminCP0rLQ_Bd9$$r3-2j5Z8_uku45wIZ-gY9"
+      )
     val df_Aggregate_1 = Aggregate_1(context, df_OrderBy_3).interim(
       "graph",
       "n0VmJXrJcJhCDBbma0KdJ$$k94j1JSMRlVwaZ6r7RhGb",
@@ -380,6 +386,14 @@ object Main {
       )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
+    val df_SetOperation_2_1 =
+      SetOperation_2_1(context, df_SetOperation_2, df_SetOperation_2).interim(
+        "graph",
+        "oBvXdYTA5tBj61w6P7m-9$$PW6Ikm92ofDdAGVfMvL_m",
+        "TE4HOZUCVuefZj5jvGqDR$$AT2IGIqwYHf-R6lTUfBkJ"
+      )
+    df_SetOperation_2_1.cache().count()
+    df_SetOperation_2_1.unpersist()
     val df_Reformat_5 = Reformat_5(context, df_Aggregate_1).interim(
       "graph",
       "ZohJ-uI1fzL3XQKSP_Umt$$4GCMZbeofo2GO4U1MPXs6",
