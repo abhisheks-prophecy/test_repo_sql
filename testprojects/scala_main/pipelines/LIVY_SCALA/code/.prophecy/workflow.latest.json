@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "1654",
+    "fabricId" : "3461",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -118,7 +118,10 @@
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
-    "sparkConf" : [ ],
+    "sparkConf" : [ {
+      "name" : "spark.sql.optimizer.excludedRules",
+      "value" : "org.apache.spark.sql.catalyst.optimizer.ColumnPruning"
+    } ],
     "hadoopConf" : [ ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
