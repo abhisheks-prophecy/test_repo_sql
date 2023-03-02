@@ -299,8 +299,13 @@ object Main {
     )
     df_Script_17.cache().count()
     df_Script_17.unpersist()
+    val df_Filter_6 = Filter_6(context, df_Script_6).interim(
+      "graph",
+      "6RHwsPMshmxqxqLVwxaAf$$qAPCAUOs1yMDoJzt6V2Ho",
+      "VNyLn1sWT73jgMQlRni-X$$WRUzyI7gGT6gKhQbB7KaU"
+    )
     val df_SetOperation_2 =
-      SetOperation_2(context, df_Script_6, df_Script_6).interim(
+      SetOperation_2(context, df_Script_6, df_Filter_6).interim(
         "graph",
         "0D6KA6M69NaxwLh4YHL36$$DBCL7Ij7iKu5Ru7REo8Ff",
         "bal6pUnNminCP0rLQ_Bd9$$r3-2j5Z8_uku45wIZ-gY9"

@@ -68,6 +68,9 @@ object Main {
       .getOrCreate()
       .newSession()
     val context = Context(spark, config)
+    spark.conf.set("spark.sql.optimizer.excludedRules",
+                   "org.apache.spark.sql.catalyst.optimizer.ColumnPruning"
+    )
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/LIVY_SCALA")
     MetricsCollector.start(spark,                    "pipelines/LIVY_SCALA")
     apply(context)

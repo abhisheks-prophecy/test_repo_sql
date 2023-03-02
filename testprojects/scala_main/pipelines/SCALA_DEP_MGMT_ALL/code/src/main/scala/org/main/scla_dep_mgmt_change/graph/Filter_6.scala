@@ -12,14 +12,9 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object SetOperation_2_1 {
+object Filter_6 {
 
-  def apply(context: Context, in0: DataFrame, in1: DataFrame): DataFrame = {
-    var res = in0
-    if (Some(false).getOrElse(false))
-      res = res.unionByName(in1, allowMissingColumns = true)
-    else res = res.unionByName(in1)
-    res
-  }
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.filter(col("first_name").like("%C%"))
 
 }
