@@ -9,7 +9,319 @@
     "phase" : 0,
     "cache" : false,
     "detailedStats" : false,
-    "isImported" : false
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "JDBC_USER",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_user"
+          },
+          "optional" : false,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "SOURCE_TABLE",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_table"
+          },
+          "optional" : false,
+          "comment" : "new comment2",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "db_secrets",
+          "kind" : {
+            "type" : "databricks_secret",
+            "value" : "qasecrets_mysql:username"
+          },
+          "optional" : true,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "JDBC_URL",
+          "kind" : {
+            "type" : "string",
+            "value" : "jdbc:mysql://18.144.156.219:3306/test_database"
+          },
+          "optional" : false,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "JDBC_SOURCE_TABLE",
+          "kind" : {
+            "type" : "string",
+            "value" : "test_table"
+          },
+          "optional" : false,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "CONFIG_BOOLEAN",
+          "kind" : {
+            "type" : "boolean",
+            "value" : true
+          },
+          "optional" : false,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "CONFIG_DOUBLE",
+          "kind" : {
+            "type" : "double",
+            "value" : 123123.12321321
+          },
+          "optional" : false,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "CONFIG_INT",
+          "kind" : {
+            "type" : "int",
+            "value" : 3243423
+          },
+          "optional" : false,
+          "comment" : "new comment1",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "CONFIG_FLOAT",
+          "kind" : {
+            "type" : "float",
+            "value" : 3454.34534
+          },
+          "optional" : false,
+          "comment" : "new comment",
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "CONFIG_STR",
+          "kind" : {
+            "type" : "string",
+            "value" : "jdbc_url-jdbc:mysql://18.144.156.219:3306/test_database"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_0",
+          "kind" : {
+            "type" : "int",
+            "value" : 0
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_1",
+          "kind" : {
+            "type" : "int",
+            "value" : 1
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_st_expr",
+          "kind" : {
+            "type" : "spark_expression",
+            "value" : "concat(`c_struct-c_short`, `c_struct-c_decimal`)"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_st_long",
+          "kind" : {
+            "type" : "string",
+            "value" : "c_array_long"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_st_rename",
+          "kind" : {
+            "type" : "string",
+            "value" : "c_array_boolean_renamed"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_rd_expr",
+          "kind" : {
+            "type" : "spark_expression",
+            "value" : "`c_decimal  -  ` >= 12321 "
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_limit_11",
+          "kind" : {
+            "type" : "int",
+            "value" : 11
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_row",
+          "kind" : {
+            "type" : "spark_expression",
+            "value" : "row_number()"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_sql_expr",
+          "kind" : {
+            "type" : "string",
+            "value" : "%1%"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_regex1",
+          "kind" : {
+            "type" : "string",
+            "value" : "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_regex2",
+          "kind" : {
+            "type" : "string",
+            "value" : "((?=.*)(?=.*[a-z$$])(?=.*[A-Z])(?=.*[@#%]).{6,20})"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_array_long",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "long",
+              "value" : null
+            },
+            "value" : [ 10 ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_array_string",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "string",
+              "value" : null
+            },
+            "value" : [ "this is string1", "this is string2" ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_record_complex",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "cr_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "crar_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "crar_long",
+                    "kind" : {
+                      "type" : "long",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "crar_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "value" : [ {
+                  "crar_short" : 11,
+                  "crar_long" : 22,
+                  "crar_float" : 33.33
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "cr_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "crr_array_bool",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "boolean",
+                      "value" : null
+                    },
+                    "value" : [ false, true ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "crr_array_spark_expression",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "value" : [ "concat(first_name, last_name)", "concat(first_name, first_name)", "concat(first_name, first_name, last_name)" ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "cr_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is a string"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "cr_int",
+              "kind" : {
+                "type" : "int",
+                "value" : 11
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "c_string_with_dollar",
+          "kind" : {
+            "type" : "string",
+            "value" : "mynameis$$iam$$anthony $$gonzales$$yes$$  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        } ]
+      }
+    },
+    "configPathInPipelineConfig" : [ "SubGraph_1" ]
   },
   "ports" : {
     "inputs" : [ {
@@ -72,101 +384,160 @@
         "expressions" : [ {
           "target" : "c_array_int",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_int\")"
+            "format" : "sql",
+            "expression" : "c_array_int"
           },
           "description" : "",
           "_row_id" : "962043970"
         }, {
           "target" : "c_array_string",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_string\")"
+            "format" : "sql",
+            "expression" : "c_array_string"
           },
           "description" : "",
           "_row_id" : "1601485396"
         }, {
           "target" : "c_array_long",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_long\")"
+            "format" : "sql",
+            "expression" : "c_array_long"
           },
           "description" : "",
           "_row_id" : "1965052548"
         }, {
           "target" : "c_array_boolean",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_boolean\")"
+            "format" : "sql",
+            "expression" : "c_array_boolean"
           },
           "description" : "",
           "_row_id" : "1368424661"
         }, {
           "target" : "c_array_date",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_date\")"
+            "format" : "sql",
+            "expression" : "c_array_date"
           },
           "description" : "",
           "_row_id" : "647602330"
         }, {
           "target" : "c_array_timestamp",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_timestamp\")"
+            "format" : "sql",
+            "expression" : "c_array_timestamp"
           },
           "description" : "",
           "_row_id" : "739353202"
         }, {
           "target" : "c_array_float",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_float\")"
+            "format" : "sql",
+            "expression" : "c_array_float"
           },
           "description" : "",
           "_row_id" : "1279239997"
         }, {
           "target" : "c_array_decimal",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_array_decimal\")"
+            "format" : "sql",
+            "expression" : "c_array_decimal"
           },
           "description" : "",
           "_row_id" : "164562272"
         }, {
           "target" : "c_struct-c_array_int",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_struct-c_array_int`\")"
+            "format" : "sql",
+            "expression" : "`c_struct-c_array_int`"
           },
           "description" : "",
           "_row_id" : "1313851216"
         }, {
           "target" : "c_struct-c_timestamp",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_struct-c_timestamp`\")"
+            "format" : "sql",
+            "expression" : "`c_struct-c_timestamp`"
           },
           "description" : "",
           "_row_id" : "2043646511"
         }, {
           "target" : "c_struct-c_short",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_struct-c_short`\")"
+            "format" : "sql",
+            "expression" : "`c_struct-c_short`"
           },
           "description" : "",
           "_row_id" : "641535649"
         }, {
           "target" : "c_struct-c_decimal",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_struct-c_decimal`\")"
+            "format" : "sql",
+            "expression" : "`c_struct-c_decimal`"
           },
           "description" : "",
           "_row_id" : "1941421258"
         } ]
       }
     }
-  }
+  },
+  "externalDependencies" : [ {
+    "type" : "coordinates",
+    "coordinates" : "mysql:mysql-connector-java:8.0.29",
+    "name" : "mysql",
+    "enabled" : false,
+    "id" : "59965868",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.postgresql:postgresql:42.3.4",
+    "name" : "postgres",
+    "enabled" : false,
+    "id" : "1360721423",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.scalanlp:epic_2.12:0.5",
+    "name" : "epic",
+    "enabled" : false,
+    "id" : "418005485",
+    "exclusions" : [ ],
+    "repo" : "https://repo.maven.apache.org/maven2/"
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
+    "name" : "cats",
+    "enabled" : false,
+    "id" : "1575366423",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.springframework:spring-beans:5.3.19",
+    "name" : "spring",
+    "enabled" : false,
+    "id" : "611418782",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+    "name" : "spark-excel",
+    "enabled" : false,
+    "id" : "368609749",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
+    "name" : "prophecy-libs-4.0.0",
+    "enabled" : false,
+    "id" : "GXM_V",
+    "exclusions" : [ ],
+    "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "mysql:mysql-connector-java:8.0.28",
+    "name" : "mysql-828",
+    "enabled" : false,
+    "id" : "E6bZY",
+    "exclusions" : [ ]
+  } ]
 }

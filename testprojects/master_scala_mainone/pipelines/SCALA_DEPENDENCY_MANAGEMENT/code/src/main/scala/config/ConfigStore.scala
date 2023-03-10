@@ -1,7 +1,6 @@
 package config
 
 import org.apache.spark.sql._
-import config.ConfigStore._
 import config.Context
 import pureconfig.ConfigReader.Result
 import pureconfig._

@@ -1,8 +1,8 @@
 package graph
 
 import io.prophecy.libs._
-import config.ConfigStore._
 import config.Context
+import udfs.UDFs._
 import udfs.UDFs._
 import udfs._
 import org.apache.spark._

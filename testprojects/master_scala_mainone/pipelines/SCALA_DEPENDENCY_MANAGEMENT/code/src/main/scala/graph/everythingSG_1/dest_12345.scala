@@ -1,8 +1,7 @@
 package graph.everythingSG_1
 
 import io.prophecy.libs._
-import config.ConfigStore._
-import config.Context
+import graph.everythingSG_1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
