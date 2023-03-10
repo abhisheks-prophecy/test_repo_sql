@@ -12,7 +12,11 @@ case class Config(
     List("dasdsad", "sadasdsad", "yes sir", "2yes sir"),
   @Description("record ddesc") c_record3: C_record3 = C_record3(),
   @Description("bool desc") bool:         Boolean = true,
-  @Description("double desc") double:     Double = 234324.0d
+  @Description("double desc") double:     Double = 234324.0d,
+  @Description("sewr") record_array:      Record_array = Record_array(),
+  @Description("sdf") array_record: List[Array_record] = List(
+    Array_record(werw = "332", ewr = List("12", "w"))
+  )
 ) extends ConfigBase
 
 object C_record3 {
@@ -32,3 +36,21 @@ object C_val3 {
 }
 
 case class C_val3(@Description("crr desc") crr: String = "asdasdasd")
+
+object Record_array {
+
+  implicit val confHint: ProductHint[Record_array] =
+    ProductHint[Record_array](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Record_array(@Description("wer") array: List[String] = List("23"))
+
+object Array_record {
+
+  implicit val confHint: ProductHint[Array_record] =
+    ProductHint[Array_record](ConfigFieldMapping(CamelCase, CamelCase))
+
+}
+
+case class Array_record(werw: String, ewr: List[String])

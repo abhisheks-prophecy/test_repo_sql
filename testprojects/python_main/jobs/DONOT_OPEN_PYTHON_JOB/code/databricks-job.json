@@ -22,17 +22,20 @@
     "job_clusters" : [ {
       "job_cluster_key" : "REL_PYTHON_DONOT_OPEN_JOB_default_small",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i3.xlarge",
         "spark_conf" : {
-          "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/DONOT_OPEN_PYTHON_JOB",
           "prophecy.metadata.fabric.id" : "2730",
+          "prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/DONOT_OPEN_PYTHON_JOB",
+          "prophecy.metadata.is.interactive.run" : "false",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
-          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
           "prophecy.packages.path" : "{\"pipelines/DONOT_OPEN_PYTHON\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
-          "prophecy.metadata.is.interactive.run" : "false",
-          "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws"
+          "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
+          "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -53,15 +56,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_DONOT_OPEN",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default", "-C", "CONFIG_DOUBLE=12.12", "CONFIG_STR=jdbc_url-${JDBC_URL}", "CONFIG_FLOAT=12.12", "CONFIG_DB_SECRETS=qasecrets:mysql_user", "JDBC_URL=jdbc:mysql://18.144.156.219:3306/test_database", "CONFIG_INT=12", "CONFIG_BOOLEAN=false", "JDBC_SOURCE_TABLE=test_table", "CONFIG_SHORT=12" ]
+        "parameters" : [ "-i", "default", "-O", "{\"CONFIG_DOUBLE\":\"12.12\",\"CONFIG_STR\":\"jdbc_url-${JDBC_URL}\",\"CONFIG_FLOAT\":\"12.12\",\"CONFIG_DB_SECRETS\":\"qasecrets:mysql_user\",\"JDBC_URL\":\"jdbc:mysql://18.144.156.219:3306/test_database\",\"CONFIG_INT\":\"12\",\"CONFIG_BOOLEAN\":\"false\",\"JDBC_SOURCE_TABLE\":\"test_table\",\"CONFIG_SHORT\":\"12\"}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-6.3.12.2"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.3.20"
+          "package" : "prophecy-libs==1.4.2"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_DONOT_OPEN-1.0-py3-none-any.whl"

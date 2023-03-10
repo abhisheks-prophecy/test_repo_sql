@@ -76,6 +76,59 @@
           },
           "optional" : false,
           "comment" : "double desc"
+        }, {
+          "name" : "record_array",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "23" ]
+              },
+              "optional" : false,
+              "comment" : "wer"
+            } ]
+          },
+          "optional" : false,
+          "comment" : "sewr"
+        }, {
+          "name" : "array_record",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "werw",
+                "kind" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "optional" : false
+              }, {
+                "name" : "ewr",
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : null
+                },
+                "optional" : false
+              } ]
+            },
+            "value" : [ {
+              "werw" : "332",
+              "ewr" : [ "12", "w" ]
+            } ]
+          },
+          "optional" : false,
+          "comment" : "sdf"
         } ]
       },
       "oldCommon" : {
@@ -158,7 +211,7 @@
     } ],
     "isImported" : false,
     "interimMode" : "Full",
-    "interimModeEnabled" : false,
+    "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
@@ -488,10 +541,104 @@
         "outputs" : [ {
           "id" : "H6Z_aAnftBpk4a-USAecW$$DfJIjJOqY8XnYd8OGH-ZP",
           "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c   short  --",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-int-column type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "-- c-long",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c-decimal",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  float",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c--boolean",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c- - -double",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c___-- string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c  date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : true
       },
       "properties" : {
         "columnsSelector" : [ ],

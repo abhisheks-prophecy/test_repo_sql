@@ -30,7 +30,7 @@ object src_azure {
         )
       )
       .load(
-        "dbfs:/Prophecy/abhisheks+1663866415875-azure@prophecy.io/OrdersDatasetInput.csv"
+        "dbfs:/Prophecy/abhisheks+azure1@prophecy.io/OrdersDatasetInput.csv"
       )
 
 }

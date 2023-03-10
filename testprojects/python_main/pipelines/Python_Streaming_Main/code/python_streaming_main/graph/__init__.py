@@ -31,5 +31,4 @@ from .FlattenSchema_2 import *
 from .DEST_KAFKA import *
 from .Parquet_Standard import *
 from .Aggregate_1_1 import *
-from .SQS_PARQUET import *
 from .Watermark_1 import *

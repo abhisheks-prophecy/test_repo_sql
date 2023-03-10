@@ -420,8 +420,8 @@
       "metadata" : {
         "label" : "RowDistributor_1",
         "slug" : "RowDistributor_1",
-        "x" : 745,
-        "y" : 549.9227294921875,
+        "x" : 740,
+        "y" : 540,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -469,8 +469,8 @@
       "metadata" : {
         "label" : "Aggregate_1",
         "slug" : "Aggregate_1",
-        "x" : 1450,
-        "y" : 25,
+        "x" : 1460,
+        "y" : 20,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -548,7 +548,7 @@
         "label" : "Repartition_1",
         "slug" : "Repartition_1",
         "x" : 1360,
-        "y" : 474.9227294921875,
+        "y" : 480,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -577,7 +577,7 @@
           "format" : "sql",
           "expression" : "concat('$c_repartition_colname', `c  float`, `c   short  --`)"
         } ],
-        "columnsSelector" : [ "eLSxCEcmzb1N2OgI8Ebon$$-sIC5Nun5moEPRO6nQGGs##c   short  --", "eLSxCEcmzb1N2OgI8Ebon$$-sIC5Nun5moEPRO6nQGGs##c  float" ],
+        "columnsSelector" : [ "eLSxCEcmzb1N2OgI8Ebon$$-sIC5Nun5moEPRO6nQGGs##c  float", "eLSxCEcmzb1N2OgI8Ebon$$-sIC5Nun5moEPRO6nQGGs##c   short  --" ],
         "repartitionType" : "hash_repartitioning",
         "rangeExpressions" : [ ],
         "defaultPartitions" : "10",
@@ -590,7 +590,7 @@
       "metadata" : {
         "label" : "FlattenSchema_1",
         "slug" : "FlattenSchema_1",
-        "x" : 1390,
+        "x" : 1400,
         "y" : 280,
         "phase" : 0,
         "cache" : false,
@@ -613,10 +613,6 @@
       },
       "properties" : {
         "explodedColsNewName" : [ {
-          "originalColToExplode" : "-- c_array_timestamp -- ",
-          "updatedColToExplode" : "-- c_array_timestamp -- ",
-          "colNameAfterExplode" : "-- c_array_timestamp -- "
-        }, {
           "originalColToExplode" : "c_array-int  _ int",
           "updatedColToExplode" : "c_array-int  _ int",
           "colNameAfterExplode" : "c_array-int  _ int"
@@ -624,6 +620,10 @@
           "originalColToExplode" : "c_array-string  _ string",
           "updatedColToExplode" : "c_array-string  _ string",
           "colNameAfterExplode" : "c_array-string  _ string"
+        }, {
+          "originalColToExplode" : "-- c_array_timestamp -- ",
+          "updatedColToExplode" : "-- c_array_timestamp -- ",
+          "colNameAfterExplode" : "-- c_array_timestamp -- "
         }, {
           "originalColToExplode" : "c_struct -- _  .c_array_int - of a struct ",
           "updatedColToExplode" : "c_struct -- _  .c_array_int - of a struct ",
@@ -675,7 +675,7 @@
           "targetTokens" : [ "c_struct -- _  ", "c_array_int - of a struct " ],
           "target" : "c_struct -- _  -c_array_int - of a struct "
         } ],
-        "columnsSelector" : [ "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_array-string  _ string", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_array-int  _ int", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_struct -- _  ", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_struct -- _  .c_array_int - of a struct ", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_double", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##-- c_array_timestamp -- " ],
+        "columnsSelector" : [ "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##-- c_array_timestamp -- ", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_struct -- _  .c_array_int - of a struct ", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_array-int  _ int", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_double", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_array-string  _ string", "jvcPRKn3BINaL0fXOlp7v$$61nQ2bPu9UDXD7bX28Guj##c_struct -- _  " ],
         "explodeColumns" : [ "-- c_array_timestamp -- ", "c_array-int  _ int", "c_array-string  _ string", "c_struct -- _  .c_array_int - of a struct " ],
         "delimiter" : "-"
       }
@@ -686,8 +686,8 @@
       "metadata" : {
         "label" : "Join_1",
         "slug" : "Join_1",
-        "x" : 565,
-        "y" : 550,
+        "x" : 560,
+        "y" : 560,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -822,7 +822,7 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c-int-column type", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c-decimal", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c  float", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c  date", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##-- c-long", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c___-- string", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c--boolean", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c_timestamp", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c   short  --", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c- - -double" ],
+        "columnsSelector" : [ "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c-int-column type", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c--boolean", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c_timestamp", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c   short  --", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c-decimal", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c  date", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c- - -double", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c  float", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##c___-- string", "512FyJ-R0KS8xn-3jc0MR$$5GlvXGpmvAEcJIhFMCu0P##-- c-long" ],
         "allIn0" : null,
         "whereClause" : {
           "format" : "sql",
@@ -837,8 +837,8 @@
       "metadata" : {
         "label" : "Script_1",
         "slug" : "Script_1",
-        "x" : 1355,
-        "y" : 605.7054443359375,
+        "x" : 1360,
+        "y" : 600,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -870,8 +870,8 @@
       "metadata" : {
         "label" : "Limit_1",
         "slug" : "Limit_1",
-        "x" : 565,
-        "y" : 415,
+        "x" : 560,
+        "y" : 420,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -901,7 +901,7 @@
       "metadata" : {
         "label" : "Deduplicate_1",
         "slug" : "Deduplicate_1",
-        "x" : 895,
+        "x" : 900,
         "y" : 280,
         "phase" : 0,
         "cache" : false,
@@ -952,8 +952,8 @@
       "metadata" : {
         "label" : "OrderBy_1",
         "slug" : "OrderBy_1",
-        "x" : 985,
-        "y" : 130,
+        "x" : 980,
+        "y" : 140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -974,7 +974,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "Sm1FwgmJ2giIruMDBcFUW$$FgYqnFM84vkef_kQT0aUq##c  - int", "Sm1FwgmJ2giIruMDBcFUW$$FgYqnFM84vkef_kQT0aUq##c- short", "Sm1FwgmJ2giIruMDBcFUW$$FgYqnFM84vkef_kQT0aUq##c_double" ],
+        "columnsSelector" : [ "Sm1FwgmJ2giIruMDBcFUW$$FgYqnFM84vkef_kQT0aUq##c- short", "Sm1FwgmJ2giIruMDBcFUW$$FgYqnFM84vkef_kQT0aUq##c  - int", "Sm1FwgmJ2giIruMDBcFUW$$FgYqnFM84vkef_kQT0aUq##c_double" ],
         "orders" : [ {
           "expression" : {
             "format" : "sql",
@@ -1002,8 +1002,8 @@
       "metadata" : {
         "label" : "Filter_1",
         "slug" : "Filter_1",
-        "x" : 730,
-        "y" : 145,
+        "x" : 740,
+        "y" : 140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1024,7 +1024,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "XYfhyZYoyhH1Wyv2jc3IT$$qdxI0_6o_RRT4X7rr6PVi##c-string" ],
         "condition" : {
           "format" : "sql",
           "expression" : "`c-string` like '%3%' or `c-string` like '$c_regex_filter'"
@@ -1037,8 +1037,8 @@
       "metadata" : {
         "label" : "WindowFunction_1",
         "slug" : "WindowFunction_1",
-        "x" : 1375,
-        "y" : 145,
+        "x" : 1380,
+        "y" : 140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1126,7 +1126,7 @@
       "metadata" : {
         "label" : "SetOperation_1",
         "slug" : "SetOperation_1",
-        "x" : 565,
+        "x" : 560,
         "y" : 280,
         "phase" : 0,
         "cache" : false,
@@ -1188,7 +1188,7 @@
       "metadata" : {
         "label" : "src_orc_all_type_no_partition",
         "slug" : "src_orc_all_type_no_partition",
-        "x" : 145,
+        "x" : 140,
         "y" : 400,
         "phase" : 0,
         "cache" : false,
@@ -1215,7 +1215,7 @@
       "metadata" : {
         "label" : "SchemaTransform_1",
         "slug" : "SchemaTransform_1",
-        "x" : 730,
+        "x" : 740,
         "y" : 280,
         "phase" : 0,
         "cache" : false,
@@ -1295,8 +1295,8 @@
       "metadata" : {
         "label" : "Reformat_1",
         "slug" : "Reformat_1",
-        "x" : 565,
-        "y" : 130,
+        "x" : 560,
+        "y" : 140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1317,7 +1317,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_decimal  -  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c -  boolean _  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_int", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_float-__  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_timestamp  __ for--today", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_timestamp", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_date", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c- short", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_string", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_struct -- _  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_long", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_short", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_boolean", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_float", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array--long", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_double", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_date-for today", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##-- c_array_timestamp -- ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_decimal", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array-- boolean ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##- c long", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array -- decimal", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c-string", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array-string  _ string", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array-int  _ int", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_double", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array -- float", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c  - int" ],
+        "columnsSelector" : [ "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c  - int", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c -  boolean _  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array -- float", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_date-for today", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c- short", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_timestamp", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_long", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_decimal  -  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_boolean", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array-int  _ int", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array--long", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_int", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array-- boolean ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array -- decimal", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_string", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_short", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_float", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_array-string  _ string", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_timestamp  __ for--today", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##-- c_array_timestamp -- ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_double", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_struct -- _  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_decimal", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c_float-__  ", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_date", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##p_double", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##- c long", "_qxLDkrbCbXqXBcdMUDPF$$LvOiy4u9Mo9Z1wKk5OaRd##c-string" ],
         "expressions" : [ {
           "target" : "c_config_values",
           "expression" : {
@@ -1530,8 +1530,8 @@
       "metadata" : {
         "label" : "OrderBy_2",
         "slug" : "OrderBy_2",
-        "x" : 733.5,
-        "y" : 419.0527221679688,
+        "x" : 740,
+        "y" : 420,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1626,8 +1626,8 @@
       "metadata" : {
         "label" : "src_csv_special_char_column_name",
         "slug" : "src_csv_special_char_column_name",
-        "x" : 145,
-        "y" : 549.9227294921875,
+        "x" : 140,
+        "y" : 540,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

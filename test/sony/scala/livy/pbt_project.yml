@@ -1,0 +1,92 @@
+name: sony_test_new
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: scala
+buildSystem: maven
+pipelines:
+  pipelines/minimal:
+    name: minimal
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-10 17:22:04'
+    datasets:
+      inputs:
+      - datasets/livy_csv_dataset
+      outputs: []
+    dependencies: {}
+  pipelines/sony_livy_pipe:
+    name: sony_livy_pipe
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-10 10:37:24'
+    datasets:
+      inputs:
+      - datasets/livy_csv_dataset
+      outputs:
+      - datasets/target_dataset
+    dependencies: {}
+  pipelines/sony_visa_replica_clone:
+    name: sony_visa_replica_clone
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-13 09:30:19'
+    datasets:
+      inputs:
+      - datasets/livy_csv_dataset
+      outputs:
+      - datasets/target_dataset
+    dependencies: {}
+  pipelines/sony_visa_replica:
+    name: sony_visa_replica
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    language: scala
+    createdAt: '2023-01-13 08:46:22'
+    datasets:
+      inputs:
+      - datasets/livy_csv_dataset
+      outputs:
+      - datasets/target_dataset
+    dependencies: {}
+datasets:
+  datasets/livy_csv_dataset:
+    name: livy_csv_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-10 10:38:33'
+    physicalDatasets:
+      captain_livy:
+        fabricId: 1654
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-10 10:38:33'
+  datasets/target_dataset:
+    name: target_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-01-10 11:48:09'
+    physicalDatasets:
+      captain_livy:
+        fabricId: 1654
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-01-10 11:48:09'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: []
+projectDependencies: {}
+pipelineConfigurations: {}

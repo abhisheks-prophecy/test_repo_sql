@@ -49,6 +49,19 @@ object Main {
                  "y0ljFftVNLexQytwgRtZe$$gCrSp9s-cpbqRZaLKOGRd"
         )
         .cache()
+    val df_Script_1 =
+      Script_1(context, df_src_avro_CustsDatasetInput_1).interim(
+        "graph",
+        "zvL4eQufcf7JXDWE5naBz$$FaOjEEhgZ-ohY-GFzOtkz",
+        "zvrtFJPhpuoVXq8RQ6UgB$$oj1NDu1sKgKz7Ldy31y9n"
+      )
+    val df_call_func = call_func(context, df_Script_1).interim(
+      "graph",
+      "jDGCmYurLPi5p2PI0NGES$$ppPGE4WaX6-Zibw1VKZeH",
+      "kcQDaPwg6yVi98DcYU8IQ$$IoQqIwKAkSnY95_gSy2rx"
+    )
+    df_call_func.cache().count()
+    df_call_func.unpersist()
     val df_WindowFunction_1 =
       WindowFunction_1(context,
                        df_src_parquet_all_type_and_partition_withspacehyphens
@@ -179,12 +192,6 @@ object Main {
       "ASVQUSGemiDjwc6M_V35W$$dFto0bYXNQ_A7n3kGM0jR",
       "U-eeoR9aJ66XXBnbWbzyj$$K894Ue9hU76yLTlb2svbu"
     )
-    val df_Script_1 =
-      Script_1(context, df_src_avro_CustsDatasetInput_1).interim(
-        "graph",
-        "zvL4eQufcf7JXDWE5naBz$$FaOjEEhgZ-ohY-GFzOtkz",
-        "zvrtFJPhpuoVXq8RQ6UgB$$oj1NDu1sKgKz7Ldy31y9n"
-      )
     val df_OrderBy_3 = OrderBy_3(context, df_ComplexExpression).interim(
       "graph",
       "hx5wO_87IAH8xNU8kd6u0$$NZNcKwMNB77oH_rUMhHw2",
@@ -292,6 +299,17 @@ object Main {
     )
     df_Script_17.cache().count()
     df_Script_17.unpersist()
+    val df_Filter_6 = Filter_6(context, df_Script_6).interim(
+      "graph",
+      "6RHwsPMshmxqxqLVwxaAf$$qAPCAUOs1yMDoJzt6V2Ho",
+      "VNyLn1sWT73jgMQlRni-X$$WRUzyI7gGT6gKhQbB7KaU"
+    )
+    val df_SetOperation_2 =
+      SetOperation_2(context, df_Script_6, df_Filter_6).interim(
+        "graph",
+        "0D6KA6M69NaxwLh4YHL36$$DBCL7Ij7iKu5Ru7REo8Ff",
+        "bal6pUnNminCP0rLQ_Bd9$$r3-2j5Z8_uku45wIZ-gY9"
+      )
     val df_Aggregate_1 = Aggregate_1(context, df_OrderBy_3).interim(
       "graph",
       "n0VmJXrJcJhCDBbma0KdJ$$k94j1JSMRlVwaZ6r7RhGb",
@@ -373,6 +391,14 @@ object Main {
       )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
+    val df_SetOperation_2_1 =
+      SetOperation_2_1(context, df_SetOperation_2, df_SetOperation_2).interim(
+        "graph",
+        "oBvXdYTA5tBj61w6P7m-9$$PW6Ikm92ofDdAGVfMvL_m",
+        "TE4HOZUCVuefZj5jvGqDR$$AT2IGIqwYHf-R6lTUfBkJ"
+      )
+    df_SetOperation_2_1.cache().count()
+    df_SetOperation_2_1.unpersist()
     val df_Reformat_5 = Reformat_5(context, df_Aggregate_1).interim(
       "graph",
       "ZohJ-uI1fzL3XQKSP_Umt$$4GCMZbeofo2GO4U1MPXs6",
