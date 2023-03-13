@@ -1,12 +1,14 @@
 import io.prophecy.libs._
-import config.ConfigStore._
 import config.Context
 import config._
+import config.ConfigStore.interimOutput
 import udfs.UDFs._
 import udfs._
 import graph._
 import graph.SubGraph_1
 import graph.everythingSG_1
+import graph.SubGraph_1.config.{Context => SubGraph_1_Context}
+import graph.everythingSG_1.config.{Context => everythingSG_1_Context}
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -84,7 +86,10 @@ object Main {
       "P3wur35dmUpCUS9RI97B6$$C-aK17F4TT5ozfKLRxLlG",
       "CYHjgxwrG-UxafTq3mty0$$bE3Abq_bfr4CAfbtMpdRX"
     )
-    val df_SubGraph_1 = SubGraph_1.apply(context, df_Limit_2)
+    val df_SubGraph_1 = SubGraph_1.apply(
+      SubGraph_1_Context(context.spark, context.config.SubGraph_1),
+      df_Limit_2
+    )
     val df_Repartition_2 = Repartition_2(context, df_WindowFunction_1).interim(
       "graph",
       "yfeifaX7xpRlj28Ls-8Vf$$29PiihbU95u1gXWccO3GA",
@@ -264,10 +269,11 @@ object Main {
            df_everythingSG_1_out1_temp,
            df_everythingSG_1_out2_temp,
            df_everythingSG_1_out3_temp
-      ) = everythingSG_1.apply(context,
-                               df_all_type_parquet,
-                               df_all_type_parquet,
-                               df_all_type_parquet
+      ) = everythingSG_1.apply(
+        everythingSG_1_Context(context.spark, context.config.everythingSG_1),
+        df_all_type_parquet,
+        df_all_type_parquet,
+        df_all_type_parquet
       )
       (df_everythingSG_1_out0_temp,
        df_everythingSG_1_out1_temp,

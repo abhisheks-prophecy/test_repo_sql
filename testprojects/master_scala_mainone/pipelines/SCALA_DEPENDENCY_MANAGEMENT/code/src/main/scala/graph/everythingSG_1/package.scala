@@ -1,16 +1,16 @@
 package graph
 
 import io.prophecy.libs._
-import config.ConfigStore._
-import config.Context
-import config._
 import graph.everythingSG_1.recursive
+import graph.everythingSG_1.recursive.config.{Context => recursive_Context}
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
+import graph.everythingSG_1.config._
+import graph.everythingSG_1.config.Config.interimOutput
 package object everythingSG_1 {
 
   def apply(
@@ -36,7 +36,10 @@ package object everythingSG_1 {
       "kyIIQzKdsKTdGSBM1MatI$$XFyiNSlAxJ_ITVUwLEFdz",
       "YCc7Bg9MF6bugh1dQnsfq$$emAGCBCiAuXT_3xnR5lAu"
     )
-    val df_recursive = recursive.apply(context, df_Script_1)
+    val df_recursive = recursive.apply(
+      recursive_Context(context.spark, context.config.recursive),
+      df_Script_1
+    )
     val df_Reformat_2 = Reformat_2(context, in0).interim(
       "everythingSG_1",
       "5gS1dA5unfLKwMouiXrPl$$wzMEj9fBYADsqc9IfaBJG",
