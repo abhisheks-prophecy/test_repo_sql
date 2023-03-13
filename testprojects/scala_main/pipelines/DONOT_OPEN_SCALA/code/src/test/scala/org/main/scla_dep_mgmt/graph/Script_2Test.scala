@@ -85,7 +85,8 @@ class Script_2Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.Lookup_1_1(
-      context,
+      org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.config
+        .Context(context.spark, context.config.all_type_scala_sg_1),
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
   }

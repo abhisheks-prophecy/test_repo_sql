@@ -1,7 +1,6 @@
 package io.prophecy.pipelines.scinterimsdatabrickspipeline.graph
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scinterimsdatabrickspipeline.config.ConfigStore._
 import io.prophecy.pipelines.scinterimsdatabrickspipeline.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._

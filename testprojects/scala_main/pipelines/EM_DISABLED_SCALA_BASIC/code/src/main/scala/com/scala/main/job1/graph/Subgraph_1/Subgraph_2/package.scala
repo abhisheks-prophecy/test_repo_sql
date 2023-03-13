@@ -1,8 +1,7 @@
 package com.scala.main.job1.graph.Subgraph_1
 
 import io.prophecy.libs._
-import com.scala.main.job1.config.ConfigStore._
-import com.scala.main.job1.config.Context
+import com.scala.main.job1.graph.Subgraph_1.Subgraph_2.config._
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._

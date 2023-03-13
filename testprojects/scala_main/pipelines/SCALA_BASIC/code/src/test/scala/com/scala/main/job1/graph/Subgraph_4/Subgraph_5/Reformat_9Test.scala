@@ -37,7 +37,11 @@ class Reformat_9Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_4.Subgraph_5.Reformat_9(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_4.Subgraph_5.Reformat_9(
+        com.scala.main.job1.graph.Subgraph_4.Subgraph_5.config
+          .Context(context.spark, context.config.Subgraph_4.Subgraph_5),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -84,7 +88,11 @@ class Reformat_9Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_4.Subgraph_5.Reformat_9(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_4.Subgraph_5.Reformat_9(
+        com.scala.main.job1.graph.Subgraph_4.Subgraph_5.config
+          .Context(context.spark, context.config.Subgraph_4.Subgraph_5),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -131,7 +139,11 @@ class Reformat_9Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_4.Subgraph_5.Reformat_9(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_4.Subgraph_5.Reformat_9(
+        com.scala.main.job1.graph.Subgraph_4.Subgraph_5.config
+          .Context(context.spark, context.config.Subgraph_4.Subgraph_5),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",

@@ -1,9 +1,8 @@
 package org.main.scla_dep_mgmt_change.graph
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
-import org.main.scla_dep_mgmt_change.config.Context
-import org.main.scla_dep_mgmt_change.config._
+import org.main.scla_dep_mgmt_change.graph.Subgraph_2.config._
+import org.main.scla_dep_mgmt_change.graph.Subgraph_2.config.Config.interimOutput
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._

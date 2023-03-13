@@ -1,7 +1,6 @@
 package org.main.scla_dep_mgmt_change.config
 
 import org.apache.spark.sql._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
 import org.main.scla_dep_mgmt_change.config.Context
 import pureconfig.ConfigReader.Result
 import pureconfig._

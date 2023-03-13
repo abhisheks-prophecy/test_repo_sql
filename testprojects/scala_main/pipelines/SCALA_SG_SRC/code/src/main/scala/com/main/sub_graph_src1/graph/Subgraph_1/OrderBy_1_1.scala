@@ -1,10 +1,8 @@
 package com.main.sub_graph_src1.graph.Subgraph_1
 
 import io.prophecy.libs._
-import com.main.sub_graph_src1.config.ConfigStore._
-import com.main.sub_graph_src1.config.Context
 import com.main.sub_graph_src1.udfs.UDFs._
-import com.main.sub_graph_src1.udfs._
+import com.main.sub_graph_src1.graph.Subgraph_1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._

@@ -37,7 +37,11 @@ class Reformat_5Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(
+        com.scala.main.job1.graph.Subgraph_1.Subgraph_2.config
+          .Context(context.spark, context.config.Subgraph_1.Subgraph_2),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -84,7 +88,11 @@ class Reformat_5Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(
+        com.scala.main.job1.graph.Subgraph_1.Subgraph_2.config
+          .Context(context.spark, context.config.Subgraph_1.Subgraph_2),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -131,7 +139,11 @@ class Reformat_5Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(
+        com.scala.main.job1.graph.Subgraph_1.Subgraph_2.config
+          .Context(context.spark, context.config.Subgraph_1.Subgraph_2),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",
@@ -178,7 +190,11 @@ class Reformat_5Test extends FunSuite with DataFrameSuiteBase {
     )
 
     val dfOutComputed =
-      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(context, dfIn)
+      com.scala.main.job1.graph.Subgraph_1.Subgraph_2.Reformat_5(
+        com.scala.main.job1.graph.Subgraph_1.Subgraph_2.config
+          .Context(context.spark, context.config.Subgraph_1.Subgraph_2),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("c   short  --",
                    "c-int-column type",

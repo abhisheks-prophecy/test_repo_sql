@@ -1,10 +1,12 @@
 package org.main.scla_dep_mgmt_change.graph
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
-import org.main.scla_dep_mgmt_change.config.Context
-import org.main.scla_dep_mgmt_change.config._
 import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.recursive_1
+import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.recursive_1.config.{
+  Context => recursive_1_Context
+}
+import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.config._
+import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.config.Config.interimOutput
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -129,7 +131,10 @@ package object all_type_scala_sg_1 {
         "Q732qOBLhcrT2x0MvHU_E$$Bq-CHD0qeTb6ke1F_1KM8",
         "Nljh_h-Q4z_oo_ltnGgSe$$8WZQIha0hUl_nuHdx2aCl"
       )
-    val df_recursive_1 = recursive_1.apply(context, df_Script_1_1)
+    val df_recursive_1 = recursive_1.apply(
+      recursive_1_Context(context.spark, context.config.recursive_1),
+      df_Script_1_1
+    )
     (df_FlattenSchema_1_1, df_OrderBy_2_1, df_recursive_1)
   }
 

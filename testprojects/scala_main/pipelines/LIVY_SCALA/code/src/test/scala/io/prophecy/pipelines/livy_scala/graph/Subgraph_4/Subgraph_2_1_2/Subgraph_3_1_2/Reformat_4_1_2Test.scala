@@ -38,7 +38,13 @@ class Reformat_4_1_2Test extends FunSuite with DataFrameSuiteBase {
 
     val dfOutComputed =
       io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
-        .Reformat_4_1_2(context, dfIn)
+        .Reformat_4_1_2(
+          io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2.config
+            .Context(context.spark,
+                     context.config.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
+            ),
+          dfIn
+        )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -80,7 +86,13 @@ class Reformat_4_1_2Test extends FunSuite with DataFrameSuiteBase {
 
     val dfOutComputed =
       io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
-        .Reformat_4_1_2(context, dfIn)
+        .Reformat_4_1_2(
+          io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2.config
+            .Context(context.spark,
+                     context.config.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
+            ),
+          dfIn
+        )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -122,7 +134,13 @@ class Reformat_4_1_2Test extends FunSuite with DataFrameSuiteBase {
 
     val dfOutComputed =
       io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
-        .Reformat_4_1_2(context, dfIn)
+        .Reformat_4_1_2(
+          io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2.config
+            .Context(context.spark,
+                     context.config.Subgraph_4.Subgraph_2_1_2.Subgraph_3_1_2
+            ),
+          dfIn
+        )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",

@@ -1,8 +1,8 @@
 package com.scala.main.job1.graph
 
 import io.prophecy.libs._
-import com.scala.main.job1.config.ConfigStore._
 import com.scala.main.job1.config.Context
+import com.scala.main.job1.udfs.UDFs._
 import com.scala.main.job1.udfs.UDFs._
 import com.scala.main.job1.udfs._
 import org.apache.spark._
