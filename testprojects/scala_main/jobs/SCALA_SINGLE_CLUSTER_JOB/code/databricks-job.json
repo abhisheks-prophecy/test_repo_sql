@@ -95,7 +95,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "custom_tags" : { },
         "ssh_public_keys" : [ ],
@@ -135,7 +136,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "custom_tags" : { },
         "ssh_public_keys" : [ ],
@@ -175,7 +177,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -193,15 +196,15 @@
       "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
       "spark_jar_task" : {
         "main_class_name" : "com.scala.main.job1.Main",
-        "parameters" : [ "-i", "test-random2" ]
+        "parameters" : [ "-i", "test-random2", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.6"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_IO_SCALA_BASIC.jar"
@@ -215,15 +218,15 @@
       "job_cluster_key" : "Cluster_1",
       "spark_jar_task" : {
         "main_class_name" : "com.scala.main.job1.Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.6"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_DISABLED_SCALA_BASIC.jar"
@@ -253,15 +256,15 @@
       "job_cluster_key" : "Cluster_2",
       "spark_jar_task" : {
         "main_class_name" : "com.scala.main.job1.Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.6"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar"
@@ -282,11 +285,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.6"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DEP_MGMT_ALL.jar"
@@ -323,15 +326,15 @@
       "job_cluster_key" : "Cluster_1",
       "spark_jar_task" : {
         "main_class_name" : "com.main.sub_graph_src1.Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.6"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_SGSRC.jar"
