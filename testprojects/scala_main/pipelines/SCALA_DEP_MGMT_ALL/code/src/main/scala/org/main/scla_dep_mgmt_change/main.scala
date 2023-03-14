@@ -1,15 +1,24 @@
 package org.main.scla_dep_mgmt_change
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
 import org.main.scla_dep_mgmt_change.config.Context
 import org.main.scla_dep_mgmt_change.config._
+import org.main.scla_dep_mgmt_change.config.ConfigStore.interimOutput
 import org.main.scla_dep_mgmt_change.udfs.UDFs._
 import org.main.scla_dep_mgmt_change.udfs._
 import org.main.scla_dep_mgmt_change.graph._
 import org.main.scla_dep_mgmt_change.graph.SubGraph_1
 import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1
 import org.main.scla_dep_mgmt_change.graph.Subgraph_2
+import org.main.scla_dep_mgmt_change.graph.SubGraph_1.config.{
+  Context => SubGraph_1_Context
+}
+import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.config.{
+  Context => all_type_scala_sg_1_Context
+}
+import org.main.scla_dep_mgmt_change.graph.Subgraph_2.config.{
+  Context => Subgraph_2_Context
+}
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -74,6 +83,8 @@ object Main {
       "vpuiPUloPPI5wKsdnBW2X$$9hYAzmyJqyva6xBUJQas7",
       "OcRhKi5A8GbNRmjSJ_cwb$$AAP0iEMiVDg3mvHXC8Y01"
     )
+    df_Deduplicate_1.cache().count()
+    df_Deduplicate_1.unpersist()
     val df_src_json_input_custs_1 = src_json_input_custs_1(context)
       .interim("graph", "XM4cdlXB7oVFseHwX2LRg", "gB7zngP2OXebTsbxfm4vF")
       .cache()
@@ -82,7 +93,10 @@ object Main {
       "faSnoqDMQPRk7kfregn3H$$ZKCAqB4L-lusn5xKNicMr",
       "FI1jEKVQ6bkCmPl3ojML-$$3tJdDF9N0cONpOP-Xu-2l"
     )
-    val df_SubGraph_1 = SubGraph_1.apply(context, df_Deduplicate_2)
+    val df_SubGraph_1 = SubGraph_1.apply(
+      SubGraph_1_Context(context.spark, context.config.SubGraph_1),
+      df_Deduplicate_2
+    )
     val df_Script_12_1 = Script_12_1(context).interim(
       "graph",
       "nCrxuIc-Tmk2bb4CAzQ-b$$bYGtrcauW3HQdrz0rLJL8",
@@ -217,7 +231,9 @@ object Main {
            df_all_type_scala_sg_1_out1_temp,
            df_all_type_scala_sg_1_out2_temp
       ) = all_type_scala_sg_1.apply(
-        context,
+        all_type_scala_sg_1_Context(context.spark,
+                                    context.config.all_type_scala_sg_1
+        ),
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens
@@ -236,7 +252,7 @@ object Main {
     df_Script_15.unpersist()
     val (df_RowDistributor_1_out0, df_RowDistributor_1_out1) = {
       val (df_RowDistributor_1_out0_temp, df_RowDistributor_1_out1_temp) =
-        RowDistributor_1(context, df_Deduplicate_1)
+        RowDistributor_1(context, df_WindowFunction_1)
       (df_RowDistributor_1_out0_temp.interim(
          "graph",
          "mxj3GIDr8L_wSjsWZxCzw$$ly00a3LzUT_45X1UWdYHu",
@@ -453,15 +469,16 @@ object Main {
            df_Subgraph_2_out5_temp,
            df_Subgraph_2_out6_temp,
            df_Subgraph_2_out7_temp
-      ) = Subgraph_2.apply(context,
-                           df_Deduplicate_2,
-                           df_OrderBy_4,
-                           df_Limit_3,
-                           df_OrderBy_6,
-                           df_Filter_4,
-                           df_Script_2,
-                           df_Reformat_8,
-                           df_Filter_3
+      ) = Subgraph_2.apply(
+        Subgraph_2_Context(context.spark, context.config.Subgraph_2),
+        df_Deduplicate_2,
+        df_OrderBy_4,
+        df_Limit_3,
+        df_OrderBy_6,
+        df_Filter_4,
+        df_Script_2,
+        df_Reformat_8,
+        df_Filter_3
       )
       (df_Subgraph_2_out0_temp,
        df_Subgraph_2_out1_temp,
@@ -505,6 +522,13 @@ object Main {
     )
     df_OrderBy_5.cache().count()
     df_OrderBy_5.unpersist()
+    val df_Reformat_6 = Reformat_6(context, df_ConfigAndUDF).interim(
+      "graph",
+      "_ONLavjGHI-FiiW5F1e5I$$ONx6xtQvDgAfQvU03uxoD",
+      "AwdVLjh-H6KMSBB5zxS9H$$rKMotUUDG_lWkfShv395O"
+    )
+    df_Reformat_6.cache().count()
+    df_Reformat_6.unpersist()
     val df_Reformat_1 =
       Reformat_1(context, df_all_type_scala_sg_1_out1).interim(
         "graph",

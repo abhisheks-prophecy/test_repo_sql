@@ -1,7 +1,6 @@
 package com.scala.main.job1.graph
 
 import io.prophecy.libs._
-import com.scala.main.job1.config.ConfigStore._
 import com.scala.main.job1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._

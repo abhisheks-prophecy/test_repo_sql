@@ -1,7 +1,6 @@
 package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt.config.ConfigStore._
 import org.main.scla_dep_mgmt.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._

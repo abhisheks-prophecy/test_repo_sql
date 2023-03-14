@@ -387,3 +387,7 @@ nb
 *** Release notes for version: 2.8.0.55 ***
 
 test
+
+*** Release notes for version: 2.8.0.66 ***
+
+test

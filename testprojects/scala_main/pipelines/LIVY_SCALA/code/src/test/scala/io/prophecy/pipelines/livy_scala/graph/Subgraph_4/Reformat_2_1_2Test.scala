@@ -36,8 +36,12 @@ class Reformat_2_1_2Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = io.prophecy.pipelines.livy_scala.graph.Subgraph_4
-      .Reformat_2_1_2(context, dfIn)
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Reformat_2_1_2(
+        io.prophecy.pipelines.livy_scala.graph.Subgraph_4.config
+          .Context(context.spark, context.config.Subgraph_4),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -77,8 +81,12 @@ class Reformat_2_1_2Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = io.prophecy.pipelines.livy_scala.graph.Subgraph_4
-      .Reformat_2_1_2(context, dfIn)
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Reformat_2_1_2(
+        io.prophecy.pipelines.livy_scala.graph.Subgraph_4.config
+          .Context(context.spark, context.config.Subgraph_4),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -118,8 +126,12 @@ class Reformat_2_1_2Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = io.prophecy.pipelines.livy_scala.graph.Subgraph_4
-      .Reformat_2_1_2(context, dfIn)
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Reformat_2_1_2(
+        io.prophecy.pipelines.livy_scala.graph.Subgraph_4.config
+          .Context(context.spark, context.config.Subgraph_4),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",
@@ -159,8 +171,12 @@ class Reformat_2_1_2Test extends FunSuite with DataFrameSuiteBase {
       "out"
     )
 
-    val dfOutComputed = io.prophecy.pipelines.livy_scala.graph.Subgraph_4
-      .Reformat_2_1_2(context, dfIn)
+    val dfOutComputed =
+      io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Reformat_2_1_2(
+        io.prophecy.pipelines.livy_scala.graph.Subgraph_4.config
+          .Context(context.spark, context.config.Subgraph_4),
+        dfIn
+      )
     val res = assertDFEquals(
       dfOut.select("year",
                    "industry_code_ANZSIC",

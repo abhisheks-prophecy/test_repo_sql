@@ -1,10 +1,8 @@
 package org.main.scla_dep_mgmt_change.graph
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
-import org.main.scla_dep_mgmt_change.config.Context
 import org.main.scla_dep_mgmt_change.udfs.UDFs._
-import org.main.scla_dep_mgmt_change.udfs._
+import org.main.scla_dep_mgmt_change.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -90,7 +88,7 @@ object ComplexExpression {
       udf_divide_total(col("c_int")).as("c_11_udf_divide_total")
     )
 
-  def c8(context: Context) = {
+  def c7(context: Context) = {
     val spark  = context.spark
     val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
@@ -120,7 +118,7 @@ object ComplexExpression {
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
   }
 
-  def c7(context: Context) = {
+  def c8(context: Context) = {
     val spark  = context.spark
     val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(

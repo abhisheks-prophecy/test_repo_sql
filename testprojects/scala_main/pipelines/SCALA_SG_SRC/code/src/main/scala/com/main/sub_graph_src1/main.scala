@@ -1,13 +1,16 @@
 package com.main.sub_graph_src1
 
 import io.prophecy.libs._
-import com.main.sub_graph_src1.config.ConfigStore._
 import com.main.sub_graph_src1.config.Context
 import com.main.sub_graph_src1.config._
+import com.main.sub_graph_src1.config.ConfigStore.interimOutput
 import com.main.sub_graph_src1.udfs.UDFs._
 import com.main.sub_graph_src1.udfs._
 import com.main.sub_graph_src1.graph._
 import com.main.sub_graph_src1.graph.Subgraph_1
+import com.main.sub_graph_src1.graph.Subgraph_1.config.{
+  Context => Subgraph_1_Context
+}
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -47,7 +50,7 @@ object Main {
            df_Subgraph_1_out1_temp,
            df_Subgraph_1_out2_temp
       ) = Subgraph_1.apply(
-        context,
+        Subgraph_1_Context(context.spark, context.config.Subgraph_1),
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens
