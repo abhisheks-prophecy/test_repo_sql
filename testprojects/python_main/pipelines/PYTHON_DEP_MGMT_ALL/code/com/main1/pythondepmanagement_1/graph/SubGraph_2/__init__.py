@@ -4,4 +4,5 @@ from .SubGraph_3 import *
 from .Reformat_1 import *
 from .Filter_4 import *
 from .Script_5 import *
+from .config import *
 from .SubGraph_2 import SubGraph_2

@@ -101,7 +101,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -126,7 +127,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -151,7 +153,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "num_workers" : 2,
         "aws_attributes" : {
@@ -179,15 +182,15 @@
       "python_wheel_task" : {
         "package_name" : "PYTHON_BASIC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -200,15 +203,15 @@
       "python_wheel_task" : {
         "package_name" : "PYTHON_BASIC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -225,11 +228,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_IO_PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -245,15 +248,15 @@
       "python_wheel_task" : {
         "package_name" : "SM_DISABLED_PYTHON_BASIC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_DISABLED_PYTHON_BASIC-1.0-py3-none-any.whl"
@@ -269,15 +272,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_PIP_SG_SRC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
@@ -293,15 +296,15 @@
       "python_wheel_task" : {
         "package_name" : "REL_PY_PIP_SG_SRC",
         "entry_point" : "main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
@@ -321,11 +324,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.2"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl"

@@ -19,4 +19,5 @@ from .Limit_3_1_1 import *
 from .Deduplicate_3_1_1 import *
 from .RowDistributor_1_1_1 import *
 from .Reformat_8_1_1 import *
+from .config import *
 from .all_type_main_1 import all_type_main_1

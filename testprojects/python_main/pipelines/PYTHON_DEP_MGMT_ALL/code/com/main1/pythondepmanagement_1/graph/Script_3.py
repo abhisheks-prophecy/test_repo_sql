@@ -1155,7 +1155,7 @@ This is another comment
     a = torch.randn((), device = device, dtype = dtype)
     print(a)
     real_val = int(Config.c_1) + int(Config.c_0)
-    assert(real_val == 1)
+    assert (real_val == 1)
     print(
         f"Configs are: CONFIG_STR:{Config.CONFIG_STR} \n CONFIG_DOUBLE:{Config.CONFIG_DOUBLE} \n CONFIG_BOOLEAN:{Config.CONFIG_BOOLEAN} \n CONFIG_INT:{Config.CONFIG_INT} \n CONFIG_FLOAT:{Config.CONFIG_FLOAT} \n CONFIG_SHORT:{Config.CONFIG_SHORT} \n CONFIG_DB_SECRETS:{Config.CONFIG_DB_SECRETS} \n c_join_expr:{Config.c_join_expr}"
     )

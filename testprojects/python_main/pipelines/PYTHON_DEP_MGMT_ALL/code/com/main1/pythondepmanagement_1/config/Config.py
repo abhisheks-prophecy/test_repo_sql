@@ -1,9 +1,11 @@
+from com.main1.pythondepmanagement_1.graph.SubGraph_2.config.Config import SubgraphConfig as SubGraph_2_Config
+from com.main1.pythondepmanagement_1.graph.all_type_main_1.config.Config import SubgraphConfig as all_type_main_1_Config
+from com.main1.pythondepmanagement_1.graph.SubGraph_7.config.Config import SubgraphConfig as SubGraph_7_Config
 from prophecy.config import ConfigBase
-prophecy_spark_context = None
 
 
 class Cr_array_record(ConfigBase):
-    def __init__(self, cra_int: int=None, cra_bool: bool=None, cra_float: float=None):
+    def __init__(self, prophecy_spark=None, cra_int: int=None, cra_bool: bool=None, cra_float: float=None):
         self.cra_int = cra_int
         self.cra_bool = cra_bool
         self.cra_float = cra_float
@@ -13,6 +15,7 @@ class Cr_array_record(ConfigBase):
 class C_record_complex(ConfigBase):
     def __init__(
             self,
+            prophecy_spark=None,
             cr_array_int: list=[12, 33], 
             cr_array_bool: list=[False, True], 
             cr_array_float: list=[12.0, -12.0, 0.0], 
@@ -32,8 +35,9 @@ class C_record_complex(ConfigBase):
         self.cr_array_string = cr_array_string
         self.cr_array_spark_expression = cr_array_spark_expression
         self.cr_array_short = cr_array_short
-        self.cr_array_record = self.get_object(
-            [Cr_array_record(cra_int = 232, cra_bool = True, cra_float = -234324.12)], 
+        self.cr_array_record = self.get_config_object(
+            prophecy_spark, 
+            [Cr_array_record(prophecy_spark = prophecy_spark, cra_int = 232, cra_bool = True, cra_float = -234324.12)], 
             cr_array_record, 
             Cr_array_record
         )
@@ -41,13 +45,13 @@ class C_record_complex(ConfigBase):
         self.cr_long = cr_long
 
         if cr_db_secrets is not None:
-            self.cr_db_secrets = self.get_dbutils(prophecy_spark_context).secrets.get(*cr_db_secrets.split(":"))
+            self.cr_db_secrets = self.get_dbutils(prophecy_spark).secrets.get(*cr_db_secrets.split(":"))
 
         pass
 
 
 class Car_record(ConfigBase):
-    def __init__(self, carr_bool: bool=None, carr_string: str=None, carr_array_int: list=None):
+    def __init__(self, prophecy_spark=None, carr_bool: bool=None, carr_string: str=None, carr_array_int: list=None):
         self.carr_bool = carr_bool
         self.carr_string = carr_string
         self.carr_array_int = carr_array_int
@@ -55,12 +59,23 @@ class Car_record(ConfigBase):
 
 
 class C_array_complex(ConfigBase):
-    def __init__(self, car_record: Car_record=None, car_spark_expression: str=None, car_db_secrets: str=None):
-        self.car_record = self.get_object(Car_record(), car_record, Car_record)
+    def __init__(
+            self,
+            prophecy_spark=None,
+            car_record: Car_record=None, 
+            car_spark_expression: str=None, 
+            car_db_secrets: str=None
+    ):
+        self.car_record = self.get_config_object(
+            prophecy_spark, 
+            Car_record(prophecy_spark = prophecy_spark), 
+            car_record, 
+            Car_record
+        )
         self.car_spark_expression = car_spark_expression
 
         if car_db_secrets is not None:
-            self.car_db_secrets = self.get_dbutils(prophecy_spark_context).secrets.get(*car_db_secrets.split(":"))
+            self.car_db_secrets = self.get_dbutils(prophecy_spark).secrets.get(*car_db_secrets.split(":"))
 
         pass
 
@@ -155,7 +170,10 @@ class Config(ConfigBase):
             c_config_50: str=None, 
             AI_MIN_DATETIME: str=None, 
             c_record_complex: dict=None, 
-            c_array_complex: list=None
+            c_array_complex: list=None, 
+            SubGraph_2: dict=None, 
+            all_type_main_1: dict=None, 
+            SubGraph_7: dict=None
     ):
         self.spark = None
         self.update(
@@ -245,7 +263,10 @@ class Config(ConfigBase):
             c_config_50, 
             AI_MIN_DATETIME, 
             c_record_complex, 
-            c_array_complex
+            c_array_complex, 
+            SubGraph_2, 
+            all_type_main_1, 
+            SubGraph_7
         )
 
     def update(
@@ -336,10 +357,12 @@ class Config(ConfigBase):
             c_config_50: str="this is a test!@#^&*()_=- asdasd", 
             AI_MIN_DATETIME: str="2020-01-02 11:11:11", 
             c_record_complex: dict={}, 
-            c_array_complex: list=None
+            c_array_complex: list=None, 
+            SubGraph_2: dict={}, 
+            all_type_main_1: dict={}, 
+            SubGraph_7: dict={}
     ):
-        global prophecy_spark_context
-        prophecy_spark_context = self.spark
+        prophecy_spark = self.spark
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
         self.CONFIG_STR = CONFIG_STR
@@ -350,7 +373,7 @@ class Config(ConfigBase):
         self.CONFIG_SHORT = self.get_int_value(CONFIG_SHORT)
 
         if CONFIG_DB_SECRETS is not None:
-            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark_context).secrets.get(*CONFIG_DB_SECRETS.split(":"))
+            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark).secrets.get(*CONFIG_DB_SECRETS.split(":"))
 
         self.EXPR_COMPLEX_DATES = EXPR_COMPLEX_DATES
         self.c_int_11 = self.get_int_value(c_int_11)
@@ -428,14 +451,44 @@ class Config(ConfigBase):
         self.c_config_49 = c_config_49
         self.c_config_50 = c_config_50
         self.AI_MIN_DATETIME = AI_MIN_DATETIME
-        self.c_record_complex = self.get_object(C_record_complex(), c_record_complex, C_record_complex)
-        self.c_array_complex = self.get_object(
+        self.c_record_complex = self.get_config_object(
+            prophecy_spark, 
+            C_record_complex(prophecy_spark = prophecy_spark), 
+            c_record_complex, 
+            C_record_complex
+        )
+        self.c_array_complex = self.get_config_object(
+            prophecy_spark, 
             [C_array_complex(
-               car_record = Car_record(carr_bool = False, carr_string = "sdasdasdd&*^&(())", carr_array_int = [10, 1, 0]), 
+               prophecy_spark = prophecy_spark, 
+               car_record = Car_record(
+                 prophecy_spark = prophecy_spark, 
+                 carr_bool = False, 
+                 carr_string = "sdasdasdd&*^&(())", 
+                 carr_array_int = [10, 1, 0]
+               ), 
                car_spark_expression = "concat(first_name, last_name)", 
                car_db_secrets = "qasecrets_mysql:username"
              )], 
             c_array_complex, 
             C_array_complex
+        )
+        self.SubGraph_2 = self.get_config_object(
+            prophecy_spark, 
+            SubGraph_2_Config(prophecy_spark = prophecy_spark), 
+            SubGraph_2, 
+            SubGraph_2_Config
+        )
+        self.all_type_main_1 = self.get_config_object(
+            prophecy_spark, 
+            all_type_main_1_Config(prophecy_spark = prophecy_spark), 
+            all_type_main_1, 
+            all_type_main_1_Config
+        )
+        self.SubGraph_7 = self.get_config_object(
+            prophecy_spark, 
+            SubGraph_7_Config(prophecy_spark = prophecy_spark), 
+            SubGraph_7, 
+            SubGraph_7_Config
         )
         pass

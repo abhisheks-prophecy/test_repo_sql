@@ -15,6 +15,7 @@ from prophecy.lookups import (
 initial = 10
 
 def registerUDFs(spark: SparkSession):
+    spark.udf.register("udf1", udf1)
     spark.udf.register("squared", squared)
     spark.udf.register("factorial", factorial)
     spark.udf.register("random_string", random_string)
@@ -27,85 +28,173 @@ def registerUDFs(spark: SparkSession):
     spark.udf.register("udf_maptype", udf_maptype)
     spark.udf.register("udf_tokenize", udf_tokenize)
 
-@udf(returnType = IntegerType())
-def squared(input):
-    input = int(input) if input is not None else 2
+def udf1Generator():
+    a = 10
 
-    return int(input) * int(input) * initial if input is not None else initial
+    @udf(returnType = IntegerType())
+    def func(value):
+        return value * a if value != None else a * a
 
-@udf(returnType = IntegerType())
-def factorial(input):
-    input = int(input) if input is not None else 2
+    return func
 
-    return int(input) * int(input) if input is not None else initial
+udf1 = udf1Generator()
 
-@udf(returnType = StringType())
-def random_string(length, extra_characters=""):
-    import string, random
-    length = int(length) if length is not None else 2
+def squaredGenerator():
+    initial = 10
 
-    return "".join(
-        [
-          random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters)
-          for _ in range(length)
-        ]
-    )
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
 
-@udf(returnType = StringType())
-def udf_scipy_dependency():
-    from scipy.special import cbrt
-    cb = cbrt([27, 64])
+        return int(input) * int(input) * initial if input is not None else initial
 
-    return str(cb[0])
+    return func
 
-@udf(returnType = IntegerType())
-def udf_swap_product(x, y):
-    x = x ^ y
-    y = x ^ y
-    x = x ^ y
+squared = squaredGenerator()
 
-    return x * y
+def factorialGenerator():
+    initial = 10
 
-@udf(returnType = BooleanType())
-def udf_prime(x):
-    if num > 1:
-        # check for factors
-        for i in range(2, num):
-            if (num % i) == 0:
-                return False
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
+
+        return int(input) * int(input) if input is not None else initial
+
+    return func
+
+factorial = factorialGenerator()
+
+def random_stringGenerator():
+    initial = 10
+
+    @udf(returnType = StringType())
+    def func(length, extra_characters=""):
+        import string, random
+        length = int(length) if length is not None else 2
+
+        return "".join(
+            [
+              random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters)
+              for _ in range(length)
+            ]
+        )
+
+    return func
+
+random_string = random_stringGenerator()
+
+def udf_scipy_dependencyGenerator():
+    initial = 10
+
+    @udf(returnType = StringType())
+    def func():
+        from scipy.special import cbrt
+        cb = cbrt([27, 64])
+
+        return str(cb[0])
+
+    return func
+
+udf_scipy_dependency = udf_scipy_dependencyGenerator()
+
+def udf_swap_productGenerator():
+    initial = 10
+
+    @udf(returnType = IntegerType())
+    def func(x, y):
+        x = x ^ y
+        y = x ^ y
+        x = x ^ y
+
+        return x * y
+
+    return func
+
+udf_swap_product = udf_swap_productGenerator()
+
+def udf_primeGenerator():
+    initial = 10
+
+    @udf(returnType = BooleanType())
+    def func(x):
+        if num > 1:
+            # check for factors
+            for i in range(2, num):
+                if (num % i) == 0:
+                    return False
+            else:
+                return True
         else:
-            return True
-    else:
-        return False
+            return False
 
-@udf(returnType = DateType())
-def udf_datetype(value):
-    return to_date(value)
+    return func
 
-@udf(returnType = TimestampType())
-def udf_timestamptype(value):
-    return to_timestamp(value)
+udf_prime = udf_primeGenerator()
 
-@udf(returnType = ArrayType(IntegerType()))
-def udf_arraytype(value, repeattimes):
-    return [value] * repeattimes
+def udf_datetypeGenerator():
+    initial = 10
 
-@udf(
-     returnType = ArrayType(StructType([
+    @udf(returnType = DateType())
+    def func(value):
+        return to_date(value)
+
+    return func
+
+udf_datetype = udf_datetypeGenerator()
+
+def udf_timestamptypeGenerator():
+    initial = 10
+
+    @udf(returnType = TimestampType())
+    def func(value):
+        return to_timestamp(value)
+
+    return func
+
+udf_timestamptype = udf_timestamptypeGenerator()
+
+def udf_arraytypeGenerator():
+    initial = 10
+
+    @udf(returnType = ArrayType(IntegerType()))
+    def func(value, repeattimes):
+        return [value] * repeattimes
+
+    return func
+
+udf_arraytype = udf_arraytypeGenerator()
+
+def udf_maptypeGenerator():
+    initial = 10
+
+    @udf(
+         returnType = ArrayType(StructType([
 StructField("char", StringType(), False), StructField("count", IntegerType(), False)]))
-)
-def udf_maptype():
-    return [{"char" : "char1", "count" : 10}]
+    )
+    def func():
+        return [{"char" : "char1", "count" : 10}]
 
-@udf(returnType = ArrayType(StringType()))
-def udf_tokenize(text):
-    # Tokenize the text
-    tokens = text.split(" ")
-    '''Remove stop words'''
-    stop_words = {"the", "is", "are", "and", "to", "of", "in"}
-    tokens = [token for token in tokens if token not in stop_words]
-    """Perform stemming"""
-    stemmer = SnowballStemmer("english")
-    tokens = [stemmer.stem(token) for token in tokens]
+    return func
 
-    return tokens
+udf_maptype = udf_maptypeGenerator()
+
+def udf_tokenizeGenerator():
+    initial = 10
+
+    @udf(returnType = ArrayType(StringType()))
+    def func(text):
+        # Tokenize the text
+        tokens = text.split(" ")
+        '''Remove stop words'''
+        stop_words = {"the", "is", "are", "and", "to", "of", "in"}
+        tokens = [token for token in tokens if token not in stop_words]
+        """Perform stemming"""
+        stemmer = SnowballStemmer("english")
+        tokens = [stemmer.stem(token) for token in tokens]
+
+        return tokens
+
+    return func
+
+udf_tokenize = udf_tokenizeGenerator()
