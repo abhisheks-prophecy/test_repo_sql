@@ -7883,6 +7883,38 @@
           },
           "optional" : false,
           "isWorkflowNodeConfiguration" : true
+        }, {
+          "name" : "pm_shared_graph",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "Subgraph_1",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "var2",
+                  "kind" : {
+                    "type" : "float",
+                    "value" : 2.1
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            }, {
+              "name" : "var1",
+              "kind" : {
+                "type" : "int",
+                "value" : 20
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
         } ]
       },
       "oldCommon" : {
@@ -8504,6 +8536,12 @@
     "sourcePort" : "bY6dBUB7OHy6i8vc1uwbD",
     "target" : "_ONLavjGHI-FiiW5F1e5I$$ONx6xtQvDgAfQvU03uxoD",
     "targetPort" : "uCqatuf401s0UakJVwZhY$$wMMVra7PxQwW0coGqRIsT"
+  }, {
+    "id" : "ZtigrdfSQQAro2nn52CPP$$I6Ub8sQ5CgSWAlFiXdGPh",
+    "source" : "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz",
+    "sourcePort" : "r0a543LnVEGLj4EiHP7P0$$F6WweoNFKHeQEZHINdKwA",
+    "target" : "qJ4cQD5wbI0dTbuuL0V-T$$jvuPJDor0P_XNwXDO72hX",
+    "targetPort" : "okLRmCUgOCIlvGVI8L4Ig$$0dA2XwjtMdchr6f7wWasL"
   } ],
   "processes" : {
     "QA8k3yf3NHL4Dj0WAvlcE$$6k8gyMJ_bK4ZvWD-WkPiK" : {
@@ -13179,6 +13217,290 @@
           "sortType" : "asc"
         } ]
       }
+    },
+    "qJ4cQD5wbI0dTbuuL0V-T$$jvuPJDor0P_XNwXDO72hX" : {
+      "id" : "qJ4cQD5wbI0dTbuuL0V-T$$jvuPJDor0P_XNwXDO72hX",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "pm_shared_graph",
+        "slug" : "pm_shared_graph",
+        "x" : -1100,
+        "y" : -1640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "okLRmCUgOCIlvGVI8L4Ig$$0dA2XwjtMdchr6f7wWasL",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "whfVBqQnJEAm4p6Oh_RDi$$po9JvR8NNPNmMgtWSS4HC",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "packageName" : "pkgscala",
+        "externalId" : "subgraphs/pm_shared_graph",
+        "name" : "pm_shared_graph"
+      },
+      "connections" : [ {
+        "id" : "YwRO9bql7iWXpffCunZVC",
+        "source" : "qJ4cQD5wbI0dTbuuL0V-T$$jvuPJDor0P_XNwXDO72hX",
+        "sourcePort" : "okLRmCUgOCIlvGVI8L4Ig$$0dA2XwjtMdchr6f7wWasL",
+        "target" : "Ly2IBGE1CPgoC51992Ii-$$nmbRGZ9oVlFASTMUoNGHZ",
+        "targetPort" : "tqkqxGfF-z674tNuf9UF_$$PKmUi3qa4ZFIpATsOcTb7"
+      }, {
+        "id" : "CmATCab9Hwd4w5aSmfz15",
+        "source" : "Ly2IBGE1CPgoC51992Ii-$$nmbRGZ9oVlFASTMUoNGHZ",
+        "sourcePort" : "dbBBb_rXY6Y3Tjj_5R8FF$$uP4-_O4RwIMeoywviDbo9",
+        "target" : "lr18wchRAuN40Moyi6p1a$$f1FDpScOfouTNt1lQVwt4",
+        "targetPort" : "tCM6WEgvNCSZgeZmSky8U$$-i9JEZ04n8SE_b35zNQNw"
+      }, {
+        "id" : "v-P3zTKAYCQRBVHHjSYwz",
+        "source" : "lr18wchRAuN40Moyi6p1a$$f1FDpScOfouTNt1lQVwt4",
+        "sourcePort" : "QB1foN13skAtZSzbJiVTH$$B4r9qqzVdVzF2daAIfxo7",
+        "target" : "qJ4cQD5wbI0dTbuuL0V-T$$jvuPJDor0P_XNwXDO72hX",
+        "targetPort" : "whfVBqQnJEAm4p6Oh_RDi$$po9JvR8NNPNmMgtWSS4HC"
+      } ],
+      "processes" : {
+        "Ly2IBGE1CPgoC51992Ii-$$nmbRGZ9oVlFASTMUoNGHZ" : {
+          "id" : "Ly2IBGE1CPgoC51992Ii-$$nmbRGZ9oVlFASTMUoNGHZ",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_10",
+            "slug" : "Reformat_10",
+            "x" : 140,
+            "y" : 160,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "tqkqxGfF-z674tNuf9UF_$$PKmUi3qa4ZFIpATsOcTb7",
+              "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "dbBBb_rXY6Y3Tjj_5R8FF$$uP4-_O4RwIMeoywviDbo9",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "expressions" : [ {
+              "target" : "c_int",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "udf_add_one('$var1')"
+              },
+              "description" : ""
+            } ]
+          }
+        },
+        "lr18wchRAuN40Moyi6p1a$$f1FDpScOfouTNt1lQVwt4" : {
+          "id" : "lr18wchRAuN40Moyi6p1a$$f1FDpScOfouTNt1lQVwt4",
+          "component" : "Subgraph",
+          "metadata" : {
+            "label" : "Subgraph_1",
+            "slug" : "Subgraph_1",
+            "x" : -60,
+            "y" : -60,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "tCM6WEgvNCSZgeZmSky8U$$-i9JEZ04n8SE_b35zNQNw",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "QB1foN13skAtZSzbJiVTH$$B4r9qqzVdVzF2daAIfxo7",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : { },
+          "connections" : [ {
+            "id" : "J556-4OuAwfr-GnBl0-KK",
+            "source" : "lr18wchRAuN40Moyi6p1a$$f1FDpScOfouTNt1lQVwt4",
+            "sourcePort" : "tCM6WEgvNCSZgeZmSky8U$$-i9JEZ04n8SE_b35zNQNw",
+            "target" : "scquc15pv5AvPVXgGyWJy$$bPu_-3MPKOOt04zjMwhNI",
+            "targetPort" : "BhdCWsXBkt77kMbkWy6Eg$$TJtwKeYW8zApN2wjbeWal"
+          }, {
+            "id" : "yWty-xlLBrC4o074mb6Y2",
+            "source" : "scquc15pv5AvPVXgGyWJy$$bPu_-3MPKOOt04zjMwhNI",
+            "sourcePort" : "QMcIIElLXTnydERZY6sjL$$MsOLRe-rYA64MeTafafLM",
+            "target" : "lr18wchRAuN40Moyi6p1a$$f1FDpScOfouTNt1lQVwt4",
+            "targetPort" : "QB1foN13skAtZSzbJiVTH$$B4r9qqzVdVzF2daAIfxo7"
+          } ],
+          "processes" : {
+            "scquc15pv5AvPVXgGyWJy$$bPu_-3MPKOOt04zjMwhNI" : {
+              "id" : "scquc15pv5AvPVXgGyWJy$$bPu_-3MPKOOt04zjMwhNI",
+              "component" : "Reformat",
+              "metadata" : {
+                "label" : "Reformat_11",
+                "slug" : "Reformat_11",
+                "x" : -440,
+                "y" : -20,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "BhdCWsXBkt77kMbkWy6Eg$$TJtwKeYW8zApN2wjbeWal",
+                  "slug" : "in",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "c_int",
+                      "type" : "integer",
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "isStreaming" : false
+                } ],
+                "outputs" : [ {
+                  "id" : "QMcIIElLXTnydERZY6sjL$$MsOLRe-rYA64MeTafafLM",
+                  "slug" : "out"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false
+              },
+              "properties" : {
+                "columnsSelector" : [ ],
+                "expressions" : [ {
+                  "target" : "c_int",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "udf_add_one('$var2')"
+                  },
+                  "description" : ""
+                } ]
+              }
+            }
+          },
+          "externalDependencies" : [ ]
+        }
+      },
+      "externalDependencies" : [ {
+        "type" : "coordinates",
+        "coordinates" : "mysql:mysql-connector-java:8.0.29",
+        "name" : "mysql",
+        "enabled" : true,
+        "id" : "59965868",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.postgresql:postgresql:42.3.4",
+        "name" : "postgres",
+        "enabled" : false,
+        "id" : "1360721423",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.scalanlp:epic_2.12:0.5",
+        "name" : "epic",
+        "enabled" : false,
+        "id" : "418005485",
+        "exclusions" : [ ],
+        "repo" : "https://repo.maven.apache.org/maven2/"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
+        "name" : "cats",
+        "enabled" : true,
+        "id" : "1575366423",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.springframework:spring-beans:5.3.19",
+        "name" : "spring",
+        "enabled" : false,
+        "id" : "611418782",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+        "name" : "spark-excel",
+        "enabled" : false,
+        "id" : "368609749",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
+        "name" : "prophecy-libs-4.0.0",
+        "enabled" : false,
+        "id" : "GXM_V",
+        "exclusions" : [ ],
+        "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "junit:junit:4.13.1",
+        "name" : "junit",
+        "enabled" : false,
+        "id" : "O0zCh",
+        "exclusions" : [ "" ]
+      } ]
     },
     "OV4umnU64FY8jeq073S6y$$_8eUIqYY7dzwH32AVBmMj" : {
       "id" : "OV4umnU64FY8jeq073S6y$$_8eUIqYY7dzwH32AVBmMj",
@@ -35027,8 +35349,8 @@
       "metadata" : {
         "label" : "dest_jdbc_userandpass_test_table",
         "slug" : "dest_jdbc_userandpass_test_table",
-        "x" : -1000,
-        "y" : -1680,
+        "x" : -780,
+        "y" : -1740,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -35923,8 +36245,8 @@
       "metadata" : {
         "label" : "src_jdbc_dbsecrets_test_table",
         "slug" : "src_jdbc_dbsecrets_test_table",
-        "x" : -1200,
-        "y" : -1660,
+        "x" : -980,
+        "y" : -1720,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

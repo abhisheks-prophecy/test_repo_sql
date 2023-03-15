@@ -8,10 +8,14 @@ import org.main.scla_dep_mgmt_change.udfs.UDFs._
 import org.main.scla_dep_mgmt_change.udfs._
 import org.main.scla_dep_mgmt_change.graph._
 import org.main.scla_dep_mgmt_change.graph.SubGraph_1
+import org.main.scla_dep_mgmt_change.graph.pm_shared_graph
 import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1
 import org.main.scla_dep_mgmt_change.graph.Subgraph_2
 import org.main.scla_dep_mgmt_change.graph.SubGraph_1.config.{
   Context => SubGraph_1_Context
+}
+import org.main.scla_dep_mgmt_change.graph.pm_shared_graph.config.{
+  Context => pm_shared_graph_Context
 }
 import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.config.{
   Context => all_type_scala_sg_1_Context
@@ -211,6 +215,24 @@ object Main {
       "hx5wO_87IAH8xNU8kd6u0$$NZNcKwMNB77oH_rUMhHw2",
       "3QwZLdav6axGl_0dxx9N_$$CvmPmUKZnuBwQ1mj-VrK0"
     )
+    val df_src_catalog_table_test_catalog_source =
+      src_catalog_table_test_catalog_source(context).interim(
+        "graph",
+        "vmRKV0Nd6-lh2PBG9DCyM$$r1IXlDV-WCE_ANbMUvQcs",
+        "RiRMBmFnYhsz_jKLJYl4P$$UkVrz2ppXuwUgrdRSOXCa"
+      )
+    val df_Reformat_2 =
+      Reformat_2(context, df_src_catalog_table_test_catalog_source).interim(
+        "graph",
+        "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz",
+        "r0a543LnVEGLj4EiHP7P0$$F6WweoNFKHeQEZHINdKwA"
+      )
+    val df_pm_shared_graph = pm_shared_graph.apply(
+      pm_shared_graph_Context(context.spark, context.config.pm_shared_graph),
+      df_Reformat_2
+    )
+    df_pm_shared_graph.cache().count()
+    df_pm_shared_graph.unpersist()
     val df_Script_6 = Script_6(
       context,
       df_src_avro_CustsDatasetInput_1,
@@ -393,20 +415,6 @@ object Main {
     val df_src_delta_all_type_no_partition = src_delta_all_type_no_partition(
       context
     ).interim("graph", "Fmg6g-ViOm77hFxIpAPch", "ee0X8XILMHhyMro4U1_V7")
-    val df_src_catalog_table_test_catalog_source =
-      src_catalog_table_test_catalog_source(context).interim(
-        "graph",
-        "vmRKV0Nd6-lh2PBG9DCyM$$r1IXlDV-WCE_ANbMUvQcs",
-        "RiRMBmFnYhsz_jKLJYl4P$$UkVrz2ppXuwUgrdRSOXCa"
-      )
-    val df_Reformat_2 =
-      Reformat_2(context, df_src_catalog_table_test_catalog_source).interim(
-        "graph",
-        "6Znk7A4h43eh2eyod9GFr$$FUM5E0P9Xrn_WDFN9qFVz",
-        "r0a543LnVEGLj4EiHP7P0$$F6WweoNFKHeQEZHINdKwA"
-      )
-    df_Reformat_2.cache().count()
-    df_Reformat_2.unpersist()
     val df_SetOperation_2_1 =
       SetOperation_2_1(context, df_SetOperation_2, df_SetOperation_2).interim(
         "graph",

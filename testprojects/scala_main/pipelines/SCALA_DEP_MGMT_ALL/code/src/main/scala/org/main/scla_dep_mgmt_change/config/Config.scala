@@ -6,6 +6,9 @@ import io.prophecy.libs._
 import org.main.scla_dep_mgmt_change.graph.SubGraph_1.config.{
   Config => SubGraph_1_Config
 }
+import org.main.scla_dep_mgmt_change.graph.pm_shared_graph.config.{
+  Config => pm_shared_graph_Config
+}
 import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.config.{
   Config => all_type_scala_sg_1_Config
 }
@@ -135,7 +138,8 @@ case class Config(
   SubGraph_1:      SubGraph_1_Config = SubGraph_1_Config(),
   all_type_scala_sg_1: all_type_scala_sg_1_Config =
     all_type_scala_sg_1_Config(),
-  Subgraph_2: Subgraph_2_Config = Subgraph_2_Config()
+  Subgraph_2:      Subgraph_2_Config = Subgraph_2_Config(),
+  pm_shared_graph: pm_shared_graph_Config = pm_shared_graph_Config()
 ) extends ConfigBase
 
 object C_array_complex {
