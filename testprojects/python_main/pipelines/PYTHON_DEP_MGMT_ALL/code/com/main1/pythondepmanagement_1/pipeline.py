@@ -677,6 +677,23 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_OrderBy_5.cache().count()
     df_OrderBy_5.unpersist()
+    df_all_type_part_parquet_1 = all_type_part_parquet_1(spark)
+    df_all_type_part_parquet_1 = collectMetrics(
+        spark, 
+        df_all_type_part_parquet_1, 
+        "graph", 
+        "rTtbSKH_cly-x18ZK3Fir$$ZV9ma8DQ-lqN_xZ10C3DJ", 
+        "_A0w1oKNzYFDexaPkZerE$$pIZhmlmPDQo2wQLvcuM4o"
+    )
+    df_Subgraph_1 = Subgraph_1(
+        spark, 
+        Config.Subgraph_1, 
+        df_all_type_part_parquet_1, 
+        df_all_type_part_parquet_1, 
+        df_all_type_part_parquet_1
+    )
+    df_Subgraph_1.cache().count()
+    df_Subgraph_1.unpersist()
     df_Script_7 = Script_7(spark, df_UTGenSetOperation_2)
     df_Script_7 = collectMetrics(
         spark, 

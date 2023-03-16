@@ -20,7 +20,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-08-18 08:39:13'
-    modifiedAt: '2022-08-18 08:39:13'
+    modifiedAt: '2023-03-14 11:34:14'
     datasets:
       inputs:
       - datasets/src_delta_all_type_no_partition
@@ -35,7 +35,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-01-05 03:56:15'
-    modifiedAt: '2023-01-05 03:56:15'
+    modifiedAt: '2023-03-14 11:38:19'
     datasets:
       inputs:
       - datasets/perf_parquet_src_2k_columns
@@ -50,7 +50,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-10-12 12:58:56'
-    modifiedAt: '2022-10-12 12:58:56'
+    modifiedAt: '2023-03-14 16:13:09'
     datasets:
       inputs:
       - datasets/src_azure
@@ -65,7 +65,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:43:12'
-    modifiedAt: '2023-03-14 08:36:03'
+    modifiedAt: '2023-03-16 09:57:18'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -82,7 +82,8 @@ pipelines:
       - datasets/src_ut_parquet_all
       outputs:
       - datasets/dest_csv_all_type_no_partition
-    subgraphs: []
+    subgraphs:
+    - subgraphs/reusable_PM
     dependencies: {}
   pipelines/DONOT_OPEN_PYTHON:
     name: REL_PY_DONOT_OPEN
@@ -322,7 +323,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-02-28 07:43:02'
-    modifiedAt: '2023-02-28 07:49:37'
+    modifiedAt: '2023-03-14 11:33:56'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -531,7 +532,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     createdAt: '2022-10-12 13:00:25'
-    modifiedAt: '2022-10-12 13:00:25'
+    modifiedAt: '2023-03-14 16:13:09'
     mode: batch
     physicalDatasets:
       dev_azure:
@@ -1538,7 +1539,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 11:54:59'
-    modifiedAt: '2023-03-14 09:26:39'
+    modifiedAt: '2023-03-16 10:55:04'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/REL_PY_CUSTOMLIBS:
     name: REL_PY_CUSTOMLIBS
@@ -1669,11 +1670,11 @@ jobs:
 functions:
   author: null
   createdAt: '2023-03-13 13:20:16'
-  modifiedAt: '2023-03-14 08:08:13'
+  modifiedAt: '2023-03-14 11:33:56'
   gems: {}
   udfs:
-    udfs/udf1:
-      name: udf1
+    udfs/squared:
+      name: squared
       description: ''
       tags: []
       inputs: []
@@ -1690,8 +1691,8 @@ functions:
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2022-12-15 18:04:50'
       modifiedAt: '2022-12-15 18:04:50'
-    udfs/squared:
-      name: squared
+    udfs/udf1:
+      name: udf1
       description: ''
       tags: []
       inputs: []
@@ -1780,6 +1781,15 @@ functions:
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2022-12-15 18:04:50'
       modifiedAt: '2022-12-15 18:04:50'
+    udfs/squared_udf:
+      name: squared_udf
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+      modifiedAt: '2022-12-15 18:04:50'
   udafs: {}
   expressions: {}
 subgraphs:
@@ -1819,6 +1829,15 @@ subgraphs:
     mode: stream
     createdAt: '2023-01-24 06:19:39'
     modifiedAt: '2023-01-24 06:19:39'
+  subgraphs/reusable_PM:
+    name: reusable_PM
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    language: python
+    artefactID: ''
+    mode: batch
+    createdAt: '2023-03-16 09:31:11'
+    modifiedAt: '2023-03-16 09:39:36'
 sqlModels: {}
 sqlPipeline: null
 dependencies:

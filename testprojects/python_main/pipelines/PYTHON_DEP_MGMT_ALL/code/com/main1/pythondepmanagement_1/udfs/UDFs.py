@@ -12,12 +12,12 @@ from prophecy.lookups import (
     lookup_row_reverse,
     lookup_nth
 )
-initial = 10
+pipeline1 = "ldme"
 
 def registerUDFs(spark: SparkSession):
+    spark.udf.register("factorial", factorial)
     spark.udf.register("udf1", udf1)
     spark.udf.register("squared", squared)
-    spark.udf.register("factorial", factorial)
     spark.udf.register("random_string", random_string)
     spark.udf.register("udf_scipy_dependency", udf_scipy_dependency)
     spark.udf.register("udf_swap_product", udf_swap_product)
@@ -27,6 +27,20 @@ def registerUDFs(spark: SparkSession):
     spark.udf.register("udf_arraytype", udf_arraytype)
     spark.udf.register("udf_maptype", udf_maptype)
     spark.udf.register("udf_tokenize", udf_tokenize)
+    spark.udf.register("squared_udf", squared_udf)
+
+def factorialGenerator():
+    initial = 10
+
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
+
+        return int(input) * int(input) if input is not None else initial
+
+    return func
+
+factorial = factorialGenerator()
 
 def udf1Generator():
     a = 10
@@ -51,19 +65,6 @@ def squaredGenerator():
     return func
 
 squared = squaredGenerator()
-
-def factorialGenerator():
-    initial = 10
-
-    @udf(returnType = IntegerType())
-    def func(input):
-        input = int(input) if input is not None else 2
-
-        return int(input) * int(input) if input is not None else initial
-
-    return func
-
-factorial = factorialGenerator()
 
 def random_stringGenerator():
     initial = 10
@@ -198,3 +199,15 @@ def udf_tokenizeGenerator():
     return func
 
 udf_tokenize = udf_tokenizeGenerator()
+
+def squared_udfGenerator():
+    int_value = 15
+    N = 10
+
+    @udf(returnType = IntegerType())
+    def func(value=10):
+        return ((value * value) + int_value - float_value) if value else int_value
+
+    return func
+
+squared_udf = squared_udfGenerator()
