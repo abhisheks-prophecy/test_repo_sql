@@ -1,10 +1,10 @@
 package config
 
-import config.ConfigStore._
-import config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._
+import graph.SubGraph_1.config.{Config => SubGraph_1_Config}
+import graph.everythingSG_1.config.{Config => everythingSG_1_Config}
 
 case class Config(
   @Description("new comment") JDBC_USER:     String = "test_user",
@@ -35,7 +35,9 @@ case class Config(
   c_array_string:   List[String] = List("this is string1", "this is string2"),
   c_record_complex: C_record_complex = C_record_complex(),
   c_string_with_dollar: String =
-    "mynameis$$iam$$anthony $$gonzales$$yes$$  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr"
+    "mynameis$$iam$$anthony $$gonzales$$yes$$  $$$CONFIG_STR yes sir $$$$$$$c_sql_expr",
+  everythingSG_1: everythingSG_1_Config = everythingSG_1_Config(),
+  SubGraph_1:     SubGraph_1_Config = SubGraph_1_Config()
 ) extends ConfigBase
 
 object C_record_complex {

@@ -1,10 +1,8 @@
 package graph.everythingSG_1.recursive.Subgraph_2.Subgraph_3
 
 import io.prophecy.libs._
-import config.ConfigStore._
-import config.Context
 import udfs.UDFs._
-import udfs._
+import graph.everythingSG_1.recursive.Subgraph_2.Subgraph_3.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._

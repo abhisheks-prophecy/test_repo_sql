@@ -1,10 +1,14 @@
 package io.prophecy.pipelines.livy_scala.config
 
-import io.prophecy.pipelines.livy_scala.config.ConfigStore._
-import io.prophecy.pipelines.livy_scala.config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._
+import io.prophecy.pipelines.livy_scala.graph.Subgraph_4.config.{
+  Config => Subgraph_4_Config
+}
+import io.prophecy.pipelines.livy_scala.graph.livyscalaSG1_1.config.{
+  Config => livyscalaSG1_1_Config
+}
 
 case class Config(
   c_expr:    String = "%11%",
@@ -17,7 +21,9 @@ case class Config(
             car_float = -10.1f
     )
   ),
-  c_record: C_record = C_record()
+  c_record:       C_record = C_record(),
+  Subgraph_4:     Subgraph_4_Config = Subgraph_4_Config(),
+  livyscalaSG1_1: livyscalaSG1_1_Config = livyscalaSG1_1_Config()
 ) extends ConfigBase
 
 object C_array {

@@ -1,10 +1,14 @@
 package com.scala.main.job1.config
 
-import com.scala.main.job1.config.ConfigStore._
-import com.scala.main.job1.config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._
+import com.scala.main.job1.graph.SubgraphMain.config.{
+  Config => SubgraphMain_Config
+}
+import com.scala.main.job1.graph.Subgraph_1.config.{Config => Subgraph_1_Config}
+import com.scala.main.job1.graph.Subgraph_3.config.{Config => Subgraph_3_Config}
+import com.scala.main.job1.graph.Subgraph_4.config.{Config => Subgraph_4_Config}
 
 case class Config(
   @Description("test_str") c_test: Option[String] = None,
@@ -16,7 +20,11 @@ case class Config(
   @Description("sewr") record_array:      Record_array = Record_array(),
   @Description("sdf") array_record: List[Array_record] = List(
     Array_record(werw = "332", ewr = List("12", "w"))
-  )
+  ),
+  SubgraphMain: SubgraphMain_Config = SubgraphMain_Config(),
+  Subgraph_4:   Subgraph_4_Config = Subgraph_4_Config(),
+  Subgraph_1:   Subgraph_1_Config = Subgraph_1_Config(),
+  Subgraph_3:   Subgraph_3_Config = Subgraph_3_Config()
 ) extends ConfigBase
 
 object C_record3 {

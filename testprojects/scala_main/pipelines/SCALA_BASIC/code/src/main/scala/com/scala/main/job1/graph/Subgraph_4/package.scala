@@ -1,10 +1,12 @@
 package com.scala.main.job1.graph
 
 import io.prophecy.libs._
-import com.scala.main.job1.config.ConfigStore._
-import com.scala.main.job1.config.Context
-import com.scala.main.job1.config._
 import com.scala.main.job1.graph.Subgraph_4.Subgraph_5
+import com.scala.main.job1.graph.Subgraph_4.Subgraph_5.config.{
+  Context => Subgraph_5_Context
+}
+import com.scala.main.job1.graph.Subgraph_4.config._
+import com.scala.main.job1.graph.Subgraph_4.config.Config.interimOutput
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -19,7 +21,10 @@ package object Subgraph_4 {
       "N5fCkDqLuqNf6isccevNa$$Vd7N6QM4EKh32Eo9d-hES",
       "KCpXTET0p3nqsi-30JBQX$$DXFDvxmcZD89bpnllrDsQ"
     )
-    val df_Subgraph_5 = Subgraph_5.apply(context, df_Reformat_8)
+    val df_Subgraph_5 = Subgraph_5.apply(
+      Subgraph_5_Context(context.spark, context.config.Subgraph_5),
+      df_Reformat_8
+    )
     df_Subgraph_5
   }
 

@@ -1,7 +1,6 @@
 package com.main.sub_graph_src1.graph
 
 import io.prophecy.libs._
-import com.main.sub_graph_src1.config.ConfigStore._
 import com.main.sub_graph_src1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._

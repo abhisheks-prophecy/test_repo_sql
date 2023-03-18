@@ -1,9 +1,8 @@
 package org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.recursive_1.Subgraph_2_1.Subgraph_3_1
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
-import org.main.scla_dep_mgmt_change.config.Context
-import org.main.scla_dep_mgmt_change.config._
+import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.recursive_1.Subgraph_2_1.Subgraph_3_1.Subgraph_4_1.config._
+import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.recursive_1.Subgraph_2_1.Subgraph_3_1.Subgraph_4_1.config.Config.interimOutput
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._

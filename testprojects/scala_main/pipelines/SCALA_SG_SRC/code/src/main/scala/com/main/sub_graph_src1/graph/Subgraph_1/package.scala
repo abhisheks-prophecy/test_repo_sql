@@ -1,10 +1,12 @@
 package com.main.sub_graph_src1.graph
 
 import io.prophecy.libs._
-import com.main.sub_graph_src1.config.ConfigStore._
-import com.main.sub_graph_src1.config.Context
-import com.main.sub_graph_src1.config._
 import com.main.sub_graph_src1.graph.Subgraph_1.recursive_1
+import com.main.sub_graph_src1.graph.Subgraph_1.recursive_1.config.{
+  Context => recursive_1_Context
+}
+import com.main.sub_graph_src1.graph.Subgraph_1.config._
+import com.main.sub_graph_src1.graph.Subgraph_1.config.Config.interimOutput
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -123,7 +125,10 @@ package object Subgraph_1 {
       "NhC1SRdJyLJ_imHbm-SGU$$URpoDRge_ARFYdNdru4wC",
       "cix9b7hiz5GT6SHK1a2ey$$S8rzxLcxjI0nNLR_s8oJR"
     )
-    val df_recursive_1 = recursive_1.apply(context, df_Script_1_1)
+    val df_recursive_1 = recursive_1.apply(
+      recursive_1_Context(context.spark, context.config.recursive_1),
+      df_Script_1_1
+    )
     val df_OrderBy_2_1 =
       OrderBy_2_1(context, df_RowDistributor_1_1_out1).interim(
         "Subgraph_1",

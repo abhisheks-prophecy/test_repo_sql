@@ -92,8 +92,11 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
         "/data/com/main/sub_graph_src1/graph/Subgraph_1/Lookup_1_1/data.json",
         port = "in"
       )
-    com.main.sub_graph_src1.graph.Subgraph_1
-      .Lookup_1_1(context, dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1)
+    com.main.sub_graph_src1.graph.Subgraph_1.Lookup_1_1(
+      com.main.sub_graph_src1.graph.Subgraph_1.config
+        .Context(context.spark, context.config.Subgraph_1),
+      dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1
+    )
   }
 
 }

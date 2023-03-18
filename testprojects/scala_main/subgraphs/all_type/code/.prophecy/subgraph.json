@@ -9,28 +9,73 @@
     "phase" : 0,
     "cache" : false,
     "detailedStats" : false,
-    "isImported" : false
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "recursive_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "Subgraph_2_1",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "Subgraph_3_1",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "Subgraph_4_1",
+                      "kind" : {
+                        "type" : "record",
+                        "fields" : [ ]
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : true
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : true
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
+        } ]
+      }
+    },
+    "configPathInPipelineConfig" : [ "all_type_scala_sg_1" ]
   },
   "ports" : {
     "inputs" : [ {
       "id" : "JmDi7cY_IrxrHpuH7A2GC",
-      "slug" : "in0"
+      "slug" : "in0",
+      "isStreaming" : false
     }, {
       "id" : "psUsGXiIH04Qe01Hhlsii",
-      "slug" : "in1"
+      "slug" : "in1",
+      "isStreaming" : false
     }, {
       "id" : "0onyz6Y5pzKgZQ7B0KT9A",
-      "slug" : "in2"
+      "slug" : "in2",
+      "isStreaming" : false
     } ],
     "outputs" : [ {
       "id" : "ZQDoycQsuVJ2jJiD25MVg",
-      "slug" : "out0"
+      "slug" : "out0",
+      "isStreaming" : false
     }, {
       "id" : "hxJJCXjo1BfX7RM97eSli",
-      "slug" : "out1"
+      "slug" : "out1",
+      "isStreaming" : false
     }, {
       "id" : "juDtv8EkA83K275JteybN",
-      "slug" : "out2"
+      "slug" : "out2",
+      "isStreaming" : false
     } ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
@@ -1018,7 +1063,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "configPathInPipelineConfig" : [ "all_type_scala_sg_1", "recursive_1" ]
       },
       "ports" : {
         "inputs" : [ {
@@ -1064,7 +1110,8 @@
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
-            "isImported" : false
+            "isImported" : false,
+            "configPathInPipelineConfig" : [ "all_type_scala_sg_1", "recursive_1", "Subgraph_2_1" ]
           },
           "ports" : {
             "inputs" : [ {
@@ -1364,7 +1411,8 @@
                 "phase" : 0,
                 "cache" : false,
                 "detailedStats" : false,
-                "isImported" : false
+                "isImported" : false,
+                "configPathInPipelineConfig" : [ "all_type_scala_sg_1", "recursive_1", "Subgraph_2_1", "Subgraph_3_1" ]
               },
               "ports" : {
                 "inputs" : [ {
@@ -1410,7 +1458,8 @@
                     "phase" : 0,
                     "cache" : false,
                     "detailedStats" : false,
-                    "isImported" : false
+                    "isImported" : false,
+                    "configPathInPipelineConfig" : [ "all_type_scala_sg_1", "recursive_1", "Subgraph_2_1", "Subgraph_3_1", "Subgraph_4_1" ]
                   },
                   "ports" : {
                     "inputs" : [ {
@@ -3563,5 +3612,64 @@
         "datasetType" : "File"
       }
     }
-  }
+  },
+  "externalDependencies" : [ {
+    "type" : "coordinates",
+    "coordinates" : "mysql:mysql-connector-java:8.0.29",
+    "name" : "mysql",
+    "enabled" : false,
+    "id" : "59965868",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.postgresql:postgresql:42.3.4",
+    "name" : "postgres",
+    "enabled" : false,
+    "id" : "1360721423",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.scalanlp:epic_2.12:0.5",
+    "name" : "epic",
+    "enabled" : false,
+    "id" : "418005485",
+    "exclusions" : [ ],
+    "repo" : "https://repo.maven.apache.org/maven2/"
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
+    "name" : "cats",
+    "enabled" : false,
+    "id" : "1575366423",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "org.springframework:spring-beans:5.3.19",
+    "name" : "spring",
+    "enabled" : false,
+    "id" : "611418782",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+    "name" : "spark-excel",
+    "enabled" : false,
+    "id" : "368609749",
+    "exclusions" : [ ]
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
+    "name" : "prophecy-libs-4.0.0",
+    "enabled" : false,
+    "id" : "GXM_V",
+    "exclusions" : [ ],
+    "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+  }, {
+    "type" : "coordinates",
+    "coordinates" : "junit:junit:4.13.1",
+    "name" : "junit",
+    "enabled" : false,
+    "id" : "O0zCh",
+    "exclusions" : [ "" ]
+  } ]
 }

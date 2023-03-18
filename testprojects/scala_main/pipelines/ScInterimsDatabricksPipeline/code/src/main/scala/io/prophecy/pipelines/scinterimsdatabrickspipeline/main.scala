@@ -1,7 +1,6 @@
 package io.prophecy.pipelines.scinterimsdatabrickspipeline
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scinterimsdatabrickspipeline.config.ConfigStore._
 import io.prophecy.pipelines.scinterimsdatabrickspipeline.config.Context
 import io.prophecy.pipelines.scinterimsdatabrickspipeline.config._
 import io.prophecy.pipelines.scinterimsdatabrickspipeline.udfs.UDFs._
@@ -129,6 +128,7 @@ object Main {
     spark.conf.set("prophecy.metadata.pipeline.uri",
                    "pipelines/ScInterimsDatabricksPipeline"
     )
+    registerUDFs(spark)
     MetricsCollector.start(spark, "pipelines/ScInterimsDatabricksPipeline")
     apply(context)
     MetricsCollector.end(spark)

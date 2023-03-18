@@ -1,14 +1,20 @@
 package org.main.scla_dep_mgmt
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt.config.ConfigStore._
 import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.config._
+import org.main.scla_dep_mgmt.config.ConfigStore.interimOutput
 import org.main.scla_dep_mgmt.udfs.UDFs._
 import org.main.scla_dep_mgmt.udfs._
 import org.main.scla_dep_mgmt.graph._
 import org.main.scla_dep_mgmt.graph.SubGraph_1
 import org.main.scla_dep_mgmt.graph.all_type_scala_sg_1
+import org.main.scla_dep_mgmt.graph.SubGraph_1.config.{
+  Context => SubGraph_1_Context
+}
+import org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.config.{
+  Context => all_type_scala_sg_1_Context
+}
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -76,7 +82,10 @@ object Main {
       "P3wur35dmUpCUS9RI97B6$$C-aK17F4TT5ozfKLRxLlG",
       "CYHjgxwrG-UxafTq3mty0$$bE3Abq_bfr4CAfbtMpdRX"
     )
-    val df_SubGraph_1 = SubGraph_1.apply(context, df_Limit_2)
+    val df_SubGraph_1 = SubGraph_1.apply(
+      SubGraph_1_Context(context.spark, context.config.SubGraph_1),
+      df_Limit_2
+    )
     val df_Repartition_2 = Repartition_2(context, df_WindowFunction_1).interim(
       "graph",
       "yfeifaX7xpRlj28Ls-8Vf$$29PiihbU95u1gXWccO3GA",
@@ -114,7 +123,9 @@ object Main {
            df_all_type_scala_sg_1_out1_temp,
            df_all_type_scala_sg_1_out2_temp
       ) = all_type_scala_sg_1.apply(
-        context,
+        all_type_scala_sg_1_Context(context.spark,
+                                    context.config.all_type_scala_sg_1
+        ),
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens

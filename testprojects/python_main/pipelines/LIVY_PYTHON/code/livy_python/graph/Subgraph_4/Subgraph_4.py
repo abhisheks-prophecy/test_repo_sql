@@ -3,8 +3,10 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from . import *
+from .config import *
 
-def Subgraph_4(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def Subgraph_4(spark: SparkSession, config: SubgraphConfig, in0: DataFrame) -> DataFrame:
+    Config.update(config)
     df_Reformat_4_1 = Reformat_4_1(spark, in0)
     df_Reformat_4_1 = collectMetrics(
         spark, 
@@ -29,6 +31,6 @@ def Subgraph_4(spark: SparkSession, in0: DataFrame) -> DataFrame:
         "GFIwQtFxtRet0CHKtOY70$$XhPn9Tzyc11xMQKI0wheo", 
         "Fm7hU9737fiGktG5N8mcS$$0fekEU5VtdEXATBBKSvxR"
     )
-    df_Subgraph_2_1 = Subgraph_2_1(spark, df_OrderBy_1_1)
+    df_Subgraph_2_1 = Subgraph_2_1(spark, config.Subgraph_2_1, df_OrderBy_1_1)
 
     return df_Subgraph_2_1

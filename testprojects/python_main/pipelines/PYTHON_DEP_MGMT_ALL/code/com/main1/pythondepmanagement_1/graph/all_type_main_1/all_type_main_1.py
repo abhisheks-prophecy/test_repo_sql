@@ -3,13 +3,16 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from . import *
+from .config import *
 
 def all_type_main_1(
         spark: SparkSession,
+        config: SubgraphConfig,
         in0: DataFrame,
         in1: DataFrame,
         in2: DataFrame
 ) -> (DataFrame, DataFrame, DataFrame):
+    Config.update(config)
     df_Source_1_1_1 = Source_1_1_1(spark)
     df_Source_1_1_1 = collectMetrics(
         spark, 
@@ -163,6 +166,7 @@ def all_type_main_1(
     )
     df_Subgraph_4_1_1 = Subgraph_4_1_1(
         spark, 
+        config.Subgraph_4_1_1, 
         df_RowDistributor_1_1_1_out0, 
         df_RowDistributor_1_1_1_out1, 
         df_Script_1_1_1

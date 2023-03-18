@@ -1,10 +1,8 @@
 package org.main.scla_dep_mgmt_change.graph
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
-import org.main.scla_dep_mgmt_change.config.Context
 import org.main.scla_dep_mgmt_change.udfs.UDFs._
-import org.main.scla_dep_mgmt_change.udfs._
+import org.main.scla_dep_mgmt_change.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -43,7 +41,12 @@ object ConfigAndUDF {
       ).as("c_complex_config"),
       expr(Config.c_record_complex.cr_array_record(0).crar_spark_expression)
         .as("c_complex_expr"),
-      c_another_complex_expression(context).as("c_another_complex_expression")
+      c_another_complex_expression(context).as("c_another_complex_expression"),
+      expr(
+        "named_struct('a', named_struct('test1', named_struct('test- another', 2)), 'b', named_struct('test1', named_struct('test- another', 2)))"
+      ).as("c_struct.test1.mainstruct"),
+      col("customer_id").as("nested.field.customer_id"),
+      col("first_name").as("nested.field.first_name")
     )
   }
 
