@@ -68,6 +68,127 @@ Join_1 AS (
 
 ),
 
+SQLStatement_1 AS (
+
+  WITH Players AS (
+  
+    SELECT 
+      'gorbie' AS username,
+      29 AS level,
+      'red' AS team
+    
+    UNION ALL
+    
+    SELECT 
+      'junelyn',
+      2,
+      'blue'
+    
+    UNION ALL
+    
+    SELECT 
+      'corba',
+      43,
+      'green'
+  
+  ),
+  
+  NPCs AS (
+  
+    SELECT 
+      'niles' AS username,
+      'red' AS team
+    
+    UNION ALL
+    
+    SELECT 
+      'jujul',
+      'red'
+    
+    UNION ALL
+    
+    SELECT 
+      'effren',
+      'blue'
+  
+  ),
+  
+  Mascots AS (
+  
+    SELECT 
+      'cardinal' AS mascot,
+      'red' AS team
+    
+    UNION ALL
+    
+    SELECT 
+      'parrot',
+      'green'
+    
+    UNION ALL
+    
+    SELECT 
+      'finch',
+      'blue'
+    
+    UNION ALL
+    
+    SELECT 
+      'sparrow',
+      'yellow'
+  
+  )
+  
+  SELECT *
+  
+  FROM (
+    SELECT 
+      username,
+      team
+    
+    FROM Players
+    
+    UNION ALL
+    
+    SELECT 
+      username,
+      team
+    
+    FROM NPCs
+   )
+
+),
+
+Join_2 AS (
+
+  SELECT 
+    in1.c_int64 AS c_int64,
+    in1.c_bignumeric AS c_bignumeric,
+    in1.c_bool AS c_bool,
+    in1.c_bytes AS c_bytes,
+    in1.c_string AS c_string,
+    in1.c_float64 AS c_float64,
+    in1.c_numeric_1 AS c_numeric_1,
+    in1.c_numeric_2 AS c_numeric_2,
+    in1.c_date AS c_date,
+    in1.c_time AS c_time,
+    in1.c_timestamp AS c_timestamp,
+    in1.c_datetime AS c_datetime,
+    in1.c_geography AS c_geography,
+    in1.c_json AS c_json,
+    in1.c_array_int64 AS c_array_int64,
+    in1.c_struct AS c_struct,
+    in1.p_date AS p_date,
+    in1.c_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little123 AS c_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little123,
+    in1._c_bool123 AS _c_bool123,
+    in1._c_bignumeric AS _c_bignumeric
+  
+  FROM SQLStatement_1 AS in0
+  INNER JOIN Join_1 AS in1
+     ON in0.username != in1.c_string
+
+),
+
 Reformat_2 AS (
 
   SELECT 
@@ -122,7 +243,7 @@ Reformat_2 AS (
     ST_PERIMETER(ST_GEOGFROMTEXT('GEOMETRYCOLLECTION(POINT(0 0), LINESTRING(1 2, 2 1))')),
     ST_PERIMETER(ST_GEOGFROMTEXT('GEOMETRYCOLLECTION(POINT(0 0), LINESTRING(1 2, 2 1))')) AS c_st_perimeter
   
-  FROM Join_1 AS in0
+  FROM Join_2 AS in0
 
 ),
 
