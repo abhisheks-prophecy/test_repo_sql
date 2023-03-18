@@ -24,3 +24,24 @@ model-paths:
 macro-paths:
 - "macros"
 target-path: "target"
+
+# ==================
+# Variable Configs
+# ==================
+vars:
+  v_project_c_int: "10"
+  v_project_c_float: "10.12"
+  v_project_c_list_string: "['this', 'is', 'thriller']"
+
+# ==================
+# Model Configs
+# ==================
+models:
+  BQMainProject:
+    bigquery:
+      materialized: "table"
+
+# ============
+# Misc
+# ============
+dispatch: []
