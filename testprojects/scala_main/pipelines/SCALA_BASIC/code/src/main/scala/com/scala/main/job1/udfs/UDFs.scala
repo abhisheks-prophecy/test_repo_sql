@@ -24,6 +24,7 @@ object UDFs extends Serializable {
     spark.udf.register("udf_string_length10",  udf_string_length10)
     spark.udf.register("udf_complex_window",   udf_complex_window)
     spark.udf.register("udf1",                 udf1)
+    registerAllUDFs(spark)
   }
 
   def udf_string_null_safe = {

@@ -18,6 +18,7 @@ object Script_6 {
     val Config = context.config
     var a=Config.c_1*Config.c_0
     assert(a==0)
+    a=a+int_value_from_pipeline_init
     var out0=in0.filter(col("customer_id")  > 5)
     var out1=in1.filter(col("customer_id")  > 5)
     var out2=in2.filter(col("first_name") === "%A%" )

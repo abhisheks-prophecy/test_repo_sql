@@ -9,8 +9,8 @@ import org.main.scla_dep_mgmt_change.graph.SubGraph_1.config.{
 import org.main.scla_dep_mgmt_change.graph.pm_shared_graph.config.{
   Config => pm_shared_graph_Config
 }
-import org.main.scla_dep_mgmt_change.graph.all_type_scala_sg_1.config.{
-  Config => all_type_scala_sg_1_Config
+import org.main.scla_dep_mgmt_change.graph.all_type_sg_scala_main.config.{
+  Config => all_type_sg_scala_main_Config
 }
 import org.main.scla_dep_mgmt_change.graph.Subgraph_2.config.{
   Config => Subgraph_2_Config
@@ -136,10 +136,10 @@ case class Config(
   c_config_50:     String = "this is test string",
   AI_MIN_DATETIME: String = "2019-06-24 12:01:19",
   SubGraph_1:      SubGraph_1_Config = SubGraph_1_Config(),
-  all_type_scala_sg_1: all_type_scala_sg_1_Config =
-    all_type_scala_sg_1_Config(),
   Subgraph_2:      Subgraph_2_Config = Subgraph_2_Config(),
-  pm_shared_graph: pm_shared_graph_Config = pm_shared_graph_Config()
+  pm_shared_graph: pm_shared_graph_Config = pm_shared_graph_Config(),
+  all_type_sg_scala_main: all_type_sg_scala_main_Config =
+    all_type_sg_scala_main_Config()
 ) extends ConfigBase
 
 object C_array_complex {

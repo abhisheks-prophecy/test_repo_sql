@@ -2,6 +2,7 @@ package com.main.sub_graph_src1.graph
 
 import com.holdenkarau.spark.testing.DataFrameSuiteBase
 import com.main.sub_graph_src1.config._
+import io.prophecy.libs.registerAllUDFs
 import io.prophecy.libs.SparkTestingUtils._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{Column, DataFrame}
@@ -74,6 +75,7 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
+    registerAllUDFs(spark)
 
     val fabricName = System.getProperty("fabric")
 
@@ -85,17 +87,17 @@ class Reformat_2Test extends FunSuite with DataFrameSuiteBase {
 
     context = Context(spark, config)
 
-    val dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1 =
+    val dfMain_sub_graph_src1_graph_all_type_sg_scala_main_Lookup_1_1 =
       createDfFromResourceFiles(
         spark,
-        "/data/com/main/sub_graph_src1/graph/Subgraph_1/Lookup_1_1/schema.json",
-        "/data/com/main/sub_graph_src1/graph/Subgraph_1/Lookup_1_1/data.json",
+        "/data/com/main/sub_graph_src1/graph/all_type_sg_scala_main/Lookup_1_1/schema.json",
+        "/data/com/main/sub_graph_src1/graph/all_type_sg_scala_main/Lookup_1_1/data.json",
         port = "in"
       )
-    com.main.sub_graph_src1.graph.Subgraph_1.Lookup_1_1(
-      com.main.sub_graph_src1.graph.Subgraph_1.config
-        .Context(context.spark, context.config.Subgraph_1),
-      dfMain_sub_graph_src1_graph_Subgraph_1_Lookup_1_1
+    com.main.sub_graph_src1.graph.all_type_sg_scala_main.Lookup_1_1(
+      com.main.sub_graph_src1.graph.all_type_sg_scala_main.config
+        .Context(context.spark, context.config.all_type_sg_scala_main),
+      dfMain_sub_graph_src1_graph_all_type_sg_scala_main_Lookup_1_1
     )
   }
 
