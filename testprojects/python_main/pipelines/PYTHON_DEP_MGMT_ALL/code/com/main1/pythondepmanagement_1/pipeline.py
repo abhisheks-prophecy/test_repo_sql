@@ -217,7 +217,7 @@ def pipeline(spark: SparkSession) -> None:
         "AVrA22qbSiO5D8bGEnww6$$d4-r8EQ3lHXDKn2sZL5oX", 
         "yrNcCB_hx8IOjKH2Wh8Jx$$-xZBC0SRBrEmyMsO8m70G"
     )
-    df_SubGraph_2 = SubGraph_2(spark, df_Repartition_1, df_RowDistributor_1_out0)
+    df_SubGraph_2 = SubGraph_2(spark, Config.SubGraph_2, df_Repartition_1, df_RowDistributor_1_out0)
     df_Limit_8 = Limit_8(spark, df_SubGraph_2)
     df_Limit_8 = collectMetrics(
         spark, 
@@ -419,6 +419,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_all_type_main_1_out0, df_all_type_main_1_out1, df_all_type_main_1_out2 = all_type_main_1(
         spark, 
+        Config.all_type_main_1, 
         df_all_type_part_parquet, 
         df_all_type_part_parquet, 
         df_all_type_part_parquet
@@ -594,7 +595,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Script_12.cache().count()
     df_Script_12.unpersist()
-    df_SubGraph_7 = SubGraph_7(spark, df_Script_3)
+    df_SubGraph_7 = SubGraph_7(spark, Config.SubGraph_7, df_Script_3)
     df_Filter_3 = Filter_3(spark, df_SubGraph_7)
     df_Filter_3 = collectMetrics(
         spark, 
@@ -676,6 +677,23 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_OrderBy_5.cache().count()
     df_OrderBy_5.unpersist()
+    df_all_type_part_parquet_1 = all_type_part_parquet_1(spark)
+    df_all_type_part_parquet_1 = collectMetrics(
+        spark, 
+        df_all_type_part_parquet_1, 
+        "graph", 
+        "rTtbSKH_cly-x18ZK3Fir$$ZV9ma8DQ-lqN_xZ10C3DJ", 
+        "_A0w1oKNzYFDexaPkZerE$$pIZhmlmPDQo2wQLvcuM4o"
+    )
+    df_Subgraph_1 = Subgraph_1(
+        spark, 
+        Config.Subgraph_1, 
+        df_all_type_part_parquet_1, 
+        df_all_type_part_parquet_1, 
+        df_all_type_part_parquet_1
+    )
+    df_Subgraph_1.cache().count()
+    df_Subgraph_1.unpersist()
     df_Script_7 = Script_7(spark, df_UTGenSetOperation_2)
     df_Script_7 = collectMetrics(
         spark, 
@@ -706,6 +724,16 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_10.cache().count()
     df_Reformat_10.unpersist()
+    df_Reformat_12 = Reformat_12(spark, df_ComplexExpr)
+    df_Reformat_12 = collectMetrics(
+        spark, 
+        df_Reformat_12, 
+        "graph", 
+        "aDyX8S3TlJTgj0xdDr5Sz$$Lp6eIo3We65OEzAsP409l", 
+        "72L5pTCszmG_xarenCe2y$$w83jwfzB1zAsoA2yBdC7C"
+    )
+    df_Reformat_12.cache().count()
+    df_Reformat_12.unpersist()
 
 def main():
     spark = SparkSession.builder\

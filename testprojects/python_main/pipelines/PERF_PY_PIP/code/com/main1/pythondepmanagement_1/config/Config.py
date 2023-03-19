@@ -1,5 +1,5 @@
+from com.main1.pythondepmanagement_1.graph.PERF_SG.config.Config import SubgraphConfig as PERF_SG_Config
 from prophecy.config import ConfigBase
-prophecy_spark_context = None
 
 
 class Config(ConfigBase):
@@ -90,7 +90,8 @@ class Config(ConfigBase):
             c_config_48: str=None, 
             c_config_49: str=None, 
             c_config_50: str=None, 
-            AI_MIN_DATETIME: str=None
+            AI_MIN_DATETIME: str=None, 
+            PERF_SG: dict=None
     ):
         self.spark = None
         self.update(
@@ -178,7 +179,8 @@ class Config(ConfigBase):
             c_config_48, 
             c_config_49, 
             c_config_50, 
-            AI_MIN_DATETIME
+            AI_MIN_DATETIME, 
+            PERF_SG
         )
 
     def update(
@@ -267,10 +269,10 @@ class Config(ConfigBase):
             c_config_48: str="this is a test!@#^&*()_=- asdasd", 
             c_config_49: str="this is a test!@#^&*()_=- asdasd", 
             c_config_50: str="this is a test!@#^&*()_=- asdasd", 
-            AI_MIN_DATETIME: str="2020-01-02 11:11:11"
+            AI_MIN_DATETIME: str="2020-01-02 11:11:11", 
+            PERF_SG: dict={}
     ):
-        global prophecy_spark_context
-        prophecy_spark_context = self.spark
+        prophecy_spark = self.spark
         self.JDBC_URL = JDBC_URL
         self.JDBC_SOURCE_TABLE = JDBC_SOURCE_TABLE
         self.CONFIG_STR = CONFIG_STR
@@ -281,7 +283,7 @@ class Config(ConfigBase):
         self.CONFIG_SHORT = self.get_int_value(CONFIG_SHORT)
 
         if CONFIG_DB_SECRETS is not None:
-            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark_context).secrets.get(*CONFIG_DB_SECRETS.split(":"))
+            self.CONFIG_DB_SECRETS = self.get_dbutils(prophecy_spark).secrets.get(*CONFIG_DB_SECRETS.split(":"))
 
         self.EXPR_COMPLEX_DATES = EXPR_COMPLEX_DATES
         self.c_int_11 = self.get_int_value(c_int_11)
@@ -359,4 +361,10 @@ class Config(ConfigBase):
         self.c_config_49 = c_config_49
         self.c_config_50 = c_config_50
         self.AI_MIN_DATETIME = AI_MIN_DATETIME
+        self.PERF_SG = self.get_config_object(
+            prophecy_spark, 
+            PERF_SG_Config(prophecy_spark = prophecy_spark), 
+            PERF_SG, 
+            PERF_SG_Config
+        )
         pass

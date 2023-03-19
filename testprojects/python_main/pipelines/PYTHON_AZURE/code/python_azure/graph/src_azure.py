@@ -14,4 +14,4 @@ def src_azure(spark: SparkSession) -> DataFrame:
         )\
         .option("header", True)\
         .option("sep", ",")\
-        .csv("dbfs:/Prophecy/abhisheks+1663866415875-azure@prophecy.io/OrdersDatasetInput.csv")
+        .csv("dbfs:/Prophecy/abhisheks+azure1@prophecy.io/OrdersDatasetInput.csv")
