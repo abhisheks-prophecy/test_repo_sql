@@ -401,6 +401,13 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Script_10_1_1_1_1_1_1_1_1_1_1.cache().count()
     df_Script_10_1_1_1_1_1_1_1_1_1_1.unpersist()
+    df_all_type_main_pythonsg_out0, df_all_type_main_pythonsg_out1, df_all_type_main_pythonsg_out2 = all_type_main_pythonsg(
+        spark, 
+        Config.all_type_main_pythonsg, 
+        df_all_type_part_parquet, 
+        df_all_type_part_parquet, 
+        df_all_type_part_parquet
+    )
     df_text = text(spark)
     df_text = collectMetrics(
         spark, 
@@ -416,13 +423,6 @@ def pipeline(spark: SparkSession) -> None:
         "graph", 
         "nLjPP0w7Cl6MSM6RXHIK0$$iS1hmJ0J0ImQO_7vTMOSk", 
         "Z7JdWCGM7uYZheCRUgwvh$$_JKl5kg-4-dO6AgxV7k8-"
-    )
-    df_all_type_main_1_out0, df_all_type_main_1_out1, df_all_type_main_1_out2 = all_type_main_1(
-        spark, 
-        Config.all_type_main_1, 
-        df_all_type_part_parquet, 
-        df_all_type_part_parquet, 
-        df_all_type_part_parquet
     )
     df_Script_1 = Script_1(spark, df_Aggregate_1)
     df_Script_1 = collectMetrics(
@@ -560,13 +560,13 @@ def pipeline(spark: SparkSession) -> None:
     Script_8(spark, df_FlattenSchema_1)
     df_Script_6 = Script_6(
         spark, 
-        df_all_type_main_1_out0, 
-        df_all_type_main_1_out1, 
-        df_all_type_main_1_out1, 
-        df_all_type_main_1_out1, 
-        df_all_type_main_1_out2, 
-        df_all_type_main_1_out2, 
-        df_all_type_main_1_out2
+        df_all_type_main_pythonsg_out0, 
+        df_all_type_main_pythonsg_out0, 
+        df_all_type_main_pythonsg_out1, 
+        df_all_type_main_pythonsg_out1, 
+        df_all_type_main_pythonsg_out1, 
+        df_all_type_main_pythonsg_out2, 
+        df_all_type_main_pythonsg_out2
     )
     df_Script_6 = collectMetrics(
         spark, 

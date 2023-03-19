@@ -65,7 +65,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:43:12'
-    modifiedAt: '2023-03-16 09:57:18'
+    modifiedAt: '2023-03-19 16:00:22'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -82,7 +82,9 @@ pipelines:
       - datasets/src_ut_parquet_all
       outputs:
       - datasets/dest_csv_all_type_no_partition
+      - datasets/py_sg_target_test_release
     subgraphs:
+    - subgraphs/all_type
     - subgraphs/reusable_PM
     dependencies: {}
   pipelines/DONOT_OPEN_PYTHON:
@@ -118,7 +120,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-07-28 11:58:31'
-    modifiedAt: '2023-03-09 04:29:45'
+    modifiedAt: '2023-03-19 15:16:00'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -181,7 +183,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-10-11 08:15:02'
-    modifiedAt: '2023-03-14 08:56:51'
+    modifiedAt: '2023-03-19 15:36:21'
     datasets:
       inputs:
       - datasets/livy_src_csv
@@ -197,7 +199,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-11-23 08:14:14'
-    modifiedAt: '2023-03-14 09:45:59'
+    modifiedAt: '2023-03-19 15:16:19'
     datasets:
       inputs:
       - datasets/qa_database_all_type_parquet
@@ -217,12 +219,14 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:08:52'
-    modifiedAt: '2022-06-29 04:08:52'
+    modifiedAt: '2023-03-19 15:45:54'
     datasets:
       inputs:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
-      outputs: []
-    subgraphs: []
+      outputs:
+      - datasets/py_sg_target_test_release
+    subgraphs:
+    - subgraphs/all_type
     dependencies: {}
   pipelines/Python_Streaming_Main:
     name: PythonStreamingAll
@@ -1510,6 +1514,21 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-02-28 07:49:35'
         modifiedAt: '2023-02-28 07:49:35'
+  datasets/py_sg_target_test_release:
+    name: py_sg_target_test_release
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-19 15:45:53'
+    modifiedAt: '2023-03-19 16:00:20'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-19 15:45:53'
+        modifiedAt: '2023-03-19 15:45:53'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
@@ -1539,7 +1558,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 11:54:59'
-    modifiedAt: '2023-03-16 10:55:04'
+    modifiedAt: '2023-03-19 15:54:52'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/REL_PY_CUSTOMLIBS:
     name: REL_PY_CUSTOMLIBS
@@ -1794,14 +1813,14 @@ functions:
   expressions: {}
 subgraphs:
   subgraphs/all_type:
-    name: all_type_main
+    name: all_type_main_pythonsg
     description: ''
     author: abhisheks+e2etests@simpledatalabs.com
     language: python
     artefactID: ''
     mode: batch
     createdAt: '2022-06-29 04:12:40'
-    modifiedAt: '2022-06-29 04:12:40'
+    modifiedAt: '2023-03-19 16:00:20'
   subgraphs/pythonLivySG1:
     name: pythonLivySG1
     description: pythonSG1
@@ -1810,7 +1829,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2022-10-11 08:16:58'
-    modifiedAt: '2023-03-14 06:18:35'
+    modifiedAt: '2023-03-19 15:16:20'
   subgraphs/unityCatalogPySG1:
     name: unityCatalogPySG1
     description: unityCatalogPySG1
@@ -1819,7 +1838,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2023-01-19 05:55:16'
-    modifiedAt: '2023-03-14 09:30:22'
+    modifiedAt: '2023-03-19 15:16:18'
   subgraphs/CSVStreamingSG:
     name: CSVStreamingSG
     description: CSVStreamingSG
@@ -1837,7 +1856,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2023-03-16 09:31:11'
-    modifiedAt: '2023-03-16 09:39:36'
+    modifiedAt: '2023-03-17 06:10:58'
 sqlModels: {}
 sqlPipeline: null
 dependencies:

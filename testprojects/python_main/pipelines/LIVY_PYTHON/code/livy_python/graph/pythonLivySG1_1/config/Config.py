@@ -7,11 +7,12 @@ class SubgraphConfig(ConfigBase):
     def __init__(
             self,
             prophecy_spark=None,
-            c_st_expr: str="concat(industry_code_ANZSIC, industry_name_ANZSIC)", 
-            c_expr: str="%11%", 
-            c_string: str="this is a test string", 
-            c_int: int=22, 
-            Subgraph_2_1: dict={}
+            c_st_expr: str="concat(industry_code_ANZSIC, industry_name_ANZSIC)",
+            c_expr: str="%11%",
+            c_string: str="this is a test string",
+            c_int: int=22,
+            Subgraph_2_1: dict={},
+            **kwargs
     ):
         self.c_st_expr = c_st_expr
         self.c_expr = c_expr

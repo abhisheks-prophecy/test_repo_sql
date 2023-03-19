@@ -7,13 +7,14 @@ class SubgraphConfig(ConfigBase):
     def __init__(
             self,
             prophecy_spark=None,
-            c_string: str="skjdsadsa", 
-            c_long: int=4324234, 
-            c_dbsecrets: str="qasecrets_mysql:username", 
-            c_spark_expression: str="concat('a', first_name)", 
-            c_float: float=-12312.123, 
-            c_boolean: bool=True, 
-            Subgraph_2: dict={}
+            c_string: str="skjdsadsa",
+            c_long: int=4324234,
+            c_dbsecrets: str="qasecrets_mysql:username",
+            c_spark_expression: str="concat('a', first_name)",
+            c_float: float=-12312.123,
+            c_boolean: bool=True,
+            Subgraph_2: dict={},
+            **kwargs
     ):
         self.c_string = c_string
         self.c_long = c_long
