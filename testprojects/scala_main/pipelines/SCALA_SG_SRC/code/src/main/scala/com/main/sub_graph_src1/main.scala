@@ -7,9 +7,9 @@ import com.main.sub_graph_src1.config.ConfigStore.interimOutput
 import com.main.sub_graph_src1.udfs.UDFs._
 import com.main.sub_graph_src1.udfs._
 import com.main.sub_graph_src1.graph._
-import com.main.sub_graph_src1.graph.Subgraph_1
-import com.main.sub_graph_src1.graph.Subgraph_1.config.{
-  Context => Subgraph_1_Context
+import com.main.sub_graph_src1.graph.all_type_sg_scala_main
+import com.main.sub_graph_src1.graph.all_type_sg_scala_main.config.{
+  Context => all_type_sg_scala_main_Context
 }
 import org.apache.spark._
 import org.apache.spark.sql._
@@ -45,27 +45,32 @@ object Main {
       )
     df_Reformat_2.cache().count()
     df_Reformat_2.unpersist()
-    val (df_Subgraph_1_out0, df_Subgraph_1_out1, df_Subgraph_1_out2) = {
-      val (df_Subgraph_1_out0_temp,
-           df_Subgraph_1_out1_temp,
-           df_Subgraph_1_out2_temp
-      ) = Subgraph_1.apply(
-        Subgraph_1_Context(context.spark, context.config.Subgraph_1),
+    val (df_all_type_sg_scala_main_out0,
+         df_all_type_sg_scala_main_out1,
+         df_all_type_sg_scala_main_out2
+    ) = {
+      val (df_all_type_sg_scala_main_out0_temp,
+           df_all_type_sg_scala_main_out1_temp,
+           df_all_type_sg_scala_main_out2_temp
+      ) = all_type_sg_scala_main.apply(
+        all_type_sg_scala_main_Context(context.spark,
+                                       context.config.all_type_sg_scala_main
+        ),
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens,
         df_src_parquet_all_type_and_partition_withspacehyphens
       )
-      (df_Subgraph_1_out0_temp,
-       df_Subgraph_1_out1_temp,
-       df_Subgraph_1_out2_temp
+      (df_all_type_sg_scala_main_out0_temp,
+       df_all_type_sg_scala_main_out1_temp,
+       df_all_type_sg_scala_main_out2_temp
       )
     }
-    df_Subgraph_1_out0.cache().count()
-    df_Subgraph_1_out0.unpersist()
-    df_Subgraph_1_out1.cache().count()
-    df_Subgraph_1_out1.unpersist()
-    df_Subgraph_1_out2.cache().count()
-    df_Subgraph_1_out2.unpersist()
+    df_all_type_sg_scala_main_out0.cache().count()
+    df_all_type_sg_scala_main_out0.unpersist()
+    df_all_type_sg_scala_main_out1.cache().count()
+    df_all_type_sg_scala_main_out1.unpersist()
+    df_all_type_sg_scala_main_out2.cache().count()
+    df_all_type_sg_scala_main_out2.unpersist()
   }
 
   def main(args: Array[String]): Unit = {

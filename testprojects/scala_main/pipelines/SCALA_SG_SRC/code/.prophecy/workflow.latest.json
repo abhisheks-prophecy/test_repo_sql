@@ -19,7 +19,7 @@
       "common" : {
         "type" : "record",
         "fields" : [ {
-          "name" : "Subgraph_1",
+          "name" : "all_type_sg_scala_main",
           "kind" : {
             "type" : "record",
             "fields" : [ {
@@ -38,7 +38,31 @@
                           "name" : "Subgraph_4_1",
                           "kind" : {
                             "type" : "record",
-                            "fields" : [ ]
+                            "fields" : [ {
+                              "name" : "c_subgraph_4_1_c_spark_expression",
+                              "kind" : {
+                                "type" : "spark_expression",
+                                "value" : "concat('hello', 'subgraph_4_1')"
+                              },
+                              "optional" : false,
+                              "isWorkflowNodeConfiguration" : false
+                            }, {
+                              "name" : "c_subgraph_4_1_c_double",
+                              "kind" : {
+                                "type" : "double",
+                                "value" : 1232
+                              },
+                              "optional" : false,
+                              "isWorkflowNodeConfiguration" : false
+                            }, {
+                              "name" : "c_subgraph_4_1_c_spark_expressiondb_secrets",
+                              "kind" : {
+                                "type" : "databricks_secret",
+                                "value" : "qasecrets_mysql:username"
+                              },
+                              "optional" : false,
+                              "isWorkflowNodeConfiguration" : false
+                            } ]
                           },
                           "optional" : false,
                           "isWorkflowNodeConfiguration" : true
@@ -46,14 +70,242 @@
                       },
                       "optional" : false,
                       "isWorkflowNodeConfiguration" : true
+                    }, {
+                      "name" : "c_sg2_1_c_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "asdas tyes asd $$ asdasd "
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_sg2_1_c_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : -121
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_sg2_1_c_boolean",
+                      "kind" : {
+                        "type" : "boolean",
+                        "value" : false
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_sg2_1_c_float",
+                      "kind" : {
+                        "type" : "float",
+                        "value" : -10.12
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
                     } ]
                   },
                   "optional" : false,
                   "isWorkflowNodeConfiguration" : true
+                }, {
+                  "name" : "c_rec1_c_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "hello sir how are you $$ my son"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_rec1_c_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : 2321
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_rec1_c_boolean",
+                  "kind" : {
+                    "type" : "boolean",
+                    "value" : false
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_rec1_c_spark_expression",
+                  "kind" : {
+                    "type" : "spark_expression",
+                    "value" : "concat('a', 'b', 'recursive_1')"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
                 } ]
               },
               "optional" : false,
               "isWorkflowNodeConfiguration" : true
+            }, {
+              "name" : "c_sg1_c_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is a test"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_bool",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_double",
+              "kind" : {
+                "type" : "double",
+                "value" : 123214123
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_float",
+              "kind" : {
+                "type" : "float",
+                "value" : 2343.423423
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_int",
+              "kind" : {
+                "type" : "int",
+                "value" : 12312
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_long",
+              "kind" : {
+                "type" : "long",
+                "value" : 23432423423
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_short",
+              "kind" : {
+                "type" : "short",
+                "value" : 21
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_array_string",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ "value1this is not $$ son $$$$#-1(2)", "value2$$this is son" ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_sg1_c_record_c_bool",
+                  "kind" : {
+                    "type" : "boolean",
+                    "value" : false
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_sg1_c_record_c_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "this is another $$ value some-1(1)"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_sg1_c_record_c_spark_expression",
+                  "kind" : {
+                    "type" : "spark_expression",
+                    "value" : "concat('a', 'b')"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_sg1_c_record_c_db_secrets",
+                  "kind" : {
+                    "type" : "databricks_secret",
+                    "value" : "qasecrets_mysql:username"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_db_secrets",
+              "kind" : {
+                "type" : "databricks_secret",
+                "value" : "qasecrets_mysql:username"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_spark_expression",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "concat('a', 'b', 'c', 'd')"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_limit",
+              "kind" : {
+                "type" : "int",
+                "value" : 15
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_orderby",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "concat(`c- short`, `c -  boolean _  `, `c-string`, `c  - int`)"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_c_rowdistributor",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "`c- short` > -10"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_join_expr_timestamp",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "in0.`c_timestamp  __ for--today`"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_sg1_aggregate",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "first(`- c long`)"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
             } ]
           },
           "optional" : false,
@@ -1559,8 +1811,8 @@
       "id" : "5ok5JsQGD0Jjxj7ors42r$$yZCtQDgjk-otsFyhSegPz",
       "component" : "Subgraph",
       "metadata" : {
-        "label" : "Subgraph_1",
-        "slug" : "Subgraph_1",
+        "label" : "all_type_sg_scala_main",
+        "slug" : "all_type_sg_scala_main",
         "x" : 1303.4833333333333,
         "y" : 370.83333333333337,
         "phase" : 0,
@@ -3218,7 +3470,7 @@
       "properties" : {
         "packageName" : "org.scala",
         "externalId" : "subgraphs/all_type",
-        "name" : "all_type_scala_sg"
+        "name" : "all_type_sg_scala_main"
       },
       "connections" : [ {
         "id" : "7tQxwJ-Ab99l7-0x-lbpz",
@@ -3358,6 +3610,18 @@
         "sourcePort" : "0onyz6Y5pzKgZQ7B0KT9A$$ewwSzvpDatq_c7TBhFcC1",
         "target" : "rTy83DSuASMaEv6ATwCpc$$dttyOhfR4nO_qSOMdCqCz",
         "targetPort" : "IgfY3DA-P4bUunWw8bPvU$$o8RqJ4VZDrb5GPpcl-YPL"
+      }, {
+        "id" : "veWZ4-8D6Z02kP_4nWQ7_$$4LDU2NEAFrn4DjFrlnewd",
+        "source" : "WwV8YcgqfDbTr1Qjw-_ub$$Dw-4lZfpoefk0R5ggK4qG",
+        "sourcePort" : "y-_P0LZWdJ6sodhEZaaQ6$$dPOnqY1Y97r_ei9Me6RL9",
+        "target" : "7LTxUzu8sKOW9tZU7Qnm1$$3Xb_z-zQFvLyaJ9gxSeO4",
+        "targetPort" : "Ta4UOdoP6bFbc3ZRLau0y$$JO2syyNaDkBcWH6eT6sBZ"
+      }, {
+        "id" : "mSh2pgc499muCdAL84OyV",
+        "source" : "2364u3XyEfqkcOFGPdruQ$$EW7rZeQgZzUUvT2-nuAEC",
+        "sourcePort" : "Vd1zEA7MfS5nw7LTlqhDD$$1evWrRkTooaHtS4I7ihEH",
+        "target" : "LcKgbTCXM4s71Zw5K7_U-$$D2kg-UOYvNXhajxmhhLw6",
+        "targetPort" : "8iB2LV9pQwqfatOuKah8s$$UZdZ7vsihHvAWstadtD4t"
       } ],
       "processes" : {
         "7dSYHS4ccxtaDQIA58yGB$$x1JPMGf3yMJMuUY-OtwTj" : {
@@ -3897,8 +4161,8 @@
           "metadata" : {
             "label" : "SetOperation_1_1",
             "slug" : "SetOperation_1_1",
-            "x" : 1012,
-            "y" : 478,
+            "x" : 1020,
+            "y" : 460,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -4418,6 +4682,33 @@
                   }
                 }, {
                   "name" : "p_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
@@ -4948,6 +5239,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -4960,7 +5278,8 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "operationType" : "unionAll"
+            "operationType" : "unionAll",
+            "allowMissingColumns" : false
           }
         },
         "Cpp-eSDWFOydUile7Uyio$$HVXQZrKocwOdLjHd_W3Xy" : {
@@ -5497,6 +5816,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -5519,8 +5865,8 @@
           "metadata" : {
             "label" : "WindowFunction_1_1",
             "slug" : "WindowFunction_1_1",
-            "x" : 828,
-            "y" : 463,
+            "x" : 820,
+            "y" : 460,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -6055,6 +6401,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -6102,7 +6475,7 @@
               "expression" : "`c  - int`"
             } ],
             "activeTab" : "windowUse",
-            "columnsSelector" : [ "efnsg6oA2Pj99oiTf1261$$r1dYSsQ-73A8sANy7Soq6##c- short", "efnsg6oA2Pj99oiTf1261$$r1dYSsQ-73A8sANy7Soq6##c  - int", "efnsg6oA2Pj99oiTf1261$$r1dYSsQ-73A8sANy7Soq6##c_decimal  -  ", "efnsg6oA2Pj99oiTf1261$$r1dYSsQ-73A8sANy7Soq6##c_float-__  " ],
+            "columnsSelector" : [ "uOaGFGF7VHHHjePAdbzbk$$CKcdgJxoxZ9bUKLD21jFx##c- short", "uOaGFGF7VHHHjePAdbzbk$$CKcdgJxoxZ9bUKLD21jFx##c  - int", "uOaGFGF7VHHHjePAdbzbk$$CKcdgJxoxZ9bUKLD21jFx##c_decimal  -  ", "uOaGFGF7VHHHjePAdbzbk$$CKcdgJxoxZ9bUKLD21jFx##c_float-__  " ],
             "specifyFrame" : false,
             "frameStart" : null,
             "orderColumns" : [ {
@@ -6128,7 +6501,7 @@
           "metadata" : {
             "label" : "RowDistributor_1_1",
             "slug" : "RowDistributor_1_1",
-            "x" : 1446,
+            "x" : 1440,
             "y" : 440,
             "phase" : 0,
             "cache" : false,
@@ -6673,14 +7046,14 @@
           "properties" : {
             "outports" : [ {
               "path" : "out0",
-              "id" : "out0",
+              "id" : "HxaQX0nF88aUd633ycAPm$$rdEKtj-QoPeqimNSJaQPi",
               "model" : {
                 "format" : "sql",
-                "expression" : "`c- short` > -10"
+                "expression" : "expr('$c_sg1_c_rowdistributor')"
               }
             }, {
               "path" : "out1",
-              "id" : "out1",
+              "id" : "PwWx57iOUAbAqGLDKsfGQ$$DrNF_-EqeazJxII0yBfLZ",
               "model" : {
                 "format" : "sql",
                 "expression" : "`c  - int` > -100"
@@ -6694,8 +7067,8 @@
           "metadata" : {
             "label" : "Deduplicate_1_1",
             "slug" : "Deduplicate_1_1",
-            "x" : 315,
-            "y" : 632,
+            "x" : 320,
+            "y" : 640,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -7261,7 +7634,7 @@
               "colName" : "c-string"
             } ],
             "dedupType" : "any",
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "KD5EqNyuHG8ykC0ZYwa1q$$qn0KJHic6QaQc8rZOWjan##c -  boolean _  ", "KD5EqNyuHG8ykC0ZYwa1q$$qn0KJHic6QaQc8rZOWjan##c-string" ],
             "orders" : [ ],
             "useOrderBy" : false
           }
@@ -7272,8 +7645,8 @@
           "metadata" : {
             "label" : "Reformat_7",
             "slug" : "Reformat_7",
-            "x" : 146,
-            "y" : 730.9000000000001,
+            "x" : 140,
+            "y" : 740,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -8033,14 +8406,596 @@
             } ]
           }
         },
+        "LcKgbTCXM4s71Zw5K7_U-$$D2kg-UOYvNXhajxmhhLw6" : {
+          "id" : "LcKgbTCXM4s71Zw5K7_U-$$D2kg-UOYvNXhajxmhhLw6",
+          "component" : "SQLStatement",
+          "metadata" : {
+            "label" : "SQLStatement_1",
+            "slug" : "SQLStatement_1",
+            "x" : 1160,
+            "y" : 320,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "8iB2LV9pQwqfatOuKah8s$$UZdZ7vsihHvAWstadtD4t",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c- short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "short column type\nthis is an optinal field\n\ncomplex data (- *&^%$#@!~()+-+)",
+                    "mappings" : [ {
+                      "columnName" : "c_short",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    }, {
+                      "columnName" : "c_short",
+                      "type" : "foreign",
+                      "datasetName" : "src_parquet_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_parquet_all_type_no_partition"
+                    }, {
+                      "columnName" : "c   short  --",
+                      "type" : "foreign",
+                      "datasetName" : "src_csv_special_char_column_name",
+                      "datasetId" : "7234/datasets/src_csv_special_char_column_name"
+                    }, {
+                      "columnName" : "c- short",
+                      "type" : "primary",
+                      "datasetName" : "",
+                      "datasetId" : "c- short"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                    }, {
+                      "type" : "user",
+                      "name" : "short"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    } ]
+                  }
+                }, {
+                  "name" : "c  - int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "int type data",
+                    "mappings" : [ {
+                      "columnName" : "c_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    }, {
+                      "columnName" : "p_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_parquet_all_type_and_partition_withspacehyphens",
+                      "datasetId" : "7234/datasets/src_parquet_all_type_and_partition_withspacehyphens"
+                    }, {
+                      "columnName" : "c-int-column type",
+                      "type" : "foreign",
+                      "datasetName" : "src_csv_special_char_column_name",
+                      "datasetId" : "7234/datasets/src_csv_special_char_column_name"
+                    }, {
+                      "columnName" : "c  - int",
+                      "type" : "primary",
+                      "datasetName" : "",
+                      "datasetId" : "c  - int"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "int"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    } ]
+                  }
+                }, {
+                  "name" : "- c long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "long description",
+                    "mappings" : [ {
+                      "columnName" : "c_struct.c_long",
+                      "type" : "foreign",
+                      "datasetName" : "src_orc_all_type_no_partition",
+                      "datasetId" : "7235/datasets/src_orc_all_type_no_partition"
+                    }, {
+                      "columnName" : "c_long",
+                      "type" : "foreign",
+                      "datasetName" : "dest_orc_all_type_no_partition",
+                      "datasetId" : "7234/datasets/dest_orc_all_type_no_partition"
+                    }, {
+                      "columnName" : "- c long",
+                      "type" : "foreign",
+                      "datasetName" : "dest_parquet_all_type_and_partition_withspacehyphens",
+                      "datasetId" : "7234/datasets/dest_parquet_all_type_and_partition_withspacehyphens"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "long"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    }, {
+                      "type" : "user",
+                      "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                    }, {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c_decimal  -  ",
+                  "type" : "decimal(10,0)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c_float-__  ",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c -  boolean _  ",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c-string",
+                  "type" : "integer",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date-for today",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp  __ for--today",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array-int  _ int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "array int type",
+                    "mappings" : [ {
+                      "columnName" : "c_array_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    }, {
+                      "columnName" : "c_struct.c_array_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "array"
+                    }, {
+                      "type" : "user",
+                      "name" : "int"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    }, {
+                      "type" : "user",
+                      "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                    } ]
+                  }
+                }, {
+                  "name" : "c_array-string  _ string",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array--long",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "long",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array-- boolean ",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "boolean",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c_array_timestamp -- ",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "timestamp",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array -- float",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "float",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array -- decimal",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "decimal(15,2)",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_struct -- _  ",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "c_short - of a struct",
+                      "type" : "short",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_int -- of a struct",
+                      "type" : "integer",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c-long-f-a-struct",
+                      "type" : "long",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_decimal - of a struct",
+                      "type" : "decimal(22,3)",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_float - of a struct - ",
+                      "type" : "float",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_boolean - of a struct  ",
+                      "type" : "boolean",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_double - of a struct _",
+                      "type" : "double",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_string - of a struct -- _",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "this is a struct field description",
+                        "mappings" : [ {
+                          "columnName" : "c_string",
+                          "type" : "foreign",
+                          "datasetName" : "src_delta_all_type_no_partition",
+                          "datasetId" : "datasets/src_delta_all_type_no_partition"
+                        }, {
+                          "columnName" : "c-string",
+                          "type" : "foreign",
+                          "datasetName" : "src_parquet_all_type_and_partition_withspacehyphens",
+                          "datasetId" : "datasets/src_parquet_all_type_and_partition_withspacehyphens"
+                        } ],
+                        "tags" : [ {
+                          "type" : "user",
+                          "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                        }, {
+                          "type" : "user",
+                          "name" : "optional"
+                        }, {
+                          "type" : "user",
+                          "name" : "string"
+                        } ]
+                      }
+                    }, {
+                      "name" : "c_date - of a struct _ ",
+                      "type" : "date",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_timestamp - of a struct-",
+                      "type" : "timestamp",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_array_int - of a struct ",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "integer",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_short",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_long",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_decimal",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_float",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "SMB10nqnNy5840kTondLS$$P2Igy92ySjQxTX2VADjnE",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "fileTabs" : [ {
+              "path" : "out",
+              "id" : "SMB10nqnNy5840kTondLS$$P2Igy92ySjQxTX2VADjnE",
+              "language" : "sql",
+              "content" : "select * from in0 where `c-string` not like '$c_sg1_c_string'"
+            } ],
+            "inputPortNames" : [ "in0" ]
+          }
+        },
         "WwV8YcgqfDbTr1Qjw-_ub$$Dw-4lZfpoefk0R5ggK4qG" : {
           "id" : "WwV8YcgqfDbTr1Qjw-_ub$$Dw-4lZfpoefk0R5ggK4qG",
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_1_1",
             "slug" : "Reformat_1_1",
-            "x" : 604,
-            "y" : 305,
+            "x" : 600,
+            "y" : 300,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -8136,7 +9091,7 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "columnsSelector" : [ "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##customer_id", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##first_name", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##last_name", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##phone", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##email", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##country_code", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##account_open_date", "hHK1gkxaT9W8dv5rdn3SV$$0ou8-Ktd15nln4T8oSqgG##account_flags" ],
+            "columnsSelector" : [ "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##customer_id", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##first_name", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##last_name", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##phone", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##email", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##country_code", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##account_open_date", "hHK1gkxaT9W8dv5rdn3SV$$TG-kppVGzir0woO4QO0Qs##account_flags" ],
             "expressions" : [ {
               "target" : "customer_id",
               "expression" : {
@@ -8209,8 +9164,8 @@
           "metadata" : {
             "label" : "Join_1_1",
             "slug" : "Join_1_1",
-            "x" : 1314,
-            "y" : 437,
+            "x" : 1320,
+            "y" : 440,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -8730,6 +9685,33 @@
                   }
                 }, {
                   "name" : "p_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
@@ -9260,6 +10242,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -9357,7 +10366,7 @@
               "target" : "c_timestamp  __ for--today",
               "expression" : {
                 "format" : "sql",
-                "expression" : "in0.`c_timestamp  __ for--today`"
+                "expression" : "expr('$c_sg1_join_expr_timestamp')"
               },
               "description" : ""
             }, {
@@ -9505,8 +10514,19 @@
               },
               "description" : ""
             } ],
+            "hints" : [ {
+              "id" : "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL",
+              "alias" : "in0",
+              "hintType" : "none",
+              "propagateColumns" : false
+            }, {
+              "id" : "So1QxkngFkmkTkzvQYzWT$$BXR-qG0sEcG-aQ7OpjpOr",
+              "alias" : "in1",
+              "hintType" : "none",
+              "propagateColumns" : false
+            } ],
             "activeTab" : "expressions",
-            "columnsSelector" : [ "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c  - int", "VqxmTIBGc3W_uVkp2ZKiI$$LlzNPaRcRmY4kE55k7lpK##c  - int", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c- short", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c  - int", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##- c long", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_decimal  -  ", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_float-__  ", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c -  boolean _  ", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_double", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c-string", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_date-for today", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_timestamp  __ for--today", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_array-int  _ int", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_array-string  _ string", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_array--long", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_array-- boolean ", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##-- c_array_timestamp -- ", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_array -- float", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_array -- decimal", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##c_struct -- _  ", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_short", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_int", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_long", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_decimal", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_float", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_boolean", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_double", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_string", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_date", "3TItDiFFV7Por6ApmAxId$$WBMELrn1oUtmU91c7v3Gp##p_timestamp" ],
+            "columnsSelector" : [ "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c  - int", "So1QxkngFkmkTkzvQYzWT$$BXR-qG0sEcG-aQ7OpjpOr##c  - int", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c- short", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c  - int", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##- c long", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_decimal  -  ", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_float-__  ", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c -  boolean _  ", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_double", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c-string", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_date-for today", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_array-int  _ int", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_array-string  _ string", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_array--long", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_array-- boolean ", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##-- c_array_timestamp -- ", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_array -- float", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_array -- decimal", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##c_struct -- _  ", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_short", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_int", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_long", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_decimal", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_float", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_boolean", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_double", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_string", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_date", "JdfRezOVKXOTJ1TWGxw_K$$vzS8QXIWENsiqBCqUzoWL##p_timestamp" ],
             "whereClause" : null,
             "headAlias" : "in0"
           }
@@ -9517,8 +10537,8 @@
           "metadata" : {
             "label" : "Script_1_1",
             "slug" : "Script_1_1",
-            "x" : 558,
-            "y" : 652,
+            "x" : 560,
+            "y" : 660,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -10072,13 +11092,554 @@
             } ],
             "outputs" : [ {
               "id" : "cix9b7hiz5GT6SHK1a2ey$$S8rzxLcxjI0nNLR_s8oJR",
-              "slug" : "out0"
+              "slug" : "out0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c- short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "short column type\nthis is an optinal field\n\ncomplex data (- *&^%$#@!~()+-+)",
+                    "mappings" : [ {
+                      "columnName" : "c_short",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    }, {
+                      "columnName" : "c_short",
+                      "type" : "foreign",
+                      "datasetName" : "src_parquet_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_parquet_all_type_no_partition"
+                    }, {
+                      "columnName" : "c   short  --",
+                      "type" : "foreign",
+                      "datasetName" : "src_csv_special_char_column_name",
+                      "datasetId" : "7234/datasets/src_csv_special_char_column_name"
+                    }, {
+                      "columnName" : "c- short",
+                      "type" : "primary",
+                      "datasetName" : "",
+                      "datasetId" : "c- short"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                    }, {
+                      "type" : "user",
+                      "name" : "short"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    } ]
+                  }
+                }, {
+                  "name" : "c  - int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "int type data",
+                    "mappings" : [ {
+                      "columnName" : "c_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    }, {
+                      "columnName" : "p_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_parquet_all_type_and_partition_withspacehyphens",
+                      "datasetId" : "7234/datasets/src_parquet_all_type_and_partition_withspacehyphens"
+                    }, {
+                      "columnName" : "c-int-column type",
+                      "type" : "foreign",
+                      "datasetName" : "src_csv_special_char_column_name",
+                      "datasetId" : "7234/datasets/src_csv_special_char_column_name"
+                    }, {
+                      "columnName" : "c  - int",
+                      "type" : "primary",
+                      "datasetName" : "",
+                      "datasetId" : "c  - int"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "int"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    } ]
+                  }
+                }, {
+                  "name" : "- c long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "long description",
+                    "mappings" : [ {
+                      "columnName" : "c_struct.c_long",
+                      "type" : "foreign",
+                      "datasetName" : "src_orc_all_type_no_partition",
+                      "datasetId" : "7235/datasets/src_orc_all_type_no_partition"
+                    }, {
+                      "columnName" : "c_long",
+                      "type" : "foreign",
+                      "datasetName" : "dest_orc_all_type_no_partition",
+                      "datasetId" : "7234/datasets/dest_orc_all_type_no_partition"
+                    }, {
+                      "columnName" : "- c long",
+                      "type" : "foreign",
+                      "datasetName" : "dest_parquet_all_type_and_partition_withspacehyphens",
+                      "datasetId" : "7234/datasets/dest_parquet_all_type_and_partition_withspacehyphens"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "long"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    }, {
+                      "type" : "user",
+                      "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                    }, {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c_decimal  -  ",
+                  "type" : "decimal(10,0)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c_float-__  ",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c -  boolean _  ",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ {
+                      "columnName" : "c_boolean",
+                      "type" : "foreign",
+                      "datasetName" : "src_orc_all_type_no_partition",
+                      "datasetId" : "7235/datasets/src_orc_all_type_no_partition"
+                    } ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "primary"
+                    } ]
+                  }
+                }, {
+                  "name" : "c-string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date-for today",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp  __ for--today",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array-int  _ int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "array int type",
+                    "mappings" : [ {
+                      "columnName" : "c_array_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    }, {
+                      "columnName" : "c_struct.c_array_int",
+                      "type" : "foreign",
+                      "datasetName" : "src_delta_all_type_no_partition",
+                      "datasetId" : "7234/datasets/src_delta_all_type_no_partition"
+                    } ],
+                    "tags" : [ {
+                      "type" : "user",
+                      "name" : "array"
+                    }, {
+                      "type" : "user",
+                      "name" : "int"
+                    }, {
+                      "type" : "user",
+                      "name" : "optional"
+                    }, {
+                      "type" : "user",
+                      "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                    } ]
+                  }
+                }, {
+                  "name" : "c_array-string  _ string",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array--long",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "long",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array-- boolean ",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "boolean",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c array- date __. ",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "date",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "-- c_array_timestamp -- ",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "timestamp",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array -- float",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "float",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array -- decimal",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "decimal(15,2)",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_struct -- _  ",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "c_short - of a struct",
+                      "type" : "short",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_int -- of a struct",
+                      "type" : "integer",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c-long-f-a-struct",
+                      "type" : "long",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_decimal - of a struct",
+                      "type" : "decimal(22,3)",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_float - of a struct - ",
+                      "type" : "float",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_boolean - of a struct  ",
+                      "type" : "boolean",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_double - of a struct _",
+                      "type" : "double",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_string - of a struct -- _",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "this is a struct field description",
+                        "mappings" : [ {
+                          "columnName" : "c_string",
+                          "type" : "foreign",
+                          "datasetName" : "src_delta_all_type_no_partition",
+                          "datasetId" : "datasets/src_delta_all_type_no_partition"
+                        }, {
+                          "columnName" : "c-string",
+                          "type" : "foreign",
+                          "datasetName" : "src_parquet_all_type_and_partition_withspacehyphens",
+                          "datasetId" : "datasets/src_parquet_all_type_and_partition_withspacehyphens"
+                        } ],
+                        "tags" : [ {
+                          "type" : "user",
+                          "name" : "complex data tag (- *&^%$#@!~()+-+)"
+                        }, {
+                          "type" : "user",
+                          "name" : "optional"
+                        }, {
+                          "type" : "user",
+                          "name" : "string"
+                        } ]
+                      }
+                    }, {
+                      "name" : "c_date - of a struct _ ",
+                      "type" : "date",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_timestamp - of a struct-",
+                      "type" : "timestamp",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_array_int - of a struct ",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : "integer",
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_short",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_long",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_decimal",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_float",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_boolean",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "p_timestamp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : false
+            "isCustomOutputSchema" : true
           },
           "properties" : {
-            "script" : "var out0=in0",
+            "script" : "var config_int_plus_long=Config.c_sg1_c_int+Config.c_sg1_c_long\nvar out0=in0",
             "scriptMethodHeader" : "def apply(spark: SparkSession, in0: DataFrame): DataFrame = {",
             "scriptMethodFooter" : "    out0\n}"
           }
@@ -10089,8 +11650,8 @@
           "metadata" : {
             "label" : "Reformat_2_1",
             "slug" : "Reformat_2_1",
-            "x" : 259,
-            "y" : 449,
+            "x" : 260,
+            "y" : 440,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -10650,7 +12211,7 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "columnsSelector" : [ "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c- short", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c  - int", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##- c long", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_decimal  -  ", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_float-__  ", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c -  boolean _  ", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_double", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c-string", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_date-for today", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_timestamp  __ for--today", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_array-int  _ int", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_array-string  _ string", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_array--long", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_array-- boolean ", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##-- c_array_timestamp -- ", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_array -- float", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_array -- decimal", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##c_struct -- _  ", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_short", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_int", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_long", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_decimal", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_float", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_boolean", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_double", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_string", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_date", "PzASxtCD3YAQjLaGtDDdI$$5Npp-j72BuXRJZmcMvixn##p_timestamp" ],
+            "columnsSelector" : [ "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c- short", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c  - int", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##- c long", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_decimal  -  ", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_float-__  ", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c -  boolean _  ", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_double", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c-string", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_date-for today", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_timestamp  __ for--today", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_array-int  _ int", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_array-string  _ string", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_array--long", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_array-- boolean ", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##-- c_array_timestamp -- ", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_array -- float", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_array -- decimal", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##c_struct -- _  ", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_short", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_int", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_long", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_decimal", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_float", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_boolean", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_double", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_string", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_date", "7TJZjmxJAA4hdMJ28QbFl$$1lQIaAhnNhW5JcHBb-xq6##p_timestamp" ],
             "expressions" : [ {
               "target" : "c- short",
               "expression" : {
@@ -10847,6 +12408,27 @@
                 "expression" : "p_timestamp"
               },
               "description" : ""
+            }, {
+              "target" : "c_config_use",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "concat('$c_sg1_c_float', '$c_sg1_c_int', '$c_sg1_c_string')"
+              },
+              "description" : ""
+            }, {
+              "target" : "c_config_spark_expr",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "expr('$c_sg1_c_spark_expression')"
+              },
+              "description" : ""
+            }, {
+              "target" : "c_udf",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "concat(udf_random_number(), udf_add_one(`c  - int`), udf_multiply(`c- short`), udf_string_null_safe(`c-string`))"
+              },
+              "description" : ""
             } ]
           }
         },
@@ -10856,8 +12438,8 @@
           "metadata" : {
             "label" : "OrderBy_1_1",
             "slug" : "OrderBy_1_1",
-            "x" : 549,
-            "y" : 453,
+            "x" : 540,
+            "y" : 460,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -11392,6 +12974,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -11404,17 +13013,11 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "columnsSelector" : [ "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c- short", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c  - int", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##- c long", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c_decimal  -  ", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c_float-__  ", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c -  boolean _  ", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c_double", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c-string", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c_date-for today", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##c_timestamp  __ for--today", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_int", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_long", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_decimal", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_float", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_boolean", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_double", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_string", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_date", "nx1-5JKsQ4pPG3d-QlgZ1$$AbXzEMmZm_I1LesEzCj8W##p_timestamp" ],
+            "columnsSelector" : [ "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##- c long", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##c_decimal  -  ", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##c_float-__  ", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##c_double", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##c_date-for today", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##c_timestamp  __ for--today", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_int", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_long", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_decimal", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_float", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_boolean", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_double", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_string", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_date", "l2Gb1pRtvNR2tBrj1WrSs$$lkjvdKJqWbw6SQYlNxdXG##p_timestamp" ],
             "orders" : [ {
               "expression" : {
                 "format" : "sql",
-                "expression" : "`c- short`"
-              },
-              "sortType" : "asc"
-            }, {
-              "expression" : {
-                "format" : "sql",
-                "expression" : "`c  - int`"
+                "expression" : "expr('$c_sg1_c_orderby')"
               },
               "sortType" : "asc"
             }, {
@@ -11422,7 +13025,7 @@
                 "format" : "sql",
                 "expression" : "`- c long`"
               },
-              "sortType" : "asc"
+              "sortType" : "desc"
             }, {
               "expression" : {
                 "format" : "sql",
@@ -11438,21 +13041,9 @@
             }, {
               "expression" : {
                 "format" : "sql",
-                "expression" : "`c -  boolean _  `"
-              },
-              "sortType" : "asc"
-            }, {
-              "expression" : {
-                "format" : "sql",
                 "expression" : "c_double"
               },
-              "sortType" : "asc"
-            }, {
-              "expression" : {
-                "format" : "sql",
-                "expression" : "`c-string`"
-              },
-              "sortType" : "asc"
+              "sortType" : "desc"
             }, {
               "expression" : {
                 "format" : "sql",
@@ -11528,8 +13119,8 @@
           "metadata" : {
             "label" : "Filter_1_1",
             "slug" : "Filter_1_1",
-            "x" : 381.99999999999994,
-            "y" : 449,
+            "x" : 380,
+            "y" : 440,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -12064,6 +13655,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -12076,10 +13694,10 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "columnsSelector" : [ "jdOWLZNbX0SEYgWB0bQqz$$SmBkhQBGlfiy0UJbw9b-a##c  - int" ],
+            "columnsSelector" : [ ],
             "condition" : {
               "format" : "sql",
-              "expression" : "`c  - int` > -100"
+              "expression" : "`c  - int` > -100 and `c-string` not like '$c_sg1_c_string'"
             }
           }
         },
@@ -12089,8 +13707,8 @@
           "metadata" : {
             "label" : "recursive_1",
             "slug" : "recursive_1",
-            "x" : 1546,
-            "y" : 648,
+            "x" : 1540,
+            "y" : 640,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -13212,6 +14830,24 @@
                         "mappings" : [ ],
                         "tags" : [ ]
                       }
+                    }, {
+                      "name" : "c_config",
+                      "type" : "string",
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_udf",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
                     } ]
                   },
                   "isStreaming" : false
@@ -13798,7 +15434,7 @@
                     "isCustomOutputSchema" : false
                   },
                   "properties" : {
-                    "columnsSelector" : [ "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c- short", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c  - int", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##- c long", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_decimal  -  ", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_float-__  ", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c -  boolean _  ", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_double", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c-string", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_date-for today", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_timestamp  __ for--today", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_array-int  _ int", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_array-string  _ string", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_array--long", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_array-- boolean ", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##-- c_array_timestamp -- ", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_array -- float", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_array -- decimal", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##c_struct -- _  ", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_short", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_int", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_long", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_decimal", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_float", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_boolean", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_double", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_string", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_date", "jATJsX8MQmiLDQbFFByen$$gpvGw_we4uk3piTN7lJAJ##p_timestamp" ],
+                    "columnsSelector" : [ "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c- short", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c  - int", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##- c long", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_decimal  -  ", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_float-__  ", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c -  boolean _  ", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_double", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c-string", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_date-for today", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_timestamp  __ for--today", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_array-int  _ int", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_array-string  _ string", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_array--long", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_array-- boolean ", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##-- c_array_timestamp -- ", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_array -- float", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_array -- decimal", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##c_struct -- _  ", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_short", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_int", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_long", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_decimal", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_float", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_boolean", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_double", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_string", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_date", "F6qp8PuP5iHhXZ3a6QUu5$$O_xXNwZIZns5-EobFYDFU##p_timestamp" ],
                     "expressions" : [ {
                       "target" : "c- short",
                       "expression" : {
@@ -13993,6 +15629,20 @@
                       "expression" : {
                         "format" : "sql",
                         "expression" : "p_timestamp"
+                      },
+                      "description" : ""
+                    }, {
+                      "target" : "c_config",
+                      "expression" : {
+                        "format" : "sql",
+                        "expression" : "concat('$c_sg2_1_c_string', '$c_sg2_1_c_boolean', '$c_sg2_1_c_int')"
+                      },
+                      "description" : ""
+                    }, {
+                      "target" : "c_udf",
+                      "expression" : {
+                        "format" : "sql",
+                        "expression" : "concat(udf_random_number(), udf_add_one(`c  - int`), udf_multiply(`c- short`), udf_string_null_safe(`c-string`))"
                       },
                       "description" : ""
                     } ]
@@ -14533,6 +16183,24 @@
                           }
                         }, {
                           "name" : "p_timestamp",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "c_config",
+                          "type" : "string",
+                          "nullable" : false,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "c_udf",
                           "type" : "string",
                           "nullable" : true,
                           "metadata" : {
@@ -15114,6 +16782,24 @@
                                 "mappings" : [ ],
                                 "tags" : [ ]
                               }
+                            }, {
+                              "name" : "c_config",
+                              "type" : "string",
+                              "nullable" : false,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            }, {
+                              "name" : "c_udf",
+                              "type" : "string",
+                              "nullable" : true,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
                             } ]
                           },
                           "isStreaming" : false
@@ -15682,6 +17368,24 @@
                                     "mappings" : [ ],
                                     "tags" : [ ]
                                   }
+                                }, {
+                                  "name" : "c_config",
+                                  "type" : "string",
+                                  "nullable" : false,
+                                  "metadata" : {
+                                    "description" : "",
+                                    "mappings" : [ ],
+                                    "tags" : [ ]
+                                  }
+                                }, {
+                                  "name" : "c_udf",
+                                  "type" : "string",
+                                  "nullable" : true,
+                                  "metadata" : {
+                                    "description" : "",
+                                    "mappings" : [ ],
+                                    "tags" : [ ]
+                                  }
                                 } ]
                               },
                               "isStreaming" : false
@@ -15694,7 +17398,7 @@
                             "isCustomOutputSchema" : false
                           },
                           "properties" : {
-                            "columnsSelector" : [ "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c- short", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c  - int", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##- c long", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_decimal  -  ", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_float-__  ", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c -  boolean _  ", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_double", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c-string", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_date-for today", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_timestamp  __ for--today", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_array-int  _ int", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_array-string  _ string", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_array--long", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_array-- boolean ", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##-- c_array_timestamp -- ", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_array -- float", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_array -- decimal", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##c_struct -- _  ", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_short", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_int", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_long", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_decimal", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_float", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_boolean", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_double", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_string", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_date", "ynThlDBYp6vxrv9MazrAc$$7LICkON8BKmlE5t4JdBx8##p_timestamp" ],
+                            "columnsSelector" : [ "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c- short", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c  - int", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##- c long", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_decimal  -  ", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_float-__  ", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c -  boolean _  ", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_double", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c-string", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_date-for today", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_timestamp  __ for--today", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_array-int  _ int", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_array-string  _ string", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_array--long", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_array-- boolean ", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##-- c_array_timestamp -- ", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_array -- float", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_array -- decimal", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##c_struct -- _  ", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_short", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_int", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_long", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_decimal", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_float", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_boolean", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_double", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_string", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_date", "RVXS4d8rKXifwXQQgXfDx$$Ln7L7k3eAcglgklKSTyF9##p_timestamp" ],
                             "expressions" : [ {
                               "target" : "c- short",
                               "expression" : {
@@ -15889,6 +17593,20 @@
                               "expression" : {
                                 "format" : "sql",
                                 "expression" : "p_timestamp"
+                              },
+                              "description" : ""
+                            }, {
+                              "target" : "c_expr",
+                              "expression" : {
+                                "format" : "sql",
+                                "expression" : "expr('$c_subgraph_4_1_c_spark_expression')"
+                              },
+                              "description" : ""
+                            }, {
+                              "target" : "c_udf",
+                              "expression" : {
+                                "format" : "sql",
+                                "expression" : "concat(udf_random_number(), udf_add_one(`c  - int`), udf_multiply(`c- short`), udf_string_null_safe(`c-string`))"
                               },
                               "description" : ""
                             } ]
@@ -16431,6 +18149,24 @@
                               }
                             }, {
                               "name" : "p_timestamp",
+                              "type" : "string",
+                              "nullable" : true,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            }, {
+                              "name" : "c_expr",
+                              "type" : "string",
+                              "nullable" : false,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            }, {
+                              "name" : "c_udf",
                               "type" : "string",
                               "nullable" : true,
                               "metadata" : {
@@ -17221,7 +18957,7 @@
                 "isCustomOutputSchema" : false
               },
               "properties" : {
-                "columnsSelector" : [ "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c- short", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c  - int", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##- c long", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_decimal  -  ", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_float-__  ", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c -  boolean _  ", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_double", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c-string", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_date-for today", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_timestamp  __ for--today", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_array-int  _ int", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_array-string  _ string", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_array--long", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_array-- boolean ", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##-- c_array_timestamp -- ", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_array -- float", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_array -- decimal", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##c_struct -- _  ", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_short", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_int", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_long", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_decimal", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_float", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_boolean", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_double", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_string", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_date", "24t3cwqthmZoUjp85pEOq$$UerKfFRLdw9WthIAkAF_s##p_timestamp" ],
+                "columnsSelector" : [ "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c- short", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c  - int", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##- c long", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_decimal  -  ", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_float-__  ", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c -  boolean _  ", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_double", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c-string", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_date-for today", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_timestamp  __ for--today", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_array-int  _ int", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_array-string  _ string", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_array--long", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_array-- boolean ", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##-- c_array_timestamp -- ", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_array -- float", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_array -- decimal", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##c_struct -- _  ", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_short", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_int", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_long", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_decimal", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_float", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_boolean", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_double", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_string", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_date", "V0cqbqmq1iekEFtvXVoCX$$XD3uZcliw6Su0Xk9aMavn##p_timestamp" ],
                 "expressions" : [ {
                   "target" : "c- short",
                   "expression" : {
@@ -17418,6 +19154,20 @@
                     "expression" : "p_timestamp"
                   },
                   "description" : ""
+                }, {
+                  "target" : "c_config",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "concat('$c_rec1_c_string', '$c_rec1_c_int')"
+                  },
+                  "description" : ""
+                }, {
+                  "target" : "c_udf",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "concat(udf_random_number(), udf_add_one(`c  - int`), udf_multiply(`c- short`), udf_string_null_safe(`c-string`))"
+                  },
+                  "description" : ""
                 } ]
               }
             }
@@ -17429,8 +19179,8 @@
           "metadata" : {
             "label" : "Limit_1_1",
             "slug" : "Limit_1_1",
-            "x" : 687,
-            "y" : 456,
+            "x" : 680,
+            "y" : 460,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -17965,6 +19715,33 @@
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
+                }, {
+                  "name" : "c_config_use",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_config_spark_expr",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_udf",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
                 } ]
               },
               "isStreaming" : false
@@ -17977,7 +19754,7 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "limit" : "25"
+            "limit" : "'$c_sg1_c_limit'"
           }
         },
         "Q732qOBLhcrT2x0MvHU_E$$AEToO4N74P5-TOd_6oR04" : {
@@ -17986,8 +19763,8 @@
           "metadata" : {
             "label" : "OrderBy_2_1",
             "slug" : "OrderBy_2_1",
-            "x" : 1615,
-            "y" : 516.9000000000001,
+            "x" : 1620,
+            "y" : 520,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -18526,7 +20303,7 @@
             "isCustomOutputSchema" : false
           },
           "properties" : {
-            "columnsSelector" : [ "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c- short", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c  - int", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##- c long", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_decimal  -  ", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_float-__  ", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c -  boolean _  ", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_double", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c-string", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_date-for today", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_timestamp  __ for--today", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_array-int  _ int", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_array-string  _ string", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_array--long", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_array-- boolean ", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##-- c_array_timestamp -- ", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_array -- float", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_array -- decimal", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##c_struct -- _  ", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_short", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_int", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_long", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_decimal", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_float", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_boolean", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_double", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_string", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_date", "8btip9sItc9iXkugGvA6i$$T_YnAhFaiXI-7Q57MpPRQ##p_timestamp" ],
+            "columnsSelector" : [ "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c- short", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c  - int", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##- c long", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_decimal  -  ", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_float-__  ", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c -  boolean _  ", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_double", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c-string", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_date-for today", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_timestamp  __ for--today", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_array-int  _ int", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_array-string  _ string", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_array--long", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_array-- boolean ", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##-- c_array_timestamp -- ", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_array -- float", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_array -- decimal", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##c_struct -- _  ", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_short", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_int", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_long", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_decimal", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_float", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_boolean", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_double", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_string", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_date", "0uCfiFMPscHuPFLOtLWun$$Jhfnz8pifbl-XhZtgkVlF##p_timestamp" ],
             "orders" : [ {
               "expression" : {
                 "format" : "sql",
@@ -18698,6 +20475,118 @@
             } ]
           }
         },
+        "7LTxUzu8sKOW9tZU7Qnm1$$3Xb_z-zQFvLyaJ9gxSeO4" : {
+          "id" : "7LTxUzu8sKOW9tZU7Qnm1$$3Xb_z-zQFvLyaJ9gxSeO4",
+          "component" : "Target",
+          "metadata" : {
+            "label" : "scala_random_target_subgraph_donotuse",
+            "slug" : "scala_random_target_subgraph_donotuse",
+            "x" : 820,
+            "y" : 280,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "Ta4UOdoP6bFbc3ZRLau0y$$JO2syyNaDkBcWH6eT6sBZ",
+              "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "customer_id",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "first_name",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "last_name",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "phone",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "email",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "country_code",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "account_open_date",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "account_flags",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "lookup1",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "datasetId" : "datasets/scala_random_target_subgraph_donotuse"
+          }
+        },
         "UAoeMkiNt9Kl_Tr2PMzV3$$zFNSiTxBP1KaPi2VfICC2" : {
           "id" : "UAoeMkiNt9Kl_Tr2PMzV3$$zFNSiTxBP1KaPi2VfICC2",
           "component" : "Lookup",
@@ -18836,8 +20725,8 @@
           "metadata" : {
             "label" : "Aggregate_1_1",
             "slug" : "Aggregate_1_1",
-            "x" : 1562,
-            "y" : 194,
+            "x" : 1560,
+            "y" : 220,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -19399,7 +21288,7 @@
               "target" : "- c long",
               "expression" : {
                 "format" : "sql",
-                "expression" : "first(`- c long`)"
+                "expression" : "expr('$c_sg1_aggregate')"
               },
               "description" : ""
             }, {
@@ -19603,11 +21492,11 @@
               },
               "description" : ""
             } ],
-            "allowSelection" : true,
+            "allowSelection" : false,
             "pivotColumn" : null,
             "pivotValues" : [ ],
-            "activeTab" : "groupBy",
-            "columnsSelector" : [ "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_date-for today", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_timestamp  __ for--today", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c- short", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c  - int", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##- c long", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_decimal  -  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_float-__  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c -  boolean _  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_double", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c-string", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array-int  _ int", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array-string  _ string", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array--long", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array-- boolean ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##-- c_array_timestamp -- ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array -- float", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array -- decimal", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_struct -- _  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_short", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_int", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_long", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_decimal", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_float", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_boolean", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_double", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_string", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_date", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_timestamp" ],
+            "activeTab" : "pivot",
+            "columnsSelector" : [ "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_date-for today", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_timestamp  __ for--today", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c- short", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c  - int", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_decimal  -  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_float-__  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c -  boolean _  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_double", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c-string", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array-int  _ int", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array-string  _ string", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array--long", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array-- boolean ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##-- c_array_timestamp -- ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array -- float", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_array -- decimal", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##c_struct -- _  ", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_short", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_int", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_long", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_decimal", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_float", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_boolean", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_double", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_string", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_date", "fr58RGTQDBAI_y4evrYTL$$3TbtWDZnERBO_NArzM6kk##p_timestamp" ],
             "groupBy" : [ {
               "_row_id" : null,
               "target" : "`c_date-for today`",

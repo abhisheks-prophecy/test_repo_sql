@@ -9,8 +9,8 @@ import org.apache.spark.sql._
 object UDFs extends Serializable {
 
   def registerUDFs(spark: SparkSession) = {
-    spark.udf.register("udf_multiply",         udf_multiply)
     spark.udf.register("udf_string_null_safe", udf_string_null_safe)
+    spark.udf.register("udf_multiply",         udf_multiply)
     spark.udf.register("udf_string_length",    udf_string_length)
     spark.udf.register("udf_random_number",    udf_random_number)
     spark.udf.register("udf_add_one",          udf_add_one)
@@ -24,22 +24,7 @@ object UDFs extends Serializable {
     spark.udf.register("udf_string_length10",  udf_string_length10)
     spark.udf.register("udf_complex_window",   udf_complex_window)
     spark.udf.register("udf1",                 udf1)
-  }
-
-  def udf_multiply = {
-    import org.apache.spark.sql.expressions.Window
-    import org.apache.spark.sql.functions._
-    var int_value    = 10
-    var string_value = "string value"
-    val colors =
-      Map("red" -> "#FF0000", "azure" -> "#F0FFFF", "peru" -> "#CD853F")
-    val nums: Map[Int, Int] = Map()
-    val fruit = Set("apples", "oranges", "pears")
-    val t     = (4, 3, 2, 1)
-    val sum   = t._1 + t._2 + t._3 + t._4
-    val ita   = Iterator(20, 40, 2, 50, 69, 90)
-    val itb   = Iterator(20, 40, 2, 50, 69, 90)
-    udf((value: Int) => value * int_value)
+    registerAllUDFs(spark)
   }
 
   def udf_string_null_safe = {
@@ -56,6 +41,22 @@ object UDFs extends Serializable {
     val ita   = Iterator(20, 40, 2, 50, 69, 90)
     val itb   = Iterator(20, 40, 2, 50, 69, 90)
     udf((s: String) => if (s != null) s.length else string_value.length)
+  }
+
+  def udf_multiply = {
+    import org.apache.spark.sql.expressions.Window
+    import org.apache.spark.sql.functions._
+    var int_value    = 10
+    var string_value = "string value"
+    val colors =
+      Map("red" -> "#FF0000", "azure" -> "#F0FFFF", "peru" -> "#CD853F")
+    val nums: Map[Int, Int] = Map()
+    val fruit = Set("apples", "oranges", "pears")
+    val t     = (4, 3, 2, 1)
+    val sum   = t._1 + t._2 + t._3 + t._4
+    val ita   = Iterator(20, 40, 2, 50, 69, 90)
+    val itb   = Iterator(20, 40, 2, 50, 69, 90)
+    udf((value: Int) => value * int_value)
   }
 
   def udf_string_length = {
@@ -266,8 +267,8 @@ object UDFs extends Serializable {
 object PipelineInitCode extends Serializable {
   import org.apache.spark.sql.expressions.Window
   import org.apache.spark.sql.functions._
-  var int_value    = 10
-  var string_value = "string value"
+  var int_value_from_pipeline_init = 10
+  var string_value                 = "string value"
 
   val colors =
     Map("red" -> "#FF0000", "azure" -> "#F0FFFF", "peru" -> "#CD853F")
