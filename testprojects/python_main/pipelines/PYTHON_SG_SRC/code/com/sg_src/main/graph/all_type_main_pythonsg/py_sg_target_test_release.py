@@ -6,4 +6,4 @@ from .config import *
 from com.sg_src.main.udfs.UDFs import *
 
 def py_sg_target_test_release(spark: SparkSession, in0: DataFrame):
-    in0.write.format("parquet").save("dbfs:/tmp/e2e/py_sg_target_test_release")
+    in0.write.format("parquet").mode("overwrite").save("dbfs:/tmp/e2e/py_sg_target_test_release")

@@ -45,13 +45,6 @@
     }
   }, {
     "PipelineComponent" : {
-      "id" : "pipelines/PYTHON_SG_SRC",
-      "nodeName" : "PythonDepMgmt",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl",
-      "language" : "python"
-    }
-  }, {
-    "PipelineComponent" : {
       "id" : "pipelines/PYTHON_DEP_MGMT_ALL",
       "nodeName" : "Py_DEP_MGMT",
       "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_DEP_MGMT_ALL-1.0-py3-none-any.whl",
@@ -62,6 +55,14 @@
       "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_PYTHON_SINGLE_CLUSTER_JOB/Script_2--342935074.py",
       "nodeName" : "Script_2",
       "id" : "rdqvpn73n-BqBR1G2fake",
+      "language" : "python",
+      "content" : "print(\"hello\")"
+    }
+  }, {
+    "ScriptComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_PYTHON_SINGLE_CLUSTER_JOB/Script_5--342935071.py",
+      "nodeName" : "Script_5",
+      "id" : "4RfLepzgTBxgR7XeARQhs$$sH2X1kYod6KizexlPXaHy",
       "language" : "python",
       "content" : "print(\"hello\")"
     }
@@ -266,30 +267,6 @@
     }, {
       "task_key" : "PythonSGSrc2",
       "depends_on" : [ {
-        "task_key" : "PythonBasic1"
-      } ],
-      "job_cluster_key" : "REL_PYTHON_SINGLE_CLUSTER_JOB_default_small",
-      "python_wheel_task" : {
-        "package_name" : "REL_PY_PIP_SG_SRC",
-        "entry_point" : "main",
-        "parameters" : [ "-i", "default", "-O", "{}" ]
-      },
-      "libraries" : [ {
-        "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.10"
-        }
-      }, {
-        "pypi" : {
-          "package" : "prophecy-libs==1.4.7"
-        }
-      }, {
-        "whl" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_PY_PIP_SG_SRC-1.0-py3-none-any.whl"
-      } ],
-      "email_notifications" : { },
-      "max_retries" : 0
-    }, {
-      "task_key" : "PythonDepMgmt",
-      "depends_on" : [ {
         "task_key" : "EM_IO"
       } ],
       "job_cluster_key" : "REL_PYTHON_SINGLE_CLUSTER_JOB_default_small",
@@ -314,7 +291,7 @@
     }, {
       "task_key" : "Py_DEP_MGMT",
       "depends_on" : [ {
-        "task_key" : "EM_IO"
+        "task_key" : "PythonSGSrc2"
       } ],
       "job_cluster_key" : "Cluster_2",
       "python_wheel_task" : {
@@ -373,6 +350,17 @@
       "job_cluster_key" : "REL_PYTHON_SINGLE_CLUSTER_JOB_default_small",
       "spark_python_task" : {
         "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_PYTHON_SINGLE_CLUSTER_JOB/Script_2--342935074.py"
+      },
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "Script_5",
+      "depends_on" : [ {
+        "task_key" : "PythonBasic1"
+      } ],
+      "job_cluster_key" : "REL_PYTHON_SINGLE_CLUSTER_JOB_default_small",
+      "spark_python_task" : {
+        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_PYTHON_SINGLE_CLUSTER_JOB/Script_5--342935071.py"
       },
       "email_notifications" : { },
       "max_retries" : 0
