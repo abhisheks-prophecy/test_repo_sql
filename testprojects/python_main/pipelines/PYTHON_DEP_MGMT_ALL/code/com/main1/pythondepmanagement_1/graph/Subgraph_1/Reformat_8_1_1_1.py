@@ -5,5 +5,5 @@ from prophecy.libs import typed_lit
 from .config import *
 from com.main1.pythondepmanagement_1.udfs.UDFs import *
 
-def very_complex_dataset(spark: SparkSession) -> DataFrame:
-    return spark.read.format("parquet").load("dbfs:/Prophecy/qa_data/parquet/verycomplexdata.parquet")
+def Reformat_8_1_1_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.select(squared(col("`c- short`")).alias("c- short"), lit(Config.config_int_here).alias("c  - int"))

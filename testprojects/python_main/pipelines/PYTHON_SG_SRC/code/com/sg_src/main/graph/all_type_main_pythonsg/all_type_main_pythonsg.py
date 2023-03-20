@@ -21,7 +21,6 @@ def all_type_main_pythonsg(
     df_Limit_1_1_1 = Limit_1_1_1(spark, df_Join_1_1)
     df_Filter_1_1_1 = Filter_1_1_1(spark, df_Limit_1_1_1)
     df_OrderBy_1_1_1 = OrderBy_1_1_1(spark, df_Filter_1_1_1)
-    df_Reformat_6 = Reformat_6(spark, df_Reformat_2_1_1)
     df_Reformat_4 = Reformat_4(spark, df_Source_1_1_1)
     py_sg_target_test_release(spark, df_Reformat_4)
     df_Aggregate_1_1_1 = Aggregate_1_1_1(spark, df_OrderBy_1_1_1)

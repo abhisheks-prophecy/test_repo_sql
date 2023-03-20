@@ -5,9 +5,8 @@ from prophecy.libs import typed_lit
 from .config import *
 from com.main1.pythondepmanagement_1.udfs.UDFs import *
 
-def Reformat_6(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def Reformat_2_1_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
-        expr("qa_mask_zip_code(`c-string`)").alias("call_udftest"), 
         col("`c- short`"), 
         col("`c  - int`"), 
         col("`- c long`"), 
@@ -36,6 +35,12 @@ def Reformat_6(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("p_string"), 
         col("p_date"), 
         col("p_timestamp"), 
-        col("c_configs"), 
-        col("c_udfs")
+        concat(
+            lit(Config.c_sg1_array_string[0]), 
+            lit(Config.c_string), 
+            lit(Config.c_sg1_record.c_sg1_record_c_string), 
+            lit(Config.c_sg1_record.c_sg1_record_c_boolean)
+          )\
+          .alias("c_configs"), 
+        concat(squared(col("`c  - int`")), factorial(lit(2)), random_string(lit(4))).alias("c_udfs")
     )

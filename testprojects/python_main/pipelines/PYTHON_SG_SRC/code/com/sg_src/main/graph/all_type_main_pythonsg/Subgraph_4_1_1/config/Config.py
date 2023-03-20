@@ -1,6 +1,3 @@
-from com.sg_src.main.graph.all_type_main_pythonsg.Subgraph_4_1_1.Subgraph_1.config.Config import (
-    SubgraphConfig as Subgraph_1_Config
-)
 from com.sg_src.main.graph.all_type_main_pythonsg.Subgraph_4_1_1.Subgraph_3_1_1.config.Config import (
     SubgraphConfig as Subgraph_3_1_1_Config
 )
@@ -15,7 +12,6 @@ class SubgraphConfig(ConfigBase):
             c_dbsecrets: str="qasecrets_mysql:username",
             c_string: str="test",
             Subgraph_3_1_1: dict={},
-            Subgraph_1: dict={},
             **kwargs
     ):
 
@@ -29,19 +25,12 @@ class SubgraphConfig(ConfigBase):
             Subgraph_3_1_1, 
             Subgraph_3_1_1_Config
         )
-        self.Subgraph_1 = self.get_config_object(
-            prophecy_spark, 
-            Subgraph_1_Config(prophecy_spark = prophecy_spark), 
-            Subgraph_1, 
-            Subgraph_1_Config
-        )
         pass
 
     def update(self, updated_config):
         self.c_dbsecrets = updated_config.c_dbsecrets
         self.c_string = updated_config.c_string
         self.Subgraph_3_1_1 = updated_config.Subgraph_3_1_1
-        self.Subgraph_1 = updated_config.Subgraph_1
         pass
 
 Config = SubgraphConfig()
