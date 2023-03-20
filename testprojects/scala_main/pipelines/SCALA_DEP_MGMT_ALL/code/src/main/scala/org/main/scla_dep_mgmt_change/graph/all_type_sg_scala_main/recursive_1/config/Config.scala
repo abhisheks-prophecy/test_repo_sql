@@ -8,6 +8,9 @@ import org.apache.spark.sql.SparkSession
 import org.main.scla_dep_mgmt_change.graph.all_type_sg_scala_main.recursive_1.Subgraph_2_1.config.{
   Config => Subgraph_2_1_Config
 }
+import org.main.scla_dep_mgmt_change.graph.all_type_sg_scala_main.recursive_1.Subgraph_1.config.{
+  Config => Subgraph_1_Config
+}
 
 object Config {
 
@@ -22,7 +25,8 @@ case class Config(
   c_rec1_c_string:           String = "hello sir how are you $$ my son",
   c_rec1_c_int:              Int = 2321,
   c_rec1_c_boolean:          Boolean = false,
-  c_rec1_c_spark_expression: String = "concat('a', 'b', 'recursive_1')"
+  c_rec1_c_spark_expression: String = "concat('a', 'b', 'recursive_1')",
+  Subgraph_1:                Subgraph_1_Config = Subgraph_1_Config()
 ) extends ConfigBase
 
 object DatabricksSecret {

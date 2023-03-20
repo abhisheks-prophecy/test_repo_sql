@@ -59,6 +59,18 @@ object Main {
         "hc6ve4O827bkh7H6ckclm$$DnY6s1vxysncNfAIsk5VA",
         "9sEegzaPsyr7WbqQN3r7e$$WcTY92B5ro2XSxVurZdC8"
       )
+    val df_Reformat_12 = Reformat_12(context, df_very_complex_dataset).interim(
+      "graph",
+      "TeymC2nZ71ETj-ZxO4LIK$$RAHGEDk9gGkQVhGq0VfGe",
+      "IbgrW9w6TcrN90B56Sq2h$$IfKA0roDygNKp-fMllteG"
+    )
+    val df_Reformat_14 = Reformat_14(context, df_Reformat_12).interim(
+      "graph",
+      "VrGveOeDMRl9l6Sygpqb_$$Z8GqQGKchpTjdwv4QLkuY",
+      "fNaAeY5AHx-Fjov8-ac4c$$szZaa0q3PScp86RhU7dlz"
+    )
+    df_Reformat_14.cache().count()
+    df_Reformat_14.unpersist()
     val df_SQLStatement_1 =
       SQLStatement_1(context,
                      df_src_parquet_all_type_and_partition_withspacehyphens1
@@ -86,13 +98,6 @@ object Main {
       "9SxukrkbLjB9767nnjjyc$$HKrQPtYnAcfBjk1YLp12B",
       "q2OHFdKSlaApfiB-p2kod$$gjcVI8oVJu6r8jvarb7gm"
     )
-    val df_Reformat_12 = Reformat_12(context, df_very_complex_dataset).interim(
-      "graph",
-      "TeymC2nZ71ETj-ZxO4LIK$$RAHGEDk9gGkQVhGq0VfGe",
-      "IbgrW9w6TcrN90B56Sq2h$$IfKA0roDygNKp-fMllteG"
-    )
-    df_Reformat_12.cache().count()
-    df_Reformat_12.unpersist()
     val df_Subgraph_1 = Subgraph_1.apply(
       Subgraph_1_Context(context.spark, context.config.Subgraph_1),
       df_src_parquet_all_type_and_partition_withspacehyphens1

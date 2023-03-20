@@ -1,6 +1,6 @@
 name: ScalaProject
 description: ''
-version: 2.9.0.0-1
+version: 2.9.0.0-2
 author: abhisheks+e2etests@simpledatalabs.com
 language: scala
 buildSystem: ''
@@ -20,7 +20,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-08-11 07:27:24'
-    modifiedAt: '2023-03-13 14:32:22'
+    modifiedAt: '2023-03-20 06:59:47'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -32,8 +32,10 @@ pipelines:
       - datasets/src_orc_all_type_no_partition
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
       - datasets/src_parquet_all_type_no_partition
+      - datasets/very_complex_dataset
       outputs:
       - datasets/dest_jdbc_userandpass_test_table
+      - datasets/scala_random_target_subgraph_donotuse
     subgraphs:
     - subgraphs/all_type
     dependencies: {}
@@ -45,7 +47,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-11-23 08:59:52'
-    modifiedAt: '2023-03-13 14:10:18'
+    modifiedAt: '2023-03-20 06:33:03'
     datasets:
       inputs:
       - datasets/qa_database_all_type_parquet
@@ -61,7 +63,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-07-28 12:00:15'
-    modifiedAt: '2023-03-16 12:02:52'
+    modifiedAt: '2023-03-20 05:12:51'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -79,7 +81,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-10-12 12:59:32'
-    modifiedAt: '2023-03-13 14:02:55'
+    modifiedAt: '2023-03-20 06:34:24'
     datasets:
       inputs:
       - datasets/src_azure
@@ -94,7 +96,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-06-29 05:58:26'
-    modifiedAt: '2023-03-19 12:46:55'
+    modifiedAt: '2023-03-20 07:02:27'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -107,6 +109,7 @@ pipelines:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
       - datasets/src_parquet_all_type_no_partition
       - datasets/src_unittest_parquet_all
+      - datasets/very_complex_dataset
       outputs:
       - datasets/dest_jdbc_userandpass_test_table
       - datasets/scala_random_target_subgraph_donotuse
@@ -153,7 +156,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2023-01-15 15:17:50'
-    modifiedAt: '2023-03-13 14:11:16'
+    modifiedAt: '2023-03-20 06:32:44'
     datasets:
       inputs:
       - datasets/src_db_livy_csv
@@ -173,11 +176,12 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-06-29 04:13:26'
-    modifiedAt: '2023-03-19 11:59:56'
+    modifiedAt: '2023-03-20 05:45:14'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/very_complex_dataset
       outputs:
       - datasets/scala_random_target_subgraph_donotuse
     subgraphs:
@@ -207,7 +211,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2023-02-28 07:31:14'
-    modifiedAt: '2023-03-13 14:13:05'
+    modifiedAt: '2023-03-20 06:29:27'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -223,7 +227,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2023-02-28 07:42:53'
-    modifiedAt: '2023-03-13 14:12:22'
+    modifiedAt: '2023-03-20 06:30:36'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -1263,7 +1267,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-11-04 10:50:36'
-    modifiedAt: '2023-03-14 19:42:50'
+    modifiedAt: '2023-03-20 06:47:07'
     author: abhisheks+e2etests@prophecy.io
   jobs/DONOT_OPEN_SCALA_JOB:
     name: REL_SCALA_DONOT_OPEN_JOB
@@ -1288,7 +1292,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-08-11 07:44:56'
-    modifiedAt: '2022-08-11 07:44:56'
+    modifiedAt: '2023-03-20 07:02:58'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/REL_SC_DBFSLIBS:
     name: REL_SC_DBFSLIBS
@@ -1314,7 +1318,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-11-04 14:04:26'
-    modifiedAt: '2023-03-09 15:54:12'
+    modifiedAt: '2023-03-20 06:47:30'
     author: abhisheks+e2etests@prophecy.io
   jobs/SCALA_SINGLE_CLUSTER_JOB:
     name: REL_SCALA_SINGLE_CLUSTER_JOB
@@ -1343,7 +1347,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 12:01:54'
-    modifiedAt: '2023-03-19 13:26:51'
+    modifiedAt: '2023-03-20 05:57:12'
     author: abhisheks+e2etests@simpledatalabs.com
 functions:
   author: null
@@ -1506,7 +1510,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2022-06-29 04:22:03'
-    modifiedAt: '2023-03-19 12:06:33'
+    modifiedAt: '2023-03-20 07:02:26'
   subgraphs/test2sg:
     name: test2sg
     description: ''

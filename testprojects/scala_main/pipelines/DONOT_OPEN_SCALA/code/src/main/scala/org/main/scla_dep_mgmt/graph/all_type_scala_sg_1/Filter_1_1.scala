@@ -13,6 +13,9 @@ import java.time._
 object Filter_1_1 {
 
   def apply(context: Context, in: DataFrame): DataFrame =
-    in.filter(col("`c  - int`") > lit(-100))
+    in.filter(
+      (col("`c  - int`") > lit(-100))
+        .and(!col("`c-string`").like(context.config.c_sg1_c_string))
+    )
 
 }

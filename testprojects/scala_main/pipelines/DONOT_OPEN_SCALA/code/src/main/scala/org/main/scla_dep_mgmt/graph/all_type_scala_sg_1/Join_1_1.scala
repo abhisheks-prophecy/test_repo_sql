@@ -29,7 +29,7 @@ object Join_1_1 {
         col("in0.c_double").as("c_double"),
         col("in0.`c-string`").as("c-string"),
         col("in0.`c_date-for today`").as("c_date-for today"),
-        col("in0.`c_timestamp  __ for--today`")
+        expr(context.config.c_sg1_join_expr_timestamp)
           .as("c_timestamp  __ for--today"),
         col("in0.`c_array-int  _ int`").as("c_array-int  _ int"),
         col("in0.`c_array-string  _ string`").as("c_array-string  _ string"),

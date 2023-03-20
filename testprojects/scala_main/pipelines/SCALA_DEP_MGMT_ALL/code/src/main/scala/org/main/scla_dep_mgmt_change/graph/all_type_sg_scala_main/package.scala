@@ -99,6 +99,13 @@ package object all_type_sg_scala_main {
         scala_random_target_subgraph_donotuse(context, df_Reformat_1_1)
       }
     }
+    val df_Reformat_3 = Reformat_3(context, df_Filter_1_1).interim(
+      "all_type_sg_scala_main",
+      "hlCiNUUN4-N1dhJqgjw_N$$mja6O7vN0kDjxCa9BrN2v",
+      "WIIEsa_6EAsbIWCfQEA1i$$b2hm1FyGLjMyegY1rRyAq"
+    )
+    df_Reformat_3.cache().count()
+    df_Reformat_3.unpersist()
     val df_SQLStatement_1 =
       SQLStatement_1(context, df_SetOperation_1_1).interim(
         "all_type_sg_scala_main",

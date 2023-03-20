@@ -17,7 +17,31 @@ object Config {
   implicit val interimOutput: InterimOutput = InterimOutputHive2("")
 }
 
-case class Config(Subgraph_3_1: Subgraph_3_1_Config = Subgraph_3_1_Config())
-    extends ConfigBase
+case class Config(
+  Subgraph_3_1:      Subgraph_3_1_Config = Subgraph_3_1_Config(),
+  c_sg2_1_c_string:  String = "asdas tyes asd $$ asdasd ",
+  c_sg2_1_c_int:     Int = -121,
+  c_sg2_1_c_boolean: Boolean = false,
+  c_sg2_1_c_float:   Float = -10.12f
+) extends ConfigBase
+
+object DatabricksSecret {
+
+  implicit val myIntReader: ConfigReader[DatabricksSecret] =
+    ConfigReader[String].map { s =>
+      val Array(scope, key) = s.split(":")
+      DatabricksSecret(scope, key)
+    }
+
+}
+
+case class DatabricksSecret(scope: String, key: String) {
+
+  override def toString: String = {
+    import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
+    dbutils.secrets.get(scope = scope, key = key)
+  }
+
+}
 
 case class Context(spark: SparkSession, config: Config)
