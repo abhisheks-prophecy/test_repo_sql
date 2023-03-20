@@ -146,6 +146,13 @@ package object all_type_sg_scala_main {
         scala_random_target_subgraph_donotuse(context, df_Reformat_1_1)
       }
     }
+    val df_Reformat_3 = Reformat_3(context, df_Filter_1_1).interim(
+      "all_type_sg_scala_main",
+      "hlCiNUUN4-N1dhJqgjw_N$$Ufv0KAXmD-cmn5B8sWf58",
+      "WIIEsa_6EAsbIWCfQEA1i$$L9NfJcYD2ne-z-uWw6cRj"
+    )
+    df_Reformat_3.cache().count()
+    df_Reformat_3.unpersist()
     (df_FlattenSchema_1_1, df_OrderBy_2_1, df_recursive_1)
   }
 

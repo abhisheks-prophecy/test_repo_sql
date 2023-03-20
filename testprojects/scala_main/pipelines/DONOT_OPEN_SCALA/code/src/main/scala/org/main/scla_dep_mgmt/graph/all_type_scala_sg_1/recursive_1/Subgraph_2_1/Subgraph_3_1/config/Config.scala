@@ -20,4 +20,23 @@ object Config {
 case class Config(Subgraph_4_1: Subgraph_4_1_Config = Subgraph_4_1_Config())
     extends ConfigBase
 
+object DatabricksSecret {
+
+  implicit val myIntReader: ConfigReader[DatabricksSecret] =
+    ConfigReader[String].map { s =>
+      val Array(scope, key) = s.split(":")
+      DatabricksSecret(scope, key)
+    }
+
+}
+
+case class DatabricksSecret(scope: String, key: String) {
+
+  override def toString: String = {
+    import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
+    dbutils.secrets.get(scope = scope, key = key)
+  }
+
+}
+
 case class Context(spark: SparkSession, config: Config)
