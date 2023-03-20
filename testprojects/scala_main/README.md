@@ -479,3 +479,7 @@ test
 *** Release notes for version: 2.9.0.2 ***
 
 d
+
+*** Release notes for version: 2.9.0.0-1 ***
+
+2.9.0.0-1

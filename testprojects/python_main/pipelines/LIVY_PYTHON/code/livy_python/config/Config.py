@@ -7,24 +7,26 @@ class Config(ConfigBase):
 
     def __init__(
             self,
-            c_st_expr: str=None, 
-            c_expr: str=None, 
-            c_string: str=None, 
-            c_int: int=None, 
-            pythonLivySG1_1: dict=None, 
-            Subgraph_4: dict=None
+            c_st_expr: str=None,
+            c_expr: str=None,
+            c_string: str=None,
+            c_int: int=None,
+            pythonLivySG1_1: dict=None,
+            Subgraph_4: dict=None,
+            **kwargs
     ):
         self.spark = None
         self.update(c_st_expr, c_expr, c_string, c_int, pythonLivySG1_1, Subgraph_4)
 
     def update(
             self,
-            c_st_expr: str="concat(industry_code_ANZSIC, industry_name_ANZSIC)", 
-            c_expr: str="%11%", 
-            c_string: str="this is a test string", 
-            c_int: int=22, 
-            pythonLivySG1_1: dict={}, 
-            Subgraph_4: dict={}
+            c_st_expr: str="concat(industry_code_ANZSIC, industry_name_ANZSIC)",
+            c_expr: str="%11%",
+            c_string: str="this is a test string",
+            c_int: int=22,
+            pythonLivySG1_1: dict={},
+            Subgraph_4: dict={},
+            **kwargs
     ):
         prophecy_spark = self.spark
         self.c_st_expr = c_st_expr
