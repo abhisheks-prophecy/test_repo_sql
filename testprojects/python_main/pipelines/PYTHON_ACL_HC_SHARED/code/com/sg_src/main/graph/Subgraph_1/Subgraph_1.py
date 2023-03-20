@@ -3,13 +3,16 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from . import *
+from .config import *
 
 def Subgraph_1(
         spark: SparkSession,
+        config: SubgraphConfig,
         in0: DataFrame,
         in1: DataFrame,
         in2: DataFrame
 ) -> (DataFrame, DataFrame, DataFrame):
+    Config.update(config)
     df_Source_1_1_1 = Source_1_1_1(spark)
     df_Source_1_1_1 = collectMetrics(
         spark, 
@@ -18,6 +21,7 @@ def Subgraph_1(
         "1r_pZPVR3jKgUYztuH7tP$$HCzfgjR_8lJN8VyR6K8Uq", 
         "vrGooAVxXtbCLM9W-fF9T$$-KHAu0njsWpG2L_gqpbcT"
     )
+    Lookup_1(spark, df_Source_1_1_1)
     df_Reformat_1_1_1 = Reformat_1_1_1(spark, df_Source_1_1_1)
     df_Reformat_1_1_1 = collectMetrics(
         spark, 
@@ -66,6 +70,15 @@ def Subgraph_1(
         "FdMdMKA9PwdDzQISgBmgv$$oDOH6Ddy73N4x4CMJtZPP", 
         "1BzY1nnb-9FJ1TEI9BHBg$$RgjBLyDUFwsdsl-s9CT9Z"
     )
+    df_Reformat_5 = Reformat_5(spark, df_Reformat_2_1_1)
+    df_Reformat_5 = collectMetrics(
+        spark, 
+        df_Reformat_5, 
+        "Subgraph_1", 
+        "7Lx4J_SbHcFsLK8LlsKM8$$ANO3o_UVD96vKQVjIQ-ti", 
+        "TGHCKhuXd1aM7IHgIIuST$$i5bT6wDFzKLNQPd0cFLUX"
+    )
+    df_Subgraph_1 = Subgraph_1(spark, config.Subgraph_1, df_Reformat_5)
     df_Aggregate_1_1_1 = Aggregate_1_1_1(spark, df_OrderBy_1_1_1)
     df_Aggregate_1_1_1 = collectMetrics(
         spark, 
@@ -74,6 +87,9 @@ def Subgraph_1(
         "OfT5Aq5SMdAyz3OV3xklC$$NARp1z05TzVgf-5K2VcGT", 
         "Ku_NG7h8pJiUsIeAGbt56$$GBjYhtlfMpgFT25pzEssU"
     )
+    df_Subgraph_2 = Subgraph_2(spark, config.Subgraph_2, df_Subgraph_1)
+    df_Subgraph_2.cache().count()
+    df_Subgraph_2.unpersist()
     df_Repartition_1_1_1 = Repartition_1_1_1(spark, df_Limit_1_1_1)
     df_Repartition_1_1_1 = collectMetrics(
         spark, 
@@ -163,9 +179,18 @@ def Subgraph_1(
     )
     df_Subgraph_4_1_1 = Subgraph_4_1_1(
         spark, 
+        config.Subgraph_4_1_1, 
         df_RowDistributor_1_1_1_out0, 
         df_RowDistributor_1_1_1_out1, 
         df_Script_1_1_1
+    )
+    df_Reformat_4 = Reformat_4(spark, df_Source_1_1_1)
+    df_Reformat_4 = collectMetrics(
+        spark, 
+        df_Reformat_4, 
+        "Subgraph_1", 
+        "doZp9lh3MPrvMLlS8l2o7$$GIK_zV4Wva18b-2Gp3MJD", 
+        "2eHJNsaAMqpCTDEffO3wW$$gtX9TBeOXkDLAAqcNzClN"
     )
     df_Reformat_8_1_1 = Reformat_8_1_1(spark, in1)
     df_Reformat_8_1_1 = collectMetrics(
@@ -175,6 +200,7 @@ def Subgraph_1(
         "YHIfTUaSlFVhJPOGJROKe$$yx9-kVu3uQzdFC7desbn_", 
         "6SGK1kGgLTQ8zVbOGEyZA$$82LZDFPwwHxw1VwIXLkeb"
     )
+    py_sg_target_test_release(spark, df_Reformat_4)
     df_Limit_3_1_1 = Limit_3_1_1(spark, df_Reformat_8_1_1)
     df_Limit_3_1_1 = collectMetrics(
         spark, 

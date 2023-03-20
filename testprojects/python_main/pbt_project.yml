@@ -50,7 +50,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-10-12 12:58:56'
-    modifiedAt: '2023-03-14 16:13:09'
+    modifiedAt: '2023-03-20 07:33:39'
     datasets:
       inputs:
       - datasets/src_azure
@@ -65,7 +65,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:43:12'
-    modifiedAt: '2023-03-19 16:00:22'
+    modifiedAt: '2023-03-20 07:44:16'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -80,6 +80,7 @@ pipelines:
       - datasets/src_parquet_all_type_no_partition
       - datasets/src_text_DatasetWithSpaceHyphens
       - datasets/src_ut_parquet_all
+      - datasets/very_complex_source
       outputs:
       - datasets/dest_csv_all_type_no_partition
       - datasets/py_sg_target_test_release
@@ -95,7 +96,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-08-11 07:47:15'
-    modifiedAt: '2022-08-11 07:47:15'
+    modifiedAt: '2023-03-20 07:42:08'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -109,8 +110,11 @@ pipelines:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
       - datasets/src_parquet_all_type_no_partition
       - datasets/src_text_DatasetWithSpaceHyphens
-      outputs: []
-    subgraphs: []
+      - datasets/very_complex_source
+      outputs:
+      - datasets/py_sg_target_test_release
+    subgraphs:
+    - subgraphs/all_type
     dependencies: {}
   pipelines/PYTHON_BASIC:
     name: PYTHON_BASIC
@@ -120,7 +124,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-07-28 11:58:31'
-    modifiedAt: '2023-03-19 15:16:00'
+    modifiedAt: '2023-03-20 07:33:49'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -152,13 +156,16 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-11-03 04:37:05'
-    modifiedAt: '2022-11-03 04:37:05'
+    modifiedAt: '2023-03-20 07:40:24'
     datasets:
       inputs:
       - datasets/src_catalog_accessible
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
-      outputs: []
-    subgraphs: []
+      - datasets/very_complex_source
+      outputs:
+      - datasets/py_sg_target_test_release
+    subgraphs:
+    - subgraphs/all_type
     dependencies: {}
   pipelines/PERF_UNITEST_GENERATE:
     name: PERF_UNITEST_GENERATE
@@ -199,7 +206,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-11-23 08:14:14'
-    modifiedAt: '2023-03-19 15:16:19'
+    modifiedAt: '2023-03-20 07:51:03'
     datasets:
       inputs:
       - datasets/qa_database_all_type_parquet
@@ -219,10 +226,11 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:08:52'
-    modifiedAt: '2023-03-19 16:33:46'
+    modifiedAt: '2023-03-20 07:35:48'
     datasets:
       inputs:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/very_complex_source
       outputs:
       - datasets/py_sg_target_test_release
     subgraphs:
@@ -267,7 +275,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-01-24 07:05:09'
-    modifiedAt: '2023-01-24 07:05:09'
+    modifiedAt: '2023-03-20 08:04:32'
     datasets:
       inputs:
       - datasets/src_orc_streaming_standard
@@ -276,13 +284,17 @@ pipelines:
       - datasets/src_streaming_delta
       - datasets/src_streaming_json
       - datasets/src_streaming_parquet_standard
+      - datasets/very_complex_source
       outputs:
       - datasets/dest_csv
       - datasets/dest_delta
       - datasets/dest_streaming_json
       - datasets/dest_streaming_orc
       - datasets/dest_streaming_parquet
-    subgraphs: []
+      - datasets/py_sg_target_test_release
+    subgraphs:
+    - subgraphs/all_type
+    - subgraphs/CSVStreamingSG
     dependencies: {}
   pipelines/PythonUCTranspileTest:
     name: PythonUCTranspileTest
@@ -311,7 +323,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-02-28 07:31:25'
-    modifiedAt: '2023-02-28 07:47:15'
+    modifiedAt: '2023-03-20 07:39:21'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -327,7 +339,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-02-28 07:43:02'
-    modifiedAt: '2023-03-14 11:33:56'
+    modifiedAt: '2023-03-20 07:39:07'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -1529,6 +1541,21 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-03-19 15:45:53'
         modifiedAt: '2023-03-19 15:45:53'
+  datasets/very_complex_source:
+    name: very_complex_source
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-20 07:26:15'
+    modifiedAt: '2023-03-20 07:26:15'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-20 07:26:15'
+        modifiedAt: '2023-03-20 07:26:15'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
@@ -1558,7 +1585,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-07-28 11:54:59'
-    modifiedAt: '2023-03-19 16:36:42'
+    modifiedAt: '2023-03-20 07:49:05'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/REL_PY_CUSTOMLIBS:
     name: REL_PY_CUSTOMLIBS
@@ -1583,7 +1610,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-11-04 10:50:42'
-    modifiedAt: '2022-11-04 10:50:42'
+    modifiedAt: '2023-03-20 07:51:37'
     author: abhisheks+e2etests@prophecy.io
   jobs/DONOT_OPEN_PYTHON_JOB:
     name: REL_PYTHON_DONOT_OPEN_JOB
@@ -1608,7 +1635,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-08-11 07:51:50'
-    modifiedAt: '2023-03-02 04:11:02'
+    modifiedAt: '2023-03-20 07:50:00'
     author: abhisheks+e2etests@simpledatalabs.com
   jobs/REL_PY_DBFSLIBS:
     name: REL_PY_DBFSLIBS
@@ -1634,7 +1661,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2022-11-04 10:54:37'
-    modifiedAt: '2023-03-01 10:16:16'
+    modifiedAt: '2023-03-20 07:50:56'
     author: abhisheks+e2etests@prophecy.io
   jobs/PythonStreamingJobRelease:
     name: PythonStreamingJobRelease
@@ -1659,7 +1686,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-01-24 07:12:50'
-    modifiedAt: '2023-03-01 13:38:16'
+    modifiedAt: '2023-03-20 08:07:18'
     author: abhisheks+e2etests@prophecy.io
   jobs/REL_PY_UC_SHARED_JOB:
     name: REL_PY_UC_SHARED_JOB
@@ -1684,23 +1711,14 @@ jobs:
       clusterId: null
     enabled: null
     createdAt: '2023-02-21 17:15:15'
-    modifiedAt: '2023-02-21 17:15:15'
+    modifiedAt: '2023-03-20 07:50:02'
     author: abhisheks+e2etests@prophecy.io
 functions:
   author: null
   createdAt: '2023-03-13 13:20:16'
-  modifiedAt: '2023-03-14 11:33:56'
+  modifiedAt: '2023-03-20 07:42:07'
   gems: {}
   udfs:
-    udfs/squared:
-      name: squared
-      description: ''
-      tags: []
-      inputs: []
-      outputs: []
-      author: abhisheks+e2etests@prophecy.io
-      createdAt: '2022-12-15 18:04:50'
-      modifiedAt: '2022-12-15 18:04:50'
     udfs/factorial:
       name: factorial
       description: ''
@@ -1712,6 +1730,15 @@ functions:
       modifiedAt: '2022-12-15 18:04:50'
     udfs/udf1:
       name: udf1
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+      modifiedAt: '2022-12-15 18:04:50'
+    udfs/squared:
+      name: squared
       description: ''
       tags: []
       inputs: []
@@ -1820,7 +1847,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2022-06-29 04:12:40'
-    modifiedAt: '2023-03-19 16:00:20'
+    modifiedAt: '2023-03-20 07:35:47'
   subgraphs/pythonLivySG1:
     name: pythonLivySG1
     description: pythonSG1
@@ -1847,7 +1874,7 @@ subgraphs:
     artefactID: ''
     mode: stream
     createdAt: '2023-01-24 06:19:39'
-    modifiedAt: '2023-01-24 06:19:39'
+    modifiedAt: '2023-03-20 08:04:31'
   subgraphs/reusable_PM:
     name: reusable_PM
     description: ''

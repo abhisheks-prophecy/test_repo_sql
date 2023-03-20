@@ -558,6 +558,9 @@ def pipeline(spark: SparkSession) -> None:
         "INfBHLuOcxIwIT33NNcTv$$RLgOfO3B23UnM-2xLZz0-"
     )
     Script_8(spark, df_FlattenSchema_1)
+    df_Subgraph_2 = Subgraph_2(spark, Config.Subgraph_2, df_Limit_5)
+    df_Subgraph_2.cache().count()
+    df_Subgraph_2.unpersist()
     df_Script_6 = Script_6(
         spark, 
         df_all_type_main_pythonsg_out0, 

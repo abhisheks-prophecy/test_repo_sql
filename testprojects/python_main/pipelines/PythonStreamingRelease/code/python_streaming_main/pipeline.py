@@ -19,6 +19,7 @@ def pipeline(spark: SparkSession) -> None:
     DEST_ORC(spark, df_Script_1)
     df_all_type_main_1_out0, df_all_type_main_1_out1, df_all_type_main_1_out2 = all_type_main_1(
         spark, 
+        Config.all_type_main_1, 
         df_src_parquet_all_type_and_partition_withspacehyphens_renamed, 
         df_src_parquet_all_type_and_partition_withspacehyphens_renamed, 
         df_src_parquet_all_type_and_partition_withspacehyphens_renamed
@@ -28,7 +29,7 @@ def pipeline(spark: SparkSession) -> None:
     df_Reformat_1 = Reformat_1(spark, df_DELTA_SRC)
     DELTA_DEST(spark, df_Reformat_1)
     df_CSV_AL = CSV_AL(spark)
-    df_Subgraph_1 = Subgraph_1(spark, df_CSV_AL)
+    df_Subgraph_1 = Subgraph_1(spark, Config.Subgraph_1, df_CSV_AL)
     DEST_CSV(spark, df_Subgraph_1)
     df_SchemaTransform_1 = SchemaTransform_1(spark, df_SetOperation_1)
     df_FlattenSchema_1 = FlattenSchema_1(spark, df_SchemaTransform_1)
