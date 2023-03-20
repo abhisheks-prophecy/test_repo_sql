@@ -50,7 +50,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-10-12 12:58:56'
-    modifiedAt: '2023-03-14 16:13:09'
+    modifiedAt: '2023-03-20 07:13:20'
     datasets:
       inputs:
       - datasets/src_azure
@@ -65,7 +65,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:43:12'
-    modifiedAt: '2023-03-19 16:00:22'
+    modifiedAt: '2023-03-20 07:13:37'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -80,6 +80,7 @@ pipelines:
       - datasets/src_parquet_all_type_no_partition
       - datasets/src_text_DatasetWithSpaceHyphens
       - datasets/src_ut_parquet_all
+      - datasets/very_complex_dataset
       outputs:
       - datasets/dest_csv_all_type_no_partition
       - datasets/py_sg_target_test_release
@@ -120,7 +121,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-07-28 11:58:31'
-    modifiedAt: '2023-03-19 15:16:00'
+    modifiedAt: '2023-03-20 07:01:02'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -219,10 +220,11 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:08:52'
-    modifiedAt: '2023-03-19 16:33:46'
+    modifiedAt: '2023-03-20 06:49:05'
     datasets:
       inputs:
       - datasets/src_parquet_all_type_and_partition_withspacehyphens
+      - datasets/very_complex_dataset
       outputs:
       - datasets/py_sg_target_test_release
     subgraphs:
@@ -311,7 +313,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-02-28 07:31:25'
-    modifiedAt: '2023-02-28 07:47:15'
+    modifiedAt: '2023-03-20 06:47:33'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -327,7 +329,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-02-28 07:43:02'
-    modifiedAt: '2023-03-14 11:33:56'
+    modifiedAt: '2023-03-20 06:48:23'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -1529,6 +1531,21 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-03-19 15:45:53'
         modifiedAt: '2023-03-19 15:45:53'
+  datasets/very_complex_dataset:
+    name: very_complex_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-20 06:39:19'
+    modifiedAt: '2023-03-20 06:39:19'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-20 06:39:19'
+        modifiedAt: '2023-03-20 06:39:19'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
@@ -1692,8 +1709,8 @@ functions:
   modifiedAt: '2023-03-14 11:33:56'
   gems: {}
   udfs:
-    udfs/squared:
-      name: squared
+    udfs/udf1:
+      name: udf1
       description: ''
       tags: []
       inputs: []
@@ -1710,8 +1727,8 @@ functions:
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2022-12-15 18:04:50'
       modifiedAt: '2022-12-15 18:04:50'
-    udfs/udf1:
-      name: udf1
+    udfs/squared:
+      name: squared
       description: ''
       tags: []
       inputs: []
@@ -1820,7 +1837,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2022-06-29 04:12:40'
-    modifiedAt: '2023-03-19 16:00:20'
+    modifiedAt: '2023-03-20 07:13:36'
   subgraphs/pythonLivySG1:
     name: pythonLivySG1
     description: pythonSG1
@@ -1856,7 +1873,7 @@ subgraphs:
     artefactID: ''
     mode: batch
     createdAt: '2023-03-16 09:31:11'
-    modifiedAt: '2023-03-17 06:10:58'
+    modifiedAt: '2023-03-20 07:13:36'
 sqlModels: {}
 sqlPipeline: null
 dependencies:

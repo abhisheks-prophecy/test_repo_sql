@@ -2,6 +2,7 @@ from .SchemaTransform_1_1_1 import SchemaTransform_1_1_1
 from .Reformat_2_1_1 import Reformat_2_1_1
 from .Limit_3_1_1 import Limit_3_1_1
 from .Subgraph_4_1_1 import Subgraph_4_1_1
+from .Reformat_6 import Reformat_6
 from .SetOperation_1_1_1 import SetOperation_1_1_1
 from .Source_1_1_1 import Source_1_1_1
 from .Reformat_8_1_1 import Reformat_8_1_1

@@ -181,6 +181,16 @@ def all_type_main_pythonsg(
         "-Nrb7QUp1eCEqz0AyZHzO$$a6zhSA6Gdx94o9StIiW_z", 
         "LcvMPPnxzPBzC6QZPp_KJ$$1TmSKXe2RNj6NQRzRtyB9"
     )
+    df_Reformat_6 = Reformat_6(spark, df_Reformat_2_1_1)
+    df_Reformat_6 = collectMetrics(
+        spark, 
+        df_Reformat_6, 
+        "all_type_main_pythonsg", 
+        "s1DXcS5c6gu6ool2EQelg$$sAMDyFW1AUTs4DCuONqB4", 
+        "q1t0lLE9__8U4vfEgr6-V$$nl13byot2T_sOZ0_RU0pS"
+    )
+    df_Reformat_6.cache().count()
+    df_Reformat_6.unpersist()
     df_Reformat_8_1_1 = Reformat_8_1_1(spark, in1)
     df_Reformat_8_1_1 = collectMetrics(
         spark, 

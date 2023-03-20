@@ -596,6 +596,9 @@ def pipeline(spark: SparkSession) -> None:
     df_Script_12.cache().count()
     df_Script_12.unpersist()
     df_SubGraph_7 = SubGraph_7(spark, Config.SubGraph_7, df_Script_3)
+    df_Subgraph_2 = Subgraph_2(spark, Config.Subgraph_2, df_Script_3)
+    df_Subgraph_2.cache().count()
+    df_Subgraph_2.unpersist()
     df_Filter_3 = Filter_3(spark, df_SubGraph_7)
     df_Filter_3 = collectMetrics(
         spark, 
@@ -641,6 +644,9 @@ def pipeline(spark: SparkSession) -> None:
         "THZf4U0Afr0WwFlHIExkT$$ZcG-fixeZPUAPkqvmsgpR"
     )
     Script_2(spark, df_WindowFunction_1)
+    df_Subgraph_2 = Subgraph_2(spark, Config.Subgraph_2)
+    df_Subgraph_2.cache().count()
+    df_Subgraph_2.unpersist()
     df_UTGenSetOperation_2 = UTGenSetOperation_2(spark, df_csv_all_type, df_csv_all_type)
     df_UTGenSetOperation_2 = collectMetrics(
         spark, 

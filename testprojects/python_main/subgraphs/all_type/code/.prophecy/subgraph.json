@@ -14,166 +14,46 @@
       "common" : {
         "type" : "record",
         "fields" : [ {
-          "name" : "c_dbsecrets",
-          "kind" : {
-            "type" : "databricks_secret",
-            "value" : "qasecrets_mysql:username"
-          },
-          "optional" : false,
-          "isWorkflowNodeConfiguration" : false
-        }, {
-          "name" : "c_string",
-          "kind" : {
-            "type" : "string",
-            "value" : "test"
-          },
-          "optional" : false,
-          "isWorkflowNodeConfiguration" : false
-        }, {
           "name" : "Subgraph_4_1_1",
           "kind" : {
             "type" : "record",
             "fields" : [ {
-              "name" : "c_dbsecrets",
-              "kind" : {
-                "type" : "databricks_secret",
-                "value" : "qasecrets_mysql:username"
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false
-            }, {
-              "name" : "c_string",
-              "kind" : {
-                "type" : "string",
-                "value" : "test"
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false
-            }, {
               "name" : "Subgraph_3_1_1",
               "kind" : {
                 "type" : "record",
                 "fields" : [ {
-                  "name" : "c_dbsecrets",
-                  "kind" : {
-                    "type" : "databricks_secret",
-                    "value" : "qasecrets_mysql:username"
-                  },
-                  "optional" : false,
-                  "isWorkflowNodeConfiguration" : false
-                }, {
-                  "name" : "c_string",
-                  "kind" : {
-                    "type" : "string",
-                    "value" : "test"
-                  },
-                  "optional" : false,
-                  "isWorkflowNodeConfiguration" : false
-                }, {
                   "name" : "Subgraph_7_1_1",
                   "kind" : {
                     "type" : "record",
                     "fields" : [ {
-                      "name" : "c_dbsecrets",
-                      "kind" : {
-                        "type" : "databricks_secret",
-                        "value" : "qasecrets_mysql:username"
-                      },
-                      "optional" : false,
-                      "isWorkflowNodeConfiguration" : false
-                    }, {
-                      "name" : "c_string",
-                      "kind" : {
-                        "type" : "string",
-                        "value" : "test"
-                      },
-                      "optional" : false,
-                      "isWorkflowNodeConfiguration" : false
-                    }, {
                       "name" : "Subgraph_8_1_1",
                       "kind" : {
                         "type" : "record",
                         "fields" : [ {
-                          "name" : "c_dbsecrets",
-                          "kind" : {
-                            "type" : "databricks_secret",
-                            "value" : "qasecrets_mysql:username"
-                          },
-                          "optional" : false,
-                          "isWorkflowNodeConfiguration" : false
-                        }, {
-                          "name" : "c_string",
-                          "kind" : {
-                            "type" : "string",
-                            "value" : "test"
-                          },
-                          "optional" : false,
-                          "isWorkflowNodeConfiguration" : false
-                        }, {
                           "name" : "Subgraph_9_1_1",
                           "kind" : {
                             "type" : "record",
-                            "fields" : [ {
-                              "name" : "c_dbsecrets",
-                              "kind" : {
-                                "type" : "databricks_secret",
-                                "value" : "qasecrets_mysql:username"
-                              },
-                              "optional" : false,
-                              "isWorkflowNodeConfiguration" : false
-                            }, {
-                              "name" : "c_string",
-                              "kind" : {
-                                "type" : "string",
-                                "value" : "test"
-                              },
-                              "optional" : false,
-                              "isWorkflowNodeConfiguration" : false
-                            }, {
-                              "name" : "c_boolean_sg9_1_1",
-                              "kind" : {
-                                "type" : "boolean",
-                                "value" : false
-                              },
-                              "optional" : false,
-                              "isWorkflowNodeConfiguration" : false
-                            } ]
+                            "fields" : [ ]
                           },
                           "optional" : false,
                           "isWorkflowNodeConfiguration" : true
-                        }, {
-                          "name" : "c_orderby",
-                          "kind" : {
-                            "type" : "spark_expression",
-                            "value" : "`c-string`"
-                          },
-                          "optional" : false,
-                          "isWorkflowNodeConfiguration" : false
                         } ]
                       },
                       "optional" : false,
                       "isWorkflowNodeConfiguration" : true
-                    }, {
-                      "name" : "c_sg7_1_1_short",
-                      "kind" : {
-                        "type" : "short",
-                        "value" : 12
-                      },
-                      "optional" : false,
-                      "isWorkflowNodeConfiguration" : false
                     } ]
                   },
                   "optional" : false,
                   "isWorkflowNodeConfiguration" : true
-                }, {
-                  "name" : "c_sg3_1_1_c_long",
-                  "kind" : {
-                    "type" : "long",
-                    "value" : 12212
-                  },
-                  "optional" : false,
-                  "isWorkflowNodeConfiguration" : false
                 } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            }, {
+              "name" : "Subgraph_1",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ ]
               },
               "optional" : false,
               "isWorkflowNodeConfiguration" : true
@@ -181,66 +61,6 @@
           },
           "optional" : false,
           "isWorkflowNodeConfiguration" : true
-        }, {
-          "name" : "c_sg1_array_string",
-          "kind" : {
-            "type" : "array",
-            "elementType" : {
-              "type" : "string",
-              "value" : null
-            },
-            "value" : [ "this is first $$", "this is second $$" ]
-          },
-          "optional" : false,
-          "isWorkflowNodeConfiguration" : false
-        }, {
-          "name" : "c_sg1_record",
-          "kind" : {
-            "type" : "record",
-            "fields" : [ {
-              "name" : "c_sg1_record_c_string",
-              "kind" : {
-                "type" : "string",
-                "value" : "hello sir $$ yes this is me $$$$"
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false
-            }, {
-              "name" : "c_sg1_record_c_boolean",
-              "kind" : {
-                "type" : "boolean",
-                "value" : false
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false
-            }, {
-              "name" : "c_sg1_record_c_float",
-              "kind" : {
-                "type" : "float",
-                "value" : 12.12
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false
-            }, {
-              "name" : "c_sg1_record_c_int",
-              "kind" : {
-                "type" : "int",
-                "value" : 12
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false
-            } ]
-          },
-          "optional" : false,
-          "isWorkflowNodeConfiguration" : false
-        }, {
-          "name" : "c_sg1_spark_expressions",
-          "kind" : {
-            "type" : "string",
-            "value" : "concat('a', 'b')"
-          },
-          "optional" : false,
-          "isWorkflowNodeConfiguration" : false
         } ]
       }
     }
@@ -261,8 +81,7 @@
     } ],
     "outputs" : [ {
       "id" : "8gLlPvomEpLCkPiJOGnSx",
-      "slug" : "out0",
-      "isStreaming" : false
+      "slug" : "out0"
     }, {
       "id" : "ucPEE76P4aqu0TkMVapen",
       "slug" : "out1",
@@ -458,6 +277,12 @@
     "sourcePort" : "2eHJNsaAMqpCTDEffO3wW",
     "target" : "jE-PedEqsq-el5mf6tL1v",
     "targetPort" : "sj2SGclCkcBdsxDgWqa3r"
+  }, {
+    "id" : "Yib-rFGI5gGnH-HIBdS4g",
+    "source" : "QTebrQxcnMAv36Nrl63HZ",
+    "sourcePort" : "7nZx0CC34uTUy4PtEZymC",
+    "target" : "s1DXcS5c6gu6ool2EQelg",
+    "targetPort" : "6HPljSmoRgC35DN3bRefa"
   } ],
   "processes" : {
     "OfT5Aq5SMdAyz3OV3xklC" : {
@@ -762,11 +587,6 @@
           "width" : "220px"
         } ],
         "dataFormats" : [ {
-          "label" : "CSV",
-          "value" : "csv",
-          "icon" : "Csv",
-          "width" : "220px"
-        }, {
           "label" : "PARQUET",
           "value" : "parquet",
           "icon" : "Parquet",
@@ -805,6 +625,11 @@
           "label" : "KAFKASTREAM",
           "value" : "KafkaStream",
           "icon" : "File",
+          "width" : "220px"
+        }, {
+          "label" : "CSV",
+          "value" : "csv",
+          "icon" : "Csv",
           "width" : "220px"
         }, {
           "label" : "CUSTOMXLSX",
@@ -1673,6 +1498,289 @@
       },
       "properties" : {
         "limit" : "10"
+      }
+    },
+    "s1DXcS5c6gu6ool2EQelg" : {
+      "id" : "s1DXcS5c6gu6ool2EQelg",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_6",
+        "slug" : "Reformat_6",
+        "x" : 580,
+        "y" : 540,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "6HPljSmoRgC35DN3bRefa",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "q1t0lLE9__8U4vfEgr6-V",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_udfs", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_decimal", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c  - int", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_float-__  ", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##- c long", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_int", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_struct -- _  ", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_string", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_array-string  _ string", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_decimal  -  ", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_float", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_timestamp", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_array-- boolean ", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c -  boolean _  ", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_date-for today", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_array-int  _ int", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c- short", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_boolean", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_configs", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##-- c_array_timestamp -- ", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_timestamp  __ for--today", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_array--long", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_short", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_long", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_double", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_date", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_array -- float", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c_array -- decimal", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##p_double", "6HPljSmoRgC35DN3bRefa$$8ENcc8lSqQPFEclAAvPld##c-string" ],
+        "expressions" : [ {
+          "target" : "call_udftest",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "call_func('qa_mask_zip_code', `c-string`)"
+          },
+          "description" : "",
+          "_row_id" : "c_7"
+        }, {
+          "target" : "`c- short`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c- short`"
+          },
+          "description" : "",
+          "_row_id" : "9181996735332288719"
+        }, {
+          "target" : "`c  - int`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c  - int`"
+          },
+          "description" : "",
+          "_row_id" : "4785755641270577869"
+        }, {
+          "target" : "`- c long`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`- c long`"
+          },
+          "description" : "",
+          "_row_id" : "2701396591149915611"
+        }, {
+          "target" : "`c_decimal  -  `",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_decimal  -  `"
+          },
+          "description" : "",
+          "_row_id" : "1238812725510185424"
+        }, {
+          "target" : "`c_float-__  `",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_float-__  `"
+          },
+          "description" : "",
+          "_row_id" : "8268165391359119517"
+        }, {
+          "target" : "`c -  boolean _  `",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c -  boolean _  `"
+          },
+          "description" : "",
+          "_row_id" : "8704693476110185117"
+        }, {
+          "target" : "c_double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_double"
+          },
+          "description" : "",
+          "_row_id" : "2483772141484786081"
+        }, {
+          "target" : "`c-string`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c-string`"
+          },
+          "description" : "",
+          "_row_id" : "4208967374580683159"
+        }, {
+          "target" : "`c_date-for today`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_date-for today`"
+          },
+          "description" : "",
+          "_row_id" : "6158562846929620392"
+        }, {
+          "target" : "`c_timestamp  __ for--today`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_timestamp  __ for--today`"
+          },
+          "description" : "",
+          "_row_id" : "5468552720059353202"
+        }, {
+          "target" : "`c_array-int  _ int`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_array-int  _ int`"
+          },
+          "description" : "",
+          "_row_id" : "3398829616346654891"
+        }, {
+          "target" : "`c_array-string  _ string`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_array-string  _ string`"
+          },
+          "description" : "",
+          "_row_id" : "3776529149179187739"
+        }, {
+          "target" : "`c_array--long`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_array--long`"
+          },
+          "description" : "",
+          "_row_id" : "7279353874910293810"
+        }, {
+          "target" : "`c_array-- boolean `",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_array-- boolean `"
+          },
+          "description" : "",
+          "_row_id" : "2964541789534839740"
+        }, {
+          "target" : "`-- c_array_timestamp -- `",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`-- c_array_timestamp -- `"
+          },
+          "description" : "",
+          "_row_id" : "3700422187171101380"
+        }, {
+          "target" : "`c_array -- float`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_array -- float`"
+          },
+          "description" : "",
+          "_row_id" : "4094424872423486398"
+        }, {
+          "target" : "`c_array -- decimal`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_array -- decimal`"
+          },
+          "description" : "",
+          "_row_id" : "2186269462853374223"
+        }, {
+          "target" : "`c_struct -- _  `",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_struct -- _  `"
+          },
+          "description" : "",
+          "_row_id" : "923982384683645435"
+        }, {
+          "target" : "p_short",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_short"
+          },
+          "description" : "",
+          "_row_id" : "2535779276718328392"
+        }, {
+          "target" : "p_int",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_int"
+          },
+          "description" : "",
+          "_row_id" : "3032296645885821628"
+        }, {
+          "target" : "p_long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_long"
+          },
+          "description" : "",
+          "_row_id" : "5372185269218613089"
+        }, {
+          "target" : "p_decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_decimal"
+          },
+          "description" : "",
+          "_row_id" : "7002786964907568868"
+        }, {
+          "target" : "p_float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_float"
+          },
+          "description" : "",
+          "_row_id" : "4508530974773188932"
+        }, {
+          "target" : "p_boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_boolean"
+          },
+          "description" : "",
+          "_row_id" : "3091794649157831191"
+        }, {
+          "target" : "p_double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_double"
+          },
+          "description" : "",
+          "_row_id" : "1815759178750458831"
+        }, {
+          "target" : "p_string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_string"
+          },
+          "description" : "",
+          "_row_id" : "6289047407812383775"
+        }, {
+          "target" : "p_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_date"
+          },
+          "description" : "",
+          "_row_id" : "3815712365784384369"
+        }, {
+          "target" : "p_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "p_timestamp"
+          },
+          "description" : "",
+          "_row_id" : "1424081433951107188"
+        }, {
+          "target" : "c_configs",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_configs"
+          },
+          "description" : "",
+          "_row_id" : "2042657728739814536"
+        }, {
+          "target" : "c_udfs",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_udfs"
+          },
+          "description" : "",
+          "_row_id" : "8005573996176989282"
+        } ]
       }
     },
     "QTebrQxcnMAv36Nrl63HZ" : {
@@ -3119,8 +3227,8 @@
       "metadata" : {
         "label" : "Subgraph_4_1_1",
         "slug" : "Subgraph_4_1_1",
-        "x" : 1980,
-        "y" : 300,
+        "x" : 1800,
+        "y" : 280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -3181,8 +3289,138 @@
         "sourcePort" : "LtJNJ9K2E3T5WSgm96Hxv",
         "target" : "uO641onqNbuvrG69asLC4",
         "targetPort" : "4q9XiJtbudq42SNvLLJcF"
+      }, {
+        "id" : "RC71uhQk4JAYJhWEHU_ay$$oO0wNyUPIlveflJsGEt_r",
+        "source" : "uO641onqNbuvrG69asLC4",
+        "sourcePort" : "Uis7YXQybZGwQKxiIeor7",
+        "target" : "l62ngazQJIGNJ3t1FgVCz",
+        "targetPort" : "Hylo0aHXKUg0fV25-FyWM"
+      }, {
+        "id" : "edhh8dm4WMNaDxDwNWDRu$$sdfLFLihZ2TpH1UN6abu0",
+        "source" : "kJhGIl4913igbop3zHWgB",
+        "sourcePort" : "Hva5MZZ-7DL6Hbo60kTk0",
+        "target" : "hGgXKTfmsL-h-QNQYA2Ro",
+        "targetPort" : "YUL048p3rFwlQ-dLFY0_a"
+      }, {
+        "id" : "oSF231Fras5Ve3OZcvV7y$$rHmGb4xMCv5vHIW97gDsn",
+        "source" : "hGgXKTfmsL-h-QNQYA2Ro",
+        "sourcePort" : "7BTxigjNe4Wk5dZzGhEtQ",
+        "target" : "vLDTgHevVHKQUJu130PVx",
+        "targetPort" : "3hNzx18Fjab7zrrfF5kCB"
+      }, {
+        "id" : "imAgHOtUA-_KweWCRVars",
+        "source" : "kJhGIl4913igbop3zHWgB",
+        "sourcePort" : "Hva5MZZ-7DL6Hbo60kTk0",
+        "target" : "QezeGN_HIODRv516024eh",
+        "targetPort" : "i-KI3P1n-3oitvCXWcfIW"
+      }, {
+        "id" : "qzHyYQZfmdkvt5ke-_ICj",
+        "source" : "QezeGN_HIODRv516024eh",
+        "sourcePort" : "RLwj_FQ5FOnl1S-jW60s8",
+        "target" : "tnvPUyKHAzjnDjUQOPEYw",
+        "targetPort" : "Pji4H7MgfrllUuUxg1v5m"
       } ],
       "processes" : {
+        "hGgXKTfmsL-h-QNQYA2Ro" : {
+          "id" : "hGgXKTfmsL-h-QNQYA2Ro",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_7",
+            "slug" : "Reformat_7",
+            "x" : 860,
+            "y" : 600,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "YUL048p3rFwlQ-dLFY0_a",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "7BTxigjNe4Wk5dZzGhEtQ",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ "YUL048p3rFwlQ-dLFY0_a$$nfBJ1b6oyDrMD7Xb7FNhk##c_struct.col-1", "YUL048p3rFwlQ-dLFY0_a$$nfBJ1b6oyDrMD7Xb7FNhk##c_struct" ],
+            "expressions" : [ {
+              "target" : "nested.field.col1",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "c_struct.`col-1`"
+              },
+              "description" : "",
+              "_row_id" : "c_171"
+            }, {
+              "target" : "nested.field.col2",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "call_func('named_struct', 'a', named_struct('test1', named_struct('test- another', 2)), 'b', named_struct('test1', named_struct('test- another', 2)))"
+              },
+              "description" : "",
+              "_row_id" : "c_172"
+            } ]
+          }
+        },
+        "tnvPUyKHAzjnDjUQOPEYw" : {
+          "id" : "tnvPUyKHAzjnDjUQOPEYw",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_9",
+            "slug" : "Reformat_9",
+            "x" : 1120,
+            "y" : 760,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "Pji4H7MgfrllUuUxg1v5m",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "VZNjHkBFcJv_rpC8K1brK",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ "Pji4H7MgfrllUuUxg1v5m$$knI6-51wLnIA1M8qgwo3z##c_int.test.value1", "Pji4H7MgfrllUuUxg1v5m$$knI6-51wLnIA1M8qgwo3z##c_int.test.value1.complex-struct1.diabetes.medication", "Pji4H7MgfrllUuUxg1v5m$$knI6-51wLnIA1M8qgwo3z##c_int.test.value1.complex-struct1.diabetes.medication.medicationsClasses", "Pji4H7MgfrllUuUxg1v5m$$knI6-51wLnIA1M8qgwo3z##c_int.test.value1.complex-array1.diabetes" ],
+            "expressions" : [ {
+              "target" : "value1",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c_int.test.value1`"
+              },
+              "description" : "",
+              "_row_id" : "c_167"
+            }, {
+              "target" : "diabetes",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c_int.test.value1.complex-array1.diabetes`"
+              },
+              "description" : "",
+              "_row_id" : "c_168"
+            }, {
+              "target" : "medicationsClasses",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c_int.test.value1.complex-struct1.diabetes.medication`.medicationsClasses"
+              },
+              "description" : "",
+              "_row_id" : "c_169"
+            } ]
+          }
+        },
         "E1vqhvpw_0tOVKqsmSyyZ" : {
           "id" : "E1vqhvpw_0tOVKqsmSyyZ",
           "component" : "Subgraph",
@@ -3585,43 +3823,6 @@
             }
           }
         },
-        "jXAIarxmRsKCNmKuiGDQW" : {
-          "id" : "jXAIarxmRsKCNmKuiGDQW",
-          "component" : "Script",
-          "metadata" : {
-            "label" : "Script_2_1_1",
-            "slug" : "Script_2_1_1",
-            "x" : 540,
-            "y" : 340,
-            "phase" : 0,
-            "cache" : false,
-            "detailedStats" : false,
-            "isImported" : false
-          },
-          "ports" : {
-            "inputs" : [ {
-              "id" : "lScHRqffdRoqYm68t7hOp",
-              "slug" : "in0"
-            }, {
-              "id" : "wxMn69Jvv8mVPRfxpnxTM",
-              "slug" : "in1"
-            }, {
-              "id" : "FMrhYJtofR7qIIOON9XEo",
-              "slug" : "in2"
-            } ],
-            "outputs" : [ {
-              "id" : "LtJNJ9K2E3T5WSgm96Hxv",
-              "slug" : "out0"
-            } ],
-            "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : false
-          },
-          "properties" : {
-            "script" : "out1=in0.select(\"c-string\")\nout2=in1.select(\"c-string\")\nout3=in2.select(\"c-string\")\nout0=out1.union(out2).union(out3)",
-            "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame) -> DataFrame:",
-            "scriptMethodFooter" : "    return out0"
-          }
-        },
         "uO641onqNbuvrG69asLC4" : {
           "id" : "uO641onqNbuvrG69asLC4",
           "component" : "Reformat",
@@ -3667,6 +3868,1989 @@
               "_row_id" : "4381279081983724557"
             } ]
           }
+        },
+        "l62ngazQJIGNJ3t1FgVCz" : {
+          "id" : "l62ngazQJIGNJ3t1FgVCz",
+          "component" : "Subgraph",
+          "metadata" : {
+            "label" : "Subgraph_1",
+            "slug" : "Subgraph_1",
+            "x" : 1000,
+            "y" : 460,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "Hylo0aHXKUg0fV25-FyWM",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "M6PcTyoHXdcSRcRAqo9iy",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : { },
+          "connections" : [ {
+            "id" : "BlkCfUEsvfb5LWie48tbH",
+            "source" : "l62ngazQJIGNJ3t1FgVCz",
+            "sourcePort" : "Hylo0aHXKUg0fV25-FyWM",
+            "target" : "23JD6gZAyxnx3fvhHQ0B1",
+            "targetPort" : "Bp0oDetM1JZ_yLuGro23q"
+          }, {
+            "id" : "Rxbzx5wrLzr_bNQTWabmP",
+            "source" : "23JD6gZAyxnx3fvhHQ0B1",
+            "sourcePort" : "JZGkRLYuhU6TGyliqZw2r",
+            "target" : "l62ngazQJIGNJ3t1FgVCz",
+            "targetPort" : "M6PcTyoHXdcSRcRAqo9iy"
+          } ],
+          "processes" : {
+            "23JD6gZAyxnx3fvhHQ0B1" : {
+              "id" : "23JD6gZAyxnx3fvhHQ0B1",
+              "component" : "Reformat",
+              "metadata" : {
+                "label" : "Reformat_5",
+                "slug" : "Reformat_5",
+                "x" : 420,
+                "y" : 260,
+                "phase" : 0,
+                "cache" : false,
+                "detailedStats" : false,
+                "isImported" : false
+              },
+              "ports" : {
+                "inputs" : [ {
+                  "id" : "Bp0oDetM1JZ_yLuGro23q",
+                  "slug" : "in0"
+                } ],
+                "outputs" : [ {
+                  "id" : "JZGkRLYuhU6TGyliqZw2r",
+                  "slug" : "out"
+                } ],
+                "selectedInputFields" : [ ],
+                "isCustomOutputSchema" : false
+              },
+              "properties" : {
+                "columnsSelector" : [ "Bp0oDetM1JZ_yLuGro23q$$d2Gc9nyNxdC5UyT-jTb-q##c-string", "Bp0oDetM1JZ_yLuGro23q$$d2Gc9nyNxdC5UyT-jTb-q##c_udfs_usage" ],
+                "expressions" : [ {
+                  "target" : "c1",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "concat('$c_sg1_c_string', `c-string`)"
+                  },
+                  "description" : "",
+                  "_row_id" : "c_14"
+                }, {
+                  "target" : "c_udfs_usage",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "c_udfs_usage"
+                  },
+                  "description" : "",
+                  "_row_id" : "4069452462534935815"
+                }, {
+                  "target" : "`c-string`",
+                  "expression" : {
+                    "format" : "sql",
+                    "expression" : "`c-string`"
+                  },
+                  "description" : "",
+                  "_row_id" : "981202872023780809"
+                } ]
+              }
+            }
+          },
+          "externalDependencies" : [ ]
+        },
+        "jXAIarxmRsKCNmKuiGDQW" : {
+          "id" : "jXAIarxmRsKCNmKuiGDQW",
+          "component" : "Script",
+          "metadata" : {
+            "label" : "Script_2_1_1",
+            "slug" : "Script_2_1_1",
+            "x" : 540,
+            "y" : 340,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "lScHRqffdRoqYm68t7hOp",
+              "slug" : "in0"
+            }, {
+              "id" : "wxMn69Jvv8mVPRfxpnxTM",
+              "slug" : "in1"
+            }, {
+              "id" : "FMrhYJtofR7qIIOON9XEo",
+              "slug" : "in2"
+            } ],
+            "outputs" : [ {
+              "id" : "LtJNJ9K2E3T5WSgm96Hxv",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "script" : "out1=in0.select(\"c-string\")\nout2=in1.select(\"c-string\")\nout3=in2.select(\"c-string\")\nout0=out1.union(out2).union(out3)",
+            "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame) -> DataFrame:",
+            "scriptMethodFooter" : "    return out0"
+          }
+        },
+        "QezeGN_HIODRv516024eh" : {
+          "id" : "QezeGN_HIODRv516024eh",
+          "component" : "FlattenSchema",
+          "metadata" : {
+            "label" : "FlattenSchema_1",
+            "slug" : "FlattenSchema_1",
+            "x" : 860,
+            "y" : 760,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "i-KI3P1n-3oitvCXWcfIW",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "RLwj_FQ5FOnl1S-jW60s8",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "explodedColsNewName" : [ {
+              "originalColToExplode" : "c_complex-array",
+              "updatedColToExplode" : "c_complex-array",
+              "colNameAfterExplode" : "c_complex-array"
+            }, {
+              "originalColToExplode" : "c_complex-array.Diabetes",
+              "updatedColToExplode" : "c_complex-array.Diabetes",
+              "colNameAfterExplode" : "c_complex-array-Diabetes"
+            }, {
+              "originalColToExplode" : "c_complex-array.Asthma",
+              "updatedColToExplode" : "c_complex-array.Asthma",
+              "colNameAfterExplode" : "c_complex-array-Asthma"
+            }, {
+              "originalColToExplode" : "c_complex-array.Diabetes.medications",
+              "updatedColToExplode" : "c_complex-array-Diabetes.medications",
+              "colNameAfterExplode" : "c_complex-array-Diabetes-medications"
+            }, {
+              "originalColToExplode" : "c_complex-array.Asthma.medications",
+              "updatedColToExplode" : "c_complex-array-Asthma.medications",
+              "colNameAfterExplode" : "c_complex-array-Asthma-medications"
+            }, {
+              "originalColToExplode" : "c_complex-array.Diabetes.medications.medicationsClasses",
+              "updatedColToExplode" : "c_complex-array-Diabetes-medications.medicationsClasses",
+              "colNameAfterExplode" : "c_complex-array-Diabetes-medications-medicationsClasses"
+            }, {
+              "originalColToExplode" : "c_complex-array.Asthma.medications.medicationsClasses",
+              "updatedColToExplode" : "c_complex-array-Asthma-medications.medicationsClasses",
+              "colNameAfterExplode" : "c_complex-array-Asthma-medications-medicationsClasses"
+            }, {
+              "originalColToExplode" : "c_complex-array.Diabetes.medications.medicationsClasses.className_1",
+              "updatedColToExplode" : "c_complex-array-Diabetes-medications-medicationsClasses.className_1",
+              "colNameAfterExplode" : "c_complex-array-Diabetes-medications-medicationsClasses-className_1"
+            }, {
+              "originalColToExplode" : "c_complex-array.Asthma.medications.medicationsClasses.className_1",
+              "updatedColToExplode" : "c_complex-array-Asthma-medications-medicationsClasses.className_1",
+              "colNameAfterExplode" : "c_complex-array-Asthma-medications-medicationsClasses-className_1"
+            }, {
+              "originalColToExplode" : "c_complex-array.Diabetes.medications.medicationsClasses.className_1.associated-Drug",
+              "updatedColToExplode" : "c_complex-array-Diabetes-medications-medicationsClasses-className_1.associated-Drug",
+              "colNameAfterExplode" : "c_complex-array-Diabetes-medications-medicationsClasses-className_1-associated-Drug"
+            }, {
+              "originalColToExplode" : "c_complex-array.Asthma.medications.medicationsClasses.className_1.associated-Drug",
+              "updatedColToExplode" : "c_complex-array-Asthma-medications-medicationsClasses-className_1.associated-Drug",
+              "colNameAfterExplode" : "c_complex-array-Asthma-medications-medicationsClasses-className_1-associated-Drug"
+            } ],
+            "fsExpressions" : [ {
+              "exploded" : "",
+              "flattenedExpression" : "c_int",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "c_int"
+              },
+              "targetTokens" : [ "c_int" ],
+              "target" : "c_int.test.value1"
+            }, {
+              "exploded" : "✓",
+              "flattenedExpression" : "c_complex-array-Diabetes-medications-medicationsClasses-className_1-associated-Drug.name",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c_complex-array`.Diabetes.medications.medicationsClasses.className_1.`associated-Drug`.name"
+              },
+              "targetTokens" : [ "c_complex-array", "Diabetes", "medications", "medicationsClasses", "className_1", "associated-Drug", "name" ],
+              "target" : "c_int.test.value1.complex-array1.diabetes"
+            }, {
+              "exploded" : "✓",
+              "flattenedExpression" : "c_complex-array-Diabetes.medications",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c_complex-array`.Diabetes.medications"
+              },
+              "targetTokens" : [ "c_complex-array", "Diabetes", "medications" ],
+              "target" : "c_int.test.value1.complex-struct1.diabetes.medication"
+            }, {
+              "exploded" : "✓",
+              "flattenedExpression" : "c_complex-array-Asthma-medications-medicationsClasses-className_1-associated-Drug.cf-use",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`c_complex-array`.Asthma.medications.medicationsClasses.className_1.`associated-Drug`.`cf-use`"
+              },
+              "targetTokens" : [ "c_complex-array", "Asthma", "medications", "medicationsClasses", "className_1", "associated-Drug", "cf-use" ],
+              "target" : "c_int.test.value1.complex-struct1.diabetes.medication.cfuse"
+            } ],
+            "columnsSelector" : [ "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Asthma.medications.medicationsClasses.className_1", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Diabetes.medications.medicationsClasses.className_1.associated-Drug", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Diabetes.medications.medicationsClasses", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Asthma.medications", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Diabetes.medications.medicationsClasses.className_1", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_int", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Asthma.medications.medicationsClasses.className_1.associated-Drug.cf-use", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Asthma.medications.medicationsClasses", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Asthma.medications.medicationsClasses.className_1.associated-Drug", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Diabetes.medications.medicationsClasses.className_1.associated-Drug.name", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Diabetes", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Asthma", "i-KI3P1n-3oitvCXWcfIW$$jQLO3UffoppoKQg6Qc9xe##c_complex-array.Diabetes.medications" ],
+            "explodeColumns" : [ ],
+            "delimiter" : "-"
+          }
+        },
+        "vLDTgHevVHKQUJu130PVx" : {
+          "id" : "vLDTgHevVHKQUJu130PVx",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_8",
+            "slug" : "Reformat_8",
+            "x" : 1060,
+            "y" : 620,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "3hNzx18Fjab7zrrfF5kCB",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "NkoKcxUjyneSVM3ylTllv",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "columnsSelector" : [ "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col2", "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col2.a.test1", "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col2.a", "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col2.a.test1.test- another", "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col2.b", "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col2.b.test1", "3hNzx18Fjab7zrrfF5kCB$$IsWQdnD3lvow4r2uNi9xp##nested.field.col1" ],
+            "expressions" : [ {
+              "target" : "col1",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`nested.field.col1`"
+              },
+              "description" : "",
+              "_row_id" : "c_174"
+            }, {
+              "target" : "test- another",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`nested.field.col2`.a.test1.`test- another`"
+              },
+              "description" : "",
+              "_row_id" : "c_175"
+            }, {
+              "target" : "test1",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "`nested.field.col2`.b.test1"
+              },
+              "description" : "",
+              "_row_id" : "c_176"
+            } ]
+          }
+        },
+        "kJhGIl4913igbop3zHWgB" : {
+          "id" : "kJhGIl4913igbop3zHWgB",
+          "component" : "Source",
+          "metadata" : {
+            "label" : "very_complex_dataset",
+            "slug" : "very_complex_dataset",
+            "x" : 640,
+            "y" : 660,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "Hva5MZZ-7DL6Hbo60kTk0",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "format" : "parquet",
+            "refreshDataset" : false,
+            "datasetTypes" : [ {
+              "label" : "FILE",
+              "value" : "File",
+              "icon" : "File",
+              "width" : "220px"
+            }, {
+              "label" : "WAREHOUSE",
+              "value" : "Warehouse",
+              "icon" : "Database",
+              "width" : "220px"
+            }, {
+              "label" : "CATALOG TABLE",
+              "value" : "Database",
+              "icon" : "Table",
+              "width" : "220px"
+            } ],
+            "dataFormats" : [ {
+              "label" : "PARQUET",
+              "value" : "parquet",
+              "icon" : "Parquet",
+              "width" : "220px"
+            }, {
+              "label" : "AVRO",
+              "value" : "avro",
+              "icon" : "File",
+              "width" : "220px"
+            }, {
+              "label" : "TEXT",
+              "value" : "text",
+              "icon" : "Document",
+              "width" : "220px"
+            }, {
+              "label" : "DELTA",
+              "value" : "delta",
+              "icon" : "Delta",
+              "width" : "220px"
+            }, {
+              "label" : "JSON",
+              "value" : "json",
+              "icon" : "Json",
+              "width" : "220px"
+            }, {
+              "label" : "ORC",
+              "value" : "orc",
+              "icon" : "File",
+              "width" : "220px"
+            }, {
+              "label" : "RANDOMDATACREATOR",
+              "value" : "RandomDataCreator",
+              "icon" : "File",
+              "width" : "220px"
+            }, {
+              "label" : "KAFKASTREAM",
+              "value" : "KafkaStream",
+              "icon" : "File",
+              "width" : "220px"
+            }, {
+              "label" : "CSV",
+              "value" : "csv",
+              "icon" : "Csv",
+              "width" : "220px"
+            }, {
+              "label" : "CUSTOMXLSX",
+              "value" : "CustomXLSX",
+              "icon" : "File",
+              "width" : "220px"
+            } ],
+            "datasetId" : "datasets/very_complex_dataset",
+            "updated" : true,
+            "dataset" : {
+              "path" : "dbfs:/Prophecy/qa_data/parquet/verycomplexdata.parquet",
+              "writeMode" : null,
+              "description" : "very complex dataset dude",
+              "compression" : null,
+              "datetimeRebaseMode" : null,
+              "recursiveFileLookup" : null,
+              "partitionColumns" : null,
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_char",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_time",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "col-1",
+                      "type" : "integer",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "col-2",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "col-3",
+                      "type" : "double",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_struct",
+                      "type" : "boolean",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_complex-array",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "struct",
+                      "fields" : [ {
+                        "name" : "Diabetes",
+                        "type" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "struct",
+                            "fields" : [ {
+                              "name" : "medications",
+                              "type" : {
+                                "type" : "array",
+                                "elementType" : {
+                                  "type" : "struct",
+                                  "fields" : [ {
+                                    "name" : "medicationsClasses",
+                                    "type" : {
+                                      "type" : "array",
+                                      "elementType" : {
+                                        "type" : "struct",
+                                        "fields" : [ {
+                                          "name" : "className_1",
+                                          "type" : {
+                                            "type" : "array",
+                                            "elementType" : {
+                                              "type" : "struct",
+                                              "fields" : [ {
+                                                "name" : "associated-Drug",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              }, {
+                                                "name" : "associated-Drug#2",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              } ]
+                                            },
+                                            "containsNull" : true
+                                          },
+                                          "nullable" : true,
+                                          "metadata" : {
+                                            "description" : "",
+                                            "mappings" : [ ],
+                                            "tags" : [ ]
+                                          }
+                                        }, {
+                                          "name" : "className_2",
+                                          "type" : {
+                                            "type" : "array",
+                                            "elementType" : {
+                                              "type" : "struct",
+                                              "fields" : [ {
+                                                "name" : "associated-Drug",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              }, {
+                                                "name" : "associated-Drug#2",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              } ]
+                                            },
+                                            "containsNull" : true
+                                          },
+                                          "nullable" : true,
+                                          "metadata" : {
+                                            "description" : "",
+                                            "mappings" : [ ],
+                                            "tags" : [ ]
+                                          }
+                                        } ]
+                                      },
+                                      "containsNull" : true
+                                    },
+                                    "nullable" : true,
+                                    "metadata" : {
+                                      "description" : "",
+                                      "mappings" : [ ],
+                                      "tags" : [ ]
+                                    }
+                                  } ]
+                                },
+                                "containsNull" : true
+                              },
+                              "nullable" : true,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            }, {
+                              "name" : "labs",
+                              "type" : {
+                                "type" : "array",
+                                "elementType" : {
+                                  "type" : "struct",
+                                  "fields" : [ {
+                                    "name" : "missing_field",
+                                    "type" : "string",
+                                    "nullable" : true,
+                                    "metadata" : {
+                                      "description" : "",
+                                      "mappings" : [ ],
+                                      "tags" : [ ]
+                                    }
+                                  } ]
+                                },
+                                "containsNull" : true
+                              },
+                              "nullable" : true,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            } ]
+                          },
+                          "containsNull" : true
+                        },
+                        "nullable" : true,
+                        "metadata" : {
+                          "description" : "",
+                          "mappings" : [ ],
+                          "tags" : [ ]
+                        }
+                      }, {
+                        "name" : "Asthma",
+                        "type" : {
+                          "type" : "array",
+                          "elementType" : {
+                            "type" : "struct",
+                            "fields" : [ {
+                              "name" : "medications",
+                              "type" : {
+                                "type" : "array",
+                                "elementType" : {
+                                  "type" : "struct",
+                                  "fields" : [ {
+                                    "name" : "medicationsClasses",
+                                    "type" : {
+                                      "type" : "array",
+                                      "elementType" : {
+                                        "type" : "struct",
+                                        "fields" : [ {
+                                          "name" : "className_1",
+                                          "type" : {
+                                            "type" : "array",
+                                            "elementType" : {
+                                              "type" : "struct",
+                                              "fields" : [ {
+                                                "name" : "associated-Drug",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              }, {
+                                                "name" : "associated-Drug#2",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              } ]
+                                            },
+                                            "containsNull" : true
+                                          },
+                                          "nullable" : true,
+                                          "metadata" : {
+                                            "description" : "",
+                                            "mappings" : [ ],
+                                            "tags" : [ ]
+                                          }
+                                        }, {
+                                          "name" : "className_2",
+                                          "type" : {
+                                            "type" : "array",
+                                            "elementType" : {
+                                              "type" : "struct",
+                                              "fields" : [ {
+                                                "name" : "associated-Drug",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              }, {
+                                                "name" : "associated-Drug#2",
+                                                "type" : {
+                                                  "type" : "array",
+                                                  "elementType" : {
+                                                    "type" : "struct",
+                                                    "fields" : [ {
+                                                      "name" : "name",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "dose",
+                                                      "type" : "integer",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "cf-use",
+                                                      "type" : "double",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "take-it_on",
+                                                      "type" : "boolean",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    }, {
+                                                      "name" : "strength",
+                                                      "type" : "string",
+                                                      "nullable" : true,
+                                                      "metadata" : {
+                                                        "description" : "",
+                                                        "mappings" : [ ],
+                                                        "tags" : [ ]
+                                                      }
+                                                    } ]
+                                                  },
+                                                  "containsNull" : true
+                                                },
+                                                "nullable" : true,
+                                                "metadata" : {
+                                                  "description" : "",
+                                                  "mappings" : [ ],
+                                                  "tags" : [ ]
+                                                }
+                                              } ]
+                                            },
+                                            "containsNull" : true
+                                          },
+                                          "nullable" : true,
+                                          "metadata" : {
+                                            "description" : "",
+                                            "mappings" : [ ],
+                                            "tags" : [ ]
+                                          }
+                                        } ]
+                                      },
+                                      "containsNull" : true
+                                    },
+                                    "nullable" : true,
+                                    "metadata" : {
+                                      "description" : "",
+                                      "mappings" : [ ],
+                                      "tags" : [ ]
+                                    }
+                                  } ]
+                                },
+                                "containsNull" : true
+                              },
+                              "nullable" : true,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            }, {
+                              "name" : "labs",
+                              "type" : {
+                                "type" : "array",
+                                "elementType" : {
+                                  "type" : "struct",
+                                  "fields" : [ {
+                                    "name" : "missing_field",
+                                    "type" : "string",
+                                    "nullable" : true,
+                                    "metadata" : {
+                                      "description" : "",
+                                      "mappings" : [ ],
+                                      "tags" : [ ]
+                                    }
+                                  } ]
+                                },
+                                "containsNull" : true
+                              },
+                              "nullable" : true,
+                              "metadata" : {
+                                "description" : "",
+                                "mappings" : [ ],
+                                "tags" : [ ]
+                              }
+                            } ]
+                          },
+                          "containsNull" : true
+                        },
+                        "nullable" : true,
+                        "metadata" : {
+                          "description" : "",
+                          "mappings" : [ ],
+                          "tags" : [ ]
+                        }
+                      } ]
+                    },
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_complex-struct",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "problems",
+                      "type" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "struct",
+                          "fields" : [ {
+                            "name" : "Diabetes",
+                            "type" : {
+                              "type" : "array",
+                              "elementType" : {
+                                "type" : "struct",
+                                "fields" : [ {
+                                  "name" : "medications",
+                                  "type" : {
+                                    "type" : "array",
+                                    "elementType" : {
+                                      "type" : "struct",
+                                      "fields" : [ {
+                                        "name" : "medicationsClasses",
+                                        "type" : {
+                                          "type" : "array",
+                                          "elementType" : {
+                                            "type" : "struct",
+                                            "fields" : [ {
+                                              "name" : "className_1",
+                                              "type" : {
+                                                "type" : "array",
+                                                "elementType" : {
+                                                  "type" : "struct",
+                                                  "fields" : [ {
+                                                    "name" : "associated-Drug",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  }, {
+                                                    "name" : "associated-Drug#2",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  } ]
+                                                },
+                                                "containsNull" : true
+                                              },
+                                              "nullable" : true,
+                                              "metadata" : {
+                                                "description" : "",
+                                                "mappings" : [ ],
+                                                "tags" : [ ]
+                                              }
+                                            }, {
+                                              "name" : "className_2",
+                                              "type" : {
+                                                "type" : "array",
+                                                "elementType" : {
+                                                  "type" : "struct",
+                                                  "fields" : [ {
+                                                    "name" : "associated-Drug",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  }, {
+                                                    "name" : "associated-Drug#2",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  } ]
+                                                },
+                                                "containsNull" : true
+                                              },
+                                              "nullable" : true,
+                                              "metadata" : {
+                                                "description" : "",
+                                                "mappings" : [ ],
+                                                "tags" : [ ]
+                                              }
+                                            } ]
+                                          },
+                                          "containsNull" : true
+                                        },
+                                        "nullable" : true,
+                                        "metadata" : {
+                                          "description" : "",
+                                          "mappings" : [ ],
+                                          "tags" : [ ]
+                                        }
+                                      } ]
+                                    },
+                                    "containsNull" : true
+                                  },
+                                  "nullable" : true,
+                                  "metadata" : {
+                                    "description" : "",
+                                    "mappings" : [ ],
+                                    "tags" : [ ]
+                                  }
+                                }, {
+                                  "name" : "labs",
+                                  "type" : {
+                                    "type" : "array",
+                                    "elementType" : {
+                                      "type" : "struct",
+                                      "fields" : [ {
+                                        "name" : "missing_field",
+                                        "type" : "string",
+                                        "nullable" : true,
+                                        "metadata" : {
+                                          "description" : "",
+                                          "mappings" : [ ],
+                                          "tags" : [ ]
+                                        }
+                                      } ]
+                                    },
+                                    "containsNull" : true
+                                  },
+                                  "nullable" : true,
+                                  "metadata" : {
+                                    "description" : "",
+                                    "mappings" : [ ],
+                                    "tags" : [ ]
+                                  }
+                                } ]
+                              },
+                              "containsNull" : true
+                            },
+                            "nullable" : true,
+                            "metadata" : {
+                              "description" : "",
+                              "mappings" : [ ],
+                              "tags" : [ ]
+                            }
+                          }, {
+                            "name" : "Asthma",
+                            "type" : {
+                              "type" : "array",
+                              "elementType" : {
+                                "type" : "struct",
+                                "fields" : [ {
+                                  "name" : "medications",
+                                  "type" : {
+                                    "type" : "array",
+                                    "elementType" : {
+                                      "type" : "struct",
+                                      "fields" : [ {
+                                        "name" : "medicationsClasses",
+                                        "type" : {
+                                          "type" : "array",
+                                          "elementType" : {
+                                            "type" : "struct",
+                                            "fields" : [ {
+                                              "name" : "className_1",
+                                              "type" : {
+                                                "type" : "array",
+                                                "elementType" : {
+                                                  "type" : "struct",
+                                                  "fields" : [ {
+                                                    "name" : "associated-Drug",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  }, {
+                                                    "name" : "associated-Drug#2",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  } ]
+                                                },
+                                                "containsNull" : true
+                                              },
+                                              "nullable" : true,
+                                              "metadata" : {
+                                                "description" : "",
+                                                "mappings" : [ ],
+                                                "tags" : [ ]
+                                              }
+                                            }, {
+                                              "name" : "className_2",
+                                              "type" : {
+                                                "type" : "array",
+                                                "elementType" : {
+                                                  "type" : "struct",
+                                                  "fields" : [ {
+                                                    "name" : "associated-Drug",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  }, {
+                                                    "name" : "associated-Drug#2",
+                                                    "type" : {
+                                                      "type" : "array",
+                                                      "elementType" : {
+                                                        "type" : "struct",
+                                                        "fields" : [ {
+                                                          "name" : "name",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "dose",
+                                                          "type" : "integer",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "cf-use",
+                                                          "type" : "double",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "take-it_on",
+                                                          "type" : "boolean",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        }, {
+                                                          "name" : "strength",
+                                                          "type" : "string",
+                                                          "nullable" : true,
+                                                          "metadata" : {
+                                                            "description" : "",
+                                                            "mappings" : [ ],
+                                                            "tags" : [ ]
+                                                          }
+                                                        } ]
+                                                      },
+                                                      "containsNull" : true
+                                                    },
+                                                    "nullable" : true,
+                                                    "metadata" : {
+                                                      "description" : "",
+                                                      "mappings" : [ ],
+                                                      "tags" : [ ]
+                                                    }
+                                                  } ]
+                                                },
+                                                "containsNull" : true
+                                              },
+                                              "nullable" : true,
+                                              "metadata" : {
+                                                "description" : "",
+                                                "mappings" : [ ],
+                                                "tags" : [ ]
+                                              }
+                                            } ]
+                                          },
+                                          "containsNull" : true
+                                        },
+                                        "nullable" : true,
+                                        "metadata" : {
+                                          "description" : "",
+                                          "mappings" : [ ],
+                                          "tags" : [ ]
+                                        }
+                                      } ]
+                                    },
+                                    "containsNull" : true
+                                  },
+                                  "nullable" : true,
+                                  "metadata" : {
+                                    "description" : "",
+                                    "mappings" : [ ],
+                                    "tags" : [ ]
+                                  }
+                                }, {
+                                  "name" : "labs",
+                                  "type" : {
+                                    "type" : "array",
+                                    "elementType" : {
+                                      "type" : "struct",
+                                      "fields" : [ {
+                                        "name" : "missing_field",
+                                        "type" : "string",
+                                        "nullable" : true,
+                                        "metadata" : {
+                                          "description" : "",
+                                          "mappings" : [ ],
+                                          "tags" : [ ]
+                                        }
+                                      } ]
+                                    },
+                                    "containsNull" : true
+                                  },
+                                  "nullable" : true,
+                                  "metadata" : {
+                                    "description" : "",
+                                    "mappings" : [ ],
+                                    "tags" : [ ]
+                                  }
+                                } ]
+                              },
+                              "containsNull" : true
+                            },
+                            "nullable" : true,
+                            "metadata" : {
+                              "description" : "",
+                              "mappings" : [ ],
+                              "tags" : [ ]
+                            }
+                          } ]
+                        },
+                        "containsNull" : true
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "mergeSchema" : null,
+              "modifiedBefore" : null,
+              "pathGlobFilter" : null,
+              "int96RebaseMode" : null,
+              "useSchema" : false,
+              "modifiedAfter" : null
+            },
+            "isNewDataset" : false,
+            "disabled" : false,
+            "datasetType" : "File"
+          }
         }
       }
     },
@@ -3709,8 +5893,8 @@
       "metadata" : {
         "label" : "Reformat_1_1_1",
         "slug" : "Reformat_1_1_1",
-        "x" : 460,
-        "y" : 320,
+        "x" : 440,
+        "y" : 360,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -3729,7 +5913,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_string", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##- c long", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array--long", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_decimal  -  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_float", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_decimal", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_float-__  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c-string", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##-- c_array_timestamp -- ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array-int  _ int", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_timestamp  __ for--today", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_double", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_struct -- _  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_date", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c- short", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array-string  _ string", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c  - int", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array -- decimal", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c -  boolean _  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_timestamp", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array -- float", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_date-for today", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_int", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array-- boolean ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_long", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_short", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_double", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_boolean" ],
+        "columnsSelector" : [ "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c  - int", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_string", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##- c long", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array-- boolean ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_timestamp  __ for--today", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array -- decimal", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array-string  _ string", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_decimal  -  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_short", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_long", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_struct -- _  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_boolean", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_float-__  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_float", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array--long", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_date", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c- short", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_decimal", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array -- float", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_timestamp", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_array-int  _ int", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_int", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##-- c_array_timestamp -- ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_double", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c_date-for today", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c -  boolean _  ", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##c-string", "vx44pfNFHnIL7ZjnQJrNL$$pSkcwq6IWWiJCirWC3KZW##p_double" ],
         "expressions" : [ {
           "target" : "`c- short`",
           "expression" : {
