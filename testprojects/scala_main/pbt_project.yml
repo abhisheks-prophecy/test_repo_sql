@@ -96,7 +96,7 @@ pipelines:
     artefactID: ''
     language: scala
     createdAt: '2022-06-29 05:58:26'
-    modifiedAt: '2023-03-20 07:02:27'
+    modifiedAt: '2023-03-21 14:52:34'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -250,6 +250,21 @@ pipelines:
       - datasets/src_jdbc_userandpass_test_table
       outputs:
       - datasets/dest_test
+    subgraphs: []
+    dependencies: {}
+  pipelines/SCALA_VECTOR_TYPE:
+    name: SCALA_VECTOR_TYPE
+    description: SCALA_VECTOR_TYPE
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-03-21 14:38:43'
+    modifiedAt: '2023-03-21 14:49:02'
+    datasets:
+      inputs:
+      - datasets/normalization_csv_dataset
+      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
@@ -1246,6 +1261,21 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-03-19 11:47:46'
         modifiedAt: '2023-03-19 11:47:46'
+  datasets/normalization_csv_dataset:
+    name: normalization_csv_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-21 14:46:16'
+    modifiedAt: '2023-03-21 14:49:02'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-21 14:46:16'
+        modifiedAt: '2023-03-21 14:46:16'
 templates:
   templates/maven:
     name: maven
