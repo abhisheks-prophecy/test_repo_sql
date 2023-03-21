@@ -26,7 +26,7 @@ def pipeline(spark: SparkSession) -> None:
     df_Join_1 = Join_1(spark, df_all_type_part_parquet, df_all_type_part_parquet)
     df_Limit_7 = Limit_7(spark, df_Join_1)
     df_Repartition_1 = Repartition_1(spark, df_Limit_7)
-    df_SubGraph_2 = SubGraph_2(spark, df_Repartition_1, df_RowDistributor_1_out0)
+    df_SubGraph_2 = SubGraph_2(spark, Config.SubGraph_2, df_Repartition_1, df_RowDistributor_1_out0)
     df_Limit_8 = Limit_8(spark, df_SubGraph_2)
     df_Reformat_6 = Reformat_6(spark, df_Limit_8)
     df_orc_src = orc_src(spark)
@@ -43,6 +43,7 @@ def pipeline(spark: SparkSession) -> None:
     df_Reformat_4 = Reformat_4(spark, df_text)
     df_all_type_main_1_out0, df_all_type_main_1_out1, df_all_type_main_1_out2 = all_type_main_1(
         spark, 
+        Config.all_type_main_1, 
         df_all_type_part_parquet, 
         df_all_type_part_parquet, 
         df_all_type_part_parquet
@@ -78,7 +79,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_11 = Reformat_11(spark, df_Script_6)
     df_Limit_3 = Limit_3(spark, df_Script_1)
-    df_SubGraph_7 = SubGraph_7(spark, df_Script_3)
+    df_SubGraph_7 = SubGraph_7(spark, Config.SubGraph_7, df_Script_3)
     df_Limit_2 = Limit_2(spark, df_SubGraph_7)
     df_src_parquet_all_type_no_partition = src_parquet_all_type_no_partition(spark)
     df_Limit_9 = Limit_9(spark, df_Join_4)

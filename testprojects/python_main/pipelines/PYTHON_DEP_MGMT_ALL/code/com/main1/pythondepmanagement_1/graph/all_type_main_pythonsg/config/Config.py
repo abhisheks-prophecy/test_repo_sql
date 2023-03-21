@@ -1,6 +1,12 @@
 from com.main1.pythondepmanagement_1.graph.all_type_main_pythonsg.Subgraph_4_1_1.config.Config import (
     SubgraphConfig as Subgraph_4_1_1_Config
 )
+from com.main1.pythondepmanagement_1.graph.all_type_main_pythonsg.Subgraph_1.config.Config import (
+    SubgraphConfig as Subgraph_1_Config
+)
+from com.main1.pythondepmanagement_1.graph.all_type_main_pythonsg.Subgraph_2.config.Config import (
+    SubgraphConfig as Subgraph_2_Config
+)
 from prophecy.config import ConfigBase
 
 
@@ -32,6 +38,8 @@ class SubgraphConfig(ConfigBase):
             c_sg1_array_string: list=["this is first $$", "this is second $$"],
             c_sg1_record: dict={},
             c_sg1_spark_expressions: str="concat('a', 'b')",
+            Subgraph_1: dict={},
+            Subgraph_2: dict={},
             **kwargs
     ):
 
@@ -53,6 +61,18 @@ class SubgraphConfig(ConfigBase):
             C_sg1_record
         )
         self.c_sg1_spark_expressions = c_sg1_spark_expressions
+        self.Subgraph_1 = self.get_config_object(
+            prophecy_spark, 
+            Subgraph_1_Config(prophecy_spark = prophecy_spark), 
+            Subgraph_1, 
+            Subgraph_1_Config
+        )
+        self.Subgraph_2 = self.get_config_object(
+            prophecy_spark, 
+            Subgraph_2_Config(prophecy_spark = prophecy_spark), 
+            Subgraph_2, 
+            Subgraph_2_Config
+        )
         pass
 
     def update(self, updated_config):
@@ -62,6 +82,8 @@ class SubgraphConfig(ConfigBase):
         self.c_sg1_array_string = updated_config.c_sg1_array_string
         self.c_sg1_record = updated_config.c_sg1_record
         self.c_sg1_spark_expressions = updated_config.c_sg1_spark_expressions
+        self.Subgraph_1 = updated_config.Subgraph_1
+        self.Subgraph_2 = updated_config.Subgraph_2
         pass
 
 Config = SubgraphConfig()

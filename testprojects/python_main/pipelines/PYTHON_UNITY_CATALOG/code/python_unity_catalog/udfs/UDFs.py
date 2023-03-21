@@ -15,9 +15,9 @@ from prophecy.lookups import (
 initial = 10
 
 def registerUDFs(spark: SparkSession):
-    spark.udf.register("squared", squared)
     spark.udf.register("factorial", factorial)
     spark.udf.register("udf1", udf1)
+    spark.udf.register("squared", squared)
     spark.udf.register("random_string", random_string)
     spark.udf.register("udf_scipy_dependency", udf_scipy_dependency)
     spark.udf.register("udf_swap_product", udf_swap_product)
@@ -28,19 +28,6 @@ def registerUDFs(spark: SparkSession):
     spark.udf.register("udf_maptype", udf_maptype)
     spark.udf.register("udf_tokenize", udf_tokenize)
     spark.udf.register("squared_udf", squared_udf)
-
-def squaredGenerator():
-    initial = 10
-
-    @udf(returnType = IntegerType())
-    def func(input):
-        input = int(input) if input is not None else 2
-
-        return int(input) * int(input) * initial if input is not None else initial
-
-    return func
-
-squared = squaredGenerator()
 
 def factorialGenerator():
     initial = 10
@@ -65,6 +52,19 @@ def udf1Generator():
     return func
 
 udf1 = udf1Generator()
+
+def squaredGenerator():
+    initial = 10
+
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
+
+        return int(input) * int(input) * initial if input is not None else initial
+
+    return func
+
+squared = squaredGenerator()
 
 def random_stringGenerator():
     initial = 10

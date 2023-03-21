@@ -165,6 +165,14 @@ def all_type_main_pythonsg(
         df_RowDistributor_1_1_1_out1, 
         df_Script_1_1_1
     )
+    df_Reformat_5 = Reformat_5(spark, df_Reformat_2_1_1)
+    df_Reformat_5 = collectMetrics(
+        spark, 
+        df_Reformat_5, 
+        "all_type_main_pythonsg", 
+        "7Lx4J_SbHcFsLK8LlsKM8$$Hxd6_ln8Vjw4ZV-LltKwS", 
+        "TGHCKhuXd1aM7IHgIIuST$$UPk8WuPU-YGpE6g8DfQHC"
+    )
     df_OrderBy_3_1_1 = OrderBy_3_1_1(spark, in2)
     df_OrderBy_3_1_1 = collectMetrics(
         spark, 
@@ -181,6 +189,10 @@ def all_type_main_pythonsg(
         "-Nrb7QUp1eCEqz0AyZHzO$$a6zhSA6Gdx94o9StIiW_z", 
         "LcvMPPnxzPBzC6QZPp_KJ$$1TmSKXe2RNj6NQRzRtyB9"
     )
+    df_Subgraph_1 = Subgraph_1(spark, config.Subgraph_1, df_Reformat_5)
+    df_Subgraph_2 = Subgraph_2(spark, config.Subgraph_2, df_Subgraph_1)
+    df_Subgraph_2.cache().count()
+    df_Subgraph_2.unpersist()
     df_Reformat_8_1_1 = Reformat_8_1_1(spark, in1)
     df_Reformat_8_1_1 = collectMetrics(
         spark, 

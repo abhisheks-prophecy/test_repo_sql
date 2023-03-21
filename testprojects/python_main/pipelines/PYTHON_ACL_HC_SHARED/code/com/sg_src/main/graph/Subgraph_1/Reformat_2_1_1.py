@@ -2,7 +2,7 @@ from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.libs import typed_lit
-from com.sg_src.main.config.ConfigStore import *
+from .config import *
 from com.sg_src.main.udfs.UDFs import *
 
 def Reformat_2_1_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
@@ -34,5 +34,13 @@ def Reformat_2_1_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("p_double"), 
         col("p_string"), 
         col("p_date"), 
-        col("p_timestamp")
+        col("p_timestamp"), 
+        concat(
+            lit(Config.c_sg1_array_string[0]), 
+            lit(Config.c_string), 
+            lit(Config.c_sg1_record.c_sg1_record_c_string), 
+            lit(Config.c_sg1_record.c_sg1_record_c_boolean)
+          )\
+          .alias("c_configs"), 
+        concat(squared(col("`c  - int`")), factorial(lit(2)), random_string(lit(4))).alias("c_udfs")
     )
