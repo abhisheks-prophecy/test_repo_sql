@@ -261,7 +261,7 @@ Geo AS (
 
   SELECT 
     ST_GEOGFROMTEXT('POINT EMPTY') AS c_geo_from_empty,
-    ST_ISCLOSED(ST_GEOGFROMTEXT('GEOMETRYCOLLECTION(POINT(0 0), LINESTRING(1 2, 2 1))')) AS c_geo_is_closed,
+    ST_ISCLOSED(ST_GEOGFROMTEXT('GEOMETRYCOLLECTION(POINT(0 0), LINESTRING(1 2, 2 1))')) AS c_geo_is_closed_bool,
     ST_SIMPLIFY(ST_GEOGFROMTEXT('LINESTRING(0 0, 0.05 0, 0.1 0, 0.15 0, 2 0)'), 1),
     ST_STARTPOINT(ST_GEOGFROMTEXT('LINESTRING(1 1, 2 1, 3 2, 3 3)')),
     ST_SNAPTOGRID(ST_GEOGFROMTEXT('LINESTRING(0 0, 0.05 0, 0.1 0, 0.15 0, 2 0)'), 1),
@@ -317,13 +317,66 @@ Geo AS (
     ST_GEOGFROM('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))'),
     ST_GEOGFROMGEOJSON(ST_ASGEOJSON(ST_GEOGFROMTEXT('POLYGON((-125 48, -124 46, -117 46, -117 49, -125 48))'))),
     ST_GEOGFROMWKB(ST_ASBINARY(ST_GEOGFROMTEXT('POLYGON((-125 48, -124 46, -117 46, -117 49, -125 48))'))),
-    ST_GEOHASH(ST_GEOGPOINT(-122.35, 47.62), 10),
-    ST_GEOMETRYTYPE(ST_GEOGFROMTEXT('GEOMETRYCOLLECTION(MULTIPOINT(-1 2, 0 12), LINESTRING(-2 4, 0 6))')),
-    ST_INTERIORRINGS(ST_GEOGFROMTEXT('POLYGON((1 1, 1 10, 5 10, 5 1, 1 1), (2 2.5, 3.5 3, 2.5 2, 2 2.5), (3.5 7, 4 6, 3 3, 3.5 7))')),
-    ST_INTERSECTS(ST_GEOGPOINT(-122, 47), ST_GEOGPOINT(122, 47)),
-    ST_INTERSECTSBOX(ST_GEOGPOINT(10, 10), 90, 0, -90, 20)
+    ST_GEOHASH(ST_GEOGPOINT(-122.35, 47.62), 10) AS c_string1,
+    ST_GEOMETRYTYPE(ST_GEOGFROMTEXT('GEOMETRYCOLLECTION(MULTIPOINT(-1 2, 0 12), LINESTRING(-2 4, 0 6))')) AS c_string,
+    ST_INTERIORRINGS(ST_GEOGFROMTEXT('POLYGON((1 1, 1 10, 5 10, 5 1, 1 1), (2 2.5, 3.5 3, 2.5 2, 2 2.5), (3.5 7, 4 6, 3 3, 3.5 7))')) AS c_array_geography,
+    ST_INTERSECTS(ST_GEOGPOINT(-122, 47), ST_GEOGPOINT(122, 47)) AS c_bool1,
+    ST_INTERSECTSBOX(ST_GEOGPOINT(10, 10), 90, 0, -90, 20) AS c_bool
   
   FROM Reformat_2 AS in0
+
+),
+
+Aggregate_1 AS (
+
+  SELECT 
+    any_value(c_int64) AS c_int64,
+    any_value(c_bignumeric) AS c_bignumeric,
+    any_value(c_bool) AS c_bool,
+    any_value(c_numeric_1) AS c_numeric_1,
+    any_value(c_date) AS c_date,
+    any_value(c_time) AS c_time,
+    any_value(c_timestamp) AS c_timestamp
+  
+  FROM Reformat_2 AS in0
+  
+  GROUP BY c_string
+  
+  HAVING c_bignumeric > 0
+
+),
+
+Join_3 AS (
+
+  SELECT 
+    in0.c_float_complex_expression AS c_float_complex_expression,
+    in1.c_int64 AS c_int64,
+    in1.c_bignumeric AS c_bignumeric,
+    in1.c_bignumeric AS c_numeric,
+    in1.c_date AS c_date,
+    in1.c_time AS c_time,
+    in0.c_bool AS c_bool,
+    in0.c_string AS c_string
+  
+  FROM Filter_1 AS in0
+  INNER JOIN Aggregate_1 AS in1
+     ON in0.c_bool = in1.c_bool
+
+),
+
+Join_4 AS (
+
+  SELECT 
+    in0.c_int64 AS c_int64,
+    in0.c_float_complex_expression AS c_float_complex_expression,
+    in0.c_float_complex_expression AS c_float_complex_expression,
+    in0.c_bool AS c_bool,
+    in0.c_numeric AS c_numeric,
+    in1.c_string1 AS c_string1
+  
+  FROM Join_3 AS in0
+  INNER JOIN Geo AS in1
+     ON in0.c_bool = in1.c_bool
 
 ),
 
@@ -331,9 +384,9 @@ OrderBy_1 AS (
 
   SELECT * 
   
-  FROM Filter_1 AS in0
+  FROM Join_4 AS in0
   
-  ORDER BY c_int64 ASC NULLS FIRST, c_numeric_1 DESC NULLS LAST, c_bool_complex_expression ASC
+  ORDER BY c_int64 ASC NULLS FIRST, c_numeric DESC NULLS LAST, c_string1 ASC
 
 ),
 
