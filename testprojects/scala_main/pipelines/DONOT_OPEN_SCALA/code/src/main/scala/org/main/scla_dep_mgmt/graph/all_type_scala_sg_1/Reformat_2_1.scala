@@ -12,7 +12,8 @@ import java.time._
 
 object Reformat_2_1 {
 
-  def apply(context: Context, in: DataFrame): DataFrame =
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    val Config = context.config
     in.select(
       col("`c- short`").as("c- short"),
       col("`c  - int`").as("c  - int"),
@@ -41,7 +42,18 @@ object Reformat_2_1 {
       col("p_double"),
       col("p_string"),
       col("p_date"),
-      col("p_timestamp")
+      col("p_timestamp"),
+      concat(lit(Config.c_sg1_c_float),
+             lit(Config.c_sg1_c_int),
+             lit(Config.c_sg1_c_string)
+      ).as("c_config_use"),
+      expr(Config.c_sg1_c_spark_expression).as("c_config_spark_expr"),
+      concat(udf_random_number(),
+             udf_add_one(col("`c  - int`")),
+             udf_multiply(col("`c- short`")),
+             udf_string_null_safe(col("`c-string`"))
+      ).as("c_udf")
     )
+  }
 
 }

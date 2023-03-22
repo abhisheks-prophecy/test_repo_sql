@@ -13,7 +13,7 @@ import java.time._
 object RowDistributor_1_1 {
 
   def apply(context: Context, in: DataFrame): (DataFrame, DataFrame) =
-    (in.filter(col("`c- short`") > lit(-10)),
+    (in.filter(expr(context.config.c_sg1_c_rowdistributor)),
      in.filter(col("`c  - int`") > lit(-100))
     )
 

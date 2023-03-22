@@ -14,14 +14,11 @@ object OrderBy_1_1 {
 
   def apply(context: Context, in: DataFrame): DataFrame =
     in.orderBy(
-      col("`c- short`").asc,
-      col("`c  - int`").asc,
-      col("`- c long`").asc,
+      expr(context.config.c_sg1_c_orderby).asc,
+      col("`- c long`").desc,
       col("`c_decimal  -  `").asc,
       col("`c_float-__  `").asc,
-      col("`c -  boolean _  `").asc,
-      col("c_double").asc,
-      col("`c-string`").asc,
+      col("c_double").desc,
       col("`c_date-for today`").asc,
       col("`c_timestamp  __ for--today`").asc,
       col("p_int").asc,

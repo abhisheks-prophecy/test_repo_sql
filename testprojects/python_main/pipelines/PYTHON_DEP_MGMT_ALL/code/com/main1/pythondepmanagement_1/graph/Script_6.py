@@ -15,6 +15,7 @@ def Script_6(
         in5: DataFrame, 
         in6: DataFrame
 ) -> DataFrame:
+    c_test_var_init = c_int + c_float
     out00 = in0.select("c-string").withColumnRenamed("c-string", "c_str_new")
     out1 = in1.select("c-string").withColumnRenamed("c-string", "c_str_new")
     out2 = in2.select("c-string").withColumnRenamed("c-string", "c_str_new")

@@ -35,6 +35,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Subgraph_1_out0, df_Subgraph_1_out1, df_Subgraph_1_out2 = Subgraph_1(
         spark, 
+        Config.Subgraph_1, 
         df_src_parquet_all_type_and_partition_withspacehyphens, 
         df_src_parquet_all_type_and_partition_withspacehyphens, 
         df_src_parquet_all_type_and_partition_withspacehyphens

@@ -5,7 +5,7 @@ from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
 from pythonorganization.donot.openme12.graph.Limit_9 import *
-import pythonorganization.donot.openme12.config.ConfigStore as ConfigStore
+from pythonorganization.donot.openme12.config.ConfigStore import *
 
 
 class Limit_9Test(BaseTestCase):
@@ -74,7 +74,12 @@ class Limit_9Test(BaseTestCase):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
-        ConfigStore.Utils.initializeFromArgs(
+        Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None)
+            Namespace(
+              file = f"configs/resources/config/{fabricName}.json",
+              config = None,
+              overrideJson = None,
+              defaultConfFile = None
+            )
         )

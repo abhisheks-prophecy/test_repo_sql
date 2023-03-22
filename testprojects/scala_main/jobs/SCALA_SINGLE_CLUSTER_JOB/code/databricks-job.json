@@ -196,7 +196,7 @@
       "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
       "spark_jar_task" : {
         "main_class_name" : "com.scala.main.job1.Main",
-        "parameters" : [ "-i", "test-random2", "-O", "{}" ]
+        "parameters" : [ "-i", "test-random2", "-O", "{\"bool\":false,\"array_record\":[{\"werw\":\"8\"}]}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -204,7 +204,7 @@
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.6"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_IO_SCALA_BASIC.jar"
@@ -226,7 +226,7 @@
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.6"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_DISABLED_SCALA_BASIC.jar"
@@ -264,7 +264,7 @@
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.6"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar"
@@ -281,7 +281,7 @@
       "job_cluster_key" : "Cluster_2",
       "spark_jar_task" : {
         "main_class_name" : "org.main.scla_dep_mgmt_change.Main",
-        "parameters" : [ "-i", "test-instance2", "-O", "{\"CONFIG_DOUBLE\":3333,\"c_1\":1,\"CONFIG_FLOAT\":33.33,\"c_filter_expression\":\"customer_id > 5\",\"c_dedup_expr\":\"concat(c_array_float, `c_array_int`) \",\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(first_name, first_name, first_name)\",\"concat(first_name, first_name, first_name)\"],\"car_record\":{\"carr_double\":44,\"carr_short\":44},\"car_string\":\"this is another string\",\"car_array_float\":[22.22,33.33],\"car_int\":55555}],\"c_0\":0,\"CONFIG_INT\":33,\"CONFIG_BOOLEAN\":false,\"db_secrets\":\"qasecrets:mysql_user\",\"JDBC_USER\":\"test_user\",\"c_str\":\"overridenstring_pipeline7\",\"c_limit_11\":11}" ]
+        "parameters" : [ "-i", "test-instance2", "-O", "{\"CONFIG_DOUBLE\":3333,\"c_1\":1,\"CONFIG_FLOAT\":33.33,\"c_filter_expression\":\"customer_id > 5\",\"c_dedup_expr\":\"concat(c_array_float, `c_array_int`) \",\"c_array_complex\":[{\"car_array_spark_expression\":[\"concat(first_name, first_name, first_name)\",\"concat(first_name, first_name, first_name)\"],\"car_record\":{\"carr_double\":44,\"carr_short\":44},\"car_string\":\"this is another string\",\"car_array_float\":[22.22,33.33],\"car_int\":55555}],\"Subgraph_2\":{\"c_config_1\":\"test config sg2 config1\"},\"c_0\":0,\"SubGraph_1\":{\"c_config_1\":\"test config sg1\"},\"all_type_sg_scala_main\":{\"c_sg1_c_limit\":22,\"c_sg1_c_record\":{\"c_sg1_c_record_c_string\":\"asdas $$ $$$$ yes sir\",\"c_sg1_c_record_c_spark_expression\":\"concat('c', 'c')\",\"c_sg1_c_record_c_bool\":true},\"c_sg1_c_string\":\"sdasdasd\",\"c_sg1_c_short\":33,\"c_sg1_c_float\":442.444,\"c_sg1_c_double\":4444,\"recursive_1\":{\"Subgraph_2_1\":{\"c_sg2_1_c_string\":\"asdasd $$ asdad asd \",\"Subgraph_3_1\":{\"Subgraph_4_1\":{\"c_subgraph_4_1_c_spark_expression\":\"concat('hello', 'yes sir')\",\"c_subgraph_4_1_c_double\":-2020,\"c_subgraph_4_1_c_spark_expressiondb_secrets\":\"qasecrets_mysql:username\"}},\"c_sg2_1_c_float\":-122215,\"c_sg2_1_c_int\":-22,\"c_sg2_1_c_boolean\":true},\"c_rec1_c_string\":\"yes major magath\",\"c_rec1_c_spark_expression\":\"concat('a', 'a')\"},\"c_sg1_c_array_string\":[\"va\"],\"c_sg1_c_spark_expression\":\"concat('a', 'a')\"},\"CONFIG_INT\":33,\"CONFIG_BOOLEAN\":false,\"pm_shared_graph\":{\"Subgraph_1\":{\"var2\":2},\"var1\":-2020},\"db_secrets\":\"qasecrets:mysql_user\",\"JDBC_USER\":\"test_user\",\"c_str\":\"overridenstring_pipeline7\",\"c_limit_11\":11}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -289,7 +289,7 @@
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.6"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DEP_MGMT_ALL.jar"
@@ -334,7 +334,7 @@
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.6"
+          "package" : "prophecy-libs==1.4.7"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_SGSRC.jar"

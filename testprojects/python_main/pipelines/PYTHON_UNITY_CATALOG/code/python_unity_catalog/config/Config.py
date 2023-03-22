@@ -6,26 +6,28 @@ class Config(ConfigBase):
 
     def __init__(
             self,
-            c_string: str=None, 
-            c_long: int=None, 
-            c_dbsecrets: str=None, 
-            c_spark_expression: str=None, 
-            c_float: float=None, 
-            c_boolean: bool=None, 
-            Subgraph_1: dict=None
+            c_string: str=None,
+            c_long: int=None,
+            c_dbsecrets: str=None,
+            c_spark_expression: str=None,
+            c_float: float=None,
+            c_boolean: bool=None,
+            Subgraph_1: dict=None,
+            **kwargs
     ):
         self.spark = None
         self.update(c_string, c_long, c_dbsecrets, c_spark_expression, c_float, c_boolean, Subgraph_1)
 
     def update(
             self,
-            c_string: str="skjdsadsa", 
-            c_long: int=4324234, 
-            c_dbsecrets: str="qasecrets_mysql:username", 
-            c_spark_expression: str="concat('a', first_name)", 
-            c_float: float=-12312.123, 
-            c_boolean: bool=True, 
-            Subgraph_1: dict={}
+            c_string: str="skjdsadsa",
+            c_long: int=4324234,
+            c_dbsecrets: str="qasecrets_mysql:username",
+            c_spark_expression: str="concat('a', first_name)",
+            c_float: float=-12312.123,
+            c_boolean: bool=True,
+            Subgraph_1: dict={},
+            **kwargs
     ):
         prophecy_spark = self.spark
         self.c_string = c_string

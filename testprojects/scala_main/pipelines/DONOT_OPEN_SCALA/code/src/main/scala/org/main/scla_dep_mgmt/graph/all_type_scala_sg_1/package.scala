@@ -117,14 +117,19 @@ package object all_type_scala_sg_1 {
         "WwV8YcgqfDbTr1Qjw-_ub$$pnS8qdrEHHcUrAYFZLdQT",
         "y-_P0LZWdJ6sodhEZaaQ6$$9axgrkS6-bnnp4-zOmcyr"
       )
-    df_Reformat_1_1.cache().count()
-    df_Reformat_1_1.unpersist()
     val df_FlattenSchema_1_1 =
       FlattenSchema_1_1(context, df_Aggregate_1_1).interim(
         "all_type_scala_sg_1",
         "7dSYHS4ccxtaDQIA58yGB$$0vGQ4fdsK8r7WYVDqZPNA",
         "1TNe7-gys_ySzJscz90bs$$U5UKRBjPcsxN0mxhMpDcs"
       )
+    val df_Reformat_3 = Reformat_3(context, df_Filter_1_1).interim(
+      "all_type_scala_sg_1",
+      "hlCiNUUN4-N1dhJqgjw_N$$m53kkOweyoa0tqNBzjFUA",
+      "WIIEsa_6EAsbIWCfQEA1i$$2MTFbS89-FgUXHHgHxwpZ"
+    )
+    df_Reformat_3.cache().count()
+    df_Reformat_3.unpersist()
     val df_OrderBy_2_1 =
       OrderBy_2_1(context, df_RowDistributor_1_1_out1).interim(
         "all_type_scala_sg_1",
@@ -135,6 +140,19 @@ package object all_type_scala_sg_1 {
       recursive_1_Context(context.spark, context.config.recursive_1),
       df_Script_1_1
     )
+    withSubgraphName("all_type_scala_sg_1", context.spark) {
+      withTargetId("scala_random_target_subgraph_donotuse", context.spark) {
+        scala_random_target_subgraph_donotuse(context, df_Reformat_1_1)
+      }
+    }
+    val df_SQLStatement_1 =
+      SQLStatement_1(context, df_SetOperation_1_1).interim(
+        "all_type_scala_sg_1",
+        "LcKgbTCXM4s71Zw5K7_U-$$iw4liVD4ogiYLMk9A6Luq",
+        "SMB10nqnNy5840kTondLS$$tdxUazXGndo0cdogp8Kxr"
+      )
+    df_SQLStatement_1.cache().count()
+    df_SQLStatement_1.unpersist()
     (df_FlattenSchema_1_1, df_OrderBy_2_1, df_recursive_1)
   }
 

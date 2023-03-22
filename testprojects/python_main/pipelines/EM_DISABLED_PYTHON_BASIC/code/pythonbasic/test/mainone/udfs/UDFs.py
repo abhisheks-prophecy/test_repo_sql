@@ -201,6 +201,14 @@ def udf_tokenizeGenerator():
 
 udf_tokenize = udf_tokenizeGenerator()
 
-@udf(returnType = IntegerType())
-def squared_udf(value=10):
-    return ((value * value) + int_value - float_value) if value else int_value
+def squared_udfGenerator():
+    int_value = 15
+    N = 10
+
+    @udf(returnType = IntegerType())
+    def func(value=10):
+        return ((value * value) + int_value - float_value) if value else int_value
+
+    return func
+
+squared_udf = squared_udfGenerator()

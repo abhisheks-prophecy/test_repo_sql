@@ -1,7 +1,7 @@
 from .Script_3 import Script_3
 from .Script_10_1_1_1 import Script_10_1_1_1
 from .Subgraph_1 import Subgraph_1
-from .all_type_main_1 import all_type_main_1
+from .all_type_main_pythonsg import all_type_main_pythonsg
 from .Limit_9 import Limit_9
 from .call_func import call_func
 from .Script_8 import Script_8
@@ -66,6 +66,7 @@ from .WindowFunction_1 import WindowFunction_1
 from .Script_11 import Script_11
 from .Reformat_12 import Reformat_12
 from .Reformat_13 import Reformat_13
+from .Subgraph_2 import Subgraph_2
 from .csv_all_type import csv_all_type
 from .Script_10_1_1_1_1_1_1_1 import Script_10_1_1_1_1_1_1_1
 from .Join_5 import Join_5

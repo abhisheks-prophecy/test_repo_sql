@@ -3,7 +3,7 @@
     "id" : "1",
     "language" : "scala",
     "fabricId" : "2730",
-    "frontEndLanguage" : "scala",
+    "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "scala",
@@ -1148,6 +1148,12 @@
     "sourcePort" : "9sEegzaPsyr7WbqQN3r7e$$WcTY92B5ro2XSxVurZdC8",
     "target" : "r8mNNwSt__UJtPnjXHMWj$$eEtdTLur5_romq5Lis3iO",
     "targetPort" : "KZUzIUlXJoZrdBH3wFXY9$$1rRfDyCY4Ei50nbc0K2Qb"
+  }, {
+    "id" : "8db6wpLf7CmQ3pnbRqsMa",
+    "source" : "TeymC2nZ71ETj-ZxO4LIK$$RAHGEDk9gGkQVhGq0VfGe",
+    "sourcePort" : "IbgrW9w6TcrN90B56Sq2h$$IfKA0roDygNKp-fMllteG",
+    "target" : "VrGveOeDMRl9l6Sygpqb_$$Z8GqQGKchpTjdwv4QLkuY",
+    "targetPort" : "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ"
   } ],
   "processes" : {
     "5IEpMUJQMpUIx6Hv3eZVS$$9f4baBrU_1q1LbFl9fY2n" : {
@@ -2923,8 +2929,8 @@
           "exploded" : "",
           "flattenedExpression" : "c_int",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_int\")"
+            "format" : "sql",
+            "expression" : "c_int"
           },
           "targetTokens" : [ "c_int" ],
           "target" : "c_int.test.value1"
@@ -2932,8 +2938,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_complex-array-Diabetes-medications-medicationsClasses-className_1-associated-Drug.name",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_complex-array`.Diabetes.medications.medicationsClasses.className_1.`associated-Drug`.name\")"
+            "format" : "sql",
+            "expression" : "`c_complex-array`.Diabetes.medications.medicationsClasses.className_1.`associated-Drug`.name"
           },
           "targetTokens" : [ "c_complex-array", "Diabetes", "medications", "medicationsClasses", "className_1", "associated-Drug", "name" ],
           "target" : "c_int.test.value1.complex-array1.diabetes"
@@ -2941,8 +2947,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_complex-struct-problems-Diabetes.medications",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_complex-struct`.problems.Diabetes.medications\")"
+            "format" : "sql",
+            "expression" : "`c_complex-struct`.problems.Diabetes.medications"
           },
           "targetTokens" : [ "c_complex-struct", "problems", "Diabetes", "medications" ],
           "target" : "c_int.test.value1.complex-struct1.diabetes.medication"
@@ -2950,8 +2956,8 @@
           "exploded" : "✓",
           "flattenedExpression" : "c_complex-struct-problems-Diabetes-medications-medicationsClasses-className_1-associated-Drug.cf-use",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c_complex-struct`.problems.Diabetes.medications.medicationsClasses.className_1.`associated-Drug`.`cf-use`\")"
+            "format" : "sql",
+            "expression" : "`c_complex-struct`.problems.Diabetes.medications.medicationsClasses.className_1.`associated-Drug`.`cf-use`"
           },
           "targetTokens" : [ "c_complex-struct", "problems", "Diabetes", "medications", "medicationsClasses", "className_1", "associated-Drug", "cf-use" ],
           "target" : "c_int.test.value1.complex-struct1.diabetes.medication.cfuse"
@@ -2959,6 +2965,149 @@
         "columnsSelector" : [ "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_int", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array.Diabetes", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array.Diabetes.medications", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array.Diabetes.medications.medicationsClasses", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array.Diabetes.medications.medicationsClasses.className_1", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array.Diabetes.medications.medicationsClasses.className_1.associated-Drug", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-array.Diabetes.medications.medicationsClasses.className_1.associated-Drug.name", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems.Diabetes", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems.Diabetes.medications", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems.Diabetes.medications.medicationsClasses", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems.Diabetes.medications.medicationsClasses.className_1", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems.Diabetes.medications.medicationsClasses.className_1.associated-Drug", "CGrsc_0iPKFrgRIqm1hi8$$62TV-cZ7-4Glm9SWk6uME##c_complex-struct.problems.Diabetes.medications.medicationsClasses.className_1.associated-Drug.cf-use" ],
         "explodeColumns" : [ "c_complex-array", "c_complex-array.Diabetes", "c_complex-array.Diabetes.medications", "c_complex-array.Diabetes.medications.medicationsClasses", "c_complex-array.Diabetes.medications.medicationsClasses.className_1", "c_complex-array.Diabetes.medications.medicationsClasses.className_1.associated-Drug", "c_complex-struct.problems", "c_complex-struct.problems.Diabetes", "c_complex-struct.problems.Diabetes.medications", "c_complex-struct.problems.Diabetes.medications.medicationsClasses", "c_complex-struct.problems.Diabetes.medications.medicationsClasses.className_1", "c_complex-struct.problems.Diabetes.medications.medicationsClasses.className_1.associated-Drug" ],
         "delimiter" : "-"
+      }
+    },
+    "VrGveOeDMRl9l6Sygpqb_$$Z8GqQGKchpTjdwv4QLkuY" : {
+      "id" : "VrGveOeDMRl9l6Sygpqb_$$Z8GqQGKchpTjdwv4QLkuY",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_14",
+        "slug" : "Reformat_14",
+        "x" : 260,
+        "y" : 420,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "nested.field.col1",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "nested.field.col2",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "a",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "test1",
+                      "type" : {
+                        "type" : "struct",
+                        "fields" : [ {
+                          "name" : "test- another",
+                          "type" : "integer",
+                          "nullable" : false,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        } ]
+                      },
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "b",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "test1",
+                      "type" : {
+                        "type" : "struct",
+                        "fields" : [ {
+                          "name" : "test- another",
+                          "type" : "integer",
+                          "nullable" : false,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        } ]
+                      },
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "fNaAeY5AHx-Fjov8-ac4c$$szZaa0q3PScp86RhU7dlz",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col1", "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col2", "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col2.a", "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col2.a.test1", "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col2.a.test1.test- another", "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col2.b", "N1NjWbhyWWLnx1CMgG4hk$$7KTGNquyzmit0gFeN13jQ##nested.field.col2.b.test1" ],
+        "expressions" : [ {
+          "target" : "col1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`nested.field.col1`"
+          },
+          "description" : ""
+        }, {
+          "target" : "test- another",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`nested.field.col2`.a.test1.`test- another`"
+          },
+          "description" : ""
+        }, {
+          "target" : "test1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`nested.field.col2`.b.test1"
+          },
+          "description" : ""
+        } ]
       }
     },
     "zTa3HjcrPr0ScL9QOW8BT$$M0QbyIk9v3R_9OpyenlDu" : {
@@ -3347,71 +3496,71 @@
         "expressions" : [ {
           "target" : "c   short  --",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c   short  --`\")"
+            "format" : "sql",
+            "expression" : "`c   short  --`"
           },
           "description" : ""
         }, {
           "target" : "c-int-column type",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c-int-column type`\")"
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
           },
           "description" : ""
         }, {
           "target" : "-- c-long",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`-- c-long`\")"
+            "format" : "sql",
+            "expression" : "`-- c-long`"
           },
           "description" : ""
         }, {
           "target" : "c-decimal",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c-decimal`\")"
+            "format" : "sql",
+            "expression" : "`c-decimal`"
           },
           "description" : ""
         }, {
           "target" : "c  float",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c  float`\")"
+            "format" : "sql",
+            "expression" : "`c  float`"
           },
           "description" : ""
         }, {
           "target" : "c--boolean",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c--boolean`\")"
+            "format" : "sql",
+            "expression" : "`c--boolean`"
           },
           "description" : ""
         }, {
           "target" : "c- - -double",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c- - -double`\")"
+            "format" : "sql",
+            "expression" : "`c- - -double`"
           },
           "description" : ""
         }, {
           "target" : "c___-- string",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c___-- string`\")"
+            "format" : "sql",
+            "expression" : "`c___-- string`"
           },
           "description" : ""
         }, {
           "target" : "c  date",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c  date`\")"
+            "format" : "sql",
+            "expression" : "`c  date`"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_timestamp\")"
+            "format" : "sql",
+            "expression" : "c_timestamp"
           },
           "description" : ""
         } ]
@@ -5016,15 +5165,15 @@
         "expressions" : [ {
           "target" : "nested.field.col1",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_struct.`col-1`\")"
+            "format" : "sql",
+            "expression" : "c_struct.`col-1`"
           },
           "description" : ""
         }, {
           "target" : "nested.field.col2",
           "expression" : {
-            "format" : "scala",
-            "expression" : "expr(\"named_struct('a', named_struct('test1', named_struct('test- another', 2)), 'b', named_struct('test1', named_struct('test- another', 2)))\")"
+            "format" : "sql",
+            "expression" : "call_func('named_struct', 'a', named_struct('test1', named_struct('test- another', 2)), 'b', named_struct('test1', named_struct('test- another', 2)))"
           },
           "description" : ""
         } ]
@@ -6972,8 +7121,29 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ ]
+        "columnsSelector" : [ "KZUzIUlXJoZrdBH3wFXY9$$1rRfDyCY4Ei50nbc0K2Qb##c_int.test.value1", "KZUzIUlXJoZrdBH3wFXY9$$1rRfDyCY4Ei50nbc0K2Qb##c_int.test.value1.complex-array1.diabetes", "KZUzIUlXJoZrdBH3wFXY9$$1rRfDyCY4Ei50nbc0K2Qb##c_int.test.value1.complex-struct1.diabetes.medication", "KZUzIUlXJoZrdBH3wFXY9$$1rRfDyCY4Ei50nbc0K2Qb##c_int.test.value1.complex-struct1.diabetes.medication.medicationsClasses" ],
+        "expressions" : [ {
+          "target" : "value1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_int.test.value1`"
+          },
+          "description" : ""
+        }, {
+          "target" : "diabetes",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_int.test.value1.complex-array1.diabetes`"
+          },
+          "description" : ""
+        }, {
+          "target" : "medicationsClasses",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`c_int.test.value1.complex-struct1.diabetes.medication`.medicationsClasses"
+          },
+          "description" : ""
+        } ]
       }
     },
     "TRj3KDiCJEKPMmBVhR_C0$$_BsN4cTI7Ypi1wdggNBEe" : {
@@ -7500,71 +7670,71 @@
         "expressions" : [ {
           "target" : "c   short  --",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c   short  --`\")"
+            "format" : "sql",
+            "expression" : "`c   short  --`"
           },
           "description" : ""
         }, {
           "target" : "c-int-column type",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c-int-column type`\")"
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
           },
           "description" : ""
         }, {
           "target" : "-- c-long",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`-- c-long`\")"
+            "format" : "sql",
+            "expression" : "`-- c-long`"
           },
           "description" : ""
         }, {
           "target" : "c-decimal",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c-decimal`\")"
+            "format" : "sql",
+            "expression" : "`c-decimal`"
           },
           "description" : ""
         }, {
           "target" : "c  float",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c  float`\")"
+            "format" : "sql",
+            "expression" : "`c  float`"
           },
           "description" : ""
         }, {
           "target" : "c--boolean",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c--boolean`\")"
+            "format" : "sql",
+            "expression" : "`c--boolean`"
           },
           "description" : ""
         }, {
           "target" : "c- - -double",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c- - -double`\")"
+            "format" : "sql",
+            "expression" : "`c- - -double`"
           },
           "description" : ""
         }, {
           "target" : "c___-- string",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c___-- string`\")"
+            "format" : "sql",
+            "expression" : "`c___-- string`"
           },
           "description" : ""
         }, {
           "target" : "c  date",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c  date`\")"
+            "format" : "sql",
+            "expression" : "`c  date`"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_timestamp\")"
+            "format" : "sql",
+            "expression" : "c_timestamp"
           },
           "description" : ""
         } ]
@@ -7983,71 +8153,71 @@
         "expressions" : [ {
           "target" : "c   short  --",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c   short  --`\")"
+            "format" : "sql",
+            "expression" : "`c   short  --`"
           },
           "description" : ""
         }, {
           "target" : "c-int-column type",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c-int-column type`\")"
+            "format" : "sql",
+            "expression" : "`c-int-column type`"
           },
           "description" : ""
         }, {
           "target" : "-- c-long",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`-- c-long`\")"
+            "format" : "sql",
+            "expression" : "`-- c-long`"
           },
           "description" : ""
         }, {
           "target" : "c-decimal",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c-decimal`\")"
+            "format" : "sql",
+            "expression" : "`c-decimal`"
           },
           "description" : ""
         }, {
           "target" : "c  float",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c  float`\")"
+            "format" : "sql",
+            "expression" : "`c  float`"
           },
           "description" : ""
         }, {
           "target" : "c--boolean",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c--boolean`\")"
+            "format" : "sql",
+            "expression" : "`c--boolean`"
           },
           "description" : ""
         }, {
           "target" : "c- - -double",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c- - -double`\")"
+            "format" : "sql",
+            "expression" : "`c- - -double`"
           },
           "description" : ""
         }, {
           "target" : "c___-- string",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c___-- string`\")"
+            "format" : "sql",
+            "expression" : "`c___-- string`"
           },
           "description" : ""
         }, {
           "target" : "c  date",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"`c  date`\")"
+            "format" : "sql",
+            "expression" : "`c  date`"
           },
           "description" : ""
         }, {
           "target" : "c_timestamp",
           "expression" : {
-            "format" : "scala",
-            "expression" : "col(\"c_timestamp\")"
+            "format" : "sql",
+            "expression" : "c_timestamp"
           },
           "description" : ""
         } ]

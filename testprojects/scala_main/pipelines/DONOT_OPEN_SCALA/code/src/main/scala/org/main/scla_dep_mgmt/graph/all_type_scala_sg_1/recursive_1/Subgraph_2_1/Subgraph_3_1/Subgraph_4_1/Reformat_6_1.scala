@@ -41,7 +41,13 @@ object Reformat_6_1 {
       col("p_double"),
       col("p_string"),
       col("p_date"),
-      col("p_timestamp")
+      col("p_timestamp"),
+      expr(context.config.c_subgraph_4_1_c_spark_expression).as("c_expr"),
+      concat(udf_random_number(),
+             udf_add_one(col("`c  - int`")),
+             udf_multiply(col("`c- short`")),
+             udf_string_null_safe(col("`c-string`"))
+      ).as("c_udf")
     )
 
 }

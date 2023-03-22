@@ -17,7 +17,7 @@ object Aggregate_1_1 {
       .agg(
         first(col("`c- short`")).as("c- short"),
         first(col("`c  - int`")).as("c  - int"),
-        first(col("`- c long`")).as("- c long"),
+        expr(context.config.c_sg1_aggregate).as("- c long"),
         first(col("`c_decimal  -  `")).as("c_decimal  -  "),
         first(col("`c_float-__  `")).as("c_float-__  "),
         first(col("`c -  boolean _  `")).as("c -  boolean _  "),

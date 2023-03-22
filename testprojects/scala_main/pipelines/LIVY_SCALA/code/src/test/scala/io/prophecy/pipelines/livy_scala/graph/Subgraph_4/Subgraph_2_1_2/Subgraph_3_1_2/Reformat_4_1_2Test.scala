@@ -2,6 +2,7 @@ package io.prophecy.pipelines.livy_scala.graph.Subgraph_4.Subgraph_2_1_2.Subgrap
 
 import com.holdenkarau.spark.testing.DataFrameSuiteBase
 import io.prophecy.pipelines.livy_scala.config._
+import io.prophecy.libs.registerAllUDFs
 import io.prophecy.libs.SparkTestingUtils._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{Column, DataFrame}
@@ -168,6 +169,7 @@ class Reformat_4_1_2Test extends FunSuite with DataFrameSuiteBase {
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
+    registerAllUDFs(spark)
 
     val fabricName = System.getProperty("fabric")
 

@@ -13,6 +13,10 @@ from prophecy.lookups import (
     lookup_nth
 )
 pipeline1 = "ldme"
+c_int = 10
+c_float = 10.12
+c_list = [1, 2, 3, 4, 5]
+c_dict = {'a' : 1, 'b' : 2}
 
 def registerUDFs(spark: SparkSession):
     spark.udf.register("factorial", factorial)
