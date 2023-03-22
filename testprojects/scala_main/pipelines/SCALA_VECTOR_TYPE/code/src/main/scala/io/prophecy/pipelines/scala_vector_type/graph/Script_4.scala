@@ -16,6 +16,7 @@ object Script_4 {
   def apply(context: Context, in0: DataFrame): DataFrame = {
     val spark = context.spark
     val Config = context.config
+    // import org.apache.spark.rdd.RDD
     // import org.apache.spark.mllib.linalg.{Vector, Vectors}
     // import org.apache.spark.mllib.linalg.distributed.RowMatrix
     // import org.apache.spark.mllib.linalg.distributed.{BlockMatrix, CoordinateMatrix, MatrixEntry}
