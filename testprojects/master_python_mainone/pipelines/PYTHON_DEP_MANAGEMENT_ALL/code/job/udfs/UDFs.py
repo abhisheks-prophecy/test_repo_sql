@@ -20,33 +20,61 @@ def registerUDFs(spark: SparkSession):
     spark.udf.register("random_string", random_string)
     spark.udf.register("udf_scipy_dependency", udf_scipy_dependency)
 
-@udf(returnType = IntegerType())
-def squared(input):
-    input = int(input) if input is not None else 2
+def squaredGenerator():
+    initial = 10
 
-    return int(input) * int(input) * initial if input is not None else initial
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
 
-@udf(returnType = IntegerType())
-def factorial(input):
-    input = int(input) if input is not None else 2
+        return int(input) * int(input) * initial if input is not None else initial
 
-    return int(input) * int(input) if input is not None else initial
+    return func
 
-@udf(returnType = StringType())
-def random_string(length, extra_characters=""):
-    import string, random
-    length = int(length) if length is not None else 2
+squared = squaredGenerator()
 
-    return "".join(
-        [
-          random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters)
-          for _ in range(length)
-        ]
-    )
+def factorialGenerator():
+    initial = 10
 
-@udf(returnType = StringType())
-def udf_scipy_dependency():
-    from scipy.special import cbrt
-    cb = cbrt([27, 64])
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
 
-    return str(cb[0])
+        return int(input) * int(input) if input is not None else initial
+
+    return func
+
+factorial = factorialGenerator()
+
+def random_stringGenerator():
+    initial = 10
+
+    @udf(returnType = StringType())
+    def func(length, extra_characters=""):
+        import string, random
+        length = int(length) if length is not None else 2
+
+        return "".join(
+            [
+              random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters)
+              for _ in range(length)
+            ]
+        )
+
+    return func
+
+random_string = random_stringGenerator()
+
+def udf_scipy_dependencyGenerator():
+    initial = 10
+
+    @udf(returnType = StringType())
+    def func():
+        from scipy.special import cbrt
+        cb = cbrt([27, 64])
+
+        return str(cb[0])
+
+    return func
+
+udf_scipy_dependency = udf_scipy_dependencyGenerator()

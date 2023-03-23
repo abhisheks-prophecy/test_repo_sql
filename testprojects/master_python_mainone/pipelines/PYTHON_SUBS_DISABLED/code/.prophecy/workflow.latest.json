@@ -1,0 +1,2151 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1770",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecy.io_team.pythonmainproject.functions",
+      "sharedFunctionPackageNames" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ {
+      "type" : "coordinates",
+      "coordinates" : "mysql:mysql-connector-java:8.0.29",
+      "name" : "mysql",
+      "enabled" : false,
+      "id" : "1658827323",
+      "exclusions" : [ ]
+    }, {
+      "type" : "pypi",
+      "id" : "410081255",
+      "name" : "matplotlib",
+      "enabled" : false,
+      "package" : "matplotlib==3.5.2"
+    }, {
+      "type" : "pypi",
+      "id" : "171138274",
+      "name" : "pandas",
+      "enabled" : false,
+      "package" : "pandas>=1.4.2"
+    }, {
+      "type" : "pypi",
+      "id" : "2121735476",
+      "name" : "numpy",
+      "enabled" : false,
+      "package" : "numpy==1.22.*"
+    }, {
+      "type" : "pypi",
+      "id" : "211888696",
+      "name" : "requests",
+      "enabled" : false,
+      "package" : "requests~=2.28.0"
+    }, {
+      "type" : "pypi",
+      "package" : "scipy>=1.6.3,<=1.8.1",
+      "name" : "scipy",
+      "enabled" : false,
+      "id" : "69834547",
+      "repo" : ""
+    }, {
+      "type" : "pypi",
+      "id" : "1722369069",
+      "name" : "torch",
+      "enabled" : false,
+      "package" : "torch==1.11.0"
+    }, {
+      "type" : "coordinates",
+      "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+      "name" : "spark-excel",
+      "enabled" : false,
+      "id" : "40864959",
+      "exclusions" : [ ]
+    }, {
+      "type" : "coordinates",
+      "coordinates" : "org.apache.commons:commons-lang3:3.8",
+      "name" : "apache-commons",
+      "enabled" : false,
+      "id" : "424233105",
+      "exclusions" : [ ]
+    }, {
+      "type" : "pypi",
+      "package" : "ComponentBuilderPython",
+      "name" : "component-builder-with-url",
+      "enabled" : false,
+      "id" : "701579940",
+      "repo" : "https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple"
+    } ],
+    "dependentProjectExternalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "python_subs_disabled",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "tMIu2owFNQ_EkLlm4Cl2N$$Wlovd0vz0K2Ht2R8-QzJf",
+    "source" : "U8BAw5aajELHHGisGh-6x$$GS_Pak0BwTHlsWkc2Oimy",
+    "sourcePort" : "SwVPrEPflt67WghuIMRs0$$PolOnQGfL1WY3mYyD0HBY",
+    "target" : "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb",
+    "targetPort" : "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi"
+  }, {
+    "id" : "zGKjU_B-y7TOIloIeEk1v",
+    "source" : "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb",
+    "sourcePort" : "pxWfeClhqjHKRhoyrPnD5$$t4i-ElxrwSA3KKl1EyU9f",
+    "target" : "8mNddHuYpOsKCF6smiiuu$$YzTOhj4XfO4R_6gH5h0HR",
+    "targetPort" : "aBkylH6uWp3wEwSrxm1Nu$$gCcZG1Rs-N2dYk2JVb7NM"
+  }, {
+    "id" : "KipmEmvAhb0evyzHOACsx",
+    "source" : "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb",
+    "sourcePort" : "pxWfeClhqjHKRhoyrPnD5$$t4i-ElxrwSA3KKl1EyU9f",
+    "target" : "AnyBQdVjDAKSFL01yaJqB$$ZjZcuWqIadFTGaNNuzHWw",
+    "targetPort" : "yARIG6h4QLVnXcO8s_LWL$$wv8YsN-qAenAVPMwUELnA"
+  }, {
+    "id" : "riNV2CWZTCDDf8p3n_41p",
+    "source" : "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb",
+    "sourcePort" : "pxWfeClhqjHKRhoyrPnD5$$t4i-ElxrwSA3KKl1EyU9f",
+    "target" : "pYarVfpki4Q6-dDeD_kUg$$c3vtvRTjbDu8AxhJQvLLg",
+    "targetPort" : "UpWvgVRIfenIHZp3HLSje$$sJaUiiNa6cXFr-XsrojHy"
+  }, {
+    "id" : "1xaPHCZheAEPOLE4G1KRQ",
+    "source" : "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb",
+    "sourcePort" : "pxWfeClhqjHKRhoyrPnD5$$t4i-ElxrwSA3KKl1EyU9f",
+    "target" : "LCZH0BLtTV6slV3Gt-Rc0$$qwI-jq8HMT5YwjpSQzA98",
+    "targetPort" : "bYNo9sBuPnMAzTU8zhDht$$gnwpNw9HFqNBN2QRiqGIQ"
+  } ],
+  "processes" : {
+    "AnyBQdVjDAKSFL01yaJqB$$ZjZcuWqIadFTGaNNuzHWw" : {
+      "id" : "AnyBQdVjDAKSFL01yaJqB$$ZjZcuWqIadFTGaNNuzHWw",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "dest_delta_scd2",
+        "slug" : "dest_delta_scd2",
+        "x" : 940,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yARIG6h4QLVnXcO8s_LWL$$wv8YsN-qAenAVPMwUELnA",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_short",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_long",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_string",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_long",
+              "type" : {
+                "type" : "array",
+                "elementType" : "long",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_boolean",
+              "type" : {
+                "type" : "array",
+                "elementType" : "boolean",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_date",
+              "type" : {
+                "type" : "array",
+                "elementType" : "date",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_timestamp",
+              "type" : {
+                "type" : "array",
+                "elementType" : "timestamp",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_float",
+              "type" : {
+                "type" : "array",
+                "elementType" : "float",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_decimal",
+              "type" : {
+                "type" : "array",
+                "elementType" : "decimal(15,2)",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(22,3)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_float",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array_int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_increasing",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/dest_delta_scd2"
+      }
+    },
+    "LCZH0BLtTV6slV3Gt-Rc0$$qwI-jq8HMT5YwjpSQzA98" : {
+      "id" : "LCZH0BLtTV6slV3Gt-Rc0$$qwI-jq8HMT5YwjpSQzA98",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Target_1",
+        "slug" : "Target_1",
+        "x" : 820,
+        "y" : 320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bYNo9sBuPnMAzTU8zhDht$$gnwpNw9HFqNBN2QRiqGIQ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_short",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_long",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_string",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_long",
+              "type" : {
+                "type" : "array",
+                "elementType" : "long",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_boolean",
+              "type" : {
+                "type" : "array",
+                "elementType" : "boolean",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_date",
+              "type" : {
+                "type" : "array",
+                "elementType" : "date",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_timestamp",
+              "type" : {
+                "type" : "array",
+                "elementType" : "timestamp",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_float",
+              "type" : {
+                "type" : "array",
+                "elementType" : "float",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_decimal",
+              "type" : {
+                "type" : "array",
+                "elementType" : "decimal(15,2)",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(22,3)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_float",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array_int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_increasing",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
+    "U8BAw5aajELHHGisGh-6x$$GS_Pak0BwTHlsWkc2Oimy" : {
+      "id" : "U8BAw5aajELHHGisGh-6x$$GS_Pak0BwTHlsWkc2Oimy",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_delta_all_type_no_partition",
+        "slug" : "src_delta_all_type_no_partition",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "SwVPrEPflt67WghuIMRs0$$PolOnQGfL1WY3mYyD0HBY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_delta_all_type_no_partition"
+      }
+    },
+    "qi2WYSZrCFsm5yYrBenDp$$14Jrry11rHyFIZiC54QxS" : {
+      "id" : "qi2WYSZrCFsm5yYrBenDp$$14Jrry11rHyFIZiC54QxS",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_1",
+        "slug" : "Source_1",
+        "x" : 220,
+        "y" : 400,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PLSEQ-vzeQWcEVgD_uCD5$$a-kf388JPcn_QFB4z0vaP",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
+    "pYarVfpki4Q6-dDeD_kUg$$c3vtvRTjbDu8AxhJQvLLg" : {
+      "id" : "pYarVfpki4Q6-dDeD_kUg$$c3vtvRTjbDu8AxhJQvLLg",
+      "component" : "RestAPIEnrich",
+      "metadata" : {
+        "label" : "RestAPIEnrich_1",
+        "slug" : "RestAPIEnrich_1",
+        "x" : 660,
+        "y" : 480,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UpWvgVRIfenIHZp3HLSje$$sJaUiiNa6cXFr-XsrojHy",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_short",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_long",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_string",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_long",
+              "type" : {
+                "type" : "array",
+                "elementType" : "long",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_boolean",
+              "type" : {
+                "type" : "array",
+                "elementType" : "boolean",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_date",
+              "type" : {
+                "type" : "array",
+                "elementType" : "date",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_timestamp",
+              "type" : {
+                "type" : "array",
+                "elementType" : "timestamp",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_float",
+              "type" : {
+                "type" : "array",
+                "elementType" : "float",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_decimal",
+              "type" : {
+                "type" : "array",
+                "elementType" : "decimal(15,2)",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(22,3)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_float",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array_int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_increasing",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "SNVkybc8luDUgd0I2Rnko$$xMx22eEJXtzedoq5Dgj0c",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "awaitTime" : null,
+        "method" : "GET",
+        "proxies" : null,
+        "verify" : null,
+        "streamFrom" : null,
+        "headersFrom" : null,
+        "auth" : null,
+        "url" : "https://www.boredapi.com/api/activity",
+        "json" : null,
+        "cert" : null,
+        "data" : null,
+        "params" : null,
+        "allow_redirectsFrom" : null,
+        "authFrom" : null,
+        "proxiesFrom" : null,
+        "files" : null,
+        "awaitTimeFrom" : null,
+        "cookies" : null,
+        "jsonFrom" : null,
+        "urlFrom" : "staticValue",
+        "activeTab" : "basicTab",
+        "allow_redirects" : null,
+        "certFrom" : null,
+        "stream" : null,
+        "filesFrom" : null,
+        "paramsFrom" : null,
+        "dataFrom" : null,
+        "timeoutFrom" : null,
+        "verifyFrom" : null,
+        "headers" : null,
+        "outputFieldName" : null,
+        "methodFrom" : "staticValue",
+        "timeout" : null,
+        "cookiesFrom" : null
+      }
+    },
+    "8mNddHuYpOsKCF6smiiuu$$YzTOhj4XfO4R_6gH5h0HR" : {
+      "id" : "8mNddHuYpOsKCF6smiiuu$$YzTOhj4XfO4R_6gH5h0HR",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "dest_delta_merge",
+        "slug" : "dest_delta_merge",
+        "x" : 840,
+        "y" : 0,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "aBkylH6uWp3wEwSrxm1Nu$$gCcZG1Rs-N2dYk2JVb7NM",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_short",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_long",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_string",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_long",
+              "type" : {
+                "type" : "array",
+                "elementType" : "long",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_boolean",
+              "type" : {
+                "type" : "array",
+                "elementType" : "boolean",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_date",
+              "type" : {
+                "type" : "array",
+                "elementType" : "date",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_timestamp",
+              "type" : {
+                "type" : "array",
+                "elementType" : "timestamp",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_float",
+              "type" : {
+                "type" : "array",
+                "elementType" : "float",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_decimal",
+              "type" : {
+                "type" : "array",
+                "elementType" : "decimal(15,2)",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(22,3)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_float",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array_int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_increasing",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/dest_delta_merge"
+      }
+    },
+    "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb" : {
+      "id" : "v81HQBQDQ7ji0OjhYmlJc$$1_1FlwxFHssVxV5A8GRpb",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 300,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_short",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_long",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_decimal",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_string",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_long",
+              "type" : {
+                "type" : "array",
+                "elementType" : "long",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_boolean",
+              "type" : {
+                "type" : "array",
+                "elementType" : "boolean",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_date",
+              "type" : {
+                "type" : "array",
+                "elementType" : "date",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_timestamp",
+              "type" : {
+                "type" : "array",
+                "elementType" : "timestamp",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_float",
+              "type" : {
+                "type" : "array",
+                "elementType" : "float",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array_decimal",
+              "type" : {
+                "type" : "array",
+                "elementType" : "decimal(15,2)",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "c_short",
+                  "type" : "short",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_int",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_long",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "type" : "decimal(22,3)",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_float",
+                  "type" : "float",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_double",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_string",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_date",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_array_int",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "integer",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "pxWfeClhqjHKRhoyrPnD5$$t4i-ElxrwSA3KKl1EyU9f",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_int", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_string", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_timestamp", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_boolean", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_double", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_long", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_decimal", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_timestamp", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_int", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_struct", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_long", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_boolean", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_string", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_float", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_date", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_date", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_float", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_short", "buAKEeVK6tRr1_lvkUrxg$$YGjlH9APuFLR80YEOSMGi##c_array_decimal" ],
+        "expressions" : [ {
+          "target" : "c_short",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_short"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_int",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_int"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_long"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_decimal"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_float"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_boolean"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_double",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_double"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_string"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_date"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_timestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_int",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_int"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_string",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_string"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_long",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_long"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_boolean",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_boolean"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_date"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_timestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_float",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_float"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_array_decimal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_array_decimal"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_struct",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_struct"
+          },
+          "description" : ""
+        }, {
+          "target" : "c_increasing",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "monotonically_increasing_id()"
+          },
+          "description" : ""
+        } ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.LCZH0BLtTV6slV3Gt-Rc0$$qwI-jq8HMT5YwjpSQzA98.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.qi2WYSZrCFsm5yYrBenDp$$14Jrry11rHyFIZiC54QxS.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
+}

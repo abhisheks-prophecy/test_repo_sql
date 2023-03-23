@@ -52,70 +52,70 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ {
+      "type" : "coordinates",
       "coordinates" : "mysql:mysql-connector-java:8.0.29",
       "name" : "mysql",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "1658827323",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
-      "package" : "matplotlib==3.5.2",
-      "name" : "matplotlib",
+      "type" : "pypi",
       "id" : "410081255",
-      "type" : "pypi",
-      "enabled" : false
+      "name" : "matplotlib",
+      "enabled" : false,
+      "package" : "matplotlib==3.5.2"
     }, {
-      "package" : "pandas>=1.4.2",
-      "name" : "pandas",
+      "type" : "pypi",
       "id" : "171138274",
-      "type" : "pypi",
-      "enabled" : false
+      "name" : "pandas",
+      "enabled" : false,
+      "package" : "pandas>=1.4.2"
     }, {
-      "package" : "numpy==1.22.*",
-      "name" : "numpy",
+      "type" : "pypi",
       "id" : "2121735476",
-      "type" : "pypi",
-      "enabled" : false
+      "name" : "numpy",
+      "enabled" : false,
+      "package" : "numpy==1.22.*"
     }, {
-      "package" : "requests~=2.28.0",
-      "name" : "requests",
+      "type" : "pypi",
       "id" : "211888696",
-      "type" : "pypi",
-      "enabled" : false
+      "name" : "requests",
+      "enabled" : false,
+      "package" : "requests~=2.28.0"
     }, {
+      "type" : "pypi",
       "package" : "scipy>=1.6.3,<=1.8.1",
-      "repo" : "",
       "name" : "scipy",
+      "enabled" : false,
       "id" : "69834547",
-      "type" : "pypi",
-      "enabled" : false
+      "repo" : ""
     }, {
-      "package" : "torch==1.11.0",
-      "name" : "torch",
+      "type" : "pypi",
       "id" : "1722369069",
-      "type" : "pypi",
-      "enabled" : false
+      "name" : "torch",
+      "enabled" : false,
+      "package" : "torch==1.11.0"
     }, {
+      "type" : "coordinates",
       "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
       "name" : "spark-excel",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "40864959",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
+      "type" : "coordinates",
       "coordinates" : "org.apache.commons:commons-lang3:3.8",
       "name" : "apache-commons",
-      "exclusions" : [ ],
+      "enabled" : false,
       "id" : "424233105",
-      "type" : "coordinates",
-      "enabled" : false
+      "exclusions" : [ ]
     }, {
-      "package" : "ComponentBuilderPython",
-      "repo" : "https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple",
-      "name" : "component-builder-with-url",
-      "id" : "701579940",
       "type" : "pypi",
-      "enabled" : false
+      "package" : "ComponentBuilderPython",
+      "name" : "component-builder-with-url",
+      "enabled" : false,
+      "id" : "701579940",
+      "repo" : "https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple"
     } ],
     "isImported" : false,
     "interimMode" : "Sources",
@@ -259,7 +259,8 @@
       "ports" : {
         "inputs" : [ {
           "id" : "qsPeFF5RXUBTeTgaqwmAI$$WQMFRTXiOZpd_I3qm33U3",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -285,23 +286,29 @@
       "ports" : {
         "inputs" : [ {
           "id" : "U5tbl4d2637b6P452eVVI$$yvA8mtEReUPMSD4SpN_L8",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "ckWV_KMmhZWwtbuX9lv7h$$8ONVEAX2pdHbGKiylkPJA",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         }, {
           "id" : "YdudoVz-hGmElpia90KkZ$$KjRdPK718vuMjfpKlqwIi",
-          "slug" : "in2"
+          "slug" : "in2",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "8KX5HV46rDuIuyVzny8ah$$FUOOK1DPt3lvnKgscp-dD",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         }, {
           "id" : "FjqfgSHuSSZpJ_7P9er1j$$MzPDSWAzFkEtye9mDtGtt",
-          "slug" : "out1"
+          "slug" : "out1",
+          "isStreaming" : false
         }, {
           "id" : "-Bnasj6fPoB5zD8Zzgoxy$$V30fjZoSBZ4F1vlUR7aj1",
-          "slug" : "out2"
+          "slug" : "out2",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -491,11 +498,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "8fRaFxaxeMwMT2Yj-EtFu$$CQgiNqTmKS8wsgFvzZW4L",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "EIrSKdmrWpBzyJYhWG4Yn$$eCu0ubMjHkSZevk3BnI_e",
-              "slug" : "out0"
+              "slug" : "out0",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -522,11 +531,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "OveEtU81B1FAPXQ94Aq2-$$vBKMaTLP-WINL5s-uDc8z",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "9xoGUzXd9Ske-evg8CBsi$$pZMAeREWPl3NuOgimkI4B",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -552,17 +563,21 @@
           "ports" : {
             "inputs" : [ {
               "id" : "7bSwOX9cPIUvZ7cS8YjXT$$ycdW3I0bIYgdPRzZbcvno",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             }, {
               "id" : "EdTcBwM6DVqL7HXdWhS85$$lbUYB5Hl5mXCr1zhtsVfP",
-              "slug" : "in1"
+              "slug" : "in1",
+              "isStreaming" : false
             }, {
               "id" : "NKemngB10HuBI5mjvX4fB$$G6MU61lRWObn2cj0zHVY9",
-              "slug" : "in2"
+              "slug" : "in2",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "ZUbrfQLqMoj8bZzVYmj_8$$0qBvL43zSEkaXXzxPZBNq",
-              "slug" : "out0"
+              "slug" : "out0",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -616,17 +631,21 @@
               "ports" : {
                 "inputs" : [ {
                   "id" : "nL4JNaoyvpZB8kJKS42bx$$GUi-Vprx86V8chpgeHRFn",
-                  "slug" : "in0"
+                  "slug" : "in0",
+                  "isStreaming" : false
                 }, {
                   "id" : "Lm-JiGXmsf1ilJiVjIAp6$$7PbGHitRZwNh4_lXrZ0Xv",
-                  "slug" : "in1"
+                  "slug" : "in1",
+                  "isStreaming" : false
                 }, {
                   "id" : "jJbEGhkujfTpfsEcmWGJF$$k6I6bpnwUUP7NobMWsoIB",
-                  "slug" : "in2"
+                  "slug" : "in2",
+                  "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "nV3cDKSsE7lB7oBPblUN5$$0KJmqMNVqgZExd2zLINlv",
-                  "slug" : "out0"
+                  "slug" : "out0",
+                  "isStreaming" : false
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -653,11 +672,13 @@
               "ports" : {
                 "inputs" : [ {
                   "id" : "LnZqU8uxaED90Wz15ohzm$$ZbvAloLo6faSnuilDGTQZ",
-                  "slug" : "in0"
+                  "slug" : "in0",
+                  "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "n8RFsPFfU0vZGRQRcQc_H$$Fipg788bBasdJQRY-r9n8",
-                  "slug" : "out0"
+                  "slug" : "out0",
+                  "isStreaming" : false
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -699,11 +720,13 @@
                   "ports" : {
                     "inputs" : [ {
                       "id" : "DxvOiMPvkfCfZx2Gcbz6R$$8C7gwa1jyoGJukZX647pT",
-                      "slug" : "in0"
+                      "slug" : "in0",
+                      "isStreaming" : false
                     } ],
                     "outputs" : [ {
                       "id" : "-2oq42d1_bu3aRf5_tVs1$$O0ZM6ArYC6V7t9ZPH2Y3u",
-                      "slug" : "out0"
+                      "slug" : "out0",
+                      "isStreaming" : false
                     } ],
                     "selectedInputFields" : [ ],
                     "isCustomOutputSchema" : false
@@ -745,11 +768,13 @@
                       "ports" : {
                         "inputs" : [ {
                           "id" : "NwFlf_nKCzCZlPp1lD1UZ$$l6lzutf5tIlS9gZermxti",
-                          "slug" : "in0"
+                          "slug" : "in0",
+                          "isStreaming" : false
                         } ],
                         "outputs" : [ {
                           "id" : "keK89GSJR8p2jJsTsVuP3$$L_xI5pyqJjwOwPE25KRt7",
-                          "slug" : "out"
+                          "slug" : "out",
+                          "isStreaming" : false
                         } ],
                         "selectedInputFields" : [ ],
                         "isCustomOutputSchema" : false
@@ -781,11 +806,13 @@
                       "ports" : {
                         "inputs" : [ {
                           "id" : "YhUqxgexzw5tEyF6zwt9-$$HfQ5ogTj7KGKhXYHWddMu",
-                          "slug" : "in0"
+                          "slug" : "in0",
+                          "isStreaming" : false
                         } ],
                         "outputs" : [ {
                           "id" : "9ePLfP6DTvdOTe5SP4izh$$GTy4rX4cqEe-inF6uyYs1",
-                          "slug" : "out0"
+                          "slug" : "out0",
+                          "isStreaming" : false
                         } ],
                         "selectedInputFields" : [ ],
                         "isCustomOutputSchema" : false
@@ -827,11 +854,13 @@
                           "ports" : {
                             "inputs" : [ {
                               "id" : "SeKCb5c4NzZRhCCWaX3A8$$ZyvZE3NJ7mg5wqxBt8etD",
-                              "slug" : "in0"
+                              "slug" : "in0",
+                              "isStreaming" : false
                             } ],
                             "outputs" : [ {
                               "id" : "YeHZ10E4xzFXqDgqon8Eo$$6psEvJPBN6ZTuAwCIJTYG",
-                              "slug" : "out"
+                              "slug" : "out",
+                              "isStreaming" : false
                             } ],
                             "selectedInputFields" : [ ],
                             "isCustomOutputSchema" : false
@@ -863,11 +892,13 @@
                           "ports" : {
                             "inputs" : [ {
                               "id" : "GOZbA94hQA9jZb9VGRNSr$$rpq6On17WVx1wzm4sdBHC",
-                              "slug" : "in0"
+                              "slug" : "in0",
+                              "isStreaming" : false
                             } ],
                             "outputs" : [ {
                               "id" : "M9D5nG6iqHPe34uiaGB7v$$d2H_GF0Jg_pCXugJgyyL1",
-                              "slug" : "out0"
+                              "slug" : "out0",
+                              "isStreaming" : false
                             } ],
                             "selectedInputFields" : [ ],
                             "isCustomOutputSchema" : false
@@ -903,11 +934,13 @@
                               "ports" : {
                                 "inputs" : [ {
                                   "id" : "vjra-vy_x1vuHGq9kXcQ7$$TKfKyuqT844hEYrkFkMpz",
-                                  "slug" : "in0"
+                                  "slug" : "in0",
+                                  "isStreaming" : false
                                 } ],
                                 "outputs" : [ {
                                   "id" : "dLw7bCjWBn39vHDz2NxPv$$7UXrH0mMJtuWz7wb0dhVX",
-                                  "slug" : "out"
+                                  "slug" : "out",
+                                  "isStreaming" : false
                                 } ],
                                 "selectedInputFields" : [ ],
                                 "isCustomOutputSchema" : false
@@ -946,11 +979,13 @@
                   "ports" : {
                     "inputs" : [ {
                       "id" : "4tMyA6qcBCeLKdXulks-O$$8IPnwyojXnFi63FS6fDod",
-                      "slug" : "in0"
+                      "slug" : "in0",
+                      "isStreaming" : false
                     } ],
                     "outputs" : [ {
                       "id" : "0bcUpFGYhOiCJkMzs-D2x$$u4hL1i6MtEdpIfcQTtEj6",
-                      "slug" : "out"
+                      "slug" : "out",
+                      "isStreaming" : false
                     } ],
                     "selectedInputFields" : [ ],
                     "isCustomOutputSchema" : false
@@ -987,11 +1022,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "41Db8d5KQYhLvXERvXyx0$$dRbQw5Mgxw8bxkZnd0xcT",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "1iCEBsfWXHTJ9jositDqz$$aIGKYxkyn7ybQqGZbt1EE",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1022,14 +1059,17 @@
           "ports" : {
             "inputs" : [ {
               "id" : "bbbyY_D_NajAvCAujmLbM$$Hmdase1H_jSnRdvt_5qBP",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "out0$$nIeXNPdcxXGLnUM-VRkkr",
-              "slug" : "out0"
+              "slug" : "out0",
+              "isStreaming" : false
             }, {
               "id" : "out1$$YNKn8DTjoAPwo-ZGMCeos",
-              "slug" : "out1"
+              "slug" : "out1",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1068,14 +1108,17 @@
           "ports" : {
             "inputs" : [ {
               "id" : "vjIyqO2sM1k6vKgcmL5Lw$$ZG0JdsQoYV8evI4BxrO-X",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             }, {
               "id" : "VaIIn_ZaG_50MV17dRA0s$$eZwj_LHEQtWJXniwToPK-",
-              "slug" : "in1"
+              "slug" : "in1",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "QyRWz1G38-t77fhBWyzKt$$iLiCjWjwjM0eHIIR53iXW",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1336,14 +1379,17 @@
           "ports" : {
             "inputs" : [ {
               "id" : "U9KdO4OXgewyigs3CskHn$$TmyV_v0wC7QEBrTCgrNwq",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             }, {
               "id" : "nQx9LQcBv8qRkJnHM_FH8$$zHjEmU5_FAN8c1AJ0PIoT",
-              "slug" : "in1"
+              "slug" : "in1",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "ovdFS3IdsuzRQWQYZOp5h$$8zICKeaN4lSXDdixdMhh8",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1368,11 +1414,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "fHpHLRB01KG3GzC_Jfkn0$$mFZGgTgprvaCzGuH_ZMho",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "IlNnoT4BP3VPlgs0AfEg9$$pcTd15oIeUhQvot36yP6K",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1405,11 +1453,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "keqlzJSgzV2GnYTsUyX3z$$bFpDJCxKeusfoSPySFgR0",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "A95bZUwhxhD0ETMULWS_S$$s-aPZLJMOyIhY5UY-DyOb",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1631,11 +1681,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "Xy6LGli1tIwWLc1uNqs4P$$GGepFOn5V2_OIElZSclda",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "yJXTo97VxtNRK3OkvwrB3$$Rit-U4_zQb1PoSd06txPa",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1758,11 +1810,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "0QM7SImf04egqXk7J-UkV$$woBh-hB17aAg-0JJQIgkn",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "qA5EuXSM1bIh-cjJJPOny$$r8-A04T1PkV-ROpaAry6u",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1818,11 +1872,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "O2_CvdT7T3l968fbpbpG-$$Gm4BkZBhgDk8XprrlGGhU",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "nP7sF7oQSZgBqaioflvHq$$lqyACRvdTkjM5sdciBv7o",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1847,11 +1903,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "Udi8SbDsublPnj2chY69A$$q4L6ehyAA3inSA9tVWuGa",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "yFnwetZX3TXNKo_sMI8S1$$Ly--1Rtf_yQtVzo1oBjvG",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2073,11 +2131,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "-ThUgJbZyZ3UVT4gX6ZmO$$my8-L8dN0QcfKD0Y-XUKM",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "bEfYRYQwKSD8As9A7utws$$dEW1bxE0PU0OnSk5OdkxK",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2175,11 +2235,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "bm7_s08CaRn3qv5FYHwTD$$XY9U1TPocKKaZqwaPMWlv",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "4eY-bznkPfHUJ2QdTuepW$$MB9axJ7sMUKDQSzMtxSlF",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2204,11 +2266,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "FjMLT3o5Tf-JOT0Sm_Ow_$$HcPGr5iHztgT3bKxd8I98",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "Bm7uppZUSQ2dHVHe5eGJw$$lyvtUSQlaVZItIpPYbAKh",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2465,7 +2529,8 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "rkbS5U7Pr6SlyC02kDJ5x$$DU1ZlJNdZmsBX1ooz0IYh",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2490,11 +2555,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "OV6nQloik18GvW7SzXtsD$$ehSioxNGS2tOaOY05sxVA",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "g-ZXclUijj1xotLoIOhS7$$mHyqHfvBHfZZo4AhaeZRx",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2568,11 +2635,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "Ckuoxgrzo6T5q2QJK4Q5J$$Tcaldv-3HjKqxCABNXwVc",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "-MGY1Yd1cqNCchVzfNwc5$$kl3RMCRKmjKDHoHb2j-s8",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2601,11 +2670,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "wvxbNVtpOlBOx_LG6ef04$$LzalITGclqhz7nyeUQkKI",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "47y9e-7QriD9beHqb8gyU$$HY_3W7mb_3oT_ZI7bZN0V",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2636,11 +2707,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "zc9UWtx5DaxHefDAcu1JD$$Lr7Uo0ad62GrpogPnyhX1",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "7An5vQwNfU_HPx8_zA3J8$$ektEbZuPVM7JAQbt-VcpT",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2673,11 +2746,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ULgpUmJ8uj_BEh-alNiIK$$vfTiDorFFvqZee9NHUyrh",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "6Uf6_y9G3pXfsiGRXptht$$lPJiM8pGw-Qyn3fbCyldr",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2719,7 +2794,8 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ecaehNHk53HyNHcWAaoBw$$ye3LV39m2c0QGyksKXePO",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "-TxFPdO4ShyklMNKWs99n$$U86yGEcyCyoID2DvoXAsn",
@@ -2727,7 +2803,8 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ ]
-          }
+          },
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : true
@@ -2754,11 +2831,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "wnPqDBBga3-sPocrHOVmq$$TixiZwvOO3GoMtQd310hA",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "CluY_h9NUB6WWnKpenXSX$$6RSzPXqReIQtSEl_ypAG4",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2784,7 +2863,8 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "GXFUlzBTN9rg24aZSvXJL$$nTtVYZxg-HrkwozBACK0-",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2809,11 +2889,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "8Fa_YmP4mtjL85riF2GZP$$Z8EB7KDwQF0Q0C2fQDoJu",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "1YzDQHXfh9mTxveS1K6CB$$pS9iQfNeRGyeiaNySBBdM",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2844,11 +2926,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "on_MIOpe9moLQfvCSYosY$$AH6HQP92lrbQFfwbN7o_W",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "qd83KNoBW1cdtZRCdaDOB$$tP4_kKq8-auHE0pWmoSjR",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3025,7 +3109,8 @@
       "ports" : {
         "inputs" : [ {
           "id" : "tyWaLQRSZj__KTR88WRBr$$KGWvOqQ7-a4CW_YpYG2DA",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -3051,14 +3136,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "akkR-mD7tyKqPyxsIrj1A$$fwtzaamLsWmKyjYRjJY71",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         }, {
           "id" : "BCEz5hWfFeNX5FFgggkSN$$M0XCbXxlcFHT-QPm9yRdB",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "qNYWT40etSYWbOLo2x_SH$$s0Wd1QQwsvHlVEHoyjDqS",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3083,11 +3171,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "cBW14r958YYOqpkLTgIPp$$unHcol9cAt-0aSRVqHt1n",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "TdCqU_SKPZ0Oekynyr4dc$$sHHmAKtR4O3P65_j2TKAe",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3116,14 +3206,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "KF08Vo0YxB-Qqd7H7zonu$$ndBiAZjUediaX4-LbHYz3",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         }, {
           "id" : "Z2oIfH4C2WFqT7q-0776h$$sqeqzyvdcglY_-Gw3e_y-",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "68d9-l2bCO_5QGzfqx0TA$$W-9XKE9wbjypgDoOevuu-",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3280,14 +3373,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "38Ow84HMAmO7Puo9-GYg5$$kVAlpicvmn7tXN7Hc9C4U",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "wC-tzRdsCr8XfsxYuhZyr$$GOnfNi7dFhxioRmEIJ4yy",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : true
         }, {
           "id" : "kTy-Q61MogF-8I97ctLHU$$bArcGw7ZO-uJNyo4kb-LP",
-          "slug" : "out1"
+          "slug" : "out1",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3326,11 +3422,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "P9JsWBG1ObZwJLSMclGvP$$I6c4cy4Z89QNt7sg8Ptfh",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "z2Tvw9MhxoomwoBRitr99$$nxdygGh3Jqq2mswoaJ7AB",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3447,11 +3545,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "URxrNeBN0JNy9cO8xOKJU$$ulVf_6e0NHjcXayaIY0zI",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "FUIdC4CSCpN17qxXAey-F$$wr8kIiR_BmYTs8282E_wZ",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3482,11 +3582,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "yZvTLHz3YMUjB4CcaTjC_$$AyDL-Oo_j3C0kKF7Jyd26",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : true
         } ],
         "outputs" : [ {
           "id" : "IgHj6Prkkm_Or21JObmyV$$0LBWjd33nvwlnhsdzZMbs",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : true
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -3518,7 +3620,8 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "rwsXfOhCnfFttYZttI_E2$$7lhJI5d_0xSqJyNZ78d-m",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

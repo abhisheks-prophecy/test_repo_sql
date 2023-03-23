@@ -130,7 +130,7 @@ def ComplexExpr(spark: SparkSession, in0: DataFrame) -> DataFrame:
                     )
                     + cbrt(lit("27.0").cast(FloatType()))
                   )
-                  + ceil(lit(-2.1))
+                  + ceil(lit(- 2.1))
                 )
                 - coalesce(lit(None), lit(1), lit(None))
               )

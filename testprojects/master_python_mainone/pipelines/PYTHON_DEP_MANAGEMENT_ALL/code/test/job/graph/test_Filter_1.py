@@ -5,7 +5,7 @@ from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
 from job.graph.Filter_1 import *
-import job.config.ConfigStore as ConfigStore
+from job.config.ConfigStore import *
 
 
 class Filter_1Test(BaseTestCase):
@@ -140,7 +140,12 @@ class Filter_1Test(BaseTestCase):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
-        ConfigStore.Utils.initializeFromArgs(
+        Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
+            Namespace(
+              file = f"configs/resources/config/{fabricName}.json",
+              config = None,
+              overrideJson = None,
+              defaultConfFile = None
+            )
         )
