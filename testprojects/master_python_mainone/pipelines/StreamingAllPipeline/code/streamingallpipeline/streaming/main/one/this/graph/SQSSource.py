@@ -18,4 +18,4 @@ def SQSSource(spark: SparkSession) -> DataFrame:
             ]), True), StructField("p_int", IntegerType(), True), StructField("p_float", DoubleType(), True), StructField("p_string", StringType(), True)
         ])
         )\
-        .load()
+        .load("")

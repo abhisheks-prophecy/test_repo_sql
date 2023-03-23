@@ -24,6 +24,8 @@ def pipeline(spark: SparkSession) -> None:
     df_DELTASource = DELTASource(spark)
     df_Reformat_1 = Reformat_1(spark, df_DELTASource)
     DeltaTarget(spark, df_Reformat_1)
+    df_src_streaming_qa_kafka = src_streaming_qa_kafka(spark)
+    df_Reformat_4 = Reformat_4(spark, df_src_streaming_qa_kafka)
     StreamingTarget_1(spark, df_Reformat_2)
     df_SchemaTransform_1 = SchemaTransform_1(spark, df_RowDistributor_1_out0)
     df_CSVAutoloader = CSVAutoloader(spark)
@@ -37,6 +39,7 @@ def pipeline(spark: SparkSession) -> None:
     df_SetOperation_1 = SetOperation_1(spark, df_ORCStandard, df_ORCStandard)
     ORCTarget(spark, df_SetOperation_1)
     JSONTarget(spark, df_Filter_1)
+    dest_qa_kafka_steraming(spark, df_Reformat_4)
 
 def main():
     spark = SparkSession.builder\

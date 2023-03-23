@@ -5,7 +5,7 @@ from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
 from job.graph.SubGraph_7.Reformat_8 import *
-import job.config.ConfigStore as ConfigStore
+from job.config.ConfigStore import *
 
 
 class Reformat_8Test(BaseTestCase):
@@ -62,7 +62,12 @@ class Reformat_8Test(BaseTestCase):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
-        ConfigStore.Utils.initializeFromArgs(
+        Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
+            Namespace(
+              file = f"configs/resources/config/{fabricName}.json",
+              config = None,
+              overrideJson = None,
+              defaultConfFile = None
+            )
         )

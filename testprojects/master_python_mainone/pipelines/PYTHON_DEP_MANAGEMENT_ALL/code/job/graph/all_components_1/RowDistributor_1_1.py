@@ -2,11 +2,11 @@ from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.libs import typed_lit
-from job.config.ConfigStore import *
+from .config import *
 from job.udfs.UDFs import *
 
 def RowDistributor_1_1(spark: SparkSession, in0: DataFrame) -> (DataFrame, DataFrame):
-    df1 = in0.filter(((col("`c- short`") > lit(-1)) & (col("p_short") > lit(1))))
+    df1 = in0.filter(((col("`c- short`") > lit(- 1)) & (col("p_short") > lit(1))))
     df2 = in0.filter((col("`c- short`") > lit(5)))
 
     return df1, df2

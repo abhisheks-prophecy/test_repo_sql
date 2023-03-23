@@ -3,13 +3,16 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from . import *
+from .config import *
 
 def all_components_1(
         spark: SparkSession,
+        config: SubgraphConfig,
         in0: DataFrame,
         in1: DataFrame,
         in2: DataFrame
 ) -> (DataFrame, DataFrame, DataFrame):
+    Config.update(config)
     df_Source_1_1 = Source_1_1(spark)
     df_Source_1_1 = collectMetrics(
         spark, 
@@ -161,7 +164,13 @@ def all_components_1(
         "10Z1_u7A7Pej444vqthCn$$4TkFmoB26RV0npfpSFqDH", 
         "EIrSKdmrWpBzyJYhWG4Yn$$99UY_onljEJiRUMBfxOOu"
     )
-    df_Subgraph_4_1 = Subgraph_4_1(spark, df_RowDistributor_1_1_out0, df_RowDistributor_1_1_out1, df_Script_1_1)
+    df_Subgraph_4_1 = Subgraph_4_1(
+        spark, 
+        config.Subgraph_4_1, 
+        df_RowDistributor_1_1_out0, 
+        df_RowDistributor_1_1_out1, 
+        df_Script_1_1
+    )
     df_Reformat_8_1 = Reformat_8_1(spark, in1)
     df_Reformat_8_1 = collectMetrics(
         spark, 

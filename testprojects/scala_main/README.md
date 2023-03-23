@@ -487,3 +487,43 @@ d
 *** Release notes for version: 2.9.0.0-2 ***
 
 2.9.0.0-2
+
+*** Release notes for version: 2.9.0.0-5 ***
+
+2.9.0.0-5
+
+*** Release notes for version: 2.9.0.0-6 ***
+
+2.9.0.0-6
+
+*** Release notes for version: 2.9.0.0-10 ***
+
+2.9.0.0-10
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-12 ***
+
+2.9.0.0-12
+
+*** Release notes for version: 2.9.0.0-20 ***
+
+2.9.0.0-20
+
+*** Release notes for version: ScalaProjectCloneExternalGit/2.9.0.0-11 ***
+
+ScalaProjectCloneExternalGit/2.9.0.0-11

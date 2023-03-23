@@ -176,14 +176,14 @@
         "predicates" : [ {
           "name" : "p1",
           "expression" : {
-            "predicate" : "`c   short  --` not like '%a%'",
-            "format" : "sql"
+            "predicate" : "~ col(\"`c   short  --`\").like(\"%a%\")",
+            "format" : "python"
           }
         }, {
           "name" : "p2",
           "expression" : {
-            "predicate" : "`c-int-column type` not like '%GH123%'",
-            "format" : "sql"
+            "predicate" : "~ col(\"`c-int-column type`\").like(\"%GH123%\")",
+            "format" : "python"
           }
         } ]
       },
