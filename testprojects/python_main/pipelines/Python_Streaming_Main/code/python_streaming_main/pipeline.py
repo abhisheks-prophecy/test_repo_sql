@@ -25,6 +25,7 @@ def pipeline(spark: SparkSession) -> None:
     SPLUNK_DEST(spark, df_Reformat_2)
     df_all_type_main_1_out0, df_all_type_main_1_out1, df_all_type_main_1_out2 = all_type_main_1(
         spark, 
+        Config.all_type_main_1, 
         df_src_parquet_all_type_and_partition_withspacehyphens_renamed, 
         df_src_parquet_all_type_and_partition_withspacehyphens_renamed, 
         df_src_parquet_all_type_and_partition_withspacehyphens_renamed
@@ -39,7 +40,7 @@ def pipeline(spark: SparkSession) -> None:
     df_FlattenSchema_2 = FlattenSchema_2(spark, df_DEV_KAFKA)
     df_Watermark_1 = Watermark_1(spark, df_FlattenSchema_2)
     df_CSV_AL = CSV_AL(spark)
-    df_Subgraph_1 = Subgraph_1(spark, df_CSV_AL)
+    df_Subgraph_1 = Subgraph_1(spark, Config.Subgraph_1, df_CSV_AL)
     DEST_CSV(spark, df_Subgraph_1)
     df_Aggregate_1 = Aggregate_1(spark, df_Watermark_1)
     df_SchemaTransform_1 = SchemaTransform_1(spark, df_SetOperation_1)

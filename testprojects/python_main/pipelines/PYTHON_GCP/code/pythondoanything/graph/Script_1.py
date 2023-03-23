@@ -21,7 +21,7 @@ def Script_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
     a = int(Config.c_1)
     b = int(Config.c_0)
     real_val = a * b
-    assert(real_val == 0)
+    assert (real_val == 0)
     out0 = in0
 
     return out0

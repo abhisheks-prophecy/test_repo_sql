@@ -16,9 +16,9 @@ initial = 10
 
 def registerUDFs(spark: SparkSession):
     spark.udf.register("factorial", factorial)
+    spark.udf.register("random_string", random_string)
     spark.udf.register("udf1", udf1)
     spark.udf.register("squared", squared)
-    spark.udf.register("random_string", random_string)
     spark.udf.register("udf_scipy_dependency", udf_scipy_dependency)
     spark.udf.register("udf_swap_product", udf_swap_product)
     spark.udf.register("udf_prime", udf_prime)
@@ -41,6 +41,25 @@ def factorialGenerator():
     return func
 
 factorial = factorialGenerator()
+
+def random_stringGenerator():
+    initial = 10
+
+    @udf(returnType = StringType())
+    def func(length, extra_characters=""):
+        import string, random
+        length = int(length) if length is not None else 2
+
+        return "".join(
+            [
+              random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters)
+              for _ in range(length)
+            ]
+        )
+
+    return func
+
+random_string = random_stringGenerator()
 
 def udf1Generator():
     a = 10
@@ -65,25 +84,6 @@ def squaredGenerator():
     return func
 
 squared = squaredGenerator()
-
-def random_stringGenerator():
-    initial = 10
-
-    @udf(returnType = StringType())
-    def func(length, extra_characters=""):
-        import string, random
-        length = int(length) if length is not None else 2
-
-        return "".join(
-            [
-              random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters)
-              for _ in range(length)
-            ]
-        )
-
-    return func
-
-random_string = random_stringGenerator()
 
 def udf_scipy_dependencyGenerator():
     initial = 10
