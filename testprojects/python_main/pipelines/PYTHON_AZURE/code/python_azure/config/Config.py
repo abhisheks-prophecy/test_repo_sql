@@ -1,14 +1,13 @@
 from prophecy.config import ConfigBase
-prophecy_spark_context = None
 
 
 class Config(ConfigBase):
 
-    def __init__(self, ):
+    def __init__(self, c_config1: str=None, **kwargs):
         self.spark = None
-        self.update()
+        self.update(c_config1)
 
-    def update(self, ):
-        global prophecy_spark_context
-        prophecy_spark_context = self.spark
+    def update(self, c_config1: str="dsadasd", **kwargs):
+        prophecy_spark = self.spark
+        self.c_config1 = c_config1
         pass

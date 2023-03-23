@@ -451,3 +451,79 @@ test
 *** Release notes for version: 2.7.7.4 ***
 
 test
+
+*** Release notes for version: 2.8.0.1 ***
+
+test
+
+*** Release notes for version: 2.8.0.2 ***
+
+dsaf
+
+*** Release notes for version: 2.8.0.3 ***
+
+mnb
+
+*** Release notes for version: 2.8.0.34 ***
+
+Changes
+
+*** Release notes for version: 2.8.0.44 ***
+
+ds
+
+*** Release notes for version: 2.8.0.77 ***
+
+test
+
+*** Release notes for version: 2.9.0.2 ***
+
+d
+
+*** Release notes for version: 2.9.0.0-1 ***
+
+2.9.0.0-1
+
+*** Release notes for version: 2.9.0.0-2 ***
+
+2.9.0.0-2
+
+*** Release notes for version: 2.9.0.0-5 ***
+
+2.9.0.0-5
+
+*** Release notes for version: 2.9.0.0-6 ***
+
+2.9.0.0-6
+
+*** Release notes for version: 2.9.0.0-10 ***
+
+2.9.0.0-10
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-11 ***
+
+2.9.0.0-11
+
+*** Release notes for version: 2.9.0.0-12 ***
+
+2.9.0.0-12
+
+*** Release notes for version: 2.9.0.0-20 ***
+
+2.9.0.0-20
+
+*** Release notes for version: ScalaProjectCloneExternalGit/2.9.0.0-11 ***
+
+ScalaProjectCloneExternalGit/2.9.0.0-11

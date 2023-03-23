@@ -8,8 +8,9 @@ from com.sg_src.main.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_src_parquet_all_type_and_partition_withspacehyphens = src_parquet_all_type_and_partition_withspacehyphens(spark)
-    df_Subgraph_1_out0, df_Subgraph_1_out1, df_Subgraph_1_out2 = Subgraph_1(
+    df_all_type_main_pythonsg_out0, df_all_type_main_pythonsg_out1, df_all_type_main_pythonsg_out2 = all_type_main_pythonsg(
         spark, 
+        Config.all_type_main_pythonsg, 
         df_src_parquet_all_type_and_partition_withspacehyphens, 
         df_src_parquet_all_type_and_partition_withspacehyphens, 
         df_src_parquet_all_type_and_partition_withspacehyphens

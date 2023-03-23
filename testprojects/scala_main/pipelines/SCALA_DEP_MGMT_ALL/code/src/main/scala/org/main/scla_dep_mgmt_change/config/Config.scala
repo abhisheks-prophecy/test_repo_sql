@@ -1,10 +1,20 @@
 package org.main.scla_dep_mgmt_change.config
 
-import org.main.scla_dep_mgmt_change.config.ConfigStore._
-import org.main.scla_dep_mgmt_change.config.Context
 import pureconfig._
 import pureconfig.generic.ProductHint
 import io.prophecy.libs._
+import org.main.scla_dep_mgmt_change.graph.SubGraph_1.config.{
+  Config => SubGraph_1_Config
+}
+import org.main.scla_dep_mgmt_change.graph.pm_shared_graph.config.{
+  Config => pm_shared_graph_Config
+}
+import org.main.scla_dep_mgmt_change.graph.all_type_sg_scala_main.config.{
+  Config => all_type_sg_scala_main_Config
+}
+import org.main.scla_dep_mgmt_change.graph.Subgraph_2.config.{
+  Config => Subgraph_2_Config
+}
 
 case class Config(
   @Description("this is jdbc user") JDBC_USER:       String = "test_user",
@@ -23,7 +33,7 @@ case class Config(
   c_st_rename:                                       String = "c_array_boolean_renamed",
   c_dedup_expr:                                      String = "concat(c_array_float, `c_array_int`)",
   c_dedup_col:                                       String = " c_array_date",
-  c_rd_expr:                                         String = "`c -  boolean _  ` in (true,false)",
+  c_rd_expr:                                         String = "`c -  boolean _  ` in (false)",
   c_12321:                                           Int = 12321,
   c_0:                                               Int = 0,
   c_1:                                               Int = 1,
@@ -124,7 +134,12 @@ case class Config(
   c_config_48:     String = "test config 12#%^&*()-=",
   c_config_49:     String = "test config 12#%^&*()-=",
   c_config_50:     String = "this is test string",
-  AI_MIN_DATETIME: String = "2019-06-24 12:01:19"
+  AI_MIN_DATETIME: String = "2019-06-24 12:01:19",
+  SubGraph_1:      SubGraph_1_Config = SubGraph_1_Config(),
+  Subgraph_2:      Subgraph_2_Config = Subgraph_2_Config(),
+  pm_shared_graph: pm_shared_graph_Config = pm_shared_graph_Config(),
+  all_type_sg_scala_main: all_type_sg_scala_main_Config =
+    all_type_sg_scala_main_Config()
 ) extends ConfigBase
 
 object C_array_complex {

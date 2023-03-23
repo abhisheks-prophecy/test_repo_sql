@@ -5,7 +5,7 @@ from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
 from python_unity_catalog.graph.SQLStatement_1_1 import *
-import python_unity_catalog.config.ConfigStore as ConfigStore
+from python_unity_catalog.config.ConfigStore import *
 
 
 class SQLStatement_1_1Test(BaseTestCase):
@@ -99,7 +99,12 @@ class SQLStatement_1_1Test(BaseTestCase):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
-        ConfigStore.Utils.initializeFromArgs(
+        Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
+            Namespace(
+              file = f"configs/resources/config/{fabricName}.json",
+              config = None,
+              overrideJson = None,
+              defaultConfFile = None
+            )
         )

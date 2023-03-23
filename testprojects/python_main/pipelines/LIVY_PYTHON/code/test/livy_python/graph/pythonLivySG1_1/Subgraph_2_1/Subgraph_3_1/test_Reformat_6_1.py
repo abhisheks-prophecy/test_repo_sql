@@ -5,7 +5,7 @@ from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
 from livy_python.graph.pythonLivySG1_1.Subgraph_2_1.Subgraph_3_1.Reformat_6_1 import *
-import livy_python.config.ConfigStore as ConfigStore
+from livy_python.config.ConfigStore import *
 
 
 class Reformat_6_1Test(BaseTestCase):
@@ -86,9 +86,14 @@ class Reformat_6_1Test(BaseTestCase):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
-        ConfigStore.Utils.initializeFromArgs(
+        Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
+            Namespace(
+              file = f"configs/resources/config/{fabricName}.json",
+              config = None,
+              overrideJson = None,
+              defaultConfFile = None
+            )
         )
         dfgraph_Lookup_1 = createDfFromResourceFiles(
             self.spark,

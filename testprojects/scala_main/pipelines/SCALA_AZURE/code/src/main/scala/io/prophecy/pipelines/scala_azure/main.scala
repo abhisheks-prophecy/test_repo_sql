@@ -1,7 +1,6 @@
 package io.prophecy.pipelines.scala_azure
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scala_azure.config.ConfigStore._
 import io.prophecy.pipelines.scala_azure.config.Context
 import io.prophecy.pipelines.scala_azure.config._
 import io.prophecy.pipelines.scala_azure.udfs.UDFs._
@@ -33,7 +32,8 @@ object Main {
       .newSession()
     val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_AZURE")
-    MetricsCollector.start(spark,                    "pipelines/SCALA_AZURE")
+    registerUDFs(spark)
+    MetricsCollector.start(spark, "pipelines/SCALA_AZURE")
     apply(context)
     MetricsCollector.end(spark)
   }

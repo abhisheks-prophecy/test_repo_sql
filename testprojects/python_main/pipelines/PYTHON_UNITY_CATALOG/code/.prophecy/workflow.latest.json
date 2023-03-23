@@ -7,19 +7,9 @@
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ {
-        "name" : "squared",
-        "code" : "@udf(returnType=IntegerType())\ndef square(input):\n    input = int(input) if input is not None else 2\n    return int(input)*int(input)*initial if input is not None else initial",
-        "language" : "python"
-      }, {
-        "name" : "factorial",
-        "code" : "@udf(returnType=IntegerType())\ndef factorial(input):\n    input = int(input) if input is not None else 2\n    return int(input)*int(input) if input is not None else initial",
-        "language" : "python"
-      }, {
-        "name" : "random_string",
-        "code" : "@udf(returnType=StringType())\ndef random_string(length, extra_characters=\"\"):\n    import string, random\n    length=int(length) if length is not None else 2\n    return \"\".join([random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + extra_characters) for _ in range(length)])",
-        "language" : "python"
-      } ],
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecy.io_team.pythonproject.functions",
+      "sharedFunctionPackageNames" : [ ],
       "initialCode" : "initial=10"
     },
     "udafs" : {
@@ -35,42 +25,160 @@
             "type" : "string",
             "value" : "skjdsadsa"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_long",
           "kind" : {
             "type" : "long",
             "value" : 4324234
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_dbsecrets",
           "kind" : {
             "type" : "databricks_secret",
             "value" : "qasecrets_mysql:username"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_spark_expression",
           "kind" : {
             "type" : "spark_expression",
             "value" : "concat('a', first_name)"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_float",
           "kind" : {
             "type" : "float",
             "value" : -12312.12321
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_boolean",
           "kind" : {
             "type" : "boolean",
             "value" : true
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "Subgraph_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "skjdsadsa"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_long",
+              "kind" : {
+                "type" : "long",
+                "value" : 4324234
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_dbsecrets",
+              "kind" : {
+                "type" : "databricks_secret",
+                "value" : "qasecrets_mysql:username"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_spark_expression",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "concat('a', first_name)"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_float",
+              "kind" : {
+                "type" : "float",
+                "value" : -12312.12321
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_boolean",
+              "kind" : {
+                "type" : "boolean",
+                "value" : true
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "Subgraph_2",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "skjdsadsa"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_long",
+                  "kind" : {
+                    "type" : "long",
+                    "value" : 4324234
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_dbsecrets",
+                  "kind" : {
+                    "type" : "databricks_secret",
+                    "value" : "qasecrets_mysql:username"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_spark_expression",
+                  "kind" : {
+                    "type" : "spark_expression",
+                    "value" : "concat('a', first_name)"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_float",
+                  "kind" : {
+                    "type" : "float",
+                    "value" : -12312.12321
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_boolean",
+                  "kind" : {
+                    "type" : "boolean",
+                    "value" : true
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
         } ]
       },
       "oldCommon" : {
@@ -153,6 +261,7 @@
       "id" : "701579940",
       "repo" : "https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple"
     } ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -161,7 +270,8 @@
       "enabled" : false,
       "value" : 10
     },
-    "topLevelPackage" : "python_unity_catalog"
+    "topLevelPackage" : "python_unity_catalog",
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
     "id" : "HRIK4nOOgIWzDrF-M8wkE",
@@ -411,8 +521,8 @@
       "metadata" : {
         "label" : "Script_10_1_1_1_1_1_1_1_1_1_1_1_1",
         "slug" : "Script_10_1_1_1_1_1_1_1_1_1_1_1_1",
-        "x" : 1000,
-        "y" : -700,
+        "x" : 960,
+        "y" : -660,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -422,6 +532,10 @@
         "inputs" : [ {
           "id" : "4wBPdQ-dhItMDR2wai_Qn$$v4ijzJ-SOMdC8T69BDUSu",
           "slug" : "input1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -456,8 +570,8 @@
       "metadata" : {
         "label" : "Filter_3",
         "slug" : "Filter_3",
-        "x" : 100,
-        "y" : -660,
+        "x" : 160,
+        "y" : -600,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -467,12 +581,15 @@
         "inputs" : [ {
           "id" : "sycGiYvHR9FAUPNYMeRr-$$9jgar3U92aI_gv05bF3AL",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "YcNKekdMgUZSpEFE2e0JA$$zyDP4cNUeizZzu3FRaaVH",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -491,8 +608,8 @@
       "metadata" : {
         "label" : "dest_uc_out2",
         "slug" : "dest_uc_out2",
-        "x" : 860,
-        "y" : 480,
+        "x" : 1040,
+        "y" : 380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -502,6 +619,109 @@
         "inputs" : [ {
           "id" : "oZ5kLn27vJyW95hJb1rpD$$mIkA0K3S1Mkwa2b4QiKWj",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -529,6 +749,10 @@
         "inputs" : [ {
           "id" : "gxZ_DYRKaLDBdx7JgJ9ET$$OWpYMZOdCo4mHo0CvYTq2",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -555,8 +779,8 @@
       "metadata" : {
         "label" : "Reformat_5",
         "slug" : "Reformat_5",
-        "x" : 800,
-        "y" : -620,
+        "x" : 820,
+        "y" : -580,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -566,12 +790,15 @@
         "inputs" : [ {
           "id" : "mMp_yY5OA-dJCTf-T5NZE$$upWDtnaH-W9bkdh-IXjnj",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "zomt2sKE2_QsInMRNnn5W$$JdOfsySHwwtNcW_277C-R",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -598,12 +825,15 @@
         "inputs" : [ {
           "id" : "G2kw1HozTwE8MjXbyFmt-$$qTTW5um19SnAtUfIFNSQY",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "xRcppHLmkT52NjEk85xoX$$ZLITjV9T7DbJtR45DQ5Sh",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -629,8 +859,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "278Xu_2NgO45n3EgEOMru$$n95JyHE0Gfbkatn2JzKHo",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -656,12 +885,114 @@
         "inputs" : [ {
           "id" : "DpAyDb8kZuqB0m4eTCGdO$$9GthA20-QCI294XSniyhb",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "J4qpQRPO3d_YacNI2Fr7j$$1A0hgZavHoKPi9D3_xckT",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -693,6 +1024,100 @@
         "inputs" : [ {
           "id" : "qKeG4ANQDfPleCHZR4587$$_wDWcNCaUUlIQuqAxAd37",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -709,8 +1134,8 @@
       "metadata" : {
         "label" : "SQLStatement_1_1",
         "slug" : "SQLStatement_1_1",
-        "x" : 500,
-        "y" : 460,
+        "x" : 400,
+        "y" : 380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -720,20 +1145,224 @@
         "inputs" : [ {
           "id" : "0ThX6V9NyNSkOW9gRGFeM$$FYoIOycuLhlEcjIiBOCll",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "oCZ1VYQxJokizoaNlsD4q$$Aws_xaInMohscMl3DNrS0",
           "slug" : "input1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "65h7wBkWd_1pmbU8Bnbh1$$gnGe__bGaMpGH3j7ifeqT",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         }, {
           "id" : "_e5Al_Uwp5RziiRIfME86$$YPc-eA0Wq8mDvHAW0QG8X",
-          "slug" : "out1",
-          "isStreaming" : false
+          "slug" : "out1"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -770,6 +1399,10 @@
         "inputs" : [ {
           "id" : "gI3HnKse_mnRBO1L3BzH_$$NXhiM3niY5gSp7wSFR4iR",
           "slug" : "input1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -815,12 +1448,114 @@
         "inputs" : [ {
           "id" : "Bri0gYAgOrKxdQzzVUqwi$$emtTKwX2d1_V2sMr0oiRd",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "I-XiQJOU_UFPgqnLARZa4$$nv2DNEEPcHIVPdxhf8YNm",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -853,12 +1588,139 @@
         "inputs" : [ {
           "id" : "vj6dyN7ClCW5jbOf0WqXB$$wH4Bqaxn3MedFhpiU-Cg3",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "pin",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "UVxjQ4HBhaewLaZxFOMUy$$XRzGKHYPgXuZwUOKZN7kG",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -976,6 +1838,10 @@
         "inputs" : [ {
           "id" : "dqXavVYfKL4U-0RXqNoVf$$LdyNORR1JjtYwdWYUbKVd",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1003,7 +1869,7 @@
         "label" : "Script_10_1_1_1_1_1_1_1_1_1_1_1",
         "slug" : "Script_10_1_1_1_1_1_1_1_1_1_1_1",
         "x" : 540,
-        "y" : -700,
+        "y" : -640,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1013,6 +1879,10 @@
         "inputs" : [ {
           "id" : "tlcX_fwdT-1eIEiRmdwaw$$tfe3-ASC5r5C_tz-HbFdp",
           "slug" : "input1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1058,6 +1928,10 @@
         "inputs" : [ {
           "id" : "dunqY9nkv1F-cAxMiSIfa$$IH6nHi05nB-9bBWtw0NRp",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1111,12 +1985,166 @@
         "inputs" : [ {
           "id" : "r9bqEVbC68hqSdZWDBwek$$Lco2-hHqkbYBWorio0uLq",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "pin",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "HtsbU57JQeA-MLuPwj5vH$$NtmWnauX15ASGicITEU2W",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1213,6 +2241,100 @@
         "inputs" : [ {
           "id" : "BUcpeNzaLcyGZ_3jL4u3K$$2iB5GGRaFjG2LRume3K6C",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1239,8 +2361,8 @@
       "metadata" : {
         "label" : "WindowFunction_1",
         "slug" : "WindowFunction_1",
-        "x" : 800,
-        "y" : 340,
+        "x" : 900,
+        "y" : 260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1250,12 +2372,114 @@
         "inputs" : [ {
           "id" : "GT_CYJgSGs8c8hYHxQZVI$$3ifKyJD0b-8qnXpil6CK4",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "ftCI1D5J-0mDPbgBkT5nX$$hfsjj3Aj_TUEI8hutIZW2",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1308,6 +2532,10 @@
         "inputs" : [ {
           "id" : "ByZ7k3imABD7nRTDfWT7p$$_RkjEFotAgmmQgPdPvP7J",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1335,7 +2563,7 @@
         "label" : "src_parquet_unity_catalog",
         "slug" : "src_parquet_unity_catalog",
         "x" : -200,
-        "y" : 280,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1345,8 +2573,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "-KnTMuCrZROy4rzPVtHMl$$oWnle9Y4Tn1gKyNoUb0nH",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1372,6 +2599,10 @@
         "inputs" : [ {
           "id" : "DahKkmhzRVqGkx4ZC53UJ$$m1DfVg_ySGxn95gpzULPG",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1409,6 +2640,10 @@
         "inputs" : [ {
           "id" : "RhQSPE8conp_prw_Hg-V5$$TmVCxMT_CUyOSpDVj5284",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1446,6 +2681,10 @@
         "inputs" : [ {
           "id" : "oDwrxnrsh8FtWrT7D4yc3$$iB1Z2yfkBuh_Jx94DvoI5",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1483,12 +2722,24 @@
         "inputs" : [ {
           "id" : "cKxBDNGkJvgm4MTzC2Y5D$$lJfiVoOPkEyOfaHqNWGpn",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "a",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "mRBiv54ru_f9OKFJAR5CG$$Kp2_BPZi12UWglJ48PXZt",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1504,8 +2755,8 @@
       "metadata" : {
         "label" : "Reformat_1",
         "slug" : "Reformat_1",
-        "x" : 220,
-        "y" : 260,
+        "x" : 180,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1515,15 +2766,221 @@
         "inputs" : [ {
           "id" : "lLT2AuENZ8PDY29_sqib-$$Wum2356uZy2dbh4brLDnW",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "ANvTEVBIMTAsJcY2MP29v$$MM7QLlXPg5PjlaG_a7CYr",
           "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : true
       },
       "properties" : {
         "columnsSelector" : [ ],
@@ -1547,6 +3004,10 @@
         "inputs" : [ {
           "id" : "6s9Wq2nO8rbX1CIaow63G$$89nIDZYCitSkboi-pT44r",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1584,8 +3045,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "b1FBdAxG9njrmGLIqbRfw$$soS7OyGuo5FxBET1XkoLl",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1611,12 +3071,139 @@
         "inputs" : [ {
           "id" : "QJKvIvFbzLvDvzhBlPuOJ$$tqeCw58sZ1XjkdPwCipq5",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "pin",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "geEfkOcY5Au5xc81GXbOz$$iSkAf_QnI9mfMP9qe_eja",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1668,20 +3255,172 @@
         "inputs" : [ {
           "id" : "SgeOcBag51adEBTThdFWr$$-YDnKgyzqxt_rbQMqp5ec",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "pin",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "tZwLuKsKi3L1ytyIQrYta$$g4qjQYa045X1sHycvgrA2",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         }, {
           "id" : "D60Roe8hyW_XWQnG_H6Zj$$4-NlS2DkLZMayPMfxYRXy",
-          "slug" : "out1",
-          "isStreaming" : false
+          "slug" : "out1"
         }, {
           "id" : "QT5Y_x21scfezTavp5Dah$$j6wIHh1FEAGClf2F4EO0e",
-          "slug" : "out2",
-          "isStreaming" : false
+          "slug" : "out2"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1728,6 +3467,10 @@
         "inputs" : [ {
           "id" : "e5MbejR4FoCqCAIFRqXO0$$sX9JVVLE_LnDmVOmhpNc_",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1765,6 +3508,10 @@
         "inputs" : [ {
           "id" : "lZVl1fjYFismyaLSBAjju$$1BhIN9SBSA0sK133gGXIF",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1802,6 +3549,10 @@
         "inputs" : [ {
           "id" : "rEMLYIMSxoclhqmjUJBIV$$Eez4bsRg-K5S8iBIArSE4",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1839,12 +3590,105 @@
         "inputs" : [ {
           "id" : "SNKNeRG2Xa-QrXhsBmTPC$$ds-qPnmnRJX98tN-yV6WP",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "IuqBKaCDcVJRGPthGZHNV$$qD1zr-A-uYqTBQ_cgktO5",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1874,6 +3718,10 @@
         "inputs" : [ {
           "id" : "mqzBBcnwIsFO5Bo6ixInY$$OUgQbjvxdqQgVyK_CkrSw",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
@@ -1911,12 +3759,114 @@
         "inputs" : [ {
           "id" : "0UMgtMBu9OziHBaU5Ji2F$$RAwGDx7oz9x-_IrIDcpEz",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "PKlq73houR22I7fcV_6F1$$mYIbz7lujDa6nG471eMph",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2027,8 +3977,8 @@
       "metadata" : {
         "label" : "Subgraph_1",
         "slug" : "Subgraph_1",
-        "x" : 80,
-        "y" : 380,
+        "x" : 40,
+        "y" : 340,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2038,20 +3988,224 @@
         "inputs" : [ {
           "id" : "MsKeLmahZrIApMKUkg5SU$$4tYnECWxGs2LYpHiaKsT_",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "T9wY0nDozkCdfNo29OUqZ$$BGHzUAmv0M4VhHvvES7Pv",
           "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "firstname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "middlename",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salary",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processed",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dob",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "9vN9IdDoqTW7H4w4r2z89$$oHLWaiwpY320x0ND3-Xu-",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         }, {
           "id" : "OeSmaZYiAd79vOWHvOz9l$$aFrNKXXoDOMiuUgUp_v82",
-          "slug" : "out1",
-          "isStreaming" : false
+          "slug" : "out1"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2110,12 +4264,114 @@
             "inputs" : [ {
               "id" : "tnR7bAl0lQCtNigUv66rj$$ntzbfjLCl_7UlMkSaxbW4",
               "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "firstname",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "middlename",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "lastname",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "salary",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "processed",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "dob",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "weight",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "gender",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "SJyutHxZ7dFmeBEDKfYiq$$bKwoI-Iovyi5-5JR-rW5l",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2145,12 +4401,114 @@
             "inputs" : [ {
               "id" : "rL51vvZrKHT_hr8GiVj7M$$ISwUBsoOSv_r2uIh7cKKk",
               "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "firstname",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "middlename",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "lastname",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "salary",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "processed",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "dob",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "weight",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "gender",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "TjneYMahdA-2XnHygCfz3$$glZ5OGwh9fo8T54PrHtrh",
-              "slug" : "out0",
-              "isStreaming" : false
+              "slug" : "out0"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2187,12 +4545,114 @@
                 "inputs" : [ {
                   "id" : "RRb_JJreyhzp9BiKFgi4g$$nRt2Jf7_Je-z8eQrmDXsC",
                   "slug" : "in0",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "firstname",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "middlename",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "lastname",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "id",
+                      "type" : "long",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "salary",
+                      "type" : "integer",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "processed",
+                      "type" : "boolean",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "dob",
+                      "type" : "date",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "weight",
+                      "type" : "double",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "state",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "city",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "gender",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
                   "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "6uFF9t0_frDCZbT6HM5X3$$4D1JpKYMeiq1Gm-0TBD0r",
-                  "slug" : "out",
-                  "isStreaming" : false
+                  "slug" : "out"
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -2221,12 +4681,114 @@
             "inputs" : [ {
               "id" : "lPNpNtj0TR8xrYUaUJcuk$$iUvbJr1qU00vLMXzBF8-4",
               "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "firstname",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "middlename",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "lastname",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "salary",
+                  "type" : "integer",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "processed",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "dob",
+                  "type" : "date",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "weight",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "gender",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "ubv9FS9CHdbRrumYbaeyl$$IGYiHocsvrny3Jaq2heDJ",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2313,7 +4875,73 @@
             } ]
           }
         }
-      }
+      },
+      "externalDependencies" : [ {
+        "type" : "coordinates",
+        "coordinates" : "mysql:mysql-connector-java:8.0.29",
+        "name" : "mysql",
+        "enabled" : false,
+        "id" : "1658827323",
+        "exclusions" : [ ]
+      }, {
+        "type" : "pypi",
+        "id" : "410081255",
+        "name" : "matplotlib",
+        "enabled" : false,
+        "package" : "matplotlib==3.5.2"
+      }, {
+        "type" : "pypi",
+        "id" : "171138274",
+        "name" : "pandas",
+        "enabled" : false,
+        "package" : "pandas>=1.4.2"
+      }, {
+        "type" : "pypi",
+        "id" : "2121735476",
+        "name" : "numpy",
+        "enabled" : false,
+        "package" : "numpy==1.22.*"
+      }, {
+        "type" : "pypi",
+        "id" : "211888696",
+        "name" : "requests",
+        "enabled" : false,
+        "package" : "requests~=2.28.0"
+      }, {
+        "type" : "pypi",
+        "package" : "scipy>=1.6.3,<=1.8.1",
+        "name" : "scipy",
+        "enabled" : false,
+        "id" : "69834547",
+        "repo" : ""
+      }, {
+        "type" : "pypi",
+        "id" : "1722369069",
+        "name" : "torch",
+        "enabled" : false,
+        "package" : "torch==1.11.0"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+        "name" : "spark-excel",
+        "enabled" : false,
+        "id" : "40864959",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.apache.commons:commons-lang3:3.8",
+        "name" : "apache-commons",
+        "enabled" : false,
+        "id" : "424233105",
+        "exclusions" : [ ]
+      }, {
+        "type" : "pypi",
+        "package" : "ComponentBuilderPython",
+        "name" : "component-builder-with-url",
+        "enabled" : false,
+        "id" : "701579940",
+        "repo" : "https://rajat@prophecy.io:AP6irTPPsV6xeRczg3vuuRAiQUo@prophecyio2.jfrog.io/artifactory/api/pypi/pypi-local/simple"
+      } ]
     },
     "UMOcNLXwLZoHWaTFAel9Z$$xNj-quD969NK6HPa4sz3I" : {
       "id" : "UMOcNLXwLZoHWaTFAel9Z$$xNj-quD969NK6HPa4sz3I",
@@ -2321,8 +4949,8 @@
       "metadata" : {
         "label" : "Script_4",
         "slug" : "Script_4",
-        "x" : -400,
-        "y" : -420,
+        "x" : -360,
+        "y" : -360,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -2365,16 +4993,203 @@
         "inputs" : [ {
           "id" : "o5GO_-Wy4iBIfTwxuRRTg$$LVFd3HGtVZ39ICs4Q5CBO",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "UH7xJLURd9usB8IctzVcG$$XCC7rXFDaOQFN_yeCM3S0",
           "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "O2cku09HPnxp7wrRpUEF0$$DSbJ1pTsGtoR3iYTmEonk",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2489,20 +5304,225 @@
         "inputs" : [ {
           "id" : "HIqs3soydc_Q2tuCAhCg9$$sAe--GZXDxjhhW76D2404",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_array",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "pin",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "lzrdHH9NH3mL8zWzxZsfV$$Q_djVe5SeOhHNl_AS_Du3",
           "slug" : "input1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "type" : "byte",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_smallint",
+              "type" : "short",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_int",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_bigint",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_float",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_double",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_string",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_boolean",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_array",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_struct",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "pin",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_config",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "PqmrHUC_XYLYIx-m2AVcJ$$G_FJ4mEuMuZFXS1LMu-E3",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         }, {
           "id" : "0J4aKuEXI9MPi9CvvaNhO$$Thar8CEZX_W9IwHq9yM65",
-          "slug" : "out1",
-          "isStreaming" : false
+          "slug" : "out1"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

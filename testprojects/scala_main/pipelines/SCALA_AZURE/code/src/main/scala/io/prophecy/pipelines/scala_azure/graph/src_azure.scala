@@ -1,7 +1,6 @@
 package io.prophecy.pipelines.scala_azure.graph
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scala_azure.config.ConfigStore._
 import io.prophecy.pipelines.scala_azure.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
@@ -30,7 +29,7 @@ object src_azure {
         )
       )
       .load(
-        "dbfs:/Prophecy/abhisheks+1663866415875-azure@prophecy.io/OrdersDatasetInput.csv"
+        "dbfs:/Prophecy/abhisheks+azure1@prophecy.io/OrdersDatasetInput.csv"
       )
 
 }

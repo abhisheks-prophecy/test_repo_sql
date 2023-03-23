@@ -8,12 +8,11 @@
       "language" : "scala"
     }
   }, {
-    "ScriptComponent" : {
-      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SC_DBFSLIBS/Script_1--342935075.py",
-      "nodeName" : "Script_1",
-      "id" : "l7NlUZ9ZFZYOMdrRD4zBh$$aO6mzZaeJFIkq-LmuW0bp",
-      "language" : "python",
-      "content" : "print(\"hello\")"
+    "PipelineComponent" : {
+      "id" : "pipelines/EM_DISABLED_SCALA_BASIC",
+      "nodeName" : "SC_DISABLED",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_DISABLED_SCALA_BASIC.jar",
+      "language" : "scala"
     }
   } ],
   "request" : {
@@ -30,12 +29,13 @@
           "prophecy.metadata.is.interactive.run" : "false",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.execution.service.url" : "wss://execution.dp.uitesting.prophecy.io/eventws",
-          "prophecy.packages.path" : "{\"pipelines/SCALA_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar\"}",
+          "prophecy.packages.path" : "{\"pipelines/SCALA_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar\",\"pipelines/EM_DISABLED_SCALA_BASIC\":\"dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_DISABLED_SCALA_BASIC.jar\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -56,9 +56,9 @@
         "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
-        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-3.2.0-7.0.4.jar"
+        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-3.2.0-7.0.10.jar"
       }, {
-        "whl" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/prophecy_libs-1.4.0-py3-none-any.whl"
+        "whl" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/prophecy_libs-1.4.7-py3-none-any.whl"
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC.jar"
       } ],
@@ -67,14 +67,22 @@
       },
       "max_retries" : 0
     }, {
-      "task_key" : "Script_1",
+      "task_key" : "SC_DISABLED",
       "depends_on" : [ {
         "task_key" : "SCALA_BASIC"
       } ],
       "job_cluster_key" : "REL_SC_DBFSLIBS_default_small",
-      "spark_python_task" : {
-        "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SC_DBFSLIBS/Script_1--342935075.py"
+      "spark_jar_task" : {
+        "main_class_name" : "com.scala.main.job1.Main",
+        "parameters" : [ "-i", "test-random3", "-O", "{\"c_test\":\"sdasdasd\"}" ]
       },
+      "libraries" : [ {
+        "jar" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala/prophecy-libs-assembly-3.2.0-7.0.10.jar"
+      }, {
+        "whl" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python/prophecy_libs-1.4.7-py3-none-any.whl"
+      }, {
+        "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_DISABLED_SCALA_BASIC.jar"
+      } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledatalabs.com" ]
       },

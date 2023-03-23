@@ -2,16 +2,14 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "1654",
+    "fabricId" : "3461",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "scala",
-      "udfs" : [ {
-        "name" : "udf1",
-        "code" : "udf((value: Int) => value * a)",
-        "language" : "scala"
-      } ],
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecy.io_team.scalaproject.functions",
+      "sharedFunctionPackageNames" : [ ],
       "initialCode" : "var a=10"
     },
     "udafs" : {
@@ -27,28 +25,32 @@
             "type" : "string",
             "value" : "%11%"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_st_expr",
           "kind" : {
             "type" : "spark_expression",
             "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_string",
           "kind" : {
             "type" : "string",
             "value" : "this is default"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_int",
           "kind" : {
             "type" : "int",
             "value" : 11
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_array",
           "kind" : {
@@ -61,21 +63,24 @@
                   "type" : "spark_expression",
                   "value" : null
                 },
-                "optional" : false
+                "optional" : false,
+                "isWorkflowNodeConfiguration" : false
               }, {
                 "name" : "car_short",
                 "kind" : {
                   "type" : "short",
                   "value" : null
                 },
-                "optional" : false
+                "optional" : false,
+                "isWorkflowNodeConfiguration" : false
               }, {
                 "name" : "car_float",
                 "kind" : {
                   "type" : "float",
                   "value" : null
                 },
-                "optional" : false
+                "optional" : false,
+                "isWorkflowNodeConfiguration" : false
               } ]
             },
             "value" : [ {
@@ -84,7 +89,8 @@
               "car_float" : -10.1
             } ]
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "c_record",
           "kind" : {
@@ -95,17 +101,644 @@
                 "type" : "string",
                 "value" : "hello"
               },
-              "optional" : false
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
             }, {
               "name" : "cr_double",
               "kind" : {
                 "type" : "double",
                 "value" : 123213213435
               },
-              "optional" : false
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
             } ]
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
+        }, {
+          "name" : "Subgraph_4",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_expr",
+              "kind" : {
+                "type" : "string",
+                "value" : "%11%"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_st_expr",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is default"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_int",
+              "kind" : {
+                "type" : "int",
+                "value" : 11
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "car_sparkexpression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "car_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "car_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "value" : [ {
+                  "car_sparkexpression" : "concat('a', 10)",
+                  "car_short" : -10,
+                  "car_float" : -10.1
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "cr_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "hello"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "cr_double",
+                  "kind" : {
+                    "type" : "double",
+                    "value" : 123213213435
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "Subgraph_2_1_2",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_expr",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "%11%"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_st_expr",
+                  "kind" : {
+                    "type" : "spark_expression",
+                    "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "this is default"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : 11
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "car_sparkexpression",
+                        "kind" : {
+                          "type" : "spark_expression",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      }, {
+                        "name" : "car_short",
+                        "kind" : {
+                          "type" : "short",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      }, {
+                        "name" : "car_float",
+                        "kind" : {
+                          "type" : "float",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "value" : [ {
+                      "car_sparkexpression" : "concat('a', 10)",
+                      "car_short" : -10,
+                      "car_float" : -10.1
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "cr_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "hello"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "cr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : 123213213435
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "Subgraph_3_1_2",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "c_expr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "%11%"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_st_expr",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "this is default"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : 11
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_array",
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "record",
+                          "fields" : [ {
+                            "name" : "car_sparkexpression",
+                            "kind" : {
+                              "type" : "spark_expression",
+                              "value" : null
+                            },
+                            "optional" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          }, {
+                            "name" : "car_short",
+                            "kind" : {
+                              "type" : "short",
+                              "value" : null
+                            },
+                            "optional" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          }, {
+                            "name" : "car_float",
+                            "kind" : {
+                              "type" : "float",
+                              "value" : null
+                            },
+                            "optional" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          } ]
+                        },
+                        "value" : [ {
+                          "car_sparkexpression" : "concat('a', 10)",
+                          "car_short" : -10,
+                          "car_float" : -10.1
+                        } ]
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_record",
+                      "kind" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "cr_string",
+                          "kind" : {
+                            "type" : "string",
+                            "value" : "hello"
+                          },
+                          "optional" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        }, {
+                          "name" : "cr_double",
+                          "kind" : {
+                            "type" : "double",
+                            "value" : 123213213435
+                          },
+                          "optional" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : true
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
+        }, {
+          "name" : "livyscalaSG1_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_expr",
+              "kind" : {
+                "type" : "string",
+                "value" : "%11%"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_st_expr",
+              "kind" : {
+                "type" : "spark_expression",
+                "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is default"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_int",
+              "kind" : {
+                "type" : "int",
+                "value" : 11
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_array",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "record",
+                  "fields" : [ {
+                    "name" : "car_sparkexpression",
+                    "kind" : {
+                      "type" : "spark_expression",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "car_short",
+                    "kind" : {
+                      "type" : "short",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  }, {
+                    "name" : "car_float",
+                    "kind" : {
+                      "type" : "float",
+                      "value" : null
+                    },
+                    "optional" : false,
+                    "isWorkflowNodeConfiguration" : false
+                  } ]
+                },
+                "value" : [ {
+                  "car_sparkexpression" : "concat('a', 10)",
+                  "car_short" : -10,
+                  "car_float" : -10.1
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "c_record",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "cr_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "hello"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "cr_double",
+                  "kind" : {
+                    "type" : "double",
+                    "value" : 123213213435
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false
+            }, {
+              "name" : "Subgraph_2_1_2",
+              "kind" : {
+                "type" : "record",
+                "fields" : [ {
+                  "name" : "c_expr",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "%11%"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_st_expr",
+                  "kind" : {
+                    "type" : "spark_expression",
+                    "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_string",
+                  "kind" : {
+                    "type" : "string",
+                    "value" : "this is default"
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_int",
+                  "kind" : {
+                    "type" : "int",
+                    "value" : 11
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_array",
+                  "kind" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "record",
+                      "fields" : [ {
+                        "name" : "car_sparkexpression",
+                        "kind" : {
+                          "type" : "spark_expression",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      }, {
+                        "name" : "car_short",
+                        "kind" : {
+                          "type" : "short",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      }, {
+                        "name" : "car_float",
+                        "kind" : {
+                          "type" : "float",
+                          "value" : null
+                        },
+                        "optional" : false,
+                        "isWorkflowNodeConfiguration" : false
+                      } ]
+                    },
+                    "value" : [ {
+                      "car_sparkexpression" : "concat('a', 10)",
+                      "car_short" : -10,
+                      "car_float" : -10.1
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "c_record",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "cr_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "hello"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "cr_double",
+                      "kind" : {
+                        "type" : "double",
+                        "value" : 123213213435
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : false
+                }, {
+                  "name" : "Subgraph_3_1_2",
+                  "kind" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "c_expr",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "%11%"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_st_expr",
+                      "kind" : {
+                        "type" : "spark_expression",
+                        "value" : "concat(industry_code_ANZSIC, industry_name_ANZSIC)"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_string",
+                      "kind" : {
+                        "type" : "string",
+                        "value" : "this is default"
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_int",
+                      "kind" : {
+                        "type" : "int",
+                        "value" : 11
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_array",
+                      "kind" : {
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "record",
+                          "fields" : [ {
+                            "name" : "car_sparkexpression",
+                            "kind" : {
+                              "type" : "spark_expression",
+                              "value" : null
+                            },
+                            "optional" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          }, {
+                            "name" : "car_short",
+                            "kind" : {
+                              "type" : "short",
+                              "value" : null
+                            },
+                            "optional" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          }, {
+                            "name" : "car_float",
+                            "kind" : {
+                              "type" : "float",
+                              "value" : null
+                            },
+                            "optional" : false,
+                            "isWorkflowNodeConfiguration" : false
+                          } ]
+                        },
+                        "value" : [ {
+                          "car_sparkexpression" : "concat('a', 10)",
+                          "car_short" : -10,
+                          "car_float" : -10.1
+                        } ]
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "c_record",
+                      "kind" : {
+                        "type" : "record",
+                        "fields" : [ {
+                          "name" : "cr_string",
+                          "kind" : {
+                            "type" : "string",
+                            "value" : "hello"
+                          },
+                          "optional" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        }, {
+                          "name" : "cr_double",
+                          "kind" : {
+                            "type" : "double",
+                            "value" : 123213213435
+                          },
+                          "optional" : false,
+                          "isWorkflowNodeConfiguration" : false
+                        } ]
+                      },
+                      "optional" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "optional" : false,
+                  "isWorkflowNodeConfiguration" : true
+                } ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : true
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
         } ]
       },
       "oldCommon" : {
@@ -118,7 +751,10 @@
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
-    "sparkConf" : [ ],
+    "sparkConf" : [ {
+      "name" : "spark.sql.optimizer.excludedRules",
+      "value" : "org.apache.spark.sql.catalyst.optimizer.ColumnPruning"
+    } ],
     "hadoopConf" : [ ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
@@ -173,7 +809,15 @@
       "id" : "GXM_V",
       "exclusions" : [ ],
       "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+    }, {
+      "type" : "coordinates",
+      "coordinates" : "junit:junit:4.13.1",
+      "name" : "junit",
+      "enabled" : false,
+      "id" : "O0zCh",
+      "exclusions" : [ "" ]
     } ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -182,7 +826,8 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "io.prophecy.pipelines.livy_scala"
+    "topLevelPackage" : "io.prophecy.pipelines.livy_scala",
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
     "id" : "HsoT2aUE3hEUiLXPHj_r3",
@@ -359,12 +1004,78 @@
         "inputs" : [ {
           "id" : "ReDYvlOISw4DGicH4UC5b$$Vr99r660q59PZvA-rKCi8",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "PiQ03iaaZCwC0zq3Kp5Uy$$lClb6fcIHA_b5eUF-JNXy",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -454,24 +1165,87 @@
         "inputs" : [ {
           "id" : "bLdsjPuzmksV1gL7ElOYX$$cAvswmEWMQXP1v5fTsgZV",
           "slug" : "input_0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "4c0NUEyXqjS_WZiiGIs9e$$3VLjDFY8rRsJUZjA6Nzja",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         }, {
           "id" : "7Oudn_lksZb56IqaFGw1Z$$MBQ2IkAbyawmMQz_F6jYX",
-          "slug" : "out1",
-          "isStreaming" : false
+          "slug" : "out1"
         }, {
           "id" : "nHJBAXQgzm0T5WxkEBZKZ$$jNn4uDO4f9g1W6GCwBOY_",
-          "slug" : "out2",
-          "isStreaming" : false
+          "slug" : "out2"
         }, {
           "id" : "eHPZxpTHl0BeGoQ_3GEol$$2VfwuqnQG9A6Lk4Hgs94e",
-          "slug" : "out3",
-          "isStreaming" : false
+          "slug" : "out3"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -518,12 +1292,78 @@
         "inputs" : [ {
           "id" : "hU9uvFF_18vvml14_UIxT$$bzj4iwlzRdzgWKBqlxXkJ",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "W5YuriIornprxC3f2pNL4$$EcUAuhoE324-WQ-S-rKBE",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -550,6 +1390,73 @@
         "inputs" : [ {
           "id" : "KwYOqTJJu3A71mRDj_m5c$$H8GerhaXpS-cDO7iUrRbn",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -580,12 +1487,78 @@
         "inputs" : [ {
           "id" : "QJ_xkz68lXjaXTgLXfbj4$$6Sas3RgcL0B8cJbOalvJK",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value_new",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "indus_concat",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "m3aCFHgfXvFTmqsqeXqhU$$zFKnZu-MWfuv8NFMOlEt1",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -612,12 +1585,78 @@
         "inputs" : [ {
           "id" : "tNnoAVRxhFNhmJzx5ihxe$$1-0NQbSzK-wFNtiwDDBDz",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "VdHJxFB4Qr65czVaauYqu$$dsI0eGzG2TP78YBTJ9QbU",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -656,12 +1695,78 @@
         "inputs" : [ {
           "id" : "MNRwz3IwCs7dryJ-yp9a5$$WGHVkkkQR1H8o-TO3sXJR",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "hiCAQWt50irDXKb-xFMZ4$$h0W4UhsP1v126jZOWVvoi",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -720,12 +1825,78 @@
             "inputs" : [ {
               "id" : "0hBh9KBkwThdeapR1RIam$$alBIcjXB9vIiXPwrTalD_",
               "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "OverXdG0SOgveyq3eCPp6$$q9TEtn1h1opmXCUeon_cX",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -801,12 +1972,78 @@
             "inputs" : [ {
               "id" : "hvt4TTE7q-tDsIwC3nb_M$$BO5uZVeaz82FKi8nnDXop",
               "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "uG_z6MfIdnAlgZx51QUKA$$l88Zg1U5zDXCUQFffndQP",
-              "slug" : "out0",
-              "isStreaming" : false
+              "slug" : "out0"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -849,12 +2086,87 @@
                 "inputs" : [ {
                   "id" : "YL5Osm-580wVqN860sngz$$t9BsWpcflGil41X-zN1eH",
                   "slug" : "in0",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_configs",
+                      "type" : "string",
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
                   "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "NroNPBUTgK_23Gh8VqhVP$$PQzcK85BzFEAacSDzHeDg",
-                  "slug" : "out0",
-                  "isStreaming" : false
+                  "slug" : "out0"
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -891,12 +2203,87 @@
                     "inputs" : [ {
                       "id" : "iWAoeFuHmyHR-pbtSxI5_$$ud__utMIImrCbYOHH1fz5",
                       "slug" : "in",
+                      "schema" : {
+                        "type" : "struct",
+                        "fields" : [ {
+                          "name" : "year",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "industry_code_ANZSIC",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "industry_name_ANZSIC",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "rme_size_grp",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "variable",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "value",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "unit",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "c_configs",
+                          "type" : "string",
+                          "nullable" : false,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        } ]
+                      },
                       "isStreaming" : false
                     } ],
                     "outputs" : [ {
                       "id" : "X3JHzwbmKt8WyukUcpDv2$$rsE1t4sIsfgUMm3M3OFsY",
-                      "slug" : "out",
-                      "isStreaming" : false
+                      "slug" : "out"
                     } ],
                     "selectedInputFields" : [ ],
                     "isCustomOutputSchema" : false
@@ -974,12 +2361,78 @@
                 "inputs" : [ {
                   "id" : "DQJpFk23iuZUrLdHlsVJp$$n6EywWd1fPcGoxqLdi1tE",
                   "slug" : "in",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
                   "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "wDd5fLv92FEDQRDX_Vi6R$$tSsY_uiyD2ByKysausjKN",
-                  "slug" : "out",
-                  "isStreaming" : false
+                  "slug" : "out"
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -1064,12 +2517,78 @@
             "inputs" : [ {
               "id" : "LiPKVZ8490wJADbQWnDOx$$r6ysUvqysa-Jm9TGZLikX",
               "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "S7xfTsANsMRuCt42_hEAI$$SjNJVg2UjGe4csFu1Zjva",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1099,12 +2618,78 @@
             "inputs" : [ {
               "id" : "gYBIlBWAuHaQhRmsVevK4$$psbTLAYykRiE1-G5CrmaS",
               "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "X2j3ieGsXy6gWc5YSubeG$$ctHDtZT41qn-lfr7P5wGn",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1156,7 +2741,66 @@
             } ]
           }
         }
-      }
+      },
+      "externalDependencies" : [ {
+        "type" : "coordinates",
+        "coordinates" : "mysql:mysql-connector-java:8.0.29",
+        "name" : "mysql",
+        "enabled" : false,
+        "id" : "59965868",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.postgresql:postgresql:42.3.4",
+        "name" : "postgres",
+        "enabled" : false,
+        "id" : "1360721423",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.scalanlp:epic_2.12:0.5",
+        "name" : "epic",
+        "enabled" : false,
+        "id" : "418005485",
+        "exclusions" : [ ],
+        "repo" : "https://repo.maven.apache.org/maven2/"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
+        "name" : "cats",
+        "enabled" : false,
+        "id" : "1575366423",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.springframework:spring-beans:5.3.19",
+        "name" : "spring",
+        "enabled" : false,
+        "id" : "611418782",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+        "name" : "spark-excel",
+        "enabled" : false,
+        "id" : "368609749",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
+        "name" : "prophecy-libs-4.0.0",
+        "enabled" : false,
+        "id" : "GXM_V",
+        "exclusions" : [ ],
+        "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "junit:junit:4.13.1",
+        "name" : "junit",
+        "enabled" : false,
+        "id" : "O0zCh",
+        "exclusions" : [ "" ]
+      } ]
     },
     "V8SBjEQV1zofrFG7T9AEp$$ETJYBPhIQM_QOy61FO0K-" : {
       "id" : "V8SBjEQV1zofrFG7T9AEp$$ETJYBPhIQM_QOy61FO0K-",
@@ -1175,12 +2819,78 @@
         "inputs" : [ {
           "id" : "pGcglUQjMLxSiViA62uNz$$OLvhfZyfxlCb_uADI5S7O",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "LKqnriXlvIsO9y1owM6fF$$TDa6vHFSf7NzAgts1KxnM",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1256,12 +2966,78 @@
         "inputs" : [ {
           "id" : "RI4CkptxkTEcqepOB3Efl$$QQv_bmf4MFUgjyx3HteKI",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "H4QB7ontxsOvzylz4Umql$$mgL8cqsnVGoRLFNSwliWt",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1291,6 +3067,73 @@
         "inputs" : [ {
           "id" : "R3goTrIfmQJqhXA6st2oF$$PK5yxGbsX9kyUUxXyhW9X",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -1320,12 +3163,78 @@
         "inputs" : [ {
           "id" : "66FAD3tGuHYR2RVeKS4xG$$DrhT7NbtCf_-9_rNkq3aW",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "lB8EmvHjogNxDSWFLHUk0$$Guy3rPpIfW0ncH7p2QSaC",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1353,12 +3262,119 @@
         "inputs" : [ {
           "id" : "AaXr38vzfQ47vkC-Noi-d$$umtuUavNBsAONhYqZHs5m",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "arr_str1",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "arr_str2",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "arr_int",
+              "type" : {
+                "type" : "array",
+                "elementType" : "integer",
+                "containsNull" : true
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "struct_complex",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "col1",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "col2",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "G50vmazmx3vjm5f1Mo-i9$$X73aCvlqDhtq2YL2tFyi-",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1449,16 +3465,185 @@
         "inputs" : [ {
           "id" : "4gblO_mlfP0r86_Jiu5SK$$YhizEHTwYG-C0WP4jV8si",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lookup1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_configs",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "xkYuxj8gaHAqSH7tIx2UW$$mEj6731oT-LLIXAmAv6zZ",
           "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lookup1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_configs",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "gE2Uh6ONJOIm1fEII1AL6$$2u2ayIR5ldW1dPMOcUH1t",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1566,12 +3751,96 @@
         "inputs" : [ {
           "id" : "MNRwz3IwCs7dryJ-yp9a5$$Xhrr7hP_2zNrDYBpWNid-",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lookup1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_configs",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "hiCAQWt50irDXKb-xFMZ4$$Bg0u5VhimgbapyGyqhrKR",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -1630,12 +3899,96 @@
             "inputs" : [ {
               "id" : "0hBh9KBkwThdeapR1RIam$$qwxwXsxd9_Zi6NXTZ5VYu",
               "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "lookup1",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "c_configs",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "OverXdG0SOgveyq3eCPp6$$-kZs_UV0OYLB64-wDGr0a",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1711,12 +4064,78 @@
             "inputs" : [ {
               "id" : "hvt4TTE7q-tDsIwC3nb_M$$bwR_5KoHGsDjCUjuCcCP-",
               "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "uG_z6MfIdnAlgZx51QUKA$$sbGxauFQ-lwNWL_Scqlt4",
-              "slug" : "out0",
-              "isStreaming" : false
+              "slug" : "out0"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -1759,12 +4178,87 @@
                 "inputs" : [ {
                   "id" : "YL5Osm-580wVqN860sngz$$-74DF_2-wYYWSxkm4sRKy",
                   "slug" : "in0",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "c_configs",
+                      "type" : "string",
+                      "nullable" : false,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
                   "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "NroNPBUTgK_23Gh8VqhVP$$EL-CXN0CAYLVP4szbe-PU",
-                  "slug" : "out0",
-                  "isStreaming" : false
+                  "slug" : "out0"
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -1801,12 +4295,87 @@
                     "inputs" : [ {
                       "id" : "iWAoeFuHmyHR-pbtSxI5_$$m7cQZublVB3TtaXSwm_L1",
                       "slug" : "in",
+                      "schema" : {
+                        "type" : "struct",
+                        "fields" : [ {
+                          "name" : "year",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "industry_code_ANZSIC",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "industry_name_ANZSIC",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "rme_size_grp",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "variable",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "value",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "unit",
+                          "type" : "string",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "c_configs",
+                          "type" : "string",
+                          "nullable" : false,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        } ]
+                      },
                       "isStreaming" : false
                     } ],
                     "outputs" : [ {
                       "id" : "X3JHzwbmKt8WyukUcpDv2$$0vq3ppATZribRslNNthgI",
-                      "slug" : "out",
-                      "isStreaming" : false
+                      "slug" : "out"
                     } ],
                     "selectedInputFields" : [ ],
                     "isCustomOutputSchema" : false
@@ -1884,12 +4453,78 @@
                 "inputs" : [ {
                   "id" : "DQJpFk23iuZUrLdHlsVJp$$k4ytilQdpkx_CmDDB_7iG",
                   "slug" : "in",
+                  "schema" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "year",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_code_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "industry_name_ANZSIC",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "rme_size_grp",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "variable",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "value",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "unit",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
                   "isStreaming" : false
                 } ],
                 "outputs" : [ {
                   "id" : "wDd5fLv92FEDQRDX_Vi6R$$tQPsZ2wsouXQIsjSw_JBj",
-                  "slug" : "out",
-                  "isStreaming" : false
+                  "slug" : "out"
                 } ],
                 "selectedInputFields" : [ ],
                 "isCustomOutputSchema" : false
@@ -1974,12 +4609,78 @@
             "inputs" : [ {
               "id" : "LiPKVZ8490wJADbQWnDOx$$JqpJ06T4eCftCmlE57A0H",
               "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "S7xfTsANsMRuCt42_hEAI$$3E30bIWWSl9OcQoYqSV9k",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2009,12 +4710,78 @@
             "inputs" : [ {
               "id" : "gYBIlBWAuHaQhRmsVevK4$$fjJ_Jda5irGt0F9FHMQDQ",
               "slug" : "in",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "year",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_code_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "industry_name_ANZSIC",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "rme_size_grp",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "variable",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "unit",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
               "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "X2j3ieGsXy6gWc5YSubeG$$6TTFKByR_BNYdM-ceQzDr",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -2066,7 +4833,66 @@
             } ]
           }
         }
-      }
+      },
+      "externalDependencies" : [ {
+        "type" : "coordinates",
+        "coordinates" : "mysql:mysql-connector-java:8.0.29",
+        "name" : "mysql",
+        "enabled" : false,
+        "id" : "59965868",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.postgresql:postgresql:42.3.4",
+        "name" : "postgres",
+        "enabled" : false,
+        "id" : "1360721423",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.scalanlp:epic_2.12:0.5",
+        "name" : "epic",
+        "enabled" : false,
+        "id" : "418005485",
+        "exclusions" : [ ],
+        "repo" : "https://repo.maven.apache.org/maven2/"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
+        "name" : "cats",
+        "enabled" : false,
+        "id" : "1575366423",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "org.springframework:spring-beans:5.3.19",
+        "name" : "spring",
+        "enabled" : false,
+        "id" : "611418782",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "com.crealytics:spark-excel_2.12:3.2.1_0.17.1",
+        "name" : "spark-excel",
+        "enabled" : false,
+        "id" : "368609749",
+        "exclusions" : [ ]
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "io.prophecy:prophecy-libs_2.12:4.0.0-3.2.0",
+        "name" : "prophecy-libs-4.0.0",
+        "enabled" : false,
+        "id" : "GXM_V",
+        "exclusions" : [ ],
+        "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "junit:junit:4.13.1",
+        "name" : "junit",
+        "enabled" : false,
+        "id" : "O0zCh",
+        "exclusions" : [ "" ]
+      } ]
     },
     "n1yP5tKWln2z7warPBomw$$xgqrZbP4i0mSdzzNcsDEl" : {
       "id" : "n1yP5tKWln2z7warPBomw$$xgqrZbP4i0mSdzzNcsDEl",
@@ -2085,16 +4911,185 @@
         "inputs" : [ {
           "id" : "5N__OsO5yB5uFYNGMeDAF$$vVHyRA2uRjnPKjFgFX31h",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lookup1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_configs",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "42wbFR28jzhBfNiXW8UWE$$MepdJFlLB5l6djhoZjqsX",
           "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lookup1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "c_configs",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "KWbcTf3ZcpKWXX0SALnEw$$AeKK23d0OhZ3ZLG3iQo94",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2120,12 +5115,78 @@
         "inputs" : [ {
           "id" : "JwTon_q1db79YA4LltOqG$$9ax4LFpAW4yWOKVqLiMCI",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "efkCLAQ1zVUUhyPwCgWvq$$gzJyGcp8RfbNThDJunOvj",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2152,12 +5213,78 @@
         "inputs" : [ {
           "id" : "y4NuE6IcFbSl7g8DVn7jC$$ib4IdocmULPEJMgHP-lac",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "_4sqdff5mqlIT81ZpqihE$$xfyZBvYtybtWyelcHjUwO",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2232,12 +5359,78 @@
         "inputs" : [ {
           "id" : "6Zu3xz243mf7WFrF5SmcS$$x0E1ToY-tczoqAFFEcTkG",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "dMNXFT5Rp0xiXEPsk2OLN$$eYc2LEmvjQLROrWTjaxXC",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2267,12 +5460,78 @@
         "inputs" : [ {
           "id" : "ivYRIdVqBFJPoJadQj7oX$$Idu9mL5CmfsNHNMrVYfag",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "nxOaLQ-GM0bpkgwIRBMOf$$3UCjKDDIpCdMUuZryLPse",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2338,12 +5597,78 @@
         "inputs" : [ {
           "id" : "VnTng-f-ANrJf-rogVQAB$$q0o9R5V7gpwQOuTN8H6r1",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "09dIQcs7g6_-riO19Um88$$gTpzkrEYrYTIf_QAwnEzd",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2412,8 +5737,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "RVljKAmFW3q1UvefPk1-B$$IGOFdfzFLcrhg9u0PxPDZ",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2439,12 +5763,78 @@
         "inputs" : [ {
           "id" : "Ef96wKDdoH4kEa6zUfb_m$$NpyVERHAgkDngS1pter-w",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "S4qVE8QQowyfg88prOg5v$$aZdcKwJEWIzob3ZtcygGp",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2520,12 +5910,78 @@
         "inputs" : [ {
           "id" : "94ePWwS1rMRWEPlKK_22x$$vdDqyFFEbc3hYnNpjkefM",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "kEiogCVNiJJX0dQI8jGYg$$WLVRzvRPjWGXBxDg4EVDH",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2603,16 +6059,81 @@
         "inputs" : [ {
           "id" : "k72alnoM_yuBz5AKA8K6V$$Db73093Lw7f9ObSwHd3ho",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "cO0rocgB30Bod0oF_Mgs_$$SuFS9psA6HysqpDyWQMWQ",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         }, {
           "id" : "VbsVndm6E9M54AMdjBY34$$qN1gi8wbSA7qaxhtrpnr7",
-          "slug" : "out1",
-          "isStreaming" : false
+          "slug" : "out1"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -2652,12 +6173,78 @@
         "inputs" : [ {
           "id" : "-9AkZJcey0npVNqfhpaaQ$$NaL8wREzvVemNBVtTzaYO",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "year",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_code_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry_name_ANZSIC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rme_size_grp",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "variable",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "5eTWHgdcXeQUB3g3zZlPb$$zTF0j8aafzaeT2PicPobM",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

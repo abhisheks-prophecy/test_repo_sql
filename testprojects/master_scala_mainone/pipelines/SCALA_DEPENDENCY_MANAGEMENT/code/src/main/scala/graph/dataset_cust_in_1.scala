@@ -1,7 +1,6 @@
 package graph
 
 import io.prophecy.libs._
-import config.ConfigStore._
 import config.Context
 import org.apache.spark._
 import org.apache.spark.sql._

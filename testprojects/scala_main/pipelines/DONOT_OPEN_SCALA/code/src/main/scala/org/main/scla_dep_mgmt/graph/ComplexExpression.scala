@@ -1,10 +1,8 @@
 package org.main.scla_dep_mgmt.graph
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt.config.ConfigStore._
-import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
-import org.main.scla_dep_mgmt.udfs._
+import org.main.scla_dep_mgmt.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -88,7 +86,7 @@ object ComplexExpression {
       (udf_string_null_safe(col("c_string")) * col("c_int")).as("c9_udf2")
     )
 
-  def c1(context: Context) = {
+  def c7(context: Context) = {
     val spark  = context.spark
     val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(
@@ -117,7 +115,7 @@ object ComplexExpression {
     ) + least(col("c_decimal"), col("c_int"), col("c_long"))
   }
 
-  def c7(context: Context) = {
+  def c1(context: Context) = {
     val spark  = context.spark
     val Config = context.config
     greatest(col("c_int"), lit(9), lit(2)) + floor(col("c_decimal")) + degrees(

@@ -2,12 +2,14 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "3461",
+    "fabricId" : "4821",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "scala",
-      "udfs" : [ ]
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecy.io_team.scalaproject.functions",
+      "sharedFunctionPackageNames" : [ ]
     },
     "udafs" : {
       "language" : "scala",
@@ -83,7 +85,15 @@
       "id" : "GXM_V",
       "exclusions" : [ ],
       "repo" : "https://prophecyio.jfrog.io/artifactory/default-sbt-release/"
+    }, {
+      "type" : "coordinates",
+      "coordinates" : "junit:junit:4.13.1",
+      "name" : "junit",
+      "enabled" : false,
+      "id" : "O0zCh",
+      "exclusions" : [ "" ]
     } ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -92,7 +102,8 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "io.prophecy.pipelines.scala_azure"
+    "topLevelPackage" : "io.prophecy.pipelines.scala_azure",
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
     "id" : "E-TsO8IslTOi1vIq7rcGF",
@@ -119,8 +130,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "L0PT63aDke-uUpajUBEUw$$pk4-M8i_RKccxMqJKj-sD",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -146,12 +156,69 @@
         "inputs" : [ {
           "id" : "xhAfAuuLNObm8KIcluhOF$$9R8AhLmUl16Yoq_Pbd7-S",
           "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "order_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_status",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "jz4MLCfDnpkFwiJqbOmU4$$z7vTGA6xPenzdlbBurLa_",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

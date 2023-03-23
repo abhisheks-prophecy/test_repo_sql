@@ -1,9 +1,9 @@
 package com.scala.main.job1
 
 import io.prophecy.libs._
-import com.scala.main.job1.config.ConfigStore._
 import com.scala.main.job1.config.Context
 import com.scala.main.job1.config._
+import com.scala.main.job1.config.ConfigStore.interimOutput
 import com.scala.main.job1.udfs.UDFs._
 import com.scala.main.job1.udfs._
 import com.scala.main.job1.graph._
@@ -11,6 +11,18 @@ import com.scala.main.job1.graph.SubgraphMain
 import com.scala.main.job1.graph.Subgraph_1
 import com.scala.main.job1.graph.Subgraph_3
 import com.scala.main.job1.graph.Subgraph_4
+import com.scala.main.job1.graph.SubgraphMain.config.{
+  Context => SubgraphMain_Context
+}
+import com.scala.main.job1.graph.Subgraph_1.config.{
+  Context => Subgraph_1_Context
+}
+import com.scala.main.job1.graph.Subgraph_3.config.{
+  Context => Subgraph_3_Context
+}
+import com.scala.main.job1.graph.Subgraph_4.config.{
+  Context => Subgraph_4_Context
+}
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -36,6 +48,29 @@ object Main {
       )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
+    val df_very_complex_dataset = very_complex_dataset(context).interim(
+      "graph",
+      "65t9a_sNrHRG8dew_5wXF$$I5dQoZS5ayqLJsV7DBi4_",
+      "ldRE0Uo_tzfYmOVJKvtEb$$CBqdSks4NwbB5oQck5Imd"
+    )
+    val df_FlattenSchema_1 =
+      FlattenSchema_1(context, df_very_complex_dataset).interim(
+        "graph",
+        "hc6ve4O827bkh7H6ckclm$$DnY6s1vxysncNfAIsk5VA",
+        "9sEegzaPsyr7WbqQN3r7e$$WcTY92B5ro2XSxVurZdC8"
+      )
+    val df_Reformat_12 = Reformat_12(context, df_very_complex_dataset).interim(
+      "graph",
+      "TeymC2nZ71ETj-ZxO4LIK$$RAHGEDk9gGkQVhGq0VfGe",
+      "IbgrW9w6TcrN90B56Sq2h$$IfKA0roDygNKp-fMllteG"
+    )
+    val df_Reformat_14 = Reformat_14(context, df_Reformat_12).interim(
+      "graph",
+      "VrGveOeDMRl9l6Sygpqb_$$Z8GqQGKchpTjdwv4QLkuY",
+      "fNaAeY5AHx-Fjov8-ac4c$$szZaa0q3PScp86RhU7dlz"
+    )
+    df_Reformat_14.cache().count()
+    df_Reformat_14.unpersist()
     val df_SQLStatement_1 =
       SQLStatement_1(context,
                      df_src_parquet_all_type_and_partition_withspacehyphens1
@@ -55,7 +90,7 @@ object Main {
     df_SCALA_BASIC12.cache().count()
     df_SCALA_BASIC12.unpersist()
     val df_SubgraphMain = SubgraphMain.apply(
-      context,
+      SubgraphMain_Context(context.spark, context.config.SubgraphMain),
       df_src_parquet_all_type_and_partition_withspacehyphens1
     )
     val df_Reformat_1 = Reformat_1(context, df_SubgraphMain).interim(
@@ -64,10 +99,13 @@ object Main {
       "q2OHFdKSlaApfiB-p2kod$$gjcVI8oVJu6r8jvarb7gm"
     )
     val df_Subgraph_1 = Subgraph_1.apply(
-      context,
+      Subgraph_1_Context(context.spark, context.config.Subgraph_1),
       df_src_parquet_all_type_and_partition_withspacehyphens1
     )
-    val df_Subgraph_3 = Subgraph_3.apply(context, df_Subgraph_1)
+    val df_Subgraph_3 = Subgraph_3.apply(
+      Subgraph_3_Context(context.spark, context.config.Subgraph_3),
+      df_Subgraph_1
+    )
     val df_Reformat_7 = Reformat_7(context, df_Subgraph_3).interim(
       "graph",
       "wuThqUc2qpf_FmJCMTj2e$$vhP6lu8CS3r_W42eJUyZ1",
@@ -86,7 +124,10 @@ object Main {
       )
     df_Reformat_123.cache().count()
     df_Reformat_123.unpersist()
-    val df_Subgraph_4 = Subgraph_4.apply(context, df_Reformat_7)
+    val df_Subgraph_4 = Subgraph_4.apply(
+      Subgraph_4_Context(context.spark, context.config.Subgraph_4),
+      df_Reformat_7
+    )
     val df_Reformat_10 = Reformat_10(context, df_Subgraph_4).interim(
       "graph",
       "cxC3W007DVzCvlwaUSQWg$$ckcxE7qTOTY5b8BHciWQ2",
@@ -103,6 +144,13 @@ object Main {
       )
     df_Reformat_11.cache().count()
     df_Reformat_11.unpersist()
+    val df_Reformat_13 = Reformat_13(context, df_FlattenSchema_1).interim(
+      "graph",
+      "r8mNNwSt__UJtPnjXHMWj$$eEtdTLur5_romq5Lis3iO",
+      "_b90bulax_o4KvWFf8l8r$$kUGB3BGJf5Sr5HSGKkfKF"
+    )
+    df_Reformat_13.cache().count()
+    df_Reformat_13.unpersist()
     val df_SCALA_BASIC1 =
       SCALA_BASIC1(context,
                    df_src_parquet_all_type_and_partition_withspacehyphens1

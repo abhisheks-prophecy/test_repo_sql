@@ -61,6 +61,7 @@ def pipeline(spark: SparkSession) -> None:
     df_Script_11 = Script_11(spark, df_Script_10_1_1_1_1_1_1_1_1_output1)
     df_Subgraph_1_out0, df_Subgraph_1_out1 = Subgraph_1(
         spark, 
+        Config.Subgraph_1, 
         df_src_parquet_unity_catalog, 
         df_src_parquet_unity_catalog
     )

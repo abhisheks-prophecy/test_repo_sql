@@ -148,6 +148,7 @@ def pipeline(spark: SparkSession) -> None:
     df_PERF_FLATTENSCHEMA.unpersist()
     df_PERF_SG_out0, df_PERF_SG_out1, df_PERF_SG_out2 = PERF_SG(
         spark, 
+        Config.PERF_SG, 
         df_REFORMAT_TES, 
         df_REFORMAT_TES, 
         df_REFORMAT_TES

@@ -2,6 +2,7 @@ package org.main.scla_dep_mgmt.graph
 
 import com.holdenkarau.spark.testing.DataFrameSuiteBase
 import org.main.scla_dep_mgmt.config._
+import io.prophecy.libs.registerAllUDFs
 import io.prophecy.libs.SparkTestingUtils._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{Column, DataFrame}
@@ -99,6 +100,7 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
   override def beforeAll() = {
     super.beforeAll()
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
+    registerAllUDFs(spark)
 
     val fabricName = System.getProperty("fabric")
 
@@ -118,7 +120,8 @@ class Join_1Test extends FunSuite with DataFrameSuiteBase {
         port = "in"
       )
     org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.Lookup_1_1(
-      context,
+      org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.config
+        .Context(context.spark, context.config.all_type_scala_sg_1),
       dfMain_scla_dep_mgmt_graph_all_type_scala_sg_1_Lookup_1_1
     )
   }

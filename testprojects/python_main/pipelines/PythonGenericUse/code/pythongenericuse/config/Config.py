@@ -1,5 +1,4 @@
 from prophecy.config import ConfigBase
-prophecy_spark_context = None
 
 
 class Config(ConfigBase):
@@ -9,6 +8,5 @@ class Config(ConfigBase):
         self.update()
 
     def update(self, ):
-        global prophecy_spark_context
-        prophecy_spark_context = self.spark
+        prophecy_spark = self.spark
         pass

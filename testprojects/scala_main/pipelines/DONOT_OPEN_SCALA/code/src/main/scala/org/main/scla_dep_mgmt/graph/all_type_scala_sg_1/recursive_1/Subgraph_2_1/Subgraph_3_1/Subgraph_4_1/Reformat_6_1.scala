@@ -1,10 +1,8 @@
 package org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.recursive_1.Subgraph_2_1.Subgraph_3_1.Subgraph_4_1
 
 import io.prophecy.libs._
-import org.main.scla_dep_mgmt.config.ConfigStore._
-import org.main.scla_dep_mgmt.config.Context
 import org.main.scla_dep_mgmt.udfs.UDFs._
-import org.main.scla_dep_mgmt.udfs._
+import org.main.scla_dep_mgmt.graph.all_type_scala_sg_1.recursive_1.Subgraph_2_1.Subgraph_3_1.Subgraph_4_1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -43,7 +41,13 @@ object Reformat_6_1 {
       col("p_double"),
       col("p_string"),
       col("p_date"),
-      col("p_timestamp")
+      col("p_timestamp"),
+      expr(context.config.c_subgraph_4_1_c_spark_expression).as("c_expr"),
+      concat(udf_random_number(),
+             udf_add_one(col("`c  - int`")),
+             udf_multiply(col("`c- short`")),
+             udf_string_null_safe(col("`c-string`"))
+      ).as("c_udf")
     )
 
 }

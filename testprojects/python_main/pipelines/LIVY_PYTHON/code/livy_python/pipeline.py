@@ -24,7 +24,7 @@ def pipeline(spark: SparkSession) -> None:
         "LmVB9Tiv7gOksXKYvwwqv$$vRQhC-glg7Tz8vdDjYpL9", 
         "sEqrqRgL-8RgpQvmEL4qv$$oEdp_cRkhh3jJCtYi3j2w"
     )
-    df_Subgraph_4 = Subgraph_4(spark, df_livy_src_csv_py)
+    df_Subgraph_4 = Subgraph_4(spark, Config.Subgraph_4, df_livy_src_csv_py)
     df_SQLStatement_1_output_1, df_SQLStatement_1_out1, df_SQLStatement_1_out2 = SQLStatement_1(
         spark, 
         df_Subgraph_4, 
@@ -84,7 +84,7 @@ def pipeline(spark: SparkSession) -> None:
         "ZZMLx6qIPkco-6Lzn_Bkq$$W6J4G5WzbXaK0Ev-YvUcS", 
         "ISaF3Q4I-FudtVSXTdXHt$$6W-4kvVqiAX0YhO5TKPng"
     )
-    df_pythonLivySG1_1 = pythonLivySG1_1(spark, df_SetOperation_1)
+    df_pythonLivySG1_1 = pythonLivySG1_1(spark, Config.pythonLivySG1_1, df_SetOperation_1)
     df_Reformat_6 = Reformat_6(spark, df_livy_src_csv_py)
     df_Reformat_6 = collectMetrics(
         spark, 

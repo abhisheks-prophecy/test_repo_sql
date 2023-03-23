@@ -1114,9 +1114,7 @@ def Script_5(spark: SparkSession, in0: DataFrame) -> DataFrame:
     # result1=subprocess.run(["pwd"], capture_output=True, text=True)
     data = [StructField(item, StringType(), True) for item in result.stdout.split("\n")]
     # data.append((result1.stdout,))
-    print(data)
     deptDF = spark.createDataFrame(data = [], schema = StructType(data))
-    deptDF.printSchema()
     out0 = in0.select("c  date")
 
     return out0

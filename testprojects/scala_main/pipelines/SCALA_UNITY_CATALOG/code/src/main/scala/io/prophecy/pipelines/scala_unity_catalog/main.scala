@@ -1,7 +1,6 @@
 package io.prophecy.pipelines.scala_unity_catalog
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scala_unity_catalog.config.ConfigStore._
 import io.prophecy.pipelines.scala_unity_catalog.config.Context
 import io.prophecy.pipelines.scala_unity_catalog.config._
 import io.prophecy.pipelines.scala_unity_catalog.udfs.UDFs._
@@ -36,7 +35,8 @@ object Main {
     val context = Context(spark, config)
     spark.conf
       .set("prophecy.metadata.pipeline.uri", "pipelines/SCALA_UNITY_CATALOG")
-    MetricsCollector.start(spark,            "pipelines/SCALA_UNITY_CATALOG")
+    registerUDFs(spark)
+    MetricsCollector.start(spark, "pipelines/SCALA_UNITY_CATALOG")
     apply(context)
     MetricsCollector.end(spark)
   }
