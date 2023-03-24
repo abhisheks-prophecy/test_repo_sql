@@ -15,10 +15,10 @@ from prophecy.lookups import (
 a = 10
 
 def registerUDFs(spark: SparkSession):
-    spark.udf.register("squared", squared)
     spark.udf.register("factorial", factorial)
-    spark.udf.register("udf1", udf1)
     spark.udf.register("random_string", random_string)
+    spark.udf.register("udf1", udf1)
+    spark.udf.register("squared", squared)
     spark.udf.register("udf_scipy_dependency", udf_scipy_dependency)
     spark.udf.register("udf_swap_product", udf_swap_product)
     spark.udf.register("udf_prime", udf_prime)
@@ -28,19 +28,6 @@ def registerUDFs(spark: SparkSession):
     spark.udf.register("udf_maptype", udf_maptype)
     spark.udf.register("udf_tokenize", udf_tokenize)
     spark.udf.register("squared_udf", squared_udf)
-
-def squaredGenerator():
-    initial = 10
-
-    @udf(returnType = IntegerType())
-    def func(input):
-        input = int(input) if input is not None else 2
-
-        return int(input) * int(input) * initial if input is not None else initial
-
-    return func
-
-squared = squaredGenerator()
 
 def factorialGenerator():
     initial = 10
@@ -54,17 +41,6 @@ def factorialGenerator():
     return func
 
 factorial = factorialGenerator()
-
-def udf1Generator():
-    a = 10
-
-    @udf(returnType = IntegerType())
-    def func(value):
-        return value * a if value != None else a * a
-
-    return func
-
-udf1 = udf1Generator()
 
 def random_stringGenerator():
     initial = 10
@@ -84,6 +60,30 @@ def random_stringGenerator():
     return func
 
 random_string = random_stringGenerator()
+
+def udf1Generator():
+    a = 10
+
+    @udf(returnType = IntegerType())
+    def func(value):
+        return value * a if value != None else a * a
+
+    return func
+
+udf1 = udf1Generator()
+
+def squaredGenerator():
+    initial = 10
+
+    @udf(returnType = IntegerType())
+    def func(input):
+        input = int(input) if input is not None else 2
+
+        return int(input) * int(input) * initial if input is not None else initial
+
+    return func
+
+squared = squaredGenerator()
 
 def udf_scipy_dependencyGenerator():
     initial = 10

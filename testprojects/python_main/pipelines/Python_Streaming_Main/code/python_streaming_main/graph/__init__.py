@@ -31,4 +31,5 @@ from .FlattenSchema_2 import FlattenSchema_2
 from .DEST_KAFKA import DEST_KAFKA
 from .Parquet_Standard import Parquet_Standard
 from .Aggregate_1_1 import Aggregate_1_1
+from .SQS_PARQUET import SQS_PARQUET
 from .Watermark_1 import Watermark_1

@@ -208,6 +208,21 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "5164",
+      "name" : "dev_s3",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "s3://prophecy-public-bucket/prophecy-libs/"
+        }
+      }
+    }, {
       "id" : "5117",
       "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
@@ -12291,7 +12306,7 @@
             "optional" : false,
             "isWorkflowNodeConfiguration" : true
           }, {
-            "name" : "Subgraph_2",
+            "name" : "Subgraph_2_renamed",
             "kind" : {
               "type" : "record",
               "fields" : [ {
