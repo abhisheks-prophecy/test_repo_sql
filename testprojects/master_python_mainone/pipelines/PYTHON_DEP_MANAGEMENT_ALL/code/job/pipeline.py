@@ -161,7 +161,7 @@ def pipeline(spark: SparkSession) -> None:
         "AVrA22qbSiO5D8bGEnww6$$d4-r8EQ3lHXDKn2sZL5oX", 
         "yrNcCB_hx8IOjKH2Wh8Jx$$-xZBC0SRBrEmyMsO8m70G"
     )
-    df_SubGraph_2 = SubGraph_2(spark, df_Repartition_1, df_RowDistributor_1_out0)
+    df_SubGraph_2 = SubGraph_2(spark, Config.SubGraph_2, df_Repartition_1, df_RowDistributor_1_out0)
     df_orc_src = orc_src(spark)
     df_orc_src = collectMetrics(
         spark, 
@@ -235,6 +235,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_all_components_1_out0, df_all_components_1_out1, df_all_components_1_out2 = all_components_1(
         spark, 
+        Config.all_components_1, 
         df_all_type_part_parquet, 
         df_all_type_part_parquet, 
         df_all_type_part_parquet
@@ -457,7 +458,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Limit_3.cache().count()
     df_Limit_3.unpersist()
-    df_SubGraph_7 = SubGraph_7(spark, df_Script_3)
+    df_SubGraph_7 = SubGraph_7(spark, Config.SubGraph_7, df_Script_3)
     df_Limit_2 = Limit_2(spark, df_SubGraph_7)
     df_Limit_2 = collectMetrics(
         spark, 

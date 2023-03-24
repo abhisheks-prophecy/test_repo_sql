@@ -19,7 +19,7 @@ def Script_6(
     print(
         f"Configs are: CONFIG_STR:{Config.CONFIG_STR} \n CONFIG_DOUBLE:{Config.CONFIG_DOUBLE} \n CONFIG_BOOLEAN:{Config.CONFIG_BOOLEAN} \n CONFIG_INT:{Config.CONFIG_INT} \n CONFIG_FLOAT:{Config.CONFIG_FLOAT} \n CONFIG_SHORT:{Config.CONFIG_SHORT} \n CONFIG_DB_SECRETS:{Config.CONFIG_DB_SECRETS}"
     )
-    assert(result == 0)
+    assert (result == 0)
     out00 = in0.select("c-string").withColumnRenamed("c-string", "c_str_new")
     out1 = in1.select("c-string").withColumnRenamed("c-string", "c_str_new")
     out2 = in2.select("c-string").withColumnRenamed("c-string", "c_str_new")

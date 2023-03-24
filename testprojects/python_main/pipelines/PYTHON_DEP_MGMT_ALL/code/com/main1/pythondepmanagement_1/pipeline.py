@@ -558,9 +558,10 @@ def pipeline(spark: SparkSession) -> None:
         "INfBHLuOcxIwIT33NNcTv$$RLgOfO3B23UnM-2xLZz0-"
     )
     Script_8(spark, df_FlattenSchema_1)
-    df_Subgraph_2 = Subgraph_2(spark, Config.Subgraph_2, df_Limit_5)
-    df_Subgraph_2.cache().count()
-    df_Subgraph_2.unpersist()
+    df_Subgraph_2_renamed = Subgraph_2_renamed(spark, Config.Subgraph_2_renamed, df_Limit_5)
+    df_Subgraph_2_renamed.cache().count()
+    df_Subgraph_2_renamed.unpersist()
+    dest_delta_scdmerge_main(spark, df_delta)
     df_Script_6 = Script_6(
         spark, 
         df_all_type_main_pythonsg_out0, 
@@ -588,6 +589,14 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_11.cache().count()
     df_Reformat_11.unpersist()
+    df_Reformat_12_1 = Reformat_12_1(spark, df_delta)
+    df_Reformat_12_1 = collectMetrics(
+        spark, 
+        df_Reformat_12_1, 
+        "graph", 
+        "HQ-YFKeTWIWSG2AeQ2fZf$$KgxUnliaO2QhiEBdjiUP3", 
+        "Trknso8mmjbWKT0zrEuxl$$mBd-sYR07zoIh5-WEuZrX"
+    )
     df_Script_12 = Script_12(spark, df_Script_10_1_1_1_1_1_1_1_1_output2)
     df_Script_12 = collectMetrics(
         spark, 
@@ -662,6 +671,7 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_Reformat_13.cache().count()
     df_Reformat_13.unpersist()
+    dest_delta_merge_main(spark, df_Reformat_12_1)
     df_ComplexExpr = ComplexExpr(spark, df_src_parquet_all_type_no_partition)
     df_ComplexExpr = collectMetrics(
         spark, 

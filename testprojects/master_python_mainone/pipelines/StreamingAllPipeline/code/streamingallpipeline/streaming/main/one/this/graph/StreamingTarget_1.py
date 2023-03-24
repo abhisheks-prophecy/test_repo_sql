@@ -18,7 +18,9 @@ def StreamingTarget_1(spark: SparkSession, in0: DataFrame):
               'backoffFactor': "1",
               'maxRetries': "10",
               'maxPayload': None,
-              'stopOnFailure': False
+              'stopOnFailure': False,
+              'skipSsl': True,
+              'certFilePath': None
             }
           )
         )\

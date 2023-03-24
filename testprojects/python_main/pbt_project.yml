@@ -50,7 +50,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-10-12 12:58:56'
-    modifiedAt: '2023-03-20 07:33:39'
+    modifiedAt: '2023-03-22 05:54:37'
     datasets:
       inputs:
       - datasets/src_azure
@@ -65,7 +65,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-06-29 04:43:12'
-    modifiedAt: '2023-03-20 07:44:16'
+    modifiedAt: '2023-03-23 16:25:34'
     datasets:
       inputs:
       - datasets/src_avro_CustsDatasetInput
@@ -83,6 +83,8 @@ pipelines:
       - datasets/very_complex_source
       outputs:
       - datasets/dest_csv_all_type_no_partition
+      - datasets/dest_delta_merge_main
+      - datasets/dest_delta_scdmerge_main
       - datasets/py_sg_target_test_release
     subgraphs:
     - subgraphs/all_type
@@ -124,7 +126,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-07-28 11:58:31'
-    modifiedAt: '2023-03-20 07:33:49'
+    modifiedAt: '2023-03-22 05:29:23'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -139,7 +141,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-08-31 07:54:13'
-    modifiedAt: '2023-03-01 07:13:39'
+    modifiedAt: '2023-03-22 06:13:04'
     datasets:
       inputs:
       - datasets/src_csv_special_char_column_name
@@ -206,7 +208,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-11-23 08:14:14'
-    modifiedAt: '2023-03-20 07:51:03'
+    modifiedAt: '2023-03-22 05:54:32'
     datasets:
       inputs:
       - datasets/qa_database_all_type_parquet
@@ -244,7 +246,7 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-01-24 05:58:12'
-    modifiedAt: '2023-01-24 05:58:12'
+    modifiedAt: '2023-03-23 09:45:28'
     datasets:
       inputs:
       - datasets/src_orc_streaming_standard
@@ -256,6 +258,7 @@ pipelines:
       - datasets/src_streaming_parquet_standard
       - datasets/src_streaming_qa_kafka
       - datasets/src_streaming_sqs_csv
+      - datasets/very_complex_source
       outputs:
       - datasets/dest_csv
       - datasets/dest_delta
@@ -265,7 +268,10 @@ pipelines:
       - datasets/dest_streaming_orc
       - datasets/dest_streaming_parquet
       - datasets/dest_streaming_splunk
-    subgraphs: []
+      - datasets/py_sg_target_test_release
+    subgraphs:
+    - subgraphs/all_type
+    - subgraphs/CSVStreamingSG
     dependencies: {}
   pipelines/PythonStreamingRelease:
     name: PythonStreamingRelease
@@ -345,6 +351,27 @@ pipelines:
       - datasets/src_csv_special_char_column_name
       outputs:
       - datasets/dest_em_disabled
+    subgraphs: []
+    dependencies: {}
+  pipelines/PYTHON_SUBS_DISABLED:
+    name: PYTHON_SUBS_DISABLED
+    description: PYTHON_SUBS_DISABLED
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-03-23 16:05:35'
+    modifiedAt: '2023-03-23 16:20:03'
+    datasets:
+      inputs:
+      - datasets/src_delta_all_type_no_partition
+      outputs:
+      - datasets/dummy_catalog_delta
+      - datasets/dummy_catalog_delta_merge_scd
+      - datasets/dummy_delta_merge
+      - datasets/dummy_dest_delta_merge_scd
+      - datasets/dummy_redshift_dest
+      - datasets/dummy_snowflake
     subgraphs: []
     dependencies: {}
 datasets:
@@ -1556,6 +1583,126 @@ datasets:
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-03-20 07:26:15'
         modifiedAt: '2023-03-20 07:26:15'
+  datasets/dummy_delta_merge:
+    name: dummy_delta_merge
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:08:51'
+    modifiedAt: '2023-03-23 16:08:51'
+    mode: batch
+    physicalDatasets:
+      captain_livy:
+        fabricId: 1654
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:08:51'
+        modifiedAt: '2023-03-23 16:08:51'
+  datasets/dummy_dest_delta_merge_scd:
+    name: dummy_dest_delta_merge_scd
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:09:57'
+    modifiedAt: '2023-03-23 16:09:58'
+    mode: batch
+    physicalDatasets:
+      captain_livy:
+        fabricId: 1654
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:09:57'
+        modifiedAt: '2023-03-23 16:09:57'
+  datasets/dummy_redshift_dest:
+    name: dummy_redshift_dest
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:11:53'
+    modifiedAt: '2023-03-23 16:11:53'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:11:53'
+        modifiedAt: '2023-03-23 16:11:53'
+  datasets/dummy_snowflake:
+    name: dummy_snowflake
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:12:29'
+    modifiedAt: '2023-03-23 16:12:29'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: Warehouse
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:12:29'
+        modifiedAt: '2023-03-23 16:12:29'
+  datasets/dummy_catalog_delta:
+    name: dummy_catalog_delta
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:18:47'
+    modifiedAt: '2023-03-23 16:20:03'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:18:47'
+        modifiedAt: '2023-03-23 16:18:47'
+  datasets/dummy_catalog_delta_merge_scd:
+    name: dummy_catalog_delta_merge_scd
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:19:42'
+    modifiedAt: '2023-03-23 16:19:42'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: Database
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:19:42'
+        modifiedAt: '2023-03-23 16:19:42'
+  datasets/dest_delta_merge_main:
+    name: dest_delta_merge_main
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:23:23'
+    modifiedAt: '2023-03-23 16:23:23'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:23:23'
+        modifiedAt: '2023-03-23 16:23:23'
+  datasets/dest_delta_scdmerge_main:
+    name: dest_delta_scdmerge_main
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-03-23 16:25:23'
+    modifiedAt: '2023-03-23 16:25:23'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 2730
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-03-23 16:25:23'
+        modifiedAt: '2023-03-23 16:25:23'
 templates: {}
 jobs:
   jobs/PYTHON_SINGLE_CLUSTER_JOB:
@@ -1716,11 +1863,20 @@ jobs:
 functions:
   author: null
   createdAt: '2023-03-13 13:20:16'
-  modifiedAt: '2023-03-20 07:42:07'
+  modifiedAt: '2023-03-23 16:25:33'
   gems: {}
   udfs:
     udfs/factorial:
       name: factorial
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+      modifiedAt: '2022-12-15 18:04:50'
+    udfs/random_string:
+      name: random_string
       description: ''
       tags: []
       inputs: []
@@ -1739,15 +1895,6 @@ functions:
       modifiedAt: '2022-12-15 18:04:50'
     udfs/squared:
       name: squared
-      description: ''
-      tags: []
-      inputs: []
-      outputs: []
-      author: abhisheks+e2etests@prophecy.io
-      createdAt: '2022-12-15 18:04:50'
-      modifiedAt: '2022-12-15 18:04:50'
-    udfs/random_string:
-      name: random_string
       description: ''
       tags: []
       inputs: []
