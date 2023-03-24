@@ -531,3 +531,7 @@ ScalaProjectCloneExternalGit/2.9.0.0-11
 *** Release notes for version: 2.9.0.1-1 ***
 
 2.9.0.1-1
+
+*** Release notes for version: 2.9.0.1-2 ***
+
+2.9.0.1-2
