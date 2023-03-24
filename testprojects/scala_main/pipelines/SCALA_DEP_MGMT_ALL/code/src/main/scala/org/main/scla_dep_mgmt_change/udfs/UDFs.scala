@@ -24,6 +24,9 @@ object UDFs extends Serializable {
     spark.udf.register("udf_string_length10",  udf_string_length10)
     spark.udf.register("udf_complex_window",   udf_complex_window)
     spark.udf.register("udf1",                 udf1)
+    spark.udf.register("udf_matrix",           udf_matrix)
+    spark.udf.register("udf_matrices",         udf_matrices)
+    spark.udf.register("udf_vectors",          udf_vectors)
     registerAllUDFs(spark)
   }
 
@@ -260,6 +263,21 @@ object UDFs extends Serializable {
   def udf1 = {
     var a = 10
     udf((value: Int) => value * a)
+  }
+
+  def udf_matrix = {
+    import org.apache.spark.ml.linalg.Matrix
+    udf((mat: Matrix) => mat.numCols)
+  }
+
+  def udf_matrices = {
+    import org.apache.spark.ml.linalg.Matrices
+    udf(() => Matrices.dense(2, 2, Array(1, 2, 3, 4)))
+  }
+
+  def udf_vectors = {
+    import org.apache.spark.ml.linalg.Vectors
+    udf(() => Vectors.dense(1.0d, 2.0d))
   }
 
 }

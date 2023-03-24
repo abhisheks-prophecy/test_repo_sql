@@ -527,3 +527,15 @@ d
 *** Release notes for version: ScalaProjectCloneExternalGit/2.9.0.0-11 ***
 
 ScalaProjectCloneExternalGit/2.9.0.0-11
+
+*** Release notes for version: 2.9.0.1-1 ***
+
+2.9.0.1-1
+
+*** Release notes for version: 2.9.0.1-2 ***
+
+2.9.0.1-2
+
+*** Release notes for version: 2.9.0.1-3 ***
+
+2.9.0.1-3

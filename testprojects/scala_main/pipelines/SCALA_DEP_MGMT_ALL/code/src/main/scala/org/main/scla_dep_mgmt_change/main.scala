@@ -180,6 +180,23 @@ object Main {
     )
     df_pm_shared_graph.cache().count()
     df_pm_shared_graph.unpersist()
+    val df_normalization_csv_dataset =
+      normalization_csv_dataset(context).interim(
+        "graph",
+        "rusdZkluaY2DwOfLeH2ns$$aB11yoBpErYRN2XCfxG6r",
+        "4LcDNvHWZj1ScAUtL3eqP$$cdoPUZEiZFbXD-xvQAEGb"
+      )
+    val df_Script_1_1 =
+      Script_1_1(context, df_normalization_csv_dataset).interim(
+        "graph",
+        "bn6OrxLvCRhd7PVJgw2WA$$GTBN5S223fgBkmFFGrnoL",
+        "bmYzKdbCLdTJrO8o7dQTr$$OLLs9M9xNSN30rUyisSwk"
+      )
+    val df_Script_3_1 = Script_3_1(context, df_Script_1_1).interim(
+      "graph",
+      "oal3Et-6d51tvnDW0W0PT$$uDOEkQ9UplPz9HCZnGnae",
+      "9EgmAq_QMV6th4l5ovSz0$$o8C5pbA10XPTdXOIah4qp"
+    )
     val df_Script_6 = Script_6(
       context,
       df_src_avro_CustsDatasetInput_1,
@@ -393,6 +410,23 @@ object Main {
     val df_src_delta_all_type_no_partition = src_delta_all_type_no_partition(
       context
     ).interim("graph", "Fmg6g-ViOm77hFxIpAPch", "ee0X8XILMHhyMro4U1_V7")
+    val df_Reformat_2_1 = Reformat_2_1(context, df_Script_3_1).interim(
+      "graph",
+      "M3zm5EEG1LvUdCnA21OaR$$MAHYIuoxcEM6xT3URqfM7",
+      "wnHqEYZQYqZz96cOv6Ety$$8cVFLX52yJlzjuh5OvxDF"
+    )
+    val df_Reformat_3_1 = Reformat_3_1(context, df_Reformat_2_1).interim(
+      "graph",
+      "dIMW3Rgwn0YcESSyhOwRm$$ykiwvc_x8MdZA1cy2Ltol",
+      "AHIKADXkY44ID1ZMV-bDq$$rDMyuw3clKzsmHvIbsXYO"
+    )
+    val df_Script_4_1 = Script_4_1(context, df_Reformat_3_1).interim(
+      "graph",
+      "6URRouwy4t1FYJ0ibuQ8f$$yeBl_S8i7Anm1IK0Xk-QX",
+      "uKDCXRpT1kI2VyrsfWxNr$$h12By7uD1Z42xVUtirgXJ"
+    )
+    df_Script_4_1.cache().count()
+    df_Script_4_1.unpersist()
     val df_SetOperation_2_1 =
       SetOperation_2_1(context, df_SetOperation_2, df_SetOperation_2).interim(
         "graph",
