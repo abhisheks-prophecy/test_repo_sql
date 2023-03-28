@@ -92,7 +92,10 @@ def main():
     MetricsCollector.initializeMetrics(spark)
     spark.conf.set("prophecy.collect.basic.stats", "true")
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
-    spark.conf.set("spark.sql.optimizer.excludedRules", "org.apache.spark.sql.catalyst.optimizer.ColumnPruning")
+    spark.conf.set(
+        "spark.sql.optimizer.excludedRules",
+        "org.apache.spark.sql.catalyst.optimizer.ColumnPruning,org.apache.spark.sql.catalyst.optimizer.ColumnPruning"
+    )
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/PYTHON_BASIC")
     
     MetricsCollector.start(spark = spark, pipelineId = "pipelines/PYTHON_BASIC")
