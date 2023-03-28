@@ -27,6 +27,49 @@
       }
     },
     "availableFabrics" : [ {
+      "id" : "5181",
+      "name" : "FabricAutomatedADVJobSize",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
+        }
+      },
+      "scalalibsResolutionMode" : {
+        "DBFS" : {
+          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
+        }
+      }
+    }, {
+      "id" : "5192",
+      "name" : "Azure-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "5199",
+      "name" : "Config_shared_acl",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2420",
       "name" : "dev_sdl_acl_dbfs",
       "clusterSizes" : {
@@ -44,43 +87,21 @@
         }
       }
     }, {
-      "id" : "5147",
-      "name" : "Config_shared_acl",
+      "id" : "5168",
+      "name" : "FabricAutomatedEBS",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "small2", "small3" ]
       },
       "pylibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://pypi.python.org/simple"
+        }
       },
       "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "5143",
-      "name" : "Config_hc_acl",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "5122",
-      "name" : "SingleCluster_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
+        "CustomArtifactory" : {
+          "url" : "https://repo1.maven.org/"
+        }
       }
     }, {
       "id" : "2601",
@@ -165,23 +186,6 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "5121",
-      "name" : "FabricAutomatedADVJobSize",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3", "adv-json1", "adv-json2" ]
-      },
-      "pylibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/python"
-        }
-      },
-      "scalalibsResolutionMode" : {
-        "DBFS" : {
-          "path" : "dbfs:/FileStore/Users/abhisheks/prophecy-libs/scala"
-        }
-      }
-    }, {
       "id" : "3854",
       "name" : "dev_prophecy_donotdelete",
       "clusterSizes" : {
@@ -195,7 +199,20 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "5145",
+      "id" : "5196",
+      "name" : "Config_hc_acl",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "5195",
       "name" : "Automated-Databricks-ACLNewDude",
       "clusterSizes" : {
         "default" : "small",
@@ -208,20 +225,18 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "5117",
-      "name" : "FabricAutomatedEBS",
+      "id" : "5164",
+      "name" : "dev_s3",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "small2", "small3" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
-        "CustomArtifactory" : {
-          "url" : "https://pypi.python.org/simple"
-        }
+        "PublicCentral" : { }
       },
       "scalalibsResolutionMode" : {
-        "CustomArtifactory" : {
-          "url" : "https://repo1.maven.org/"
+        "DBFS" : {
+          "path" : "s3://prophecy-public-bucket/prophecy-libs/"
         }
       }
     }, {
@@ -266,19 +281,6 @@
         "CustomArtifactory" : {
           "url" : "https://repo1.maven.org/"
         }
-      }
-    }, {
-      "id" : "5138",
-      "name" : "GCP-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
       }
     }, {
       "id" : "2080",
@@ -333,6 +335,19 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "5186",
+      "name" : "TEST-Automated_Databricks1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "2394",
       "name" : "dev_sdl_acl",
       "clusterSizes" : {
@@ -358,19 +373,6 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "adv-json1" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "5119",
-      "name" : "JobFabricMain_1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -405,24 +407,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "5123",
-      "name" : "TEST-Automated_Databricks1",
+      "id" : "5182",
+      "name" : "SingleCluster_1",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2", "small2" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "5139",
-      "name" : "Azure-TEST_Automated",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -460,6 +449,32 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
+    }, {
+      "id" : "5171",
+      "name" : "JobFabricMain_1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1", "adv-json2" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "5187",
+      "name" : "GCP-TEST_Automated",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "adv-json1" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
     } ]
   },
   "processes" : {
@@ -474,10 +489,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "rkL0o83Atv9xMJNgOyAQU"
+          "id" : "rkL0o83Atv9xMJNgOyAQU",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "nKDMYbQmxNWNiU2FeyutN"
+          "id" : "nKDMYbQmxNWNiU2FeyutN",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -1036,15 +1053,17 @@
       "metadata" : {
         "label" : "Script_2",
         "slug" : "Script",
-        "x" : 436.20001220703125,
-        "y" : 576.5999755859375
+        "x" : 420,
+        "y" : 500
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "bpaXT0j9N9Wo0H3KNB9G4"
+          "id" : "bpaXT0j9N9Wo0H3KNB9G4",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "S13wuyD_C30uwa-1FZpwx"
+          "id" : "S13wuyD_C30uwa-1FZpwx",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -1090,10 +1109,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "KQZbSBG_fp8Dh3XcVApUC"
+          "id" : "KQZbSBG_fp8Dh3XcVApUC",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "7OJODT0JPULgYEZZ5JY1x"
+          "id" : "7OJODT0JPULgYEZZ5JY1x",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -2052,10 +2073,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "7h3ijXLIDMCoOsZMSd8bE"
+          "id" : "7h3ijXLIDMCoOsZMSd8bE",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "GZMZadJ4JHronbKNk70i2"
+          "id" : "GZMZadJ4JHronbKNk70i2",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -5433,10 +5456,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "j-35vFWKX3fOTgVArZO0y"
+          "id" : "j-35vFWKX3fOTgVArZO0y",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "Fwm0kiP2Blkiz_DjAsjpx"
+          "id" : "Fwm0kiP2Blkiz_DjAsjpx",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -5464,10 +5489,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "D0jZ_DHveYtcbSdbZkjuj"
+          "id" : "D0jZ_DHveYtcbSdbZkjuj",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "mN1W9IienzD-0JvxKU0IQ"
+          "id" : "mN1W9IienzD-0JvxKU0IQ",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -5811,10 +5838,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "mcfjBVXKphNlB3zZNVlQM"
+          "id" : "mcfjBVXKphNlB3zZNVlQM",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "c1m14lxDEvkBD7_aI3sMz"
+          "id" : "c1m14lxDEvkBD7_aI3sMz",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -6374,10 +6403,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "ssQgHqp1P1M8Hvg_LyoIO$$HLho6wlUka9NkfA1u-tAL"
+          "id" : "ssQgHqp1P1M8Hvg_LyoIO$$HLho6wlUka9NkfA1u-tAL",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "WiD8HGr-_ELwsksXgQZN7$$IKjYTFjEoHBuJFuQL0NSW"
+          "id" : "WiD8HGr-_ELwsksXgQZN7$$IKjYTFjEoHBuJFuQL0NSW",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -6404,10 +6435,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "4GjxWzcr0z_c_vb2a-qdc"
+          "id" : "4GjxWzcr0z_c_vb2a-qdc",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "aZI8ryt1iLn_pKH4RziBg"
+          "id" : "aZI8ryt1iLn_pKH4RziBg",
+          "slug" : ""
         } ]
       },
       "settings" : {
@@ -6434,10 +6467,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "9HlDuzT0aA7cxQZGjcR_M"
+          "id" : "9HlDuzT0aA7cxQZGjcR_M",
+          "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "kbOVS6Em7zKvckbijz2bs"
+          "id" : "kbOVS6Em7zKvckbijz2bs",
+          "slug" : ""
         } ]
       },
       "settings" : {
