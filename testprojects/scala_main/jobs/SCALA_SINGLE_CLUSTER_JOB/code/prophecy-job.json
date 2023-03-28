@@ -9,7 +9,7 @@
       "clusterMode" : "Single"
     },
     "enabled" : true,
-    "defaultClusterSize" : "adv-json1",
+    "defaultClusterSize" : "11-3-adv-json1",
     "alerting" : {
       "emails" : "abhisheks@prophecy.io,abhisheks@simpledatalabs.com",
       "onStart" : false,
@@ -134,7 +134,7 @@
       "name" : "dev",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2", "adv-jsoncomplex" ]
+        "availableClusterSizes" : [ "small", "medium", "adv-json1", "adv-json2", "adv-jsoncomplex", "11-3-adv-json1" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -229,7 +229,7 @@
       "name" : "dev_s3",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "adv-json_9_1" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -478,22 +478,22 @@
     } ]
   },
   "processes" : {
-    "DL-E6u8JPMv5OLvsgXvqj" : {
-      "id" : "DL-E6u8JPMv5OLvsgXvqj",
+    "fEdKhr0WS9J0yFHRlTkcx$$ylOQay990DQCqNCqeI66x" : {
+      "id" : "fEdKhr0WS9J0yFHRlTkcx$$ylOQay990DQCqNCqeI66x",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "EM_IO",
         "slug" : "EM_IO",
-        "x" : -320,
-        "y" : 20
+        "x" : -260,
+        "y" : -20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "rkL0o83Atv9xMJNgOyAQU",
+          "id" : "T2ysK96QtzcNSUjZcV0we$$mnU6uzMtGwbO6ctARd0VN",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "nKDMYbQmxNWNiU2FeyutN",
+          "id" : "-9BjFX2JnXJAb8zBaPZI6$$R3LP3slCPCsjGB0ZzX4HU",
           "slug" : ""
         } ]
       },
@@ -592,7 +592,7 @@
                     "type" : "string",
                     "value" : null
                   },
-                  "value" : [ "23" ]
+                  "value" : [ "23", "121" ]
                 },
                 "isWorkflowNodeConfiguration" : false
               } ]
@@ -1035,15 +1035,10 @@
             "isWorkflowNodeConfiguration" : true
           } ],
           "instances" : {
-            "ScalaProjectCloneExternalGit" : [ "test-random3", "test-random1", "test-random2", "default", "test_all_instancevalues" ]
+            "ScalaProjectCloneExternalGit" : [ "newinstance1", "default" ]
           },
-          "overrides" : {
-            "bool" : false,
-            "array_record" : [ {
-              "werw" : "8"
-            } ]
-          },
-          "selectedInstance" : "test-random2"
+          "overrides" : { },
+          "selectedInstance" : "default"
         }
       }
     },
@@ -1095,7 +1090,7 @@
         "outputs" : [ ]
       },
       "properties" : {
-        "clusterSize" : "adv-json1"
+        "clusterSize" : "11-3-adv-json1"
       }
     },
     "EnBhDB9q7Qps0M-POArMA" : {
@@ -6491,12 +6486,6 @@
     }
   },
   "connections" : [ {
-    "id" : "wyCTpiY--rYXnW7fqE5Iw",
-    "source" : "DL-E6u8JPMv5OLvsgXvqj",
-    "target" : "EnBhDB9q7Qps0M-POArMA",
-    "sourcePort" : "nKDMYbQmxNWNiU2FeyutN",
-    "targetPort" : "KQZbSBG_fp8Dh3XcVApUC"
-  }, {
     "id" : "D1cl0QBnXmthvQkupAPvK",
     "source" : "EnBhDB9q7Qps0M-POArMA",
     "target" : "zpW3JW9SBY91WtenbovxD",
@@ -6508,12 +6497,6 @@
     "target" : "IwLWoFpeABdPj70x5ewGZ",
     "sourcePort" : "w0U6w5nt8tJY2a4qpH6dU",
     "targetPort" : "j-35vFWKX3fOTgVArZO0y"
-  }, {
-    "id" : "zc_I9uHdEw9SQCm6y5aPp",
-    "source" : "DL-E6u8JPMv5OLvsgXvqj",
-    "target" : "8OOdxFZAmu1pkp0uBHaBP",
-    "sourcePort" : "nKDMYbQmxNWNiU2FeyutN",
-    "targetPort" : "4GjxWzcr0z_c_vb2a-qdc"
   }, {
     "id" : "4YAMdInUAlXtU42w0MJOD",
     "source" : "_qiFSsxfdxuPJ4J4uhgxS",
@@ -6532,12 +6515,6 @@
     "target" : "qhw6BKxwq3hOBYvXF5PxY",
     "sourcePort" : "c1m14lxDEvkBD7_aI3sMz",
     "targetPort" : "bpaXT0j9N9Wo0H3KNB9G4"
-  }, {
-    "id" : "8muy13NjVsDo4ye2wBjtv",
-    "source" : "DL-E6u8JPMv5OLvsgXvqj",
-    "target" : "ZTooE20sDX6AOBrHr1dOx",
-    "sourcePort" : "nKDMYbQmxNWNiU2FeyutN",
-    "targetPort" : "DnLKwgfoDEFQTRdHs0VX7"
   }, {
     "id" : "SkflxxJ4ky67usa4ChdV0",
     "source" : "EnBhDB9q7Qps0M-POArMA",
@@ -6562,5 +6539,17 @@
     "target" : "FEgs01nKh8Echmw6wWNwU$$LhBSYUs52_99mpgiwFjG4",
     "sourcePort" : "GZMZadJ4JHronbKNk70i2",
     "targetPort" : "ssQgHqp1P1M8Hvg_LyoIO$$HLho6wlUka9NkfA1u-tAL"
+  }, {
+    "id" : "CtITXIa6xK0oHD2ZNlwEo",
+    "source" : "fEdKhr0WS9J0yFHRlTkcx$$ylOQay990DQCqNCqeI66x",
+    "target" : "EnBhDB9q7Qps0M-POArMA",
+    "sourcePort" : "-9BjFX2JnXJAb8zBaPZI6$$R3LP3slCPCsjGB0ZzX4HU",
+    "targetPort" : "KQZbSBG_fp8Dh3XcVApUC"
+  }, {
+    "id" : "ypNM0FSr40cX6WWX75qBu",
+    "source" : "fEdKhr0WS9J0yFHRlTkcx$$ylOQay990DQCqNCqeI66x",
+    "target" : "8OOdxFZAmu1pkp0uBHaBP",
+    "sourcePort" : "-9BjFX2JnXJAb8zBaPZI6$$R3LP3slCPCsjGB0ZzX4HU",
+    "targetPort" : "4GjxWzcr0z_c_vb2a-qdc"
   } ]
 }

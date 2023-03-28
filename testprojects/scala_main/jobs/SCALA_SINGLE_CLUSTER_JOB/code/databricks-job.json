@@ -80,9 +80,9 @@
     "format" : "MULTI_TASK",
     "name" : "REL_SCALA_SINGLE_CLUSTER_JOB",
     "job_clusters" : [ {
-      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
+      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_11-3-adv-json1",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "m5.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2730",
@@ -123,7 +123,7 @@
     }, {
       "job_cluster_key" : "Cluster_2",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "m5.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2730",
@@ -193,14 +193,14 @@
     },
     "tasks" : [ {
       "task_key" : "EM_IO",
-      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
+      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_11-3-adv-json1",
       "spark_jar_task" : {
         "main_class_name" : "com.scala.main.job1.Main",
-        "parameters" : [ "-i", "test-random2", "-O", "{\"bool\":false,\"array_record\":[{\"werw\":\"8\"}]}" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.14"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.14"
         }
       }, {
         "pypi" : {
@@ -208,6 +208,11 @@
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SM_IO_SCALA_BASIC.jar"
+      }, {
+        "maven" : {
+          "coordinates" : "org.apache.spark:spark-mllib_2.12:3.3.0",
+          "exclusions" : [ ]
+        }
       } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io", "abhisheks@simpledatalabs.com" ]
@@ -240,7 +245,7 @@
       "depends_on" : [ {
         "task_key" : "EMDisabled"
       } ],
-      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
+      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_11-3-adv-json1",
       "spark_python_task" : {
         "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SCALA_SINGLE_CLUSTER_JOB/Script_2--342935074.py"
       },
@@ -260,7 +265,7 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.14"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.14"
         }
       }, {
         "pypi" : {
@@ -290,7 +295,7 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.14"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.14"
         }
       }, {
         "pypi" : {
@@ -358,7 +363,7 @@
       "depends_on" : [ {
         "task_key" : "Scala_Dep_1"
       } ],
-      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
+      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_11-3-adv-json1",
       "spark_python_task" : {
         "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SCALA_SINGLE_CLUSTER_JOB/Script_5--342935071.py"
       },
@@ -371,7 +376,7 @@
       "depends_on" : [ {
         "task_key" : "EM_IO"
       } ],
-      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_adv-json1",
+      "job_cluster_key" : "REL_SCALA_SINGLE_CLUSTER_JOB_default_11-3-adv-json1",
       "spark_python_task" : {
         "python_file" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/REL_SCALA_SINGLE_CLUSTER_JOB/Script_3--342935073.py"
       },
