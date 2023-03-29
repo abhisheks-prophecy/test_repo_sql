@@ -47,16 +47,21 @@
         "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
-        "jar" : "s3://prophecy-public-bucket/prophecy-libs/prophecy-libs-assembly-3.2.0-7.0.12.jar"
+        "jar" : "s3://prophecy-public-bucket/prophecy-libs/prophecy-libs-assembly-3.2.0-7.0.14.jar"
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.7"
+          "package" : "prophecy-libs==1.4.8"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_BASIC_20_MINS.jar"
       }, {
         "maven" : {
           "coordinates" : "mysql:mysql-connector-java:8.0.29",
+          "exclusions" : [ ]
+        }
+      }, {
+        "maven" : {
+          "coordinates" : "org.apache.spark:spark-mllib_2.12:3.3.0",
           "exclusions" : [ ]
         }
       } ],

@@ -1,6 +1,5 @@
 package io.prophecy.pipelines.perf_unitest_generate.config
 
-import io.prophecy.pipelines.perf_unitest_generate.config.ConfigStore._
 import io.prophecy.pipelines.perf_unitest_generate.config.Context
 import pureconfig.ConfigReader.Result
 import pureconfig._
