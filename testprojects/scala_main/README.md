@@ -551,3 +551,7 @@ bn
 *** Release notes for version: 2.10.0.5 ***
 
 n
+
+*** Release notes for version: 2.10.6 ***
+
+test
