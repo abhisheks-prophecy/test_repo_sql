@@ -1,10 +1,8 @@
 package io.prophecy.pipelines.scala_pipeline.graph.Subgraph_1
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scala_pipeline.config.ConfigStore._
-import io.prophecy.pipelines.scala_pipeline.config.Context
 import io.prophecy.pipelines.scala_pipeline.udfs.UDFs._
-import io.prophecy.pipelines.scala_pipeline.udfs._
+import io.prophecy.pipelines.scala_pipeline.graph.Subgraph_1.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
