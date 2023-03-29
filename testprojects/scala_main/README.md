@@ -559,3 +559,7 @@ test
 *** Release notes for version: 2.10.7 ***
 
 g
+
+*** Release notes for version: 2.10.8 ***
+
+e
