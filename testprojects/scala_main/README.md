@@ -555,3 +555,7 @@ n
 *** Release notes for version: 2.10.6 ***
 
 test
+
+*** Release notes for version: 2.10.7 ***
+
+g
