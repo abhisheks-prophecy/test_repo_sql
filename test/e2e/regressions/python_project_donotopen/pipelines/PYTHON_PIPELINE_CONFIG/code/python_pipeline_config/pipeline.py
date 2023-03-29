@@ -9,8 +9,8 @@ from python_pipeline_config.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_dataset_cust_in = dataset_cust_in(spark)
     df_Reformat_1 = Reformat_1(spark, df_dataset_cust_in)
-    df_Subgraph_1 = Subgraph_1(spark, df_Reformat_1)
-    df_PYTHON_SG = PYTHON_SG(spark, df_Reformat_1)
+    df_Subgraph_1 = Subgraph_1(spark, Config.Subgraph_1, df_Reformat_1)
+    df_PYTHON_SG = PYTHON_SG(spark, Config.PYTHON_SG, df_Reformat_1)
 
 def main():
     spark = SparkSession.builder\

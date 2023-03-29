@@ -3,19 +3,30 @@ description: ''
 version: 0.0.1
 author: abhisheks+e2etests@prophecy.io
 language: python
-buildSystem: wheel
+buildSystem: ''
+buildSystemDetails:
+  artefactID: python_test
+  parentArtefactID: abhishekse2etestsprophecy.io_team
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-03-29 08:46:34'
+  modifiedAt: '2023-03-29 08:46:34'
 pipelines:
   pipelines/PYTHON_PIPELINE_CONFIG:
     name: PYTHON_PIPELINE_CONFIG
     description: PYTHON_PIPELINE_CONFIG
     author: abhisheks+e2etests@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2023-02-23 07:36:24'
+    modifiedAt: '2023-03-29 08:47:06'
     datasets:
       inputs:
       - datasets/dataset_cust_in
       outputs: []
+    subgraphs:
+    - subgraphs/PYTHON_SG
     dependencies: {}
 datasets:
   datasets/dataset_cust_in:
@@ -23,6 +34,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-02-23 07:37:32'
+    modifiedAt: '2023-02-23 07:37:32'
     mode: batch
     physicalDatasets:
       captain_livy:
@@ -31,6 +43,7 @@ datasets:
         description: ''
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-02-23 07:37:32'
+        modifiedAt: '2023-02-23 07:37:32'
 templates: {}
 jobs:
   jobs/PYTHON_JOB_CONFIG:
@@ -56,16 +69,26 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-02-23 07:39:53'
+    modifiedAt: '2023-03-29 08:47:47'
     author: abhisheks+e2etests@prophecy.io
-libraries: []
+functions:
+  author: null
+  createdAt: '2023-03-29 08:46:34'
+  modifiedAt: '2023-03-29 08:46:34'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
 subgraphs:
   subgraphs/PYTHON_SG:
     name: PYTHON_SG
     description: PYTHON_SG
     author: abhisheks+e2etests@prophecy.io
     language: python
+    artefactID: ''
     mode: batch
     createdAt: '2023-02-23 07:37:49'
+    modifiedAt: '2023-03-29 08:47:06'
 sqlModels: {}
 sqlPipeline: null
 dependencies: '[]'

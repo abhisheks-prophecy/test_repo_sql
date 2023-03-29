@@ -3,19 +3,30 @@ description: ''
 version: 0.0.1
 author: abhisheks+e2etests@prophecy.io
 language: scala
-buildSystem: maven
+buildSystem: ''
+buildSystemDetails:
+  artefactID: scala_random_test
+  parentArtefactID: abhishekse2etestsprophecy.io_team
+  buildSystem: maven
+  author: null
+  createdAt: '2023-03-29 08:51:35'
+  modifiedAt: '2023-03-29 08:51:35'
 pipelines:
   pipelines/SCALA_PIPELINE:
     name: SCALA_PIPELINE
     description: SCALA_PIPELINE
     author: abhisheks+e2etests@prophecy.io
     mode: batch
+    artefactID: ''
     language: scala
     createdAt: '2023-02-23 06:45:33'
+    modifiedAt: '2023-03-29 08:51:40'
     datasets:
       inputs:
       - datasets/dataset_cust_in
       outputs: []
+    subgraphs:
+    - subgraphs/SCALA_SG
     dependencies: {}
 datasets:
   datasets/dataset_cust_in:
@@ -23,6 +34,7 @@ datasets:
     description: ''
     author: abhisheks+e2etests@prophecy.io
     createdAt: '2023-02-23 07:17:59'
+    modifiedAt: '2023-02-23 07:17:59'
     mode: batch
     physicalDatasets:
       captain_livy:
@@ -31,6 +43,7 @@ datasets:
         description: ''
         author: abhisheks+e2etests@prophecy.io
         createdAt: '2023-02-23 07:17:59'
+        modifiedAt: '2023-02-23 07:17:59'
 templates: {}
 jobs:
   jobs/SCALA_JOB:
@@ -56,16 +69,26 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-02-23 07:28:04'
+    modifiedAt: '2023-03-29 08:53:35'
     author: abhisheks+e2etests@prophecy.io
-libraries: []
+functions:
+  author: null
+  createdAt: '2023-03-29 08:51:35'
+  modifiedAt: '2023-03-29 08:51:35'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
 subgraphs:
   subgraphs/SCALA_SG:
     name: SCALA_SG
     description: SCALA_SG
     author: abhisheks+e2etests@prophecy.io
     language: scala
+    artefactID: ''
     mode: batch
     createdAt: '2023-02-23 07:32:42'
+    modifiedAt: '2023-03-29 08:51:40'
 sqlModels: {}
 sqlPipeline: null
 dependencies: '[]'

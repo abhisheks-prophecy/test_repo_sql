@@ -1,7 +1,6 @@
 package io.prophecy.pipelines.scala_pipeline.graph
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.scala_pipeline.config.ConfigStore._
 import io.prophecy.pipelines.scala_pipeline.config.Context
 import org.apache.spark._
 import org.apache.spark.sql._

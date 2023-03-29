@@ -27,7 +27,8 @@
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.interims.table" : "prophecy.interims_manual",
           "prophecy.execution.metrics.pipeline-metrics.table" : "prophecy.pipeline_runs_manual",
-          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual"
+          "prophecy.execution.metrics.component-metrics.table" : "prophecy.component_runs_manual",
+          "prophecy.execution.metrics.disabled" : false
         },
         "num_workers" : 1,
         "aws_attributes" : {
@@ -43,15 +44,15 @@
       "job_cluster_key" : "SCALA_JOB_default_small",
       "spark_jar_task" : {
         "main_class_name" : "io.prophecy.pipelines.scala_pipeline.Main",
-        "parameters" : [ "-i", "default" ]
+        "parameters" : [ "-i", "default", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.7"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.14"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.0"
+          "package" : "prophecy-libs==1.4.8"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/SCALA_PIPELINE.jar"
