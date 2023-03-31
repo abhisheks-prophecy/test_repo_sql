@@ -411,3 +411,7 @@ test
 *** Release notes for version: 2.10.01 ***
 
 test
+
+*** Release notes for version: 2.10.8 ***
+
+test
