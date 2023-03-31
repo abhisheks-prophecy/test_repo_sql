@@ -1,0 +1,383 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "4889",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "newteam.pipelines.functions",
+      "sharedFunctionPackageNames" : [ "abhishekse2etestsprophecy.io_team.python_project.functions", "prophecy_12323.parent_m.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "4694",
+      "projectName" : "python_project",
+      "externalDependencies" : [ {
+        "type" : "pypi",
+        "id" : "epc4R",
+        "name" : "pandas",
+        "enabled" : false,
+        "package" : "pandas>=1.4.2"
+      }, {
+        "type" : "pypi",
+        "id" : "clIDk",
+        "name" : "pyhocon",
+        "enabled" : false,
+        "package" : "pyhocon"
+      }, {
+        "type" : "pypi",
+        "id" : "_tsAo",
+        "name" : "matplotlib",
+        "enabled" : false,
+        "package" : "matplotlib==3.5.2"
+      }, {
+        "type" : "pypi",
+        "id" : "rfqtn",
+        "name" : "torch",
+        "enabled" : false,
+        "package" : "torch==1.11.0"
+      }, {
+        "type" : "pypi",
+        "id" : "gCmJ-",
+        "name" : "scipy",
+        "enabled" : false,
+        "package" : "scipy>=1.6.3,<=1.8.1"
+      }, {
+        "type" : "coordinates",
+        "coordinates" : "mysql:mysql-connector-java:8.0.28",
+        "name" : "mysql",
+        "enabled" : false,
+        "id" : "z0GAr",
+        "exclusions" : [ ]
+      } ]
+    }, {
+      "projectUID" : "22148",
+      "projectName" : "parent_M",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pipeline__372",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "ckEuq06Zz66-oIHzBRnQO$$ujryknRqAPeYh59Unls8Z" : {
+      "id" : "ckEuq06Zz66-oIHzBRnQO$$ujryknRqAPeYh59Unls8Z",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ALL_TYPE_PARQUET_NO_PARTITION",
+        "slug" : "ALL_TYPE_PARQUET_NO_PARTITION",
+        "x" : -540,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "xhrI6cyDRaKgvSo-vBiiN$$s1LwNegTs4KeZMJn-IlPb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=http://gitserver:3000/zoYlsmR6_team_778/huswgyID_project_4694.git&subPath=&tag=python_project/1.0&projectSubscriptionProjectId=4694&path=datasets/ALL_TYPE_PARQUET_NO_PARTITION"
+      }
+    },
+    "Z__q4Vzi_-Z3wgUvlHeZz$$53QDcEkVy6lezYCX6F5kB" : {
+      "id" : "Z__q4Vzi_-Z3wgUvlHeZz$$53QDcEkVy6lezYCX6F5kB",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_3",
+        "slug" : "Source_3",
+        "x" : 560,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "55JM10nHkvXaBVwRnIfla$$9Iaq2nkLVG42aCVU9obCo",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
+    "Pm6_GOyhFdQWoKcvLjesz$$eDnb9KBby1Sj-7M-lbG92" : {
+      "id" : "Pm6_GOyhFdQWoKcvLjesz$$eDnb9KBby1Sj-7M-lbG92",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Automated-Source-clone-python",
+        "slug" : "Automated_Source_clone_python",
+        "x" : -400,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "-jmnGw5Rf9FaCdmEXk6kr$$DSW_fTwnumEv3wx22o1gf",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=http://gitserver:3000/zoYlsmR6_team_778/huswgyID_project_4694.git&subPath=&tag=python_project/1.0&projectSubscriptionProjectId=4694&path=datasets/Automated-Source-clone-python"
+      }
+    },
+    "tRQawnzSIWViRt1gVQarq$$hTAN90Q1TfEUmdu7NWhQF" : {
+      "id" : "tRQawnzSIWViRt1gVQarq$$hTAN90Q1TfEUmdu7NWhQF",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ALL_TYPE_CSV",
+        "slug" : "ALL_TYPE_CSV",
+        "x" : -680,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "P1dfXosCqRB49TWFPfiw1$$ka60PE59YQyBgbk6FuKl_",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=http://gitserver:3000/zoYlsmR6_team_778/huswgyID_project_4694.git&subPath=&tag=python_project/1.0&projectSubscriptionProjectId=4694&path=datasets/ALL_TYPE_CSV"
+      }
+    },
+    "P4VO3jsAgDZkPZp-Cn6ES$$Dv2neR_Vsqn8ldCfxbuOR" : {
+      "id" : "P4VO3jsAgDZkPZp-Cn6ES$$Dv2neR_Vsqn8ldCfxbuOR",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_4",
+        "slug" : "Source_4",
+        "x" : 700,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "eZXgEHP4FJs1iy-2RCsm7$$3qK5PQlpHcFfLsi9FgmcV",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
+    "zr-_Iy8OcfJO_sfhi8tzy$$o0M20NBeY_xuckJ5PScig" : {
+      "id" : "zr-_Iy8OcfJO_sfhi8tzy$$o0M20NBeY_xuckJ5PScig",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_1",
+        "slug" : "Source_1",
+        "x" : 280,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "mAICPlN7D1AwwJHAqfXfE$$_DAPDaG8VBSSUMHnIH991",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
+    "p5iHKyKQ-yVC1IaHL2a79$$gh6s7A7QlvowjOxIugTDa" : {
+      "id" : "p5iHKyKQ-yVC1IaHL2a79$$gh6s7A7QlvowjOxIugTDa",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_2",
+        "slug" : "Source_2",
+        "x" : 420,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "eoNryoNK1b5oNu6QBttcF$$I-WsRAB7mG9m063kLDD0F",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
+    "xx1eKO1H6uI9xpc9bt1vF$$dkgT6OJkdizbjb64Ee28J" : {
+      "id" : "xx1eKO1H6uI9xpc9bt1vF$$dkgT6OJkdizbjb64Ee28J",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_0",
+        "slug" : "Source_0",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "lpK6jima69zkFIGt-ZJSQ$$lhqSvuI0F4O28lWQUEg-C",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.Z__q4Vzi_-Z3wgUvlHeZz$$53QDcEkVy6lezYCX6F5kB.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.P4VO3jsAgDZkPZp-Cn6ES$$Dv2neR_Vsqn8ldCfxbuOR.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.zr-_Iy8OcfJO_sfhi8tzy$$o0M20NBeY_xuckJ5PScig.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.p5iHKyKQ-yVC1IaHL2a79$$gh6s7A7QlvowjOxIugTDa.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.xx1eKO1H6uI9xpc9bt1vF$$dkgT6OJkdizbjb64Ee28J.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
+}

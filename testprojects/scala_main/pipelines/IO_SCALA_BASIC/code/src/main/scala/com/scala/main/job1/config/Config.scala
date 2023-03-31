@@ -46,7 +46,9 @@ object Record_array {
 
 }
 
-case class Record_array(@Description("wer") array: List[String] = List("23"))
+case class Record_array(
+  @Description("wer") array: List[String] = List("23", "121")
+)
 
 object Array_record {
 

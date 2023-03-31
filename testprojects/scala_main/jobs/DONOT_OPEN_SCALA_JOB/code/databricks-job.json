@@ -28,7 +28,7 @@
     "tasks" : [ {
       "task_key" : "DONOT_OPEN_SCALA",
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "m5.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2730",
@@ -72,11 +72,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.2.0-7.0.10"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.0.14"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.4.7"
+          "package" : "prophecy-libs==1.4.8"
         }
       }, {
         "jar" : "dbfs:/FileStore/prophecy/artifacts/prophecy/uitesting/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/REL_SC_PIP_DONOT_OPEN.jar"
@@ -90,6 +90,11 @@
           "coordinates" : "org.typelevel:cats-core_2.12:2.6.1",
           "exclusions" : [ ]
         }
+      }, {
+        "maven" : {
+          "coordinates" : "org.apache.spark:spark-mllib_2.12:3.3.0",
+          "exclusions" : [ ]
+        }
       } ],
       "email_notifications" : {
         "on_success" : [ "abhisheks@prophecy.io" ]
@@ -101,7 +106,7 @@
         "task_key" : "DONOT_OPEN_SCALA"
       } ],
       "new_cluster" : {
-        "spark_version" : "10.4.x-scala2.12",
+        "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "m5.xlarge",
         "spark_conf" : {
           "prophecy.metadata.fabric.id" : "2730",
