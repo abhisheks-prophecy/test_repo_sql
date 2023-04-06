@@ -1,0 +1,19 @@
+WITH TABLE_COMPLEX_TYPES AS (
+
+  SELECT * 
+  
+  FROM {{ source('QA_DATABASE.QA_SIMPLE_SCHEMA', 'TABLE_COMPLEX_TYPES') }}
+
+),
+
+Reformat_1 AS (
+
+  SELECT * 
+  
+  FROM TABLE_COMPLEX_TYPES AS in0
+
+)
+
+SELECT * 
+
+FROM Reformat_1
