@@ -1,6 +1,85 @@
 ---
 version: 2
 sources:
+- name: "xyz1"
+  database: "SNOWFLAKE_SAMPLE_DATA"
+  schema: "TPCH_SF1"
+  config:
+    enabled: true
+  tables:
+  - name: "SUPPLIER"
+    columns:
+    - name: "S_SUPPKEY"
+      dataType:
+        type: "Number"
+    - name: "S_NAME"
+      dataType:
+        type: "String"
+    - name: "S_ADDRESS"
+      dataType:
+        type: "String"
+    - name: "S_NATIONKEY"
+      dataType:
+        type: "Number"
+    - name: "S_PHONE"
+      dataType:
+        type: "String"
+    - name: "S_ACCTBAL"
+      dataType:
+        type: "Number"
+    - name: "S_COMMENT"
+      dataType:
+        type: "String"
+  - name: "LINEITEM"
+    columns:
+    - name: "L_ORDERKEY"
+      dataType:
+        type: "Number"
+    - name: "L_PARTKEY"
+      dataType:
+        type: "Number"
+    - name: "L_SUPPKEY"
+      dataType:
+        type: "Number"
+    - name: "L_LINENUMBER"
+      dataType:
+        type: "Number"
+    - name: "L_QUANTITY"
+      dataType:
+        type: "Number"
+    - name: "L_EXTENDEDPRICE"
+      dataType:
+        type: "Number"
+    - name: "L_DISCOUNT"
+      dataType:
+        type: "Number"
+    - name: "L_TAX"
+      dataType:
+        type: "Number"
+    - name: "L_RETURNFLAG"
+      dataType:
+        type: "String"
+    - name: "L_LINESTATUS"
+      dataType:
+        type: "String"
+    - name: "L_SHIPDATE"
+      dataType:
+        type: "Date"
+    - name: "L_COMMITDATE"
+      dataType:
+        type: "Date"
+    - name: "L_RECEIPTDATE"
+      dataType:
+        type: "Date"
+    - name: "L_SHIPINSTRUCT"
+      dataType:
+        type: "String"
+    - name: "L_SHIPMODE"
+      dataType:
+        type: "String"
+    - name: "L_COMMENT"
+      dataType:
+        type: "String"
 - name: "QA_DATABASE.QA_SIMPLE_SCHEMA"
   database: "QA_DATABASE"
   schema: "QA_SIMPLE_SCHEMA"
@@ -57,3 +136,108 @@ sources:
     - name: "C_VARIANT_5"
       dataType:
         type: "Variant"
+  - name: "CUSTOMERS"
+    columns:
+    - name: "ID"
+      dataType:
+        type: "Number"
+    - name: "FIRST_NAME"
+      dataType:
+        type: "String"
+    - name: "LAST_NAME"
+      dataType:
+        type: "String"
+  - name: "NEWLY_ADDED_TABLE"
+    columns:
+    - name: "c_number"
+      dataType:
+        type: "Number"
+  - name: "ALL_TYPE_TABLE_SMALLER"
+    columns:
+    - name: "C_NUM"
+      dataType:
+        type: "Number"
+    - name: "C_NUM10"
+      dataType:
+        type: "Number"
+    - name: "C_DEC"
+      dataType:
+        type: "Number"
+    - name: "C_NUMERIC"
+      dataType:
+        type: "Number"
+    - name: "C_INT"
+      dataType:
+        type: "Number"
+    - name: "C_INTEGER"
+      dataType:
+        type: "Number"
+    - name: "C_DOUBLE"
+      dataType:
+        type: "Float"
+    - name: "C_FLOAT"
+      dataType:
+        type: "Float"
+    - name: "C_COUBLE_PRECISION"
+      dataType:
+        type: "Float"
+    - name: "C_REAL"
+      dataType:
+        type: "Float"
+    - name: "C_VARCHAR"
+      dataType:
+        type: "String"
+    - name: "C_VARCHAR50"
+      dataType:
+        type: "String"
+    - name: "C_CHAR"
+      dataType:
+        type: "String"
+    - name: "C_CHAR10"
+      dataType:
+        type: "String"
+    - name: "C_STRING"
+      dataType:
+        type: "String"
+    - name: "C_STRING20"
+      dataType:
+        type: "String"
+    - name: "C_TEXT"
+      dataType:
+        type: "String"
+    - name: "C_TEXT30"
+      dataType:
+        type: "String"
+    - name: "C_BINARY"
+      dataType:
+        type: "Binary"
+    - name: "C_BINARY100"
+      dataType:
+        type: "Binary"
+    - name: "C_VARBINARY"
+      dataType:
+        type: "Binary"
+    - name: "C_BOOL"
+      dataType:
+        type: "Boolean"
+    - name: "C_TIMESTAMP"
+      dataType:
+        type: "Timestamp"
+    - name: "C_DATE"
+      dataType:
+        type: "Date"
+    - name: "C_DATETIME"
+      dataType:
+        type: "Timestamp"
+    - name: "C_TIME"
+      dataType:
+        type: "Time"
+    - name: "C_ARRAY"
+      dataType:
+        type: "Array"
+    - name: "C_OBJECT"
+      dataType:
+        type: "Object"
+    - name: "C_GEOGRAPHY"
+      dataType:
+        type: "Geography"
