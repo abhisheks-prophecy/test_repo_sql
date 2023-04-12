@@ -1,7 +1,17 @@
-{% set v_int = 12 %}
+{{
+  config({    
+    "materialized": "table"
+  })
+}}
+
+{% set v_complex_dict = { "problems" : [{ "Diabetes" : [{ "medications" : [{ "medicationsClasses" : [{ "className" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }], "className2" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }] }] }], "labs" : [{ "missing_field" : "missing_value" }] }], "Asthma" : [{  }] }] } %}
+{% set v_float = 10.12 %}
 {% set v_bool = True %}
-{% set v_dict = { 'a' : 10, 'b' : 20 } %}
 {% set v_array = [1, 2, 3, 4, 5] %}
+{% set v_dict = { 'a' : 10, 'b' : 20 } %}
+{% set v_int = 12 %}
+
+
 
 
 
@@ -36,7 +46,7 @@ env_uitesting_shared_parent_model_1 AS (
 
 ),
 
-StunningOne AS (
+AllStunningOne AS (
 
   SELECT 
     ST_PERIMETER(TO_GEOGRAPHY('POLYGON((0 0, 1 0, 1 1, 0 1, 0 0))')) + ST_HAUSDORFFDISTANCE(ST_POINT(0, 0), ST_POINT(0, 1)) + EXTRACT(YEAR FROM TO_TIMESTAMP('2013-05-08T23:39:20.123-07:00')) + DATE_PART(QUARTER, '2013-05-08'::DATE) + abs(-10) + ceil(10.12) + floor(12.5656) + mod(10, 2) + round(-975.975, 1) + SIGN(-1.35E-10) + truncate(4.23423) + truncate(4.23423, 2) + cbrt(8) + exp(2) + factorial(1) + pow(2, 3) + power(1, 2) + sqrt(4) + square(2) + ln(10) + log(10, 10) + COS(0) + COS(PI() / 3) + COS(RADIANS(90)) + SIN(0) + SIN(PI() / 3) + SIN(RADIANS(90)) - HAVERSINE(40.7127, -74.0059, 34.05, -118.25) + DAYOFMONTH('2013-05-08T23:39:20.123-07:00'::TIMESTAMP) AS c_add_expression,
@@ -75,9 +85,9 @@ StunningOne AS (
       concat(C_STRING, {{c_ifor}}) AS col_for_{{c_ifor}},
     {% endfor %}
     
-    {% if v_int > 10 and   var('v_p_dict')['a'] == 10 %}
+    {% if v_int > 10 and       var('v_p_dict')['a'] == 10 %}
       concat(C_STRING, C_BOOL) AS c_if,
-    {% elif v_bool == True or   var('v_p_complex_dict')['a'][0] > 10 %}
+    {% elif v_bool == True or       var('v_p_complex_dict')['a'][0] > 10 %}
       concat(C_STRING, C_INT) AS c_if,
     {% else %}
       concat(C_STRING, C_INTEGER) AS c_if,
@@ -92,7 +102,7 @@ Limit_1 AS (
 
   SELECT * 
   
-  FROM StunningOne AS in0
+  FROM AllStunningOne AS in0
   
   LIMIT 10
 
