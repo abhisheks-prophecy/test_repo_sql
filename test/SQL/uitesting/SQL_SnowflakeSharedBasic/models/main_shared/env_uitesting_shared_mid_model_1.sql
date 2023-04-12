@@ -76,12 +76,13 @@ StunningOne AS (
     {% endfor %}
     
     {% if v_int > 10 and   var('v_p_dict')['a'] == 10 %}
-      concat(C_STRING, C_BOOL) AS c_if
+      concat(C_STRING, C_BOOL) AS c_if,
     {% elif v_bool == True or   var('v_p_complex_dict')['a'][0] > 10 %}
-      concat(C_STRING, C_INT) AS c_if
+      concat(C_STRING, C_INT) AS c_if,
     {% else %}
-      concat(C_STRING, C_INTEGER) AS c_if
+      concat(C_STRING, C_INTEGER) AS c_if,
     {% endif %}
+    concat(C_STRING20, {{ SQL_SnowflakeSharedBasic.qa_concat_function_main('c_string', 'c_integer') }}) AS c_macro_1
   
   FROM env_uitesting_shared_parent_model_1 AS in0
 
