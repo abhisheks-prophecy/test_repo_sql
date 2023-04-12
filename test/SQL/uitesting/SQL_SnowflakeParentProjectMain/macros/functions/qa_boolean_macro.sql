@@ -17,3 +17,7 @@ concat({{param_float}} + {{param_array[0]}}, 'hello')
 {% macro round_function(n1, scale=2) %}
 ROUND({{n1}}, {{scale}})
 {% endmacro %}
+
+{% macro qa_macro_call_another_macro(final_param='random data') %}
+concat({{ qa_concat_macro(final_param) }}, {{final_param}})
+{% endmacro %}
