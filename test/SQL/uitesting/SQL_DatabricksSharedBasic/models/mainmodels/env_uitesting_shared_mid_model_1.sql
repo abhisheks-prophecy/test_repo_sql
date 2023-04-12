@@ -1,3 +1,9 @@
+
+
+{% set v_int = 10 %}
+{% set v_dict = { 'a' : 10, 'b' : 20 } %}
+
+
 WITH env_uitesting_shared_parent_model_1 AS (
 
   SELECT * 
@@ -19,7 +25,18 @@ Reformat_1 AS (
     c_boolean AS c_boolean,
     c_array AS c_array,
     c_struct AS c_struct,
-    {{ SQL_DatabricksSharedBasic.qa_concat_function_main('c_string', 'c_boolean') }} AS c_macro
+    {{ SQL_DatabricksSharedBasic.qa_concat_function_main('c_string', 'c_boolean') }} AS c_macro,
+    {% if v_int > 0 or   var('v_project_dict')['a'] > 10 %}
+      concat(c_string, c_float) AS c_if,
+    {% elif v_dict['a'] > 10 or   var('v_project_dict')['b'] == 'hello' %}
+      concat(c_string, c_int) AS c_if,
+    {% else %}
+      concat(c_string, c_bigint) AS c_if,
+    {% endif %}
+    {% for c_i in range(0, 5) %}
+      concat(c_string, {{c_i}}) AS cfor_col_{{c_i}}
+    {% if not loop.last %} , {% endif %}
+    {% endfor %}
   
   FROM env_uitesting_shared_parent_model_1 AS in0
 
@@ -68,6 +85,22 @@ Join_1 AS (
   FROM SQLStatement_1 AS in0
   INNER JOIN Limit_1 AS in1
      ON in0.c_tinyint = in1.c_tinyint
+
+),
+
+raw_customers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_customers')}}
+
+),
+
+Reformat_2 AS (
+
+  SELECT * 
+  
+  FROM raw_customers AS in0
 
 )
 
