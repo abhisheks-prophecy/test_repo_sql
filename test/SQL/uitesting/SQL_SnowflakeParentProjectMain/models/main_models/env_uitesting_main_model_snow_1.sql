@@ -50,7 +50,7 @@ Reformat_1 AS (
     C_GEOGRAPHY AS C_GEOGRAPHY,
     {{ SQL_SnowflakeMainProject.qa_boolean_macro('c_string') }} AS c_macro1,
     {{ SQL_SnowflakeMainProject.qa_concat_macro('c_string20') }} AS c_macro2,
-    {% if v_model_int_main > 10 and       var('v_project_int_parent') %}
+    {% if v_model_int_main > 10 and           var('v_project_int_parent') %}
       {{ SQL_SnowflakeMainProject.qa_boolean_macro('c_string') }} AS c_if,
     {% else %}
       {{ SQL_SnowflakeMainProject.qa_concat_macro('c_string20') }} AS c_if,
@@ -58,9 +58,10 @@ Reformat_1 AS (
     {{ var('v_project_expression_parent')}} AS c_expression_project_variable,
     {{v_model_expression}} AS c_expression_model_variable,
     {% for c_i in range(1, 4) %}
-      concat(C_STRING, {{c_i}}) AS col_{{c_i}}
-    {% if not loop.last %} , {% endif %}
+      concat(C_STRING, {{c_i}}) AS col_{{c_i}},
     {% endfor %}
+    
+    {{ SQL_SnowflakeMainProject.qa_macro_call_another_macro('c_string') }} AS c_macro_another_macro
   
   FROM ALL_TYPE_TABLE_SMALLER AS in0
 
