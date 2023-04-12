@@ -1,5 +1,13 @@
-{% set v_int = 10 %}
+{% set v_complex_dict = { "problems" : [{ "Diabetes" : [{ "medications" : [{ "medicationsClasses" : [{ "className" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }], "className2" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }] }] }], "labs" : [{ "missing_field" : "missing_value" }] }], "Asthma" : [{  }] }] } %}
+{% set v_float = 10.12 %}
+{% set v_bool = True %}
+{% set v_array = [1, 2, 3, 4] %}
 {% set v_dict = { 'a' : 10, 'b' : 20 } %}
+{% set v_int = 10 %}
+
+
+
+
 
 
 WITH env_uitesting_shared_parent_model_1 AS (
@@ -10,7 +18,7 @@ WITH env_uitesting_shared_parent_model_1 AS (
 
 ),
 
-StunningOne AS (
+AllStunningOne AS (
 
   SELECT 
     (1 != 2) or (true != NULL) or (NULL != NULL) or (1 < 2) or (2 <= 2) or (2 <=> 2) or ((2 % 1.8) == 1) or (to_date('2009-07-30 04:17:52') < to_date('2009-07-30 04:17:52')) or (add_months('2016-08-31', 1) < add_months('2017-08-31', 3)) or (true and false) or array_contains(array_distinct(array(1, 2, 3)), 2) or array_contains(array_except(array(1, 2, 3), array(1, 3, 5)), 2) or array_contains(array_intersect(array(1, 2, 3), array(1, 3, 5)), 10) or (array_join(array('hello', NULL, 'world'), ' ', ',') LIKE '%hello%') or (array_max(array(1, 20, NULL, 3)) > 10) or (array_min(array(1, 20, NULL, 3)) > 20) or array_contains(array_remove(array(1, 2, 3, NULL, 3), 3), 3) or array_contains(array_repeat(5, 2), 6) or array_contains(array_union(array(1, 2, 3), array(1, 3, 5)), 10) or arrays_overlap(array(1, 2, 3), array(3, 4, 5)) or (10 BETWEEN 2 and 20) or contains('Spark SQL', 'Spark') or endswith('Spark SQL', 'SQL') or (EXISTS (array(1, 2, 3), 
@@ -42,9 +50,9 @@ StunningOne AS (
     c_array AS c_array,
     c_struct AS c_struct,
     {{ SQL_DatabricksSharedBasic.qa_concat_function_main('c_string', 'c_boolean') }} AS c_macro,
-    {% if v_int > 0 or               var('v_project_dict')['a'] > 10 %}
+    {% if v_int > 0 or                       var('v_project_dict')['a'] > 10 %}
       concat(c_string, c_float) AS c_if,
-    {% elif v_dict['a'] > 10 or               var('v_project_dict')['b'] == 'hello' %}
+    {% elif v_dict['a'] > 10 or                       var('v_project_dict')['b'] == 'hello' %}
       concat(c_string, c_int) AS c_if,
     {% else %}
       concat(c_string, c_bigint) AS c_if,
@@ -62,7 +70,7 @@ Limit_1 AS (
 
   SELECT * 
   
-  FROM StunningOne AS in0
+  FROM AllStunningOne AS in0
   
   LIMIT 10
 

@@ -1,12 +1,4 @@
-WITH raw_customers AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_customers')}}
-
-),
-
-all_type_parquet AS (
+WITH all_type_parquet AS (
 
   SELECT * 
   
@@ -19,6 +11,14 @@ Reformat_1 AS (
   SELECT * 
   
   FROM all_type_parquet AS in0
+
+),
+
+raw_customers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_customers')}}
 
 ),
 
