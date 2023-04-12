@@ -42,7 +42,8 @@ Reformat_1 AS (
     {% else %}
       concat(c_string, c_double) AS c_if,
     {% endif %}
-    {{ SQL_DatabricksParentProjectMain.databricks__language_specific_concat() }} AS c_macro_3
+    {{ SQL_DatabricksParentProjectMain.databricks__language_specific_concat() }} AS c_macro_3,
+    {{ SQL_DatabricksParentProjectMain.qa_macro_call_another_macro('c_string') }} AS c_macro_another_macro
   
   FROM all_type_parquet AS in0
 
