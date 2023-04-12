@@ -1,3 +1,5 @@
+
+
 {% set v_dict_model_db = { 'a' : 1, 'b' : 2 } %}
 {% set v_list_model_db = [1, 2, 3, 4, 5] %}
 {% set v_int_model_db = 10 %}
@@ -13,12 +15,6 @@ WITH all_type_parquet AS (
   SELECT * 
   
   FROM {{ source('spark_catalog.qa_database', 'all_type_parquet') }}
-
-),
-
-Macro_1 AS (
-
-  {{()}}
 
 ),
 
@@ -41,7 +37,7 @@ Reformat_1 AS (
       concat(c_string, {{c_i}}) AS cfor_{{c_i}},
     {% endfor %}
     
-    {% if v_int_model_db > 10 or       var('v_dict_project_level')['a'] == 10 or    v_list_model_db[0] == 1 %}
+    {% if v_int_model_db > 10 or   var('v_dict_project_level')['a'] == 10 or  v_list_model_db[0] == 1 %}
       concat(c_string, {{ SQL_DatabricksParentProjectMain.qa_concat_macro('c_string') }}) AS c_if,
     {% else %}
       concat(c_string, c_double) AS c_if,
