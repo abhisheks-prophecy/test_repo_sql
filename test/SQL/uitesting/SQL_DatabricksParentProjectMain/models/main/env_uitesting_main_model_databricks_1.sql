@@ -8,7 +8,13 @@
 
 
 
-WITH all_type_parquet AS (
+WITH Macro_1 AS (
+
+  {{()}}
+
+),
+
+all_type_parquet AS (
 
   SELECT * 
   
