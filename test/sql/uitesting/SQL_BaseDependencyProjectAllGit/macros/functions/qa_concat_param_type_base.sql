@@ -1,4 +1,4 @@
-{% macro qa_concat_param_type_base(input_string='hello', int_param=10) %}
+{% macro _qa_concat_param_type_base(input_string='hello', int_param=10) %}
 concat({{input_string}}, {{int_param}})
 {% endmacro %}
 
@@ -7,6 +7,10 @@ concat({{param_float}} + {{param_array[0]}}, 'hello')
 {% endmacro %}
 
  {% macro round_function_base(n1, scale=2) %}
+ROUND({{n1}}, {{scale}})
+{% endmacro %}
+
+ {% macro _round_function_base(n1, scale=2) %}
 ROUND({{n1}}, {{scale}})
 {% endmacro %}
 

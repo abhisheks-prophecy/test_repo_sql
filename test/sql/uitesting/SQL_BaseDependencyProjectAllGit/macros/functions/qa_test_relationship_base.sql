@@ -20,6 +20,11 @@ SELECT * from {{model}} where {{col}} > {{ id_min }}
 select * from {{ model }} where {{ column_name }} is not null
 {% endmacro %}
 
+ {% macro _qa_all_null_base(model='customers', column_name='id') %}
+
+select * from {{ model }} where {{ column_name }} is not null
+{% endmacro %}
+
  {% macro qa_get_unique_count_base(model, column_name) %}
 
 select count(*)
