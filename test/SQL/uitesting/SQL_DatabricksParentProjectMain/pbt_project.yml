@@ -62,15 +62,6 @@ sqlMacros:
     - macros/functions/language_specific_concat.sql
     createdAt: '2023-04-12 14:04:58'
     modifiedAt: '2023-04-12 14:04:58'
-  .prophecy/metadata/sqlmacros/qa_concat_param_type:
-    name: qa_concat_param_type
-    macroType: expression
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - macros/functions/qa_concat_param_type.sql
-    createdAt: '2023-04-12 14:08:22'
-    modifiedAt: '2023-04-12 14:08:22'
   .prophecy/metadata/sqlmacros/qa_model_all_above_given_id:
     name: qa_model_all_above_given_id
     macroType: query
@@ -180,6 +171,24 @@ sqlMacros:
     - macros/functions/functions.yml
     createdAt: '2023-04-12 14:41:27'
     modifiedAt: '2023-04-12 14:41:27'
+  .prophecy/metadata/sqlmacros/qa_concat_param_type:
+    name: qa_concat_param_type
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_concat_param_type.sql
+    createdAt: '2023-04-12 14:08:22'
+    modifiedAt: '2023-04-12 14:08:22'
+  .prophecy/metadata/sqlmacros/qa_concat_macro_column:
+    name: qa_concat_macro_column
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_concat_param_type.sql
+    createdAt: '2023-04-14 06:44:40'
+    modifiedAt: '2023-04-14 06:44:40'
   .prophecy/metadata/sqlmacros/postgres__language_specific_deduplicate:
     name: postgres__language_specific_deduplicate
     macroType: query
@@ -288,20 +297,34 @@ sqlSeeds:
     createdAt: '2023-04-12 14:06:18'
     modifiedAt: '2023-04-12 14:06:18'
 sqlSources:
-  .prophecy/metadata/sqlsources/spark_catalog_qa_database:
-    name: spark_catalog.qa_database
+  .prophecy/metadata/sqlsources/aliasbase_spark_catalog_qa_database:
+    name: aliasbase_spark_catalog_qa_database
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
     - prophecy-sources/sources.yml
-    createdAt: '2023-04-12 14:21:44'
-    modifiedAt: '2023-04-12 14:21:44'
+    createdAt: '2023-04-14 05:36:37'
+    modifiedAt: '2023-04-14 05:36:37'
     tables:
     - name: all_type_parquet
       description: null
       author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-12 14:21:44'
-      modifiedAt: '2023-04-12 14:21:44'
+      createdAt: '2023-04-14 05:36:37'
+      modifiedAt: '2023-04-14 05:36:37'
+  .prophecy/metadata/sqlsources/aliasbase_spark_catalog_qa_db_warehouse:
+    name: aliasbase_spark_catalog_qa_db_warehouse
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-04-14 05:36:37'
+    modifiedAt: '2023-04-14 05:36:37'
+    tables:
+    - name: all_type_non_partitioned
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-14 05:36:37'
+      modifiedAt: '2023-04-14 05:36:37'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline

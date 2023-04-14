@@ -8,11 +8,19 @@
 
 
 
-WITH all_type_parquet AS (
+WITH all_type_non_partitioned AS (
 
   SELECT * 
   
-  FROM {{ source('spark_catalog.qa_database', 'all_type_parquet') }}
+  FROM {{ source('aliasbase_spark_catalog_qa_db_warehouse', 'all_type_non_partitioned') }}
+
+),
+
+all_type_parquet AS (
+
+  SELECT * 
+  
+  FROM {{ source('aliasbase_spark_catalog_qa_database', 'all_type_parquet') }}
 
 ),
 
@@ -35,7 +43,7 @@ Reformat_1 AS (
       concat(c_string, {{c_i}}) AS cfor_{{c_i}},
     {% endfor %}
     
-    {% if v_int_model_db > 10 or                                   var('v_dict_project_level')['a'] == 10 or                  v_list_model_db[0] == 1 %}
+    {% if v_int_model_db > 10 or                                       var('v_dict_project_level')['a'] == 10 or                    v_list_model_db[0] == 1 %}
       concat(c_string, {{ SQL_DatabricksParentProjectMain.qa_concat_macro('c_string') }}) AS c_if,
     {% else %}
       concat(c_string, c_double) AS c_if,
@@ -44,14 +52,6 @@ Reformat_1 AS (
     {{ SQL_DatabricksParentProjectMain.qa_macro_call_another_macro('c_string') }} AS c_macro_another_macro
   
   FROM all_type_parquet AS in0
-
-),
-
-raw_orders AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_orders')}}
 
 ),
 
@@ -69,9 +69,9 @@ Join_1 AS (
     in1.c_array AS c_array,
     in1.c_struct AS c_struct
   
-  FROM raw_orders AS in0
+  FROM all_type_non_partitioned AS in0
   INNER JOIN Reformat_1 AS in1
-     ON in0.status != in1.c_string
+     ON in0.c_tinyint == in1.c_tinyint
 
 )
 

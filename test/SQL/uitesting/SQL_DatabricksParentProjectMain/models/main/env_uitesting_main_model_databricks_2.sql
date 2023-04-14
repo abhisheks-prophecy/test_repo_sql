@@ -1,4 +1,12 @@
-WITH service_classification AS (
+WITH model_with_only_seed AS (
+
+  SELECT * 
+  
+  FROM {{ ref('model_with_only_seed')}}
+
+),
+
+service_classification AS (
 
   SELECT * 
   
@@ -6,11 +14,17 @@ WITH service_classification AS (
 
 ),
 
-model_with_only_seed AS (
+Join_1 AS (
 
-  SELECT * 
+  SELECT 
+    in0.country_code AS country_code,
+    in0.country_label AS country_label,
+    in1.code AS code,
+    in0.service_label AS service_label
   
-  FROM {{ ref('model_with_only_seed')}}
+  FROM model_with_only_seed AS in0
+  INNER JOIN service_classification AS in1
+     ON in0.service_label = in1.service_label
 
 ),
 
@@ -35,20 +49,6 @@ SQLStatement_1 AS (
   SELECT * 
   
   FROM raw_orders
-
-),
-
-Join_1 AS (
-
-  SELECT 
-    in0.country_code AS country_code,
-    in0.country_label AS country_label,
-    in1.code AS code,
-    in0.service_label AS service_label
-  
-  FROM model_with_only_seed AS in0
-  INNER JOIN service_classification AS in1
-     ON in0.service_label = in1.service_label
 
 )
 
