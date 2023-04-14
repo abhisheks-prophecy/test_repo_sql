@@ -1,6 +1,6 @@
 name: SQL_BaseDependencyProjectAllGit
 description: ''
-version: '1.1'
+version: '1.2'
 author: null
 language: sql
 buildSystem: ''
@@ -32,15 +32,6 @@ sqlModels:
     createdAt: '2023-04-13 08:01:38'
     modifiedAt: '2023-04-13 08:01:38'
 sqlMacros:
-  .prophecy/metadata/sqlmacros/qa_test_relationship_base:
-    name: qa_test_relationship_base
-    macroType: query
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - macros/functions/qa_test_relationship_base.sql
-    createdAt: '2023-04-13 07:50:46'
-    modifiedAt: '2023-04-13 07:50:46'
   .prophecy/metadata/sqlmacros/bigquery__language_specific_concat_base:
     name: bigquery__language_specific_concat_base
     macroType: expression
@@ -59,15 +50,6 @@ sqlMacros:
     - macros/gems/language_specific_deduplicate_base.sql
     createdAt: '2023-04-13 07:39:22'
     modifiedAt: '2023-04-13 07:39:22'
-  .prophecy/metadata/sqlmacros/qa_complex_macro_base:
-    name: qa_complex_macro_base
-    macroType: query
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - macros/functions/qa_test_relationship_base.sql
-    createdAt: '2023-04-13 07:51:46'
-    modifiedAt: '2023-04-13 07:51:46'
   .prophecy/metadata/sqlmacros/redshift__language_specific_deduplicate_base:
     name: redshift__language_specific_deduplicate_base
     macroType: expression
@@ -113,15 +95,42 @@ sqlMacros:
     - macros/gems/language_specific_deduplicate_base.sql
     createdAt: '2023-04-13 07:40:15'
     modifiedAt: '2023-04-13 07:40:15'
-  .prophecy/metadata/sqlmacros/_qa_concat_param_type_base:
-    name: _qa_concat_param_type_base
+  .prophecy/metadata/sqlmacros/qa_test_relationship_base:
+    name: qa_test_relationship_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_test_relationship_base.sql
+    createdAt: '2023-04-13 07:50:46'
+    modifiedAt: '2023-04-13 07:50:46'
+  .prophecy/metadata/sqlmacros/qa_concat_macro_base_column:
+    name: qa_concat_macro_base_column
     macroType: expression
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/functions/qa_concat_param_type_base.sql
-    createdAt: '2023-04-13 09:15:47'
-    modifiedAt: '2023-04-13 09:15:47'
+    createdAt: '2023-04-14 06:45:27'
+    modifiedAt: '2023-04-14 06:45:27'
+  .prophecy/metadata/sqlmacros/qa_complex_macro_base:
+    name: qa_complex_macro_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_test_relationship_base.sql
+    createdAt: '2023-04-13 07:51:46'
+    modifiedAt: '2023-04-13 07:51:46'
+  .prophecy/metadata/sqlmacros/qa_macro_call_another_macro_base_column:
+    name: qa_macro_call_another_macro_base_column
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_concat_param_type_base.sql
+    createdAt: '2023-04-14 06:45:27'
+    modifiedAt: '2023-04-14 06:45:27'
   .prophecy/metadata/sqlmacros/snowflake__language_specific_concat_base:
     name: snowflake__language_specific_concat_base
     macroType: expression
@@ -248,6 +257,24 @@ sqlMacros:
     - macros/functions/qa_test_relationship_base.sql
     createdAt: '2023-04-13 07:51:46'
     modifiedAt: '2023-04-13 07:51:46'
+  .prophecy/metadata/sqlmacros/qa_concat_macro_base:
+    name: qa_concat_macro_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_concat_param_type_base.sql
+    createdAt: '2023-04-14 06:21:01'
+    modifiedAt: '2023-04-14 06:21:01'
+  .prophecy/metadata/sqlmacros/_qa_concat_param_type_base:
+    name: _qa_concat_param_type_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_concat_param_type_base.sql
+    createdAt: '2023-04-13 09:15:47'
+    modifiedAt: '2023-04-13 09:15:47'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/economic_survery_manufacturing:
     name: economic_survery_manufacturing
