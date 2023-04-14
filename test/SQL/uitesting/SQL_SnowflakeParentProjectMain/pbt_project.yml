@@ -43,6 +43,18 @@ sqlModels:
       datasets: []
     createdAt: '2023-04-13 09:45:02'
     modifiedAt: '2023-04-13 09:45:02'
+  .prophecy/metadata/sqlmodels/env_uitesting_main_model_snow_3:
+    name: env_uitesting_main_model_snow_3
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/testone/env_uitesting_main_model_snow_3.sql
+    - .prophecy/ide/models/env_uitesting_main_model_snow_3.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-13 14:14:03'
+    modifiedAt: '2023-04-13 14:14:03'
 sqlMacros:
   .prophecy/metadata/sqlmacros/default__language_specific_deduplicate:
     name: default__language_specific_deduplicate
@@ -62,6 +74,15 @@ sqlMacros:
     - macros/functions/language_specific_concat.sql
     createdAt: '2023-04-12 13:57:52'
     modifiedAt: '2023-04-12 13:57:52'
+  .prophecy/metadata/sqlmacros/qa_concat_macro_column:
+    name: qa_concat_macro_column
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_boolean_macro.sql
+    createdAt: '2023-04-14 07:17:47'
+    modifiedAt: '2023-04-14 07:17:47'
   .prophecy/metadata/sqlmacros/qa_model_all_above_given_id:
     name: qa_model_all_above_given_id
     macroType: query
@@ -251,6 +272,15 @@ sqlMacros:
     - macros/gems/language_specific_deduplicate.sql
     createdAt: '2023-04-12 13:57:52'
     modifiedAt: '2023-04-12 13:57:52'
+  .prophecy/metadata/sqlmacros/qa_macro_call_another_macro_column:
+    name: qa_macro_call_another_macro_column
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/functions/qa_boolean_macro.sql
+    createdAt: '2023-04-14 07:17:47'
+    modifiedAt: '2023-04-14 07:17:47'
   .prophecy/metadata/sqlmacros/qa_all_null:
     name: qa_all_null
     macroType: query
@@ -278,30 +308,44 @@ sqlSeeds:
     createdAt: '2023-04-12 13:57:52'
     modifiedAt: '2023-04-12 13:57:52'
 sqlSources:
-  .prophecy/metadata/sqlsources/QA_DATABASE_QA_SIMPLE_SCHEMA:
-    name: QA_DATABASE.QA_SIMPLE_SCHEMA
+  .prophecy/metadata/sqlsources/alias_base_QA_DATABASE_QA_SCHEMA:
+    name: alias_base_QA_DATABASE_QA_SCHEMA
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
     - prophecy-sources/sources.yml
-    createdAt: '2023-04-12 13:57:52'
-    modifiedAt: '2023-04-12 13:57:52'
+    createdAt: '2023-04-14 05:41:23'
+    modifiedAt: '2023-04-14 05:41:23'
+    tables:
+    - name: ALL_TYPE_TABLE_NON_GEOMETRY
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-14 05:41:23'
+      modifiedAt: '2023-04-14 05:41:23'
+  .prophecy/metadata/sqlsources/alias_base_QA_DATABASE_QA_SIMPLE_SCHEMA:
+    name: alias_base_QA_DATABASE_QA_SIMPLE_SCHEMA
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-04-14 05:41:23'
+    modifiedAt: '2023-04-14 05:41:23'
     tables:
     - name: ALL_TYPE_TABLE_SMALLER
       description: null
       author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-12 13:57:52'
-      modifiedAt: '2023-04-12 13:57:52'
+      createdAt: '2023-04-14 05:41:23'
+      modifiedAt: '2023-04-14 05:41:23'
     - name: CUSTOMERS
       description: null
       author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-12 13:57:52'
-      modifiedAt: '2023-04-12 13:57:52'
+      createdAt: '2023-04-14 05:41:23'
+      modifiedAt: '2023-04-14 05:41:23'
     - name: TABLE_COMPLEX_TYPES
       description: null
       author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-12 13:57:52'
-      modifiedAt: '2023-04-12 13:57:52'
+      createdAt: '2023-04-14 05:41:23'
+      modifiedAt: '2023-04-14 05:41:23'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
