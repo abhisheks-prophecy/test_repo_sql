@@ -38,7 +38,7 @@ Reformat_1 AS (
     c_array AS c_array,
     c_struct AS c_struct,
     {{ SQL_DatabricksParentProjectMain.qa_boolean_macro('c_string') }} AS c_maco_1,
-    {{ SQL_DatabricksParentProjectMain.qa_concat_macro('c_string') }} AS c_maco_2,
+    concat({{ SQL_DatabricksParentProjectMain.qa_concat_macro_column('c_string') }}, {{ SQL_BaseDependencyProjectAllGit.qa_concat_macro_base("test random string") }}) AS c_maco_2,
     {% for c_i in range(0, 5) %}
       concat(c_string, {{c_i}}) AS cfor_{{c_i}},
     {% endfor %}
@@ -49,7 +49,8 @@ Reformat_1 AS (
       concat(c_string, c_double) AS c_if,
     {% endif %}
     {{ SQL_DatabricksParentProjectMain.databricks__language_specific_concat() }} AS c_macro_3,
-    {{ SQL_DatabricksParentProjectMain.qa_macro_call_another_macro('c_string') }} AS c_macro_another_macro
+    {{ SQL_DatabricksParentProjectMain.qa_macro_call_another_macro_column('c_string') }} AS c_macro_4,
+    {{ SQL_BaseDependencyProjectAllGit._round_function_base(10.12321, 2) }} AS c_dep_project_macro
   
   FROM all_type_parquet AS in0
 
