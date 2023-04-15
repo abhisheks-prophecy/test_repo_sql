@@ -2,6 +2,10 @@
 concat('{{input_string}}', {{int_param}})
 {% endmacro %}
 
+{% macro _qa_concat_string_cols(input_col1, input_col2) %}
+concat({{input_col1}}, {{input_col2}})
+{% endmacro %}
+
  {% macro multi_macro_expressions_base(param_float=12, param_array=[1, 2, 3], param_dict=[1, 2, 3]) %}
 concat({{param_float}} + {{param_array[0]}}, 'hello')
 {% endmacro %}
