@@ -49,7 +49,7 @@ Reformat_1 AS (
     C_OBJECT AS C_OBJECT,
     C_GEOGRAPHY AS C_GEOGRAPHY,
     {{ SQL_SnowflakeMainProject.qa_boolean_macro('c_string') }} AS c_macro1,
-    concat({{ SQL_SnowflakeMainProject.qa_concat_macro('c_string') }}, {{ SQL_BaseDependencyProjectAllGit.qa_concat_macro_base("test random string") }}) AS c_macro2,
+    concat({{ SQL_SnowflakeMainProject.qa_concat_macro('c_string') }}, {{ SQL_BaseDependencyProjectAllGit.qa_concat_macro_base('test random string') }}) AS c_macro2,
     {% if v_model_int_main > 10 and                   var('v_project_int_parent') %}
       {{ SQL_SnowflakeMainProject.qa_boolean_macro('c_string') }} AS c_if,
     {% else %}
@@ -62,7 +62,7 @@ Reformat_1 AS (
     {% endfor %}
     
     {{ SQL_SnowflakeMainProject.qa_macro_call_another_macro_column('c_string') }} AS c_macro_another_macro,
-    {{ SQL_BaseDependencyProjectAllGit._round_function_base(10.12321, 2) }} AS c_dep_project_macro
+    {{ SQL_BaseDependencyProjectAllGit._round_function_base(10.34234, 2) }} AS c_base_macro_round
   
   FROM ALL_TYPE_TABLE_SMALLER AS in0
 
