@@ -1,10 +1,16 @@
 {{
   config({    
     "materialized": "view",
-    "sql_header": "ALTER SESSION SET timestamp_output_format = 'YYYY-MM-DD HH24:MI:SS'",
     "unique_key": "C_NUM",
     "on_schema_change": "append_new_columns",
-    "alias": "alias_env_uitesting_main_model_snow_3"
+    "alias": "alias_env_uitesting_main_model_snow_3",
+    "enabled": true,
+    "database": "qa_database",
+    "schema": "qa_simple_schema",
+    "docs": {"show": true},
+    "persist_docs": {"relation": true, "columns": true},
+    "pre_hook": ["ALTER SESSION SET timestamp_output_format = 'YYYY-MM-DD HH24:MI:SS'"],
+    "post_hook": ["ALTER SESSION UNSET timestamp_output_format"]
   })
 }}
 
