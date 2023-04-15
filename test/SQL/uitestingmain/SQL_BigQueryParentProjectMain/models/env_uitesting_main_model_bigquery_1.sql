@@ -33,7 +33,17 @@ Join_1 AS (
 
 Reformat_1 AS (
 
-  SELECT * 
+  SELECT 
+    id AS id,
+    user_id AS user_id,
+    order_date AS order_date,
+    status AS status,
+    order_id AS order_id,
+    payment_method AS payment_method,
+    amount AS amount,
+    {{ SQL_BaseDependencyProjectAllGit.qa_concat_macro_base_column('payment_method') }} AS c_base_dependency_macro,
+    {{ SQL_BigQueryParentProjectMain.qa_boolean_macro('user_id') }} AS c_boolean_macro,
+    concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}') AS c_dbt_date
   
   FROM Join_1 AS in0
 
