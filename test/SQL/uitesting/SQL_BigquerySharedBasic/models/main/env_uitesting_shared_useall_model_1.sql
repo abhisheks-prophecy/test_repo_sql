@@ -20,6 +20,7 @@ WITH raw_orders AS (
 
 ),
 
+-- kiran comment
 Macro_1 AS (
 
   {{ SQL_BigQueryParentProjectMain.qa_all_null(model = 'raw_orders', column_name = 'id') }}
