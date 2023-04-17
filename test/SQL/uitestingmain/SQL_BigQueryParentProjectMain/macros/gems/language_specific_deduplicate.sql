@@ -1,5 +1,5 @@
 {%- macro language_specific_deduplicate(relation, partition_by, order_by) -%}
-    {{ return(adapter.dispatch('language_specific_deduplicate', 'dbt_utils')(relation, partition_by, order_by)) }}
+    {{ return(adapter.dispatch('language_specific_deduplicate', 'SQL_BigQueryParentProjectMain')(relation, partition_by, order_by)) }}
 {% endmacro %}
 
 {%- macro default__language_specific_deduplicate(relation, partition_by, order_by) -%}

@@ -1,5 +1,5 @@
 {%- macro language_specific_concat() -%}
-  {{ return(adapter.dispatch('language_specific_concat', 'dbt_utils')()) }}
+  {{ return(adapter.dispatch('language_specific_concat', 'SQL_DatabricksParentProjectMain')()) }}
 {%- endmacro -%}
 
 {% macro default__language_specific_concat() %}
