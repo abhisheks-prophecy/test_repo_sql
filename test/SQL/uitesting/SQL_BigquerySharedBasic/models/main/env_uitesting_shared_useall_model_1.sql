@@ -84,7 +84,7 @@ Join_1 AS (
   
   FROM env_uitesting_shared_parent_model_1
   INNER JOIN env_uitesting_shared_child_model_1
-     ON env_uitesting_shared_parent_model_1.c_int64 = env_uitesting_shared_child_model_1.c_int64 and env_uitesting_shared_parent_model_1.c_bignumeric = env_uitesting_shared_child_model_1.c_bignumeric and env_uitesting_shared_parent_model_1.c_bool = env_uitesting_shared_child_model_1.c_bool
+     ON env_uitesting_shared_parent_model_1.c_bool = env_uitesting_shared_child_model_1.c_bool
   INNER JOIN env_uitesting_shared_mid_model_1
      ON env_uitesting_shared_parent_model_1.c_int64 = env_uitesting_shared_mid_model_1.c_int64 and env_uitesting_shared_parent_model_1.c_bignumeric = env_uitesting_shared_mid_model_1.c_bignumeric and env_uitesting_shared_parent_model_1.c_bool = env_uitesting_shared_mid_model_1.c_bool
 
@@ -229,7 +229,7 @@ Join_3 AS (
   
   FROM Filter_1 AS in0
   INNER JOIN Join_2 AS in1
-     ON in0.c_string = in1.c_string
+     ON in0.cfor_col_1 != in1.c_string
 
 )
 

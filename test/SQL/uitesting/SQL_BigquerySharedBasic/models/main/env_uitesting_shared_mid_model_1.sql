@@ -17,3 +17,12 @@ Reformat_1 AS (
 SELECT *
 
 FROM Reformat_1
+
+{% if is_incremental() %}
+  
+  WHERE c_int64 > (
+    SELECT MAX(c_int64)
+    
+    FROM {{this}}
+   )
+{% endif %}
