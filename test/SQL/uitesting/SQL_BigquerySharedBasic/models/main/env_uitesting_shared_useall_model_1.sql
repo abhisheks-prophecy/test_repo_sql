@@ -10,11 +10,31 @@
 
 
 
-WITH raw_payments AS (
+WITH raw_orders AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_orders')}}
+
+),
+
+raw_payments AS (
 
   SELECT * 
   
   FROM {{ ref('raw_payments')}}
+
+),
+
+SQLStatement_2 AS (
+
+  SELECT 
+    t1.id,
+    t1.payment_method
+  
+  FROM raw_payments AS t1, raw_orders AS t2
+  
+  WHERE t1.order_id = t2.id or t2.status IS NOT NULL or t1.payment_method IS NOT NULL
 
 ),
 
@@ -28,7 +48,7 @@ env_uitesting_main_model_bigquery_1 AS (
 
 SQLStatement_1 AS (
 
-  SELECT *
+  SELECT * 
   
   FROM env_uitesting_main_model_bigquery_1
   
@@ -169,14 +189,6 @@ Filter_1 AS (
 
 ),
 
-raw_orders AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_orders')}}
-
-),
-
 Macro_1 AS (
 
   {{ SQL_BigQueryParentProjectMain.qa_all_not_null(model = 'raw_orders', column_name = 'user_id') }}
@@ -199,7 +211,7 @@ Join_2 AS (
   FROM Aggregate_1 AS in0
   INNER JOIN Macro_1 AS in1
      ON in0.c_string != in1.status
-  INNER JOIN raw_payments AS in2
+  INNER JOIN SQLStatement_2 AS in2
      ON in1.status != in2.payment_method
 
 ),
@@ -229,6 +241,14 @@ Join_3 AS (
   FROM Filter_1 AS in0
   INNER JOIN Join_2 AS in1
      ON in0.cfor_col_1 != in1.c_string
+
+),
+
+Reformat_1 AS (
+
+  SELECT * 
+  
+  FROM env_uitesting_shared_parent_model_1 AS in0
 
 )
 
