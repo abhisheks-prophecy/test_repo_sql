@@ -29,7 +29,7 @@ Join_1 AS (
     all_type_non_partitioned.c_array AS c_array,
     all_type_non_partitioned.c_double AS c_double,
     all_type_non_partitioned.c_struct AS c_struct,
-    {{ SQL_BaseDependencyProjectAllGit.qa_concat_macro_base_column('all_type_non_partitioned.c_string') }} AS c_base_dependency_macro,
+    {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column('all_type_non_partitioned.c_string') }} AS c_base_dependency_macro,
     {{ SQL_DatabricksParentProjectMain.qa_boolean_macro('all_type_non_partitioned.c_string') }} AS c_current_project_macro,
     concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}') AS c_dbt_date
   
