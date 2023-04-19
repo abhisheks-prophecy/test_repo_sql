@@ -1,5 +1,3 @@
-
-
 {% set v_complex_dict = { "problems" : [{ "Diabetes" : [{ "medications" : [{ "medicationsClasses" : [{ "className" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }], "className2" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }] }] }], "labs" : [{ "missing_field" : "missing_value" }] }], "Asthma" : [{  }] }] } %}
 {% set v_float = 10.12 %}
 {% set v_bool = True %}
@@ -20,28 +18,62 @@ WITH raw_orders AS (
 
 ),
 
--- kiran comment
-Macro_1 AS (
-
-  {{ SQL_BigQueryParentProjectMain.qa_all_null(model = 'raw_orders', column_name = 'id') }}
-
-),
-
-OrderBy_1 AS (
+raw_payments AS (
 
   SELECT * 
   
-  FROM Macro_1 AS in0
-  
-  ORDER BY id ASC NULLS FIRST
+  FROM {{ ref('raw_payments')}}
 
 ),
 
-env_uitesting_shared_mid_model_1 AS (
+SQLStatement_2 AS (
+
+  SELECT 
+    t1.id,
+    t1.payment_method
+  
+  FROM raw_payments AS t1, raw_orders AS t2
+  
+  WHERE t1.order_id = t2.id or t2.status IS NOT NULL or t1.payment_method IS NOT NULL
+
+),
+
+env_uitesting_main_model_bigquery_1 AS (
 
   SELECT * 
   
-  FROM {{ ref('env_uitesting_shared_mid_model_1')}}
+  FROM {{ ref('env_uitesting_main_model_bigquery_1')}}
+
+),
+
+SQLStatement_1 AS (
+
+  SELECT * 
+  
+  FROM env_uitesting_main_model_bigquery_1
+  
+  WHERE c_base_dependency_macro IS NOT NULL or c_boolean_macro IN (true, false, NULL) or c_numeric_1 > -100 or c_int64 BETWEEN 100 and 10000000
+
+),
+
+Aggregate_1 AS (
+
+  SELECT 
+    any_value(c_string) AS c_string,
+    any_value(c_float64) AS c_float64,
+    any_value(c_bytes) AS c_bytes,
+    any_value(c_numeric_1) AS c_numeric_1,
+    any_value(c_date) AS c_date,
+    any_value(c_time) AS c_time,
+    any_value(c_timestamp) AS c_timestamp,
+    any_value(c_datetime) AS c_datetime,
+    any_value(c_geography) AS c_geography
+  
+  FROM SQLStatement_1 AS in0
+  
+  GROUP BY c_bool
+  
+  HAVING c_float64 > -10
 
 ),
 
@@ -50,6 +82,14 @@ env_uitesting_shared_child_model_1 AS (
   SELECT * 
   
   FROM {{ ref('env_uitesting_shared_child_model_1')}}
+
+),
+
+env_uitesting_shared_mid_model_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('env_uitesting_shared_mid_model_1')}}
 
 ),
 
@@ -91,45 +131,6 @@ Join_1 AS (
 
 ),
 
-env_uitesting_main_model_bigquery_1 AS (
-
-  SELECT * 
-  
-  FROM {{ ref('env_uitesting_main_model_bigquery_1')}}
-
-),
-
-SQLStatement_1 AS (
-
-  SELECT *
-  
-  FROM env_uitesting_main_model_bigquery_1
-  
-  WHERE c_bool IS true and c_string LIKE '%[a-zA-Z]%'
-
-),
-
-Aggregate_1 AS (
-
-  SELECT 
-    any_value(c_string) AS c_string,
-    any_value(c_float64) AS c_float64,
-    any_value(c_bytes) AS c_bytes,
-    any_value(c_numeric_1) AS c_numeric_1,
-    any_value(c_date) AS c_date,
-    any_value(c_time) AS c_time,
-    any_value(c_timestamp) AS c_timestamp,
-    any_value(c_datetime) AS c_datetime,
-    any_value(c_geography) AS c_geography
-  
-  FROM SQLStatement_1 AS in0
-  
-  GROUP BY c_bool
-  
-  HAVING c_float64 > -10
-
-),
-
 AllStunningOne AS (
 
   SELECT 
@@ -137,9 +138,9 @@ AllStunningOne AS (
       concat(c_string, {{c_i}}) AS cfor_col_{{c_i}},
     {% endfor %}
     
-    {% if v_int > 0 or                           var('v_project_dict')['a'] > 10 or   var('v_project_int') > 10 %}
+    {% if v_int > 0 or                             var('v_project_dict')['a'] > 10 or     var('v_project_int') > 10 %}
       concat(c_string, c_bool) AS c_if,
-    {% elif v_dict['a'] > 10 or   var('v_project_dict')['b'] == 'hello' %}
+    {% elif v_dict['a'] > 10 or     var('v_project_dict')['b'] == 'hello' %}
       concat(c_string, c_int64) AS c_if,
     {% else %}
       concat(c_string, c_numeric_1) AS c_if,
@@ -171,7 +172,8 @@ AllStunningOne AS (
     c_array_int64 AS c_array_int64,
     c_time AS c_time,
     c_bignumeric AS c_bignumeric,
-    {{ SQL_BigQueryParentProjectMain.qa_boolean_macro('c_int64') }} AS c_concat_basic
+    {{ SQL_BigQueryParentProjectMain.qa_boolean_macro('c_int64') }} AS c_concat_basic,
+    concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}') AS c_dbt_utils
   
   FROM Join_1 AS in0
 
@@ -184,6 +186,12 @@ Filter_1 AS (
   FROM AllStunningOne AS in0
   
   WHERE c_bool IS true
+
+),
+
+Macro_1 AS (
+
+  {{ SQL_BigQueryParentProjectMain.qa_all_not_null(model = 'raw_orders', column_name = 'user_id') }}
 
 ),
 
@@ -201,8 +209,10 @@ Join_2 AS (
     in0.c_geography AS c_geography
   
   FROM Aggregate_1 AS in0
-  INNER JOIN OrderBy_1 AS in1
+  INNER JOIN Macro_1 AS in1
      ON in0.c_string != in1.status
+  INNER JOIN SQLStatement_2 AS in2
+     ON in1.status != in2.payment_method
 
 ),
 
@@ -231,6 +241,14 @@ Join_3 AS (
   FROM Filter_1 AS in0
   INNER JOIN Join_2 AS in1
      ON in0.cfor_col_1 != in1.c_string
+
+),
+
+Reformat_1 AS (
+
+  SELECT * 
+  
+  FROM env_uitesting_shared_parent_model_1 AS in0
 
 )
 
