@@ -34,7 +34,7 @@ Join_1 AS (
     concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}') AS c_dbt_date
   
   FROM all_type_non_partitioned
-  INNER JOIN all_type_partitioned
+  LEFT JOIN all_type_partitioned
      ON all_type_non_partitioned.c_tinyint = all_type_partitioned.c_tinyint and all_type_non_partitioned.c_smallint = all_type_partitioned.c_smallint
 
 )
