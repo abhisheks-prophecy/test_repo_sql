@@ -10,35 +10,7 @@
 
 
 
-WITH raw_orders AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_orders')}}
-
-),
-
-raw_payments AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_payments')}}
-
-),
-
-SQLStatement_2 AS (
-
-  SELECT 
-    t1.id,
-    t1.payment_method
-  
-  FROM raw_payments AS t1, raw_orders AS t2
-  
-  WHERE t1.order_id = t2.id or t2.status IS NOT NULL or t1.payment_method IS NOT NULL
-
-),
-
-env_uitesting_main_model_bigquery_1 AS (
+WITH env_uitesting_main_model_bigquery_1 AS (
 
   SELECT * 
   
@@ -189,9 +161,37 @@ Filter_1 AS (
 
 ),
 
+raw_orders AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_orders')}}
+
+),
+
 Macro_1 AS (
 
   {{ SQL_BigQueryParentProjectMain.qa_all_not_null(model = 'raw_orders', column_name = 'user_id') }}
+
+),
+
+raw_payments AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_payments')}}
+
+),
+
+SQLStatement_2 AS (
+
+  SELECT 
+    t1.id,
+    t1.payment_method
+  
+  FROM raw_payments AS t1, raw_orders AS t2
+  
+  WHERE t1.order_id = t2.id or t2.status IS NOT NULL or t1.payment_method IS NOT NULL
 
 ),
 
