@@ -17,6 +17,7 @@ raw_customers AS (
 
 raw_customers_1 AS (
 
+  {#blah#}
   SELECT * 
   
   FROM raw_customers
