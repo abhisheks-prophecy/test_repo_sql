@@ -1,0 +1,245 @@
+{
+  "id" : "env_uitesting_shared_parent_model_1",
+  "metainfo" : {
+    "label" : "env_uitesting_shared_parent_model_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    }
+  },
+  "processes" : {
+    "env_uitesting_shared_parent_model_1##T0NtuHUQ" : {
+      "id" : "env_uitesting_shared_parent_model_1##T0NtuHUQ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "env_uitesting_shared_parent_model_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Join_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "z8jgoxHc",
+          "slug" : "Join_1"
+        } ],
+        "outputs" : [ {
+          "id" : "DfRqlr92",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Join_1##gIzQ0CpY" : {
+      "id" : "Join_1##gIzQ0CpY",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.first_name != in1.c_string"
+          },
+          "joinType" : "INNER"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in1.c_tinyint"
+          },
+          "alias" : "c_tinyint"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_smallint"
+          },
+          "alias" : "c_smallint"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_int"
+          },
+          "alias" : "c_int"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_bigint"
+          },
+          "alias" : "c_bigint"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_float"
+          },
+          "alias" : "c_float"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_double"
+          },
+          "alias" : "c_double"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_string"
+          },
+          "alias" : "c_string"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_boolean"
+          },
+          "alias" : "c_boolean"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_array"
+          },
+          "alias" : "c_array"
+        }, {
+          "expression" : {
+            "expression" : "in1.c_struct"
+          },
+          "alias" : "c_struct"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W1zmTVXy",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "FpHCUXWz",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "UrZEkoO9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "raw_customers##C5m0AYWs" : {
+      "id" : "raw_customers##C5m0AYWs",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "raw_customers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "raw_customers",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Tqyo0tIQ",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Reformat_1##bnFc0FPK" : {
+      "id" : "Reformat_1##bnFc0FPK",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n8dfcaUk",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "rISwwSLI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "all_type_parquet##oZyIBZSQ" : {
+      "id" : "all_type_parquet##oZyIBZSQ",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_parquet",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_parquet",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_database"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Mp7OxHCg",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "mgeAZEZW",
+    "source" : "all_type_parquet##oZyIBZSQ",
+    "sourcePort" : "Mp7OxHCg",
+    "target" : "Reformat_1##bnFc0FPK",
+    "targetPort" : "n8dfcaUk"
+  }, {
+    "id" : "VUZFjy9p",
+    "source" : "raw_customers##C5m0AYWs",
+    "sourcePort" : "Tqyo0tIQ",
+    "target" : "Join_1##gIzQ0CpY",
+    "targetPort" : "W1zmTVXy"
+  }, {
+    "id" : "p36pwvpx",
+    "source" : "Reformat_1##bnFc0FPK",
+    "sourcePort" : "rISwwSLI",
+    "target" : "Join_1##gIzQ0CpY",
+    "targetPort" : "FpHCUXWz"
+  }, {
+    "id" : "BJMUUWpC",
+    "source" : "Join_1##gIzQ0CpY",
+    "sourcePort" : "UrZEkoO9",
+    "target" : "env_uitesting_shared_parent_model_1##T0NtuHUQ",
+    "targetPort" : "z8jgoxHc"
+  } ],
+  "component" : "Model"
+}
