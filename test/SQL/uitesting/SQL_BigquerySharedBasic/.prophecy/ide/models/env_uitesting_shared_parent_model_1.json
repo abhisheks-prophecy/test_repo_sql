@@ -1,0 +1,117 @@
+{
+  "id" : "env_uitesting_shared_parent_model_1",
+  "metainfo" : {
+    "label" : "env_uitesting_shared_parent_model_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    }
+  },
+  "processes" : {
+    "all_type_table##xLbg3LO1" : {
+      "id" : "all_type_table##xLbg3LO1",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_table",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_table",
+          "sourceType" : "Source",
+          "sourceName" : "prophecy-qa.qa_test_dataset"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "UgIa4vQB",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Reformat_1##rr6pugCN" : {
+      "id" : "Reformat_1##rr6pugCN",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wDr24B3J",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "e0xfGgPd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "env_uitesting_shared_parent_model_1##t1v7NbK6" : {
+      "id" : "env_uitesting_shared_parent_model_1##t1v7NbK6",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "env_uitesting_shared_parent_model_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Reformat_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HiMzlpPc",
+          "slug" : "Reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "utdeN9l6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "LM2wd50I",
+    "source" : "all_type_table##xLbg3LO1",
+    "sourcePort" : "UgIa4vQB",
+    "target" : "Reformat_1##rr6pugCN",
+    "targetPort" : "wDr24B3J"
+  }, {
+    "id" : "aa82HLlf",
+    "source" : "Reformat_1##rr6pugCN",
+    "sourcePort" : "e0xfGgPd",
+    "target" : "env_uitesting_shared_parent_model_1##t1v7NbK6",
+    "targetPort" : "HiMzlpPc"
+  } ],
+  "component" : "Model"
+}
