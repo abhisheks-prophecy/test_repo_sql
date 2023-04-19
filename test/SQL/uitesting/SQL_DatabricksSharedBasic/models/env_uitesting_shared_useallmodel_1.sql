@@ -1,12 +1,4 @@
-WITH env_uitesting_shared_parent_model_1 AS (
-
-  SELECT * 
-  
-  FROM {{ ref('env_uitesting_shared_parent_model_1')}}
-
-),
-
-env_uitesting_shared_child_model_1 AS (
+WITH env_uitesting_shared_child_model_1 AS (
 
   SELECT * 
   
@@ -42,6 +34,22 @@ Join_1 AS (
 
 ),
 
+raw_customers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_customers')}}
+
+),
+
+env_uitesting_shared_parent_model_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('env_uitesting_shared_parent_model_1')}}
+
+),
+
 Join_2 AS (
 
   SELECT 
@@ -59,6 +67,8 @@ Join_2 AS (
   FROM Join_1 AS in0
   INNER JOIN env_uitesting_shared_parent_model_1 AS in1
      ON in0.c_double = in1.c_double
+  INNER JOIN raw_customers AS in2
+     ON in1.c_string != in2.first_name
 
 )
 
