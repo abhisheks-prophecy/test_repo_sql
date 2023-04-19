@@ -1,0 +1,108 @@
+{
+  "id" : "env_uitesting_shared_child_model_1",
+  "metainfo" : {
+    "label" : "env_uitesting_shared_child_model_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    }
+  },
+  "processes" : {
+    "env_uitesting_shared_mid_model_1##NylGNK56" : {
+      "id" : "env_uitesting_shared_mid_model_1##NylGNK56",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "env_uitesting_shared_mid_model_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "env_uitesting_shared_mid_model_1",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Ty9lS2ck",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Reformat_1##FiGYJ7Io" : {
+      "id" : "Reformat_1##FiGYJ7Io",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Oc3FENVg",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "bEjx0ckl",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "env_uitesting_shared_child_model_1##iq3X4TTm" : {
+      "id" : "env_uitesting_shared_child_model_1##iq3X4TTm",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "env_uitesting_shared_child_model_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Reformat_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oM42Bbml",
+          "slug" : "Reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "hL8D9i4A",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "e7ZuILtQ",
+    "source" : "env_uitesting_shared_mid_model_1##NylGNK56",
+    "sourcePort" : "Ty9lS2ck",
+    "target" : "Reformat_1##FiGYJ7Io",
+    "targetPort" : "Oc3FENVg"
+  }, {
+    "id" : "fHQtTFoS",
+    "source" : "Reformat_1##FiGYJ7Io",
+    "sourcePort" : "bEjx0ckl",
+    "target" : "env_uitesting_shared_child_model_1##iq3X4TTm",
+    "targetPort" : "oM42Bbml"
+  } ],
+  "component" : "Model"
+}
