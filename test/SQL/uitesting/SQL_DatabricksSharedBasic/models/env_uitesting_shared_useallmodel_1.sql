@@ -1,3 +1,11 @@
+{{
+  config({    
+    "materialized": "table",
+    "pre_hook": [],
+    "post_hook": []
+  })
+}}
+
 {% set v_int = 22 %}
 
 WITH env_uitesting_shared_child_model_1 AS (
@@ -103,6 +111,47 @@ AllStunningOne AS (
 
 ),
 
+env_uitesting_main_model_databricks_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('env_uitesting_main_model_databricks_1')}}
+
+),
+
+model_with_only_seed_base AS (
+
+  SELECT * 
+  
+  FROM {{ ref('model_with_only_seed_base')}}
+
+),
+
+Join_3 AS (
+
+  SELECT 
+    in1.p_int AS p_int,
+    in1.p_string AS p_string,
+    in1.c_string AS c_string,
+    in1.c_int AS c_int,
+    in1.c_bigint AS c_bigint,
+    in1.c_smallint AS c_smallint,
+    in1.c_tinyint AS c_tinyint,
+    in1.c_float AS c_float,
+    in1.c_boolean AS c_boolean,
+    in1.c_array AS c_array,
+    in1.c_double AS c_double,
+    in1.c_struct AS c_struct,
+    in1.c_base_dependency_macro AS c_base_dependency_macro,
+    in1.c_current_project_macro AS c_current_project_macro,
+    in1.c_dbt_date AS c_dbt_date
+  
+  FROM model_with_only_seed_base AS in0
+  INNER JOIN env_uitesting_main_model_databricks_1 AS in1
+     ON in0.country_code != in1.p_string
+
+),
+
 Join_2 AS (
 
   SELECT 
@@ -122,6 +171,8 @@ Join_2 AS (
      ON in0.c_double = in1.c_double
   INNER JOIN raw_customers AS in2
      ON in1.c_string != in2.first_name
+  INNER JOIN Join_3 AS in3
+     ON in2.first_name != in3.c_string
 
 )
 
