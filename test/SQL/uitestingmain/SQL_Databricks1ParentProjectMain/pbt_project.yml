@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: 3.0.0-1.1
+version: 3.0.0-1.5
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -8,7 +8,31 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/Job_SQL_DatabricksParentProjectMain:
+    name: Job_SQL_DatabricksParentProjectMain
+    description: SQL Databricks job
+    fabricUID: 2730
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2023-04-19 08:19:44'
+    modifiedAt: '2023-04-20 15:21:30'
+    author: abhisheks+e2etests@prophecy.io
 functions:
   author: null
   createdAt: '2023-04-15 08:21:42'
@@ -25,6 +49,7 @@ sqlModels:
     author: abhisheks+e2etests@prophecy.io
     files:
     - models/main/databricks/main_mones/env_uitesting_main_model_databricks_1.sql
+    - .prophecy/ide/models/env_uitesting_main_model_databricks_1.json
     sqlDependencies:
       models: []
       datasets: []
@@ -110,6 +135,7 @@ sqlMacros:
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/functions/language_specific_concat.sql
+    - .prophecy/ide/macros/language_specific_concat.json
     createdAt: '2023-04-15 08:36:01'
     modifiedAt: '2023-04-15 08:36:01'
   .prophecy/metadata/sqlmacros/qa_all_not_null:
@@ -137,6 +163,7 @@ sqlMacros:
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/functions/qa_number_macro.sql
+    - .prophecy/ide/macros/qa_number_macro.json
     createdAt: '2023-04-15 08:22:12'
     modifiedAt: '2023-04-15 08:22:12'
   .prophecy/metadata/sqlmacros/snowflake__language_specific_concat:
@@ -155,6 +182,7 @@ sqlMacros:
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/gems/language_specific_deduplicate.sql
+    - .prophecy/ide/macros/language_specific_deduplicate.json
     createdAt: '2023-04-15 08:37:06'
     modifiedAt: '2023-04-15 08:37:06'
   .prophecy/metadata/sqlmacros/snowflake__language_specific_deduplicate:
@@ -191,6 +219,7 @@ sqlMacros:
     author: abhisheks+e2etests@prophecy.io
     files:
     - macros/gems/qa_test_relationship.sql
+    - .prophecy/ide/macros/qa_test_relationship.json
     createdAt: '2023-04-15 08:37:30'
     modifiedAt: '2023-04-15 08:37:30'
   .prophecy/metadata/sqlmacros/qa_complex_macro:
