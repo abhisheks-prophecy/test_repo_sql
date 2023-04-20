@@ -1,5 +1,3 @@
-
-
 {% set v_model_int_main = 10 %}
 {% set v_model_dict_main = { 'a' : 10, 'b' : 15 } %}
 {% set v_model_dict_complex = { 'a' : 2, 'b' : 10, 'c' : [1, 2, 'hello'] } %}
@@ -63,7 +61,6 @@ Reformat_1 AS (
       concat(C_STRING, {{c_i}}) AS col_{{c_i}},
     {% endfor %}
     
-    {{ SQL_SnoflakeMainProject.qa_macro_call_another_macro_column('c_string') }} AS c_macro_another_macro,
     {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column('c_string') }} AS c_base_macro,
     concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}') AS c_dbutils_macro
   
