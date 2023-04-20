@@ -8,6 +8,11 @@
       "sources" : [ ]
     },
     "graphConfig" : {
+      "modelConfig" : {
+        "materialized" : "view",
+        "pre-hook" : "",
+        "post-hook" : ""
+      },
       "userDefinedConfig" : {
         "vars" : {
           "v_complex_dict" : "{ \"problems\" : [{ \"Diabetes\" : [{ \"medications\" : [{ \"medicationsClasses\" : [{ \"className\" : [{ \"associatedDrug\" : [{ \"name\" : \"asprin\", \"dose\" : \"\", \"strength\" : \"500 mg\" }], \"associatedDrug#2\" : [{ \"name\" : \"somethingElse\", \"dose\" : \"\", \"strength\" : \"500 mg\" }] }], \"className2\" : [{ \"associatedDrug\" : [{ \"name\" : \"asprin\", \"dose\" : \"\", \"strength\" : \"500 mg\" }], \"associatedDrug#2\" : [{ \"name\" : \"somethingElse\", \"dose\" : \"\", \"strength\" : \"500 mg\" }] }] }] }], \"labs\" : [{ \"missing_field\" : \"missing_value\" }] }], \"Asthma\" : [{  }] }] }",
@@ -525,7 +530,7 @@
         "macroDependencies" : [ "SQL_BaseGitDepProjectAllFinal.bigquery__language_specific_concat_base", "SQL_BigQueryParentProjectMain.qa_boolean_macro" ]
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "l3va8YCF##c_string", "l3va8YCF##c_bool", "l3va8YCF##c_int64", "l3va8YCF##c_numeric_1", "l3va8YCF##c_geography", "l3va8YCF##p_date", "l3va8YCF##c_timestamp", "l3va8YCF##c_json", "l3va8YCF##c_interval", "l3va8YCF##c_float64", "l3va8YCF##c_numeric_2", "l3va8YCF##c_date", "l3va8YCF##c_datetime", "l3va8YCF##c_bytes", "l3va8YCF##c_struct", "l3va8YCF##c_array_int64", "l3va8YCF##c_time", "l3va8YCF##c_bignumeric" ],
         "expressions" : [ {
           "rowType" : "for",
           "variable" : {

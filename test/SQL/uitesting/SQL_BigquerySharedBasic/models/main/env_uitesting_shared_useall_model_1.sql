@@ -1,3 +1,11 @@
+{{
+  config({    
+    "materialized": "view",
+    "pre_hook": ["SELECT * FROM region-us.INFORMATION_SCHEMA.SCHEMATA","SELECT * FROM `prophecy-qa`.`region-us`.INFORMATION_SCHEMA.SCHEMATA_LINKS"],
+    "post_hook": ["SELECT * FROM `prophecy-qa`.`region-us`.INFORMATION_SCHEMA.SCHEMATA_LINKS","SELECT * FROM region-us.INFORMATION_SCHEMA.SCHEMATA"]
+  })
+}}
+
 {% set v_complex_dict = { "problems" : [{ "Diabetes" : [{ "medications" : [{ "medicationsClasses" : [{ "className" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }], "className2" : [{ "associatedDrug" : [{ "name" : "asprin", "dose" : "", "strength" : "500 mg" }], "associatedDrug#2" : [{ "name" : "somethingElse", "dose" : "", "strength" : "500 mg" }] }] }] }], "labs" : [{ "missing_field" : "missing_value" }] }], "Asthma" : [{  }] }] } %}
 {% set v_float = 10.12 %}
 {% set v_bool = True %}
