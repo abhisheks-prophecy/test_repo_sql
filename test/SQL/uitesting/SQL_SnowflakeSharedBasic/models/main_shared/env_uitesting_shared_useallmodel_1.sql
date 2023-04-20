@@ -2,7 +2,60 @@
 {% set v_bool = True %}
 
 
-WITH env_uitesting_shared_child_model_1 AS (
+WITH goods_classification AS (
+
+  SELECT * 
+  
+  FROM {{ ref('goods_classification')}}
+
+),
+
+default__test_accepted_range_1 AS (
+
+  {{ dbt_utils.default__test_accepted_range(model = 'goods_classification', column_name = 'NZHSC_Level_1_Code_HS2', min_value = -100, max_value = 9999999) }}
+
+),
+
+service_classification AS (
+
+  SELECT * 
+  
+  FROM {{ ref('service_classification')}}
+
+),
+
+snowflake__language_specific_deduplicate_base_1 AS (
+
+  {{ SQL_BaseGitDepProjectAllFinal.snowflake__language_specific_deduplicate_base(relation = 'service_classification', partition_by = 'code_1', order_by = 'service_label_1') }}
+
+),
+
+Join_3 AS (
+
+  SELECT 
+    in0.NZHSC_LEVEL_2_CODE_HS4 AS NZHSC_LEVEL_2_CODE_HS4,
+    in0.NZHSC_LEVEL_1_CODE_HS2 AS NZHSC_LEVEL_1_CODE_HS2,
+    in0.NZHSC_LEVEL_2 AS NZHSC_LEVEL_2,
+    in0.NZHSC_LEVEL_1 AS NZHSC_LEVEL_1,
+    in0.STATUS_HS4 AS STATUS_HS4,
+    in1.CODE_1 AS CODE_1,
+    in1.SERVICE_LABEL_1 AS SERVICE_LABEL_1
+  
+  FROM default__test_accepted_range_1 AS in0
+  INNER JOIN snowflake__language_specific_deduplicate_base_1 AS in1
+     ON in0.STATUS_HS4 != in1.CODE_1
+
+),
+
+env_uitesting_main_model_snow_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('env_uitesting_main_model_snow_1')}}
+
+),
+
+env_uitesting_shared_child_model_1 AS (
 
   SELECT * 
   
@@ -18,6 +71,14 @@ env_uitesting_shared_mid_model_1 AS (
 
 ),
 
+model_with_only_seed_base AS (
+
+  SELECT * 
+  
+  FROM {{ ref('model_with_only_seed_base')}}
+
+),
+
 Join_1 AS (
 
   SELECT 
@@ -25,7 +86,7 @@ Join_1 AS (
     in0.C_NUM10 AS C_NUM10,
     in1.C_DEC AS C_DEC,
     in0.C_NUMERIC AS C_NUMERIC,
-    in0.C_INT AS C_INT,
+    in3.C_INT AS C_INT,
     in0.C_INTEGER AS C_INTEGER,
     in0.C_DOUBLE AS C_DOUBLE,
     in0.C_FLOAT AS C_FLOAT,
@@ -54,6 +115,10 @@ Join_1 AS (
   FROM env_uitesting_shared_child_model_1 AS in0
   INNER JOIN env_uitesting_shared_mid_model_1 AS in1
      ON in0.c_num = in1.c_num
+  INNER JOIN model_with_only_seed_base AS in2
+     ON in1.C_STRING != in2.CODE_1
+  INNER JOIN env_uitesting_main_model_snow_1 AS in3
+     ON in1.C_INT != in3.C_NUM
 
 ),
 
@@ -111,7 +176,10 @@ AllStunningOne AS (
     {% else %}
       concat(C_STRING, C_INTEGER) AS c_if,
     {% endif %}
-    concat(C_STRING20, {{ SQL_SnowflakeSharedBasic.qa_concat_function_main('c_string', 'c_integer') }}) AS c_macro_1
+    concat(C_STRING20, {{ SQL_SnowflakeSharedBasic.qa_concat_function_main('c_string', 'c_integer') }}) AS c_macro_1,
+    concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}', {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column('c_string') }}, {{ SQL_SnoflakeMainProject.qa_concat_macro_column('c_string') }}) AS c_macro_from_dependent_projects,
+    {{ SQL_SnoflakeMainProject.snowflake__language_specific_concat() }} AS c_macro_language_specific_concat,
+    {{ dbt_date.snowflake__day_name('c_date', 2) }} AS c_dbt_date_call
   
   FROM env_uitesting_shared_parent_model_1 AS in0
 
@@ -152,7 +220,9 @@ Join_2 AS (
   
   FROM Join_1 AS in0
   INNER JOIN AllStunningOne AS in1
-     ON in0.C_BOOL = in1.C_BOOL
+     ON in0.C_STRING != in1.C_CONCAT_EXPRESSION
+  INNER JOIN Join_3 AS in2
+     ON in1.C_STRING != in2.NZHSC_LEVEL_1
 
 )
 
