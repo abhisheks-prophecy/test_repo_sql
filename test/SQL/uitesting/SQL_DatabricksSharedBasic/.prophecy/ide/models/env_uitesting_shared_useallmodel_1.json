@@ -396,7 +396,7 @@
         "x" : 260,
         "y" : 20,
         "phase" : 0,
-        "macroDependencies" : [ "SQL_DatabricksSharedBasic.qa_concat_function_main" ]
+        "macroDependencies" : [ "SQL_DatabricksSharedBasic.qa_concat_function_main", "SQL_DatabricksParentProjectMain.qa_boolean_macro", "SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column" ]
       },
       "properties" : {
         "columnsSelector" : [ "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_tinyint", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_smallint", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_int", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_bigint", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_float", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_double", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_string", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_boolean", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_array", "c_MlT2psvl5SG-Bl87jYu$$TwhuW0vg751YcTAdNaWTi##c_struct" ],
@@ -517,6 +517,21 @@
             },
             "alias" : "cfor_col_{{c_i}}"
           } ]
+        }, {
+          "expression" : {
+            "expression" : "{{ SQL_DatabricksParentProjectMain.qa_boolean_macro('c_string') }}"
+          },
+          "alias" : "c_databricks_project_main"
+        }, {
+          "expression" : {
+            "expression" : "{{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column('c_string') }}"
+          },
+          "alias" : "c_base_project"
+        }, {
+          "expression" : {
+            "expression" : "concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format(\"my pretty message\") }}')"
+          },
+          "alias" : "c_dbt_utils_functions"
         } ]
       },
       "ports" : {
@@ -717,6 +732,21 @@
               }
             }, {
               "name" : "cfor_col_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_databricks_project_main",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_base_project",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_dbt_utils_functions",
               "dataType" : {
                 "type" : "String"
               }
@@ -1355,6 +1385,21 @@
               }
             }, {
               "name" : "cfor_col_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_databricks_project_main",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_base_project",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_dbt_utils_functions",
               "dataType" : {
                 "type" : "String"
               }

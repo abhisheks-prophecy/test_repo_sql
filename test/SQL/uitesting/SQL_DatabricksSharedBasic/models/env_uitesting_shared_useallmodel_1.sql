@@ -92,9 +92,12 @@ AllStunningOne AS (
       concat(c_string, c_bigint) AS c_if,
     {% endif %}
     {% for c_i in range(0, 5) %}
-      concat(c_string, {{c_i}}) AS cfor_col_{{c_i}}
-    {% if not loop.last %} , {% endif %}
+      concat(c_string, {{c_i}}) AS cfor_col_{{c_i}},
     {% endfor %}
+    
+    {{ SQL_DatabricksParentProjectMain.qa_boolean_macro('c_string') }} AS c_databricks_project_main,
+    {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column('c_string') }} AS c_base_project,
+    concat('{{ dbt_utils.pretty_time() }}', '{{ dbt_utils.pretty_log_format("my pretty message") }}') AS c_dbt_utils_functions
   
   FROM env_uitesting_shared_parent_model_1 AS in0
 
