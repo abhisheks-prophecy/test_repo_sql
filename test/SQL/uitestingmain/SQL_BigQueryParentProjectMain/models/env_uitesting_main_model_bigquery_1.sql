@@ -1,16 +1,16 @@
-WITH raw_payments AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_payments')}}
-
-),
-
-all_type_table AS (
+WITH all_type_table AS (
 
   SELECT * 
   
   FROM {{ source('alias_prophecy_qa_qa_test_dataset', 'all_type_table') }}
+
+),
+
+raw_payments AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_payments')}}
 
 ),
 
