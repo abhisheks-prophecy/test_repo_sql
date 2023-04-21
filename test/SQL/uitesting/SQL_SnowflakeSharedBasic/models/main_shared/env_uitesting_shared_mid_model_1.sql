@@ -24,6 +24,14 @@ WITH raw_customers AS (
 
 ),
 
+Reformat_1 AS (
+
+  SELECT * 
+  
+  FROM raw_customers AS in0
+
+),
+
 Aggregate_1 AS (
 
   SELECT 
@@ -104,7 +112,7 @@ Limit_1 AS (
   
   FROM AllStunningOne AS in0
   
-  LIMIT 10
+  LIMIT 40
 
 ),
 
@@ -134,7 +142,7 @@ SQLStatement_1 AS (
   
   FROM OrderBy_1 AS in0
   
-  WHERE C_INT != 0
+  WHERE C_INT > -100
 
 ),
 
@@ -172,7 +180,7 @@ Join_1 AS (
     in0.C_GEOGRAPHY AS C_GEOGRAPHY
   
   FROM SQLStatement_1 AS in0
-  INNER JOIN Aggregate_1 AS in1
+  INNER JOIN Reformat_1 AS in1
      ON in0.C_STRING != in1.LAST_NAME
 
 )
