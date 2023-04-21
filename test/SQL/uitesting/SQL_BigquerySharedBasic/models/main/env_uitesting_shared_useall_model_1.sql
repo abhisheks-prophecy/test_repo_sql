@@ -1,8 +1,8 @@
 {{
   config({    
     "materialized": "view",
-    "pre_hook": ["SELECT * FROM region-us.INFORMATION_SCHEMA.SCHEMATA","SELECT * FROM `prophecy-qa`.`region-us`.INFORMATION_SCHEMA.SCHEMATA_LINKS"],
-    "post_hook": ["SELECT * FROM `prophecy-qa`.`region-us`.INFORMATION_SCHEMA.SCHEMATA_LINKS","SELECT * FROM region-us.INFORMATION_SCHEMA.SCHEMATA"]
+    "pre_hook": [],
+    "post_hook": []
   })
 }}
 
@@ -142,7 +142,7 @@ AllStunningOne AS (
     c_bool AS c_bool,
     c_json AS c_json,
     c_interval AS c_interval,
-    c_int64 AS c_int64,
+    c_int64 * 2,
     c_float64 AS c_float64,
     c_numeric_2 AS c_numeric_2,
     c_date AS c_date,
@@ -235,7 +235,6 @@ Join_3 AS (
     in0.c_bool AS c_bool,
     in0.c_json AS c_json,
     in0.c_interval AS c_interval,
-    in0.c_int64 AS c_int64,
     in0.c_float64 AS c_float64,
     in0.c_numeric_2 AS c_numeric_2,
     in0.c_date AS c_date,
