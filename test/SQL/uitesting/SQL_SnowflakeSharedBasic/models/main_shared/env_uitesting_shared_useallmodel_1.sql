@@ -12,7 +12,7 @@ WITH goods_classification AS (
 
 default__test_accepted_range_1 AS (
 
-  {{ dbt_utils.default__test_accepted_range(model = 'goods_classification', column_name = 'NZHSC_Level_1_Code_HS2', min_value = -100, max_value = 9999999) }}
+  {{ dbt_utils.default__test_accepted_range(model = 'goods_classification', column_name = 'NZHSC_Level_1_Code_HS2', min_value = 10, max_value = 15) }}
 
 ),
 

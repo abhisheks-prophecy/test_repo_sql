@@ -29,6 +29,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_parent_model_1",
+        "x" : 120,
+        "y" : 120,
         "phase" : 0
       },
       "properties" : {
@@ -200,13 +202,15 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "SQLStatement_1",
+        "x" : 1120,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "m5UnwiMA##C_INT" ],
         "condition" : {
-          "expression" : "C_INT != 0"
+          "expression" : "C_INT > -100"
         }
       },
       "ports" : {
@@ -614,6 +618,8 @@
       "component" : "OrderBy",
       "metadata" : {
         "label" : "OrderBy_1",
+        "x" : 920,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1043,6 +1049,8 @@
       "component" : "Aggregate",
       "metadata" : {
         "label" : "Aggregate_1",
+        "x" : 1100,
+        "y" : 480,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1115,11 +1123,78 @@
         "isCustomOutputSchema" : false
       }
     },
+    "3bVOjlbS9bgixLGoIBJhv$$9YDzP7TWj4_GCdkWJP2oe" : {
+      "id" : "3bVOjlbS9bgixLGoIBJhv$$9YDzP7TWj4_GCdkWJP2oe",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 1080,
+        "y" : 320,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Mzj1_DvEog2thOPoBJxLF$$zCWafcqBRl_DFtqGAaavx",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "0ePBTh3Yg9QfG0n_NwGny$$iz3BPNcnNraYYx34_MR1V",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "env_uitesting_shared_mid_model_1##NQCt8tcw" : {
       "id" : "env_uitesting_shared_mid_model_1##NQCt8tcw",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_shared_mid_model_1",
+        "x" : 1520,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1448,6 +1523,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "AllStunningOne",
+        "x" : 320,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ "SQL_SnowflakeSharedBasic.qa_concat_function_main" ]
       },
@@ -2027,6 +2104,8 @@
       "component" : "Seed",
       "metadata" : {
         "label" : "raw_customers",
+        "x" : 780,
+        "y" : 300,
         "phase" : 0
       },
       "properties" : {
@@ -2068,6 +2147,8 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "Filter_1",
+        "x" : 720,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -2482,6 +2563,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
+        "x" : 1320,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -2851,6 +2934,11 @@
                 "type" : "Number"
               }
             }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
               "name" : "LAST_NAME",
               "dataType" : {
                 "type" : "String"
@@ -3020,11 +3108,13 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_1",
+        "x" : 520,
+        "y" : 120,
         "phase" : 0
       },
       "properties" : {
         "limit" : {
-          "expression" : "10"
+          "expression" : "40"
         }
       },
       "ports" : {
@@ -3471,17 +3561,23 @@
     "target" : "Join_1##rPpCF7t2",
     "targetPort" : "KFejbUdP"
   }, {
-    "id" : "hjH2NQnG",
-    "source" : "Aggregate_1##azRGuJok",
-    "sourcePort" : "IUDSU0AQ",
-    "target" : "Join_1##rPpCF7t2",
-    "targetPort" : "wMf6hPjX"
-  }, {
     "id" : "K2Uleqh7",
     "source" : "Join_1##rPpCF7t2",
     "sourcePort" : "kmBNRJ0R",
     "target" : "env_uitesting_shared_mid_model_1##NQCt8tcw",
     "targetPort" : "SPrxgwxV"
+  }, {
+    "id" : "78nNmZ4mrHsPtJRrMokhF",
+    "source" : "raw_customers##QINtLSMd",
+    "sourcePort" : "ny9WJWAn",
+    "target" : "3bVOjlbS9bgixLGoIBJhv$$9YDzP7TWj4_GCdkWJP2oe",
+    "targetPort" : "Mzj1_DvEog2thOPoBJxLF$$zCWafcqBRl_DFtqGAaavx"
+  }, {
+    "id" : "y3zqztbV1U4FAMuTrnr2q",
+    "source" : "3bVOjlbS9bgixLGoIBJhv$$9YDzP7TWj4_GCdkWJP2oe",
+    "sourcePort" : "0ePBTh3Yg9QfG0n_NwGny$$iz3BPNcnNraYYx34_MR1V",
+    "target" : "Join_1##rPpCF7t2",
+    "targetPort" : "wMf6hPjX"
   } ],
   "component" : "Model"
 }
