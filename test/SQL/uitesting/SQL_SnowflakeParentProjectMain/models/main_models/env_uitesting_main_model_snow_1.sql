@@ -1,3 +1,9 @@
+{{
+  config({    
+    "materialized": "table"
+  })
+}}
+
 {% set v_model_int_main = 10 %}
 {% set v_model_dict_main = { 'a' : 10, 'b' : 15 } %}
 {% set v_model_dict_complex = { 'a' : 2, 'b' : 10, 'c' : [1, 2, 'hello'] } %}
