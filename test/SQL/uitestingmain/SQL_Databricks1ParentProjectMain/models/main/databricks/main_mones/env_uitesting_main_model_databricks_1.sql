@@ -21,7 +21,7 @@ Join_1 AS (
     all_type_partitioned.p_string AS p_string,
     all_type_non_partitioned.c_string AS c_string,
     all_type_non_partitioned.c_int AS c_int,
-    all_type_non_partitioned.c_bigint AS c_bigint,
+    all_type_non_partitioned.c_bigint + spark_catalog.qa_db_warehouse.area(10, 20) AS c_bigint,
     all_type_non_partitioned.c_smallint AS c_smallint,
     all_type_non_partitioned.c_tinyint AS c_tinyint,
     all_type_non_partitioned.c_float AS c_float,
