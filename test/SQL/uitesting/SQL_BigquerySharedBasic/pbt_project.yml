@@ -8,7 +8,55 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/REL_BQ_AIRFLOW:
+    name: REL_BQ_AIRFLOW
+    description: TEST AIRFLOW JOB BIGQUERY
+    fabricUID: 5295
+    scheduler:
+      Composer: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0 10 * *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-04-21 13:02:23'
+    modifiedAt: '2023-04-21 13:41:50'
+    author: abhisheks+shared@prophecy.io
+  jobs/REL_BQ_Databricks:
+    name: REL_BQ_Databricks
+    description: ''
+    fabricUID: 4931
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: true
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-04-21 13:42:59'
+    modifiedAt: '2023-04-21 13:47:11'
+    author: abhisheks+shared@prophecy.io
 functions:
   author: null
   createdAt: '2023-04-16 15:58:13'
