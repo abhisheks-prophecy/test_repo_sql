@@ -8,7 +8,45 @@
 
 {% set v_int = 22 %}
 
-WITH env_uitesting_shared_child_model_1 AS (
+WITH raw_customers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_customers')}}
+
+),
+
+Filter_1 AS (
+
+  SELECT * 
+  
+  FROM raw_customers AS in0
+  
+  WHERE true
+
+),
+
+Limit_1 AS (
+
+  SELECT * 
+  
+  FROM Filter_1 AS in0
+  
+  LIMIT 100
+
+),
+
+OrderBy_1 AS (
+
+  SELECT * 
+  
+  FROM Limit_1 AS in0
+  
+  ORDER BY first_name ASC NULLS FIRST
+
+),
+
+env_uitesting_shared_child_model_1 AS (
 
   SELECT * 
   
@@ -41,14 +79,6 @@ Join_1 AS (
   FROM env_uitesting_shared_child_model_1 AS in0
   INNER JOIN env_uitesting_shared_mid_model_1 AS in1
      ON in0.c_smallint != in1.c_int
-
-),
-
-raw_customers AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_customers')}}
 
 ),
 
@@ -111,6 +141,37 @@ AllStunningOne AS (
 
 ),
 
+Aggregate_1 AS (
+
+  SELECT 
+    any_value(c_bool_expr) AS c_bool_expr,
+    any_value(c_concat_expr) AS c_concat_expr,
+    any_value(c_add_expr) AS c_add_expr,
+    any_value(c_tinyint) AS c_tinyint,
+    any_value(c_smallint) AS c_smallint,
+    any_value(c_int) AS c_int,
+    any_value(c_bigint) AS c_bigint,
+    any_value(c_float) AS c_float,
+    any_value(c_double) AS c_double,
+    any_value(c_string) AS c_string,
+    any_value(c_boolean) AS c_boolean,
+    any_value(c_macro) AS c_macro,
+    any_value(c_if) AS c_if,
+    any_value(cfor_col_0) AS cfor_col_0,
+    any_value(cfor_col_1) AS cfor_col_1,
+    any_value(cfor_col_2) AS cfor_col_2,
+    any_value(cfor_col_3) AS cfor_col_3,
+    any_value(cfor_col_4) AS cfor_col_4,
+    any_value(c_databricks_project_main) AS c_databricks_project_main,
+    any_value(c_base_project) AS c_base_project,
+    any_value(c_dbt_utils_functions) AS c_dbt_utils_functions
+  
+  FROM AllStunningOne AS in0
+  
+  GROUP BY c_boolean
+
+),
+
 env_uitesting_main_model_databricks_1 AS (
 
   SELECT * 
@@ -167,9 +228,9 @@ Join_2 AS (
     in0.c_struct AS c_struct
   
   FROM Join_1 AS in0
-  INNER JOIN AllStunningOne AS in1
+  INNER JOIN Aggregate_1 AS in1
      ON in0.c_double = in1.c_double
-  INNER JOIN raw_customers AS in2
+  INNER JOIN OrderBy_1 AS in2
      ON in1.c_string != in2.first_name
   INNER JOIN Join_3 AS in3
      ON in2.first_name != in3.c_string
