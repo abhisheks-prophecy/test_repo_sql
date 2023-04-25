@@ -1,3 +1,9 @@
+{{
+  config({    
+    "materialized": "table"
+  })
+}}
+
 WITH SQLStatement_0 AS (
 
   SELECT 
