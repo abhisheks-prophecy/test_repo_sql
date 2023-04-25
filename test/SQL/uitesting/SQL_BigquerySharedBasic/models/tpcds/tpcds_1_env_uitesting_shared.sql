@@ -22,14 +22,6 @@ DATE_DIM AS (
 
 ),
 
-STORE_SALES AS (
-
-  SELECT * 
-  
-  FROM {{ source('prophecy-qa.qa_test_dataset', 'STORE_SALES') }}
-
-),
-
 ITEM AS (
 
   SELECT * 
@@ -49,7 +41,7 @@ SQLStatement_3 AS (
     sum(ss_ext_sales_price) AS itemrevenue,
     sum(ss_ext_sales_price) * 100 / sum(sum(ss_ext_sales_price)) OVER (PARTITION BY i_class) AS revenueratio
   
-  FROM store_sales, item, date_dim
+  FROM qa_test_dataset.STORE_SALES, item, date_dim
   
   WHERE ss_item_sk = i_item_sk and i_category IN ('Women', 'Electronics', 'Shoes') and ss_sold_date_sk = d_date_sk and d_date BETWEEN CAST('2002-05-27' AS date) and DATE_ADD(DATE'2002-05-27', INTERVAL 30 DAY)
   
