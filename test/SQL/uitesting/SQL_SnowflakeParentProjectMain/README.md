@@ -31,3 +31,11 @@
 *** Release notes for version: 3.0.0-1.5 ***
 
 3.0.0-1.5
+
+*** Release notes for version: 3.0.0-4 ***
+
+3.0.0-4
+
+*** Release notes for version: 3.0.0-5 ***
+
+3.0.0-5
