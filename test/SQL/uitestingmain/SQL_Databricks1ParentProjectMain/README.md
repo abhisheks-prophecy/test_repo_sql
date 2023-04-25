@@ -24,3 +24,7 @@
 *** Release notes for version: 1.0.0-DBT ***
 
 1.0.0-DBT
+
+*** Release notes for version: 1.0.1-DBT ***
+
+1.0.1-DBT
