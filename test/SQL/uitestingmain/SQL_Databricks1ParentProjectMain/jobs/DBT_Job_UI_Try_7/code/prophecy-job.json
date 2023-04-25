@@ -1,0 +1,162 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "23",
+    "jobId" : "jobs/DBT_Job_UI_Try_7",
+    "name" : "DBT_Job_UI_Try_7",
+    "schedule" : "0 0 0 1/1 * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "prophecy_internal_jobs",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "21",
+      "name" : "databricks-sql-warehouse",
+      "clusterSizes" : {
+        "default" : "prophecy_internal_jobs",
+        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
+      }
+    }, {
+      "id" : "23",
+      "name" : "databricks_sql_warehouse_qa",
+      "clusterSizes" : {
+        "default" : "prophecy_internal_jobs",
+        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
+      }
+    } ]
+  },
+  "processes" : {
+    "l3YiYHHL2ot1eyNpylIto$$cuzUPYAos73ZeeDYhcL7F" : {
+      "id" : "l3YiYHHL2ot1eyNpylIto$$cuzUPYAos73ZeeDYhcL7F",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : 780,
+        "y" : 620
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "320YPpSjYUcY5bTTXqilO$$c53HPTSgsgL0EP0emfwqt",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "TMJ-j0UPbC1nL-aCaUDdu$$kOsg5Kt_SSGvJoQE8xVPG",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : true,
+        "gitEntity" : "branch",
+        "projectId" : "82",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "profile" : "run_profile",
+        "sqlFabricId" : "23",
+        "gitEntityValue" : "main",
+        "execDeps" : true,
+        "execTest" : false,
+        "currentProjectModels" : [ {
+          "label" : "env_uitesting_main_model_databricks_2",
+          "value" : "env_uitesting_main_model_databricks_2",
+          "id" : "82/.prophecy/metadata/sqlmodels/env_uitesting_main_model_databricks_2",
+          "name" : "env_uitesting_main_model_databricks_2"
+        }, {
+          "label" : "env_uitesting_main_model_databricks_1",
+          "value" : "env_uitesting_main_model_databricks_1",
+          "id" : "82/.prophecy/metadata/sqlmodels/env_uitesting_main_model_databricks_1",
+          "name" : "env_uitesting_main_model_databricks_1"
+        } ]
+      }
+    },
+    "NJ-b_3YQ8f28FyfSGBiVO$$PsJAugZhb4CWZTOys4isS" : {
+      "id" : "NJ-b_3YQ8f28FyfSGBiVO$$PsJAugZhb4CWZTOys4isS",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_1",
+        "slug" : "DBT_1",
+        "x" : 940,
+        "y" : 620
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LUhDny5BVxImV9nfyJn0n$$H2wtMGvPfjYQyzF6z3l6V",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "ay0bBSB1R-r4hdLYvjgbK$$izVPb956kYBuZxauwVqXX",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : true,
+        "gitEntity" : "branch",
+        "projectId" : "82",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "profile" : "run_profile",
+        "sqlFabricId" : "21",
+        "gitEntityValue" : "main",
+        "execDeps" : true,
+        "execTest" : false,
+        "currentProjectModels" : [ {
+          "label" : "env_uitesting_main_model_databricks_2",
+          "value" : "env_uitesting_main_model_databricks_2",
+          "id" : "82/.prophecy/metadata/sqlmodels/env_uitesting_main_model_databricks_2",
+          "name" : "env_uitesting_main_model_databricks_2"
+        }, {
+          "label" : "env_uitesting_main_model_databricks_1",
+          "value" : "env_uitesting_main_model_databricks_1",
+          "id" : "82/.prophecy/metadata/sqlmodels/env_uitesting_main_model_databricks_1",
+          "name" : "env_uitesting_main_model_databricks_1"
+        } ]
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "vuBHphV37t0MEkFdLtS9a$$NnrTbHYenJp2MhhG6r18u",
+    "source" : "l3YiYHHL2ot1eyNpylIto$$cuzUPYAos73ZeeDYhcL7F",
+    "target" : "NJ-b_3YQ8f28FyfSGBiVO$$PsJAugZhb4CWZTOys4isS",
+    "sourcePort" : "TMJ-j0UPbC1nL-aCaUDdu$$kOsg5Kt_SSGvJoQE8xVPG",
+    "targetPort" : "LUhDny5BVxImV9nfyJn0n$$H2wtMGvPfjYQyzF6z3l6V"
+  } ]
+}
