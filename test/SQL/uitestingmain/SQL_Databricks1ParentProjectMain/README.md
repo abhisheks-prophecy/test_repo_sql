@@ -36,3 +36,7 @@
 *** Release notes for version: 1.0.4-DBT ***
 
 1.0.4-DBT
+
+*** Release notes for version: 1.0.7-DBT ***
+
+1.0.7-DBT
