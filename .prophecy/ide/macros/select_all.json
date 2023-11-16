@@ -1,1 +1,113 @@
-{"macro_bjXtCsYt":{"name":"select_all","macroId":"macro_bjXtCsYt","macroType":"query","definition":"\nselect * from {{name}}","parameters":{"type":"record","fields":[{"name":"name","kind":{"type":"unknown","value":"'customers'","actualValue":"unknown"},"optional":true,"isWorkflowNodeConfiguration":false}]},"description":"select all table","staleState":"none","propertiesFile":{"name":"test","content":"---\nversion: 2\nmacros:\n- name: \"select_all\"\n  description: \"select all table\"\n  arguments:\n  - name: \"name\"\n    type: \"unknown\"\n  macroType: \"query\"\n- name: \"cents_to_dollars\"\n  arguments:\n  - name: \"column_name\"\n    type: \"unknown\"\n  - name: \"decimal_places\"\n    type: \"int\"\n  - name: \"some_other\"\n    type: \"unknown\"\n  macroType: \"expression\"\n","path":"dbt_project/macros/test/test.yml","projectConfiguration":null,"folderConfiguration":{"version":2,"macros":[{"name":"select_all","description":"select all table","arguments":[{"name":"name","type":"unknown"}],"macroType":"query"},{"name":"cents_to_dollars","arguments":[{"name":"column_name","type":"unknown"},{"name":"decimal_places","type":"int"},{"name":"some_other","type":"unknown"}],"macroType":"expression"}]},"packagesYml":null}},"macro_aWHuWbym":{"name":"get_all_where_column_is_not_null","macroId":"macro_aWHuWbym","macroType":"query","definition":"\nselect * from {{ model_name }} where {{ column_name }} is not null","parameters":{"type":"record","fields":[{"name":"model_name","kind":{"type":"unknown"},"optional":false,"isWorkflowNodeConfiguration":false},{"name":"column_name","kind":{"type":"unknown"},"optional":false,"isWorkflowNodeConfiguration":false}]},"staleState":"none"},"macro_vR3JE6zH":{"name":"get_distinct_columns_not_in_int_range","macroId":"macro_vR3JE6zH","macroType":"query","definition":"\n{% set max_more_than=4 %}      \nwith all_values as (\n  select distinct {{ column_name_int }} as distinct_column from {{ model_name }}\n),\nall_values_not_in_list as (\n  select distinct_column from all_values where distinct_column not in (\n  {% for unaccepted_value_int in unaccepted_values_int %}\n  {% if unaccepted_value_int >= max_more_than %}\n  4\n  {% else %}\n  {{ unaccepted_value_int }}\n  {% endif %}\n  {% if not loop.last %},{% endif %}\n  {% endfor %}\n)\n)\n\nselect * from all_values_not_in_list","parameters":{"type":"record","fields":[{"name":"model_name","kind":{"type":"unknown"},"optional":false,"isWorkflowNodeConfiguration":false},{"name":"column_name_int","kind":{"type":"unknown"},"optional":false,"isWorkflowNodeConfiguration":false},{"name":"unaccepted_values_int","kind":{"type":"unknown","value":"[1, 2]"},"optional":true,"isWorkflowNodeConfiguration":false}]},"staleState":"none"}}
+{
+  "macro_bjXtCsYt" : {
+    "name" : "select_all",
+    "macroId" : "macro_bjXtCsYt",
+    "macroType" : "query",
+    "definition" : "\nselect * from {{name}}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "name",
+        "kind" : {
+          "type" : "unknown",
+          "value" : "'customers'",
+          "actualValue" : "unknown"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "description" : "select all table",
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "test",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"select_all\"\n  description: \"select all table\"\n  arguments:\n  - name: \"name\"\n    type: \"unknown\"\n  macroType: \"query\"\n- name: \"cents_to_dollars\"\n  arguments:\n  - name: \"column_name\"\n    type: \"unknown\"\n  - name: \"decimal_places\"\n    type: \"int\"\n  - name: \"some_other\"\n    type: \"unknown\"\n  macroType: \"expression\"\n",
+      "path" : "dbt_project/macros/test/test.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "select_all",
+          "description" : "select all table",
+          "arguments" : [ {
+            "name" : "name",
+            "type" : "unknown"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "cents_to_dollars",
+          "arguments" : [ {
+            "name" : "column_name",
+            "type" : "unknown"
+          }, {
+            "name" : "decimal_places",
+            "type" : "int"
+          }, {
+            "name" : "some_other",
+            "type" : "unknown"
+          } ],
+          "macroType" : "expression"
+        } ]
+      },
+      "packagesYml" : null
+    }
+  },
+  "macro_aWHuWbym" : {
+    "name" : "get_all_where_column_is_not_null",
+    "macroId" : "macro_aWHuWbym",
+    "macroType" : "query",
+    "definition" : "\nselect * from {{ model_name }} where {{ column_name }} is not null",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model_name",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "macro_vR3JE6zH" : {
+    "name" : "get_distinct_columns_not_in_int_range",
+    "macroId" : "macro_vR3JE6zH",
+    "macroType" : "query",
+    "definition" : "\n{% set max_more_than=4 %}      \nwith all_values as (\n  select distinct {{ column_name_int }} as distinct_column from {{ model_name }}\n),\nall_values_not_in_list as (\n  select distinct_column from all_values where distinct_column not in (\n  {% for unaccepted_value_int in unaccepted_values_int %}\n  {% if unaccepted_value_int >= max_more_than %}\n  4\n  {% else %}\n  {{ unaccepted_value_int }}\n  {% endif %}\n  {% if not loop.last %},{% endif %}\n  {% endfor %}\n)\n)\n\nselect * from all_values_not_in_list",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model_name",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name_int",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "unaccepted_values_int",
+        "kind" : {
+          "type" : "unknown",
+          "value" : "[1, 2]"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}
