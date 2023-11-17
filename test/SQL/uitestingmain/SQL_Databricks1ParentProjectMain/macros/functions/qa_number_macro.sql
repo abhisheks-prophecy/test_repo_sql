@@ -1,5 +1,5 @@
 {% macro qa_macro_call_another_macro_column(param_column) %}
-concat({{ qa_concat_macro_column(param_column) }}, {{param_column}})
+concat({{ SQL_DatabricksParentProjectMain.qa_concat_macro_column(param_column) }}, {{param_column}})
 {% endmacro %}
 
  {% macro qa_concat_macro(input_string_col) %}
@@ -62,7 +62,7 @@ or (isnan (cast('NaN' as double)))
 {% endmacro %}
 
  {% macro qa_concat_macro_calling_complex_concat(param_column) %}
-concat({{ qa_concat_macro(param_column) }}, {{param_column}})
+concat({{ SQL_DatabricksParentProjectMain.qa_concat_macro(param_column) }}, {{param_column}})
 {% endmacro %}
 
  {% macro qa_number_macro(input_number_col=10) %}

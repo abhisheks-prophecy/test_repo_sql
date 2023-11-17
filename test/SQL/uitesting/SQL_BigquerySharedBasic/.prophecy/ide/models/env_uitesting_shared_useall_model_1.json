@@ -8,6 +8,11 @@
       "sources" : [ ]
     },
     "graphConfig" : {
+      "modelConfig" : {
+        "materialized" : "view",
+        "pre-hook" : "",
+        "post-hook" : ""
+      },
       "userDefinedConfig" : {
         "vars" : {
           "v_complex_dict" : "{ \"problems\" : [{ \"Diabetes\" : [{ \"medications\" : [{ \"medicationsClasses\" : [{ \"className\" : [{ \"associatedDrug\" : [{ \"name\" : \"asprin\", \"dose\" : \"\", \"strength\" : \"500 mg\" }], \"associatedDrug#2\" : [{ \"name\" : \"somethingElse\", \"dose\" : \"\", \"strength\" : \"500 mg\" }] }], \"className2\" : [{ \"associatedDrug\" : [{ \"name\" : \"asprin\", \"dose\" : \"\", \"strength\" : \"500 mg\" }], \"associatedDrug#2\" : [{ \"name\" : \"somethingElse\", \"dose\" : \"\", \"strength\" : \"500 mg\" }] }] }] }], \"labs\" : [{ \"missing_field\" : \"missing_value\" }] }], \"Asthma\" : [{  }] }] }",
@@ -209,7 +214,7 @@
                 "type" : "Interval"
               }
             }, {
-              "name" : "c_int64",
+              "name" : "f0_",
               "dataType" : {
                 "type" : "Integer"
               }
@@ -381,7 +386,7 @@
                 "type" : "Interval"
               }
             }, {
-              "name" : "c_int64",
+              "name" : "f0_",
               "dataType" : {
                 "type" : "Integer"
               }
@@ -525,7 +530,7 @@
         "macroDependencies" : [ "SQL_BaseGitDepProjectAllFinal.bigquery__language_specific_concat_base", "SQL_BigQueryParentProjectMain.qa_boolean_macro" ]
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "l3va8YCF##c_string", "l3va8YCF##c_bool", "l3va8YCF##c_int64", "l3va8YCF##c_numeric_1", "l3va8YCF##c_geography", "l3va8YCF##p_date", "l3va8YCF##c_timestamp", "l3va8YCF##c_json", "l3va8YCF##c_interval", "l3va8YCF##c_float64", "l3va8YCF##c_numeric_2", "l3va8YCF##c_date", "l3va8YCF##c_datetime", "l3va8YCF##c_bytes", "l3va8YCF##c_struct", "l3va8YCF##c_array_int64", "l3va8YCF##c_time", "l3va8YCF##c_bignumeric" ],
         "expressions" : [ {
           "rowType" : "for",
           "variable" : {
@@ -630,9 +635,9 @@
           "alias" : "c_interval"
         }, {
           "expression" : {
-            "expression" : "c_int64"
+            "expression" : "c_int64 * 2"
           },
-          "alias" : "c_int64"
+          "alias" : ""
         }, {
           "expression" : {
             "expression" : "c_float64"
@@ -898,7 +903,7 @@
                 "type" : "Interval"
               }
             }, {
-              "name" : "c_int64",
+              "name" : "f0_",
               "dataType" : {
                 "type" : "Integer"
               }
@@ -2806,11 +2811,6 @@
                 "type" : "Interval"
               }
             }, {
-              "name" : "c_int64",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
               "name" : "c_float64",
               "dataType" : {
                 "type" : "Float"
@@ -2921,11 +2921,6 @@
               "name" : "c_interval",
               "dataType" : {
                 "type" : "Interval"
-              }
-            }, {
-              "name" : "c_int64",
-              "dataType" : {
-                "type" : "Integer"
               }
             }, {
               "name" : "c_float64",
@@ -3618,11 +3613,6 @@
           "alias" : "c_interval"
         }, {
           "expression" : {
-            "expression" : "in0.c_int64"
-          },
-          "alias" : "c_int64"
-        }, {
-          "expression" : {
             "expression" : "in0.c_float64"
           },
           "alias" : "c_float64"
@@ -3667,8 +3657,8 @@
           },
           "alias" : "c_bignumeric"
         } ],
-        "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "jJhLqqYh##cfor_col_1", "apW8mKdl##c_string", "jJhLqqYh##c_string", "jJhLqqYh##c_geography", "jJhLqqYh##c_numeric_1", "jJhLqqYh##p_date", "jJhLqqYh##c_timestamp", "jJhLqqYh##c_bool", "jJhLqqYh##c_json", "jJhLqqYh##c_interval", "jJhLqqYh##c_float64", "jJhLqqYh##c_numeric_2", "jJhLqqYh##c_date", "jJhLqqYh##c_datetime", "jJhLqqYh##c_bytes", "jJhLqqYh##c_struct", "jJhLqqYh##c_array_int64", "jJhLqqYh##c_time", "jJhLqqYh##c_bignumeric" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -3762,7 +3752,7 @@
                 "type" : "Interval"
               }
             }, {
-              "name" : "c_int64",
+              "name" : "f0_",
               "dataType" : {
                 "type" : "Integer"
               }
@@ -3939,11 +3929,6 @@
               "name" : "c_interval",
               "dataType" : {
                 "type" : "Interval"
-              }
-            }, {
-              "name" : "c_int64",
-              "dataType" : {
-                "type" : "Integer"
               }
             }, {
               "name" : "c_float64",

@@ -1,118 +1,52 @@
+{{
+  config({    
+    "materialized": "table"
+  })
+}}
+
 WITH SQLStatement_0 AS (
 
-  WITH year_total AS (
-  
-    SELECT 
-      c_customer_id AS customer_id,
-      c_first_name AS customer_first_name,
-      c_last_name AS customer_last_name,
-      c_preferred_cust_flag AS customer_preferred_cust_flag,
-      c_birth_country AS customer_birth_country,
-      c_login AS customer_login,
-      c_email_address AS customer_email_address,
-      d_year AS dyear,
-      sum(((ss_ext_list_price - ss_ext_wholesale_cost - ss_ext_discount_amt) + ss_ext_sales_price) / 2) AS year_total,
-      's' AS sale_type
-    
-    FROM customer, store_sales, date_dim
-    
-    WHERE c_customer_sk = ss_customer_sk and ss_sold_date_sk = d_date_sk
-    
-    GROUP BY 
-      c_customer_id, 
-      c_first_name, 
-      c_last_name, 
-      c_preferred_cust_flag, 
-      c_birth_country, 
-      c_login, 
-      c_email_address, 
-      d_year
-    
-    UNION ALL
-    
-    SELECT 
-      c_customer_id AS customer_id,
-      c_first_name AS customer_first_name,
-      c_last_name AS customer_last_name,
-      c_preferred_cust_flag AS customer_preferred_cust_flag,
-      c_birth_country AS customer_birth_country,
-      c_login AS customer_login,
-      c_email_address AS customer_email_address,
-      d_year AS dyear,
-      sum((((cs_ext_list_price - cs_ext_wholesale_cost - cs_ext_discount_amt) + cs_ext_sales_price) / 2)) AS year_total,
-      'c' AS sale_type
-    
-    FROM customer, catalog_sales, date_dim
-    
-    WHERE c_customer_sk = cs_bill_customer_sk and cs_sold_date_sk = d_date_sk
-    
-    GROUP BY 
-      c_customer_id, 
-      c_first_name, 
-      c_last_name, 
-      c_preferred_cust_flag, 
-      c_birth_country, 
-      c_login, 
-      c_email_address, 
-      d_year
-    
-    UNION ALL
-    
-    SELECT 
-      c_customer_id AS customer_id,
-      c_first_name AS customer_first_name,
-      c_last_name AS customer_last_name,
-      c_preferred_cust_flag AS customer_preferred_cust_flag,
-      c_birth_country AS customer_birth_country,
-      c_login AS customer_login,
-      c_email_address AS customer_email_address,
-      d_year AS dyear,
-      sum((((ws_ext_list_price - ws_ext_wholesale_cost - ws_ext_discount_amt) + ws_ext_sales_price) / 2)) AS year_total,
-      'w' AS sale_type
-    
-    FROM customer, web_sales, date_dim
-    
-    WHERE c_customer_sk = ws_bill_customer_sk and ws_sold_date_sk = d_date_sk
-    
-    GROUP BY 
-      c_customer_id, 
-      c_first_name, 
-      c_last_name, 
-      c_preferred_cust_flag, 
-      c_birth_country, 
-      c_login, 
-      c_email_address, 
-      d_year
-  
-  )
-  
   SELECT 
-    t_s_secyear.customer_id,
-    t_s_secyear.customer_first_name,
-    t_s_secyear.customer_last_name,
-    t_s_secyear.customer_login
+    substr(w_warehouse_name, 1, 20),
+    sm_type,
+    cc_name,
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk <= 30)
+        THEN 1
+      ELSE 0
+    END) AS "30 days",
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk > 30) and 
+                       (cs_ship_date_sk - cs_sold_date_sk <= 60)
+        THEN 1
+      ELSE 0
+    END) AS "31-60 days",
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk > 60) and 
+                       (cs_ship_date_sk - cs_sold_date_sk <= 90)
+        THEN 1
+      ELSE 0
+    END) AS "61-90 days",
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk > 90) and
+                       (cs_ship_date_sk - cs_sold_date_sk <= 120)
+        THEN 1
+      ELSE 0
+    END) AS "91-120 days",
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk > 120)
+        THEN 1
+      ELSE 0
+    END) AS ">120 days"
   
-  FROM year_total AS t_s_firstyear, year_total AS t_s_secyear, year_total AS t_c_firstyear, year_total AS t_c_secyear, year_total AS t_w_firstyear, year_total AS t_w_secyear
+  FROM catalog_sales, warehouse, ship_mode, call_center, date_dim
   
-  WHERE t_s_secyear.customer_id = t_s_firstyear.customer_id and t_s_firstyear.customer_id = t_c_secyear.customer_id and t_s_firstyear.customer_id = t_c_firstyear.customer_id and t_s_firstyear.customer_id = t_w_firstyear.customer_id and t_s_firstyear.customer_id = t_w_secyear.customer_id and t_s_firstyear.sale_type = 's' and t_c_firstyear.sale_type = 'c' and t_w_firstyear.sale_type = 'w' and t_s_secyear.sale_type = 's' and t_c_secyear.sale_type = 'c' and t_w_secyear.sale_type = 'w' and t_s_firstyear.dyear = 1999 and t_s_secyear.dyear = 1999 + 1 and t_c_firstyear.dyear = 1999 and t_c_secyear.dyear = 1999 + 1 and t_w_firstyear.dyear = 1999 and t_w_secyear.dyear = 1999 + 1 and t_s_firstyear.year_total > 0 and t_c_firstyear.year_total > 0 and t_w_firstyear.year_total > 0 and CASE
-    WHEN t_c_firstyear.year_total > 0
-      THEN t_c_secyear.year_total / t_c_firstyear.year_total
-    ELSE NULL
-  END > CASE
-    WHEN t_s_firstyear.year_total > 0
-      THEN t_s_secyear.year_total / t_s_firstyear.year_total
-    ELSE NULL
-  END and CASE
-    WHEN t_c_firstyear.year_total > 0
-      THEN t_c_secyear.year_total / t_c_firstyear.year_total
-    ELSE NULL
-  END > CASE
-    WHEN t_w_firstyear.year_total > 0
-      THEN t_w_secyear.year_total / t_w_firstyear.year_total
-    ELSE NULL
-  END
+  WHERE d_month_seq BETWEEN 1200 and 1200 + 11 and cs_ship_date_sk = d_date_sk and cs_warehouse_sk = w_warehouse_sk and cs_ship_mode_sk = sm_ship_mode_sk and cs_call_center_sk = cc_call_center_sk
   
-  ORDER BY t_s_secyear.customer_id, t_s_secyear.customer_first_name, t_s_secyear.customer_last_name, t_s_secyear.customer_login
+  GROUP BY 
+    substr(w_warehouse_name, 1, 20), sm_type, cc_name
+  
+  ORDER BY substr(w_warehouse_name, 1, 20), sm_type, cc_name
   
   LIMIT 100
 
@@ -120,322 +54,64 @@ WITH SQLStatement_0 AS (
 
 SQLStatement_3 AS (
 
-  WITH SQLStatement_3_1 AS (
+  SELECT 
+    i_item_id,
+    i_item_desc,
+    i_category,
+    i_class,
+    i_current_price,
+    sum(ss_ext_sales_price) AS itemrevenue,
+    sum(ss_ext_sales_price) * 100 / sum(sum(ss_ext_sales_price)) OVER (PARTITION BY i_class) AS revenueratio
   
-    WITH ssr AS (
-    
-      SELECT 
-        s_store_id,
-        sum(sales_price) AS sales,
-        sum(profit) AS profit,
-        sum(return_amt) AS returns,
-        sum(net_loss) AS profit_loss
-      
-      FROM (
-        SELECT 
-          ss_store_sk AS store_sk,
-          ss_sold_date_sk AS date_sk,
-          ss_ext_sales_price AS sales_price,
-          ss_net_profit AS profit,
-          CAST(0 AS decimal (7, 2)) AS return_amt,
-          CAST(0 AS decimal (7, 2)) AS net_loss
-        
-        FROM store_sales
-        
-        UNION ALL
-        
-        SELECT 
-          sr_store_sk AS store_sk,
-          sr_returned_date_sk AS date_sk,
-          CAST(0 AS decimal (7, 2)) AS sales_price,
-          CAST(0 AS decimal (7, 2)) AS profit,
-          sr_return_amt AS return_amt,
-          sr_net_loss AS net_loss
-        
-        FROM store_returns
-       ) AS salesreturns, date_dim, store
-      
-      WHERE date_sk = d_date_sk and d_date BETWEEN CAST('2002-08-09' AS date) and dateadd(DAY, 14, CAST('2002-08-09' AS date)) and store_sk = s_store_sk
-      
-      GROUP BY s_store_id
-    
-    ),
-    
-    csr AS (
-    
-      SELECT 
-        cp_catalog_page_id,
-        sum(sales_price) AS sales,
-        sum(profit) AS profit,
-        sum(return_amt) AS returns,
-        sum(net_loss) AS profit_loss
-      
-      FROM (
-        SELECT 
-          cs_catalog_page_sk AS page_sk,
-          cs_sold_date_sk AS date_sk,
-          cs_ext_sales_price AS sales_price,
-          cs_net_profit AS profit,
-          CAST(0 AS decimal (7, 2)) AS return_amt,
-          CAST(0 AS decimal (7, 2)) AS net_loss
-        
-        FROM catalog_sales
-        
-        UNION ALL
-        
-        SELECT 
-          cr_catalog_page_sk AS page_sk,
-          cr_returned_date_sk AS date_sk,
-          CAST(0 AS decimal (7, 2)) AS sales_price,
-          CAST(0 AS decimal (7, 2)) AS profit,
-          cr_return_amount AS return_amt,
-          cr_net_loss AS net_loss
-        
-        FROM catalog_returns
-       ) AS salesreturns, date_dim, catalog_page
-      
-      WHERE date_sk = d_date_sk and d_date BETWEEN CAST('2002-08-09' AS date) and dateadd(DAY, 14, CAST('2002-08-09' AS date)) and page_sk = cp_catalog_page_sk
-      
-      GROUP BY cp_catalog_page_id
-    
-    ),
-    
-    wsr AS (
-    
-      SELECT 
-        web_site_id,
-        sum(sales_price) AS sales,
-        sum(profit) AS profit,
-        sum(return_amt) AS returns,
-        sum(net_loss) AS profit_loss
-      
-      FROM (
-        SELECT 
-          ws_web_site_sk AS wsr_web_site_sk,
-          ws_sold_date_sk AS date_sk,
-          ws_ext_sales_price AS sales_price,
-          ws_net_profit AS profit,
-          CAST(0 AS decimal (7, 2)) AS return_amt,
-          CAST(0 AS decimal (7, 2)) AS net_loss
-        
-        FROM web_sales
-        
-        UNION ALL
-        
-        SELECT 
-          ws_web_site_sk AS wsr_web_site_sk,
-          wr_returned_date_sk AS date_sk,
-          CAST(0 AS decimal (7, 2)) AS sales_price,
-          CAST(0 AS decimal (7, 2)) AS profit,
-          wr_return_amt AS return_amt,
-          wr_net_loss AS net_loss
-        
-        FROM web_returns
-        LEFT JOIN web_sales
-           ON (wr_item_sk = ws_item_sk and wr_order_number = ws_order_number)
-       ) AS salesreturns, date_dim, web_site
-      
-      WHERE date_sk = d_date_sk and d_date BETWEEN CAST('2002-08-09' AS date) and dateadd(DAY, 14, CAST('2002-08-09' AS date)) and wsr_web_site_sk = web_site_sk
-      
-      GROUP BY web_site_id
-    
-    )
-    
-    SELECT 
-      channel,
-      id,
-      sum(sales) AS sales,
-      sum(returns) AS returns,
-      sum(profit) AS profit
-    
-    FROM (
-      SELECT 
-        'store channel' AS channel,
-        'store' || s_store_id AS id,
-        sales,
-        returns,
-        (profit - profit_loss) AS profit
-      
-      FROM ssr
-      
-      UNION ALL
-      
-      SELECT 
-        'catalog channel' AS channel,
-        'catalog_page' || cp_catalog_page_id AS id,
-        sales,
-        returns,
-        (profit - profit_loss) AS profit
-      
-      FROM csr
-      
-      UNION ALL
-      
-      SELECT 
-        'web channel' AS channel,
-        'web_site' || web_site_id AS id,
-        sales,
-        returns,
-        (profit - profit_loss) AS profit
-      
-      FROM wsr
-     ) AS x
-    
-    GROUP BY ROLLUP(channel, id)
-    
-    ORDER BY channel, id
-    
-    LIMIT 100
+  FROM store_sales, item, date_dim
   
-  )
+  WHERE ss_item_sk = i_item_sk and i_category IN ('Women', 'Electronics', 'Shoes') and ss_sold_date_sk = d_date_sk and d_date BETWEEN CAST('2002-05-27' AS date) and dateadd(DAY, 30, to_date('2002-05-27'))
   
-  SELECT *
+  GROUP BY 
+    i_item_id, i_item_desc, i_category, i_class, i_current_price
   
-  FROM SQLStatement_3_1
+  ORDER BY i_category, i_class, i_item_id, i_item_desc, revenueratio
 
 ),
 
 Join_1 AS (
 
   SELECT 
-    in0.CUSTOMER_ID AS CUSTOMER_ID,
-    in0.CUSTOMER_FIRST_NAME AS CUSTOMER_FIRST_NAME,
-    in0.CUSTOMER_LAST_NAME AS CUSTOMER_LAST_NAME,
-    in0.CUSTOMER_LOGIN AS CUSTOMER_LOGIN
+    in1.I_ITEM_ID AS I_ITEM_ID,
+    in1.I_ITEM_DESC AS I_ITEM_DESC,
+    in1.I_CATEGORY AS I_CATEGORY,
+    in1.I_CLASS AS I_CLASS,
+    in1.I_CURRENT_PRICE AS I_CURRENT_PRICE,
+    in1.ITEMREVENUE AS ITEMREVENUE,
+    in1.REVENUERATIO AS REVENUERATIO,
+    in0.SM_TYPE AS SM_TYPE,
+    in0.CC_NAME AS CC_NAME
   
   FROM SQLStatement_0 AS in0
   INNER JOIN SQLStatement_3 AS in1
-     ON in0.CUSTOMER_ID != in1.ID
+     ON in0.SM_TYPE != in1.I_ITEM_DESC
 
 ),
 
 SQLStatement_1 AS (
 
-  WITH SQLStatement_1_1 AS (
+  SELECT 
+    i_item_id,
+    i_item_desc,
+    i_category,
+    i_class,
+    i_current_price,
+    sum(ss_ext_sales_price) AS itemrevenue,
+    sum(ss_ext_sales_price) * 100 / sum(sum(ss_ext_sales_price)) OVER (PARTITION BY i_class) AS revenueratio
   
-    WITH wscs AS (
-    
-      SELECT 
-        sold_date_sk,
-        sales_price
-      
-      FROM (
-        SELECT 
-          ws_sold_date_sk AS sold_date_sk,
-          ws_ext_sales_price AS sales_price
-        
-        FROM web_sales
-        
-        UNION ALL
-        
-        SELECT 
-          cs_sold_date_sk AS sold_date_sk,
-          cs_ext_sales_price AS sales_price
-        
-        FROM catalog_sales
-       ) AS x
-    
-    ),
-    
-    wswscs AS (
-    
-      SELECT 
-        d_week_seq,
-        sum(CASE
-          WHEN (d_day_name = 'Sunday')
-            THEN sales_price
-          ELSE NULL
-        END) AS sun_sales,
-        sum(CASE
-          WHEN (d_day_name = 'Monday')
-            THEN sales_price
-          ELSE NULL
-        END) AS mon_sales,
-        sum(CASE
-          WHEN (d_day_name = 'Tuesday')
-            THEN sales_price
-          ELSE NULL
-        END) AS tue_sales,
-        sum(CASE
-          WHEN (d_day_name = 'Wednesday')
-            THEN sales_price
-          ELSE NULL
-        END) AS wed_sales,
-        sum(CASE
-          WHEN (d_day_name = 'Thursday')
-            THEN sales_price
-          ELSE NULL
-        END) AS thu_sales,
-        sum(CASE
-          WHEN (d_day_name = 'Friday')
-            THEN sales_price
-          ELSE NULL
-        END) AS fri_sales,
-        sum(CASE
-          WHEN (d_day_name = 'Saturday')
-            THEN sales_price
-          ELSE NULL
-        END) AS sat_sales
-      
-      FROM wscs, date_dim
-      
-      WHERE d_date_sk = sold_date_sk
-      
-      GROUP BY d_week_seq
-    
-    )
-    
-    SELECT 
-      d_week_seq1,
-      round(sun_sales1 / sun_sales2, 2),
-      round(mon_sales1 / mon_sales2, 2),
-      round(tue_sales1 / tue_sales2, 2),
-      round(wed_sales1 / wed_sales2, 2),
-      round(thu_sales1 / thu_sales2, 2),
-      round(fri_sales1 / fri_sales2, 2),
-      round(sat_sales1 / sat_sales2, 2)
-    
-    FROM (
-      SELECT 
-        wswscs.d_week_seq AS d_week_seq1,
-        sun_sales AS sun_sales1,
-        mon_sales AS mon_sales1,
-        tue_sales AS tue_sales1,
-        wed_sales AS wed_sales1,
-        thu_sales AS thu_sales1,
-        fri_sales AS fri_sales1,
-        sat_sales AS sat_sales1
-      
-      FROM wswscs, date_dim
-      
-      WHERE date_dim.d_week_seq = wswscs.d_week_seq and
-                              d_year = 1999
-     ) AS y, (
-      SELECT 
-        wswscs.d_week_seq AS d_week_seq2,
-        sun_sales AS sun_sales2,
-        mon_sales AS mon_sales2,
-        tue_sales AS tue_sales2,
-        wed_sales AS wed_sales2,
-        thu_sales AS thu_sales2,
-        fri_sales AS fri_sales2,
-        sat_sales AS sat_sales2
-      
-      FROM wswscs, date_dim
-      
-      WHERE date_dim.d_week_seq = wswscs.d_week_seq and
-                              d_year = 1999 + 1
-     ) AS z
-    
-    WHERE d_week_seq1 = d_week_seq2 - 53
-    
-    ORDER BY d_week_seq1
+  FROM store_sales, item, date_dim
   
-  )
+  WHERE ss_item_sk = i_item_sk and i_category IN ('Women', 'Electronics', 'Shoes') and ss_sold_date_sk = d_date_sk and d_date BETWEEN CAST('2002-05-27' AS date) and dateadd(DAY, 30, to_date('2002-05-27'))
   
-  SELECT *
+  GROUP BY 
+    i_item_id, i_item_desc, i_category, i_class, i_current_price
   
-  FROM SQLStatement_1_1
+  ORDER BY i_category, i_class, i_item_id, i_item_desc, revenueratio
 
 ),
 
@@ -868,7 +544,7 @@ SQLStatement_2 AS (
         FROM customer_address, customer
         
         WHERE ca_address_sk = c_current_addr_sk and
-                                                      c_preferred_cust_flag = 'Y'
+                                                                    c_preferred_cust_flag = 'Y'
         
         GROUP BY ca_zip
         
@@ -892,157 +568,81 @@ Join_2 AS (
   SELECT 
     in1.S_STORE_NAME AS S_STORE_NAME,
     in1."SUM(SS_NET_PROFIT)" AS SS_NET_PROFIT,
-    in0."ROUND(SUN_SALES1 / SUN_SALES2, 2)" AS ROUND_SUN_SALES1_SUN_SALES2
+    in0.ITEMREVENUE AS ITEMREVENUE
   
   FROM SQLStatement_1 AS in0
   INNER JOIN SQLStatement_2 AS in1
-     ON in0."ROUND(FRI_SALES1 / FRI_SALES2, 2)" != in1."SUM(SS_NET_PROFIT)"
+     ON in0.I_ITEM_ID != in1.S_STORE_NAME
 
 ),
 
 SQLStatement_4 AS (
 
-  WITH SQLStatement_4_1 AS (
+  SELECT 
+    count(DISTINCT ws_order_number) AS order_count,
+    sum(ws_ext_ship_cost) AS total_shipping_cost,
+    sum(ws_net_profit) AS total_net_profit
   
-    WITH ssales AS (
-    
-      SELECT 
-        c_last_name,
-        c_first_name,
-        s_store_name,
-        ca_state,
-        s_state,
-        i_color,
-        i_current_price,
-        i_manager_id,
-        i_units,
-        i_size,
-        sum(ss_net_paid_inc_tax) AS netpaid
-      
-      FROM store_sales, store_returns, store, item, customer, customer_address
-      
-      WHERE ss_ticket_number = sr_ticket_number and ss_item_sk = sr_item_sk and ss_customer_sk = c_customer_sk and ss_item_sk = i_item_sk and ss_store_sk = s_store_sk and c_current_addr_sk = ca_address_sk and c_birth_country <> upper(ca_country) and s_zip = ca_zip and s_market_id = 8
-      
-      GROUP BY 
-        c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
-    
-    )
-    
-    SELECT 
-      c_last_name,
-      c_first_name,
-      s_store_name,
-      sum(netpaid) AS paid
-    
-    FROM ssales
-    
-    WHERE i_color = 'cornsilk'
-    
-    GROUP BY 
-      c_last_name, c_first_name, s_store_name
-    
-    HAVING sum(netpaid) > (
-      SELECT 0.05 * avg(netpaid)
-      
-      FROM ssales
-     )
-    
-    ORDER BY c_last_name, c_first_name, s_store_name
+  FROM web_sales AS ws1, date_dim, customer_address, web_site
   
-  )
+  WHERE d_date BETWEEN '2002-2-01' and 
+             dateadd(DAY, 60, to_date('2002-2-01')) and ws1.ws_ship_date_sk = d_date_sk and ws1.ws_ship_addr_sk = ca_address_sk and ca_state = 'CA' and ws1.ws_web_site_sk = web_site_sk and web_company_name = 'pri' and EXISTS
+  (
+    SELECT *
+    
+    FROM web_sales AS ws2
+    
+    WHERE ws1.ws_order_number = ws2.ws_order_number and ws1.ws_warehouse_sk <> ws2.ws_warehouse_sk
+   )
+   and not exists
+  (
+    SELECT *
+    
+    FROM web_returns AS wr1
+    
+    WHERE ws1.ws_order_number = wr1.wr_order_number
+   )
   
-  SELECT *
   
-  FROM SQLStatement_4_1
+  ORDER BY count(DISTINCT ws_order_number)
+  
+  LIMIT 100
 
 ),
 
 SQLStatement_5 AS (
 
-  WITH SQLStatement_5_1 AS (
+  SELECT sum(ws_ext_discount_amt) AS Excess_Discount_Amount
   
-    WITH ss AS (
-    
-      SELECT 
-        ca_county,
-        d_qoy,
-        d_year,
-        sum(ss_ext_sales_price) AS store_sales
-      
-      FROM store_sales, date_dim, customer_address
-      
-      WHERE ss_sold_date_sk = d_date_sk and ss_addr_sk = ca_address_sk
-      
-      GROUP BY 
-        ca_county, d_qoy, d_year
-    
-    ),
-    
-    ws AS (
-    
-      SELECT 
-        ca_county,
-        d_qoy,
-        d_year,
-        sum(ws_ext_sales_price) AS web_sales
-      
-      FROM web_sales, date_dim, customer_address
-      
-      WHERE ws_sold_date_sk = d_date_sk and ws_bill_addr_sk = ca_address_sk
-      
-      GROUP BY 
-        ca_county, d_qoy, d_year
-    
-    )
-    
-    SELECT 
-      ss1.ca_county,
-      ss1.d_year,
-      ws2.web_sales / ws1.web_sales AS web_q1_q2_increase,
-      ss2.store_sales / ss1.store_sales AS store_q1_q2_increase,
-      ws3.web_sales / ws2.web_sales AS web_q2_q3_increase,
-      ss3.store_sales / ss2.store_sales AS store_q2_q3_increase
-    
-    FROM ss AS ss1, ss AS ss2, ss AS ss3, ws AS ws1, ws AS ws2, ws AS ws3
-    
-    WHERE ss1.d_qoy = 1 and ss1.d_year = 1999 and ss1.ca_county = ss2.ca_county and ss2.d_qoy = 2 and ss2.d_year = 1999 and ss2.ca_county = ss3.ca_county and ss3.d_qoy = 3 and ss3.d_year = 1999 and ss1.ca_county = ws1.ca_county and ws1.d_qoy = 1 and ws1.d_year = 1999 and ws1.ca_county = ws2.ca_county and ws2.d_qoy = 2 and ws2.d_year = 1999 and ws1.ca_county = ws3.ca_county and ws3.d_qoy = 3 and ws3.d_year = 1999 and CASE
-      WHEN ws1.web_sales > 0
-        THEN ws2.web_sales / ws1.web_sales
-      ELSE NULL
-    END > CASE
-      WHEN ss1.store_sales > 0
-        THEN ss2.store_sales / ss1.store_sales
-      ELSE NULL
-    END and CASE
-      WHEN ws2.web_sales > 0
-        THEN ws3.web_sales / ws2.web_sales
-      ELSE NULL
-    END > CASE
-      WHEN ss2.store_sales > 0
-        THEN ss3.store_sales / ss2.store_sales
-      ELSE NULL
-    END
-    
-    ORDER BY web_q1_q2_increase
+  FROM web_sales, item, date_dim
   
-  )
+  WHERE i_manufact_id = 939 and i_item_sk = ws_item_sk and d_date BETWEEN '2002-02-16' and 
+          dateadd(DAY, 90, to_date('2002-02-16')) and d_date_sk = ws_sold_date_sk and ws_ext_discount_amt > (
+    SELECT 1.3 * avg(ws_ext_discount_amt)
+    
+    FROM web_sales, date_dim
+    
+    WHERE ws_item_sk = i_item_sk and d_date BETWEEN '2002-02-16' and
+                                 dateadd(DAY, 90, to_date('2002-02-16')) and d_date_sk = ws_sold_date_sk
+   )
   
-  SELECT *
+  ORDER BY sum(ws_ext_discount_amt)
   
-  FROM SQLStatement_5_1
+  LIMIT 100
 
 ),
 
 Join_3 AS (
 
   SELECT 
-    in0.C_LAST_NAME AS C_LAST_NAME,
-    in0.PAID AS PAID,
-    in1.D_YEAR AS D_YEAR
+    in0.ORDER_COUNT AS ORDER_COUNT,
+    in0.TOTAL_SHIPPING_COST AS TOTAL_SHIPPING_COST,
+    in0.TOTAL_NET_PROFIT AS TOTAL_NET_PROFIT,
+    in1.EXCESS_DISCOUNT_AMOUNT AS EXCESS_DISCOUNT_AMOUNT
   
   FROM SQLStatement_4 AS in0
   INNER JOIN SQLStatement_5 AS in1
-     ON in0.C_LAST_NAME != in1.CA_COUNTY
+     ON in0.ORDER_COUNT != in1.EXCESS_DISCOUNT_AMOUNT
 
 ),
 
@@ -1388,27 +988,27 @@ SQLStatement_7 AS (
   FROM store_sales, store, customer_demographics, customer_address, date_dim
   
   WHERE s_store_sk = ss_store_sk and  ss_sold_date_sk = d_date_sk and d_year = 2001 and  
-       ((cd_demo_sk = ss_cdemo_sk and 
-         cd_marital_status = 'D' and 
-         cd_education_status = 'Secondary' and 
-         ss_sales_price BETWEEN 100.0 and 150.0) or
-        (cd_demo_sk = ss_cdemo_sk and 
-         cd_marital_status = 'W' and 
-         cd_education_status = '2 yr Degree' and 
-         ss_sales_price BETWEEN 50.0 and 100.0) or 
-       (cd_demo_sk = ss_cdemo_sk and 
-         cd_marital_status = 'U' and 
-         cd_education_status = 'Unknown' and 
-         ss_sales_price BETWEEN 150.0 and 200.0)) and
-       ((ss_addr_sk = ca_address_sk and
-        ca_country = 'United States' and
-        ca_state IN ('VA', 'MI', 'FL') and ss_net_profit BETWEEN 0 and 2000) or
-        (ss_addr_sk = ca_address_sk and
-        ca_country = 'United States' and
-        ca_state IN ('SC', 'GA', 'MN') and ss_net_profit BETWEEN 150 and 3000) or
-        (ss_addr_sk = ca_address_sk and
-        ca_country = 'United States' and
-        ca_state IN ('OK', 'IA', 'TX') and ss_net_profit BETWEEN 50 and 25000))
+         ((cd_demo_sk = ss_cdemo_sk and 
+           cd_marital_status = 'D' and 
+           cd_education_status = 'Secondary' and 
+           ss_sales_price BETWEEN 100.0 and 150.0) or
+          (cd_demo_sk = ss_cdemo_sk and 
+           cd_marital_status = 'W' and 
+           cd_education_status = '2 yr Degree' and 
+           ss_sales_price BETWEEN 50.0 and 100.0) or 
+         (cd_demo_sk = ss_cdemo_sk and 
+           cd_marital_status = 'U' and 
+           cd_education_status = 'Unknown' and 
+           ss_sales_price BETWEEN 150.0 and 200.0)) and
+         ((ss_addr_sk = ca_address_sk and
+          ca_country = 'United States' and
+          ca_state IN ('VA', 'MI', 'FL') and ss_net_profit BETWEEN 0 and 2000) or
+          (ss_addr_sk = ca_address_sk and
+          ca_country = 'United States' and
+          ca_state IN ('SC', 'GA', 'MN') and ss_net_profit BETWEEN 150 and 3000) or
+          (ss_addr_sk = ca_address_sk and
+          ca_country = 'United States' and
+          ca_state IN ('OK', 'IA', 'TX') and ss_net_profit BETWEEN 50 and 25000))
 
 ),
 
@@ -1427,37 +1027,56 @@ Join_4 AS (
 
 Join_5 AS (
 
-  SELECT * 
+  SELECT 
+    in0.ORDER_COUNT AS ORDER_COUNT,
+    in0.TOTAL_SHIPPING_COST AS TOTAL_SHIPPING_COST,
+    in0.TOTAL_NET_PROFIT AS TOTAL_NET_PROFIT,
+    in0.EXCESS_DISCOUNT_AMOUNT AS EXCESS_DISCOUNT_AMOUNT,
+    in1.W_WAREHOUSE_NAME AS W_WAREHOUSE_NAME,
+    in1.W_WAREHOUSE_SQ_FT AS W_WAREHOUSE_SQ_FT,
+    in1.JAN_SALES AS JAN_SALES
   
   FROM Join_3 AS in0
   INNER JOIN Join_4 AS in1
-     ON in0.C_LAST_NAME != in1.W_WAREHOUSE_NAME
+     ON in0.ORDER_COUNT != in1.JAN_SALES
 
 ),
 
 Join_6 AS (
 
   SELECT 
-    in0.CUSTOMER_ID AS CUSTOMER_ID,
-    in0.CUSTOMER_FIRST_NAME AS CUSTOMER_FIRST_NAME,
-    in1.SS_NET_PROFIT AS SUM_SS_NET_PROFIT
+    in0.I_ITEM_ID AS I_ITEM_ID,
+    in0.I_ITEM_DESC AS I_ITEM_DESC,
+    in0.I_CATEGORY AS I_CATEGORY,
+    in0.I_CLASS AS I_CLASS,
+    in0.I_CURRENT_PRICE AS I_CURRENT_PRICE,
+    in0.ITEMREVENUE AS ITEMREVENUE,
+    in0.REVENUERATIO AS REVENUERATIO,
+    in0.SM_TYPE AS SM_TYPE,
+    in0.CC_NAME AS CC_NAME
   
   FROM Join_1 AS in0
   INNER JOIN Join_2 AS in1
-     ON in0.CUSTOMER_ID != in1.S_STORE_NAME
+     ON in0.I_CATEGORY != in1.S_STORE_NAME
 
 ),
 
 Join_7 AS (
 
   SELECT 
-    in0.CUSTOMER_ID AS CUSTOMER_ID,
-    in0.CUSTOMER_FIRST_NAME AS CUSTOMER_FIRST_NAME,
-    in1.D_YEAR AS D_YEAR
+    in0.I_ITEM_ID AS I_ITEM_ID,
+    in0.I_ITEM_DESC AS I_ITEM_DESC,
+    in0.I_CATEGORY AS I_CATEGORY,
+    in0.I_CLASS AS I_CLASS,
+    in0.I_CURRENT_PRICE AS I_CURRENT_PRICE,
+    in0.ITEMREVENUE AS ITEMREVENUE,
+    in0.REVENUERATIO AS REVENUERATIO,
+    in0.SM_TYPE AS SM_TYPE,
+    in0.CC_NAME AS CC_NAME
   
   FROM Join_6 AS in0
   INNER JOIN Join_5 AS in1
-     ON in0.CUSTOMER_ID != in1.W_WAREHOUSE_NAME
+     ON in0.I_CURRENT_PRICE != in1.ORDER_COUNT
 
 )
 

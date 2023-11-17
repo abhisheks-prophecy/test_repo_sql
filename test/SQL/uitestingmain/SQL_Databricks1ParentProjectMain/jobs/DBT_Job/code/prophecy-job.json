@@ -1,0 +1,93 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "23",
+    "jobId" : "jobs/DBT_Job",
+    "name" : "DBT_Job",
+    "schedule" : "0 0 0 1/1 * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "prophecy_internal_jobs",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "21",
+      "name" : "databricks-sql-warehouse",
+      "clusterSizes" : {
+        "default" : "prophecy_internal_jobs",
+        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
+      }
+    }, {
+      "id" : "23",
+      "name" : "databricks_sql_warehouse_qa",
+      "clusterSizes" : {
+        "default" : "prophecy_internal_jobs",
+        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
+      }
+    } ]
+  },
+  "processes" : {
+    "6EJIP-3qx1yH9cKpmwrBq$$4UlPCc7A8L_cGj0EC3XDM" : {
+      "id" : "6EJIP-3qx1yH9cKpmwrBq$$4UlPCc7A8L_cGj0EC3XDM",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : 760,
+        "y" : 600
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "z-rFg6dNsaZ7YsPqA5Wuu$$L1XSYNxqnbJRmS3XmgLf2",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "YYwvDqNYpuOJVefDYwEP6$$UWGaxGZMKK0lfWQEb_HH2",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : true,
+        "gitEntity" : "branch",
+        "projectId" : "75",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "profile" : "run_profile",
+        "sqlFabricId" : "23",
+        "gitEntityValue" : "dev",
+        "execDeps" : true,
+        "execTest" : false,
+        "currentProjectModels" : ""
+      }
+    }
+  },
+  "connections" : [ ]
+}

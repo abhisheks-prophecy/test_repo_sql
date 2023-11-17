@@ -14,8 +14,8 @@
     }
   },
   "processes" : {
-    "all_type_non_partitioned##ve8sfXut" : {
-      "id" : "all_type_non_partitioned##ve8sfXut",
+    "all_type_non_partitioned##LUbumELZ" : {
+      "id" : "all_type_non_partitioned##LUbumELZ",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
@@ -33,9 +33,9 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "yPWm6gGD",
+          "id" : "LHjanqHZ",
           "schema" : {
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "c_tinyint",
               "dataType" : {
@@ -112,8 +112,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "all_type_partitioned##Y0hiBp1V" : {
-      "id" : "all_type_partitioned##Y0hiBp1V",
+    "all_type_partitioned##XJqfrLSp" : {
+      "id" : "all_type_partitioned##XJqfrLSp",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_partitioned",
@@ -131,9 +131,9 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "qx0zkAHQ",
+          "id" : "ZVDyF8YR",
           "schema" : {
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "c_tinyint",
               "dataType" : {
@@ -220,8 +220,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "Join_1##aCYDmR4F" : {
-      "id" : "Join_1##aCYDmR4F",
+    "Join_1##jQUqPt15" : {
+      "id" : "Join_1##jQUqPt15",
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
@@ -236,7 +236,7 @@
           "expression" : {
             "expression" : "all_type_non_partitioned.c_tinyint = all_type_partitioned.c_tinyint and all_type_non_partitioned.c_smallint = all_type_partitioned.c_smallint"
           },
-          "joinType" : "left"
+          "joinType" : "INNER"
         } ],
         "expressions" : [ {
           "expression" : {
@@ -260,7 +260,7 @@
           "alias" : "c_int"
         }, {
           "expression" : {
-            "expression" : "all_type_non_partitioned.c_bigint"
+            "expression" : "all_type_non_partitioned.c_bigint + spark_catalog.qa_db_warehouse.area(10, 20)"
           },
           "alias" : "c_bigint"
         }, {
@@ -314,15 +314,15 @@
           },
           "alias" : "c_dbt_date"
         } ],
-        "activeTab" : "conditions",
-        "columnsSelector" : [ "VjgrXG9Z##c_tinyint", "f0EE5Brk##c_tinyint", "VjgrXG9Z##c_smallint", "f0EE5Brk##c_smallint", "f0EE5Brk##p_int", "f0EE5Brk##p_string", "VjgrXG9Z##c_string", "VjgrXG9Z##c_int", "VjgrXG9Z##c_bigint", "VjgrXG9Z##c_smallint", "VjgrXG9Z##c_tinyint", "VjgrXG9Z##c_float", "VjgrXG9Z##c_boolean", "VjgrXG9Z##c_array", "VjgrXG9Z##c_double", "VjgrXG9Z##c_struct" ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "hdi3OKfg##c_tinyint", "zLebEKG3##c_tinyint", "hdi3OKfg##c_smallint", "zLebEKG3##c_smallint", "zLebEKG3##p_int", "zLebEKG3##p_string", "hdi3OKfg##c_string", "hdi3OKfg##c_int", "hdi3OKfg##c_bigint", "hdi3OKfg##c_smallint", "hdi3OKfg##c_tinyint", "hdi3OKfg##c_float", "hdi3OKfg##c_boolean", "hdi3OKfg##c_array", "hdi3OKfg##c_double", "hdi3OKfg##c_struct" ],
         "headAlias" : "all_type_non_partitioned"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "VjgrXG9Z",
+          "id" : "hdi3OKfg",
           "schema" : {
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "c_tinyint",
               "dataType" : {
@@ -396,9 +396,9 @@
           },
           "slug" : "all_type_non_partitioned"
         }, {
-          "id" : "f0EE5Brk",
+          "id" : "zLebEKG3",
           "schema" : {
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "c_tinyint",
               "dataType" : {
@@ -483,7 +483,7 @@
           "slug" : "all_type_partitioned"
         } ],
         "outputs" : [ {
-          "id" : "mnvPAjSY",
+          "id" : "Qg66Tudr",
           "schema" : {
             "providerType" : "Databricks",
             "fields" : [ {
@@ -509,7 +509,7 @@
             }, {
               "name" : "c_bigint",
               "dataType" : {
-                "type" : "Bigint"
+                "type" : "Double"
               }
             }, {
               "name" : "c_smallint",
@@ -587,8 +587,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "env_uitesting_main_model_databricks_1##mrVA2xlV" : {
-      "id" : "env_uitesting_main_model_databricks_1##mrVA2xlV",
+    "env_uitesting_main_model_databricks_1##FVPNTVRx" : {
+      "id" : "env_uitesting_main_model_databricks_1##FVPNTVRx",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_1",
@@ -609,7 +609,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "IbJyW1G9",
+          "id" : "U1dIR4tL",
           "schema" : {
             "providerType" : "Databricks",
             "fields" : [ {
@@ -635,7 +635,7 @@
             }, {
               "name" : "c_bigint",
               "dataType" : {
-                "type" : "Bigint"
+                "type" : "Double"
               }
             }, {
               "name" : "c_smallint",
@@ -711,7 +711,7 @@
           "slug" : "Join_1"
         } ],
         "outputs" : [ {
-          "id" : "Ela2FA8Y",
+          "id" : "FsXjpnSl",
           "schema" : {
             "providerType" : "Databricks",
             "fields" : [ {
@@ -737,7 +737,7 @@
             }, {
               "name" : "c_bigint",
               "dataType" : {
-                "type" : "Bigint"
+                "type" : "Double"
               }
             }, {
               "name" : "c_smallint",
@@ -817,23 +817,23 @@
     }
   },
   "connections" : [ {
-    "id" : "eT6zSoDN",
-    "source" : "all_type_non_partitioned##ve8sfXut",
-    "sourcePort" : "yPWm6gGD",
-    "target" : "Join_1##aCYDmR4F",
-    "targetPort" : "VjgrXG9Z"
+    "id" : "euquQUly",
+    "source" : "all_type_non_partitioned##LUbumELZ",
+    "sourcePort" : "LHjanqHZ",
+    "target" : "Join_1##jQUqPt15",
+    "targetPort" : "hdi3OKfg"
   }, {
-    "id" : "U2p1S2NK",
-    "source" : "all_type_partitioned##Y0hiBp1V",
-    "sourcePort" : "qx0zkAHQ",
-    "target" : "Join_1##aCYDmR4F",
-    "targetPort" : "f0EE5Brk"
+    "id" : "WhQuN7dM",
+    "source" : "all_type_partitioned##XJqfrLSp",
+    "sourcePort" : "ZVDyF8YR",
+    "target" : "Join_1##jQUqPt15",
+    "targetPort" : "zLebEKG3"
   }, {
-    "id" : "e9KiVE6k",
-    "source" : "Join_1##aCYDmR4F",
-    "sourcePort" : "mnvPAjSY",
-    "target" : "env_uitesting_main_model_databricks_1##mrVA2xlV",
-    "targetPort" : "IbJyW1G9"
+    "id" : "tIg3EjTi",
+    "source" : "Join_1##jQUqPt15",
+    "sourcePort" : "Qg66Tudr",
+    "target" : "env_uitesting_main_model_databricks_1##FVPNTVRx",
+    "targetPort" : "U1dIR4tL"
   } ],
   "component" : "Model"
 }
