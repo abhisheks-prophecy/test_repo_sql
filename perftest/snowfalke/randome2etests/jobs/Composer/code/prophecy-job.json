@@ -1,0 +1,133 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "63",
+    "jobId" : "jobs/Composer",
+    "name" : "Composer",
+    "dagName" : "perftest_abhisheks_e2etests_Snowflake_DBT_Generic_Composer",
+    "schedule" : "0 0 1 1 *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "60",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1702453157825
+    }, {
+      "id" : "63",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "65",
+      "name" : "dev_airflow253"
+    }, {
+      "id" : "66",
+      "name" : "dev_airflow_mwaa"
+    } ],
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ ]
+  },
+  "processes" : {
+    "iXkYiDemZ-85dumP38FnA$$CZblK8PUf4gAEpfg2Zdfz" : {
+      "id" : "iXkYiDemZ-85dumP38FnA$$CZblK8PUf4gAEpfg2Zdfz",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : -560,
+        "y" : -180
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wdbclyja-4nX9g4cGzFFY$$U1yDbs3wrjTugeuQzvQob",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "rawSHtOHf7g0FFMkxXCyY$$4mO2fYro6ssfXnQ5eLgvv",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : true,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "warnErrorOptions" : null,
+        "gitTokenSecret" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "374",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "runTest" : false,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : true,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "isProphecyManaged" : false,
+        "profile" : null,
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "59",
+        "gitEntityValue" : "main",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "dbtProfileSecret" : null,
+        "models" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : true,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "perftest_1",
+          "value" : "perftest_1",
+          "id" : "374/.prophecy/metadata/sqlmodels/perftest_1",
+          "name" : "perftest_1"
+        } ],
+        "profilesDir" : null,
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ ]
+}
