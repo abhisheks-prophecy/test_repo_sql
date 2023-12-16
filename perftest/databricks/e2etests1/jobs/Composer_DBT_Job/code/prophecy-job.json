@@ -1,0 +1,133 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "63",
+    "jobId" : "jobs/Composer_DBT_Job",
+    "name" : "Composer_DBT_Job",
+    "dagName" : "perftest_abhisheks_e2etests_Databricks_DBT_Generic_Composer_DBT_Job",
+    "schedule" : "0 0 1 1 *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "60",
+      "name" : "dev_airflow_prophecy_managed",
+      "trialStartDate" : 1702453157825
+    }, {
+      "id" : "63",
+      "name" : "dev_airflow"
+    }, {
+      "id" : "65",
+      "name" : "dev_airflow253"
+    }, {
+      "id" : "66",
+      "name" : "dev_airflow_mwaa"
+    } ],
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ ]
+  },
+  "processes" : {
+    "_d4hSFBgcw6ZSbL1u9rbS$$84hnJxnBfvwhyXWdxROVV" : {
+      "id" : "_d4hSFBgcw6ZSbL1u9rbS$$84hnJxnBfvwhyXWdxROVV",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : -780,
+        "y" : -180
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GjeBX5UyDVsI8qHtyBkLl$$FWnAOP37ZMXdYiCt9Iot3",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "AIdFke_uqxe_iJUdLhJ4p$$JJF54H57Ih__8z76mc_uS",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : true,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "warnErrorOptions" : null,
+        "gitTokenSecret" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "375",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "runTest" : true,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : true,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "isProphecyManaged" : false,
+        "profile" : null,
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "57",
+        "gitEntityValue" : "dev_databricks_perftest",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "dbtProfileSecret" : null,
+        "models" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : true,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "perftest_1",
+          "value" : "perftest_1",
+          "id" : "375/.prophecy/metadata/sqlmodels/perftest_1",
+          "name" : "perftest_1"
+        } ],
+        "profilesDir" : null,
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ ]
+}

@@ -1,0 +1,92 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "57",
+    "jobId" : "jobs/Databricks_DBT_Job",
+    "name" : "Databricks_DBT_Job",
+    "schedule" : "0 0 0 1 1 ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "prophecy_internal_jobs",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "57",
+      "name" : "dev_sql_databricks",
+      "clusterSizes" : {
+        "default" : "prophecy_internal_jobs",
+        "availableClusterSizes" : [ "prophecy_internal_jobs" ]
+      }
+    } ]
+  },
+  "processes" : {
+    "V5Rg8UN23xmnQu6pG7kb_$$6O6b_QvhjfSf_-sYQbNin" : {
+      "id" : "V5Rg8UN23xmnQu6pG7kb_$$6O6b_QvhjfSf_-sYQbNin",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : -540,
+        "y" : -80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nsLdTaaRnC_tekBGsq8gn$$o6dWR54yXr8kLy3R3IpS6",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "2sTpkKfMxZDdO-rAmm4lU$$EKmY5aUCbYc3VBRf9V_cS",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : true,
+        "gitEntity" : "branch",
+        "projectId" : "375",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "fullRefresh" : true,
+        "profile" : "run_profile",
+        "sqlFabricId" : "57",
+        "gitEntityValue" : "dev_databricks_perftest",
+        "execDeps" : true,
+        "execTest" : false,
+        "currentProjectModels" : [ {
+          "label" : "perftest_1",
+          "value" : "perftest_1",
+          "id" : "375/.prophecy/metadata/sqlmodels/perftest_1",
+          "name" : "perftest_1"
+        } ]
+      }
+    }
+  },
+  "connections" : [ ]
+}
