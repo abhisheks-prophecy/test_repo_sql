@@ -8,7 +8,8 @@ WITH perftestseed_1 AS (
 
 Reformat_1 AS (
 
-  SELECT * 
+  {#Simplifies data extraction from a performance test dataset.#}
+  SELECT c_int AS c_int
   
   FROM perftestseed_1 AS in0
 
