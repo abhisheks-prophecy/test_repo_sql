@@ -1,0 +1,161 @@
+{
+  "id" : "perftest_1",
+  "metainfo" : {
+    "label" : "perftest_1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 1
+  },
+  "processes" : {
+    "perftest_1##xQFCtG0D" : {
+      "id" : "perftest_1##xQFCtG0D",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "perftest_1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Reformat_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QerS2rXq",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "Reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Wct9mfwH",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "MxSzID9gTDUrEZZiZwn7M$$GwcJZmJmjqVA5hRyksyNQ" : {
+      "id" : "MxSzID9gTDUrEZZiZwn7M$$GwcJZmJmjqVA5hRyksyNQ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -220,
+        "y" : -20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "p2vlr_ikpGaCBcCqCNhla$$ONtKjKRbK_Gm1kYuMhep3",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "oG__diYMt0tc5lFlqlPiX$$pkXe4VQTqFLKV9EH3RzOK",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "HAao87_yDxsSB2fbyTm28" : {
+      "id" : "HAao87_yDxsSB2fbyTm28",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "perftestseed_1",
+        "slug" : "perftestseed_1",
+        "x" : -820,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "perftestseed_1",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "YyGiopOMRopiVsES9OkWq",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "uzU71kKi-PoVRn2U9BlgJ$$oFHGbZvoZNUp0554uq-rI",
+    "source" : "MxSzID9gTDUrEZZiZwn7M$$GwcJZmJmjqVA5hRyksyNQ",
+    "sourcePort" : "oG__diYMt0tc5lFlqlPiX$$pkXe4VQTqFLKV9EH3RzOK",
+    "target" : "perftest_1##xQFCtG0D",
+    "targetPort" : "QerS2rXq"
+  }, {
+    "id" : "pywBOLoYTptaUx2I2pT_T",
+    "source" : "HAao87_yDxsSB2fbyTm28",
+    "sourcePort" : "YyGiopOMRopiVsES9OkWq",
+    "target" : "MxSzID9gTDUrEZZiZwn7M$$GwcJZmJmjqVA5hRyksyNQ",
+    "targetPort" : "p2vlr_ikpGaCBcCqCNhla$$ONtKjKRbK_Gm1kYuMhep3"
+  } ],
+  "component" : "Model"
+}

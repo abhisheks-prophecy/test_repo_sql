@@ -1,0 +1,115 @@
+name: Databricks_DBT_Generic
+description: ''
+version: 0.0.1
+author: null
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs:
+  jobs/Databricks_DBT_Job:
+    name: Databricks_DBT_Job
+    description: ''
+    fabricUID: 57
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0 0 1 1 ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-12-16 05:43:44'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/Composer_DBT_Job:
+    name: Composer_DBT_Job
+    description: ''
+    fabricUID: 63
+    scheduler:
+      Composer: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0 1 1 *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-12-16 05:44:28'
+    author: abhisheks+e2etests@prophecy.io
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2023-12-15 18:31:49'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/perftest_1:
+    name: perftest_1
+    schema:
+      providerType: Databricks
+      fields:
+      - name: c_int
+        dataType:
+          type: Integer
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/perftest_1.sql
+    - .prophecy/ide/models/perftest_1.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-12-15 18:32:23'
+sqlMacros: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/perftestseed_1:
+    name: perftestseed_1
+    schema:
+      providerType: Databricks
+      fields:
+      - name: c_int
+        dataType:
+          type: Integer
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/perftestseed_1.csv
+    createdAt: '2023-12-15 18:33:02'
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+e2etests@prophecy.io
+  createdAt: '2023-12-15 18:31:49'
+dependencies: '[]'
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}
