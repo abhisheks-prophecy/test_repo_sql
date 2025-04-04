@@ -1,0 +1,64 @@
+{
+  "id" : "test_pipeline",
+  "metainfo" : {
+    "label" : "test_pipeline",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    }
+  },
+  "processes" : {
+    "2nBLvqP71TXd0y9ovAeye" : {
+      "id" : "2nBLvqP71TXd0y9ovAeye",
+      "component" : "OrchestrationSource",
+      "kind" : "S3Source",
+      "metadata" : {
+        "label" : "S3Source_0",
+        "x" : -900,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "s3",
+          "properties" : {
+            "id" : "s3"
+          },
+          "type" : "connector"
+        },
+        "format" : {
+          "kind" : "csv",
+          "properties" : {
+            "header" : true,
+            "separator" : ","
+          }
+        },
+        "properties" : {
+          "filePath" : "/annual-enterprise-survey-2020-financial-year-provisional-csv.csv"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "7b64a65d-f388-4ff9-88d5-840d9ae1a5be",
+          "slug" : "out0"
+        } ]
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
