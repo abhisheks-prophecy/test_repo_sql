@@ -9,3 +9,10 @@ with DAG(Schedule = Schedule):
         format = CSVFormat(header = True, separator = ","), 
         filePath = "/annual-enterprise-survey-2020-financial-year-provisional-csv.csv"
     )
+    OrchestrationSource_1 = SourceTask(
+        task_id = "OrchestrationSource_1", 
+        component = "OrchestrationSource", 
+        kind = "SharepointSource", 
+        connector = Connection(kind = "sharepoint"), 
+        format = CSVFormat(header = True, separator = ",")
+    )
