@@ -36,8 +36,42 @@ sqlMacros:
     - macros/generate_schema_name.sql
     - .prophecy/ide/macros/generate_schema_name.json
     createdAt: '2025-04-04 14:59:34'
-sqlSeeds: {}
-sqlSources: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/seed2:
+    name: seed2
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: a
+        dataType:
+          type: Integer
+      - name: b
+        dataType:
+          type: Float
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/seed2.csv
+    - seeds/seeds.yml
+    createdAt: '2025-04-04 17:11:17'
+sqlSources:
+  .prophecy/metadata/sqlsources/qwe_qwe2:
+    name: qwe.qwe2
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-04-04 17:55:36'
+    tables:
+    - name: table1
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2025-04-04 17:55:36'
 sqlUnreferencedSources: {}
 sqlOrchestratorPipelines:
   .prophecy/metadata/sqlorchestratorpipeline/test_pipeline:
